@@ -1,0 +1,11 @@
+E:\TFS192.168.100.212\EDUSHI_CHANNEL_SYSTEM\www.edushi.com\Edushi.Index7.0.VS2013\Edushi.Index7.0\Edushi.Www.Special\bin\Debug\Edushi.Www.Special.dll
+E:\TFS192.168.100.212\EDUSHI_CHANNEL_SYSTEM\www.edushi.com\Edushi.Index7.0.VS2013\Edushi.Index7.0\Edushi.Www.Special\bin\Debug\Edushi.Www.Special.pdb
+E:\TFS192.168.100.212\EDUSHI_CHANNEL_SYSTEM\www.edushi.com\Edushi.Index7.0.VS2013\Edushi.Index7.0\Edushi.Www.Special\bin\Debug\EDC.Framework.dll
+E:\TFS192.168.100.212\EDUSHI_CHANNEL_SYSTEM\www.edushi.com\Edushi.Index7.0.VS2013\Edushi.Index7.0\Edushi.Www.Special\bin\Debug\Edushi.Www.Model.dll
+E:\TFS192.168.100.212\EDUSHI_CHANNEL_SYSTEM\www.edushi.com\Edushi.Index7.0.VS2013\Edushi.Index7.0\Edushi.Www.Special\bin\Debug\MongoDB.Bson.dll
+E:\TFS192.168.100.212\EDUSHI_CHANNEL_SYSTEM\www.edushi.com\Edushi.Index7.0.VS2013\Edushi.Index7.0\Edushi.Www.Special\bin\Debug\Enyim.Caching.dll
+E:\TFS192.168.100.212\EDUSHI_CHANNEL_SYSTEM\www.edushi.com\Edushi.Index7.0.VS2013\Edushi.Index7.0\Edushi.Www.Special\bin\Debug\log4net.dll
+E:\TFS192.168.100.212\EDUSHI_CHANNEL_SYSTEM\www.edushi.com\Edushi.Index7.0.VS2013\Edushi.Index7.0\Edushi.Www.Special\bin\Debug\Edushi.Www.Model.pdb
+E:\TFS192.168.100.212\EDUSHI_CHANNEL_SYSTEM\www.edushi.com\Edushi.Index7.0.VS2013\Edushi.Index7.0\Edushi.Www.Special\obj\Debug\Edushi.Www.Special.csprojResolveAssemblyReference.cache
+E:\TFS192.168.100.212\EDUSHI_CHANNEL_SYSTEM\www.edushi.com\Edushi.Index7.0.VS2013\Edushi.Index7.0\Edushi.Www.Special\obj\Debug\Edushi.Www.Special.dll
+E:\TFS192.168.100.212\EDUSHI_CHANNEL_SYSTEM\www.edushi.com\Edushi.Index7.0.VS2013\Edushi.Index7.0\Edushi.Www.Special\obj\Debug\Edushi.Www.Special.pdb

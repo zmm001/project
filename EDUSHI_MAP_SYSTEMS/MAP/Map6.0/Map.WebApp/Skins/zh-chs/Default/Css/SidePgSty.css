@@ -1,0 +1,93 @@
+﻿@import url(Common.css);
+
+/*页卡 我要入驻*/
+.Caption{ position:relative; width:300px;}
+.Caption h3.BulStore,.Caption h3.EShopJoin,.Caption h3.SpClaim{ font-size:12px; color:#333; padding:0 0 0 10px; margin:0 0 5px; background:url(../Images/Arrow2.gif) no-repeat left 1px;}
+.Caption span.OthIf{ position:absolute; top:0; right:0;}
+
+/*.Caption span{ position:absolute; top:0; right:0;}
+.Caption span a{ color:Blue; text-decoration:underline;}
+.Caption span a:hover{ color:Red; text-decoration:none;}*/
+
+.Speak,.Speak1{ margin:5px 0; background:url(../Images/SearchNavLine.gif) repeat-x left bottom; padding-bottom:5px;}
+.Speak span{ float:left;}
+.Speak1 span{ float:left; line-height:27px;}/*带有input输入楼层*/
+.Speak1 input{ margin:0 2px;}
+
+/*企事业And店铺*/
+.DouDuty{ width:300px; height:23px; position:relative; border-bottom:1px solid #CCC;}
+.DouDuty h3{ padding:7px 0 0 14px; margin:0; font-size:12px; color:#666; background:url(../images/Arrow3.gif) no-repeat left 7px;}
+ul.SwTitle{padding:0; margin:0; list-style-type:none; position:absolute; top:0; right:20px;}
+ul.SwTitle li{float:right; height:11px; overflow:hidden; background:url(../images/SwTitleBg.gif) no-repeat left top; margin:0 0 0 5px; padding:8px 5px 4px; width:80px; font-weight:bold; text-align:center; color:#999;}
+ul.SwTitle li.Current{padding-bottom:5px; background-position:left -25px; color:#666;}
+
+table.TabStyle3{ margin:5px 0;}
+table.TabStyle1 tr td.Til,table.TabStyle3 tr th{ text-align:right; color:#666; font-weight:bold;}
+
+table.TabStyle3 span.ReMark{ color:#FF6400; padding-left:1px;}
+table.TabStyle3 tr td.ClTil{ font-weight:bold; position:relative; background:url(../Images/ArrowSx.gif) no-repeat left 4px; height:15px; overflow:hidden; padding-left:12px; color:#666;}
+table.TabStyle3 tr td.ClTil span{ position:absolute; top:2px; right:10px; color:#666; font-weight:normal;}
+
+table.TabStyle2 tr td.ChBx input,table.TabStyle2 tr td.ChBx span{ float:left;}
+table.TabStyle2 tr td.ChBx span{ padding:4px 0 0;}
+table.TabStyle1 tr th,table.TabStyle2 tr th{ color:#666; background:url(../images/ArrowSx.gif) no-repeat left 2px; padding-left:12px; text-align:left;}
+td.SpTdCon{ height:5px; overflow:hidden;}
+td.SpTdLine{ height:13px; background:url(../Images/SearchNavLine.gif) repeat-x left center;}
+td.SubTdCon{ padding-left:21px; line-height:200%;}
+
+/*登录*/
+.MinLogin{margin:5px 0;border:1px solid #FFDD99;background-color: #FFF9ED; padding:5px; text-align:center;}
+
+/*页卡 地图找店*/
+.FindEstore{overflow-y:auto;overflow-x:hidden;
+     scrollbar-face-color: #DBEBFE; /*滚动条凸出部分的颜色*/
+     scrollbar-shadow-color: #B8D6FA; /*滚动条空白部分的颜色*/
+     scrollbar-highlight-color: #FFFFFF; /*立体滚动条阴影的颜色*/
+     scrollbar-3dlight-color: #DBEBFE; /*滚动条亮边的颜色*/
+     scrollbar-darkshadow-color:#458CE4; /*上下按钮上三角箭头的颜色*/
+     scrollbar-track-color: #FFFFFF; /*滚动条的背景颜色*/
+     scrollbar-arrow-color: #458CE4;/*滚动条强阴影的颜色*/
+}
+.FindEstore h3{ padding:2px 0 0; margin:5px 0 0; font-size:12px; color:#666;}
+.FindEstore h3.Sx,.FindEstore h3.Cx{ background-image:url(../Images/FindEstoreH3Bg.gif); height:14px; overflow:hidden; background-repeat:no-repeat; padding-left:16px;}
+.FindEstore h3.Sx{ background-position:left top;}
+.FindEstore h3.Cx{ background-position:left -14px;}
+.EachRow{margin:5px 0;}
+.DottedLine{background:url(../Images/SearchNavLine.gif) repeat-x left center; height:1px; font-size:0;/*for IE6*/}
+
+.NormalInfo{padding:3px 3px 3px 12px; cursor:pointer; background:url(../Images/DownIco.gif) no-repeat 3px 6px;}
+.ActiveInfo{padding:3px 3px 3px 12px; cursor:pointer; background:#f6f6f6 url(../Images/UpIco.gif) no-repeat 3px 6px;}
+.DetailCir{margin:5px 0; line-height:150%; color:#666;}
+
+table.TabSty1{ width:280px; overflow:hidden;}
+table.TabSty1 caption{ text-align:left; color:#666; font-weight:bold;}
+table.TabSty1 tr th,table.TabSty1 tr td{ line-height:25px; height:25px; background:url(../Images/SearchNavLine.gif) repeat-x left bottom;}
+
+span.Bt{ color:#999; font-weight:bold; background:url(../Images/ArrowCircle2.gif) no-repeat left 4px; padding-left:6px;}
+
+.DetailCir .TdRgt{ text-align:right; padding-top:3px;}
+
+.DetailCir ul{ padding:0; margin:0; list-style-type:none; color:#666;}
+.DetailCir ul li{padding-left:14px; margin:3px 0; background:url(../images/ArrowCircle1.gif) no-repeat 5px 8px;}
+.DetailCir ul li img{ padding-left:3px; cursor:pointer;}
+.DetailCir ul li span{ color:#369; margin-left:5px; cursor:pointer;}
+
+
+.EShopAndCompanyJoin{height:auto; width:300px;overflow-y:auto;overflow-x:hidden;
+scrollbar-face-color: #DBEBFE; /*滚动条凸出部分的颜色*/
+scrollbar-shadow-color: #B8D6FA; /*滚动条空白部分的颜色*/
+scrollbar-highlight-color: #FFFFFF; /*立体滚动条阴影的颜色*/
+scrollbar-3dlight-color: #DBEBFE; /*滚动条亮边的颜色*/
+scrollbar-darkshadow-color:#458CE4; /*上下按钮上三角箭头的颜色*/
+scrollbar-track-color: #FFFFFF; /*滚动条的背景颜色*/
+scrollbar-arrow-color: #458CE4;/*滚动条强阴影的颜色*/ 
+}
+.Report{height:auto; width:300px;overflow-y:auto;overflow-x:hidden;position:relative;
+scrollbar-face-color: #DBEBFE; /*滚动条凸出部分的颜色*/
+scrollbar-shadow-color: #B8D6FA; /*滚动条空白部分的颜色*/
+scrollbar-highlight-color: #FFFFFF; /*立体滚动条阴影的颜色*/
+scrollbar-3dlight-color: #DBEBFE; /*滚动条亮边的颜色*/
+scrollbar-darkshadow-color:#458CE4; /*上下按钮上三角箭头的颜色*/
+scrollbar-track-color: #FFFFFF; /*滚动条的背景颜色*/
+scrollbar-arrow-color: #458CE4;/*滚动条强阴影的颜色*/ 
+}

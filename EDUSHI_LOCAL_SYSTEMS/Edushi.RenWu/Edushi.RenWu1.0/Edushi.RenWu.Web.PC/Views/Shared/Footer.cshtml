@@ -1,0 +1,51 @@
+﻿@using Edushi.RenWu.Model
+@using Edushi.RenWu.Special
+@model List<ZiXunInfoTypeModel>
+@{
+    var parentType =Model.FindAll(p=>p.IT_ParentID==0);
+    var subType = ViewBag.SubType as List<RenWuInfoTypeModel>;
+}
+<div class="channel-footer-nav">
+    <div class="wrapper clearfix">
+        <div class="fl f-logo">
+            <a href="@Url.Content("~/")" target="_blank"><img src="@Url.Content("~/asset/images/logo.png")"></a>
+        </div>
+        <div class="fl current-channel">
+            <strong><a href="@Url.Content("~/")" target="_blank">人物</a></strong>
+            @if (subType != null && subType.Any())
+            {
+                foreach (var item in subType)
+                {
+                    <a href="@Common.GetInfoListUrl(Url.Content("~/"),item.IT_ParentID, item.IT_ID)" target="_blank">@item.IT_Name</a>
+                }
+            }
+        </div>
+        <div class="fl other-channel">
+            <strong>其他频道</strong>
+            @foreach (var item in parentType)
+            {
+                <a href="@Common.GetInfoListUrl(ViewBag.ZxDomain,item.IT_ParentID, item.IT_ID)" target="_blank">@item.IT_Name</a>
+            }
+            @*<a href="http://caijing.edushi.com/" target="_blank">财经</a>*@
+            <a href="http://hangzhou.fangtoo.com/" target="_blank">房产</a>
+            <a href="http://lvyou.edushi.com" target="_blank">旅游</a>
+            <a href="http://www.edushi.com/zt/" target="_blank">专题</a>
+            <a href="http://tu.edushi.com/" target="_blank">图闻</a>
+        </div>
+    </div>
+</div>
+@Html.Raw(ViewBag.FooterHtml)
+<script>
+    (function () {
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        }
+        else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+</script>

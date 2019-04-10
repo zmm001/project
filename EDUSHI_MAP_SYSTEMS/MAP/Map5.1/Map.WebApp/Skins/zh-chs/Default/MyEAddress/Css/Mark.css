@@ -1,0 +1,31 @@
+﻿body{font-size:12px; color:#333;text-align:left;}
+img{border-width:0px}
+form{padding:0;margin:0}
+a{color:#369;text-decoration:none;}
+a:hover{color:red; text-decoration:underline;}
+.HackBox{clear:both;border-top:transparent 0px solid;height:0;overflow:hidden;}
+
+.InTagCon{position:relative;width:305px; height:132px;}
+.PinIco{width:35px; height:34px;
+    /*---- IE6 png bug ----*/
+    background:url('../Images/PinIco.png') !important;
+	background:none;}
+.InTagConBg{width:305; height:132px;
+    /*---- IE6 png bug ----*/
+    background:url('../Images/ViewTagBg.png') !important;
+	background:none;}
+.InTagDetCon{position:absolute; top:0; left:0;width:290px; height:122px; padding:5px 15px 5px 10px; text-align:left;}
+.InTagDetCon h3{font-size:14px; padding:0; margin:0 0 3px; height:23px; line-height:23px;width:280px; overflow:hidden;-o-text-overflow:ellipsis; text-overflow:ellipsis; white-space:nowrap; line-height:23px;}
+.AutoText{width:270px; height:64px; overflow-x:hidden; overflow-y:auto; line-height:120%;
+          scrollbar-face-color: #DBEBFE; /*滚动条凸出部分的颜色*/
+          scrollbar-shadow-color: #B8D6FA; /*滚动条空白部分的颜色*/
+          scrollbar-highlight-color: #FFFFFF; /*立体滚动条阴影的颜色*/
+          scrollbar-3dlight-color: #DBEBFE; /*滚动条亮边的颜色*/
+          scrollbar-darkshadow-color:#458CE4; /*上下按钮上三角箭头的颜色*/
+          scrollbar-track-color: #FFFFFF; /*滚动条的背景颜色*/
+          scrollbar-arrow-color: #458CE4;/*滚动条强阴影的颜色*/          
+          } 
+.WkButton{margin:6px 20px 0 0;text-align:center;}
+
+.CloseWin,.CloseBtnOver,.CloseBtnOut{position:absolute; top:10px; right:15px; cursor:hand; width:13px; height:13px; overflow:hidden;background:url(../Images/CloseBtn.gif) no-repeat left top;}
+.CloseBtnOver{background-position:left -13px;}

@@ -1,0 +1,4 @@
+E:\TFS192.168.100.212\EDUSHI_CHANNEL_SYSTEM\Edushi.WenDa\Edushi.WenDa1.0\Edushi.WenDa.SQLServerDAL\bin\Debug\Edushi.WenDa.SQLServerDAL.dll
+E:\TFS192.168.100.212\EDUSHI_CHANNEL_SYSTEM\Edushi.WenDa\Edushi.WenDa1.0\Edushi.WenDa.SQLServerDAL\bin\Debug\Edushi.WenDa.SQLServerDAL.pdb
+E:\TFS192.168.100.212\EDUSHI_CHANNEL_SYSTEM\Edushi.WenDa\Edushi.WenDa1.0\Edushi.WenDa.SQLServerDAL\obj\Debug\Edushi.WenDa.SQLServerDAL.dll
+E:\TFS192.168.100.212\EDUSHI_CHANNEL_SYSTEM\Edushi.WenDa\Edushi.WenDa1.0\Edushi.WenDa.SQLServerDAL\obj\Debug\Edushi.WenDa.SQLServerDAL.pdb

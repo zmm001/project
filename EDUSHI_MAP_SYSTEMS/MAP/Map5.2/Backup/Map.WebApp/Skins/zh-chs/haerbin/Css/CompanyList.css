@@ -1,0 +1,16 @@
+﻿@import url(Common.css);
+body{font-family:"宋体"}
+.PjIncomeNav{height:auto; width:300px;overflow-y:auto;overflow-x:hidden;
+scrollbar-face-color: #DBEBFE; /*滚动条凸出部分的颜色*/
+scrollbar-shadow-color: #B8D6FA; /*滚动条空白部分的颜色*/
+scrollbar-highlight-color: #FFFFFF; /*立体滚动条阴影的颜色*/
+scrollbar-3dlight-color: #DBEBFE; /*滚动条亮边的颜色*/
+scrollbar-darkshadow-color:#458CE4; /*上下按钮上三角箭头的颜色*/
+scrollbar-track-color: #FFFFFF; /*滚动条的背景颜色*/
+scrollbar-arrow-color: #458CE4;/*滚动条强阴影的颜色*/ 
+}
+img.PjIncomeImg{position:absolute;top:0;right:10px;}    
+ul.ShowList{padding:0; margin:3px 0;}
+ul.ShowList li{display:block; padding:3px 0; background:url(../Images/SearchNavLine.gif) repeat-x left bottom; line-height:21px; height:21px;}
+ul.ShowList li img{ margin-left:3px;}
+.Paginate{text-align:center;margin:5px 0;}

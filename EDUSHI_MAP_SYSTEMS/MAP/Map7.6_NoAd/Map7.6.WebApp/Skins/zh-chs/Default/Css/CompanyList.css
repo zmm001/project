@@ -1,0 +1,8 @@
+﻿@import url(Common.css);
+body{font-family:"宋体"}
+.PjIncomeNav{height:auto; width:310px;overflow-y:auto;overflow-x:hidden;}
+img.PjIncomeImg{position:absolute;top:0;right:20px;}    
+ul.ShowList{padding:0; margin:3px 0;}
+ul.ShowList li{display:block; padding:3px 0; background:url(../Images/SearchNavLine.gif) repeat-x left bottom; line-height:21px; height:21px;}
+ul.ShowList li img{ margin-left:3px;}
+.Paginate{text-align:center;margin:5px 0;}

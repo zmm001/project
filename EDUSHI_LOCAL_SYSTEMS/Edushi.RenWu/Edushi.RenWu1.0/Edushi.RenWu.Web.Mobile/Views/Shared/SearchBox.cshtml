@@ -1,0 +1,18 @@
+﻿<div class="search-box">
+    <div>
+        <i class="search-icon"></i>
+        <input type="text" id="search_text" value="@ViewBag.KeyWord" placeholder="请输入人物名称">
+    </div>
+    <a href="javascript:void(0);" id="search-btn">搜索</a>
+</div>
+
+<script>
+    $(function () {
+        $("#search-btn").click(function () {
+            var text = $("#search_text").val();
+            if (text != "") {
+                location.href = "/renwu/info/ck" + encodeURIComponent(text) + ".html";
+            }
+        });
+    });
+</script>

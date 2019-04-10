@@ -1,0 +1,90 @@
+﻿@using Edushi.Common
+@model Edushi.UserCenter.Web.Mobile.Models.MyAttentionModel
+@{
+    ViewBag.Title = string.Format("\"{0}\"个人中心-E都市", Model.UserInfo.UI_NickName);
+    var imgDomain = Common.GetConfigString("UserHeadPic");
+    var loginId = Model.UserInfo.UI_ID;
+}
+
+<div id="app" class="my">
+    <!--头部-->
+    <header-bar :data="header" @@back="back()"></header-bar>
+    <!--内容-->
+    <div class="container">
+        <div class="tab-box tab-follow">
+            <a href="javascript:void(0)" class="tab-btn current">E都市号</a>
+            <a class="tab-btn" href="@string.Format(Url.Content("~/my/attentionNonEditor/{0}.html"),1)" id="putong">普通号</a>
+        </div>
+        @if (Model.List != null && Model.List.Any())
+        {
+            <div class="follow-list follow-fixed">
+                <ul id="datalist">
+                    @foreach (var item in Model.List)
+                    {
+                        <li @Html.Raw(item.Num <= 0 ? "" : (item.Num > 99 ? "data-number=\"99+\"" : string.Format("data-number=\"{0}\"", item.Num)))>
+                            <a href="@string.Format(Url.Content("~/index/1-{0}.html"),item.UserInfo["ID"])">
+                                <div class="photo">
+                                    <img src="@(imgDomain + item.UserInfo["Avatar"])">
+                                </div>
+                                <div class="info">
+                                    <span class="name">@Html.Raw(item.UserInfo["NickName"])</span>
+                                    <span class="time">@item.Time</span>
+                                    <span class="text">@Html.Raw(item.Title)</span>
+                                </div>
+                            </a>
+                            @if (loginId != Convert.ToInt32(item.UserInfo["ID"].ToString()))
+                            {
+                                   <div class="follow-btn followed" onclick="attention(@item.UserInfo["ID"])"></div>
+                            }
+                        </li>
+                    }
+                </ul>
+                <div class="loding" style="display: none;">正在加载更多</div>
+            </div>
+        }
+
+    </div>
+</div>
+<script>
+
+
+    var my = new Vue({
+        el: '#app',
+        data: function () {
+            return {
+                header: {
+                    title: "我的关注",
+                    number: "@Model.TotalCount"
+                }
+            }
+        },
+        methods: {
+            //返回
+            back: function () {
+                window.history.back();
+            }
+        }
+    });
+    var ConfigData = {
+        Count: "@Model.PageCount",
+        Url: "@Url.Content("~/")",
+        Page: "GetMoreAttention.htm",
+        PageIndex: 1,
+        Contaiter: $("#datalist"),
+        Type: 3
+    };
+    function attention(val) {
+        $.ajaxSettings.async = false;
+        $.post("/CancelAttention.htm", { "userId": val }, function (data) {
+            if (data.ResultCode == 1) {
+                window.location.reload();
+            } else if (data.ResultCode == 2) {
+                window.location.href = 'http://m.edushi.com/user/Login.html?BackUrl=' + window.location.href;
+            } else {
+                alert(data.Msg);
+            }
+        })
+    }
+</script>
+
+<script src="@Url.Content("~/asset/js/scrollLoad.bak.js")"></script>

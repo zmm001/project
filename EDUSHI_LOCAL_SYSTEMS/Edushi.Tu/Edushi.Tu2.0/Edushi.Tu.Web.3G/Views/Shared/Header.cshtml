@@ -1,0 +1,15 @@
+﻿@using Edushi.Tu.Special
+@{
+    string parameterName = Common.GetConfigString("CooperationApp_UrlParameterName");
+    string parameterValue = Request.QueryString[parameterName];
+    string indexURL = ("http://m.edushi.com/").GetCooperationAppURL(parameterName, parameterValue);
+}
+<header>
+    <a href="javascript:history.go(-1);" class="back"></a>
+    <a href="@indexURL" class="logo"></a>
+    <a href="@Url.Content("~/")" class="channel-name">图闻</a>
+    <span class="fr">
+        <a href="http://m.edushi.com/user/" class="user"></a>
+        <a href="http://m.edushi.com/Navigation.html" class="category"></a>
+    </span>
+</header>

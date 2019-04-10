@@ -1,0 +1,123 @@
+﻿@{
+    Layout = null;
+}
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head><title>
+	包打听—有问有答本地人|E都市
+</title><meta content="包打听" name="Keywords" /><meta content="E都市包打听是以在线互动问答和搜索形式展现、提供本地化的信息服务平台,您可以根据自身的需求,有针对性地提出问题,同时这些答案也可以满足有相同或类似问题的其他人需求." name="Description" /><meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <script src="http://res.edushi.com/js/jquery-1.7.2.min.js" type="text/javascript"></script>
+    <script type="text/javascript" src="http://int.dpool.sina.com.cn/iplookup/iplookup.php?format=js"></script>
+    <script src="/js/channelcitylist.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            if (typeof remote_ip_info != 'undefined' && "" != remote_ip_info.city) {
+                var ecity = remote_ip_info.city.replace('市', '');
+
+                $.ajax({
+                    type: "post",
+                    async: false,
+                    url: $("#hidCurrentCity").val(),
+                    dataType: "json",
+                    data: { CityName: ecity },
+                    success: function (data) {
+                        var html = "";
+                        html += "您当前所在的城市可能是 <span>" + ecity + "</span>,";
+                        if (data.isBdt == 1) {
+                            html += "<a href='http://" + data.cityCode + ".edushi.com/bdt/'><span>点击进入" + ecity + "包打听</span></a>";
+                        }
+                        $("#currentCity").html(html.toString()).show();
+                        $("#ddlProvince").val(data.EP_ID).change();
+                        $("#ddlCity").val(data.cityCode);
+                    }
+                });
+            }
+
+            $("#btnGo").click(function () {
+                window.location.href = "http://" + $("#ddlCity").val() + ".edushi.com/bdt/";
+            })
+        })
+    </script>
+    <link href="/css/channelcitylist.css" rel="stylesheet" type="text/css" /></head>
+<body>
+
+<div id="topmenu">
+  <div><a href="http://my.edushi.com/register.aspx">免费注册</a> | <a href="http://my.edushi.com/">登录</a> | <a href="http://www.edushi.com/about/GuestBook.aspx">留言</a></div>
+</div>
+<div id="logobox" style=" background-image:url(images/bdt_bj.png)">
+  <div id="logo"><a href="http://www.edushi.com/">
+      <img src="images/citylist_bdt.png" width="191" height="55" border="0" />
+      </a></div>
+  <div id="menu"></div>
+  <div id="breadCrumb">当前位置：<a href="/">E都市首页</a> &gt; 
+      包打听城市列表</div>
+</div>
+<div id="content">
+  <div id="currentCity" class="current" style="display:none;"></div>
+
+  <div class="city_list hotcity"><strong>热门城市：</strong>  
+  <a href="http://hz.edushi.com/bdt/">杭州</a> <a href="http://beijing.edushi.com/bdt/">北京</a><a href="http://sh.edushi.com/bdt/">上海</a>  <a href="http://guangzhou.edushi.com/bdt/">广州</a> <a href="http://sz.edushi.com/bdt/">深圳</a>  <a href="http://nanjing.edushi.com/bdt/">南京</a>  <a href="http://wuhan.edushi.com/bdt/">武汉</a></div>
+
+  <div class="city_list" style="height:30px;">
+    <ul>
+      <li><strong>按省份选择：</strong></li>
+      <li>
+          <select id="ddlProvince"></select>
+         <select id="ddlCity"></select>
+      </li>
+      <li><input id="btnGo" name="" type="button" value="确 定" class="btn" /></li>      
+    </ul>
+  </div>
+
+  <div class="city_list hotcity">
+  <script type="text/javascript">
+      /*首页城市列表标签云*/
+      var cpro_id = "u1134064";
+</script>
+<script src="http://cpro.baidustatic.com/cpro/ui/c.js" type="text/javascript"></script>
+  </div>
+    
+  <div class="city_list">
+    <strong>按拼音首字母选择：</strong>
+      <dl><dt>A</dt><dd><a href="http://ankang.edushi.com/bdt/" >安康</a> |<a href="http://anyang.edushi.com/bdt/" >安阳</a> |<a href="http://anji.edushi.com/bdt/" >安吉</a> </dd></dl><dl><dt>B</dt><dd><a href="http://beijing.edushi.com/bdt/" >北京</a> |<a href="http://baotou.edushi.com/bdt/" >包头</a> </dd></dl><dl><dt>C</dt><dd><a href="http://chongqing.edushi.com/bdt/" >重庆</a> |<a href="http://chengdu.edushi.com/bdt/" >成都</a> |<a href="http://changchun.edushi.com/bdt/" >长春</a> |<a href="http://chenzhou.edushi.com/bdt/" >郴州</a> |<a href="http://chunan.edushi.com/bdt/" >淳安</a> |<a href="http://chengde.edushi.com/bdt/" >承德</a> |<a href="http://chaozhou.edushi.com/bdt/" >潮州</a> |<a href="http://changzhou.edushi.com/bdt/" >常州</a> |<a href="http://changsha.edushi.com/bdt/" >长沙</a> </dd></dl><dl><dt>D</dt><dd><a href="http://dongyang.edushi.com/bdt/" >东阳</a> |<a href="http://deqing.edushi.com/bdt/" >德清</a> |<a href="http://danyang.edushi.com/bdt/" >丹阳</a> |<a href="http://dalian.edushi.com/bdt/" >大连</a> |<a href="http://dongguan.edushi.com/bdt/" >东莞</a> </dd></dl><dl><dt>E</dt><dd><a href="http://enshi.edushi.com/bdt/" >恩施</a> </dd></dl><dl><dt>F</dt><dd><a href="http://fuzhou.edushi.com/bdt/" >福州</a> |<a href="http://fushun.edushi.com/bdt/" >抚顺</a> |<a href="http://fuyang.edushi.com/bdt/" >富阳</a> |<a href="http://foshan.edushi.com/bdt/" >佛山</a> </dd></dl><dl><dt>G</dt><dd><a href="http://guangzhou.edushi.com/bdt/" >广州</a> |<a href="http://guilin.edushi.com/bdt/" >桂林</a> |<a href="http://guiyang.edushi.com/bdt/" >贵阳</a> </dd></dl><dl><dt>H</dt><dd><a href="http://hz.edushi.com/bdt/" >杭州</a> |<a href="http://huzhou.edushi.com/bdt/" >湖州</a> |<a href="http://hanzhong.edushi.com/bdt/" >汉中</a> |<a href="http://huhehaote.edushi.com/bdt/" >呼和浩特</a> |<a href="http://huizhou.edushi.com/bdt/" >惠州</a> |<a href="http://harbin.edushi.com/bdt/" >哈尔滨</a> |<a href="http://hefei.edushi.com/bdt/" >合肥</a> |<a href="http://haikou.edushi.com/bdt/" >海口</a> </dd></dl><dl><dt>J</dt><dd><a href="http://jinhua.edushi.com/bdt/" >金华</a> |<a href="http://jining.edushi.com/bdt/" >济宁</a> |<a href="http://jingmen.edushi.com/bdt/" >荆门</a> |<a href="http://jingzhou.edushi.com/bdt/" >荆州</a> |<a href="http://jiaxing.edushi.com/bdt/" >嘉兴</a> |<a href="http://jinan.edushi.com/bdt/" >济南</a> |<a href="http://jilin.edushi.com/bdt/" >吉林</a> </dd></dl><dl><dt>K</dt><dd><a href="http://keqiao.edushi.com/bdt/" >柯桥</a> |<a href="http://kunming.edushi.com/bdt/" >昆明</a> </dd></dl><dl><dt>L</dt><dd><a href="http://liuzhou.edushi.com/bdt/" >柳州</a> |<a href="http://lijiang.edushi.com/bdt/" >丽江</a> |<a href="http://lishui.edushi.com/bdt/" >丽水</a> |<a href="http://linfen.edushi.com/bdt/" >临汾</a> |<a href="http://luzhou.edushi.com/bdt/" >泸州</a> |<a href="http://linan.edushi.com/bdt/" >临安</a> |<a href="http://lasa.edushi.com/bdt/" >拉萨</a> |<a href="http://lanzhou.edushi.com/bdt/" >兰州</a> |<a href="http://luoyang.edushi.com/bdt/" >洛阳</a> </dd></dl><dl><dt>N</dt><dd><a href="http://ningbo.edushi.com/bdt/" >宁波</a> |<a href="http://nanchang.edushi.com/bdt/" >南昌</a> |<a href="http://nanjing.edushi.com/bdt/" >南京</a> |<a href="http://nanchong.edushi.com/bdt/" >南充</a> |<a href="http://nantong.edushi.com/bdt/" >南通</a> |<a href="http://nanning.edushi.com/bdt/" >南宁</a> </dd></dl><dl><dt>P</dt><dd><a href="http://putian.edushi.com/bdt/" >莆田</a> |<a href="http://puyang.edushi.com/bdt/" >濮阳</a> |<a href="http://pingtan.edushi.com/bdt/" >平潭</a> </dd></dl><dl><dt>Q</dt><dd><a href="http://qinhuangdao.edushi.com/bdt/" >秦皇岛</a> |<a href="http://quanzhou.edushi.com/bdt/" >泉州</a> |<a href="http://jinjiang.edushi.com/bdt/" >泉州</a> |<a href="http://shishi.edushi.com/bdt/" >泉州</a> |<a href="http://qd.edushi.com/bdt/" >青岛</a> </dd></dl><dl><dt>R</dt><dd><a href="http://rizhao.edushi.com/bdt/" >日照</a> </dd></dl><dl><dt>S</dt><dd><a href="http://sh.edushi.com/bdt/" >上海</a> |<a href="http://sz.edushi.com/bdt/" >深圳</a> |<a href="http://shaoguan.edushi.com/bdt/" >韶关</a> |<a href="http://shaoxing.edushi.com/bdt/" >绍兴</a> |<a href="http://shuozhou.edushi.com/bdt/" >朔州</a> |<a href="http://suizhou.edushi.com/bdt/" >随州</a> |<a href="http://shuitou.edushi.com/bdt/" >水头</a> |<a href="http://shangyu.edushi.com/bdt/" >上虞</a> |<a href="http://shijiazhuang.edushi.com/bdt/" >石家庄</a> |<a href="http://suzhou.edushi.com/bdt/" >苏州</a> |<a href="http://sanya.edushi.com/bdt/" >三亚</a> |<a href="http://shenyang.edushi.com/bdt/" >沈阳</a> |<a href="http://suining.edushi.com/bdt/" >遂宁</a> </dd></dl><dl><dt>T</dt><dd><a href="http://tianjin.edushi.com/bdt/" >天津</a> |<a href="http://taixing.edushi.com/bdt/" >泰兴</a> |<a href="http://taiyuan.edushi.com/bdt/" >太原</a> |<a href="http://tangshan.edushi.com/bdt/" >唐山</a> </dd></dl><dl><dt>W</dt><dd><a href="http://wuhan.edushi.com/bdt/" >武汉</a> |<a href="http://wuhu.edushi.com/bdt/" >芜湖</a> |<a href="http://weihai.edushi.com/bdt/" >威海</a> |<a href="http://wulumuqi.edushi.com/bdt/" >乌鲁木齐</a> |<a href="http://wenzhou.edushi.com/bdt/" >温州</a> </dd></dl><dl><dt>X</dt><dd><a href="http://xiamen.edushi.com/bdt/" >厦门</a> |<a href="http://xian.edushi.com/bdt/" >西安</a> |<a href="http://xinxiang.edushi.com/bdt/" >新乡</a> |<a href="http://xining.edushi.com/bdt/" >西宁</a> |<a href="http://xuzhou.edushi.com/bdt/" >徐州</a> </dd></dl><dl><dt>Y</dt><dd><a href="http://yangzhou.edushi.com/bdt/" >扬州</a> |<a href="http://yinchuan.edushi.com/bdt/" >银川</a> |<a href="http://yingkou.edushi.com/bdt/" >营口</a> |<a href="http://yunfu.edushi.com/bdt/" >云浮</a> |<a href="http://yanji.edushi.com/bdt/" >延吉</a> |<a href="http://yongkang.edushi.com/bdt/" >永康</a> |<a href="http://yantai.edushi.com/bdt/" >烟台</a> |<a href="http://yichang.edushi.com/bdt/" >宜昌</a> </dd></dl><dl><dt>Z</dt><dd><a href="http://zhengzhou.edushi.com/bdt/" >郑州</a> |<a href="http://zhangjiajie.edushi.com/bdt/" >张家界</a> |<a href="http://zhumadian.edushi.com/bdt/" >驻马店</a> |<a href="http://zhongshan.edushi.com/bdt/" >中山</a> |<a href="http://zhuhai.edushi.com/bdt/" >珠海</a> |<a href="http://zhangjiagang.edushi.com/bdt/" >张家港</a> </dd></dl>
+
+    <div class="clear">     
+      </div>
+  </div>
+</div>
+
+@*<div id="footer"><p><a href="http://aladdin.edushi.com" target="_blank">关于阿拉丁</a>| <a href="http://www.edushi.com/about/" target="_blank">关于E都市</a>| <a href="http://www.edushi.com/about/MapSign.aspx" target="_blank"> 产品中心</a>| <a href="http://aladdin.edushi.com/GisInfo.aspx" target="_blank">GIS及政府应用</a>| <a href="http://aladdin.edushi.com/DataApplyMap.aspx" target="_blank">数据销售</a>| <a href="http://www.edushi.com/Links/" target="_blank">友情链接 </a>| <a href="http://www.edushi.com/about/News.htm" target="_blank">新闻中心</a>| <a href="http://www.edushi.com/about/GuestBook.aspx" target="_blank">访客留言 </a>| <a href="http://www.edushi.com/about/Declear.htm" target="_blank">法律声明</a>| <a href="http://aladdin.edushi.com/CompanyDynamicInfo.aspx?id=60" target="_blank">测绘资质</a></p>
+  <p>甲测资字33002003   广告经营许可证号   3301082100176<a href="http://www.miibeian.gov.cn/">浙B2-20050306</a> 版权所有@2004-2012   出版号:ISBN:7-900200-28-2</p>
+</div>*@
+<div id="footer">
+  <div class="footer-nav">
+    <a href="http://www.edushi.com/about/" target="_blank">关于E都市</a>|
+    <a href="http://www.edushi.com/about/Declear.htm" target="_blank">法律声明</a>|
+    <a href="http://www.edushi.com/about/ContactUs.htm" target="_blank">联系我们</a>
+  </div>
+  <div class="footer-copyright">
+    <p>
+        广告经营许可证号:3301082100176&nbsp;&nbsp;&nbsp;甲测资字:3300168&nbsp;&nbsp;&nbsp;浙B2-20050306&nbsp;&nbsp;&nbsp;浙公网安备 33010502000262号<br />
+        Copyright &copy; 2004 - @System.DateTime.Now.Year EDUSHI. All Rights Reserved
+      </p>
+  </div>
+</div>
+<script type="text/javascript">
+    var gaJsHost = (("https:" == document.location.protocol) ? " https://ssl." : " http://www.");
+    document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+    try {
+        var pageTracker = _gat._getTracker("UA-2977291-1");
+        pageTracker._trackPageview();
+    } catch (err) { }</script>
+<script type="text/javascript">
+    var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+    document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3F99a36e54478482e04c158ab069a3e598' type='text/javascript'%3E%3C/script%3E"));
+</script>
+</body>
+</html>
+<input type="hidden" id="hidPro" value="@Url.Action("getProvince")" />
+<input type="hidden" id="hidCity" value="@Url.Action("getCity")" />
+<input type="hidden" id="hidCurrentCity" value="@Url.Action("getCurrentCity")" />
+<input type="hidden" id="hidType" value="bdt" />

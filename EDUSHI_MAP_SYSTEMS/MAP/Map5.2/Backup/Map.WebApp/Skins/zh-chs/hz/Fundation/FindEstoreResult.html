@@ -1,0 +1,28 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head>
+    <title>FindEstoreResult</title>
+    <script language="javascript" type="text/javascript" src="/Js/GeneralLib.js"></script>
+    <script language="javascript" type="text/javascript" src="../Js/FindEstoreResult.js"></script>
+    <link rel="stylesheet" href="../Css/FindEstoreResult.css" type="text/css" />
+</head>
+<body>
+    <div style="width: 300px;clear: both;" id="TabContent">
+        <div class="LocalResult">
+            共有<strong id="Count"></strong>项符合<strong id="Keyword"></strong>的查询结果
+            <div class="HidOp" id="isShowAllLabel" onclick="fnShowLabel(this)">显示全部</div>
+            <div class="FilterNav" id="Filter"></div>
+            <ul class="LocalList" id="ulRecordList">
+            </ul>
+            <div class="Paginate" id="Page"></div>
+        </div>
+        <div class="ScrollBoxNav" id="ScrollBoxNav">
+            <div id="TopSide"></div>
+            <div class="ScroolBoxCon" id="ScrollBox">
+                <div class="P" id="ScrollSales" style="height:20px;overflow:hidden"></div>
+                <div class="P" style="height:20px;overflow:hidden" id="ScrollVoucher"></div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

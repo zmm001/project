@@ -1,0 +1,11 @@
+body { font-size:12px; font-family:"ËÎÌו"; margin:0; color:#333; overflow-x:hidden; width:270px;}
+a:link,a:visited { color:#1A70C7; text-decoration:none; ; cursor:pointer}
+a:hover { color:#1A70C7; text-decoration:underline; ; cursor:pointer}
+ul { margin:0; }
+.redText { color:Red; }
+.Station { clear:both; height:auto; overflow-x:hidden; }
+.Station div.DottedLine { background-image:url(images/dot.gif); background-repeat:repeat-x; background-position:bottom; height:1px; clear:both;}
+.Station div.NormalInfo { padding:8px; cursor:pointer; background-image:url(images/newmap64.gif); background-repeat:no-repeat; background-position:95% center;}
+.Station div.ActiveInfo { padding:8px; cursor:pointer; background-color:#F1F8FF; background-image:url(images/newmap65.gif); background-repeat:no-repeat; background-position:95% center;}
+.Station ul {  margin-left:5px; padding-left:5px; display:none; margin-bottom:5px; }
+.Station ul li { list-style:none; padding:5px; display:inline-table; float:left; width:55px; }

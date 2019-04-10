@@ -1,0 +1,4 @@
+E:\TFS192.168.100.212\EDUSHI_DATA_CENTER\EdushiDataCenter\v3.0\EdushiDataCenterSolution\Edushi.Data.Center\bin\Debug\Edushi.Data.Center.dll
+E:\TFS192.168.100.212\EDUSHI_DATA_CENTER\EdushiDataCenter\v3.0\EdushiDataCenterSolution\Edushi.Data.Center\bin\Debug\Edushi.Data.Center.pdb
+E:\TFS192.168.100.212\EDUSHI_DATA_CENTER\EdushiDataCenter\v3.0\EdushiDataCenterSolution\Edushi.Data.Center\obj\Debug\Edushi.Data.Center.dll
+E:\TFS192.168.100.212\EDUSHI_DATA_CENTER\EdushiDataCenter\v3.0\EdushiDataCenterSolution\Edushi.Data.Center\obj\Debug\Edushi.Data.Center.pdb

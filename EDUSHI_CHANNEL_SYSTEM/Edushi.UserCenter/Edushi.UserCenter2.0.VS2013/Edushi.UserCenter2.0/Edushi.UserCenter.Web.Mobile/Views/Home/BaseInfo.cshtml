@@ -1,0 +1,265 @@
+﻿@using Edushi.Common
+@model Edushi.UserCenter.Web.Mobile.Models.BaseInfoModel
+
+@{
+    if (Model.Type == 2)
+    {
+        Layout = "~/Areas/WenDa/Views/Shared/_Layout.cshtml";
+    }
+    if (Model.Type == 3)          // 小说
+    {
+        Layout = "~/Areas/Xiaoshuo/Views/Shared/_Layout.cshtml";
+    }
+    ViewBag.Title = string.Format("\"{0}\"个人中心-E都市", Model.UserInfo.UI_NickName);
+    var user = Model.UserInfo;
+    var imgDomain = Common.GetConfigString("UserHeadPic");
+}
+<div id="app">
+    <div class="my info">
+    <!--头部-->
+    <header-bar :data="header" @@back="back()" @@rightClick="confirm"></header-bar>
+    <!--内容-->
+        <div class="container" :class="{set : page}">
+            <div class="list-wrap">
+                <div class="info-list">
+                    <div class="item">
+                        <span class="name">我的头像：</span>
+                        <span class="val">
+                            <span class="photo"><img :src="info.url"></span>
+                        </span>
+                    </div>
+                    <div class="item" data-page='nickname'>
+                        <span class="name">我的昵称</span>
+                        <span class="val" v-text="info.nickname ? info.nickname : '未设置'"></span>
+                    </div>
+                    <div class="item" data-page='signature'>
+                        <span class="name">我的签名</span>
+                        <span class="val" v-text="info.signature ? info.signature : '未设置'"></span>
+                    </div>
+                    <div class="item" data-page='userid'>
+                        <span class="name">用户名</span>
+                        <span class="val" v-text="info.userid ? info.userid : '未设置'"></span>
+                    </div>
+                    <div class="item" data-page='password'>
+                        <span class="name">登录密码</span>
+                        <span class="val" v-text="info.password ? '******' : '未设置'"></span>
+                    </div>
+                </div>
+                <div class="info-list">
+                    <div class="item">
+                        <span class="name">绑定手机</span>
+                        <span class="val" v-text="info.tel ? info.tel : '未绑定'"></span>
+                    </div>
+                    <div class="item">
+                        <span class="name">绑定QQ</span>
+                        <span class="val" v-text="info.qq ?  '已绑定' : '未绑定'"></span>
+                    </div>
+                    <div class="item">
+                        <span class="name">绑定微博</span>
+                        <span class="val" v-text="info.weibo ? '已绑定' : '未绑定'"></span>
+                    </div>
+                    <div class="item">
+                        <span class="name">绑定微信</span>
+                        <span class="val" v-text="info.wechat  ? '已绑定' : '未绑定'"></span>
+                    </div>
+                    <div class="item">
+                        <span class="name">我的邮箱</span>
+                        <span class="val" v-text="info.mail  ? info.mail : '未绑定'"></span>
+                    </div>
+                </div>
+            </div>
+            <div class="list-wrap">
+                <div class="info-set">
+                    <div class="info-list" v-if="page == 'nickname'">
+                        <div class="item">
+                            <input type="text" v-model="info.nickname" placeholder="请输入昵称">
+                        </div>
+                        <p class="msg" :class="{show : msg.nickname}" v-text="msg.nickname"></p>
+                    </div>
+                    <div class="info-list" v-if="page == 'password'">
+                        <div class="item">
+                            <input type="password" placeholder="请输入密码" v-model='inputPass'>
+                        </div>
+                        <div class="item">
+                            <input type="password" placeholder="请再次输入密码" v-model="againPass">
+                        </div>
+                        <p class="msg" :class="{ show : msg.password }" v-text="msg.password"></p>
+                    </div>
+                    <div class="info-list" v-if="page == 'signature'">
+                        <div class="item">
+                            <input type="text" v-model="info.signature" placeholder="请输入签名">
+                        </div>
+                        <p class="msg" :class="{ show : msg.signature }" v-text="msg.signature"></p>
+                    </div>
+                    <div class="info-list" v-if="page == 'userid'">
+                        <div class="item">
+                            <input type="text" v-model="info.userid" placeholder="请输入用户名">
+                        </div>
+                        <p class="msg" :class="{ show : msg.userid }" v-text="msg.userid"></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+</div>
+
+<script>
+
+
+    var my = new Vue({
+        el: '#app',
+        data: function () {
+            return {
+                header: {
+                    back:true,
+                    title: "基本资料",
+                    rightBtn: false
+                },
+                info: {
+                    url: '@(imgDomain+user.UI_Avatar)',
+                    nickname: '@Model.UserInfo.UI_NickName',
+                    signature: '@Html.Raw(Model.UserInfo.UI_Tags)',
+                    userid: '@Model.UserInfo.UI_UserName',
+                    password: ' @(string.IsNullOrWhiteSpace(Model.UserInfo.UI_PassWord)?false:true)',
+                    tel: '@(!string.IsNullOrWhiteSpace(user.UI_MobileNo)?(user.UI_MobileNo.Substring(0, 2) + "*******" + user.UI_MobileNo.Substring(9, 2)):"")',
+                    qq: '@Model.UserInfo.UI_QQ',
+                    weibo: '@Model.UserInfo.UI_WeiBo',
+                    wechat: '@Model.UserInfo.UI_WeiXin',
+                    mail: '@Model.UserInfo.UI_Email'
+                },
+                msg: {
+                    nickname: '',
+                    signature: '',
+                    userid: '',
+                    password: '',
+                },
+                inputPass: '',
+                againPass: '',
+                page: ''
+               // isShow: false
+            }
+        },
+        methods: {
+            //返回
+            back: function () {
+                if (this.page == '') {
+                    window.history.back();
+                } else {
+                    this.page = '';
+                    this.header.rightBtn = '';
+                    this.info = JSON.parse(sessionStorage.getItem('myInfo'));
+                }
+
+            },
+            //点击完成
+            confirm: function () {
+                if (this.page == 'nickname') {   //修改昵称
+                    if (this.info.nickname == "") {
+                        this.msg.nickname="昵称不能为空！";
+                        return false;
+                    }
+                    if (this.info.nickname.length > 15) {
+                        this.msg.nickname = "昵称过长!";
+                        return false;
+                    }
+                    var that = this;
+                    $.ajax({
+                        type: "post",
+                        dataType: "json",
+                        url: "@Url.Content("~/UpdateNickName.htm")",
+                        data: { "nickName": that.info.nickname },
+                        success: function (data) {
+                            if (data.ResultCode == 1) {
+                                that.page = '';
+                                that.header.rightBtn = '';
+                                sessionStorage.setItem('myInfo', JSON.stringify(that.info));
+                            } else {
+                                that.msg.nickname=data.Msg;
+                            }
+                        }
+                    });
+                } else if (this.page == 'password') {  //修改密码
+                    if (this.inputPass == "" || this.againPass == "") {
+                        this.msg.password="密码不能为空！";
+                        return false;
+                    } else if (this.inputPass != this.againPass) {
+                        this.msg.password = "密码不一致！";
+                        return false;
+                    }
+                    var that = this;
+                    $.ajax({
+                        type: "post",
+                        dataType: "json",
+                        url: "@Url.Content("~/UpdatePassword.htm")",
+                        data: { "oldPassword": that.inputPass, "newPassword": that.againPass },
+                        success: function (data) {
+                            if (data.ResultCode == 1) {
+                                that.page = '';
+                                that.header.rightBtn = '';
+                                sessionStorage.setItem('myInfo', JSON.stringify(that.info));
+                            } else {
+                                that.msg.password =data.Msg;
+                            }
+                        }
+                    });
+                } else if (this.page == 'userid') {   //修改用户名
+                    if (this.info.userid == "") {
+                        this.msg.userid="用户名不能为空！";
+                        return false;
+                    }
+                    var that = this;
+                    $.ajax({
+                        type: "post",
+                        dataType: "json",
+                        url: "@Url.Content("~/UpdateUserName.htm")",
+                        data: { "userName": that.info.userid },
+                        success: function (data) {
+                            if (data.ResultCode == 1) {
+                                that.page = '';
+                                that.header.rightBtn = '';
+                                sessionStorage.setItem('myInfo', JSON.stringify(that.info));
+                            } else {
+                                that.msg.userid=data.Msg;
+                            }
+                        }
+                    });
+                } else if (this.page == 'signature') {
+                    if (this.info.signature.length>150) {
+                        this.msg.signature = "签名过长!";
+                        return false;
+                    }
+                    var that = this;
+                    $.ajax({
+                        type: "post",
+                        dataType: "json",
+                        url: "@Url.Content("~/UpdateTags.htm")",
+                        data: { "tags": that.info.signature },
+                        success: function (data) {
+                            if (data.ResultCode == 1) {
+                                that.page = '';
+                                that.header.rightBtn = '';
+                                sessionStorage.setItem('myInfo', JSON.stringify(that.info));
+                            } else {
+                                that.msg.signature =data.Msg;
+                            }
+                        }
+                    });
+                }
+
+            }
+           
+        },
+        mounted: function () {
+            sessionStorage.setItem('myInfo', JSON.stringify(this.info));
+            var that = this;
+            $('.info-list:eq(0) .item:not(:first)').bind('click',
+                function () {
+                    that.page = $(this).data('page');
+                    that.header.rightBtn = '完成';
+                    that.msg[$(this).data('page')] = '';
+                });
+        }
+    })
+
+
+</script>

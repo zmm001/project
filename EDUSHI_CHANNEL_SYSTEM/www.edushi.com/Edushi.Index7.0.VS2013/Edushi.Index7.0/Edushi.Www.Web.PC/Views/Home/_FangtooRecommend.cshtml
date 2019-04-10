@@ -1,0 +1,90 @@
+﻿@{
+    string baseUrl = "http://fangtoo.edushi.com/";
+    string JsonUrl = "http://hangzhou.fangtoo.com/es/gethouse/";
+    long ticks = DateTime.Now.Ticks;    //时间戳
+}
+
+
+<script type="text/javascript">
+    (function ($) {
+        $(document).ready(function () {
+            var pi = 1, _contain = $("#ft_es");
+            var foundHouse = function () {
+                _contain.hide();
+                $.getJSON("@JsonUrl?timeTicks=@ticks&pi=" + pi + "&ps=3&callback=?", function (data) {
+                    if (!data || !data.data) return;
+                    var _item = null, _tp = data.tp, _html = "";
+                    if (pi == 1) $("#ft_es_prev").addClass("unClick").css("color", "#ececec");
+                    else if ($("#ft_es_prev").hasClass("unClick")) $("#ft_es_prev").removeClass("unClick").css("color", "#666666");
+
+                    if (pi >= _tp) $("#ft_es_next").addClass("unClick").css("color", "#ececec");
+                    else if ($("#ft_es_next").hasClass("unClick")) $("#ft_es_next").removeClass("unClick").css("color", "#666666");
+
+                    for (var i = 0; i < data.data.length; i++) {
+                        _item = data.data[i];
+                        _html += '<li style="float:left; width:200px; margin-right:10px;">';
+                        _html += '<a href="@baseUrl/es/' + _item.id + '/" target="_blank" title="' + _item.BuildingName + '"><img style="width:196px; height:140px; padding:1px; background:#fff; border:1px solid #ebebeb;" src="http://imgs.fangtuwang.com/' + _item.Pics.replace("s_", "m_") + '" alt="' + _item.BuildingName + '" /></a>';
+                        _html += '<div style=" margin-top:8px; overflow:hidden; width:196px; white-space:nowrap;text-align:center;"><span style="color: #ff0000; margin-top:6px; "><b>' + _item.RefPrice + '</b>万</span><a href="@baseUrl/es/' + _item.id + '/" target="_blank" title="' + _item.BuildingName + '" style="color: #0074cc; text-decoration:underline;">' + _item.BuildingName + '</a></div>';
+                        _html += '<div style="margin-top: 6px; text-align:center;">' + _item.BldgArea + '㎡<span style="width:0.3em; display:inline-block;"></span>' + (_item.RoomCount > 0 ? _item.RoomCount + "室" : "") + (_item.HollCount > 0 ? _item.HollCount + "厅" : "") + '<span style="width:0.3em; display:inline-block;"></span>' + _item.Floor + '/' + _item.FloorCount + '层</div>';
+                        //_html += '<div style="color: #ff0000; margin-top:6px; "><b>' + _item.RefPrice + '</b>万</div>';
+                        _html += '</li>';
+                    }
+                    _contain.html(_html).fadeIn();
+                });
+            }
+
+            $("#ft_es_prev").click(function () {
+                if ($(this).hasClass("unClick")) return;
+                pi--;
+                foundHouse();
+            });
+
+            $("#ft_es_next").click(function () {
+                if ($(this).hasClass("unClick")) return;
+                pi++;
+                foundHouse();
+            });
+
+            foundHouse();
+        });
+
+    })(jQuery);
+</script>
+
+<div class="bottom-container">
+    	<div class="bottom-container-a fang-container clearfix">
+    		<div class="f-l tit-left"><p class="bdt-tit fang-tit"><a href="@baseUrl/es/" target="_blank">经典二手房</a></p></div>
+            
+            <div class="f-l clearfix">
+                <div class="f-l" style="width:698px;">
+                    <div class="fang-news" style="margin-bottom:0px;">
+            <a href="@baseUrl/es/cr330102/" target="_blank">上城</a>·<a href="@baseUrl/es/cr330103/" target="_blank">下城</a>·<a href="@baseUrl/es/cr330105/" target="_blank">拱墅</a>·<a href="@baseUrl/es/cr330106/" target="_blank">西湖</a>
+            <font>|</font>
+            <a href="@baseUrl/es/ur3/" target="_blank">三居室</a>·<a href="@baseUrl/es/ur2/" target="_blank">二居室</a>
+            <font>|</font>
+            <a href="@baseUrl/es/cs0/" target="_blank">学区房</a>·<a href="@baseUrl/es/up80-100/" target="_blank">80-100万</a>·<a href="@baseUrl/es/up100-150/" target="_blank">100-150万</a>·<a href="@baseUrl/es/dtsw1/" target="_blank">地铁1号线</a>
+            <a href="@baseUrl/es/" target="_blank" class="see-more">更多</a>
+        </div>
+                    <div style="position:relative; padding:20px 8px 0;  height:206px; ">
+                        <span id="ft_es_prev" style="position:absolute; left:3px; top:70px;"><a class="fang-prev"></a></span>
+                        <span id="ft_es_next" style="position:absolute; right:7px; top:70px;"><a class="fang-next"></a></span>
+                        <ul id="ft_es" class="clearfix" style=" margin: 0px 0 0 37px; font-size: 14px; letter-spacing: 0.5px">
+                        	                            
+            </ul>
+        </div>
+    </div>
+            </div>
+            
+            <ul class="f-r bdt-btn fang-btn">
+            	<li><a href="@baseUrl/es/" target="_blank"><span class="ershoufang"></span>二手房</a></li>
+                <li><a href="@baseUrl/cz/" target="_blank"><span class="zufang"></span>租房</a></li>
+                <li><a href="@baseUrl/xf/" target="_blank"><span class="xinfang"></span>新房</a></li>
+                <li><a href="@baseUrl/building/" target="_blank"><span class="xiaoqu"></span>杭州小区</a></li>
+                <li><a href="@baseUrl/fj/" target="_blank"><span class="fangjia"></span>查房价</a></li>
+                <li><a href="@baseUrl/jjr/zj1/" target="_blank"><span class="zhuanjia"></span>小区专家</a></li>
+                <li class="no-border"><a href="@baseUrl/gj/" target="_blank"><span class="gujia"></span>房产估价</a></li>
+                <li class="no-border"><a href="@baseUrl/" target="_blank"><span class="more"></span>更多</a></li>
+                <li class="no-border"></li>
+        </ul>
+    </div>
+</div>

@@ -1,0 +1,221 @@
+﻿@model Edushi.RenWu.Web.Mobile.Models.DetailModel
+@using Edushi.RenWu.Special
+@using Edushi.RenWu.Web.Mobile.Hepler
+@{
+    string title;  //默认名称
+
+    var newsTitle = "相关新闻";
+
+    switch (Model.CurrentModel.IT_ID)
+    {
+        case (int)DataEnum.Channel.YuLe:
+            title = string.Format("{0}个人资料_最新八卦_代表作品_主要成就-{1}人物-E都市", Model.RenWuModel.IA_Title, Model.CurrentModel.IT_Name);
+            newsTitle = "最新八卦";
+            break;
+        case (int)DataEnum.Channel.HuaTi:
+            title = string.Format("{0}是谁_个人资料_相关新闻-{1}人物-E都市", Model.RenWuModel.IA_Title, Model.CurrentModel.IT_Name);
+            break;
+        case (int)DataEnum.Channel.YingShi:
+            title = string.Format("{0}结局_扮演者_最新剧透-{1}人物-E都市", Model.RenWuModel.IA_Title, Model.CurrentModel.IT_Name);
+            newsTitle = "最新剧透";
+            break;
+        case (int)DataEnum.Channel.FengYun:
+            title = string.Format("{0}资料介绍_相关新闻-{1}人物-E都市", Model.RenWuModel.IA_Title, Model.CurrentModel.IT_Name);
+            break;
+        case (int)DataEnum.Channel.LiShi:
+            title = string.Format("{0}历史简介_怎么死的_相关新闻-{1}人物-E都市", Model.RenWuModel.IA_Title, Model.CurrentModel.IT_Name);
+            break;
+        default:
+            title = Model.RenWuModel.IA_Title + "_" + Model.CurrentModel.IT_Name + "人物-E都市";
+            break;
+    }
+    ViewBag.Title = title;
+    var pcUrl = string.Empty;
+    var URI = Request.Url.AbsoluteUri.ToLower();
+    var ilocation = URI.LastIndexOf("/", StringComparison.Ordinal);
+    if (ilocation > -1)
+    {
+        pcUrl = "http://www.edushi.com/renwu/info/" + URI.Substring(ilocation + 1);
+    }
+}
+
+@section meta
+{
+    <meta name="MobileOptimized" content="width" />
+    <meta name="HandheldFriendly" content="true" />
+    <meta name="keywords" content="@(Model.RenWuModel.IA_Title)" />
+    <meta name="description" content="" />
+    <link rel="canonical" href="@pcUrl">
+}
+
+<div class="content-main">
+
+    @if (Model.RenWuModel != null)
+    {
+        <section class="introduce-box">
+            <div class="photo">
+                <img src="@string.Format("{0}{1}",ViewBag.ImgDomain,Model.RenWuModel.IA_Pic)" alt="">
+            </div>
+            @Html.Raw(Model.RenWuModel.IA_Content)
+        </section>
+    }    
+    
+    <section class="comment-cnt">
+        <div class="comment-box">
+
+            <div class="tit">全部评论 (@Model.CommentCount)</div>
+            @if (Model.LstComment != null && Model.LstComment.Any())
+            {
+                var articleCommentList = Model.LstComment.FindAll(p => p.UC_FatherID == 0);
+                int acount = int.Parse(Common.GetConfigString("ArticleCommentCount"));
+                acount = articleCommentList.Count < acount ? articleCommentList.Count : acount;
+                for (var i = 0; i < acount; i++)
+                {
+                    var item = articleCommentList[i];
+                    var userRepeaterList = Model.LstComment.FindAll(p => p.UC_FatherID == item.UC_ID);
+                    var user = DataHelper.GetUserSimpleInfoByUIID(item.UC_UserID.Value, false);
+
+
+                    <div class="comment-list">
+                        <div class="photo"><img src="@(ViewBag.UserHeaderDomain + user["Avatar"])" onerror="this.src = 'http://res.edushi.com/www/touch/v7/asset/images/userhead.jpg'" /></div>
+                        <div class="comment-info">
+                            <div>
+                                <div class="user">
+                                    <span class="name">@user["NickName"]</span>
+                                    <p class="time">@item.UC_CreateDate.Value.ToLocalTime().ToString("yyyy-MM-dd HH:mm") </p>
+                                </div>
+                                <ul class="tools" data-id="@item.UC_ID">
+                                    <li class="zan @(DataHelper.GetIsUpvoteDownvote(item.UC_ID)==-2?" yizan":"")"><em>+1</em><span>@item.UC_UpvoteTotal</span></li>
+                                    <li class="cai @(DataHelper.GetIsUpvoteDownvote(item.UC_ID) == -3 ? " yicai" : "")"><em>+1</em><span>@item.UC_DownvoteTotal</span></li>
+                                    <li class="replay"><a href="@string.Format("{0}comment/detail/{1}-{2}.html", Url.Content("~/"), Model.RenWuModel.IA_ID, item.UC_ID)">回复</a></li>
+                                </ul>
+                            </div>
+                            <div class="content">
+                                @Html.Raw(item.UC_Content)
+                            </div>
+                            @if (userRepeaterList.Any())
+                            {
+                                var replyCount = userRepeaterList.Count > 2 ? 2 : userRepeaterList.Count;
+
+                                <div class="replay-box">
+                                    @for (int j = 0; j < replyCount; j++)
+                                    {
+                                        var replyItem = userRepeaterList[j];
+                                        var replyUser = DataHelper.GetUserSimpleInfoByUIID(replyItem.UC_UserID.Value, false);
+                                        <div class="replay-list">
+                                            <div>
+                                                <div class="user">
+                                                    <span class="name">@replyUser["NickName"]</span>
+                                                    <span class="time">@replyItem.UC_CreateDate.Value.ToLocalTime().ToString("yyyy-MM-dd HH:mm") </span>
+                                                </div>
+                                                <ul class="tools" data-id="@replyItem.UC_ID">
+                                                    <li class="zan @(DataHelper.GetIsUpvoteDownvote(replyItem.UC_ID) == -2 ? " yizan" : "")"><em>+1</em><span>@replyItem.UC_UpvoteTotal</span></li>
+                                                    <li class="cai @(DataHelper.GetIsUpvoteDownvote(replyItem.UC_ID) == -3 ? " yicai" : "")"><em>+1</em><span>@replyItem.UC_DownvoteTotal</span></li>
+                                                </ul>
+                                            </div>
+                                            <div class="replay-content">@Html.Raw(replyItem.UC_Content)</div>
+                                        </div>
+
+                                    }
+                                    @if (userRepeaterList.Count > 2)
+                                    {
+                                        <div class="all-replay"><a href="@string.Format("{0}comment/detail/{1}-{2}.html", Url.Content("~/"), Model.RenWuModel.IA_ID, item.UC_ID)">查看全部@(userRepeaterList.Count)条回复</a></div>
+                                    }
+
+                                </div>
+                            }
+
+                        </div>
+                    </div>
+                }
+                if (articleCommentList.Count > acount)
+                {
+                    <div class="all"><a href="@string.Format("{0}comment/detail/{1}.html", Url.Content("~/"), Model.RenWuModel.IA_ID)">查看全部评论</a></div>
+                }
+
+            }
+
+
+        </div>
+        <div class="post-comment">
+            <input type="hidden" value="@Model.RenWuModel.IA_ID" id="article-id" />
+            <input type="hidden" value="0" id="father-id" />
+            <textarea placeholder="@(DataHelper.GetUserId() > 0 ? "" : "登录之后再评论")" class="comment-area"></textarea>
+            <input type="button" class="publish" value="发布" />
+        </div>
+    </section>
+
+    <section class="news-list">
+        <div class="d-title"><span>@newsTitle</span></div>
+        @if (Model.News != null && Model.News.Any())
+        {
+            <ul id="datalist">
+                @foreach (var item in Model.News)
+                {
+                    var className = string.Empty;
+                    var imgHtml = string.Empty;
+                    if (!string.IsNullOrWhiteSpace(item.Pic) && !string.IsNullOrWhiteSpace(item.Pic1) && !string.IsNullOrWhiteSpace(item.Pic2))
+                    {
+                        className = "class='multiple'";
+                        imgHtml = string.Format("<img src='{0}' onerror=\"this.src='{3}'\"><img src='{1}' onerror=\"this.src='{3}'\"><img src='{2}' onerror=\"this.src='{3}'\">", item.Pic, item.Pic1, item.Pic2, Url.Content("~/asset/images/default_photo.png"));
+                    }
+                    else if (!string.IsNullOrWhiteSpace(item.Pic))
+                    {
+                        className = "class='single'";
+                        imgHtml = string.Format("<img src='{0}' onerror=\"this.src='{1}'\">", item.Pic, Url.Content("~/asset/images/default_photo.png"));
+                    }
+
+                    <li @Html.Raw(className)>
+                        <a href="@item.Url">
+                            <span class="title">@Html.Raw(item.Title)</span>
+                            <div class="img-box">
+                                @Html.Raw(imgHtml)
+                            </div>
+                            <div class="date">@item.CreateTime.ToString("yyyy-MM-dd")</div>
+                        </a>
+                    </li>
+                }
+            </ul>
+        }
+        @*<p class="more-btn"><a href="##">更多相关新闻</a></p>*@
+    </section>
+    <section class="pop-content">
+        <div class="pop-box">
+            <div class="msg" id="msg">您已收藏，请到个人中心查看</div>
+            <span class="btn cancel">知道了</span>
+            <a class="btn confirm" href="javascript:void(0);" style="display: none;">去看看</a>
+        </div>
+    </section>
+</div>
+
+<script type="text/javascript">
+    //下拉导航
+    $(".nav").bind("click", function () {
+        if ($("header").is(":hidden")) {
+            $("header").slideDown();
+        } else {
+            $("header").slideUp();
+        }
+    });
+    $(function () {
+        $(".depict p").each(function () {
+            if ($(this).text().length > 72) {
+                $(this).text($(this).text().substring(0, 72));
+            }
+        });
+    });
+</script>
+<script>
+    var requestUrl = "@Url.Content("~/")";
+    var ConfigData = {
+        Url: "@Url.Content("~/")",
+        Page: "GetMoreRwDataData.htm",
+        currentID:"@Model.RenWuModel.IA_ID",
+        Title:"@Model.RenWuModel.IA_Title",
+        Count:"@Model.PageCount",
+        obj: $("#datalist")
+    }
+    
+</script>
+<script src="@Url.Content("~/asset/js/NextPageLoad.js")" type="text/javascript"></script>
+<script type="text/javascript" src="@Url.Content("~/asset/js/comment.js")"></script>

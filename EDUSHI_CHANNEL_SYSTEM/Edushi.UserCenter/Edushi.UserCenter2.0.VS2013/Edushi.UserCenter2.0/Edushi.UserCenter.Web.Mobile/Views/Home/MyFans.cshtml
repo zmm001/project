@@ -1,0 +1,120 @@
+﻿@using Edushi.Common
+@model Edushi.UserCenter.Web.Mobile.Models.MyAttentionModel
+@{
+    ViewBag.Title = string.Format("\"{0}\"个人中心-E都市", Model.UserInfo.UI_NickName);
+    var imgDomain = Common.GetConfigString("UserHeadPic");
+    var loginId = Model.UserInfo.UI_ID;
+}
+
+<div id="app" class="my">
+    <!--头部-->
+    <header-bar :data="header" @@back="back()"></header-bar>
+    <!--内容-->
+    <div class="container">
+        @if (Model.List != null && Model.List.Any())
+        {
+            var attention = new Edushi.UserCenter.Web.Mobile.Controllers.AuthorNewsController();
+            <div class="follow-list">
+                <ul id="datalist">
+                    @foreach (var item in Model.List)
+                    {
+                        <li @Html.Raw(item.Num <= 0 ? "" : (item.Num > 99 ? "data-number=\"99+\"" : string.Format("data-number=\"{0}\"", item.Num)))>
+                            <a href="@string.Format(Url.Content("~/index/{0}-{1}.html"), Convert.ToInt32(item.UserInfo["Type"].ToString()) == 3 ? 5 : 1, item.UserInfo["FansId"])">
+                                <div class="photo">
+                                    <img src="@(imgDomain + item.UserInfo["Avatar"])">
+                                </div>
+                                <div class="info">
+                                    <span class="name">@Html.Raw(item.UserInfo["NickName"])</span>
+                                    <span class="time">@item.Time</span>
+                                    <span class="text">@Html.Raw(item.Title)</span>
+                                </div>
+                            </a>
+                            @{
+                        /**
+                                * 判断当前粉丝有没有关注我
+                                * 1 有
+                                *      判断我有没有关注当前粉丝
+                                 *      1.1 有--->互相关注
+                                 *      1.2 无--->关注+TA关注了我
+                                * 2 无(不存在这种情况)
+                                */
+                                var fansId = int.Parse(item.UserInfo["FansId"].ToString());// 获取当前粉丝列表用户id
+                                if (fansId != loginId)
+                                {
+                                    var isAttentioneds = fansId <= 0 ? 0 : attention.GetIsAttentioned(fansId);
+                                if (isAttentioneds != 0 && isAttentioneds == -2)
+                                {
+                                    <div class="follow-btn" onclick="attention(this,@fansId)"></div>
+                                }
+                                else
+                                {
+                                    <div class="add-follow" onclick="attention(this,@fansId)"></div>
+                                    <div class="follow-tips">TA关注了我</div>
+                                }
+                                }
+                                
+                            }
+                        </li>
+                    }
+                </ul>
+                <div class="loding" style="display: none;">正在加载更多</div>
+            </div>
+        }
+
+    </div>
+</div>
+<script>
+
+
+    var my = new Vue({
+        el: '#app',
+        data: function () {
+            return {
+                header: {
+                    title: "我的粉丝",
+                    number: "@Model.TotalCount"
+                }
+            }
+        },
+        methods: {
+            //返回
+            back: function () {
+                window.history.back();
+            }
+        }
+    });
+    var ConfigData = {
+        Count: "@Model.PageCount",
+        Url: "@Url.Content("~/")",
+        Page: "GetMorefans.htm",
+        PageIndex: 1,
+        Contaiter: $("#datalist"),
+        Type: 3
+    };
+    function attention(element,val) {
+        if(element.className=='add-follow'){
+            $.post("/AddAttention.htm", { "userId": val }, function (data) {//添加关注
+                if (data.ResultCode == 1) {
+                    element.className='follow-btn';
+                    window.location.reload();
+                } else if (data.ResultCode == 2) {
+                    window.location.href = 'http://m.edushi.com/user/Login.html?BackUrl=' + window.location.href;
+                } else {
+                    alert(data.Msg);
+                }
+            })
+        }else{
+            $.post("/CancelAttention.htm", { "userId": val }, function (data) {//取消关注
+                if (data.ResultCode == 1) {
+                    element.className='add-follow';
+                    window.location.reload();
+                } else if (data.ResultCode == 2) {
+                    window.location.href = 'http://m.edushi.com/user/Login.html?BackUrl=' + window.location.href;
+                } else {
+                    alert(data.Msg);
+                }
+            })
+        }
+    }
+</script>
+<script src="@Url.Content("~/asset/js/scrollLoad.bak.js")"></script>

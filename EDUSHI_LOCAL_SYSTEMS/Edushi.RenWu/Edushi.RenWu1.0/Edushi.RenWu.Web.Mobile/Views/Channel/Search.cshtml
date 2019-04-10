@@ -1,0 +1,13 @@
+﻿@using Edushi.RenWu.Special
+@{
+    Layout = "~/Views/Channel/ChannelLayout.cshtml";
+}
+
+@if (Model.PageCount > 1)
+{
+    <div class="page-box">
+        <a href="@Common.GetPageUrl(Url.Content("~/"), Model.currentPage, Model.PageCount, "up", Model.KeyWord)">上一页</a>
+        <span class="page-count">@(Model.currentPage)/@(Model.PageCount)</span>
+        <a href="@Common.GetPageUrl(Url.Content("~/"), Model.currentPage, Model.PageCount, "down", Model.KeyWord)">下一页</a>
+    </div>
+}

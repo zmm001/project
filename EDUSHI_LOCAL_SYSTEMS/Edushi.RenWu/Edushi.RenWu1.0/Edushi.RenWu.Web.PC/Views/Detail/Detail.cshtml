@@ -1,0 +1,175 @@
+﻿@model Edushi.RenWu.Web.PC.Models.DetailModel
+@using Edushi.RenWu.Special
+@{
+    var mobileUrl = string.Empty;
+    var uri = Request.Url.AbsoluteUri.ToLower();
+    var ilocation = uri.LastIndexOf("/", StringComparison.Ordinal);
+    if (ilocation > -1)
+    {
+        mobileUrl = "http://m.edushi.com/renwu/info/" + uri.Substring(ilocation + 1);
+    }
+    string title;  //默认名称
+
+    switch (Model.CurrentModel.IT_ID)
+    {
+        case (int)DataEnum.Channel.YuLe:
+            title = string.Format("{0}个人资料 {0}简介 {0}最新消息-{1}人物-E都市", Model.RenWuModel.IA_Title, Model.CurrentModel.IT_Name);
+            break;
+        case (int)DataEnum.Channel.HuaTi:
+            title = string.Format("{0}是谁 {0}个人资料 {0}背景介绍-{1}人物-E都市", Model.RenWuModel.IA_Title, Model.CurrentModel.IT_Name);
+            break;
+        case (int)DataEnum.Channel.YingShi:
+            title = string.Format("{0}结局 {0}扮演者 {0}图片剧照-{1}人物-E都市", Model.RenWuModel.IA_Title, Model.CurrentModel.IT_Name);
+            break;
+        case (int)DataEnum.Channel.FengYun:
+            title = string.Format("{0}资料 {0}介绍 {0}最新新闻-{1}人物-E都市", Model.RenWuModel.IA_Title, Model.CurrentModel.IT_Name);
+            break;
+        case (int)DataEnum.Channel.LiShi:
+            title = string.Format("{0}历史简介 {0}资料 {0}怎么死的-{1}人物-E都市", Model.RenWuModel.IA_Title, Model.CurrentModel.IT_Name);
+            break;
+        default:
+            title = Model.RenWuModel.IA_Title + "-" + Model.CurrentModel.IT_Name + "人物-E都市";
+            break;
+    }
+    ViewBag.Title = title;
+}
+@section meta
+{
+    <meta name="keywords" content="@(Model.RenWuModel.IA_Title)" />
+    <meta name="description" content="" />
+    <meta http-equiv="mobile-agent" content="format=html5;url=@mobileUrl" />
+}
+<link href="@Url.Content("~/asset/css/detail.css")" rel="stylesheet" type="text/css" />
+@*<script src="http://res.edushi.com/js/jquery-1.7.2.min.js" type="text/javascript"></script>*@
+<div class="container mt20">
+    <!--频道导航-->
+    @{Html.RenderPartial("ChannelNavigation");}
+
+    <div class="content-main">
+        <div class="web-width">
+            <div class="urhere">
+                <a href="@Url.Content("~/")" target="_blank">首页</a> &gt; <a href="@Common.GetPcInfoListUrl(Url.Content("~/"),Model.CurrentModel.IT_ParentID,Model.CurrentModel.IT_ID)" target="_blank">@(Model.CurrentModel.IT_Name)人物</a> &gt; 正文
+            </div>
+        </div>
+        <div class="profile">
+            <div class="web-width">
+                @if (Model.RenWuModel != null)
+                {
+                    <div class="photo">
+                        <img src="@(ViewBag.ImgDomain+Model.RenWuModel.IA_Pic)" alt="">
+                    </div>
+                    <div class="txt">
+                        <span class="name">@Html.Raw(Model.RenWuModel.IA_Title)</span>
+                        @Html.Raw(Model.RenWuModel.IA_Content)
+                    </div>
+                }
+            </div>
+        </div>
+
+        <div class="web-width">
+            <div class="all-news">
+                <div class="all-news-cnt">
+                    @if (Model.News != null && Model.News.Any())
+                    {
+                        foreach (var item in Model.News)
+                        {
+
+                            <dl class="clearfix new-width">
+                                @if (!string.IsNullOrWhiteSpace(item.Pic))
+                                {
+                                    <dt><a href="@item.Url" target="_blank"><img src="@item.Pic" onerror="this.src='@Url.Content("~/asset/images/default_photo.png")'"></a></dt>
+                                }
+                                <dd>
+                                    <h3><a href="@item.Url" target="_blank">@Html.Raw(item.Title)</a></h3>
+                                    <p class="jianjie"><a href="@item.Url" target="_blank">@Html.Raw(item.Lead)</a></p>
+                                    <p class="time"><span>@item.CreateTime.ToString("yyyy-MM-dd")</span>@item.FromTitle</p>
+                                </dd>
+                            </dl>
+                        }
+                    }
+                </div>
+
+                <div class="page-box">
+                    @Html.Raw(Html.Pager(Model.TotalCount, Model.PageSize, Model.currentPage, "", "", new PagerOptions { PageIndexParameterName = "pageno", ShowDisabledPagerItems = false, NumericPagerItemCount = 10, CurrentPageNumberFormatString = "<span>{0}</span>", ShowFirstLast = false }, Model.PageRouteName, null, null).ToString().Replace("&lt;", "<").Replace("&gt;", ">").Replace("'", "\""))
+                </div>
+                @*评论开始*@
+                <div class="comment-box" id="comments-area">
+                    <div class="comment-line"></div>
+                    <div class="comment-toolbar">
+                        <div class="comment-logo"></div>
+                        <div class="count">跟贴 <span>@Model.CountComment</span></div>
+                        <div class="join-count">参与 <span>@Model.TotalCountComment</span></div>
+                        <a href="#comments-area" class="fatie">发贴</a>
+                    </div>
+                    <div class="tie-cnt">
+                        <div class="js-tieba">
+                            <div class="tie-area clearfix">
+                                <textarea name="" id="comment0" class="comments-area"></textarea>
+
+                                <div class="publist-btn" onclick="SubmitGuestBook(0);">
+                                    <input type="button" name="" id="submitBtn" value="登录并发贴" />
+                                </div>
+
+                                @*隐藏域*@
+
+                                <input type="hidden" id="hidUrl" value="@Url.Content("~/")" />
+                                <input type="hidden" id="hidID" value="@(Model.RenWuModel.IA_ID)" />
+                            </div>
+                            <div class="tips">网友评论仅供其表达个人看法，并不表明E都市立场。</div>
+                            <div id="msg0" style=" display:none;" class="msg"></div>
+                        </div>
+
+                        <div class="tie-hot" id="allcomment">
+                            @Html.Raw(Model.CommentHtml)
+                        </div>
+                        @if (Model.CountCommentNoRepeat > 10)
+                        {
+                            <p class="more" style=" display:block;" id="divMoreComment"><span onclick="MoreComment()">加载更多评论</span></p>
+                        }
+                    </div>
+                </div>
+                @*评论结束*@
+            </div>
+            <div class="per-side-list fr">
+                <div class="per-side-tit">
+                    <span><em>人物</em>排行</span>
+                </div>
+                <ul>
+                    @if (Model.RwTopTen != null && Model.RwTopTen.Any())
+                    {
+                        for (int i = 0; i < Model.RwTopTen.Count; i++)
+                        {
+                            var item = Model.RwTopTen[i];
+                            <li>
+                                <i>@(i + 1)</i>
+                                <a href="@item.Url" target="_blank">
+                                    <div class="photo"><img src="@item.Pic" alt=""></div>
+                                    <div class="info">
+                                        <span class="name">@Html.Raw(item.Title)</span>
+                                        @Html.Raw(item.Desc)
+                                    </div>
+                                </a>
+                            </li>
+                        }
+                    }
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+        //验证是否登录
+        var url = @Url.Content("~/") + "Detail/GetLoginUser";
+        $.post(url, function (data) {
+            var $userHtml = "";
+            var backUrl = escape(window.location.href);
+            if (data.ResultCode == 1 && data.NickName) {
+                $("#submitBtn").val("发贴");
+
+            } else {
+                $("#submitBtn").val("登录并发贴");
+            }
+        }, "json");
+</script>
+<script type="text/javascript" src="@Url.Content("~/asset/js/Comment.js")"></script>
+

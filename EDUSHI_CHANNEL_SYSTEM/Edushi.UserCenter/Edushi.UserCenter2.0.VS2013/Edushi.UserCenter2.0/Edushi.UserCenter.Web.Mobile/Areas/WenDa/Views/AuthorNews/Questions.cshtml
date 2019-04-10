@@ -1,0 +1,60 @@
+﻿@using Edushi.Common
+@model Edushi.UserCenter.Web.Mobile.Areas.WenDa.Models.WenDaCustomModel
+@{
+    var imgDomain = Common.GetConfigString("UserHeadPic");
+}
+@if (Model.questionModel.List != null && Model.questionModel.List.Any())
+{
+    <div class="question-cnt js-votebox" id="datalist">
+        @foreach (var item in Model.questionModel.List)
+        {
+            if (string.IsNullOrWhiteSpace(item.Title))
+            {
+                continue;
+            }
+            var qNickName = item.UserInfo != null && !string.IsNullOrWhiteSpace(item.UserInfo["NickName"].ToString()) ? item.UserInfo["NickName"] : "E都市网友";
+            var qUserHead = item.UserInfo != null && !string.IsNullOrWhiteSpace(item.UserInfo["Avatar"].ToString()) ? imgDomain + item.UserInfo["Avatar"] : Url.Content("~/areas/wenda/asset/images/userhead.jpg");
+            int qUserId = item.UserInfo != null && item.UserInfo["ID"] != null ? (int)item.UserInfo["ID"] : 0;
+            var qWendaUrl = qUserId > 0 ? "href=/user/wenda/index/1-" + qUserId + ".html" : "";
+            <div class="question-list @(!string.IsNullOrWhiteSpace(item.Pic) ? "single" : "")">
+                <div class="wrap">
+                    <h2 class="q-tit"><a href="@item.Url">@Html.Raw(item.Title)</a></h2>
+
+                 
+                </div>
+                @if (!string.IsNullOrWhiteSpace(item.Pic))
+                {
+                    <div class="img-box"><span><img src="@item.Pic"></span></div>
+                }
+                @*问答优化*@
+                <div class="q-info">
+                    <a @qWendaUrl class="photo">
+                        <img src="@qUserHead" />@qNickName
+                    </a>
+                    <span>@item.CreateDate</span>
+                    <span>@(item.AnswerCount)回答</span><span>@(item.FavoriteCount)人收藏</span>
+                </div>
+                <div class="oper">
+                    <a href="@item.Url" class="answer">我来回答</a>
+                    <div class="share">分享</div>
+                </div>
+            </div>
+        }
+    </div>
+
+    <div class="loading" style="display: none;">正在加载中</div>
+    <div class="more-cnt" @Html.Raw(Model.questionModel.PageCount > 1 ? "style=\"display:none\"" : "")>没有更多了</div>
+}
+<script>
+    var ConfigData = {
+        "PageIndex": 1,
+        "UserId": "@Model.userId",
+        "Count": "@Model.questionModel.PageCount",
+        "Page": "@Url.Content("~/")",
+        "Url": "wenda/GetAuthorMoreQuestions.htm",
+        "Id": 0,
+        "Type": 4
+    }
+</script>
+
+<script src="@Url.Content("~/areas/wenda/asset/js/scrollload.bak.js")"></script>

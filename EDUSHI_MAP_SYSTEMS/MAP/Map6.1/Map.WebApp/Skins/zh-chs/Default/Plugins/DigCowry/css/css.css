@@ -1,0 +1,68 @@
+*html{min-width:420px;}
+html,body,h1,h2,h3,ul,ol,p{margin:0;padding:0;}
+body{font-size:12px; font-family:Verdana,Lucida,Arial,Helvetica; color:#333;text-align:left;}
+img{border-width:0px}
+form{padding:0;margin:0}
+a{color:#06C;text-decoration:none;}
+a:hover,.mian_p01 a:hover,.again h3 a:hover,.mian_p03 a:hover{color:red; text-decoration:underline;}
+.l{float:left;}
+.r{float:right;}
+ul{list-style:none;}
+.clear{clear:both;border-top:transparent 0px solid;height:0;overflow:hidden;}
+
+#page{width:500px;height:580px !important;height:590px;margin:0 auto;background:url(bg-down.gif) left bottom no-repeat;}
+#page1{width:500px;height:460px;*height:450px !important;*height:460px;margin:0 auto;background:url(bg-down.gif) left bottom no-repeat;}
+#page2{width:500px;height:460px;margin:0 auto;background:url(bg.gif) left top no-repeat;}
+#upstyle{width:100%;height:100%;margin:0 auto;background:url(bg-up.gif) left top no-repeat;}
+
+.close{float:right;width:16px;height:17px;overflow:hidden;display:inline;margin:8px 8px 0 0;}
+
+.banner{width:425px;height:60px;overflow:hidden;margin:7px 0 0 38px;float:left;display:inline;}
+.banner img{width:425px;height:60px;}
+
+.mian{width:430px;height:120px;margin:0 auto;background:url(c1.gif) 20px top no-repeat;}
+.mian1{width:430px;height:120px;margin:0 auto;background:url(c2.gif) 20px top no-repeat;}
+.mian2{width:430px;height:120px;margin:0 auto;background:url(c3.gif) 20px 10px no-repeat;margin-top:15px;}
+
+.mian_p01{float:left;width:73%;font:normal 14px 宋体;line-height:150%;color:#0299e7;margin:45px 0 0 110px;display:inline;height:45px;}
+.mian_p01 a,.mian_p03 a,.bian{color:#ff4613;}
+
+.mian_p02{float:left;width:62%;font:normal 14px 宋体;line-height:160%;color:#0299e7;margin:65px 0 0 145px;display:inline;height:45px;}
+
+.mian_p03{text-align:center;margin-top:10px;width:95%;font:normal 14px 宋体;line-height:160%;color:#666;}
+
+.induct{float:left;width:97%;margin:10px 0 0 10px !important;margin:10px 0 0 7px;border-bottom:1px dashed #ccc;padding-bottom:5px;}
+.induct img{float:left;width:80px;height:80px;padding:1px;border:1px solid #f8b38d;margin-top:3px;}
+
+.induct_ul01{float:left;margin:0 0 0 10px;font:normal 12px 宋体;color:#666;width:77%;}
+.induct_ul01 li{line-height:150%;overflow:hidden;}
+.se{color:#e4630d;margin:0 5px 0 0;}
+
+.main_h01{font:bold 12px 宋体;float:left;color:#ff4613;margin:10px 0 0 16px !important;margin:10px 0 0 10px;}
+.main_p02{font:normal 12px 宋体;color:#0299e7;line-height:150%;float:left;margin:5px 0 0 16px !important;margin:5px 0 0 10px;text-indent:2em;width:95%;}
+
+.mian_ul{font:normal 12px 宋体;color:#e4630d;margin:5px 0 0 14px !important;margin:5px 0 0 9px;float:left;}
+.mian_ul li{margin:0 10px 7px 0;*margin:0 10px 5px 0;float:left;}
+
+.inpu{border:1px solid #fb9a55;background:#fce6db;margin:0 0 0 3px;color:#666;width:140px;padding:2px;}
+
+.button{width:60px;margin:5px 0 0 190px !important;margin:5px 0 0 95px;height:25px;float:left;}
+
+.main_ul01{float:left;margin:5px 0 0 12px !important;margin:5px 0 0 8px;}
+.main_ul01 li{float:left;margin:0 6px 5px 0 !important;margin:0 7px 5px 0;}
+.main_ul01 li img{width:75px;height:40px;border:1px solid #ccc;}
+
+.again{width:420px;background:url(card.gif) 110px top no-repeat;margin:0 auto;margin-top:5px;}
+.again1{width:420px;background:url(card1.gif) 110px top no-repeat;margin:0 auto;margin-top:5px;}
+.again_h{float:left;margin:50px 0 0 200px !important;margin:50px 0 0 100px;font:bold 14px 宋体;color:#f83002;text-indent:-99999em;}
+.again_img1{float:left;margin:25px 0 25px 150px !important;margin:25px 0 25px 75px;width:75px;height:26px;}
+.again_img3{float:left;margin:25px 0 25px 200px !important;margin:25px 0 25px 100px;width:75px;height:26px;}
+.again h3{font:bold 14px 宋体;color:#00b1ec;margin:3px 0 0;}
+.again h3 a,.again_ul li a{color:#00b1ec;}
+.again h3 .l{margin:5px 0 0 80px;}
+.again h3 .r{margin:5px 65px 0 0;}
+
+.again_ul{font:bold 14px 宋体;float:left;margin:10px 0 0 50px !important;margin:10px 0 0 25px;}
+.again_ul li{float:left;margin:0 10px 0 0;}
+
+.again_img2{float:left;margin:15px 0 0 180px !important;margin:15px 0 0 90px;width:75px;height:26px;}

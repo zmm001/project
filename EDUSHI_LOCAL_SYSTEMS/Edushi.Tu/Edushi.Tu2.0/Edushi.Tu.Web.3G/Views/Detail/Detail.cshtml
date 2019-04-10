@@ -1,0 +1,298 @@
+﻿@model Edushi.Tu.Web._3G.Models.DetailModel
+@using Edushi.Tu.Web._3G.Helper
+@{
+    ViewBag.Title = Model.article.PA_Title+"-图闻-E都市";
+    var authorId = Model.AuthorInfo["ID"] == null ? 0 : Convert.ToInt32(Model.AuthorInfo["ID"]);
+}
+@section meta {
+    <meta name="keywords" content="@(Model.article.PA_Keyword)-@(Model.article.PA_Title)" />
+    <meta name="description" content="@(Model.article.PA_FirstPicDesc)" />
+}
+<link rel="stylesheet" href="@Url.Content("~/asset/css/detail_7.0.css")">
+<header class="clearfix">
+    <a href="javascript:history.go(-1);" class="back"></a>
+    @if (Model.AuthorInfo != null && Model.AuthorInfo["NickName"] != null && !string.IsNullOrWhiteSpace(Model.AuthorInfo["NickName"].ToString()))
+    {
+        <div class="look-info">
+            <div class="userid">
+                <a href="@string.Format("http://m.edushi.com/user/index/3-{0}.html", Model.AuthorInfo["ID"])"><img src="@(ViewBag.UserHeaderDomain + Model.AuthorInfo["Avatar"])"></a>
+                <div>
+                    <a href="@string.Format("http://m.edushi.com/user/index/3-{0}.html", Model.AuthorInfo["ID"])" class="name">@Model.AuthorInfo["NickName"]</a>
+                    <p class="time">@(DateTime.Parse(Model.article.PA_CreateDate.ToString()).ToLocalTime().ToString("yyyy-MM-dd"))</p>
+                </div>
+            </div>
+            <span id="articleIsAtted" data-id="@authorId" @Html.Raw(DataHelper.GetIsAttentioned(authorId) == -2 ? "class=\"look-add look-follow\"" : "class=\"look-add\"")></span> <!-- 已关注添加样式 look-follow -->
+            @*<script>
+                $.post("/GetIsAttentioned.htm?", { "authorId": "@authorId" }, function (data) {
+                    if (data==-2) {
+                        $("#articleIsAtted").addClass("look-add look-follow");
+                    } else {
+                        $("#articleIsAtted").addClass("look-add");
+                    }
+                })
+            </script>*@
+        </div>
+    }
+    
+    <div class="share"></div>
+</header>
+<div class="content-main">
+    @if (Model.listData != null && Model.listData.Any())
+    {
+        <section class="carousel">
+            <div class="focus-box swiper-container">
+                <ul class="swiper-wrapper">
+                    @foreach (var item in Model.listData)
+                    {
+                        <li class="swiper-slide">
+                            <div class="img-wrap">
+                                <img data-src="@item.PAI_Pic" class="swiper-lazy"/>
+                            </div>
+                            <div class="info">
+                                @Html.Raw(item.PAI_Desc)
+                            </div>
+                        </li>
+                    }
+                </ul>
+            </div>
+        </section>
+    }
+    <div class="focus-comment">
+        <div class="focus-info">
+            <div class="page">
+                <span class="current-num">1</span>/<span class="total-num">@(Model.listData.Count)</span></div>
+            <div class="text-info">
+                <div class="text">
+                </div>
+            </div>
+        </div>
+        <div class="tu-comment clearfix">
+            <div class="tu-post-comment">
+                <input type="hidden" value="@Model.article.PA_ID" id="article-id" />
+                <input type="hidden" value="0" id="father-id" />
+                <textarea id="comment-area" class="comment-area" placeholder="@(DataHelper.GetUserId() > 0 ? "" : "登录之后再评论")"></textarea>
+                <input type="button" class="publish" value="发布">
+            </div>
+            <ul class="tips">
+                <li class="comments"><a href="@(Model.CountComment<=0?"javascript:void(0);":string.Format("{0}comment/detail/{1}.html",Url.Content("~/"), Model.article.PA_ID))">
+                    @if (Model.CountComment > 0)
+                    {
+                        <span>@Model.CountComment</span>
+                    }
+                    </a></li>
+                <li @Html.Raw(DataHelper.IsUpvoteDownvote(Model.article.PA_ID) == -2 ? "class=\"tu-zan visited\"" : "class=\"tu-zan\"")>
+                    <em>+1</em></li>
+                <li @Html.Raw(DataHelper.GetIsFavorites(Model.article.PA_ID) == -2 ? "class=\"favorite collected\"" : "class=\"favorite\"")>
+                </li>
+                <!-- 收藏成功添加样式 collected -->
+            </ul>
+        </div>
+    </div>
+</div>
+<div class="share-layout">
+</div>
+<div class="share-box">
+    <div class="share-li">
+        <a class="weixin">微信</a> <a class="qq">QQ</a> <a href="@Model.ShareUrlDic["QQZone"]" class="qzone">
+            QQ空间</a> <a href="@Model.ShareUrlDic["Sina"]" class="weibo">微博</a> <a href="http://report.edushi.com/report"
+                class="report">举报</a>
+    </div>
+    <div class="cancle">
+        取消</div>
+</div>
+<section class="share-tips">
+    <div class="tips-box">
+        <p>点击浏览器下方“<em></em>”分享给<span>QQ</span>好友</p>
+        <p>safari浏览器请点击“<i></i>”按钮 </p>
+    </div>
+</section>
+<section class="pop-content">
+    <div class="pop-box">
+        <div class="msg" id="msg">您已收藏，请到个人中心查看</div>
+        <span class="btn cancel">知道了</span>
+        <a class="btn confirm">去看看</a>
+    </div> 
+</section>
+<section class="look-layout">
+    <div class="look-msg"></div>
+</section>
+<script type="text/javascript" src="@Url.Content("~/asset/js/swiper.min.js")"></script>
+<script type="text/javascript">
+var mySwiper = new Swiper('.swiper-container', {
+    //autoHeight: true, //高度随内容变化
+    //loop: true,
+    lazy: {
+        loadPrevNext: true,
+    },
+    on:{
+        init: function(){
+            var newCont = $(".swiper-slide-active .info").text();
+            $(".focus-info .text").text(newCont);
+        },
+        touchStart: function(event){
+            $(".text-info").css({"height":"1.84rem","transition-duration":"0ms"});
+        },
+        slideChangeTransitionStart: function(){
+            var newCont = $(".swiper-slide-active .info").text();
+            $(".current-num").text(this.realIndex+1);
+            $(".focus-info .text").text(newCont);
+        }
+    }
+});
+
+$(function(){
+    $(".focus-info .text").click(function(){
+        var _height = $(this).height();
+        if($(".text-info").height() < _height){
+            $(".text-info").css({"height":_height,"transition-duration":"300ms"});
+        }else{
+            $(".text-info").css({"height":"1.84rem","transition-duration":"300ms"});
+        }
+    });
+
+    $(".carousel .focus-box ul li").height($(window).height());
+    $(window).resize(function(){
+        $(".carousel .focus-box ul li").height($(window).height());
+    });
+    $(".focus-info .total-num").text(parseInt(mySwiper.slides.length));
+
+    $(".content-main .carousel").click(function(){
+        $("body").toggleClass("active");
+    });
+    //分享显示与隐藏
+    $(".share").click(function(){
+        $(".share-layout").show();
+        $(".share-box").addClass("show");
+    });
+    $(".share-layout, .share-box .cancle").click(function(){
+        $(".share-layout").hide();
+        $(".share-box").removeClass("show");
+    });
+    //点击qq 微信提示层
+    $(".qq, .weixin").click(function(){
+        if($(this).hasClass("qq")){
+           $(".share-tips span").text("QQ");
+        }else{
+           $(".share-tips span").text("微信"); 
+        }
+        $(".share-tips").show();
+    });
+    $(".share-tips").click(function(){
+        $(this).hide();
+    });
+
+    //文章点赞
+    var _isClick = true; //防止重复点击
+    if($(".tu-zan").length > 0){
+        $(".tu-zan").click(function () {
+            if (_isClick) {
+                _isClick = false;
+                if (!$(this).hasClass("visited")) {
+                    var _this = $(this);
+                    $.ajax({
+                        type: "post",
+                        dataType: "json",
+                        url: "/AddArticleUpvoteDownvote.htm?r=" + new Date().getTime(),
+                        data: { "iaId": "@Model.article.PA_ID", "action": 1 },
+                        success: function (data) {
+                            _isClick = true;
+                            if (data.ResultCode == 1) {
+                                _this.addClass("visited");
+                                _this.find("em").show();
+                            } else if (data.ResultCode == 2) {
+                                var url = 'http://m.edushi.com/user/Login.html?BackUrl=' + window.location.href;
+                                popUp("亲，登录后才能踩哦", 1, url, "去登陆");
+                            } else {
+                                popUp(data.Msg);
+                            }
+                        }
+                    });
+                } 
+            }
+	        
+        });
+    }
+
+    var _isAttedClick = true; //防止重复点击
+    $("#articleIsAtted").click(function(){
+    if (_isAttedClick) {
+            _isAttedClick = false;
+            var userId = $(this).data("id");
+
+            if ($(this).hasClass("look-follow")) {
+                $.ajax({
+                    type: "post",
+                    dataType: "json",
+                    url: "/CancelAttention.htm?r=" + new Date().getTime(),
+                    data: { "userId": userId },
+                    success: function (data) {
+                        _isAttedClick = true;
+                        if (data.ResultCode == 1) {
+                            $(".look-msg").text("取消关注成功");
+                            $(".look-layout").fadeIn(200).delay(1500).fadeOut(200);
+                            $("#articleIsAtted").removeClass("look-follow");
+                        } else if (data.ResultCode == 2) {
+                            var url = 'http://m.edushi.com/user/Login.html?BackUrl=' + window.location.href;
+                            popUp("亲，登录后才能关注哦", 1, url, "去登陆");
+                        } else {
+                            popUp(data.Msg);
+                        }
+                    }
+                });
+            } else {
+                $.ajax({
+                    type: "post",
+                    dataType: "json",
+                    url: "/AddAttention.htm?r=" + new Date().getTime(),
+                    data: { "userId": userId },
+                    success: function (data) {
+                        _isAttedClick = true;
+                        if (data.ResultCode == 1) {
+                            $("#articleIsAtted").addClass("look-follow");
+                            $(".look-msg").text("关注成功"); 
+                            $(".look-layout").fadeIn(200).delay(1500).fadeOut(200);
+                        } else if (data.ResultCode == 2) {
+                            var url = 'http://m.edushi.com/user/Login.html?BackUrl=' + window.location.href;
+                            popUp("亲，登录后才能关注哦", 1, url, "去登陆");
+                        } else {
+                            popUp(data.Msg);
+                        }
+                    }
+                });
+            }
+        }
+    });
+
+    var _isFavClick = true; //防止重复点击
+    $(".favorite").click(function() {
+        if (_isFavClick) {
+            _isFavClick = false;
+            if (!$(this).hasClass("collected")) {
+                var _this = $(this);
+                $.ajax({
+                    type: "post",
+                    dataType: "json",
+                    url: "/AddFavorite.htm?r=" + new Date().getTime(),
+                    data: { "id": "@Model.article.PA_ID" },
+                    success: function (data) {
+                        _isFavClick = true;
+                        if (data.ResultCode == 1) {
+                            _this.addClass("collected");
+                            var url = "http://m.edushi.com/user/my/favorite.html";
+                            popUp("您已收藏，请到个人中心查看", 1, url, "去看看");
+                        } else if (data.ResultCode == 2) {
+                            var url = 'http://m.edushi.com/user/Login.html?BackUrl=' + window.location.href;
+                            popUp("亲，登录后才能收藏哦", 1, url, "去登陆");
+                        } else {
+                            popUp(data.Msg);
+                        }
+                    }
+                });
+            } 
+         }
+    });
+});
+
+
+
+</script>

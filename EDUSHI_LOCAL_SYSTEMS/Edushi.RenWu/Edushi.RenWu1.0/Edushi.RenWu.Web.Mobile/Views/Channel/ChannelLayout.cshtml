@@ -1,0 +1,68 @@
+﻿
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.PageType = 0;  //导航风格标志
+    if (Model.CurrentModel==null)
+    {
+        ViewBag.Title = string.Format("检索\"{0}\"结果-人物频道-E都市",Model.KeyWord);
+    }
+    else
+    {
+        ViewBag.Title = Model.CurrentModel.IT_Name + "人物-人物频道-E都市";
+    }
+    var data = Model as Edushi.RenWu.Web.Mobile.Models.ChannelIndexModel;
+    var sub = string.Empty;
+    var myType = data.AllRwType.FindAll(p =>p.IT_ParentID ==(data.CurrentModel==null?0: data.CurrentModel.IT_ID));
+
+    
+    if (myType.Count > 0)
+    {
+        sub = string.Join(",", myType.Select(p => p.IT_Name));
+    }
+
+    var keywords = string.Format("{0},{1}",data.CurrentModel==null?Model.KeyWord:data.CurrentModel.IT_Name, sub);
+    var description = string.Format("E都市{0}频道是全面专业的{0}人物资讯信息平台，提供集{1}等人物资讯，构建新型互联网媒体平台为互联网用户提供价值资讯。", data.CurrentModel==null?"人物":data.CurrentModel.IT_Name, (sub.Replace(",", "、")));
+    var pcUrl = string.Empty;
+    var URI = Request.Url.AbsoluteUri.ToLower();
+    var ilocation = URI.LastIndexOf("/", StringComparison.Ordinal);
+    if (ilocation > -1)
+    {
+        pcUrl = "http://www.edushi.com/renwu/info/" + URI.Substring(ilocation + 1);
+    }
+ }
+
+@section meta
+{
+    <meta name="Keywords" content="@keywords" />
+    <meta name="Description" content="@description" />
+    <link rel="canonical" href="@pcUrl">
+}
+
+<!--搜索框-->
+@Html.Partial("SearchBox")
+
+<div class="content-main">
+     @if (data.RenWuList != null && data.RenWuList.Any())
+     { 
+         <section class="per-classify">
+        <ul class="rewu-list" id="datalist">
+         @foreach (var item in data.RenWuList)
+         { 
+            <li>
+                <a href="@item.Url">
+                    <div class="photo"><img src="@item.Pic" alt=""></div>
+                    <div class="txt">
+                    	<span class="name">@Html.Raw(item.Title)</span>
+                        @Html.Raw(item.Desc)
+                    </div>
+                </a>
+            </li>
+         }
+        </ul>
+    </section>
+     }
+   @RenderBody()
+    
+</div>
+
+

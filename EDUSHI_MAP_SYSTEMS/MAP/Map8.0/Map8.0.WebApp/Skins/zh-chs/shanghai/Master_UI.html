@@ -1,0 +1,458 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" scroll-y="no" style="overflow-y: hidden;">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    {$Meta_IE}
+    <title>{$Title}</title>
+    <meta name="Keywords" content="{$Keywords}" />
+    <meta name="Description" content="{$Description}" />
+    <style type="text/css">
+	body, ul, dl, dd, dt, ol, li, p, h1, h2, h3, h4, h5, h6, form, fieldset, table, img, td, div, input{ margin:0;padding:0;}
+	body{ background:#fff; font-family:Microsoft Yahei; font-size:12px;}
+	body, input, select, textarea{ color:#222;}
+	button, input, select textarea { margin: 0; font: inherit; color: inherit; }
+	button { overflow: visible;}
+	button, select { text-transform: none;}
+	table { border-spacing: 0; border-collapse: collapse;}
+	td, th { padding: 0;}
+	ul, ol, li{list-style-type:none;}
+	li{ vertical-align:0;}
+	h1, h2, h3, h4, h5, h6, dl, dt, dd{ font-weight:normal;}
+	img, object, embed, video{ border:none;}
+	i, em{ font-style:normal;}
+	a{ outline-style:none; color:#545454 ;text-decoration:none;}
+	a:hover{ color:#ff8500; text-decoration:underline; outline:0;}
+	.clear{ clear:both;}
+	.clearfix:before,.clearfix:after{ display:table; content:" ";}
+	.clearfix:after{ clear:both;}
+	.clearfix{ *zoom:1;}
+	.f-l{ display:inline; float:left;}
+	.f-r{ display:inline; float:right;}
+	.t-c{ text-align:center;}
+	.position-re{position:relative;}
+	.m-r8{ margin-right:8px;}
+	.m-t2{ margin-top:2px;}
+	@media screen and (-webkit-min-device-pixel-ratio:0) { 
+		body, button, input, select, textarea{line-height:normal !important;}
+		input, select, textarea{outline-style:none;}
+	}
+	
+	.wrapper, .page-header{ position:relative; width:100%; min-width:1000px; margin:0 auto; overflow:hidden;}
+	.container{ position:relative; z-index:1; margin-right:350px;}
+	.sidebar{ position:absolute; right:0; top:0; z-index:999; width:350px; background:#fff;}
+	.sidebar-yscroll{ width:100%;}
+	
+	/*
+		头部
+	*/
+	.header-box{ margin-bottom:8px;}
+	.map-logo{ position:absolute; left:0; top:0; width:215px; margin-left:20px; margin-top:15px;}
+	.map-logo img{ float:left; display:block; width:102px; height:34px;}
+	.header-right{ position:relative; margin-top:8px; margin-left:249px;}
+	.top-bar{ width:100%; height:36px; background:url(images/top_menubg.gif) repeat-x left bottom; border-bottom:1px solid #a8a8a8; line-height:36px;}
+	.top-bar a{ color:#666;}
+	.top-bar a:hover{ color:#cc2900; text-decoration:none;}
+	.top-menu{ width:70%; height:15px; margin-top:11px; line-height:15px;}
+	.top-menu a{ margin-left:1.2%; padding-right:1.2%; border-right:1px solid #ccc; font-size:14px;}
+	.top-tips{ width:30%; text-align:right;}
+	.top-tips li{ float:right; display:inline-block; margin-right:2%;}
+	.top-tips .sethome{ padding-right:2%; background:url(images/top_linebg.gif) no-repeat right 5px;}
+	.tips-other{ position:relative; *top:-4px;}
+	.login-reg{ height:24px; margin-right:2%; margin-top:5px; padding:0 8px 0 5px; border:1px solid #cccccc; line-height:15px;
+		background:-moz-linear-gradient(top, #ffffff, #ebebeb);
+		background:-webkit-linear-gradient(top,#ffffff,#ebebeb);
+		background:-o-linear-gradient(top,#ffffff,#ebebeb);
+		filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#ebebeb', GradientType='0'); /* IE*/ 
+	}
+	.login-reg a{ display:inline-block; margin-right:0; margin-top:4px;}
+	.login-reg i{ display:inline; float:left; width:16px; height:18px; margin-top:2px; margin-right:5px; background:url(images/login_icon.png) no-repeat;}
+	.login-reg .login{ margin-right:6px; padding-left:8px; border-left:1px solid #d9d9d9; color:#cc2900;}
+	
+	.current-channel{ display:inline; float:left; height:26px; margin-top:9px; margin-left:10px; background:url(images/btn_icon.png) no-repeat 0 0; font-size:16px; font-weight:bold; color:#fff; line-height:26px;}
+	.current-channel p{ height:26px; margin-left:12px; padding-right:12px; background:url(images/btn_icon.png) no-repeat right -26px;}
+
+	.search-ipt, .search-bus, .search-car{ *display:inline; *float:left; width:460px; height:32px; margin-right:6px; background:#fff; border:1px solid #d8d8d8; text-indent:12px; color:#121212; line-height:32px; font-size:16px; box-shadow:inset 0 0 1px 1px rgba(104,104,104,.2); z-index:2;}
+	.search-btn{ display:inline; float:left; width:97px; height:32px; font-size:16px; color:#fff; text-align:center; border:none; background:url(images/search_btnbg.gif) repeat-x left bottom; cursor:pointer;}
+	.hot-tags{ display:inline; float:left; margin-left:20px; margin-top:12px; font-family:SimSun; color:#565656;}
+	.hot-tags a{ color:#565656; cursor:pointer;}
+	.search-tab-tit{ position:relative; top:0; z-index:1; font-family:SimSun;}
+	.search-tab-tit span{ display:inline-block; margin-right:5px; padding:0 30px; line-height:25px; color:#474747; background:#eaeaea; cursor:pointer;}
+	.search-tab-tit span.tab1{ background:#7c8897; color:#fff;}
+	.dropdwon-icon{ position:absolute; right:18px; top:15px; display:block; width:13px; height:7px; background:url(images/map_icon.png) no-repeat -60px -38px; cursor:pointer;}
+	.search-bus, .search-car{ text-indent:12px;}
+	.search-bus input{*position:relative; *top:5px; width:196px; height:28px; line-height:28px; background:#fff; border:none;}
+	.search-car input{*position:relative; *top:5px; width:196px; height:28px; line-height:28px; background:#fff; border:none;}
+	.site-swap{ display:block; width:21px; height:22px; margin:5px 10px 0 10px; background:url(images/map_icon.png) no-repeat 0 -58px;}
+	.del-icon{ position:absolute; right:0; top:14px; display:block; width:9px; height:9px; background:url(images/map_icon.png) no-repeat -78px -38px; cursor:pointer;}
+	.add-via-icon{ position:absolute; right:5px; top:7px; width:21px; height:22px; background:url(images/map_icon.png) no-repeat -26px -58px; cursor:pointer;}
+	.add-via-line{ position:absolute; left:162px; top:36px; z-index:100;}
+	.add-via-line p{ background:#fff; border:1px solid #d8d8d8; text-indent:5px;}
+	.via-num{ margin-right:10px; padding:2px 4px; background:#ebebeb; border:1px solid #c7c7c7;}
+	.add-via-line .del-icon{ right:5px;}
+	.search-car .add-via-line input{ width:132px;}
+	
+	.container-topbar{ position:relative; z-index:1; width:100%; line-height:32px; color:#525151; background:#f3f3f3; box-shadow:0 5px 5px 0px rgba(0,0,0,.2);}
+	.change-city{ margin-right:12px; margin-left:10px; cursor:pointer;}
+	.change-city em{ display:inline-block; width:10px; height:5px; margin-left:3px; background:url(images/map_icon.png) no-repeat -59px 0;}
+	.air-quality{ margin-left:5px; padding:3px 5px; background:#e0cf22; color:#fff; border-radius:5px;}
+	.pm25green{ background:#3fbe00; /*优*/}
+	.pm25yellow{ background:#e0cf22; /*良*/}
+	.pm25orange{ background:#f2542f; /*轻度污染*/}
+	.pm25red{ background:#ea1818; /*中度污染*/}
+	.pm25purple{ background:#b62d77; /*重度污染*/}
+	.pm25balck{ background:#692196; /*严重污染*/}
+	.container-topbar-tools{ *margin-right:18px;}
+	.container-topbar-tools li{ display:inline; float:left; margin-right:10px; margin-left:8px; cursor:pointer;}
+	.traffic span, .tools span, .full-screen span{ position:relative; top:2px; *top:-2px; display:inline-block; margin-right:3px;}
+	.traffic span{ width:9px; height:14px; background:url(images/map_icon.png) no-repeat 0 0;}
+	.tools span{ width:14px; height:14px; background:url(images/map_icon.png) no-repeat -16px 0;}
+	.full-screen span{ width:12px; height:12px; background:url(images/map_icon.png) no-repeat -38px 0;}
+	.out-fullscreen span{ background-position:-66px -20px;}
+	.hide-sidebar{ position:absolute; right:0; top:50%; z-index:999; width:20px; height:67px; margin-top:-33px; background:url(images/arrow_icon.png) no-repeat 0 0; cursor:pointer;}
+	.show-sidebar{ background-position:-20px 0;}
+	.tools-dropdown{ *position:relative; *top:-5px; display:inline-block; width:10px; height:5px; margin-left:3px; background:url(images/map_icon.png) no-repeat -59px 0;}
+	.tools-on{ background-position:-59px -7px;}
+	.show-all-tools{ position:absolute; left:0; top:32px; display:none; width:61px; padding:5px 0 3px 10px; background:rgba(243,243,243,.86); background:#f3f3f3\9;}
+	.show-all-tools a{ color:#525151;}
+	.show-all-tools em{ position:relative; top:3px; *top:0; display:inline-block; margin-right:3px;}
+	.ranging{ width:12px; height:12px; background:url(images/map_icon.png) no-repeat -51px -54px;}
+	.screenshot{ width:12px; height:12px; background:url(images/map_icon.png) no-repeat -66px -54px;}
+	em.mark{ width:8px; height:16px; margin-right:7px; background:url(images/map_icon.png) no-repeat -82px -54px;}
+	.share{ width:12px; height:11px; background:url(images/map_icon.png) no-repeat -52px -70px;}
+	.print{ width:12px; height:13px; background:url(images/map_icon.png) no-repeat -68px -68px;}
+	
+	.sidebar-tit{ height:32px; padding-right:8px; line-height:32px; text-align:right; background:#f3f3f3; overflow:hidden;}
+	.news{line-height:16px;left:0;position: relative;}
+	.news li{width:80px;height:29px; padding-left:2px; text-align:center; float:left; margin:4px 3px 0px 0px; background:url(images/tab_icon.png) 0 -36px no-repeat; cursor:pointer;}
+	.news .on{background:url(images/tab_icon.png) 0 0 no-repeat}
+	.news .on span{color:#313131; font-weight:bold;}
+	.news li span{color:#686868; padding:5px 0 0 0; text-decoration:none; display:block; float:left; width:62px; overflow:hidden;white-space:nowrap;}
+	.news li a.miniclose{width:10px; height:11px; background:url(images/ico.png) no-repeat -515px -33px; float:left; margin:5px 5px 0 0;_margin-right:3px; font-size:10px;}
+	.news li a:hover{background-position:-513px -45px;}
+	.tabcontrol{width: 40px;position: absolute;right: 0;top: 10px;}
+	.tabcontrol a{float: left;width: 13px;height: 13px;display: block;margin-right: 4px;_margin-right: 2px;overflow: hidden;}
+	.tabcontrol a.a1{background: url(images/ico.png) no-repeat -424px -33px;}
+	.tabcontrol a.a2{background: url(images/ico.png) no-repeat -438px -33px;}
+	.down_bq{width: 15px; float: left;margin-top:4px;margin-right:4px; }
+	.down_bq ul{position:absolute;top: 24px;left:7px;float:left;margin:0;padding:5px;padding-bottom:0px;text-align:left;line-height:16px;border:solid 1px #88bad9;background:#fff;z-index:100000;}
+	.down_bq ul li{ background: url(images/icon_7.png) no-repeat 0 5px; padding-left:10px; margin-bottom:10px;}
+	.down_bq ul li a{color:#88bad9;}
+	
+	#direction{position: absolute;left: 15px;bottom: 15px;width:42px; height:73px;background:url(images/zz.png) no-repeat 0 0;_background:none;_filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled=true,sizingMethod=scale,src="images/zz.png";)}
+	#minimap{position: absolute;right: 0;bottom: 0;width: 15px;height: 15px;background: url(images/ico.png) no-repeat -495px -33px;}
+	#eyeMap{position:absolute; right:0; bottom:0; width:180px; height:140px; padding:3px; border-left:1px solid #b9d6e7; border-top:1px solid #b9d6e7; background:#fff; }
+	#ImgThemeScrollLeft{background: url(images/ico.png) no-repeat -396px -33px; width: 11px; height: 11px;margin-top: 4px}
+	#ImgThemeScrollRight{background: url(images/ico.png) no-repeat -410px -33px; width: 11px; height: 11px;margin-top: 4px; float: right;}
+	.eyeEdushia{display:block; background:url(images/ico.png) no-repeat -526px -34px; width:14px; height:14px; position:absolute;}
+	/*-------------  提示功能  ----------------------------*/
+	.Prompt{ background:url(images/bg_000_11.png) no-repeat 0 0;display:none; position:absolute; width:213px; height:48px; font-weight:bold; color:#fff; font-size:16px; line-height:48px; text-align:center; z-index:9999; top:0px;left:50%; margin:10px -106px;}
+	/*用户登录*/
+	.LoginNavT{background:url(Images/LoginNavBg.gif) no-repeat left top;width:300px; height:6px; overflow:hidden;}
+	.LoginNavD{background:url(Images/LoginNavBg.gif) no-repeat left bottom; width:300px; padding:5px 10px 12px; position:relative; text-align:left;}
+	.LoginNavD h3{padding:0;margin:0 0 5px;background:url(Images/LoginH3Til.gif) no-repeat left 5px; text-indent:-9000px;height:21px;}
+	.LoginNavD table{width:280px;}
+	.LoginNavD table tr th,.LoginNavD table tr td{line-height:25px; padding:0 3px;}
+	.LoginNavD table tr th{ width:70px; text-align:right; font-weight:normal;}
+	.LoginNavD table tr td span{float:left; margin-right:3px;}
+	.ThisStyle{border:1px solid #0075B0;border-right-color:#84A5CE;border-bottom-color:#84A5CE;background-color:#DFEBF7;}
+	.LoginClew{border:1px solid #E3E197;padding:5px 24px 5px 42px; margin:10px 10px 0; background:#FFFFDD url(images/ClewIco1.gif) no-repeat 24px 4px; color:#C30;}
+	input.InFieldSty{border:1px solid #84A5CE;border-right-color:#C1D2E7;border-bottom-color:#C1D2E7;background-color:#F7FBFF;}
+	.RollConten{width:272px;overflow:hidden;}
+	.RollConten ul{padding:0;margin:0; list-style-type:none;}
+	.RollConten ul li{float:left;margin:0 5px; height:19px; line-height:19px;}
+	.RollConten ul li a{ display:block; padding-left:20px;}
+	
+	/*短信发送*/
+	.mbox{	width:450px;height:280px;position:absolute;	border:1px solid #7f9db9;left: 1px;top: 2px;background:#fff;text-align:left;}
+	.mbox p{margin:0; padding:0;}
+	.mbox h1{ background:#f0f7ff;margin:2px; line-height:24px; padding-left:10px; height:24px;}
+	.mbox h1 span{ float:left; font-size:14px; }
+	.mbox .closesend{ display:block; width:11px; height:11px; margin:5px 5px 0 0; float:right; display:inline;}
+	.mbox .sint{ float:left; width:40%; padding:10px 0 0 10px; clear:left; line-height:20px; }
+	.mbox .txtbox{ height:16px;}
+	.mbox .yzm span{ float:left;}
+	.mbox .tgray{ color: #999;}
+	.mbox .info{ border:1px solid #ccc; float:right; width:45%; padding:10px; clear:right; margin:8px 10px 0 0;word-wrap:break-word; line-height:24px; display:inline;}
+	.mbox .infobox{ height:160px; overflow-y:auto;}
+    </style>
+    <script language="javascript">
+        if (top.location != self.location) top.location = self.location;
+    </script>
+    <script type="text/javascript" language="javascript">
+        var GlobalConfig = {
+            'WebRootPath': '{$WebRootPath}',
+            'Language': '{$Language}',
+            'Domain': '{$Domain}',
+            'CityCode': '{$CityCode}',
+            'CityName': '{$CityName}',
+            'EDataCenterUrl': '{$EDataCenterUrl}',
+            'Loading': '<div><img style="margin-top:2px;" src="../Images/loading.gif"></div>',
+            'DianUrl': '{$DianUrl}',
+            'HuangyeUrl': '{$HuangyeUrl}',
+            'UserCenterUrl': '{$UserCenterUrl}',
+            'EdizhiUrl': '{$EdizhiUrl}',
+            'ImgUrl': '{$ImageUrl}pic_{$CityCode}/',
+            'PicUrl': '{$PicUrl}/',
+            'Api3Url': '{$Api3Url}',
+            'GoogleID': '{$GoogleID}',
+            'IsBDT': '{$IsBDT}',
+            'IsEStore': '{$IsEStore}', //新增是否是E店
+            'Is3D': '{$Is3D}',
+//            'RoadCityList': ['fuzhou', 'beijing'], //有道路图层的城市列表          
+            'DimeUrl': '{$DimeUrl}',
+            'JobUrl': '{$JobUrl}',
+            'HouseeUrl': '{$HouseUrl}',
+            'HotelUrl': '{$HotelUrl}',
+            'HasDime': '{$HasDime}',
+            'HasHouse': '{$HasHouse}',
+            'HasJob': '{$HasJob}',
+            'HasHotel': '{$HasHotel}',
+            'DataCetnerMapDataUrl': '{$DataCetnerMapDataUrl}',          //提供Map7的地图上的主题地图、包打听滚动、常用位置的数据提供
+            'DataCetnerAdDataUrl': '{$DataCetnerAdDataUrl}',            //提供所有程序的广告的数据
+            'Api4Url': '{$Api4Url}',
+            'DataCetnerBusDataUrl': '{$DataCetnerBusDataUrl}',          //提供公交两点搜索的web页面
+            'DataCetnerSearchDataUrl': '{$DataCetnerSearchDataUrl}',     //提供所有程序的搜索接口
+            'DataCetnerBusDataUrl': '{$DataCetnerBusDataUrl}',
+            'BusDeuceSearchUrl': '{$BusDeuceSearchUrl}'
+        };
+        var pageTracker = '';
+    </script>
+    <script type="text/javascript" src="/Js/jquery-1.5.1.js"></script>
+    <script type="text/javascript" src="/Js/GeneralLib.js"></script>
+    <script type="text/javascript" src="/Js/Init.js"></script>
+    <!--<script src="http://tjs.sjs.sinajs.cn/open/api/js/wb.js" type="text/javascript" charset="utf-8"></script>-->
+    <script type="text/javascript" src="/Js/Common.js"></script>
+</head>
+<body onkeyup="fnKeyup(event)" id="BodyHtml">
+	<div id="Header" class="header-box">
+        	<div class="top-bar clearfix">
+                <p class="f-l top-menu" id="ulChannellList">
+                    {$TitleURL}
+                </p>
+                <ul class="f-r top-tips">
+	            <!--<li><a href="http://www.edushi.com/about/GuestBook.aspx?c={$CityCode}&l={$Language}" target="_blank" title="留言">留言</a></li>-->
+                    <li><a href="http://www.edushi.com/about/ContactUs.htm" target="_blank">联系我们</a></li>
+	            <li class="sethome"><a href="javascript:;" onclick="SetHome(this,'http://www.edushi.com/')">设为首页</a></li>
+	            <li id="liLoginInfo" class="login-reg"></li>
+                </ul>
+            </div>
+		<div class="page-header clearfix">
+	        <div class="map-logo">
+	            <a href="http://www.edushi.com/"><img src="images/map_logo.gif"></a>
+	            <div class="current-channel">
+                    <p>三维地图</p>
+                </div>
+	        </div>
+	        <div class="header-right">
+            <div class="top-search">
+            	<div id="divMapSearch" class="clearfix">
+                	<p class="f-l position-re" id="AllSearch">
+                        <input id="txtSearchKey" onblur="if(!__EdushiSuggest.IsMouseOnSuggestPanel){__EdushiSuggest.Hide();}" onkeyup="fnKeySearchSuggest('fnMapSearch()', this, 230, 75, 510, 'map', 0, event);" type="text" size="60" class="search-ipt" />
+                    </p>
+                    <input name="" type="button" onclick="fnMapSearch()" class="search-btn" value="搜 索" />
+                    <p class="hot-tags" id="MapHotKeywords"></p>
+                </div>
+                <div class="clearfix" id="divBusSearch" style="display:none;">
+                    <div class="f-l search-bus">
+                        <p class="f-l position-re m-t2">
+                            <input type="text" id="txtBusStart" name="" value="起点" onchange="this.style.color='#000000'" onblur="if(!__EdushiSuggest.IsMouseOnSuggestPanel){__EdushiSuggest.Hide();}if(this.value==''){this.style.color='#434343';this.value='起点';}" onfocus="if (this.value == '起点'){this.style.color='#000000';this.value='';}" onkeyup="fnKeySearchSuggest('$(\'txtBusEnd\').style.color=\'#000000\';$(\'txtBusEnd\').focus();', this, 230, 75, 239, 'bus', 0, event);" />
+                        </p>
+                        <p class="f-l"><a href="javascript:void(0)" class="site-swap" onclick="KeyWordsChange();"></a></p>
+                        <p class="f-l position-re m-t2">
+                            <input type="text" id="txtBusEnd" name="" value="终点" onchange="this.style.color='#000000'" onblur="if(!__EdushiSuggest.IsMouseOnSuggestPanel){__EdushiSuggest.Hide();}if(this.value==''){this.style.color='#434343';this.value='终点';}" onfocus="if (this.value == '终点'){this.style.color='#000000';this.value='';}" onkeyup="fnKeySearchSuggest('fnBusSearch()', this, 500, 75, 239, 'bus', 0, event);" />
+                        </p>
+                    </div>
+                    <input name="" type="button" class="search-btn" value="搜 索" onclick="fnBusSearch()" />
+                    <span class="hot-tags"><a onclick="fnNewBusSearchByLine();">线路查询</a><!--&nbsp;<a onclick="fnNewBusSearchByStation();">站点查询</a>--></span>
+                </div>
+                <div class="clearfix" id="divDriveSearch" style="display:none;">
+                    <div class="f-l search-car position-re">
+	                        <p class="f-l position-re m-t2"><input type="text" id="txtDriveStart" name="" value="起点" onchange="this.style.color='#000000'" onblur="if(!__EdushiSuggest.IsMouseOnSuggestPanel){__EdushiSuggest.Hide();}if(this.value==''){this.style.color='#434343';this.value='起点';}" onfocus="if (this.value == '起点'){this.style.color='#000000';this.value='';}" onkeyup="fnKeySearchSuggest('if($(\'navReturnIcon\').style.display==\'none\'){}else{$(\'txtDriveEnd\').style.color=\'#000000\';$(\'txtDriveEnd\').focus();}', this, 230, 75, 239, 'drive', 0, event);" class="drive-searchSta"></p>
+                        <p class="f-l" id="navReturnIcon"><a href="javascript:void(0)" class="site-swap" onclick="KeyWordsChange_Drive();"></a></p>
+	                        <p class="f-l position-re m-t2"><input type="text" id="txtDriveEnd" name="" value="终点" onchange="this.style.color='#000000'" onblur="if(!__EdushiSuggest.IsMouseOnSuggestPanel){__EdushiSuggest.Hide();}if(this.value==''){this.style.color='#434343';this.value='终点';}" onfocus="if (this.value == '终点'){this.style.color='#000000';this.value='';}" onkeyup="fnKeySearchSuggest('fnDriveSearch()', this, 500, 75, 239, 'drive', 0, event);" class="drive-searchEnd"></p>
+                        <!--<p class="add-via-icon J-addVia"></p>
+                        <div class="add-via-line">
+                           
+                        </div>-->
+                    </div>
+                    <input type="button" id="" name="" value="搜 索" class="search-btn" onclick="fnDriveSearch()">
+                </div>
+            </div>
+            <p class="search-tab-tit">
+                <span class="tab1" id="MapSearch" onclick="fnSearchChange('MapSearch');">搜索</span>
+                <span class="tab2" id="BusSearch" onclick="fnSearchChange('BusSearch');">公交</span>
+                <span class="tab2" id="DriveSearch" onclick="fnSearchChange('DriveSearch');">驾车</span>
+            </p>         
+        </div>
+    </div>
+    </div>
+    <div class="wrapper position-re" id="Wrapper">
+        <div class="container" id="Content">
+            <div class="container-topbar clearfix" id="toolsleft">
+                <div class="f-l position-re" style="z-index:1000;">
+                    <a href="javascript:fnSwichCity()" id="lnkSwichCity"><span class="change-city">{$CityName}市<em></em></span></a>
+                </div>
+                <div class="f-r">
+                    <ul class="container-topbar-tools clearfix">
+                        <li class="tools position-re J-showTools"><p><span></span>工具<em class="tools-dropdown"></em></p>
+                            <div class="show-all-tools">
+                                <p><a href="javascript:;" id="Scalediv" title="测距"><em class="ranging"></em>测距</a></p>
+                                <p><a href="javascript:;" id="markdiv" title="地图标记"><em class="mark"></em>标记</a></p>
+                            </div>
+                        </li>
+                        <li class="full-screen"><span></span><a href="javascript:;" id="aFullScrenn" title="全屏">全屏</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="Prompt" id="PromptInfo">您已启动测试功能！</div>    
+            <img style="position: absolute; top: 50%; left: 50%;" id="maploading" src="images/maploading.gif" />
+            <div id="EdushiMap">
+            </div>
+            <div id="minimap" onclick="fnShowEyeMap();"></div>
+            <div id="eyeMap" style="display: none;">
+                <div style="border: 1px solid #88bad7; width: 178px; height: 138px;" id="eyeEdushiMap">
+                    <a href="javascript:;" class="eyeEdushia" onclick="fnShowEyeMap();"></a>
+                </div>
+            </div>
+            <div id="orientation" style="display:none;"></div>
+            <div id="direction"></div>
+            <div style="bottom: 0px; position: absolute;" id="Auditing">
+            	{$AuditingPicCode}
+        	</div>
+        </div>
+        <div class="sidebar" id="Navigation">
+        	<div class="sidebar-tit" id="Tabs">
+                <ul class="down_bq">
+                    <li id="ddlList">
+                        <img src="images/btn_down.png" />
+                        <ul style="display: none;" id="ddlListul"></ul>
+                    </li>
+                </ul>
+                <div style="width: 255px; position: relative; float: left; overflow: hidden;">
+                    <ul class="news clearfix" id="HeadContainer"></ul>
+                </div>
+                <div class="tabcontrol">
+                    <a href="javascript:;" id="LeftBtn" class="a1"></a><a href="javascript:;" id="RightBtn" class="a2"></a>
+                </div>
+            </div>
+            <div id="BodyContainer" class="sidebar-yscroll">
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+<script type="text/javascript">
+	jQuery(".top-menu a:last").css({"border-right":"none"});
+
+    var _viaNun = 1;
+    jQuery(function () {
+        //显示工具下拉选择框
+        jQuery(".J-showTools").hover(function () {
+            jQuery(".show-all-tools").slideDown();
+            jQuery(".tools-dropdown").addClass("tools-on");
+        }, function () {
+            jQuery(".show-all-tools").slideUp();
+            jQuery(".tools-dropdown").removeClass("tools-on");
+        });
+
+        //自驾
+        jQuery(".J-addVia").click(function () {
+            jQuery(".drive-searchSta, .drive-searchEnd").css({ "width": "150px" });
+            jQuery("#navReturnIcon").hide();
+            if (jQuery("#driveVia").length < 1) {
+                jQuery("#navReturnIcon").after('<p class="f-l position-re m-t2 J-viaForm" id="driveVia"><input class="myclass" type="text" id="txt_via_' + _viaNun + '" name="" onchange="this.style.color=\'#000000\'" onblur="if(!__EdushiSuggest.IsMouseOnSuggestPanel){__EdushiSuggest.Hide();}if(this.value==\'\'){this.style.color=\'#434343\';this.value=\'请输入途经站点\';}" onfocus="if (this.value == \'请输入途经站点\'){this.style.color=\'#000000\';this.value=\'\';}" onkeyup="fnKeySearchSuggest(\'\', this, 230, 75, 239, \'drive\', 0, event);" value="请输入途经站点"><!--<em class="dropdwon-icon"></em>--><em class="del-icon" id="remove_point_' + _viaNun + '"></em></p>'); //if($(\'navReturnIcon\').style.display==\'none\'){}else{$(\'txtDriveEnd\').style.color=\'#000000\';$(\'txtDriveEnd\').focus();}
+                deleteFun(_viaNun);
+                _viaNun++;
+            } else {
+                if (jQuery(".via-form").length < 4) {
+                    jQuery(".add-via-line").append('<p class="via-form J-viaForm position-re"><span class="via-num" id="via_num_' + _viaNun + '">' + _viaNun + '</span><input class="myclass" type="text" id="txt_via_' + _viaNun + '" name="" onchange="this.style.color=\'#000000\'" onblur="if(!__EdushiSuggest.IsMouseOnSuggestPanel){__EdushiSuggest.Hide();}if(this.value==\'\'){this.style.color=\'#434343\';this.value=\'请输入途经站点\';}" onfocus="if (this.value == \'请输入途经站点\'){this.style.color=\'#000000\';this.value=\'\';}" onkeyup="fnKeySearchSuggest(\'\', this, 230, 75, 239, \'drive\', 0, event);" value="请输入途经站点"><em class="del-icon" id="remove_point_' + _viaNun + '"></em></p>');
+                    deleteFun(_viaNun);
+                    _viaNun++;
+                } else {
+                    return false;
+                }
+            }
+        });
+        //天气
+        getWeather(GlobalConfig.CityName);
+    });
+    function deleteFun(Temp_viaNun) {//Temp_viaNun
+        jQuery("#remove_point_" + Temp_viaNun + "").click(function () {
+            jQuery(".J-viaForm").last().remove();
+            _viaNun--;
+            //            alert(_viaNun);
+            //            alert(jQuery(".J-viaForm").length);
+            if (jQuery(".J-viaForm").length < 1) {
+                jQuery("#navReturnIcon").show();
+                jQuery(".drive-searchSta, .drive-searchEnd").css({ "width": "220px" });
+                //_viaNun = 1;
+            }
+        });
+    }
+</script>
+<script type="text/javascript" language="javascript">
+//设为首页
+function SetHome(obj,url){
+    try{
+		obj.style.behavior='url(#default#homepage)';
+		obj.setHomePage(url);
+   }catch(e){
+		if(window.netscape){
+			try{
+				netscape.security.PrivilegeManager.enablePrivilege("UniversalXPConnect");
+			}catch(e){
+				alert("抱歉，此操作被浏览器拒绝！\n\n请在浏览器地址栏输入'about:config'并回车然后将[signed.applets.codebase_principal_support]设置为'true'");
+			}
+		}else{
+			alert("抱歉，您的浏览器不支持自动设置首页，请使用浏览器菜单手动设置！");
+		}
+	}
+}
+</script>
+<script type="text/javascript" language="javascript">
+    fnLoadInit();
+    var __EdushiSuggest = new Suggest(134, 70, 172, document.body);
+    __EdushiSuggest._loadData();
+    ENetwork.DownloadScript(GlobalConfig.Api4Url + 'default.aspx?MapID=EdushiMap&City={$CityCode}&L={$Language}&x={$CenterX}&y={$CenterY}&w=' + _MapWidth + '&h=' + _MapHeight + '&eye=true&ew=178&eh=138&e=utf-8&z=1&v=0&zb=true&s=true&solution=default');
+</script>
+<script type="text/javascript" language="javascript">
+    var BMap_Map = null;
+    //var local = null;
+    var ac = null;
+    var tempX = 0;
+    var tempY = 0;
+    var tempW = 0;
+</script>
+<script type="text/javascript">
+    var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+    document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3F99a36e54478482e04c158ab069a3e598' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript" src="http://www.google-analytics.com/ga.js"></script>
+<script type="text/javascript">
+    var pageTracker = _gat._getTracker("{$GoogleID}");
+    pageTracker._initData();
+    pageTracker._trackPageview();
+</script>
+{$StatisticsCode}
+<script type="text/javascript">
+    setTimeout(function () { AddSearchInfoWindowJsLink(); }, 2000);
+    setTimeout(function () {
+        //alert(jQuery("#AlaMap_Plug_BaiduMap",vM.ContentWindow.document).html());
+        //监听是否切换到了百度地图即DIV：AlaMap_Plug_BaiduMap有了内容
+        jQuery("#AlaMap_Plug_BaiduMap", vM.ContentWindow.document).bind('DOMNodeInserted', function (e) {
+            if (jQuery("div[title='退出全景']", vM.ContentWindow.document)) {
+                //                jQuery("div[title='退出全景']", vM.ContentWindow.document).css("top", 30);
+                //                jQuery("div[title='退出全景']", vM.ContentWindow.document).css("right", 300);
+                jQuery("div[title='退出全景']", vM.ContentWindow.document).css({
+                    'top': 20,
+                    'right': 40,
+                    'width': 70,
+                    'height': 34,
+                    'background-image': 'url(/Images/return_bg.png)',
+                    'background-repeat': 'no-repeat'
+                });
+            }
+            //            alert('element now contains: ' + jQuery(e.target).html());
+        });
+    }, 2000);
+</script>

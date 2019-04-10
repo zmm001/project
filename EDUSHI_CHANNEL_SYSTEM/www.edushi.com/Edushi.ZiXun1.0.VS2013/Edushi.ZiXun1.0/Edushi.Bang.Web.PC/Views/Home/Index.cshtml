@@ -1,0 +1,275 @@
+﻿@model Edushi.Bang.Web.PC.Models.HomeModel
+@using Edushi.Bang.Model
+@using Edushi.Bang.Special;
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>@(Model.Base.CityName)生活帮-本地资讯门户网站|E都市</title>
+    <meta name="keywords" content="生活帮,门户网站" />
+    <meta name="description" content="@(Model.Base.CityName)生活帮,最全的本地综合资讯门户网站,旨在为@(Model.Base.CityName)网民提供最新的新闻资讯和互动娱乐服务,内容涵盖@(Model.Base.CityName)本地热点新闻、娱乐时尚、吃喝玩乐等资讯.生活在@(Model.Base.CityName),就上@(Model.Base.CityName)生活帮." />
+    <meta http-equiv="mobile-agent" content="format=html5; url=@Request.Url.AbsoluteUri.ToLower().Replace("/bang", "/bang/3g").GetRedirectPermanentURL1()" />
+    <script src="http://res.edushi.com/js/jquery-1.7.2.min.js" type="text/javascript"></script>
+    <script src="http://res.edushi.com/dian/5_0/js/main.js" type="text/javascript"></script>
+    <link href="http://res.edushi.com/dian/5_0/css/base.css" rel="stylesheet"/>
+    <script type="text/javascript" src="http://res.edushi.com/dian/5_0/js/koala.min.1.5.js"></script>
+    <script type="text/javascript" src="http://res.edushi.com/dian/5_0/js/noPic.js"></script>
+    @*<link href="http://res.edushi.com/bang/v3/asset/css/detail.css" rel="stylesheet" />*@
+    <link href="http://res.edushi.com/bang/v3/asset/css/index.css" rel="stylesheet" />
+</head>
+<body>
+    @{Html.RenderAction("_header", "Shared", new { id = "-1" });}
+    <div class="wrapper clr">
+    @if (Model.YuLe != null && Model.YuLe.Count > 0)
+    {
+        <div class="channel-recom">
+            <div class="sub-newsnav clr">
+                <p>娱 乐 频 道</p>
+            </div>
+            <div class="clr">
+        	    <div class="f-r channel-right">
+            	    <ul class="clr">
+                    @for (int i = 0; i < Model.YuLe.Count; i++)
+                    {
+                        if (i < 4)
+                        {
+                            InfoArticleModel item = Model.YuLe[i];
+                            string url = Common.GetInfoUrl(Model.Base.BangUrl, item.IT_ParentPath, item.IT_ID, item.IA_ID);
+                	    <li>
+                    	    <a href="@url" target="_blank"><img src="@item.IA_Pic.GetPicReplace("http://cpic7.edushi.com/", Common.GetConfigString("CdnPicUrl"))" /></a>
+                            <p><a href="@url" target="_blank">@item.IA_Title</a></p>
+                        </li>
+                        }
+                        else
+                        {
+                            break;
+                        }
+                    }
+                    </ul>
+                </div>
+                <div class="f-l channel-left">
+            	    <ul class="channel-list">
+                    @for (int i = 0; i < Model.YuLe.Count; i++)
+                    {
+                        if (i >= 4)
+                        {
+                            InfoArticleModel item = Model.YuLe[i];
+                            string url = Common.GetInfoUrl(Model.Base.BangUrl, item.IT_ParentPath, item.IT_ID, item.IA_ID);
+                            
+                            if (i == 4 || i == 9)
+                            {
+                                 <li class="bold"><a href="@url" target="_blank">@item.IA_Title</a></li>
+                            }
+                            else
+                            {
+                                string typeUrl = Common.GetInfoListUrl(Model.Base.BangUrl, item.IT_ParentPath, item.IT_ID);
+                                <li><span><a href="@typeUrl" target="_blank">@item.IT_Name</a> | </span><a href="@url" target="_blank">@item.IA_Title</a></li>
+                            }
+                        }
+                    }
+                    </ul>
+                </div>
+            </div>
+            <p class="clear"></p>
+        </div>
+    }
+    @if (Model.ShiXun != null && Model.ShiXun.Count > 0)
+    {
+        <div class="channel-recom">
+            <div class="sub-newsnav clr">
+                <p>头 条 频 道</p>
+            </div>
+            <div class="clr">
+        	    <div class="f-r channel-right">
+            	    <ul class="clr">
+                	    @for (int i = 0; i < Model.ShiXun.Count; i++)
+                        {
+                            if (i < 4)
+                            {
+                                InfoArticleModel item = Model.ShiXun[i];
+                                string url = Common.GetInfoUrl(Model.Base.BangUrl, item.IT_ParentPath, item.IT_ID, item.IA_ID);
+                	            <li>
+                    	            <a href="@url" target="_blank"><img src="@item.IA_Pic.GetPicReplace("http://cpic7.edushi.com/", Common.GetConfigString("CdnPicUrl"))" /></a>
+                                    <p><a href="@url" target="_blank">@item.IA_Title</a></p>
+                                </li>
+                            }
+                            else
+                            {
+                                break;
+                            }
+                        }
+                    </ul>
+                </div>
+                <div class="f-l channel-left">
+            	    <ul class="channel-list">
+                	    @for (int i = 0; i < Model.ShiXun.Count; i++)
+                        {
+                            if (i >= 4)
+                            {
+                                InfoArticleModel item = Model.ShiXun[i];
+                                string url = Common.GetInfoUrl(Model.Base.BangUrl, item.IT_ParentPath, item.IT_ID, item.IA_ID);
+                            
+                                if (i == 4 || i == 9)
+                                {
+                                     <li class="bold"><a href="@url" target="_blank">@item.IA_Title</a></li>
+                                }
+                                else
+                                {
+                                    string typeUrl = Common.GetInfoListUrl(Model.Base.BangUrl, item.IT_ParentPath, item.IT_ID);
+                                    <li><span><a href="@typeUrl" target="_blank">@item.IT_Name</a> | </span><a href="@url" target="_blank">@item.IA_Title</a></li>
+                                }
+                            }
+                        }
+                    </ul>
+                </div>
+            </div>
+            <p class="clear"></p>
+        </div>
+    }
+    @*@if (Model.LiRen != null && Model.LiRen.Count > 0)
+    {
+        <div class="channel-recom">
+            <div class="sub-newsnav clr">
+                <p>丽 人 频 道</p>
+            </div>
+            <div class="clr">
+        	    <div class="f-r channel-right">
+            	    <ul class="clr">
+                	   @for (int i = 0; i < Model.LiRen.Count; i++)
+                        {
+                            if (i < 4)
+                            {
+                                InfoArticleModel item = Model.LiRen[i];
+                                string url = Common.GetInfoUrl(Model.Base.BangUrl, item.IT_ParentPath, item.IT_ID, item.IA_ID);
+                	            <li>
+                    	            <a href="@url" target="_blank"><img src="@item.IA_Pic.GetPicReplace("http://cpic7.edushi.com/", Common.GetConfigString("CdnPicUrl"))" /></a>
+                                    <p><a href="@url" target="_blank">@item.IA_Title</a></p>
+                                </li>
+                            }
+                            else
+                            {
+                                break;
+                            }
+                        }
+                    </ul>
+                </div>
+                <div class="f-l channel-left">
+            	    <ul class="channel-list">
+                	    @for (int i = 0; i < Model.LiRen.Count; i++)
+                        {
+                            if (i >= 4)
+                            {
+                                InfoArticleModel item = Model.LiRen[i];
+                                string url = Common.GetInfoUrl(Model.Base.BangUrl, item.IT_ParentPath, item.IT_ID, item.IA_ID);
+                            
+                                if (i == 4 || i == 9)
+                                {
+                                     <li class="bold"><a href="@url" target="_blank">@item.IA_Title</a></li>
+                                }
+                                else
+                                {
+                                    string typeUrl = Common.GetInfoListUrl(Model.Base.BangUrl, item.IT_ParentPath, item.IT_ID);
+                                    <li><span><a href="@typeUrl" target="_blank">@item.IT_Name</a> | </span><a href="@url" target="_blank">@item.IA_Title</a></li>
+                                }
+                            }
+                        }
+                    </ul>
+                </div>
+            </div>
+            <p class="clear"></p>
+        </div>
+    }*@
+    @if (Model.QiLe != null && Model.QiLe.Count > 0)
+    {
+        <div class="channel-recom">
+            <div class="sub-newsnav clr">
+                <p>奇 乐 频 道</p>
+            </div>
+            <div class="clr">
+        	    <div class="f-r channel-right">
+            	    <ul class="clr">
+                	    @for (int i = 0; i < Model.QiLe.Count; i++)
+                        {
+                            if (i < 4)
+                            {
+                                InfoArticleModel item = Model.QiLe[i];
+                                string url = Common.GetInfoUrl(Model.Base.BangUrl, item.IT_ParentPath, item.IT_ID, item.IA_ID);
+                	            <li>
+                    	            <a href="@url" target="_blank"><img src="@item.IA_Pic.GetPicReplace("http://cpic7.edushi.com/", Common.GetConfigString("CdnPicUrl"))" /></a>
+                                    <p><a href="@url" target="_blank">@item.IA_Title</a></p>
+                                </li>
+                            }
+                            else
+                            {
+                                break;
+                            }
+                        }
+                    </ul>
+                </div>
+                <div class="f-l channel-left">
+            	    <ul class="channel-list">
+                	    @for (int i = 0; i < Model.QiLe.Count; i++)
+                        {
+                            if (i >= 4)
+                            {
+                                InfoArticleModel item = Model.QiLe[i];
+                                string url = Common.GetInfoUrl(Model.Base.BangUrl, item.IT_ParentPath, item.IT_ID, item.IA_ID);
+                            
+                                if (i == 4 || i == 9)
+                                {
+                                     <li class="bold"><a href="@url" target="_blank">@item.IA_Title</a></li>
+                                }
+                                else
+                                {
+                                    string typeUrl = Common.GetInfoListUrl(Model.Base.BangUrl, item.IT_ParentPath, item.IT_ID);
+                                    <li><span><a href="@typeUrl" target="_blank">@item.IT_Name</a> | </span><a href="@url" target="_blank">@item.IA_Title</a></li>
+                                }
+                            }
+                        }
+                    </ul>
+                </div>
+            </div>
+            <p class="clear"></p>
+        </div>
+    }
+    
+    </div>
+    <div class="page-footer">
+	    <div class="wrapper">
+    	    <ul class="footer-nav clr">  
+        	    @*<li><a href="http://aladdin.edushi.com/" target="_blank">阿拉丁</a>|</li>*@
+                <li><a href="http://www.edushi.com/about/" target="_blank">关于E都市</a>|</li>
+                @*<li><a href="http://@(Model.Base.CityCode.Replace("shanghai", "sh").Replace("hangzhou", "hz")).edushi.com/" target="_blank">城市地图</a>|</li>
+                <li><a href="http://@(Model.Base.CityCode).edushi.com/adserver/index.html" target="_blank">广告服务</a>|</li>
+                <li><a href="http://www.edushi.com/about/GoToMap.htm" target="_blank">商务合作</a>|</li>*@
+                
+                <li><a href="http://www.edushi.com/about/Declear.htm" target="_blank">法律声明</a>|</li>
+                <li><a href="http://www.edushi.com/about/ContactUs.htm" target="_blank">联系我们</a></li>
+            </ul>
+            <div class="footer-copyright">
+        	    <p>
+            	    广告经营许可证号:3301082100176&nbsp;&nbsp;&nbsp;@*出版号:ISBN:7-900200-28-2&nbsp;&nbsp;&nbsp;*@甲测资字:3300168&nbsp;&nbsp;&nbsp;浙B2-20050306&nbsp;&nbsp;&nbsp;@*<a target="_blank" href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=33010502000262" style="color:#808080">*@浙公网安备 33010502000262号@*</a>*@<br />
+				    Copyright &copy; 2004 - 2017 EDUSHI. All Rights Reserved
+                </p>
+                @*阿拉丁股份&nbsp;&nbsp;&nbsp;版权所有*@
+            </div>
+        </div>
+    </div>
+
+    @*@{Html.RenderAction("_footer", "Shared");}*@
+    <script type="text/javascript" language="javascript">
+        var url = '@(Model.Base.DataCetnerAdDataUrl)Ad2.0/ads.aspx?citycode=@(Model.Base.CityCode)&l=@(Model.Base.Language)&manyKeys=shouyetonglantupian&callback=showManyAd&rnd=' + Math.random();
+        $.getScript(url);
+        function showManyAd(AdData, AdKey) {
+            if (AdData) {
+                var AdDataArr = AdData.split(',');
+                var AdKeyArr = AdKey.split(',');
+                if (AdDataArr.length == AdKeyArr.length) {
+                    for (var i = 0; i < AdKeyArr.length; i++) {
+                        document.getElementById(AdKeyArr[i]).innerHTML = AdDataArr[i];
+                    }
+                }
+            }
+        }
+    </script>
+</body>
+</html>

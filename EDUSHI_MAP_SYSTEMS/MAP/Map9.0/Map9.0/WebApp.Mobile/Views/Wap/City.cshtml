@@ -1,0 +1,543 @@
+﻿@{
+    ViewBag.Title = "City";
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" id="viewport" content="width=device-width,initial-scale=1.0, maximum-scale=1.0,minimum-scale=1.0,user-scalable=no" />
+    <title>城市选择</title>
+    <link href="~/Content/common.css" rel="stylesheet" />
+    <link href="~/Content/city.css" rel="stylesheet" />
+    <script>
+        document.documentElement.style.fontSize = 100 * ((document.documentElement.clientWidth) / 750) + "px";
+    </script>
+    <script src="~/Scripts/jquery-1.8.3.min.js"></script>
+</head>
+<body>
+    <section class="top-fixed">
+        <header id="currentCity"><a href="javascript:history.go(-1);" class="back"></a></header>
+    </section>
+    <section class="city-box">
+        <div class="current-city">
+            <span class="map3d">杭州</span>
+        </div>
+        <div class="title" id="spell_热">热门城市</div>
+        <div class="hot-city">
+            <span id="310000#121.492,31.222">上海</span>
+            <span id="440300#114.085947,22.547">深圳</span>
+            <span id="440100#113.323552,23.106561">广州</span>
+            <span id="330100#120.209947,30.245853">杭州</span>
+            <span id="320100#118.796623,32.059352">南京</span>
+            <span id="500000#106.550464,29.563761">重庆</span>
+            <span id="510100#104.063927,30.657393">成都</span>
+            <span id="610100#108.936589,34.338491">西安</span>
+            <span id="120000#117.232,39.081">天津</span>
+            <span id="420100#114.305215,30.592935">武汉</span>
+            <span id="430100#112.917927,28.220256">长沙</span>
+            <span id="360100#115.857531,28.663088">南昌</span>
+            <span id="210100#123.431913,41.812973">沈阳</span>
+            <span id="410100#113.625126,34.745868">郑州</span>
+            <span id="220100#125.326012,43.83261">长春</span>
+            <span id="310500#120.619585,31.299379">苏州</span>
+            <span id="340100#117.227308,31.82057">合肥</span>
+            <span id="350200#118.110221,24.490474">厦门</span>
+            <span id="370200#120.379178,36.091349">青岛</span>
+            <span id="460100#110.348734,20.018775">海口</span>
+        </div>
+        <div class="city-list">
+            <div class="title" id="spell_A">A</div>
+            <ul>
+                <li id="152900">阿拉善盟</li>
+                <li id="210300">鞍山</li>
+                <li id="340800">安庆</li>
+                <li id="410500">安阳</li>
+                <li id="513200">阿坝藏族羌族自治州</li>
+                <li id="520400">安顺</li>
+                <li id="542500">阿里</li>
+                <li id="610900">安康</li>
+                <li id="652900">阿克苏</li>
+                <li id="654300">阿勒泰</li>
+                <li id="659002">阿拉尔</li>
+                <li id="820000">澳门</li>
+
+            </ul>
+            <div class="title" id="spell_B">B</div>
+            <ul>
+                <li id="110000">北京</li>
+                <li id="130600">保定</li>
+                <li id="150200">包头</li>
+                <li id="150800">巴彦淖尔</li>
+                <li id="210500">本溪</li>
+                <li id="220600">白山</li>
+                <li id="220800">白城</li>
+                <li id="340300">蚌埠</li>
+                <li id="341600">亳州</li>
+                <li id="371600">滨州</li>
+                <li id="450500">北海</li>
+                <li id="451000">百色</li>
+                <li id="511900">巴中</li>
+                <li id="520500">毕节</li>
+                <li id="530500">保山</li>
+                <li id="610300">宝鸡</li>
+                <li id="620400">白银</li>
+                <li id="652700">博尔塔拉蒙古自治州</li>
+                <li id="652800">巴音郭楞蒙古自治州</li>
+            </ul>
+            <div class="title" id="spell_C">C</div>
+            <ul>
+                <li id="130800">承德</li>
+                <li id="130900">沧州</li>
+                <li id="140400">长治</li>
+                <li id="150400#118.969,42.279" class="sand">赤峰</li>
+                <li id="211300">朝阳</li>
+                <li id="220100#125.326012,43.83261" class="sand">长春</li>
+                <li id="320400">常州</li>
+                <li id="341100">滁州</li>
+                <li id="341700">池州</li>
+                <li id="430100#112.917927,28.220256" class="sand">长沙</li>
+                <li id="430700">常德</li>
+                <li id="431000">郴州</li>
+                <li id="445100">潮州</li>
+                <li id="451400">崇左</li>
+                <li id="500000#106.550464,29.563761" class="sand">重庆</li>
+                <li id="510100#104.063927,30.657393">成都</li>
+                <li id="532300">楚雄彝族自治州</li>
+                <li id="540300">昌都</li>
+                <li id="652300">昌吉回族自治州</li>
+            </ul>
+            <div class="title" id="spell_D">D</div>
+            <ul>
+                <li id="140200">大同</li>
+                <li id="210200">大连</li>
+                <li id="210600">丹东</li>
+                <li id="230600">大庆</li>
+                <li id="232700">大兴安岭</li>
+                <li id="370500">东营</li>
+                <li id="371400#116.31,37.459" class="sand">德州</li>
+                <li id="441900#113.757,23.031" class="sand">东莞</li>
+                <li id="460400">儋州</li>
+                <li id="510600">德阳</li>
+                <li id="511700">达州</li>
+                <li id="533100">大理白族自治州</li>
+                <li id="533400">迪庆藏族自治州</li>
+                <li id="621100">定西</li>
+
+            </ul>
+            <div class="title" id="spell_E">E</div>
+            <ul>
+                <li id="150600#107.482,38.183" class="sand">鄂尔多斯</li>
+                <li id="420700">鄂州</li>
+                <li id="422800">恩施土家族苗族自治州</li>
+            </ul>
+            <div class="title" id="spell_F">F</div>
+            <ul>
+                <li id="210400">抚顺</li>
+                <li id="210900">阜新</li>
+                <li id="341200">阜阳</li>
+                <li id="350100#119.305,26.063" class="sand">福州</li>
+                <li id="350181#119.354,25.714" class="sand">福清</li>
+                <li id="361000">抚州</li>
+                <li id="440600#113.108,23.0195" class="sand">佛山</li>
+                <li id="450600">防城港</li>
+
+            </ul>
+            <div class="title" id="spell_G">G</div>
+            <ul>
+                <li id="360700">赣州</li>
+                <li id="440100#113.323552,23.106561" class="sand">广州</li>
+                <li id="450300">桂林</li>
+                <li id="450800">贵港</li>
+                <li id="511600">广元</li>
+                <li id="513300">甘孜藏族自治州</li>
+                <li id="520100#106.768,26.631" class="sand">贵阳</li>
+                <li id="623000">甘南藏族自治州</li>
+                <li id="632600">果洛藏族自治州</li>
+                <li id="640400">固原</li>
+            </ul>
+            <div class="title" id="spell_H">H</div>
+            <ul>
+                <li id="130400">邯郸</li>
+                <li id="131100">衡水</li>
+                <li id="150100#111.706,40.814" class="sand">呼和浩特</li>
+                <li id="150700">呼伦贝尔</li>
+                <li id="211400">葫芦岛</li>
+                <li id="230100#126.655,45.743" class="sand">哈尔滨</li>
+                <li id="230400">鹤岗</li>
+                <li id="231100">黑河</li>
+                <li id="320800">淮安</li>
+                <li id="330100#120.209947,30.245853" class="sand">杭州</li>
+                <li id="330500">湖州</li>
+                <li id="340100#117.227308,31.82057" class="sand">合肥</li>
+                <li id="340400">淮南</li>
+                <li id="340600">淮北</li>
+                <li id="341000">黄山</li>
+                <li id="371700">菏泽</li>
+                <li id="410600">鹤壁</li>
+                <li id="420200">黄石</li>
+                <li id="421100">黄冈</li>
+                <li id="430400">衡阳</li>
+                <li id="431200">怀化</li>
+                <li id="441300#114.425,23.088" class="sand">惠州</li>
+                <li id="441600">河源</li>
+                <li id="451200">河池</li>
+                <li id="330500#110.348734,20.018775" class="sand">海口</li>
+                <li id="532500">红河哈尼族彝族自治州</li>
+                <li id="532500#107.038,33.07" class="sand">汉中</li>
+                <li id="630200">海东</li>
+                <li id="632200">海北藏族自治州</li>
+                <li id="632300">黄南藏族自治州</li>
+                <li id="632500">海南藏族自治州</li>
+                <li id="632800">海西蒙古族藏族自治州</li>
+                <li id="650500">哈密</li>
+                <li id="653200">和田</li>
+            </ul>
+            <div class="title" id="spell_J">J</div>
+            <ul>
+                <li id="140500">晋城</li>
+                <li id="140700">晋中</li>
+                <li id="210700">锦州</li>
+                <li id="220200">吉林</li>
+                <li id="230300">鸡西</li>
+                <li id="230822#130.569,46.245" class="sand">佳木斯</li>
+                <li id="330400">嘉兴</li>
+                <li id="330700">金华</li>
+                <li id="360200">景德镇</li>
+                <li id="360400">九江</li>
+                <li id="360800">吉安</li>
+                <li id="370100">济南</li>
+                <li id="370800#116.98,35.59" class="sand">济宁</li>
+                <li id="410800">焦作</li>
+                <li id="419001">济源</li>
+                <li id="420800">荆门</li>
+                <li id="421000">荆州</li>
+                <li id="440700">江门</li>
+                <li id="445200">揭阳</li>
+                <li id="620200">嘉峪关</li>
+                <li id="620300">金昌</li>
+                <li id="620900">酒泉</li>
+            </ul>
+            <div class="title" id="spell_K">K</div>
+            <ul>
+                <li id="410200">开封</li>
+                <li id="530100#102.745,25.072" class="sand">昆明</li>
+                <li id="650200">克拉玛依</li>
+                <li id="653000">克孜勒苏柯尔克孜自治州</li>
+                <li id="653100">喀什</li>
+            </ul>
+            <div class="title" id="spell_L">L</div>
+            <ul>
+                <li id="131000">廊坊</li>
+                <li id="141000">临汾</li>
+                <li id="141100">吕梁</li>
+                <li id="211100">辽阳</li>
+                <li id="220400">辽源</li>
+                <li id="320700">连云港</li>
+                <li id="331100">丽水</li>
+                <li id="341500">六安</li>
+                <li id="350800">龙岩</li>
+                <li id="371200">莱芜</li>
+                <li id="371300">临沂</li>
+                <li id="371500">聊城</li>
+                <li id="410300">洛阳</li>
+                <li id="411100">漯河</li>
+                <li id="430281#113.506,27.668" class="sand">醴陵</li>
+                <li id="431300">娄底</li>
+                <li id="450200">柳州</li>
+                <li id="510500">泸州</li>
+                <li id="511100">乐山</li>
+                <li id="513400">凉山彝族自治州</li>
+                <li id="520200">六盘水</li>
+                <li id="530700">丽江</li>
+                <li id="530900">临沧</li>
+                <li id="540100">拉萨</li>
+                <li id="540400">林芝</li>
+                <li id="620100#103.872,36.046" class="sand">兰州</li>
+                <li id="621200">陇南</li>
+                <li id="622900">临夏回族自治州</li>
+            </ul>
+            <div class="title" id="spell_M">M</div>
+            <ul>
+                <li id="231000">牡丹江</li>
+                <li id="340500">马鞍山</li>
+                <li id="440900">茂名</li>
+                <li id="441400">梅州</li>
+                <li id="510700">绵阳</li>
+                <li id="511400">眉山</li>
+            </ul>
+            <div class="title" id="spell_N">N</div>
+            <ul>
+                <li id="320100#118.796623,32.059352" class="sand">南京</li>
+                <li id="320600">南通</li>
+                <li id="330200">宁波</li>
+                <li id="350700">南平</li>
+                <li id="350900">宁德</li>
+                <li id="360100#115.857531,28.663088" class="sand">南昌</li>
+                <li id="411300">南阳</li>
+                <li id="450100#108.338,22.827" class="sand">南宁</li>
+                <li id="511000">内江</li>
+                <li id="511300">南充</li>
+                <li id="533300">怒江傈僳族自治州</li>
+                <li id="540600">那曲</li>
+            </ul>
+            <div class="title" id="spell_P">P</div>
+            <ul>
+                <li id="211100">盘锦</li>
+                <li id="350300">莆田</li>
+                <li id="360300">萍乡</li>
+                <li id="410400">平顶山</li>
+                <li id="410900">濮阳</li>
+                <li id="510400">攀枝花</li>
+                <li id="530800">普洱</li>
+                <li id="620800">平凉</li>
+            </ul>
+            <div class="title" id="spell_Q">Q</div>
+            <ul>
+                <li id="130300">秦皇岛</li>
+                <li id="230200">齐齐哈尔</li>
+                <li id="230900">七台河</li>
+                <li id="330800">衢州</li>
+                <li id="350500">泉州</li>
+                <li id="370200#120.379178,36.091349" class="sand">青岛</li>
+                <li id="429005">潜江</li>
+                <li id="441800">清远</li>
+                <li id="450700">钦州</li>
+                <li id="522300">黔西南布依族苗族自治州</li>
+                <li id="522600">黔东南苗族侗族自治州</li>
+                <li id="522700">黔南布依族苗族自治州</li>
+                <li id="530300">曲靖</li>
+                <li id="621000">庆阳</li>
+            </ul>
+            <div class="title" id="spell_R">R</div>
+            <ul>
+                <li id="371100">日照</li>
+                <li id="540200">日喀则</li>
+            </ul>
+            <div class="title" id="spell_S">S</div>
+            <ul>
+                <li id="130100">石家庄</li>
+                <li id="140600">朔州</li>
+                <li id="210100#123.431913,41.812973" class="sand">沈阳</li>
+                <li id="220300">四平</li>
+                <li id="220700">松原</li>
+                <li id="230500">双鸭山</li>
+                <li id="231200">绥化</li>
+                <li id="310000#121.492,31.222" class="sand">上海</li>
+                <li id="320500#120.619585,31.299379" class="sand">苏州</li>
+                <li id="321300">宿迁</li>
+                <li id="330600#120.587,29.991" class="sand">绍兴</li>
+                <li id="341300">宿州</li>
+                <li id="350400">三明</li>
+                <li id="361100">上饶</li>
+                <li id="411200">三门峡</li>
+                <li id="411400">商丘</li>
+                <li id="420300">十堰</li>
+                <li id="421300">随州</li>
+                <li id="429021">神农架林区</li>
+                <li id="430500">邵阳</li>
+                <li id="440200">韶关</li>
+                <li id="440300#114.085947,22.547" class="sand">深圳</li>
+                <li id="440500">汕头</li>
+                <li id="441500">汕尾</li>
+                <li id="460200">三亚</li>
+                <li id="460300">三沙</li>
+                <li id="510900">遂宁</li>
+                <li id="540500">山南</li>
+                <li id="611000">商洛</li>
+                <li id="640200">石嘴山</li>
+                <li id="659001">石河子</li>
+            </ul>
+            <div class="title" id="spell_T">T</div>
+            <ul>
+                <li id="120100#117.232,39.081" class="sand">天津</li>
+                <li id="130200">唐山</li>
+                <li id="140100">太原</li>
+                <li id="150500">通辽</li>
+                <li id="211200">铁岭</li>
+                <li id="220500">通化</li>
+                <li id="321200">泰州</li>
+                <li id="331000">台州</li>
+                <li id="340700">铜陵</li>
+                <li id="370900">泰安</li>
+                <li id="429006">天门</li>
+                <li id="520600">铜仁</li>
+                <li id="610200">铜川</li>
+                <li id="620500">天水</li>
+                <li id="650400">吐鲁番</li>
+                <li id="654200">塔城</li>
+                <li id="659003">图木舒克</li>
+                <li id="710000">台湾</li>
+            </ul>
+            <div class="title" id="spell_W">W</div>
+            <ul>
+                <li id="150300">乌海</li>
+                <li id="150900">乌兰察布</li>
+                <li id="320200">无锡</li>
+                <li id="330300">温州</li>
+                <li id="340200">芜湖</li>
+                <li id="371000">威海</li>
+                <li id="420100#114.305215,30.592935" class="sand">武汉</li>
+                <li id="450400">梧州</li>
+                <li id="532600">文山壮族苗族自治州</li>
+                <li id="610500">渭南</li>
+                <li id="620600">武威</li>
+                <li id="640300">吴忠</li>
+                <li id="650100">乌鲁木齐</li>
+                <li id="659004">五家渠</li>
+            </ul>
+            <div class="title" id="spell_X">X</div>
+            <ul>
+                <li id="350200">邢台</li>
+                <li id="140900">忻州</li>
+                <li id="152200">兴安盟</li>
+                <li id="152500">锡林郭勒盟</li>
+                <li id="320300">徐州</li>
+                <li id="341800">宣城</li>
+                <li id="350200#118.110221,24.490474" class="sand">厦门</li>
+                <li id="360500">新余</li>
+                <li id="410700">新乡</li>
+                <li id="411000#113.81,34.02" class="sand">许昌</li>
+                <li id="411500">信阳</li>
+                <li id="420600">襄阳</li>
+                <li id="420900">孝感</li>
+                <li id="421200">咸宁</li>
+                <li id="429004">仙桃</li>
+                <li id="430300">湘潭</li>
+                <li id="433100">湘西土家族苗族自治州</li>
+                <li id="532800">西双版纳傣族自治州</li>
+                <li id="610100#108.936589,34.338491" class="sand">西安</li>
+                <li id="610400">咸阳</li>
+                <li id="630100#101.715,36.645" class="sand">西宁</li>
+                <li id="810000">香港</li>
+            </ul>
+            <div class="title" id="spell_Y">Y</div>
+            <ul>
+                <li id="140300">阳泉</li>
+                <li id="140800">运城</li>
+                <li id="210800">营口</li>
+                <li id="222400">延边朝鲜族自治州</li>
+                <li id="230700">伊春</li>
+                <li id="320900">盐城</li>
+                <li id="321000">扬州</li>
+                <li id="360600">鹰潭</li>
+                <li id="360900">宜春</li>
+                <li id="370600#121.405,37.538" class="sand">烟台</li>
+                <li id="371725#115.942,35.593" class="sand">郓城</li>
+                <li id="420500">宜昌</li>
+                <li id="430600">岳阳</li>
+                <li id="430900">益阳</li>
+                <li id="431100#111.631,26.231" class="sand">永州</li>
+                <li id="441700">阳江</li>
+                <li id="445300">云浮</li>
+                <li id="450900">玉林</li>
+                <li id="511500">宜宾</li>
+                <li id="511800">雅安</li>
+                <li id="530400">玉溪</li>
+                <li id="610600">延安</li>
+                <li id="610800">榆林</li>
+                <li id="632700">玉树藏族自治州</li>
+                <li id="640100">银川</li>
+                <li id="654000">伊犁哈萨克自治州</li>
+            </ul>
+            <div class="title" id="spell_Z">Z</div>
+            <ul>
+                <li id="130700">张家口</li>
+                <li id="321100">镇江</li>
+                <li id="330900">舟山</li>
+                <li id="350600">漳州</li>
+                <li id="370300#118.051,36.813" class="sand">淄博</li>
+                <li id="370400">枣庄</li>
+                <li id="410100#113.625126,34.745868" class="sand">郑州</li>
+                <li id="411600">周口</li>
+                <li id="411700">驻马店</li>
+                <li id="430200">株洲</li>
+                <li id="430800">张家界</li>
+                <li id="440400">珠海</li>
+                <li id="440800">湛江</li>
+                <li id="441200">肇庆</li>
+                <li id="442000">中山</li>
+                <li id="510300">自贡</li>
+                <li id="512000">资阳</li>
+                <li id="520300">遵义</li>
+                <li id="530600">昭通</li>
+                <li id="620700">张掖</li>
+                <li id="640500">中卫</li>
+            </ul>
+        </div>
+    </section>
+    <section class="city-anchor">
+        <span data-tit="spell_热">热</span>
+        <span data-tit="spell_A">A</span>
+        <span data-tit="spell_B">B</span>
+        <span data-tit="spell_C">C</span>
+        <span data-tit="spell_D">D</span>
+        <span data-tit="spell_E">E</span>
+        <span data-tit="spell_F">F</span>
+        <span data-tit="spell_G">G</span>
+        <span data-tit="spell_H">H</span>
+        <span data-tit="spell_J">J</span>
+        <span data-tit="spell_K">K</span>
+        <span data-tit="spell_L">L</span>
+        <span data-tit="spell_M">M</span>
+        <span data-tit="spell_N">N</span>
+        <span data-tit="spell_P">P</span>
+        <span data-tit="spell_Q">Q</span>
+        <span data-tit="spell_R">R</span>
+        <span data-tit="spell_S">S</span>
+        <span data-tit="spell_T">T</span>
+        <span data-tit="spell_W">W</span>
+        <span data-tit="spell_X">X</span>
+        <span data-tit="spell_Y">Y</span>
+        <span data-tit="spell_Z">Z</span>
+    </section>
+    <section class="letter-style"></section>
+
+
+    <script src="~/Scripts/common.js"></script>
+    @*
+        <script src="~/Scripts/Constants.js"></script>*@
+    <script type="text/javascript">
+        $(function () {
+            $(".city-anchor span").click(function () {
+                var _text = $(this).text();
+                $(".letter-style").text(_text).fadeIn(200).delay(1000).fadeOut(200);
+                var _dataTit = $(this).attr("data-tit");
+                var tgtop = $("#" + _dataTit).offset().top - $(".city-box").offset().top;
+                $("body,html").animate({ scrollTop: tgtop }, 0);
+            });
+
+            $(".city-box .hot-city span").click(function () {
+                var spanArr = $(".city-box .hot-city span");//获取所有的li元素
+                var idx = $(this).index();//获取span的下标
+                var adcode = spanArr.eq(idx).attr("id").toString();
+
+                currentCity = this.innerText;
+                $('#cityName').text(currentCity);
+                var orignalText = $("#currentCity").text().trim();
+                var currentText = orignalText.replace(orignalText.split("-")[1].replace(orignalText), this.innerText);
+                $("#currentCity").text(currentText);
+
+                window.location.href = "/wap/Index?id=" + escape(adcode) + "&cityName=" + escape(currentCity + "市") + "&isLocation=1&is3D=1";
+            });
+
+            $(".city-list ul li").click(function () {
+                var spanArr = $(".city-list ul li");   // 获取所有的li元素
+                var city = $(this).context.innerText;  // 获取span的下标
+                var adcode = $(this).context.id;       // 获取城市编码
+
+                window.location.href = "/wap/Index?id=" + escape(adcode) + "&cityName=" + escape(city + "市") + "&isLocation=1";
+            });
+
+            $(function () {
+                getLink();
+            });
+
+            function getLink() {
+                var currCity = getQueryString("name");
+                //var r = window.location.search.substr(1);
+                $("#currentCity").text("当前城市-" + currCity).append("<a href='javascript:history.go(-1);' class='back'></a>");
+            }
+        })
+    </script>
+</body>
+</html>

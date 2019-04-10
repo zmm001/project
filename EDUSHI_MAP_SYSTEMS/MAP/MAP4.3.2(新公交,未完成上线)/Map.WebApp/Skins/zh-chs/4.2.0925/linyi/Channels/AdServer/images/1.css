@@ -1,0 +1,49 @@
+body{ margin:0px; font-size:14px; background:#FAF8E9;}
+#container{ width:910px;height:auto;background:#FFFFFF;margin:auto;}
+#header{ float:left; width:910px; height:241px; background:url(../images/c1.jpg) no-repeat left top; }
+#header div.left{ float:right; width:426px; height:241px; background:url(../images/c36.jpg) no-repeat right top;}
+#header div.left5{ float:right; width:426px; height:241px; background:url(../images/c33.jpg) no-repeat right top;}
+#pagebody{width:910px; height:2430px; background:#FFFFFF;}
+#pagebodyleft{ float:left; width:246px; height:87px; background:url(../images/c3.jpg) no-repeat;}
+#pagebodycontent{ float:left; width:587px; height:87px; background:url(../images/c4.jpg);}
+#pagebodyright{ float:left; width:77px; height:87px; background:url(../images/c5.jpg) no-repeat;}
+#mainbody{float:left;margin:7px 0px 0px 40px;width:834px;height:163px;border-top-style: groove;
+border-top-color: #C8C8C8;border-left-color: #C8C8C8;border-left-width: 1px;border-right-style: none;border-left-style: solid; background:url(../images/c9.jpg) repeat-x; background-color:#FFFFFF; line-height:18px; display:inline;}
+#mainbody1{ height:159px; background:url(../images/c8.jpg) repeat-y right;}
+#mainbody1 .left{float:left;width:132px;height:120px;margin:27px 0px 0px 0px;border-right-width: 1px;border-right-style: dashed;border-right-color: #999999;}
+#mainbody1 .img{ height:66px; background:url(../images/c10.jpg)}
+#mainbody1 .img1{ height:66px;background:url(../images/c11.jpg)}
+#mainbody1 .img2{ height:66px;background:url(../images/c12.jpg)}
+#mainbody1 .img3{ height:66px;background:url(../images/c13.jpg)}
+#mainbody1 .img4{ height:66px;background:url(../images/c14.jpg)}
+#mainbody1 .img5{ height:66px;background:url(../images/c15.jpg)}
+#mainbody1 .img6{ height:66px;background:url(../images/c16.jpg)}
+#mainbody1 .img7{ height:66px;background:url(../images/c17.jpg)}
+#mainbody1 .img8{ height:66px;background:url(../images/c35.jpg)}
+#mainbody1 .midder{float:left;width:430px;height:120px;margin:27px 0px 0px 0px; padding-left:18px; line-height:22px;}
+#mainbody1 .right{float:left;width:225px;height:122px;margin:20px 0px 0px 0px;border: 2px solid #D3D3D1;}
+#mainbody1 .rightimg{ height:122px; background:url(../images/c18.jpg) no-repeat center;}
+#mainbody1 .rightimg1{ height:122px; background:url(../images/c19.jpg) no-repeat center;}
+#mainbody1 .rightimg2{ height:236px; background:url(../images/c20.jpg) no-repeat center;}
+#mainbody1 .rightimg3{ height:128px; background:url(../images/c21.jpg) no-repeat center;}
+#mainbody1 .rightimg4{ height:243px; background:url(../images/c22.jpg) no-repeat center;}
+#mainbody1 .rightimg5{ height:123px; background:url(../images/c23.jpg) no-repeat center;}
+#mainbody1 .rightimg6{ height:261px; background:url(../images/c24.jpg) no-repeat center;}
+#mainbody1 .rightimg7{ height:191px; background:url(../images/c28.jpg) no-repeat center;}
+#mainbody1 .rightimg8{ height:164px; background:url(../images/c34.jpg) no-repeat center;}
+#mainbody2{ height:4px; background:url(../images/c7.gif) no-repeat right;}
+#mainbody3{ float:left; width:910px; height:60px;  margin-top:8px;}
+#mainbody3 .left1{ float:left; height:auto; width:629px;height:60px;background:url(../images/c26.jpg)}
+#mainbody3 .left2{ float:left; width:243px; height:60px;background:url(../images/c25.jpg) no-repeat;}
+#mainbody3 .right1{ float:right; width:38px; height:60px; background:url(../images/c27.jpg);}
+#footer{ float:left; width:910px; height:163px; margin-top:7px;}
+.footer1{ float:left; width:198px; height:89px; background:url(../images/c29.jpg);}
+.footer2{ float:left; width:656px; height:89px; background:url(../images/c30.jpg) repeat-x; }
+.footer2 a{ margin-top:30px;color:#FFFFFF; text-decoration:none;}
+.footer2_bottom{width:655px;height:44px;line-height: 23px; margin-top:20px;}
+.footer3{ float:left; width:56px; height:89px; background:url(../images/c31.jpg);}
+.footer4{ float:left; width:910px; height:74px; background:url(../images/c32.jpg);}
+.Master_bottom_task{ width:830px; height:60px; margin:auto}
+.Master_bottom_left{ width:830px;  margin-top:13px; float:left; text-align:center; line-height:25px; color:#515050; font-size:14px;}
+.Master_bottom_left a{color:#383737; text-decoration:none;}
+.Master_bottom_left a:hover{color:#383737; text-decoration:underline;}/* CSS Document */

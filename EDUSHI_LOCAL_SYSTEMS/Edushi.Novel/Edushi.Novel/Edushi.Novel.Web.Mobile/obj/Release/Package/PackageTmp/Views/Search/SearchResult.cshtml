@@ -1,0 +1,74 @@
+﻿@{
+    ViewBag.Title = "SearchResult";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title></title>
+    @Html.Partial("/Views/Shared/_PartialHead.cshtml")
+</head>
+
+<body>
+    <div id="app" v-cloak>
+        <header>
+            <span class="back" onclick="javascript:history.go(-1);"></span>
+            <div class="search-box">
+                <input type="text" name="" id="search" placeholder="搜索书名" v-bind:value="searchKey" />
+                <p class="del"></p>
+            </div>
+            <a class="search-btn" v-on:click="search()">搜索</a>
+        </header>
+        <div class="main-container">
+            <div v-if="isNull" class="search-tag">
+                <p>暂时没有数据哦！请更换关键字</p>
+            </div>
+            <div v-else>
+                <div class="search-tag">
+                    <!-- 搜索有结果时 -->
+                    <p>
+                        为您找到<span>{{count}}</span>本相关书籍
+                    </p>
+                    <div class="module">
+                        <ul class="books-list">
+                                <li v-for="item in searchResultList">
+                                    <a v-bind:href="item.Href">
+                                        <div class="img">
+                                            <img v-bind:src="item.CoverImage">
+                                        </div>
+                                        <div class="info">
+
+                                            <div class="name">
+                                                {{item.FirstName}}<span class="red">{{searchKey}}</span>{{item.SecondName}}
+                                            </div>
+                                            <div class="book-info">{{item.Description}}</div>
+
+                                            <div class="book-tags">
+                                                <div class="author">@*<img v-bind:src="item.AuthorImage" />*@{{item.Author}}</div>
+                                                <div class="tags">
+                                                    <span>{{item.StatusDesc}}</span>
+                                                    <span>{{item.CategoryName}}</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </a>
+                            </li>
+                            }
+                        </ul>
+
+                        <div class="loading" v-if="display">加载中</div>
+
+
+                    </div>
+                    }
+                </div>
+            </div>
+        </div>
+        @Html.Partial("/Views/Shared/_PartialUserCenter.cshtml")
+    </div>
+
+
+    <script type="text/javascript" src="~/Content/asset/js/common.js"></script>
+    <script src="~/Content/asset/js/Novel/searchResult.js"></script>
+</body>
+</html>

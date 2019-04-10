@@ -1,0 +1,138 @@
+﻿@{
+    ViewBag.Title = "爱上头条（E都市）小说频道";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>爱上头条（E都市）小说频道</title>
+    @Html.Partial("/Views/Shared/_PartialHead.cshtml")
+</head>
+<body>
+    <div id="app" v-cloak>
+        <header>
+            <span class="back" onclick="javascript:history.go(-1);"></span>
+            <span class="title">{{categoryName}}</span>
+            <span class="nav"></span>
+            @Html.Partial("/Views/Shared/_PartialMenu.cshtml")
+        </header>
+        <div class="main-container">
+            <nav class="category-sort">
+                <div class="nav">
+                    <p class="on category" data-id="000000" v-on:click="getCategoryTabData(true,null,null)"><span>全部</span></p>
+                    <p v-for="item in categoryList" v-bind:data-id="item.ID" v-on:click="getCategoryTabData(false,item.ID,null)"><span>{{item.Name}}</span>    </p>
+                </div>
+            </nav>
+            <nav class="filter-nav js-filter">
+                <div class="tab-nav">
+                    <span data-id="1" class="on type" v-on:click="getCategoryTabData(false,null,1)">最热</span>
+                    <span data-id="2" v-on:click="getCategoryTabData(false,null,2)">最新</span>
+                    <span data-id="3" v-on:click="getCategoryTabData(false,null,3)">长篇/中篇</span>
+                    @*<span data-id="4" v-on:click="getCategoryTabData(false,null,4)">免费</span>*@
+                </div>
+            </nav>
+            <section class="module">
+                <div class="tab-cnt" v-bind:style="{'display':isShowStyle ? 'none':'block'}">
+                    <ul class="books-list">
+                        <li v-for="item in hotBookList">
+                            <a v-bind:href="item.Href">
+                                <div class="img"><img v-bind:src="item.CoverImage"></div>
+                                <div class="info">
+
+                                    <div class="name">{{item.Name}}</div>
+                                    <div class="book-info">{{item.Description}}</div>
+
+                                    <div class="book-tags">
+                                        <div class="author">@*<img v-bind:src="item.CoverImage" />*@{{item.Author}}</div>
+                                        <div class="tags">
+                                            <span>{{item.StatusDesc}}</span>
+                                            <span>{{item.CategoryName}}</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+
+                    </ul>
+                </div>
+                <div class="tab-cnt" v-bind:style="{'display':isShowStyle ? 'block':'none'}">
+                    <ul class="books-list">
+                        <li v-for="item in newBookList">
+                            <a v-bind:href="item.Href">
+                                <div class="img"><img v-bind:src="item.CoverImage"></div>
+                                <div class="info">
+
+                                    <div class="name">{{item.Name}}</div>
+                                    <div class="book-info">{{item.Description}}</div>
+
+                                    <div class="book-tags">
+                                        <div class="author">@*<img v-bind:src="item.CoverImage" />*@{{item.Author}}</div>
+                                        <div class="tags">
+                                            <span>{{item.StatusDesc}}</span>
+                                            <span>{{item.CategoryName}}</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="tab-cnt">
+                    <ul class="books-list">
+                        <li v-for="item in longPieceList">
+                            <a v-bind:href="item.Href">
+                                <div class="img"><img v-bind:src="item.CoverImage"></div>
+                                <div class="info">
+
+                                    <div class="name">{{item.Name}}</div>
+                                    <div class="book-info">{{item.Description}}</div>
+
+                                    <div class="book-tags">
+                                        <div class="author">@*<img v-bind:src="item.CoverImage" />*@{{item.Author}}</div>
+                                        <div class="tags">
+                                            <span>{{item.StatusDesc}}</span>
+                                            <span>{{item.CategoryName}}</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="tab-cnt">
+                    <ul class="books-list">
+                        <li v-for="item in freeBookList">
+                            <a v-bind:href="item.Href">
+                                <div class="img"><img v-bind:src="item.CoverImage"></div>
+                                <div class="info">
+
+                                    <div class="name">{{item.Name}}</div>
+                                    <div class="book-info">{{item.Description}}</div>
+
+                                    <div class="book-tags">
+                                        <div class="author">@*<img v-bind:src="item.CoverImage" />*@{{item.Author}}</div>
+                                        <div class="tags">
+                                            <span>{{item.StatusDesc}}</span>
+                                            <span>{{item.CategoryName}}</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="loading">加载中</div>
+            </section>
+        </div>
+    </div>
+    @Html.Partial("/Views/Shared/_PartialUserCenter.cshtml")
+    @Html.Partial("~/Views/Shared/_PartialFooter.cshtml")
+
+    <script type="text/javascript" src="~/Content/asset/js/common.js"></script>
+    <script type="text/javascript" src="~/Content/asset/js/Novel/booklist.js?v=20180723"></script>
+    <script>
+        tab(".category-sort .nav p", "", "on");//图书列表
+    </script>
+</body>
+</html>

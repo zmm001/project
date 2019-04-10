@@ -1,0 +1,276 @@
+﻿@using Edushi.WenDa.Web.App.Models;
+@model   UserIndexModel
+<script src="@Url.Content("~/asset/js/common.js")"></script>
+<style>
+    .error-item {
+        margin: 0 auto;
+        box-sizing: border-box;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        margin-top: 4.76rem;
+    }
+
+        .error-item img {
+            box-sizing: border-box;
+            margin: 0 auto;
+            width: 3.8rem;
+            height: 2.8rem;
+        }
+
+    .error-tip {
+        margin-top: 0.36rem;
+        font-size: 0.24rem;
+        color: #999999;
+        text-align: center;
+    }
+</style>
+<div id="qw-newuser">
+    <div class="main-nav-box nav-user">
+        <nav>
+            <a href="@Url.Content(string.Format("~/user/index?type=1&appId={0}", Model.appId))" @Html.Raw(Model.type == 1 ? " class=\"on\"" : "")>提问</a>
+            <a href="@Url.Content(string.Format("~/user/index?type=2&appId={0}", Model.appId))" @Html.Raw(Model.type == 2 ? " class=\"on\"" : "")>回答</a>
+            <a href="@Url.Content(string.Format("~/user/index?type=3&appId={0}", Model.appId))" @Html.Raw(Model.type == 3 ? " class=\"on\"" : "")>评论</a>
+        </nav>
+    </div>
+    <div class="wraper content-top">
+        @if (Model.list != null && Model.list.Count > 0)
+        {
+            if (Model.type == 1)
+            {
+                <!-- 提问区 -->
+                <div class="question">
+                    @foreach (var item in Model.list)
+                    {
+                        <div class="question-list">
+                            <div class="question-item">
+                                <div class="title">
+                                    <img src="@Url.Content("~/asset/img/function/2/提问@2x.png")" alt="">
+                                    <a href="javascript:void(0);" onclick="openPage('@item.Url')"><span>@item.Title</span></a>
+                                </div>
+                                <div class="favorite-tool">
+                                    <div style="display: inline-block;"><span>@(item.favoritesCount)收藏</span><span style="width: 0.3rem; text-align: center; display: inline-block; color: rgba(176, 179, 184, 1);">·</span><span>@(item.answerCount)回答</span></div>
+                                </div>
+                            </div>
+                        </div>
+                    }
+                    @if (Model.PageCount > 1)
+                    {
+                        <div class="loading">加载中</div>
+                    }
+                </div>
+            }
+            else if (Model.type == 2)
+            {
+                <!-- 回答区 -->
+                <div class="answer">
+                    @foreach (var item in Model.list)
+                    {
+                        <div class="answer-list">
+                            <div class="answer-item">
+                                <a href="javascript:void(0);" onclick="openPage('@item.question_url')">
+                                    <div class="title"><img src="@Url.Content("~/asset/img/function/2/回答@2x.png")" alt=""><span>@item.question_title</span></div>
+                                </a>
+                                @if (!string.IsNullOrEmpty(item.Pic))
+                                {
+                                    <div class="img-box"><img src="@item.Pic" alt="" style="height: 3.32rem;"></div>
+                                }
+                                <div class="userinfo">
+                                    <a href="javascript:void(0);" class="photo" onclick="openUserIndexPage(@item.appId)"><img src="@item.avatar">@item.nickname</a><span class="datetime">@item.gmt_create</span>
+                                </div>
+                                <div class="detail"><a href="javascript:void(0);" onclick="openPage('@item.Url')"><span>@Html.Raw(item.content)</span></a></div>
+                                <div class="event">
+                                    <a>@(item.likes)赞同</a><span style="width: 0.3rem; text-align: center; display: inline-block; color: rgba(176, 179, 184, 1);">·</span><a>@(item.comment)评论</a>
+                                </div>
+                            </div>
+                        </div>
+                    }
+                    @if (Model.PageCount > 1)
+                    {
+                        <div class="loading">加载中</div>
+                    }
+                </div>
+            }
+            else if (Model.type == 3)
+            {
+                <!-- 评论区 -->
+                <div class="comment">
+                    @foreach (var item in Model.list)
+                    {
+                        <div class="comment-list">
+                            <div class="comment-item">
+                                @if (item.isFather)
+                                {
+                                    if (item.target_answer != null)
+                                    {
+                                        <div class="q-info">
+                                            <a href="javascript:void(0);" class="photo" onclick="openUserIndexPage(@item.appId)"><img src="@item.avatar" alt=""></a>
+                                            <span class="username">@item.nickname</span>
+                                            <span class="datetime">@item.gmt_create</span>
+                                        </div>
+                                        <div class="content"><a href="javascript:void(0);">@Html.Raw(item.content)</a></div>
+                                        <div class="img-box-item">
+                                            @if (!string.IsNullOrEmpty(item.target_answer.Pic))
+                                            {
+                                                <div class="img-item">
+                                                    <a href="javascript:void(0);" onclick="openPage('@item.target_answer.url')">
+
+                                                        <img src="@item.target_answer.Pic" alt="">
+
+                                                        <span>
+                                                            <p>@Html.Raw(item.target_answer.content)</p>
+                                                        </span>
+                                                    </a>
+                                                </div>
+                                            }
+                                            else
+                                            {
+                                                <a href="javascript:void(0);" onclick="openPage('@item.target_answer.url')"><div class="no-picture"><span class="picture-content">@Html.Raw(item.target_answer.content)</span></div></a>
+                                            }
+
+                                        </div>
+                                    }
+                                }
+                                else
+                                {
+                                    <div class="reply-list">
+                                        <div class="q-info">
+                                            <a href="javascript:void(0);" class="photo" onclick="openUserIndexPage(@item.appId)"><img src="@item.avatar" alt=""></a>
+                                            <span class="username">@item.nickname</span>
+                                            <span class="datetime">@item.gmt_create</span>
+                                        </div>
+                                        <div class="content">@Html.Raw(item.content)</div>
+                                        <div class="quesition-item">
+                                            <span class="username">@item.FatherCommentNickName</span>
+                                            <span class="question">@Html.Raw(item.FatherCommentCotent)</span>
+                                        </div>
+                                    </div>
+                                }
+                            </div>
+                        </div>
+                    }
+                    @if (Model.PageCount > 1)
+                    {
+                        <div class="loading">加载中</div>
+                    }
+                </div>
+            }
+        }
+        else
+        {
+            <div class="error-box">
+                <div class="error-item"><img src="@(Edushi.WenDa.Web.App.Helper.DataHelper.checkPlatType() == 1 ? Url.Content("~/asset/images/nocontent.png") : Url.Content("~/asset/images/nocontent-andriod.png"))" /></div><div class="error-tip">暂时没有内容</div>
+            </div>
+        }
+
+    </div>
+</div>
+
+<script>
+    var sEId = "@(Model.user == null ? 0 : Model.user.UI_ID)";
+    var sType = "@Model.type";
+    var pageIndex = 1;
+    var pageCount = "@Model.PageCount";
+    var gate = true;
+
+    $(function () {
+        scrollLoad();
+    })
+    function scrollLoad() {
+        $(window).bind("scroll", function () {
+            // 判断页面是否拉到底部
+            if ($(document).scrollTop() + $(window).height() >= $(document).height()) {
+                if (gate) {
+                    pageIndex++;
+                    if (pageIndex > pageCount) {
+                        gate = false;
+                        return false;
+                    }
+                    $(".loading").css("display", "block");
+                    $.ajax({
+                        type: 'post',
+                        url: '@Url.Content("~/User/getMoreUserData")',
+                        data: { "sType": sType, "sEId": sEId, "pageIndex": pageIndex },
+                        success: function (data) {
+                            //console.log(data)
+                            if (data.length > 0 && data != null) {
+                                for (var i = 0; i < data.length; i++) {
+                                    var element = "";
+                                    var result = data[i];
+                                    if (result.type == "1") {// 提问
+                                        element = '<div class="question-list"><div class="question-item">' +
+                                            '<div class="title">' +
+                                                '<img src="@Url.Content("~/asset/img/function/2/提问@2x.png")" alt="">' +
+                                                '<a href="javascript:void(0);" onclick="openPage(\'' + result.Url + '\')"><span>' + result.Title + '</span></a>' +
+                                            '</div>' +
+                                            '<div class="favorite-tool">' +
+                                            '<div style="display: inline-block;"><span>' + result.favoritesCount + '收藏</span><span style="width: 0.3rem; text-align: center; display: inline-block; color: rgba(176, 179, 184, 1);">·</span><span>' + result.answerCount + '回答</span></div>' +
+                                            '</div>' +
+                                            '</div>' +
+                                            '</div>'
+                                    }
+                                    else if (result.type == "2") {// 回答
+                                        var imgbox = '';
+                                        if (result.Pic != null && result.Pic != '')
+                                            imgbox = '<div class="img-box"><img src=' + result.Pic + ' alt="" style="height: 3.32rem;"></div>';
+
+                                        element = '<div class="answer-list"><div class="answer-item">' +
+                                            '<a href="javascript:void(0);" onclick="openPage(\'' + result.question_url + '\')"><div class="title"><img src="@Url.Content("~/asset/img/function/2/回答@2x.png")" alt=""><span>' + result.question_title + '</span></div></a>'
+                                       + imgbox +
+                                        '<div class="userinfo">' +
+                                            '<a href="javascript:void(0);" class="photo" onclick="openUserIndexPage(' + result.appId + ')"><img src="' + result.avatar + '">' + result.nickname + ' </a><span class="datetime">' + result.gmt_create + '</span>' +
+                                        '</div>' +
+                                        '<div class="detail"><a href="javascript:void(0);" onclick="openPage(\'' + result.Url + '\')"><span>' + result.content + '</span></a></div>' +
+                                        '<div class="event"><a>' + result.likes + '赞同</a><span style="width: 0.3rem; text-align: center; display: inline-block; color: rgba(176, 179, 184, 1);">·</span><a>' + result.comment + '评论</a></div>' +
+                                        '</div>' +
+                                        '</div>';
+                                    }
+                                    else if (result.type == "3") {//评论
+                                        var isfather = '';
+                                        if (result.isFather) {
+                                            if (result.target_answer != null) {
+                                                var imgbox = "";
+                                                if (result.target_answer.Pic != '') {
+                                                    imgbox = '<div class="img-item"><a href="javascript:void(0);" onclick="openPage(\'' + result.target_answer.url + '\')"><img src="' + result.target_answer.Pic + '" alt=""><span><p>' + result.target_answer.content + '</p></span></a></div>';
+                                                } else {
+                                                    imgbox = '<a href="javascript:void(0);" onclick="openPage(\'' + result.target_answer.url + '\')"><div class="no-picture"><span class="picture-content">' + result.target_answer.content + '</span></div></a>';
+                                                }
+                                                isfather = '<div class="q-info">' +
+                                                        '<a href="javascript:void(0);" class="photo" onclick="openUserIndexPage(' + result.appId + ')"><img src="' + result.avatar + '" alt=""></a>' +
+                                                        '<span class="username">' + result.nickname + '</span>' +
+                                                        '<span class="datetime">' + result.gmt_create + '</span>' +
+                                                    '</div>' +
+                                                    '<div class="content"><a href="javascript:void(0);">' + result.content + '</a></div>' +
+                                                    '<div class="img-box-item">' +
+                                                        imgbox +
+                                                    '</div>';
+                                            }
+                                        }
+                                        else {
+                                            isfather = '<div class="reply-list">' +
+                                                    '<div class="q-info">' +
+                                                        '<a href="javascript:void(0);" class="photo" onclick="openUserIndexPage(' + result.appId + ')"><img src="' + result.avatar + '" alt=""></a>' +
+                                                        '<span class="username">' + result.nickname + '</span>' +
+                                                        '<span class="datetime">' + result.gmt_create + '</span>' +
+                                                    '</div>' +
+                                                    '<div class="content">' + result.content + '</div>' +
+                                                    '<div class="quesition-item">' +
+                                                        '<span class="username">' + result.FatherCommentNickName + '</span>' +
+                                                        '<span class="question">' + result.FatherCommentCotent + '</span>' +
+                                                    '</div>' +
+                                                '</div>';
+                                        }
+                                        element = '<div class="comment-list"><div class="comment-item">' + isfather + '</div></div>'
+                                    }
+                                    $('.loading').before(element);
+                                }
+                                $(".loading").css("display", "none");
+                            }
+                        },
+                        error: function (msg) { }
+                    })
+                }
+            }
+        })
+    }
+</script>

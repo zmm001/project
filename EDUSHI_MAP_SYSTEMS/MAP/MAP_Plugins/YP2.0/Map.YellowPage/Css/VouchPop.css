@@ -1,0 +1,12 @@
+﻿#wrap{width:398px;height:auto;}
+#tjgg{ height:29px;background:url(../images/9.jpg); margin-left:43px;}
+#tjgg-1{float:left;width:auto;height:29px;line-height: 29px;height: 29px;font-size:14px;color:#000000;font-weight: bold;text-indent: 5px;}
+#tjgg-2{float:right;width:24px;height:29px;}
+#tjgg-3{float:left;width:5px;height:222px;background-image: url(../images/11.jpg);}
+#tjgg-4{float:left;height:222px;width: 345px;background-color:#ffffff;margin:auto; overflow:auto}
+#tjgg-5{float:right;width:5px;height:222px;background-image: url(../images/12.jpg);}
+.left{margin-top:85px;float:left; width:43px; height:35px; background:none;filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled=true, sizingMethod=scale, src="images/left.png");}
+[class].left{ background:url(../images/left.png)}
+#footer{float:right;width:355px;height:7px;background-image:url(../images/13.jpg);margin-left:43px;}
+.box p, .h {display:table-cell; *display:inline; zoom:1; vertical-align:middle; } 
+.h {height:26px; width:0; overflow:hidden;}

@@ -1,0 +1,426 @@
+﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="3.5">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{3E86B780-5089-4581-8BC2-C8BC4943D821}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Map.YellowPage</RootNamespace>
+    <AssemblyName>Map.YellowPage</AssemblyName>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>2.0</OldToolsVersion>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AspNetPager, Version=6.0.0.0, Culture=neutral, PublicKeyToken=fb0a0fe055d40fd4, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\EDUSHI_CM_LIBRARY\Assembly_Library\Assembly_Library\AspNetPager.dll</HintPath>
+    </Reference>
+    <Reference Include="EDC.Framework, Version=3.0.1.708, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Libs\EDC.Framework.dll</HintPath>
+    </Reference>
+    <Reference Include="EDC.LocalSystem, Version=2.0.0.1012, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\EDUSHI_LOCAL_SYSTEMS\LocalSystem2.0\LocalSystem.Huangye.Web\bin\EDC.LocalSystem.dll</HintPath>
+    </Reference>
+    <Reference Include="EDC.Member, Version=2.0.0.1012, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Map6.1\Map.WebApp\bin\EDC.Member.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core, Version=3.5.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions, Version=3.5.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions, Version=3.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Web.Extensions.Design, Version=3.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Web.Mobile" />
+    <Reference Include="System.Xml.Linq, Version=3.5.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="URLRewriter, Version=1.0.1495.18710, Culture=neutral" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Channel\House.aspx" />
+    <Content Include="CompanyDetail_bak.aspx" />
+    <Content Include="Css\sys.css" />
+    <Content Include="Default.aspx" />
+    <Content Include="FlagCount.aspx" />
+    <Content Include="Js\Ajax.js" />
+    <Content Include="Js\AjaxData.js" />
+    <Content Include="Js\Company.js" />
+    <Content Include="AjaxHandler.aspx" />
+    <Content Include="CompanyDetail.aspx" />
+    <Content Include="Css\new_css.css" />
+    <Content Include="Error.aspx" />
+    <Content Include="GetWcfState.aspx" />
+    <Content Include="Js\Comment.js" />
+    <Content Include="Js\Common.js" />
+    <Content Include="Js\GeneralLib.js" />
+    <Content Include="Js\House.js" />
+    <Content Include="Js\marquee.js" />
+    <Content Include="Js\NewSlides.swf" />
+    <Content Include="Js\OtherSlides.swf" />
+    <Content Include="Js\Slides.js" />
+    <Content Include="Js\SlidesFlash.swf" />
+    <Content Include="Js\ypDetail.js" />
+    <Content Include="Js\zhaopin.js" />
+    <Content Include="KeywordSearchList.aspx" />
+    <Content Include="Login.aspx" />
+    <Content Include="MemcachedConfig\Config.xml" />
+    <Content Include="new_images\01.jpg" />
+    <Content Include="new_images\02.jpg" />
+    <Content Include="new_images\03.jpg" />
+    <Content Include="new_images\04.jpg" />
+    <Content Include="new_images\05.jpg" />
+    <Content Include="new_images\2.jpg" />
+    <Content Include="new_images\20100812150025.jpg" />
+    <Content Include="new_images\20101125092404.gif" />
+    <Content Include="new_images\ad.gif" />
+    <Content Include="new_images\ad01.gif" />
+    <Content Include="new_images\ad22.gif" />
+    <Content Include="new_images\AlternantL.gif" />
+    <Content Include="new_images\AlternantR.gif" />
+    <Content Include="new_images\Arrow.gif" />
+    <Content Include="new_images\banner.gif" />
+    <Content Include="new_images\bdt.gif" />
+    <Content Include="new_images\bg-pic.gif" />
+    <Content Include="new_images\bj.png" />
+    <Content Include="new_images\blackPhoto.gif" />
+    <Content Include="new_images\blue-pic.gif" />
+    <Content Include="new_images\box-bg-2.gif" />
+    <Content Include="new_images\box-bg.gif" />
+    <Content Include="new_images\box1.gif" />
+    <Content Include="new_images\button1.gif" />
+    <Content Include="new_images\coin.gif" />
+    <Content Include="new_images\coin1.gif" />
+    <Content Include="new_images\coin2.gif" />
+    <Content Include="new_images\csjm.gif" />
+    <Content Include="new_images\Cu.gif" />
+    <Content Include="new_images\CurAlternantL.gif" />
+    <Content Include="new_images\CurAlternantR.gif" />
+    <Content Include="new_images\cx.gif" />
+    <Content Include="new_images\dian.gif" />
+    <Content Include="new_images\dtxx.gif" />
+    <Content Include="new_images\edian.gif" />
+    <Content Include="new_images\emessage.gif" />
+    <Content Include="new_images\error.gif" />
+    <Content Include="new_images\EstoreLogo.gif" />
+    <Content Include="new_images\H3TitleBg.gif" />
+    <Content Include="new_images\HotBizCirBg.gif" />
+    <Content Include="new_images\HotBizCirH3.gif" />
+    <Content Include="new_images\hy-img.gif" />
+    <Content Include="new_images\jbxx.gif" />
+    <Content Include="new_images\jdyd.gif" />
+    <Content Include="new_images\jian.gif" />
+    <Content Include="new_images\jiang.gif" />
+    <Content Include="new_images\jiantou.gif" />
+    <Content Include="new_images\Juan.gif" />
+    <Content Include="new_images\kuang-bottom.gif" />
+    <Content Include="new_images\kuang-cen.gif" />
+    <Content Include="new_images\kuang-top.gif" />
+    <Content Include="new_images\left.gif" />
+    <Content Include="new_images\li-bg.gif" />
+    <Content Include="new_images\loading.gif" />
+    <Content Include="new_images\map-d.gif" />
+    <Content Include="new_images\mapdw.gif" />
+    <Content Include="new_images\MySentInfo.gif" />
+    <Content Include="new_images\NOPHOTO.jpg" />
+    <Content Include="new_images\OutBtnLinkBg.gif" />
+    <Content Include="new_images\right.gif" />
+    <Content Include="new_images\s-img.gif" />
+    <Content Include="new_images\sCom20100104105107.jpg" />
+    <Content Include="new_images\SearchBtn.gif" />
+    <Content Include="new_images\SearchNavBg.gif" />
+    <Content Include="new_images\SpLine.gif" />
+    <Content Include="new_images\SpLine2.gif" />
+    <Content Include="new_images\sq.gif" />
+    <Content Include="new_images\ss-b.gif" />
+    <Content Include="new_images\ss-c.gif" />
+    <Content Include="new_images\ss-coin.gif" />
+    <Content Include="new_images\ss-t.gif" />
+    <Content Include="new_images\ss.gif" />
+    <Content Include="new_images\ss.jpg" />
+    <Content Include="new_images\swdh.gif" />
+    <Content Include="new_images\tjpl.gif" />
+    <Content Include="new_images\utility.js" />
+    <Content Include="new_images\xq.gif" />
+    <Content Include="new_images\zkxx.gif" />
+    <Content Include="new_images\zp.gif" />
+    <Content Include="OwnerDetail.aspx" />
+    <Content Include="OwnerDetail_bak.aspx" />
+    <Content Include="Shop.aspx" />
+    <Content Include="TypeSearchList.aspx" />
+    <Content Include="UserControl\WebFooterUserControl.ascx" />
+    <None Include="Web References\com.edushi.wse\UploadService.disco" />
+    <Content Include="UserControl\WucOther.ascx" />
+    <Content Include="UserControl\WucYpHead.ascx" />
+    <Content Include="Web.config" />
+    <Content Include="zhaopin.aspx" />
+    <Content Include="TestState.aspx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AjaxHandler.aspx.cs">
+      <DependentUpon>AjaxHandler.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AjaxHandler.aspx.designer.cs">
+      <DependentUpon>AjaxHandler.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Channel\House.aspx.cs">
+      <DependentUpon>House.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Channel\House.aspx.designer.cs">
+      <DependentUpon>House.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CompanyDetail_bak.aspx.cs">
+      <DependentUpon>CompanyDetail_bak.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CompanyDetail_bak.aspx.designer.cs">
+      <DependentUpon>CompanyDetail_bak.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="FlagCount.aspx.cs">
+      <DependentUpon>FlagCount.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FlagCount.aspx.designer.cs">
+      <DependentUpon>FlagCount.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GetWcfState.aspx.cs">
+      <DependentUpon>GetWcfState.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GetWcfState.aspx.designer.cs">
+      <DependentUpon>GetWcfState.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="OwnerDetail_bak.aspx.cs">
+      <DependentUpon>OwnerDetail_bak.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="OwnerDetail_bak.aspx.designer.cs">
+      <DependentUpon>OwnerDetail_bak.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Shop.aspx.cs">
+      <DependentUpon>Shop.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Shop.aspx.designer.cs">
+      <DependentUpon>Shop.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControl\WucOther.ascx.cs">
+      <DependentUpon>WucOther.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControl\WucOther.ascx.designer.cs">
+      <DependentUpon>WucOther.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="YP_Class\BasePage.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CompanyDetail.aspx.cs">
+      <DependentUpon>CompanyDetail.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CompanyDetail.aspx.designer.cs">
+      <DependentUpon>CompanyDetail.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Error.aspx.cs">
+      <DependentUpon>Error.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Error.aspx.designer.cs">
+      <DependentUpon>Error.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="KeywordSearchList.aspx.cs">
+      <DependentUpon>KeywordSearchList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="KeywordSearchList.aspx.designer.cs">
+      <DependentUpon>KeywordSearchList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Login.aspx.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Login.aspx.designer.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="OwnerDetail.aspx.cs">
+      <DependentUpon>OwnerDetail.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="OwnerDetail.aspx.designer.cs">
+      <DependentUpon>OwnerDetail.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="TypeSearchList.aspx.cs">
+      <DependentUpon>TypeSearchList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="TypeSearchList.aspx.designer.cs">
+      <DependentUpon>TypeSearchList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControl\WebFooterUserControl.ascx.cs">
+      <DependentUpon>WebFooterUserControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControl\WebFooterUserControl.ascx.designer.cs">
+      <DependentUpon>WebFooterUserControl.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControl\WucYpHead.ascx.cs">
+      <DependentUpon>WucYpHead.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControl\WucYpHead.ascx.designer.cs">
+      <DependentUpon>WucYpHead.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\com.edushi.wse\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="YP_Class\AddWebag.cs">
+    </Compile>
+    <Compile Include="YP_Class\FlagCount.cs" />
+    <Compile Include="YP_Class\NewBasePage.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="YP_Class\WebAge.cs" />
+    <Compile Include="zhaopin.aspx.cs">
+      <DependentUpon>zhaopin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="zhaopin.aspx.designer.cs">
+      <DependentUpon>zhaopin.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="TestState.aspx.cs">
+      <DependentUpon>TestState.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="TestState.aspx.designer.cs">
+      <DependentUpon>TestState.aspx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\..\Aladdin.WebAg\Aladdin.WebAg\Aladdin.WebAg.csproj">
+      <Project>{59EF62E3-2C2C-47A8-9BEB-5B362E5D3CDC}</Project>
+      <Name>Aladdin.WebAg</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\YellowPage.Bll\YellowPage.Bll.csproj">
+      <Project>{E6838001-F84E-444E-ABBC-20FDF6D094B9}</Project>
+      <Name>YellowPage.Bll</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferences Include="Web References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\com.edushi.wse\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\com.edushi.wse\UploadService.wsdl" />
+    <None Include="Web References\com.edushi.wse\UploadStatus.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferenceUrl Include="http://wse.edushi.com/UploadService.asmx">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\com.edushi.wse\</RelPath>
+      <UpdateFromURL>http://wse.edushi.com/UploadService.asmx</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>Map_YellowPage_com_edushi_wse_UploadService</CachedSettingsPropName>
+    </WebReferenceUrl>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v9.0\WebApplications\Microsoft.WebApplication.targets" Condition="" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>False</AutoAssignPort>
+          <DevelopmentServerPort>4131</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://hangzhou.edushi.com/hy/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>

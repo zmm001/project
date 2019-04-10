@@ -1,0 +1,1 @@
+﻿<%@ ServiceHost Language="C#" Debug="true" Service="Edushi.EtongchengWCF.EtongchengNoSqlService" CodeBehind="EtongchengNoSqlService.svc.cs" %>

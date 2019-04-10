@@ -1,0 +1,44 @@
+body{ margin:0; font-size:12px; background-color:Transparent; }
+a{ color:#1A70C7; font-size:12px; text-decoration:none; cursor:pointer}
+a:hover{color:#1A70C7; font-size:12px; text-decoration:underline}
+ul{ list-style-type:none; margin:0; padding:0;}
+.City{width:730px; height:505px;}
+.City .Chead{ width:730px; height:30px; background:url(../images/newmap66.gif) no-repeat; overflow:hidden;}
+.City .Chead .Title{ float:left; margin-left:5px; line-height:30px; width:675px; color:#000; font-size:14px; font-weight:bold}
+.City .Chead .Close{ float:right; margin:5px 40px 0 0;}
+.City .Chead .Close img{ cursor:pointer;}
+.City .Ccontent{ width:730px; height:461px; background:url(../images/newmap67.gif) repeat-y;}
+.City .CFoot{ height:12px; background:url(../images/newmap68.gif) no-repeat}
+.City .Ccontent .Czhitong{ width:712px; height:25px; background-color:#f4f4f4; border:1px solid #d5d5d5; margin:0 0 0 9px; line-height:25px; color:#333; font-weight:bold; }
+.City .Ccontent .Czhitong img{ margin:6px 6px 0 6px;}
+.City .Ccontent .cityname{ width:713px; height:70px; padding-top:5px;}
+
+.m_h_c{position:absolute;background:url(../images/newmap33.gif) no-repeat;width:15px; height:17px; margin-left:17px;}
+.m_h_c:hover{background:url(../images/newmap33a.gif) no-repeat;width:15px; height:17px;}
+
+.cityul{margin-left:30px; position:}
+.cityul li{float:left; width:70px;font-size:10px; height:22px;}
+.cityul li img{ margin-right:5px;}
+.allcityT{font-weight:normal; margin-left:440px; cursor:pointer;}
+.allcityT label{ cursor:pointer;}
+.allcityS{background-color:#f4f4f4; width:712px; height:330px;  border:1px solid #d5d5d5;border-top-width:0px; margin:0 0 0 9px;}
+[class].allcityS .t{width:340px; height:60px;  float:left; margin:10px auto auto 10px;}
+.allcityS .t{width:340px; height:60px;  float:left; margin:10px auto auto 10px;}
+.allcityS span{color:#000; font-size:12px; font-weight:bold}
+.allcityS img{ margin-right:5px;}
+[class].allcityS .cityl{ width:330px; height:60px; float: left; margin-left:10px; margin-top:3px;}
+.allcityS .cityl{ width:320px; height:60px; float: left; margin-left:10px; margin-top:3px;}
+.allcityS .cityl a{ margin-right:7px;}
+.pinyin{ width:712px; height:365px;  border:1px solid #d5d5d5;border-top-width:0px; margin:0 0 0 9px;}
+.pinyin .content{height:340px; margin-top:10px;}
+.pinyin .content .cityl{ width:330px; height:60px; float: left; margin-left:10px; margin-top:3px;}
+.pinyin .content .cityl a{ margin-right:7px;}
+.zimuT{height:26px; background-color:#6b6b6b; overflow:hidden;}
+
+.zimu{ float:right; margin-right:10px;}
+.zimu div{ float:left; border:1px solid #b0b5bb; background-color:#FFFFFF; height:18px; width:18px; margin:3px 0px 0px 2px; text-align:center; color:#ff8601; font-weight:bolder; cursor: pointer; line-height:18px;}
+.zimu .active{border:1px solid #b0b5bb;border-bottom-width:0px; height:23px;}
+.SList{width:250px;position:absolute; z-index:1001; }
+.City2d{width:250px;}
+.AOver{ margin-left:15px; height:9px; font-size:1px; background:url(../images/j.gif) no-repeat left bottom; position:relative; top:1px}
+.ShowCity{ padding:5px; line-height:20px; font-size:12px; border:1px solid #a5a5a5; background:#fff; }

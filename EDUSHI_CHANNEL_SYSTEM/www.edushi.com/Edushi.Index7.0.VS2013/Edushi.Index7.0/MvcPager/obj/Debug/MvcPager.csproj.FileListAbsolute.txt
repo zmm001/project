@@ -1,0 +1,5 @@
+E:\TFS192.168.100.212\EDUSHI_CHANNEL_SYSTEM\www.edushi.com\Edushi.Index7.0.VS2013\Edushi.Index7.0\MvcPager\bin\Debug\MvcPager.dll
+E:\TFS192.168.100.212\EDUSHI_CHANNEL_SYSTEM\www.edushi.com\Edushi.Index7.0.VS2013\Edushi.Index7.0\MvcPager\bin\Debug\MvcPager.pdb
+E:\TFS192.168.100.212\EDUSHI_CHANNEL_SYSTEM\www.edushi.com\Edushi.Index7.0.VS2013\Edushi.Index7.0\MvcPager\obj\Debug\MvcPager.dll
+E:\TFS192.168.100.212\EDUSHI_CHANNEL_SYSTEM\www.edushi.com\Edushi.Index7.0.VS2013\Edushi.Index7.0\MvcPager\obj\Debug\MvcPager.pdb
+E:\TFS192.168.100.212\EDUSHI_CHANNEL_SYSTEM\www.edushi.com\Edushi.Index7.0.VS2013\Edushi.Index7.0\MvcPager\obj\Debug\MvcPager.csprojResolveAssemblyReference.cache

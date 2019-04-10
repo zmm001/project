@@ -1,0 +1,110 @@
+﻿@{
+    ViewBag.Title = "Male";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>爱上头条（E都市）小说频道-男频</title>
+    @Html.Partial("/Views/Shared/_PartialHead.cshtml")
+</head>
+<body>
+    <div id="app" v-cloak>
+        <header>
+            <span class="back" onclick="javascript:history.go(-1);"></span>
+            <span class="title">男生专区</span>
+            <input type="hidden" id="tagName" value="male" />
+            <span class="nav"></span>
+            @Html.Partial("/Views/Shared/_PartialMenu.cshtml")
+        </header>
+        <div class="main-container male">
+            <section class="module">
+                <div class="module-title"><span>主编力荐</span></div>
+                <div class="books-group-box">
+                    <ul class="group-4">
+                        <li v-for="item in firstBookList">
+                            <a v-bind:href="item.Href">
+                                <div class="img"><img v-bind:src="item.CoverImage"></div>
+                                <p class="name">{{item.Name}}</p>
+                                <p class="author">{{item.Author}}</p>
+                            </a>
+                        </li>
+                    </ul>
+                    <ul class="books-list">
+                        <li v-for="item in secondBookList">
+                            <a v-bind:href="item.Href">
+                                <div class="img"><img v-bind:src="item.CoverImage"></div>
+                                <div class="info">
+
+                                    <div class="name">{{item.Name}}</div>
+                                    <div class="book-info">{{item.Description}}</div>
+
+                                    <div class="book-tags">
+                                        <div class="author">@*<img v-bind:src="item.AuthorImage" />*@{{item.Author}}</div>
+                                        <div class="tags">
+                                            <span>{{item.StatusDesc}}</span>
+                                            <span>{{item.CategoryName}}</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="refresh-click" v-on:click="fetchOtherBookList('male')"><span>换一换</span></div>
+            </section>
+            <section class="line"></section>
+            <section class="module">
+                <div class="module-title">男生最新书籍</div>
+                <ul>
+                    <li v-for="item in lastestBookList">
+                        <a v-bind:href="item.Href">
+                            <div class="img"><img v-bind:src="item.CoverImage"></div>
+                            <p class="name">{{item.Name}}</p>
+                            <p class="author">{{item.Author}}</p>
+                        </a>
+                    </li>
+                </ul>
+            </section>
+            <section class="line"></section>
+            <section v-show="firstTopBookList.length > 0" class="module">
+                <div class="module-title">男生排行书籍</div>
+                <ul class="books-group">
+                    <li v-for="item in firstTopBookList">
+                        <a v-bind:href="item.Href">
+                            <div class="img"><img v-bind:src="item.CoverImage"></div>
+                            <p class="name">{{item.Name}}</p>
+                            <p class="author">{{item.Author}}</p>
+                        </a>
+                    </li>
+                </ul>
+                <ul class="books-list">
+                    <li v-for="item in secondTopBookList">
+                        <a v-bind:href="item.Href">
+                            <div class="img"><img v-bind:src="item.CoverImage"></div>
+                            <div class="info">
+
+                                <div class="name">{{item.Name}}</div>
+                                <div class="book-info">{{item.Description}}</div>
+
+                                <div class="book-tags">
+                                    <div class="author">{{item.Author}}</div>
+                                    <div class="tags">
+                                        <span>{{item.StatusDesc}}</span>
+                                        <span>{{item.CategoryName}}</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </li>
+                </ul>
+            </section>
+        </div>
+        @Html.Partial("/Views/Shared/_PartialUserCenter.cshtml")
+        @Html.Partial("~/Views/Shared/_PartialFooter.cshtml")
+
+        <script type="text/javascript" src="~/Content/asset/js/common.js"></script>
+        <script src="~/Content/asset/js/Novel/channel.js?v=20180808"></script>
+    </div>
+</body>
+</html>

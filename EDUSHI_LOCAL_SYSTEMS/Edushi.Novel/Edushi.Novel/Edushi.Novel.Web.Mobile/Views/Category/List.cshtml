@@ -1,0 +1,162 @@
+﻿@{
+    ViewBag.Title = "List";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title></title>
+    @Html.Partial("/Views/Shared/_PartialHead.cshtml")
+</head>
+<body>
+    <header>
+        <span class="back" onclick="javascript:history.go(-1);"></span>
+        <span class="title">书库</span>
+        <span class="nav"></span>
+        @Html.Partial("/Views/Shared/_PartialMenu.cshtml")
+    </header>
+    <div class="main-container">
+        <div class="group-cell">
+            <a href="#" class="on">男生</a>
+            <a href="#">女生</a>
+        </div>
+        <ul class="sort-list">
+            <li>
+                <a href="#">
+                    <img src="~/Content/asset/images/cimg01.png">
+                    <span>都市</span>
+                </a>
+                <div class="sub">
+                    <a href="#">生活</a>
+                    <a href="#">异能</a>
+                    <a href="#">重生</a>
+                    <a href="#">热血</a>
+                    <a href="#">人生</a>
+                </div>
+            </li>
+            <li>
+                <a href="#">
+                    <img src="~/Content/asset/images/cimg02.png">
+                    <span>玄幻</span>
+                </a>
+                <div class="sub">
+                    <a href="#">生活</a>
+                    <a href="#">异能</a>
+                    <a href="#">重生</a>
+                    <a href="#">热血</a>
+                    <a href="#">人生</a>
+                </div>
+            </li>
+            <li>
+                <a href="#">
+                    <img src="~/Content/asset/images/cimg03.png">
+                    <span>校园</span>
+                </a>
+                <div class="sub">
+                    <a href="#">生活</a>
+                    <a href="#">异能</a>
+                    <a href="#">重生</a>
+                    <a href="#">热血</a>
+                    <a href="#">人生</a>
+                </div>
+            </li>
+            <li>
+                <a href="#">
+                    <img src="~/Content/asset/images/cimg04.png">
+                    <span>灵异</span>
+                </a>
+                <div class="sub">
+                    <a href="#">生活</a>
+                    <a href="#">异能</a>
+                    <a href="#">重生</a>
+                    <a href="#">热血</a>
+                    <a href="#">人生</a>
+                </div>
+            </li>
+            <li>
+                <a href="#">
+                    <img src="~/Content/asset/images/cimg05.png">
+                    <span>历史</span>
+                </a>
+                <div class="sub">
+                    <a href="#">生活</a>
+                    <a href="#">异能</a>
+                    <a href="#">重生</a>
+                    <a href="#">热血</a>
+                    <a href="#">人生</a>
+                </div>
+            </li>
+            <li>
+                <a href="#">
+                    <img src="~/Content/asset/images/cimg06.png">
+                    <span>游戏</span>
+                </a>
+                <div class="sub">
+                    <a href="#">生活</a>
+                    <a href="#">异能</a>
+                    <a href="#">重生</a>
+                    <a href="#">热血</a>
+                    <a href="#">人生</a>
+                </div>
+            </li>
+            <li>
+                <a href="#">
+                    <img src="~/Content/asset/images/cimg07.png">
+                    <span>武侠</span>
+                </a>
+                <div class="sub">
+                    <a href="#">生活</a>
+                    <a href="#">异能</a>
+                    <a href="#">重生</a>
+                    <a href="#">热血</a>
+                    <a href="#">人生</a>
+                </div>
+            </li>
+            <li>
+                <a href="#">
+                    <img src="~/Content/asset/images/cimg08.png">
+                    <span>出版</span>
+                </a>
+                <div class="sub">
+                    <a href="#">生活</a>
+                    <a href="#">异能</a>
+                    <a href="#">重生</a>
+                    <a href="#">热血</a>
+                    <a href="#">人生</a>
+                </div>
+            </li>
+            <li>
+                <a href="#">
+                    <img src="~/Content/asset/images/cimg09.png">
+                    <span>科幻</span>
+                </a>
+                <div class="sub">
+                    <a href="#">生活</a>
+                    <a href="#">异能</a>
+                    <a href="#">重生</a>
+                    <a href="#">热血</a>
+                    <a href="#">人生</a>
+                </div>
+            </li>
+            <li>
+                <a href="#">
+                    <img src="~/Content/asset/images/cimg10.png">
+                    <span>仙侠</span>
+                </a>
+                <div class="sub">
+                    <a href="#">生活</a>
+                    <a href="#">异能</a>
+                    <a href="#">重生</a>
+                    <a href="#">热血</a>
+                    <a href="#">人生</a>
+                </div>
+            </li>
+        </ul>
+    </div>
+   @Html.Partial("/Views/Shared/_PartialUserCenter.cshtml")
+    @Html.Partial("~/Views/Shared/_PartialFooter.cshtml")
+
+    <script type="text/javascript" src="~/Content/asset/js/common.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,209 @@
+﻿@using Edushi.Common
+@using Edushi.WenDa.Web.PC.Helper
+@model Edushi.WenDa.Web.PC.Models.HomeModel
+@{
+    ViewBag.Title = "E都市问答";
+    var userUrl = Common.GetConfigString("domain_UserCenter");
+}
+
+@section meta
+{
+    <meta name="Keywords" content="E都市问答，一款有用的问答，专注分享知识、经验、观念。在这里，希望所有人都能找到答案、参与讨论。" />
+    <meta name="Description" content="E都市问答 是以在线互动问答和搜索形式展现、提供价值资讯的信息服务平台,您可以根据自身的需求,有针对性地提出问题,同时这些答案也可以满足有相同或类似问题的其他人需求" />
+}
+
+@Html.Partial("_ListHeader")
+
+@Html.Partial("_Search")
+
+<div class="main-nav-box">
+    <div class="wrapper">
+        <a href="@Url.Content("~/")" target="_blank" class="current">首页</a>
+        @if (Model.AllTypes != null && Model.AllTypes.Any())
+        {
+            var parentTypes = Model.AllTypes.FindAll(p => p.IT_ParentID == 0);
+            if (parentTypes.Any())
+            {
+                foreach (var item in parentTypes)
+                {
+                    <a href="@Common.GetWenDaInfoListUrl(Url.Content("~/"),item.IT_ID)" target="_blank">@item.IT_Name.Substring(0,2)</a>
+                }
+            }
+            
+        }
+    </div>
+</div>
+<div class="wrapper main-container clearfix">
+<div class="fl main-box">
+@if (Model.WenDaList != null && Model.WenDaList.Any())
+{
+    <div class="question-list js-votebox" id="datalist">
+    @foreach (var item in Model.WenDaList)
+    {
+        var qNickName = item.QUserInfo != null ? item.QUserInfo["NickName"] : "E都市网友";
+        var qUserHead = item.QUserInfo != null ? ViewBag.UserHeaderDomain + item.QUserInfo["Avatar"] : Url.Content("~/asset/images/userhead.jpg");
+        int qUserId = item.QUserInfo != null ? (int)item.QUserInfo["ID"] : 0;
+        var qWendaUserUrl = qUserId > 0 ? "href=" + userUrl + "wenda/index/1-" + qUserId + ".html target=_blank" : "";
+    <div class="question-cnt js-votelist">
+        <h2 class="q-tit">
+            <a href="@item.Url" target="_blank">@Html.Raw(item.QTitle)</a>
+        </h2>
+        <div class="q-info">
+            <a @qWendaUserUrl class="photo">
+                <img src="@qUserHead" onerror="this.src='@Url.Content("~/asset/images/userhead.jpg")'" />@qNickName
+            </a>
+            <span>@item.CreateDate</span><span>@(item.ReplyCount)回答</span><span class="last">@(item.CollectionCount)人收藏</span>
+        </div>
+        @if (!string.IsNullOrWhiteSpace(item.Answer))
+        {
+            var nickName = item.UserInfo != null ? item.UserInfo["NickName"] : "E都市网友";
+            var userHead = item.UserInfo != null ? ViewBag.UserHeaderDomain + item.UserInfo["Avatar"] : Url.Content("~/asset/images/userhead.jpg");
+            int userId = item.UserInfo != null && item.UserInfo["ID"] != null ? (int)item.UserInfo["ID"] : 0;
+            var wendaUserUrl = userId > 0 ? "href=" + userUrl + "wenda/index/1-" + userId + ".html target=_blank" : "";
+            <div class="answer-info clearfix">
+                @if (!string.IsNullOrWhiteSpace(item.Pic))
+                {
+                    <div class="pic"><img src="@item.Pic" onerror="this.src='@Url.Content("~/asset/images/default_photo.png")'"></div>
+                }
+                <div class="anser-item">
+                    <div class="anser-item-i">
+                        <a href="@item.Url" target="_blank">@Html.Raw(item.Answer)<span>全文</span></a>
+                    </div>
+                    <div class="answer-user">
+                        <a class="photo" @wendaUserUrl>
+                            <img src="@userHead" onerror="this.src='@Url.Content("~/asset/images/userhead.jpg")'" />@nickName
+                        </a>
+                    </div>
+                    <ul class="anser-oper js-oper clearfix" data-id="@item.AnswerId">
+                        <li @Html.Raw(item.IsPraise == -2 ? "class=\"yizan zan\"" : "class=\"zan\"")><span class="u-num">@(item.PraiseCount)</span> 赞<em>+1</em></li>
+                        <li @Html.Raw(item.IsPraise == -3 ? "class=\"yicai cai\"" : "class=\"cai\"")><span class="u-num">@(item.StepCount)</span> 踩<em>+1</em></li>
+                        <li class="comment">@(item.CommentCount) 评论</li>
+                        <li class="share">
+                            分享
+                            <div class="hid-share">
+                                <a href="javascript:void(0);" class="weixin">
+                                    <div class="wx-qr">
+                                        <img src="@Url.Content("~/asset/images/0302.jpg")"/>
+                                    </div>
+                                </a>
+                                <a href="javascript:void(0);" target="_blank" class="qq"></a>
+                                <a href="javascript:void(0);" target="_blank" class="qzone"></a>
+                                <a href="javascript:void(0);" target="_blank" class="weibo"></a>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        }
+
+    </div>
+}
+    </div>
+    <div class="loading">正在加载中</div>
+    <div class="end">没有更多了</div>
+}
+
+
+</div>
+    <div class="fr sidebar-box">
+        @{ Html.RenderAction("_LoginUser", "Shared");}
+        @*<div class="best-wenda">
+            <div class="nav-tit"><span>精选</span>问答<a href="#" target="_blank">更多</a></div>
+            <div class="best-qa-list">
+                <div class="tit"><a href="#" target="_blank">孩子性格内向，不喜欢说话（对于亲戚），这种性格好不好？</a></div>
+                <div class="qa-info">671回答<span>|</span>1405人收藏</div>
+                <div class="qa-user">
+                    <a href="#" target="_blank" class="photo">
+                        <img src="http://apps.edushi.com/avatar/system/018.jpg" />志博云天
+                    </a>
+                    <span class="tip">历史问答达人</span>
+                    <span class="zan-number">347 赞</span>
+                </div>
+                <div class="qa-item">
+                    <a href="#" target="_blank">现在的小孩子都生活中电视，电脑，手机的环境中，玩伴较少！对于孩子的性格培养确实增加了难度！很多教育专家会有不同建解？其实我个人觉孩子们的性格现在的小孩子都生活中电视，电脑，手机的环境中，玩伴较少！对于孩子的性格培养确实增加了难度！很多教育专家会有不同建解？其实我个人觉孩子们的性格</a>
+                </div>
+            </div>
+            <div class="best-qa-list">
+                <div class="tit"><a href="#" target="_blank">孩子性格内向，不喜欢说话（对于亲戚），这种性格好不好？</a></div>
+                <div class="qa-info">671回答<span>|</span>1405人收藏</div>
+                <div class="qa-user">
+                    <a href="#" target="_blank" class="photo">
+                        <img src="http://apps.edushi.com/avatar/system/018.jpg" />志博云天
+                    </a>
+                    <span class="tip">历史问答达人</span>
+                    <span class="zan-number">347 赞</span>
+                </div>
+                <div class="qa-item">
+                    <a href="#" target="_blank">现在的小孩子都生活中电视，电脑，手机的环境中，玩伴较少！对于孩子的性格培养确实增加了难度！很多教育专家会有不同建解？其实我个人觉孩子们的性格,现在的小孩子都生活中电视</a>
+                </div>
+            </div>
+            <div class="best-qa-list">
+                <div class="tit"><a href="#" target="_blank">孩子性格内向，不喜欢说话（对于亲戚），这种性格好不好？</a></div>
+                <div class="qa-info">671回答<span>|</span>1405人收藏</div>
+                <div class="qa-user">
+                    <a href="#" target="_blank" class="photo">
+                        <img src="http://apps.edushi.com/avatar/system/018.jpg" />志博云天
+                    </a>
+                    <span class="tip">历史问答达人</span>
+                    <span class="zan-number">347 赞</span>
+                </div>
+                <div class="qa-item">
+                    <a href="#" target="_blank">现在的小孩子都生活中电视，电脑，手机的环境中，玩伴较少！对于孩子的性格培养确实增加了难度！很多教育专家会有不同建解？其实我个人觉孩子们的性格,现在的小孩子都生活中电视</a>
+                </div>
+            </div>
+        </div>*@
+        
+        @if (Model.WaitQuestions != null && Model.WaitQuestions.Any())
+        {
+            <div class="invite-quest">
+                <div class="nav-tit"><span>等我</span>回答<a href="@Url.Content("~/info/2.html")" target="_blank">更多</a></div>
+                <ul class="invite-list">
+                @foreach (var item in Model.WaitQuestions)
+                {
+                    var url = Common.GetInfoUrl(Url.Content("~/"), item.IT_ID_Parent, item.IQ_ID);
+                    var userInfo = item.IQ_UserID == null || item.IQ_UserID <= 0 ? null : DataHelper.GetUserSimpleInfoByUIID(item.IQ_UserID.Value);
+                    var nickName = userInfo != null ? userInfo["NickName"] : "E都市网友";
+                    var userHead = userInfo != null ? ViewBag.UserHeaderDomain + userInfo["Avatar"] : Url.Content("~/asset/images/userhead.jpg");
+                    int userId = userInfo != null ? (int)userInfo["ID"] : 0;
+                    var wendaUserUrl = userId > 0 ? "href=" + userUrl + "wenda/index/1-" + userId + ".html target=_blank" : "";
+                    var collectionCount = DataHelper.GetUserFavoritesCount(item.IQ_ID.ToString());
+                    <li>
+                        <a href="@url" target="_blank" class="clearfix">
+                            <div class="invite-item">@Html.Raw(item.IQ_Title)</div>
+                        </a>
+                        <div class="qa-info">
+                            <a @wendaUserUrl class="photo">
+                                <img src="@userHead" />@nickName
+                            </a>
+                            <span>@Common.TimeInterval(item.IQ_CreateDate.Value, DateTime.Now)</span><span>@(item.IQ_AnswerCount)回答</span><span class="last">@(collectionCount)人收藏</span>
+                        </div>
+                        <a href="@url" target="_blank" class="answer-btn">回答</a>
+                    </li>
+                }
+                </ul>
+            </div>
+        }
+        
+        <div class="wenda-contact">
+            <span>浙网文[2015]0464-184号</span>
+            <span>浙公网安备 33010502000262号</span>
+            <span>跟帖评论自律管理承诺书</span>
+        </div>
+    </div>
+</div>
+<!--read_data：@Model.read_data_time-->
+@* 底部悬浮 *@
+@Html.Partial("_FooterFloat")
+
+<script>
+    var ConfigData = {
+        "PageIndex":1,
+        "Count": "@Model.PageCount",
+        "Page": "@Url.Content("~/")",
+        "Url": "MoreListData.htm",
+        "Id": 0,
+        "Type": 1
+    }
+</script>
+
+<script src="@Url.Content("~/asset/js/scrollload.bak.js")"></script>

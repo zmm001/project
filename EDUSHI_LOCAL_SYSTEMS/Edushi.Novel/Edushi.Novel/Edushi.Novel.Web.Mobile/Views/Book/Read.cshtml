@@ -1,0 +1,68 @@
+﻿@{
+    ViewBag.Title = "Read";
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>爱上头条（E都市）小说频道</title>
+    @Html.Partial("/Views/Shared/_PartialHead.cshtml")
+    <style type="text/css">
+        ::-webkit-scrollbar {
+            width: 5px;
+            height: 5px;
+        }
+
+        iframe {
+            width: 7.5rem;
+            height: 100%;
+            border: none;
+        }
+
+        .zhezhao {
+            display: block;
+            position: absolute;
+            left: 0;
+            top: 0;
+            z-index: 1000;
+            width: 3.2rem;
+            height: 1.3rem;
+            line-height: 0.5rem;
+            background: rgba(0,0,0,0);
+        }
+    </style>
+</head>
+<body>
+    <div id="app" v-cloak>
+        <iframe v-bind:src="sourceHref"></iframe>
+        <a class="zhezhao" href="javascript:history.go(-1);"></a>
+    </div>
+    <script type="text/javascript">
+        $(function () {
+            $("iframe").height($(window).height());
+        });
+        var datas = new Vue({
+            el: '#app',
+            data: {
+                sourceHref: ''//原文链接
+            },
+            mounted: function () {
+                var bookid = this.getQueryString("BookId")
+                var chapterid = this.getQueryString("chapter")
+                this.sourceHref = "https://aikan.i5read.com/app/reader/" + bookid + "/" + chapterid + "?bookStore=3&channel=13666657819&loginPos=6&publishChannelType=1&originUrlId=9060&isInSubscriptionsEnv=0&weixinAppId=wx48a164b9f44f6ed2"
+            },
+            methods: {
+                getQueryString: function (name) {
+                    if (name.length > 0) {
+                        var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)");
+                        var r = window.location.search.substr(1).match(reg);
+                        if (r != null) {
+                            return unescape(r[2]);
+                        }
+                    }
+                    return null;
+                }
+            }
+        })
+    </script>
+</body>
+</html>

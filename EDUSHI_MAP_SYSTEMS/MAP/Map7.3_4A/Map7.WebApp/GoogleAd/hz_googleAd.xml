@@ -1,0 +1,70 @@
+﻿<?xml version="1.0"?>
+<GoogleAdConfig>
+   <ShowEStore value="&lt;a href=&quot;http://hangzhou.edushi.com/dian/&quot; target=&quot;_blank&quot;&gt;更多&lt;span style=&quot;color:Red&quot;&gt;商家促销打折优惠券&lt;/span&gt;信息尽在杭州E店&lt;/a&gt;">
+    <Type>
+      <BigType>旅游</BigType>
+      <SmallType>汽车租赁|票务订购|旅行社</SmallType>
+    </Type>
+    <Type>
+      <BigType>吃喝</BigType>
+      <SmallType> </SmallType>
+    </Type>
+    <Type>
+      <BigType>玩乐</BigType>
+      <SmallType>网吧|洗浴|棋牌室|娱乐场|夜总会|游戏俱乐部|KTV|电影院|酒吧|剧院|音乐厅</SmallType>
+    </Type>
+    <Type>
+      <BigType>住宿</BigType>
+      <SmallType> </SmallType>
+    </Type>
+    <Type>
+      <BigType>购物</BigType>
+      <SmallType> </SmallType>
+    </Type>
+    <Type>
+      <BigType>住宿</BigType>
+      <SmallType> </SmallType>
+    </Type>
+    <Type>
+      <BigType>美容</BigType>
+      <SmallType> </SmallType>
+    </Type>
+    <Type>
+      <BigType>运动</BigType>
+      <SmallType> </SmallType>
+    </Type>
+    <Type>
+      <BigType>医疗</BigType>
+      <SmallType>保健品|药店</SmallType>
+    </Type>
+    <Type>
+      <BigType>家政</BigType>
+      <SmallType> </SmallType>
+    </Type>
+    <Type>
+      <BigType>婚庆</BigType>
+      <SmallType> </SmallType>
+    </Type>
+    <Type>
+      <BigType>教育</BigType>
+      <SmallType>外语培训|计算机培训|家教|驾校|其他培训</SmallType>
+    </Type>
+    <Type>
+      <BigType>房产</BigType>
+      <SmallType>房屋中介|装修|装饰|家居</SmallType>
+    </Type>
+    <Type>
+      <BigType>专业</BigType>
+      <SmallType> </SmallType>
+    </Type>
+    <Type>
+      <BigType>企业</BigType>
+      <SmallType> </SmallType>
+    </Type>
+    <Type>
+      <BigType>便民</BigType>
+      <SmallType> </SmallType>
+    </Type>
+  </ShowEStore>
+
+</GoogleAdConfig>

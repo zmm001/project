@@ -1,0 +1,93 @@
+﻿@model Edushi.UserCenter.Web.Mobile.Areas.WenDa.Models.FansOrAttentionsModel
+@{
+    ViewBag.Title = "我的关注-E都市问答";
+}
+
+<div id="app">
+    <div class="my">
+        <!--头部-->
+        <header-bar :data="header"></header-bar>
+        <!--内容-->
+        <div class="container">
+            <div class="follow-list follow-list-wd">
+                <ul id="datalist">
+                    @if (Model.List != null && Model.List.Any())
+                    {
+                        foreach (var item in Model.List)
+                        {
+                            <li>
+                                <a href="/user/wenda/index/1-@(item.UserId).html">
+                                    <div class="photo">
+                                        <img src="@item.Avatar">
+                                    </div>
+                                </a>
+                                <div class="info">
+                                    <a href="/user/wenda/index/1-@(item.UserId).html">
+                                        <span class="name">@Html.Raw(item.NickName)</span>
+                                        <span class="text">@Html.Raw(item.Desc)</span>
+                                    </a>
+                                        <span class="follow-btn @Html.Raw(item.IsMutualConcern ? "friends" : "following")" data-id="@item.UserId"><span></span>关注</span>
+                                        <!--已关注 following / 相互关注 friends-->
+                                </div>
+                            </li>
+                        }
+                    }
+                </ul>
+                <div class="loading" style="display: none;">加载中...</div>
+                <div class="end" @Html.Raw(Model.PageCount > 1 ? "style=\"display:none;\"" : "")>没有更多了</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+
+
+    var my = new Vue({
+        el: '#app',
+        data: function() {
+            return {
+                header: {
+                    title: '我的关注',
+                    number: '@(Model.TotalCount)人',
+                },
+            }
+        },
+        methods: {
+        },
+        mounted:function() {
+            //取消关注
+            $("#datalist").on("click",
+                "li .friends,li .following",
+                function () {
+                    var userId = $(this).data("id");
+                    $.ajax({
+                        type: "post",
+                        dataType: "json",
+                        url: "@Url.Content("~/CancelAttention.htm")",
+                        data: { "userId": userId },
+                        success: function (data) {
+                            if (data.ResultCode == 1) {
+                                window.location.href = "@Url.Content("~/wenda/attention.html")";
+                            } else if (data.ResultCode == 2) {
+                                window.location.href = 'http://m.edushi.com/user/Login.html?BackUrl=' + window.location.href;
+                            } else {
+                                alert(data.Msg);
+                            }
+                        }
+                    });
+                });
+        }
+    });
+    var ConfigData = {
+        "PageIndex":1,
+        "Count": "@Model.PageCount",
+        "Page": "@Url.Content("~/")",
+        "Url": "wenda/GetMoreAttention.htm",
+        "Id": 0,
+        "Type": 1
+    }
+
+</script>
+
+<script src="@Url.Content("~/areas/wenda/asset/js/scrollload.bak.js")"></script>

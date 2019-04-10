@@ -1,0 +1,114 @@
+﻿@import url(Common.css);
+body{font-family:"宋体"}
+.PopNav{position:relative;}
+.ThemeMapNav,.ThemeMapNav2,.eStoreNav,.CorpNav,.CorpNav2,.ArchitNav{position:relative;width:305px; text-align:left;}
+.ThemeMapNav,.CorpNav,.ArchitNav{height:276px;}
+.eStoreNav{height:316px;}
+.ThemeMapNav2,.CorpNav2{ height:206px;}
+
+.PopContent{position:absolute; top:0; left:0;width:280px; height:205px; padding:2px 15px 3px 10px;}
+.CloseWin,.CloseBtnOver,.CloseBtnOut{position:absolute; top:11px; right:12px; cursor:hand; width:13px; height:13px; overflow:hidden;background:url(../Images/CloseBtn.gif) no-repeat left top;}
+.CloseBtnOver{background-position:left -13px;}
+
+.ThemeMap,.eStore,.Corp,.Archit{width:305px; height:276px;}
+.eStore{ width:305px; height:316px;}
+.ThemeMap2,.Corp2{ width:305px; height:206px;}
+
+/*主题地图泡泡*/
+.ThemeMap{
+    /*---- IE6 png bug ----*/
+    background:url('../Images/ThemeMap.png') !important;
+	background:none;
+	filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../Images/ThemeMap.png',sizingMethod='image') !important;
+}
+
+/*房途泡泡*/
+.ThemeMap2{
+    /*---- IE6 png bug ----*/
+    background:url('../Images/ThemeMap2.png') !important;
+	background:none;
+	filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../Images/ThemeMap2.png',sizingMethod='image') !important;
+}
+
+/*E店泡泡*/
+.eStore{
+    /*---- IE6 png bug ----*/
+    background:url('../Images/eStoreBg.png') !important;
+	background:none;
+	filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../Images/eStoreBg.png',sizingMethod='image') !important;
+	}
+	
+/*企业泡泡*/
+.Corp{
+    /*---- IE6 png bug ----*/
+    background:url('../Images/CorpBg.png') !important;
+	background:none;
+	filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../Images/CorpBg.png',sizingMethod='image') !important;
+	}
+
+/*Poi泡泡*/
+.Corp2{
+    /*---- IE6 png bug ----*/
+    background:url('../Images/CorpBg2.png') !important;
+	background:none;
+	filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../Images/CorpBg2.png',sizingMethod='image') !important;
+	}
+	
+/*建筑泡泡*/
+.Archit{
+    /*---- IE6 png bug ----*/
+    background:url('../Images/ArchitBg.png') !important;
+	background:none;
+	filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../Images/ArchitBg.png',sizingMethod='image') !important;
+	}
+.PopContent .TextBox{width:280px; height:170px; overflow:auto;
+                     scrollbar-face-color: #DBEBFE; /*滚动条凸出部分的颜色*/
+                     scrollbar-shadow-color: #B8D6FA; /*滚动条空白部分的颜色*/
+                     scrollbar-highlight-color: #FFFFFF; /*立体滚动条阴影的颜色*/
+                     scrollbar-3dlight-color: #DBEBFE; /*滚动条亮边的颜色*/
+                     scrollbar-darkshadow-color:#458CE4; /*上下按钮上三角箭头的颜色*/
+                     scrollbar-track-color: #FFFFFF; /*滚动条的背景颜色*/
+                     scrollbar-arrow-color: #458CE4;/*滚动条强阴影的颜色*/ 
+                     }
+.PopContent h3{font-size:14px; padding:0; margin:1px 0 3px; width:280px; height:23px; overflow:hidden;}
+.PopContent h3 span{ float:left; display:block; overflow:hidden;}
+.PopContent h3 span.Til{ padding:8px 0 0; height:15px; line-height:15px; margin-right:3px;}
+.PopContent h3 Img{ margin:5px 1px 0;}
+.LeftNav{float:left; width:84px; background-color:White; border:1px solid #CCC; padding:1px;}
+.StorePho{width:84px;height:56px;overflow:hidden;}
+.StorePho img{width:84px;}
+
+.ThemeMapNav2 .RgtNav,.eStoreNav .RgtNav,.CorpNav .RgtNav,.ArchitNav .RgtNav{float:right; width:186px;}
+.RgtNav a.MoreInfo{ text-decoration:underline;}
+.ThemeMapNav2 .RgtNav p,.eStoreNav .RgtNav p,.CorpNav .RgtNav p,.CorpNav2 .RgtNav p,.ArchitNav .RgtNav p,.RowNav2 p{padding:0; margin:0; height:19px; line-height:19px; overflow:hidden;-o-text-overflow:ellipsis; text-overflow:ellipsis; white-space:nowrap;}
+.ThemeMapNav2 .RgtNav p,.eStoreNav .RgtNav p,.CorpNav .RgtNav p,.ArchitNav .RgtNav p{ width:186px;}
+.CorpNav2 .RgtNav p{ width:280px;}
+
+span.PutRightRz,span.PutRightBl,span.PutRightdz{ position:absolute;}
+span.PutRightRz{ top:18px; left:112px;}
+/*tmm*/
+span.PutRightdz{ top:0px; right:0px}
+
+.eStoreNav span.PutRightBl,.CorpNav span.PutRightBl,.ArchitNav span.PutRightBl{ top:36px; left:124px;}
+.CorpNav2 span.PutRightBl{ top:18px; left:210px;}
+span.PutRightBl a{ margin-top:4px; text-decoration:underline; background:url(../Images/BulIco.gif) no-repeat left top; display:block; height:13px; line-height:13px; padding:1px 0 0 14px;}
+P.PutRightBl a{ margin-top:4px; text-decoration:underline; background:url(../Images/BulIco.gif) no-repeat left top; display:block; height:13px; line-height:13px; padding:1px 0 0 14px;}
+span.PutRightBl a:hover,.RgtNav a.MoreInfo:hover{ color:Red; text-decoration:none;}
+
+.CorpNav2 .RowNav{ margin:5px 0; width:280px; overflow:hidden;}
+.ThemeMapNav2 .RowNav{ margin:5px; width:270px; overflow:hidden; border:1px solid #CCC; background-color:#F2F2F2; padding:5px 4px 3px; text-align:left;}
+.RowNav{ margin:3px 0; width:280px; overflow:hidden;}
+.RowNav span.OrgSty,.RowNav2 span.OrgSty{ font-family:Arial; color:#FF6400;}
+.RowNav ul{padding:5px 0 0; margin:0; list-style-type:none;}
+.RowNav ul li{float:left; margin:0 6px 0 0;}
+.RowNav ul li img,span.ToFriInput img{cursor:pointer;}
+span.ToFriInput{float:left; margin-right:1px;}
+
+.RowNav2 {margin-top:7px; height:35px; width:270px; overflow:hidden; border:1px solid #CCC; background-color:#F2F2F2; padding:5px 4px 3px; text-align:left;}
+
+/*优惠券、促销*/
+.OthInfoNav{ color:#666;}
+.OthInfoNav p{ margin:5px 0;}
+
+
+

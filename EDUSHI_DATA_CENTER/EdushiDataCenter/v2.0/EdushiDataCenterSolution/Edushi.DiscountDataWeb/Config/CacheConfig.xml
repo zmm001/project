@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<!--
+Path        memcached中缓存键值 如：{dian}_{CityCode}_{Language}_{key}
+Key         缓存模块key
+CacheTime   缓存时间（单位：分钟）
+Ending      后缀（默认为空）
+IDEnd       是否是ID结尾的（true/false）
+ListKey     包含key列表
+KeyInfo     key说明
+<Item Key=""  CacheTime="" Ending="">缓存描述</Item>
+    ===>>>最终memcache中的key为  Path+Ending / Path+Ending_ListKey
+-->
+<ItemList Path="discount_{0}_{1}_{2}">
+<!--商圈中的数据-->
+    <Item Key="tagrecommend"  CacheTime="120">商圈中的快速导航</Item>
+    <Item Key="category"  CacheTime="120" IDEnd="true" KeyInfo="后缀为行业分类ID">获得商圈中行业的分类</Item>
+    <Item Key="eshopdynamic"  CacheTime="120" IDEnd="true" KeyInfo="企业ID">E店动态的信息</Item>
+    <Item Key="remmonddymic"  CacheTime="120">商圈推荐动态信息</Item>
+    <Item Key="landmarkdymic"  CacheTime="120">商圈地标公告推荐</Item>    
+    <Item Key="areadata"  CacheTime="120">获得商圈的区域数据</Item>
+    <Item Key="businessaaradata"  CacheTime="120">获得所有的区域商圈</Item>
+    <!--折扣中的数据-->
+    <Item Key="discountcachezonetype"  CacheTime="120">获得折扣地域类别</Item>    
+    <Item Key="discountcachetradetype"  CacheTime="120">获得折扣的行业类别</Item>	
+    <Item Key="discounthotkeyword"  CacheTime="120">获得热门关键字</Item>
+    <Item Key="discountcachemarqueelist"  CacheTime="120">折扣频道滚动信息</Item>	
+    <Item Key="alldiscountdata"  CacheTime="120">获得所有的数据集</Item>
+	
+    <Item Key="discountalleshopdata"  CacheTime="120">获得折扣中所有的E店</Item>
+    <Item Key="channeltype"  CacheTime="120">所有频道的广告</Item>  
+</ItemList>

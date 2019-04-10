@@ -1,0 +1,1567 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="MongoDB.Bson.BsonConstants" Collapsed="true">
+    <Position X="149.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAQAgAAIAAAAIAAAAAAAAAAAAAQAAQAA=</HashCode>
+      <FileName>BsonConstants.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MongoDB.Bson.BsonDefaults" Collapsed="true">
+    <Position X="151.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAIAAAAAAAAAAAAAAAAAAABAAAAAAIAAAIAAAAA=</HashCode>
+      <FileName>BsonDefaults.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MongoDB.Bson.BsonExtensionMethods" Collapsed="true">
+    <Position X="151.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAIAAAAAAAAAA=</HashCode>
+      <FileName>BsonExtensionMethods.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MongoDB.Bson.BsonUtils" Collapsed="true">
+    <Position X="149.5" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BAAAAAAAAAAAAAAAAACAAAAIACAAAAAEAAACAAAAACA=</HashCode>
+      <FileName>BsonUtils.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MongoDB.Bson.BsonException" Collapsed="true">
+    <Position X="19" Y="10.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Exceptions\BsonException.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MongoDB.Bson.BsonInternalException" Collapsed="true">
+    <Position X="16.75" Y="12" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Exceptions\BsonInternalException.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MongoDB.Bson.BsonSerializationException" Collapsed="true">
+    <Position X="19" Y="12" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Exceptions\BsonSerializationException.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MongoDB.Bson.TruncationException" Collapsed="true">
+    <Position X="21.25" Y="12" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Exceptions\TruncationException.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MongoDB.Bson.BsonArray" Collapsed="true">
+    <Position X="18.25" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AFIAAEABAAAAABQUiAAABAQiAIAAAMAkCAggAABUIjA=</HashCode>
+      <FileName>ObjectModel\BsonArray.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="MongoDB.Bson.BsonBinaryData" Collapsed="true">
+    <Position X="22.75" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABAAIAIAIAAAAAQEgAAAAAIgAAAAAMAAAAAIAQAAAiA=</HashCode>
+      <FileName>ObjectModel\BsonBinaryData.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="MongoDB.Bson.BsonBoolean" Collapsed="true">
+    <Position X="29.5" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABAEAAAAAACAAAQEgAAAAAAAAgAAAMAAAAggAAAAAiA=</HashCode>
+      <FileName>ObjectModel\BsonBoolean.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="MongoDB.Bson.BsonDateTime" Collapsed="true">
+    <Position X="34" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BBAAAAAAAEAAAAQEgACQAAAAAAAAAMAAAACgAAAQAiA=</HashCode>
+      <FileName>ObjectModel\BsonDateTime.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="MongoDB.Bson.BsonDocument" Collapsed="true">
+    <Position X="38.5" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>aBIwgAAAJAAABJQkiACQBAAgAOBCBcIkCAAiAgBYAjI=</HashCode>
+      <FileName>ObjectModel\BsonDocument.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="MongoDB.Bson.BsonDocumentWrapper" Collapsed="true">
+    <Position X="40.75" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IAAAAAAAAAAAAAQEgAIAAAAgACBAEMAAAAAAAgAAAAI=</HashCode>
+      <FileName>ObjectModel\BsonDocumentWrapper.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="MongoDB.Bson.BsonDouble" Collapsed="true">
+    <Position X="2.5" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABAAAAAEQAAAAAQEgAAAAAAAAAAAAMAAAAAgAAAAAiA=</HashCode>
+      <FileName>ObjectModel\BsonDouble.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="MongoDB.Bson.BsonElement" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="161.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABAAIAAAAAAAAAQEgAAAAAQgAIAAAMAgAACgAAAAAjA=</HashCode>
+      <FileName>ObjectModel\BsonElement.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="MongoDB.Bson.BsonInt32" Collapsed="true">
+    <Position X="4.75" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABAAAAAEAAAAAAQEkBEgAAAAAQAAAMBAABggAAAAAqA=</HashCode>
+      <FileName>ObjectModel\BsonInt32.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="MongoDB.Bson.BsonInt64" Collapsed="true">
+    <Position X="9.25" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABAAAAAEAAAAAAQEgAAAAAAAAAAAAMAAIAAgAAAAAiA=</HashCode>
+      <FileName>ObjectModel\BsonInt64.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="MongoDB.Bson.BsonJavaScript" Collapsed="true">
+    <Position X="11.5" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAQEgAAgAAAAAAAAAMAEAAAAAAAgAiA=</HashCode>
+      <FileName>ObjectModel\BsonJavaScript.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="MongoDB.Bson.BsonJavaScriptWithScope" Collapsed="true">
+    <Position X="11.5" Y="6.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAIAAAAAAAAACQEgAAAAAAAAIAAAMAAAAAAAAAAAjA=</HashCode>
+      <FileName>ObjectModel\BsonJavaScriptWithScope.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="MongoDB.Bson.BsonMaxKey" Collapsed="true">
+    <Position X="13.75" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAQEgAAAAAAAAAAAAIAAABAgAAAAAiA=</HashCode>
+      <FileName>ObjectModel\BsonMaxKey.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="MongoDB.Bson.BsonMinKey" Collapsed="true">
+    <Position X="16" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAQEgAAAAAAAAAAAAIAAABAgAAAAAiA=</HashCode>
+      <FileName>ObjectModel\BsonMinKey.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="MongoDB.Bson.BsonNull" Collapsed="true">
+    <Position X="20.5" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAQEgAAAAAAAAAAAAIAAABAgAAAAAiA=</HashCode>
+      <FileName>ObjectModel\BsonNull.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="MongoDB.Bson.BsonObjectId" Collapsed="true">
+    <Position X="25" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AJAgAAAAAAAAAAQEoIICAgAAAAAAAMAAAAAggAAABiA=</HashCode>
+      <FileName>ObjectModel\BsonObjectId.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="MongoDB.Bson.BsonRegularExpression" Collapsed="true">
+    <Position X="27.25" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAQAAAAQEgAAIAAAQAACAgMAAAAAAAABAAiA=</HashCode>
+      <FileName>ObjectModel\BsonRegularExpression.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="MongoDB.Bson.BsonString" Collapsed="true">
+    <Position X="31.75" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABAAAAAAAAAAAAQEgAIAAAAAAAAAAMAgAAAgAAAAAiA=</HashCode>
+      <FileName>ObjectModel\BsonString.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="MongoDB.Bson.BsonSymbol" Collapsed="true">
+    <Position X="36.25" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAIAAAAAAAAAQEgAAAAAQAAAAAAMAAAAAABAAAAiA=</HashCode>
+      <FileName>ObjectModel\BsonSymbol.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="MongoDB.Bson.BsonSymbolTable" Collapsed="true">
+    <Position X="160" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAgAAAAAAAAIAAAAAAAAAAAAAAAAACAAAA=</HashCode>
+      <FileName>ObjectModel\BsonSymbolTable.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MongoDB.Bson.BsonTimestamp" Collapsed="true">
+    <Position X="43" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABAAAAAAAAAAAAQEoAACAAAAAAAAAMAAAAAgAAAAAiA=</HashCode>
+      <FileName>ObjectModel\BsonTimestamp.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="MongoDB.Bson.BsonTypeMapper" Collapsed="true">
+    <Position X="161.75" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAEAAABAAAABAAAIAAAQAAAAAAAAAAAAAAAiAAAAA=</HashCode>
+      <FileName>ObjectModel\BsonTypeMapper.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MongoDB.Bson.BsonUndefined" Collapsed="true">
+    <Position X="7" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAQEgAAAAAAAAAAAAIAAABAgAAAAAiA=</HashCode>
+      <FileName>ObjectModel\BsonUndefined.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="MongoDB.Bson.BsonValue" Collapsed="true">
+    <Position X="22.75" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>UDgokNKFAAAAFw5t912KCgJgOs2Q0PBggLFl6ExCP3g=</HashCode>
+      <FileName>ObjectModel\BsonValue.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="MongoDB.Bson.GuidConverter" Collapsed="true">
+    <Position X="161.75" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAACAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAA=</HashCode>
+      <FileName>ObjectModel\GuidConverter.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MongoDB.Bson.IO.BsonBinaryReader" Collapsed="true">
+    <Position X="13.25" Y="17.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ARIJBASiACAABEAABAAAwgAAwHAEAQAAAAAkABiCQRA=</HashCode>
+      <FileName>IO\BsonBinaryReader.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MongoDB.Bson.IO.BsonBinaryReaderBookmark" Collapsed="true">
+    <Position X="5.25" Y="17.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAEAAAAAAABAAgAAAAAAAAAAAAAAAAAAAAgAAAAAA=</HashCode>
+      <FileName>IO\BsonBinaryReaderBookmark.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MongoDB.Bson.IO.BsonBinaryReaderContext" Collapsed="true">
+    <Position X="156.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAIAAAQAAAAAAAAAAAAAAAAAAAAgBAAAAQAAIAABA=</HashCode>
+      <FileName>IO\BsonBinaryReaderContext.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MongoDB.Bson.IO.BsonBinaryReaderSettings" Collapsed="true">
+    <Position X="13.25" Y="14.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IEAEAAAQAAAAAAAAAAIAAAAAAQBAAAAAIAAAAAABBBE=</HashCode>
+      <FileName>IO\BsonBinaryReaderSettings.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MongoDB.Bson.IO.BsonBinaryWriter" Collapsed="true">
+    <Position X="5.25" Y="14.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAIBAAAhADAAhAA4YkEEAAAASAAAAAKAAACABAiIQFA=</HashCode>
+      <FileName>IO\BsonBinaryWriter.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MongoDB.Bson.IO.BsonBinaryWriterContext" Collapsed="true">
+    <Position X="158.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAIAAAEAAAAAAAAAAgAAAAAAAAAgBAAAEQAAAACAA=</HashCode>
+      <FileName>IO\BsonBinaryWriterContext.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MongoDB.Bson.IO.BsonBinaryWriterSettings" Collapsed="true">
+    <Position X="8.75" Y="11.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAEAAAAQAAAAAgAAAIAAgAAAQBAAAAAAIAAAAABABA=</HashCode>
+      <FileName>IO\BsonBinaryWriterSettings.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MongoDB.Bson.IO.BsonBuffer" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="160" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AgQAAASbACAMABggQoMAgARAYCABgUKiBSCQwJBAMBA=</HashCode>
+      <FileName>IO\BsonBuffer.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="MongoDB.Bson.IO.BsonDocumentReader" Collapsed="true">
+    <Position X="8.75" Y="17.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQIJBASCACAABEAABAAAwgAAAHAEAQAAAAAkABiCARA=</HashCode>
+      <FileName>IO\BsonDocumentReader.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MongoDB.Bson.IO.BsonDocumentReaderBookmark" Collapsed="true">
+    <Position X="0.75" Y="17.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QAAAEAAAAAAABAAAAAAAAAAAAEAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>IO\BsonDocumentReaderBookmark.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MongoDB.Bson.IO.BsonDocumentReaderContext" Collapsed="true">
+    <Position X="158.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAIAAAQEAACAUAAAAgAAAAAAAAAgACAAEQAAIAABA=</HashCode>
+      <FileName>IO\BsonDocumentReaderContext.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MongoDB.Bson.IO.BsonDocumentReaderSettings" Collapsed="true">
+    <Position X="8.75" Y="14.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAEAAAAAAAAAAAAAAIAAAAAAQAAAAAAAAAAAAAAABA=</HashCode>
+      <FileName>IO\BsonDocumentReaderSettings.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MongoDB.Bson.IO.BsonDocumentWriter" Collapsed="true">
+    <Position X="3" Y="14.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gAIBAAABADAAhAAgYkMEAAQACAAAAAKAAACAAYiIAEA=</HashCode>
+      <FileName>IO\BsonDocumentWriter.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MongoDB.Bson.IO.BsonDocumentWriterContext" Collapsed="true">
+    <Position X="160" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAIAAAAEAACAAAAAAgAAQAAAAAAgACAAAQAAIgCAA=</HashCode>
+      <FileName>IO\BsonDocumentWriterContext.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MongoDB.Bson.IO.BsonDocumentWriterSettings" Collapsed="true">
+    <Position X="13.25" Y="11.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAEAAAAAAAAAAAAAAIAAAAAAQAAAAAAAAAAAAAAABA=</HashCode>
+      <FileName>IO\BsonDocumentWriterSettings.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MongoDB.Bson.IO.BsonReader" Collapsed="true">
+    <Position X="11" Y="16.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQIJBAaCBCAEBEAAhBAgygABAHAsAUAAsAAkBBCKARA=</HashCode>
+      <FileName>IO\BsonReader.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="MongoDB.Bson.IO.BsonReaderBookmark" Collapsed="true">
+    <Position X="3" Y="16.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAABAAAAAAAAAAACAABAAAIAAAAAAAAJAAAAAA=</HashCode>
+      <FileName>IO\BsonReaderBookmark.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MongoDB.Bson.IO.BsonReaderSettings" Collapsed="true">
+    <Position X="11" Y="13.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAIBAAAAAAAAAAAAAAIQAQAAYAAAAAAAAAAAABI=</HashCode>
+      <FileName>IO\BsonReaderSettings.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MongoDB.Bson.IO.BsonWriter" Collapsed="true">
+    <Position X="3" Y="13.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAIBIAIBADAUgAAg5sEECAQACAAAAEKgoACABICIAEA=</HashCode>
+      <FileName>IO\BsonWriter.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="MongoDB.Bson.IO.BsonWriterSettings" Collapsed="true">
+    <Position X="11" Y="10.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAIBAAAAAAAAAAAAAAIQAQAAYAAAAAAAAAAAABI=</HashCode>
+      <FileName>IO\BsonWriterSettings.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MongoDB.Bson.IO.JsonBuffer" Collapsed="true">
+    <Position X="151.25" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAgAEIAAAAgAAAAAABgAAAAAAAAAAAAgAAAAAA=</HashCode>
+      <FileName>IO\JsonBuffer.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MongoDB.Bson.IO.JsonReader" Collapsed="true">
+    <Position X="11" Y="17.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BRIJRBbiYCggBEAABAAEwwgUAHAEAVAQABAnAByCARE=</HashCode>
+      <FileName>IO\JsonReader.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MongoDB.Bson.IO.JsonReaderBookmark" Collapsed="true">
+    <Position X="3" Y="17.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>RAAAEAAAAAAABAAgAAABAAAAAEAAAAAAAAAAgAIAAAA=</HashCode>
+      <FileName>IO\JsonReaderBookmark.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MongoDB.Bson.IO.JsonReaderContext" Collapsed="true">
+    <Position X="153" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAIAAAQAAAAAAAAAAAAAAAAAAAAgAAAAAQAAAAABA=</HashCode>
+      <FileName>IO\JsonReaderContext.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MongoDB.Bson.IO.JsonReaderSettings" Collapsed="true">
+    <Position X="11" Y="14.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IAAEAAAQAAAAAAAAAAIAAAAAAQAAAAAAAAAAAAAAABA=</HashCode>
+      <FileName>IO\JsonReaderSettings.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MongoDB.Bson.IO.JsonScanner" Collapsed="true">
+    <Position X="154.75" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQAAAAAAEAAAAAAAAAAAIAAAAAAAAAFAAAAAAAACAAA=</HashCode>
+      <FileName>IO\JsonScanner.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MongoDB.Bson.IO.JsonToken" Collapsed="true">
+    <Position X="7.75" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACAAAAQAAAQAAAAAAAAAIEAgBQAAIAAAABA=</HashCode>
+      <FileName>IO\JsonToken.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MongoDB.Bson.IO.DateTimeJsonToken" Collapsed="true">
+    <Position X="7.75" Y="8.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>IO\JsonToken.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MongoDB.Bson.IO.DoubleJsonToken" Collapsed="true">
+    <Position X="10" Y="8.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAA=</HashCode>
+      <FileName>IO\JsonToken.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MongoDB.Bson.IO.Int32JsonToken" Collapsed="true">
+    <Position X="12.25" Y="8.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABA=</HashCode>
+      <FileName>IO\JsonToken.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MongoDB.Bson.IO.Int64JsonToken" Collapsed="true">
+    <Position X="14.5" Y="8.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>IO\JsonToken.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MongoDB.Bson.IO.ObjectIdJsonToken" Collapsed="true">
+    <Position X="1" Y="8.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAA=</HashCode>
+      <FileName>IO\JsonToken.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MongoDB.Bson.IO.RegularExpressionJsonToken" Collapsed="true">
+    <Position X="3.25" Y="8.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAA=</HashCode>
+      <FileName>IO\JsonToken.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MongoDB.Bson.IO.StringJsonToken" Collapsed="true">
+    <Position X="5.5" Y="8.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAA=</HashCode>
+      <FileName>IO\JsonToken.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MongoDB.Bson.IO.JsonWriter" Collapsed="true">
+    <Position X="0.75" Y="14.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAIBAAABADAAhAAg4kEkAAAACAAAAAKAAACABAiIAEA=</HashCode>
+      <FileName>IO\JsonWriter.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MongoDB.Bson.IO.JsonWriterContext" Collapsed="true">
+    <Position X="156.5" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAIAQAAAQAAAAAAAAAAIAAAAAAAgAAAAAQAAACCAA=</HashCode>
+      <FileName>IO\JsonWriterContext.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MongoDB.Bson.IO.JsonWriterSettings" Collapsed="true">
+    <Position X="11" Y="11.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAEAQAAAAIEAAgAEAIAAAAAgQAAAAAAIIAgAAhAAFA=</HashCode>
+      <FileName>IO\JsonWriterSettings.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MongoDB.Bson.Serialization.Attributes.BsonDateTimeOptionsAttribute" Collapsed="true">
+    <Position X="3" Y="12" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAABAAABAAEEAAAAAAABAAEAAAAAAAAgAAAA=</HashCode>
+      <FileName>Serialization\Attributes\BsonDateTimeOptionsAttribute.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MongoDB.Bson.Serialization.Attributes.BsonDefaultValueAttribute" Collapsed="true">
+    <Position X="154.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QAAAAAAAAAAAAAAAAAAIAAAAAABAICAAAAAAAAAAEAA=</HashCode>
+      <FileName>Serialization\Attributes\BsonDefaultValueAttribute.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MongoDB.Bson.Serialization.Attributes.BsonDictionaryOptionsAttribute" Collapsed="true">
+    <Position X="5.25" Y="12" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAEAAAAAAAAAAAEAAAAAAAAgAAAA=</HashCode>
+      <FileName>Serialization\Attributes\BsonDictionaryOptionsAttribute.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MongoDB.Bson.Serialization.Attributes.BsonDiscriminatorAttribute" Collapsed="true">
+    <Position X="156.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ACAAAAAYAAEAAAAQAAAAABAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Serialization\Attributes\BsonDiscriminatorAttribute.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MongoDB.Bson.Serialization.Attributes.BsonElementAttribute" Collapsed="true">
+    <Position X="149.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAEAAAACAAAAAAAAAAAAAAAAEAAAAAAAAAIAAAAAAAA=</HashCode>
+      <FileName>Serialization\Attributes\BsonElementAttribute.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MongoDB.Bson.Serialization.Attributes.BsonExtraElementsAttribute" Collapsed="true">
+    <Position X="153" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Serialization\Attributes\BsonExtraElementsAttribute.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MongoDB.Bson.Serialization.Attributes.BsonIdAttribute" Collapsed="true">
+    <Position X="156.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQEAAAACAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAA=</HashCode>
+      <FileName>Serialization\Attributes\BsonIdAttribute.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MongoDB.Bson.Serialization.Attributes.BsonIgnoreAttribute" Collapsed="true">
+    <Position X="158.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Serialization\Attributes\BsonIgnoreAttribute.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MongoDB.Bson.Serialization.Attributes.BsonIgnoreExtraElementsAttribute" Collapsed="true">
+    <Position X="160" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAIAAAAAAAAAAAIAAAAAAAEAAAEAAAAAAAAAAAA=</HashCode>
+      <FileName>Serialization\Attributes\BsonIgnoreExtraElementsAttribute.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MongoDB.Bson.Serialization.Attributes.BsonIgnoreIfDefaultAttribute" Collapsed="true">
+    <Position X="161.75" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAA=</HashCode>
+      <FileName>Serialization\Attributes\BsonIgnoreIfDefaultAttribute.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MongoDB.Bson.Serialization.Attributes.BsonIgnoreIfNullAttribute" Collapsed="true">
+    <Position X="149.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAA=</HashCode>
+      <FileName>Serialization\Attributes\BsonIgnoreIfNullAttribute.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MongoDB.Bson.Serialization.Attributes.BsonKnownTypesAttribute" Collapsed="true">
+    <Position X="151.25" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAA=</HashCode>
+      <FileName>Serialization\Attributes\BsonKnownTypesAttribute.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MongoDB.Bson.Serialization.Attributes.BsonRepresentationAttribute" Collapsed="true">
+    <Position X="0.75" Y="12" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAQAAACAAAAAUAAAAAAAAAAAGAAAAAAAAgAAAA=</HashCode>
+      <FileName>Serialization\Attributes\BsonRepresentationAttribute.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MongoDB.Bson.Serialization.Attributes.BsonRequiredAttribute" Collapsed="true">
+    <Position X="156.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Serialization\Attributes\BsonRequiredAttribute.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MongoDB.Bson.Serialization.Attributes.BsonSerializationOptionsAttribute" Collapsed="true">
+    <Position X="3" Y="10.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Serialization\Attributes\BsonSerializationOptionsAttribute.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MongoDB.Bson.Serialization.BsonClassMap" Collapsed="true">
+    <Position X="16.5" Y="13.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ATQCRSJLA0CxAyUqgQALCIjoAhMAxiNlQBAEaAAUIRs=</HashCode>
+      <FileName>Serialization\BsonClassMap.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MongoDB.Bson.Serialization.BsonClassMap&lt;TClass&gt;" Collapsed="true">
+    <Position X="16.5" Y="14.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQAAACAABAAAAgQIAAAAAAgAQAAAgAAAABAESAAAABg=</HashCode>
+      <FileName>Serialization\BsonClassMap.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MongoDB.Bson.Serialization.BsonClassMapSerializer" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="161.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ICAAAAAAAAAAAAgAAAAQAAAAACBAAAABQQAAAAAAAgI=</HashCode>
+      <FileName>Serialization\BsonClassMapSerializer.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="MongoDB.Bson.Serialization.BsonDefaultSerializer" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="153" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ACABAAAAAAAAAAACAEAAQAAAAAFCABAQQAAAACCIQAA=</HashCode>
+      <FileName>Serialization\BsonDefaultSerializer.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="MongoDB.Bson.Serialization.BsonMemberMap" Collapsed="true">
+    <Position X="153" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>MQECIgYCADCABAAGhKBI4EAgMBZAmAEAAAIkCgIAUAA=</HashCode>
+      <FileName>Serialization\BsonMemberMap.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MongoDB.Bson.Serialization.BsonSerializer" Collapsed="true">
+    <Position X="158.25" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gCBBAAgAAAAAAAABACAAAIAQACBICAAwAAICQQAAABI=</HashCode>
+      <FileName>Serialization\BsonSerializer.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MongoDB.Bson.Serialization.Conventions.ConventionProfile" Collapsed="true">
+    <Position X="154.75" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IAAAgCAAAAAAAEEgIQAQEEEAAAAAAQiiAAAiAABAAEE=</HashCode>
+      <FileName>Serialization\Conventions\ConventionProfile.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MongoDB.Bson.Serialization.Conventions.NullDefaultValueConvention" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="158.25" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Serialization\Conventions\DefaultValueConventions.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="MongoDB.Bson.Serialization.Conventions.StandardDiscriminatorConvention" Collapsed="true">
+    <Position X="1.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CAAAIAAAAAAAAAAAAGAAAAAAEAoAAAAAAAIAAAAAAAA=</HashCode>
+      <FileName>Serialization\Conventions\DiscriminatorConventions.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="MongoDB.Bson.Serialization.Conventions.ScalarDiscriminatorConvention" Collapsed="true">
+    <Position X="0.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Serialization\Conventions\DiscriminatorConventions.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MongoDB.Bson.Serialization.Conventions.HierarchicalDiscriminatorConvention" Collapsed="true">
+    <Position X="2.75" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Serialization\Conventions\DiscriminatorConventions.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MongoDB.Bson.Serialization.Conventions.MemberNameElementNameConvention" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="160" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Serialization\Conventions\ElementNameConventions.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="MongoDB.Bson.Serialization.Conventions.CamelCaseElementNameConvention" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="151.25" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Serialization\Conventions\ElementNameConventions.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="MongoDB.Bson.Serialization.Conventions.NamedExtraElementsMemberConvention" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="161.75" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAIAAAAAQAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Serialization\Conventions\ExtraElementsMemberConventions.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="MongoDB.Bson.Serialization.Conventions.LookupIdGeneratorConvention" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="158.25" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Serialization\Conventions\IdGeneratorConventions.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="MongoDB.Bson.Serialization.Conventions.NamedIdMemberConvention" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="149.5" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIA=</HashCode>
+      <FileName>Serialization\Conventions\IdMemberConventions.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="MongoDB.Bson.Serialization.Conventions.NeverIgnoreExtraElementsConvention" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="151.25" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Serialization\Conventions\IgnoreExtraElementsConventions.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="MongoDB.Bson.Serialization.Conventions.AlwaysIgnoreExtraElementsConvention" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="149.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Serialization\Conventions\IgnoreExtraElementsConventions.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="MongoDB.Bson.Serialization.Conventions.NeverIgnoreIfDefaultConvention" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="153" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Serialization\Conventions\IgnoreIfDefaultConventions.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="MongoDB.Bson.Serialization.Conventions.AlwaysIgnoreIfDefaultConvention" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="151.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Serialization\Conventions\IgnoreIfDefaultConventions.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="MongoDB.Bson.Serialization.Conventions.NeverIgnoreIfNullConvention" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="154.75" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Serialization\Conventions\IgnoreIfNullConventions.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="MongoDB.Bson.Serialization.Conventions.AlwaysIgnoreIfNullConvention" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="153" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Serialization\Conventions\IgnoreIfNullConventions.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="MongoDB.Bson.Serialization.Conventions.PublicMemberFinderConvention" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="151.25" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Serialization\Conventions\MemberFinderConventions.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="MongoDB.Bson.Serialization.Conventions.NeverSerializeDefaultValueConvention" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="156.5" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Serialization\Conventions\SerializeDefaultValueConventions.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="MongoDB.Bson.Serialization.Conventions.AlwaysSerializeDefaultValueConvention" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="154.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Serialization\Conventions\SerializeDefaultValueConventions.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="MongoDB.Bson.Serialization.IdGenerators.BsonObjectIdGenerator" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="154.75" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ACBAAAAAAAAAAAAAAAAAAAAAQAAAAAAAQAAAAAAAAAA=</HashCode>
+      <FileName>Serialization\IdGenerators\IdGenerators.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="MongoDB.Bson.Serialization.IdGenerators.CombGuidGenerator" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="153" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ACBAAAAAAAAAAAAAAAAAAAAAQAAAAAAAQAAAAAAAAAA=</HashCode>
+      <FileName>Serialization\IdGenerators\IdGenerators.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="MongoDB.Bson.Serialization.IdGenerators.GuidGenerator" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="149.5" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ACBAAAAAAAAAAAAAAAAAAAAAQAAAAAAAQAAAAAAAAAA=</HashCode>
+      <FileName>Serialization\IdGenerators\IdGenerators.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="MongoDB.Bson.Serialization.IdGenerators.NullIdChecker" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="160" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ACBAAAAAAAAAAAAAAAAAAAAAQAAAAAAAQAAAAAAAAAA=</HashCode>
+      <FileName>Serialization\IdGenerators\IdGenerators.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="MongoDB.Bson.Serialization.IdGenerators.ObjectIdGenerator" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="161.75" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ACBAAAAAAAAAAAAAAAAAAAAAQAAAAAAAQAAAAAAAAAA=</HashCode>
+      <FileName>Serialization\IdGenerators\IdGenerators.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="MongoDB.Bson.Serialization.IdGenerators.StringObjectIdGenerator" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="154.75" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ACBAAAAAAAAAAAAAAAAAAAAAQAAAAAAAQAAAAAAAAAA=</HashCode>
+      <FileName>Serialization\IdGenerators\IdGenerators.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="MongoDB.Bson.Serialization.IdGenerators.ZeroIdChecker&lt;T&gt;" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="156.5" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AABAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Serialization\IdGenerators\IdGenerators.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="MongoDB.Bson.Serialization.Options.DateTimeSerializationOptions" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="156.5" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAoEBAAAAABAIABAAAMAAAABAABAAEACAAAAAAgAAAA=</HashCode>
+      <FileName>Serialization\Options\DateTimeSerializationOptions.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="MongoDB.Bson.Serialization.Options.DictionarySerializationOptions" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="158.25" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAgEAAAAAAAAAQCBACIAAAAAAAAAAEACCAAAAAgAAAE=</HashCode>
+      <FileName>Serialization\Options\DictionarySerializationOptions.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="MongoDB.Bson.Serialization.Options.DocumentSerializationOptions" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="160" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAEAAAAAAAAAAAgAAIAAAAAAEAAAAAAAAAAQAAAAEA=</HashCode>
+      <FileName>Serialization\Options\DocumentSerializationOptions.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="MongoDB.Bson.Serialization.Options.RepresentationSerializationOptions" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="153" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAIQAAACAAAAAQAAQAAAAAAAAGAgABAAogoAAAI=</HashCode>
+      <FileName>Serialization\Options\RepresentationSerializationOptions.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="MongoDB.Bson.Serialization.Serializers.ArraySerializer&lt;T&gt;" Collapsed="true">
+    <Position X="138" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAACBAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Serialization\Serializers\ArraySerializer.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MongoDB.Bson.Serialization.Serializers.TwoDimensionalArraySerializer&lt;T&gt;" Collapsed="true">
+    <Position X="7.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAACBAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Serialization\Serializers\ArraySerializer.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MongoDB.Bson.Serialization.Serializers.ThreeDimensionalArraySerializer&lt;T&gt;" Collapsed="true">
+    <Position X="18.75" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAACBAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Serialization\Serializers\ArraySerializer.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MongoDB.Bson.Serialization.Serializers.BsonBaseSerializer" Collapsed="true">
+    <Position X="77.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IAAAAAAAAAIAAAAAAAAAAAAAACBAAAAAAAAAAAAAAAI=</HashCode>
+      <FileName>Serialization\Serializers\BsonBaseSerializer.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="MongoDB.Bson.Serialization.Serializers.BsonIBsonSerializableSerializer" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="154.75" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ICAAAAAAAAAAAAAAAAAAAAAAACBAAAAAQAAAAAAAAAI=</HashCode>
+      <FileName>Serialization\Serializers\BsonIBsonSerializableSerializer.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="MongoDB.Bson.Serialization.Serializers.BooleanSerializer" Collapsed="true">
+    <Position X="48" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ACAAAAAAAAAAAAAAAAAAAAAAACBAAAAAQAAAAAAAAAA=</HashCode>
+      <FileName>Serialization\Serializers\BsonPrimitiveSerializers.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MongoDB.Bson.Serialization.Serializers.DateTimeSerializer" Collapsed="true">
+    <Position X="57" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ACAAAAAAAAAAAAAAAAAAAAAAACBAAAAAQAAAAAAAAAA=</HashCode>
+      <FileName>Serialization\Serializers\BsonPrimitiveSerializers.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MongoDB.Bson.Serialization.Serializers.DoubleSerializer" Collapsed="true">
+    <Position X="66" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ACAAAAAAAAAAAAAAAAAQAAAAACBAAAAAQAAAAAAAAAA=</HashCode>
+      <FileName>Serialization\Serializers\BsonPrimitiveSerializers.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MongoDB.Bson.Serialization.Serializers.GuidSerializer" Collapsed="true">
+    <Position X="75" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ACAAAAAAAAAAAAAAAAAAAAAAACBAAAAAQAAAAAAAAAA=</HashCode>
+      <FileName>Serialization\Serializers\BsonPrimitiveSerializers.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MongoDB.Bson.Serialization.Serializers.Int32Serializer" Collapsed="true">
+    <Position X="84" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ACAAAAAAAAAAAAAAAAAQAAAAACBAAAAAQAAAAAAAAAA=</HashCode>
+      <FileName>Serialization\Serializers\BsonPrimitiveSerializers.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MongoDB.Bson.Serialization.Serializers.Int64Serializer" Collapsed="true">
+    <Position X="93" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ACAAAAAAAAAAAAAAAAAQAAAAACBAAAAAQAAAAAAAAAA=</HashCode>
+      <FileName>Serialization\Serializers\BsonPrimitiveSerializers.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MongoDB.Bson.Serialization.Serializers.ObjectIdSerializer" Collapsed="true">
+    <Position X="102" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ACAAAAAAAAAAAAAAAAAAAAAAACBAAAAAQAAAAAAAAAA=</HashCode>
+      <FileName>Serialization\Serializers\BsonPrimitiveSerializers.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MongoDB.Bson.Serialization.Serializers.StringSerializer" Collapsed="true">
+    <Position X="111" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ACAAAAAAAAAAAAAAAAAAAAAAACBAAAAAQAAAAAAAAAA=</HashCode>
+      <FileName>Serialization\Serializers\BsonPrimitiveSerializers.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MongoDB.Bson.Serialization.Serializers.BsonArraySerializer" Collapsed="true">
+    <Position X="120" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ACAAAAAAAAAAAAAAAAAAAAAAACBAAAAAQAAAAAAAAAA=</HashCode>
+      <FileName>Serialization\Serializers\BsonValueSerializers.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MongoDB.Bson.Serialization.Serializers.BsonBinaryDataSerializer" Collapsed="true">
+    <Position X="129" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ACAAAAAAAAAAAAAAAAAAAAAAACBAAAAAQAAAAAAAAAA=</HashCode>
+      <FileName>Serialization\Serializers\BsonValueSerializers.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MongoDB.Bson.Serialization.Serializers.BsonBooleanSerializer" Collapsed="true">
+    <Position X="140.25" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ACAAAAAAAAAAAAAAAAAAAAAAACBAAAAAQAAAAAAAAAA=</HashCode>
+      <FileName>Serialization\Serializers\BsonValueSerializers.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MongoDB.Bson.Serialization.Serializers.BsonDateTimeSerializer" Collapsed="true">
+    <Position X="9.75" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ACAAAAAAAAAAAAAAAAAAAAAAACBAAAAAQAAAAAAAAAA=</HashCode>
+      <FileName>Serialization\Serializers\BsonValueSerializers.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MongoDB.Bson.Serialization.Serializers.BsonDocumentSerializer" Collapsed="true">
+    <Position X="21" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ICAAAAAAAAAAAAAAAAAAAAAAACBAAAAAQAAAAAAAAAI=</HashCode>
+      <FileName>Serialization\Serializers\BsonValueSerializers.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MongoDB.Bson.Serialization.Serializers.BsonDocumentWrapperSerializer" Collapsed="true">
+    <Position X="30" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ACAAAAAAAAAAAAAAAAAAAAAAACBAAAAAQAAAAAAAAAA=</HashCode>
+      <FileName>Serialization\Serializers\BsonValueSerializers.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MongoDB.Bson.Serialization.Serializers.BsonDoubleSerializer" Collapsed="true">
+    <Position X="39" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ACAAAAAAAAAAAAAAAAAAAAAAACBAAAAAQAAAAAAAAAA=</HashCode>
+      <FileName>Serialization\Serializers\BsonValueSerializers.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MongoDB.Bson.Serialization.Serializers.BsonInt32Serializer" Collapsed="true">
+    <Position X="50.25" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ACAAAAAAAAAAAAAAAAAAAAAAACBAAAAAQAAAAAAAAAA=</HashCode>
+      <FileName>Serialization\Serializers\BsonValueSerializers.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MongoDB.Bson.Serialization.Serializers.BsonInt64Serializer" Collapsed="true">
+    <Position X="59.25" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ACAAAAAAAAAAAAAAAAAAAAAAACBAAAAAQAAAAAAAAAA=</HashCode>
+      <FileName>Serialization\Serializers\BsonValueSerializers.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MongoDB.Bson.Serialization.Serializers.BsonJavaScriptSerializer" Collapsed="true">
+    <Position X="68.25" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ACAAAAAAAAAAAAAAAAAAAAAAACBAAAAAQAAAAAAAAAA=</HashCode>
+      <FileName>Serialization\Serializers\BsonValueSerializers.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MongoDB.Bson.Serialization.Serializers.BsonJavaScriptWithScopeSerializer" Collapsed="true">
+    <Position X="77.25" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ACAAAAAAAAAAAAAAAAAAAAAAACBAAAAAQAAAAAAAAAA=</HashCode>
+      <FileName>Serialization\Serializers\BsonValueSerializers.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MongoDB.Bson.Serialization.Serializers.BsonMaxKeySerializer" Collapsed="true">
+    <Position X="86.25" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ACAAAAAAAAAAAAAAAAAAAAAAACBAAAAAQAAAAAAAAAA=</HashCode>
+      <FileName>Serialization\Serializers\BsonValueSerializers.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MongoDB.Bson.Serialization.Serializers.BsonMinKeySerializer" Collapsed="true">
+    <Position X="95.25" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ACAAAAAAAAAAAAAAAAAAAAAAACBAAAAAQAAAAAAAAAA=</HashCode>
+      <FileName>Serialization\Serializers\BsonValueSerializers.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MongoDB.Bson.Serialization.Serializers.BsonNullSerializer" Collapsed="true">
+    <Position X="104.25" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ACAAAAAAAAAAAAAAAAAAAAAAACBAAAAAQAAAAAAAAAA=</HashCode>
+      <FileName>Serialization\Serializers\BsonValueSerializers.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MongoDB.Bson.Serialization.Serializers.BsonObjectIdSerializer" Collapsed="true">
+    <Position X="113.25" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ACAAAAAAAAAAAAAAAAAAAAAAACBAAAAAQAAAAAAAAAA=</HashCode>
+      <FileName>Serialization\Serializers\BsonValueSerializers.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MongoDB.Bson.Serialization.Serializers.BsonRegularExpressionSerializer" Collapsed="true">
+    <Position X="122.25" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ACAAAAAAAAAAAAAAAAAAAAAAACBAAAAAQAAAAAAAAAA=</HashCode>
+      <FileName>Serialization\Serializers\BsonValueSerializers.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MongoDB.Bson.Serialization.Serializers.BsonStringSerializer" Collapsed="true">
+    <Position X="131.25" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ACAAAAAAAAAAAAAAAAAAAAAAACBAAAAAQAAAAAAAAAA=</HashCode>
+      <FileName>Serialization\Serializers\BsonValueSerializers.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MongoDB.Bson.Serialization.Serializers.BsonSymbolSerializer" Collapsed="true">
+    <Position X="142.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ACAAAAAAAAAAAAAAAAAAAAAAACBAAAAAQAAAAAAAAAA=</HashCode>
+      <FileName>Serialization\Serializers\BsonValueSerializers.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MongoDB.Bson.Serialization.Serializers.BsonTimestampSerializer" Collapsed="true">
+    <Position X="12" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ACAAAAAAAAAAAAAAAAAAAAAAACBAAAAAQAAAAAAAAAA=</HashCode>
+      <FileName>Serialization\Serializers\BsonValueSerializers.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MongoDB.Bson.Serialization.Serializers.BsonUndefinedSerializer" Collapsed="true">
+    <Position X="23.25" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ACAAAAAAAAAAAAAAAAAAAAAAACBAAAAAQAAAAAAAAAA=</HashCode>
+      <FileName>Serialization\Serializers\BsonValueSerializers.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MongoDB.Bson.Serialization.Serializers.BsonValueSerializer" Collapsed="true">
+    <Position X="32.25" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ACAAAAAAAAAAAAAAAAAAAAAAACBAAAAAQAAAAAAAAAA=</HashCode>
+      <FileName>Serialization\Serializers\BsonValueSerializers.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MongoDB.Bson.Serialization.Serializers.EnumerableSerializer&lt;T&gt;" Collapsed="true">
+    <Position X="41.25" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAACBAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Serialization\Serializers\CollectionGenericSerializers.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MongoDB.Bson.Serialization.Serializers.QueueSerializer&lt;T&gt;" Collapsed="true">
+    <Position X="52.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAACBAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Serialization\Serializers\CollectionGenericSerializers.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MongoDB.Bson.Serialization.Serializers.StackSerializer&lt;T&gt;" Collapsed="true">
+    <Position X="61.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAACBAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Serialization\Serializers\CollectionGenericSerializers.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MongoDB.Bson.Serialization.Serializers.EnumerableSerializer" Collapsed="true">
+    <Position X="70.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ACAAAAAAAAAAAAAAAAAAAAAAACBAAAAAQAAAAAAAAAA=</HashCode>
+      <FileName>Serialization\Serializers\CollectionSerializers.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MongoDB.Bson.Serialization.Serializers.QueueSerializer" Collapsed="true">
+    <Position X="79.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ACAAAAAAAAAAAAAAAAAAAAAAACBAAAAAQAAAAAAAAAA=</HashCode>
+      <FileName>Serialization\Serializers\CollectionSerializers.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MongoDB.Bson.Serialization.Serializers.StackSerializer" Collapsed="true">
+    <Position X="88.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ACAAAAAAAAAAAAAAAAAAAAAAACBAAAAAQAAAAAAAAAA=</HashCode>
+      <FileName>Serialization\Serializers\CollectionSerializers.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MongoDB.Bson.Serialization.Serializers.DictionarySerializer&lt;TKey, TValue&gt;" Collapsed="true">
+    <Position X="97.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAABAAAAAAAAAAAAAAAAAAAACBAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Serialization\Serializers\DictionaryGenericSerializer.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MongoDB.Bson.Serialization.Serializers.DictionarySerializer" Collapsed="true">
+    <Position X="106.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ACAABAAAAAAAAAAAAAAAAAAAACBAAAAAQAAAAAAAAAA=</HashCode>
+      <FileName>Serialization\Serializers\DictionarySerializer.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MongoDB.Bson.Serialization.Serializers.EnumSerializer" Collapsed="true">
+    <Position X="115.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ACAAAABAAAAAAAAAAAAAAAAAAKBAAAAAQAAAAAAAAAA=</HashCode>
+      <FileName>Serialization\Serializers\EnumSerializer.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MongoDB.Bson.Serialization.Serializers.ImageSerializer" Collapsed="true">
+    <Position X="124.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ACAAAAAAAAAAAAAAAAAAAAAAACBAAAAAQAAAAAAAAAA=</HashCode>
+      <FileName>Serialization\Serializers\ImageSerializers.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MongoDB.Bson.Serialization.Serializers.BitmapSerializer" Collapsed="true">
+    <Position X="133.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ACAAAAAAAAAAAAAAAAAAAAAAACBAAAAAQAAAAAAAAAA=</HashCode>
+      <FileName>Serialization\Serializers\ImageSerializers.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MongoDB.Bson.Serialization.Serializers.BitArraySerializer" Collapsed="true">
+    <Position X="144.75" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ACCAAAAAAAAAAAAAAAAAAAAAACBAAAAAQAAAAAAAAAA=</HashCode>
+      <FileName>Serialization\Serializers\NetPrimitiveSerializers.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MongoDB.Bson.Serialization.Serializers.ByteArraySerializer" Collapsed="true">
+    <Position X="14.25" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ACAAAAAAAAAAAAAAAAAAAAAAACBAAAAAQAAAAAAAAAA=</HashCode>
+      <FileName>Serialization\Serializers\NetPrimitiveSerializers.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MongoDB.Bson.Serialization.Serializers.ByteSerializer" Collapsed="true">
+    <Position X="25.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ACAAAAAAAAAAAAAAAAAAAAAAACBAAAAAQAAAAAAAAAA=</HashCode>
+      <FileName>Serialization\Serializers\NetPrimitiveSerializers.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MongoDB.Bson.Serialization.Serializers.CharSerializer" Collapsed="true">
+    <Position X="34.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ACAAAAAAAAAAAAAAAAAAAAAAACBAAAAAQAAAAAAAAAA=</HashCode>
+      <FileName>Serialization\Serializers\NetPrimitiveSerializers.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MongoDB.Bson.Serialization.Serializers.CultureInfoSerializer" Collapsed="true">
+    <Position X="43.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ACAAAAAAAAAAAAAAAAAAAAAAACBAAAAAQAAAAAAAAAA=</HashCode>
+      <FileName>Serialization\Serializers\NetPrimitiveSerializers.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MongoDB.Bson.Serialization.Serializers.DateTimeOffsetSerializer" Collapsed="true">
+    <Position X="54.75" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ACAAAAAAAAAAAAAAAAAAAAAAACBAAAAAQAAAAAAAAAA=</HashCode>
+      <FileName>Serialization\Serializers\NetPrimitiveSerializers.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MongoDB.Bson.Serialization.Serializers.DecimalSerializer" Collapsed="true">
+    <Position X="63.75" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ACAAAAAAAAAAAAAAAAAQAAAAACBAAAAAQAAAAAAAAAA=</HashCode>
+      <FileName>Serialization\Serializers\NetPrimitiveSerializers.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MongoDB.Bson.Serialization.Serializers.DrawingSizeSerializer" Collapsed="true">
+    <Position X="72.75" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ACAAAAAAAAAAAAAAAAAAAAAAACBAAAAAQAAAAAAAAAA=</HashCode>
+      <FileName>Serialization\Serializers\NetPrimitiveSerializers.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MongoDB.Bson.Serialization.Serializers.Int16Serializer" Collapsed="true">
+    <Position X="81.75" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ACAAAAAAAAAAAAAAAAAQAAAAACBAAAAAQAAAAAAAAAA=</HashCode>
+      <FileName>Serialization\Serializers\NetPrimitiveSerializers.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MongoDB.Bson.Serialization.Serializers.IPAddressSerializer" Collapsed="true">
+    <Position X="90.75" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ACAAAAAAAAAAAAAAAAAAAAAAACBAAAAAQAAAAAAAAAA=</HashCode>
+      <FileName>Serialization\Serializers\NetPrimitiveSerializers.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MongoDB.Bson.Serialization.Serializers.IPEndPointSerializer" Collapsed="true">
+    <Position X="99.75" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ACAAAAAAAAAAAAAAAAAAAAAAACBAAAAAQAAAAAAAAAA=</HashCode>
+      <FileName>Serialization\Serializers\NetPrimitiveSerializers.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MongoDB.Bson.Serialization.Serializers.SByteSerializer" Collapsed="true">
+    <Position X="108.75" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ACAAAAAAAAAAAAAAAAAAAAAAACBAAAAAQAAAAAAAAAA=</HashCode>
+      <FileName>Serialization\Serializers\NetPrimitiveSerializers.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MongoDB.Bson.Serialization.Serializers.SingleSerializer" Collapsed="true">
+    <Position X="117.75" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ACAAAAAAAAAAAAAAAAAQAAAAACBAAAAAQAAAAAAAAAA=</HashCode>
+      <FileName>Serialization\Serializers\NetPrimitiveSerializers.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MongoDB.Bson.Serialization.Serializers.TimeSpanSerializer" Collapsed="true">
+    <Position X="126.75" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ACAAAAAAAAAAAAAAAAAAAAAAACBAAAAAQAAAAAAAAAA=</HashCode>
+      <FileName>Serialization\Serializers\NetPrimitiveSerializers.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MongoDB.Bson.Serialization.Serializers.UInt16Serializer" Collapsed="true">
+    <Position X="135.75" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ACAAAAAAAAAAAAAAAAAQAAAAACBAAAAAQAAAAAAAAAA=</HashCode>
+      <FileName>Serialization\Serializers\NetPrimitiveSerializers.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MongoDB.Bson.Serialization.Serializers.UInt32Serializer" Collapsed="true">
+    <Position X="147" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ACAAAAAAAAAAAAAAAAAQAAAAACBAAAAAQAAAAAAAAAA=</HashCode>
+      <FileName>Serialization\Serializers\NetPrimitiveSerializers.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MongoDB.Bson.Serialization.Serializers.UInt64Serializer" Collapsed="true">
+    <Position X="16.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ACAAAAAAAAAAAAAAAAAQAAAAACBAAAAAQAAAAAAAAAA=</HashCode>
+      <FileName>Serialization\Serializers\NetPrimitiveSerializers.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MongoDB.Bson.Serialization.Serializers.UriSerializer" Collapsed="true">
+    <Position X="27.75" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ACAAAAAAAAAAAAAAAAAAAAAAACBAAAAAQAAAAAAAAAA=</HashCode>
+      <FileName>Serialization\Serializers\NetPrimitiveSerializers.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MongoDB.Bson.Serialization.Serializers.VersionSerializer" Collapsed="true">
+    <Position X="36.75" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ACAAAAAAAAAAAAAAAAAAAAAAACBAAAAAQAAAAAAAAAA=</HashCode>
+      <FileName>Serialization\Serializers\NetPrimitiveSerializers.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MongoDB.Bson.Serialization.Serializers.NullableSerializer&lt;T&gt;" Collapsed="true">
+    <Position X="45.75" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAACBACAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Serialization\Serializers\NullableGenericSerializer.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MongoDB.Bson.Serialization.Serializers.ObjectSerializer" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="149.5" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ICAAAAAAAAAAAAAAAAAAAAAAACBAAAAAQAAAAAAAAAI=</HashCode>
+      <FileName>Serialization\Serializers\ObjectSerializer.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Struct Name="MongoDB.Bson.ObjectId" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="149.5" Y="8.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EIAgAAAAEQAAAAQEoIKCAgAAAABAAIABAIAAgAAAByI=</HashCode>
+      <FileName>ObjectModel\ObjectId.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Struct>
+  <Interface Name="MongoDB.Bson.IConvertibleToBsonDocument" Collapsed="true">
+    <Position X="156.5" Y="10" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ObjectModel\IConvertibleToBsonDocument.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="MongoDB.Bson.ICustomBsonTypeMapper" Collapsed="true">
+    <Position X="158.25" Y="10" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ObjectModel\ICustomBsonTypeMapper.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="MongoDB.Bson.Serialization.IBsonSerializable" Collapsed="true">
+    <Position X="149.5" Y="10" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IAAAAAAAAAAAAAAAAAAAAAAAACBAAAAAAAAAAAAAAAI=</HashCode>
+      <FileName>Serialization\IBsonSerializable.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="MongoDB.Bson.Serialization.IBsonSerializationOptions" Collapsed="true">
+    <Position X="151.25" Y="10" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Serialization\IBsonSerializationOptions.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="MongoDB.Bson.Serialization.IBsonSerializationProvider" Collapsed="true">
+    <Position X="153" Y="10" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Serialization\IBsonSerializationProvider.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="MongoDB.Bson.Serialization.IBsonSerializer" Collapsed="true">
+    <Position X="154.75" Y="10" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IAAAAAAAAAAAAAAAAAAAAAAAACBAAAAAAAAAAAAAAAI=</HashCode>
+      <FileName>Serialization\IBsonSerializer.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="MongoDB.Bson.Serialization.IIdGenerator" Collapsed="true">
+    <Position X="153" Y="10.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AABAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Serialization\IIdGenerator.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="MongoDB.Bson.Serialization.Conventions.IDefaultValueConvention" Collapsed="true">
+    <Position X="160" Y="10" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Serialization\Conventions\DefaultValueConventions.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="MongoDB.Bson.Serialization.Conventions.IDiscriminatorConvention" Collapsed="true">
+    <Position X="161.75" Y="10" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAEAAAAAAAAIAAAAAAAIAAAAAAAA=</HashCode>
+      <FileName>Serialization\Conventions\DiscriminatorConventions.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="MongoDB.Bson.Serialization.Conventions.IElementNameConvention" Collapsed="true">
+    <Position X="149.5" Y="10.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Serialization\Conventions\ElementNameConventions.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="MongoDB.Bson.Serialization.Conventions.IExtraElementsMemberConvention" Collapsed="true">
+    <Position X="151.25" Y="10.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Serialization\Conventions\ExtraElementsMemberConventions.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="MongoDB.Bson.Serialization.Conventions.IIdGeneratorConvention" Collapsed="true">
+    <Position X="154.75" Y="10.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Serialization\Conventions\IdGeneratorConventions.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="MongoDB.Bson.Serialization.Conventions.IIdMemberConvention" Collapsed="true">
+    <Position X="156.5" Y="10.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIA=</HashCode>
+      <FileName>Serialization\Conventions\IdMemberConventions.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="MongoDB.Bson.Serialization.Conventions.IIgnoreExtraElementsConvention" Collapsed="true">
+    <Position X="158.25" Y="10.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Serialization\Conventions\IgnoreExtraElementsConventions.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="MongoDB.Bson.Serialization.Conventions.IIgnoreIfDefaultConvention" Collapsed="true">
+    <Position X="160" Y="10.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Serialization\Conventions\IgnoreIfDefaultConventions.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="MongoDB.Bson.Serialization.Conventions.IIgnoreIfNullConvention" Collapsed="true">
+    <Position X="161.75" Y="10.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Serialization\Conventions\IgnoreIfNullConventions.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="MongoDB.Bson.Serialization.Conventions.IMemberFinderConvention" Collapsed="true">
+    <Position X="149.5" Y="11.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Serialization\Conventions\MemberFinderConventions.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="MongoDB.Bson.Serialization.Conventions.ISerializeDefaultValueConvention" Collapsed="true">
+    <Position X="151.25" Y="11.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Serialization\Conventions\SerializeDefaultValueConventions.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Enum Name="MongoDB.Bson.BsonBinarySubType" Collapsed="true">
+    <Position X="149.5" Y="12.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACEAAAAAAAAAgAEAAAIAIAAAAAAAAAAAAAAAAAAAg=</HashCode>
+      <FileName>ObjectModel\BsonBinarySubType.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="MongoDB.Bson.BsonType" Collapsed="true">
+    <Position X="153" Y="12.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QAAAEAAAAQQBCAEBQAACAAAAIAACAAQCFAIAAAAACCA=</HashCode>
+      <FileName>ObjectModel\BsonType.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="MongoDB.Bson.GuidRepresentation" Collapsed="true">
+    <Position X="160" Y="12.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAABAAAIAAAAABAAAAAAAIIAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ObjectModel\GuidRepresentation.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="MongoDB.Bson.IO.BsonReaderState" Collapsed="true">
+    <Position X="151.25" Y="12.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AABAAAAAgAAAAAEAAgAAAAQAAAAAAAAAAQAgAACAAAA=</HashCode>
+      <FileName>IO\BsonReaderState.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="MongoDB.Bson.IO.BsonWriterState" Collapsed="true">
+    <Position X="154.75" Y="12.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AABAAAAAgAAAAAAAAAAAAAQAAAAAAAAAAAAgAACAAAA=</HashCode>
+      <FileName>IO\BsonWriterState.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="MongoDB.Bson.IO.ContextType" Collapsed="true">
+    <Position X="156.5" Y="12.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAgAABCAAAAAAAAAAAAAIAAAACAAAAAAAAAAA=</HashCode>
+      <FileName>IO\ContextType.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="MongoDB.Bson.IO.JsonOutputMode" Collapsed="true">
+    <Position X="161.75" Y="12.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAIAAAAAAAIAAAgAAAAAAAAAABAAAAAAAAAA=</HashCode>
+      <FileName>IO\JsonOutputMode.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="MongoDB.Bson.IO.JsonTokenType" Collapsed="true">
+    <Position X="149.5" Y="13.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>RIAAABAAECQAAAAAQAAAAAAAIIADAAQAEAgAAAABAGA=</HashCode>
+      <FileName>IO\JsonToken.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="MongoDB.Bson.Serialization.Options.DictionaryRepresentation" Collapsed="true">
+    <Position X="158.25" Y="12.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAgAAAAAAAAAAQABAAAAAAAAAAAAAAACAAAAAAAAAAA=</HashCode>
+      <FileName>Serialization\Options\DictionarySerializationOptions.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="微软雅黑" Size="9" />
+</ClassDiagram>

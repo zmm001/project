@@ -1,0 +1,168 @@
+﻿@model Edushi.UserCenter.Web.Mobile.Models.UserIndexResultModel
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" id="viewport" content="width=device-width,initial-scale=1.0, maximum-scale=1.0,minimum-scale=1.0,user-scalable=no" />
+    <title>@string.Format("{0}-E都市", Model.UserInfo == null || string.IsNullOrWhiteSpace(Model.UserInfo.UI_NickName) ? "用户头条号" : Model.UserInfo.UI_NickName)</title>
+    <link href="@Url.Content("~/asset/css/homepage.css")" rel="stylesheet" />
+    <script type="text/javascript">
+        document.documentElement.style.fontSize = 50 * ((document.documentElement.clientWidth) / 360) + "px";
+    </script>
+    <script type="text/javascript" src="@Url.Content("~/asset/js/jquery-1.8.3.min.js")"></script>
+    <script>
+        var _hmt = _hmt || [];
+        (function () {
+            var hm = document.createElement("script");
+            hm.src = "https://hm.baidu.com/hm.js?99a36e54478482e04c158ab069a3e598";
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
+</head>
+<body>
+    <header>
+        <a href="javascript:history.go(-1);" class="back"></a>
+        <a href="http://m.edushi.com/" class="logo"></a>
+        <a class="current">@Model.UserInfo.UI_NickName</a>
+        <span class="fr">
+            <a href="@Url.Content("~/")" class="user"></a>
+            <a href="http://m.edushi.com/Navigation.html" class="category"></a>
+        </span>
+    </header>
+    @if (Model.UserInfo != null)
+    {
+        var user = Model.UserInfo;
+        <div class="content-box">
+            <div id="open" class="top-box">
+                <div class="look-info clearfix">
+                    <div class="userid">
+                        <span class="user-img"><img src="@(string.IsNullOrWhiteSpace(user.UI_Avatar) ? Url.Content("~/asset/images/userhead.jpg") : ViewBag.UserImgDomain+user.UI_Avatar)"></span>
+                        <div class="user-name">
+                            <span>@Model.UserInfo.UI_NickName</span>
+                            <p>@Html.Raw(Model.UserInfo.UI_Tags)</p>
+                        </div>
+                    </div>
+                    @if (Model.UserInfo.UI_ID > 0)
+                    {
+                        <div id="articleIsAtted" data-id="@Model.UserInfo.UI_ID"></div> <!-- 已关注时添加样式 look-follow -->
+                        <script>
+                            $.post("/GetIsAttentioned.htm", { "authorId": "@Model.UserInfo.UI_ID" }, function (data) {
+                                if (data == -2) {
+                                    $("#articleIsAtted").addClass("look-add look-follow");
+                                } else {
+                                    $("#articleIsAtted").addClass("look-add");
+                                }
+                            })
+                        </script>
+                    }
+
+                </div>
+                @if (ViewBag.status == "1")
+                {
+                    <script type="text/javascript">
+                        $("#open").addClass("open");
+                    </script>
+                    <div class="follow-box">
+                        <a href="#"><h3>37</h3> <span>TA的关注</span></a>
+                        <a href="#"><h3>0</h3> <span>TA的粉丝</span></a>
+                    </div>
+                }
+                <div class="tabnav">
+                    @RenderSection("header", false)
+                </div>
+            </div>
+            
+            <section class="newslist">
+                <ul id="datalist">
+                    @RenderBody()
+                </ul>
+                <div class="loading" style="display: none;">
+                    <span>正在加载更多</span>
+                </div>
+
+            </section>
+
+            <script>
+                var ConfigData = {
+                    Count: "@Model.PageCount",
+                    Url: "@Url.Content("~/")",
+                    Page: "GetMoreUserData.htm",
+                    UserId: "@Model.UserInfo.UI_ID",
+                    NewsType: "@Model.Type",
+                    PageIndex: 1,
+                    Contaiter: $("#datalist"),
+                    Type: 1
+
+                };
+
+               
+
+                //关注或取消关注
+                $("#articleIsAtted").click(function () {
+                    var userId = $(this).data("id");
+
+                    if ($(this).hasClass("look-follow")) {
+                        $.ajax({
+                            type: "post",
+                            dataType: "json",
+                            url: "/CancelAttention.htm",
+                            data: { "userId": userId },
+                            success: function (data) {
+                                if (data.ResultCode == 1) {
+                                    $("#articleIsAtted").removeClass("look-follow");
+                                } else if (data.ResultCode == 2) {
+                                    window.location.href = 'http://m.edushi.com/user/Login.html?BackUrl=' + window.location.href;
+                                } else {
+                                    alert(data.Msg);
+                                }
+                            }
+                        });
+                    } else {
+                        $.ajax({
+                            type: "post",
+                            dataType: "json",
+                            url: "/AddAttention.htm",
+                            data: { "userId": userId },
+                            success: function (data) {
+                                if (data.ResultCode == 1) {
+                                    $("#articleIsAtted").addClass("look-follow");
+                                } else if (data.ResultCode == 2) {
+                                    window.location.href = 'http://m.edushi.com/user/Login.html?BackUrl=' + window.location.href;
+                                } else {
+                                    alert(data.Msg);
+                                }
+                            }
+                        });
+                    }
+
+                });
+                //更新最后浏览时间
+                $.post("@Url.Content("~/UpdateAttentionOfUpdateDate.htm")", { "userId": "@Model.UserInfo.UI_ID" });
+            </script>
+            <script src="@Url.Content("~/asset/js/scrollLoad.min.js")"></script>
+        </div>
+    }
+
+
+    <footer>
+        <div class="ft-link">
+            <a href="http://m.edushi.com/" class="back-home">返回首页</a>
+            <a href="http://apps.edushi.com/news/app.html" class="app-download">客户端下载</a>
+            <a href="http://report.edushi.com/report" class="report">举报</a>
+        </div>
+        <div class="ft-info">浙B2-20050306&nbsp;&nbsp;浙江网安备&nbsp;33010502000262号</div>
+    </footer>
+    <section class="floatbar">
+        <a href="http://m.edushi.com/" class="back-home"></a>
+        <div class="back-top"></div>
+        <a class="user" href="@Url.Content("~/")"></a>
+    </section>
+    <script type="text/javascript" src="@Url.Content("~/asset/js/common.js")"></script>
+</body>
+</html>

@@ -1,0 +1,145 @@
+﻿@using Edushi.Common
+@model Edushi.UserCenter.Web.PC.Models.WenDaCustomModel
+@{
+    var imgDomain = Common.GetConfigString("UserHeadPic");
+}
+
+<div class="info-tips">TA的动态!</div>
+<div class="act-box js-votebox" id="datalist">
+        @if (Model.activitieModel != null && Model.activitieModel.List.Any())
+        {
+            foreach (var item in Model.activitieModel.List)
+            {
+                if (string.IsNullOrWhiteSpace(item.QTitle))
+                {
+                    continue;
+                }
+                <div class="question-cnt js-votelist">
+                    <div class="status">
+                        <span class="word">@(item.ActivitieType == 1 ? "TA回答了问题" : (item.ActivitieType == 2 ? "TA评论了回答" : (item.ActivitieType == 4 ? "TA回复了评论" : "TA点赞了回答")))</span>@Common.TimeInterval(item.ActivitieTime, DateTime.Now)
+                        @{
+                            var activitieId = item.ActivitieType == 1 ? item.AnswerId : (item.ActivitieType == 3 ? item.PraiseId : (item.CommentDetail != null && item.CommentDetail.ReplyModel != null ? item.CommentDetail.ReplyModel.CommentId : item.CommentDetail.CommentId));
+                            var qNickName = item.QUserInfo != null && !string.IsNullOrWhiteSpace(item.QUserInfo["NickName"].ToString()) ? item.QUserInfo["NickName"] : "E都市网友";
+                            var qUserHead = item.QUserInfo != null && !string.IsNullOrWhiteSpace(item.QUserInfo["Avatar"].ToString()) ? imgDomain + item.QUserInfo["Avatar"] : Url.Content("~/areas/wenda/asset/images/userhead.jpg");
+                            int qUserId = item.QUserInfo != null && item.QUserInfo["ID"] != null ? (int)item.QUserInfo["ID"] : 0;
+                            var qWendaUrl = qUserId > 0 ? "href=/wenda/index/1-" + qUserId + ".html target=_blank" : "";
+                        }
+                    </div>
+                    <h2 class="q-tit"><a href="@item.Url" target="_blank">@Html.Raw(item.QTitle)</a></h2>
+                    <div class="q-info">
+                        <a @qWendaUrl class="photo">
+                            <img src="@qUserHead" />@qNickName
+                        </a>
+                        <span>@item.QCreateDate</span><span>@(item.ReplyCount)回答</span><span class="last">@(item.CollectionCount)人收藏</span>
+                    </div>
+                    @if (!string.IsNullOrWhiteSpace(item.Answer))
+                    {
+                        var nickName = item.UserInfo != null && !string.IsNullOrWhiteSpace(item.UserInfo["NickName"].ToString()) ? item.UserInfo["NickName"] : "E都市网友";
+                        var userHead = item.UserInfo != null && !string.IsNullOrWhiteSpace(item.UserInfo["Avatar"].ToString()) ? imgDomain + item.UserInfo["Avatar"] : Url.Content("~/areas/wenda/asset/images/userhead.jpg");
+                        int userId = item.UserInfo != null && item.UserInfo["ID"]  !=null ? (int)item.UserInfo["ID"] : 0;
+                        var wendaUrl = userId > 0 ? "href=/wenda/index/1-" + userId + ".html target=_blank" : "";
+                        <div class="answer-info clearfix">
+                            @if (!string.IsNullOrWhiteSpace(item.Pic))
+                            {
+                                <div class="pic"><img src="@item.Pic"></div>
+                            }
+                            <div class="anser-item">
+                                <div class="anser-item-i">
+                                    <a href="@item.Url" target="_blank">
+                                        @{
+                                            if (item.ActivitieType == 1)
+                                            {
+                                                <b>
+                                                    @Html.Raw(item.Answer)
+                                                </b>
+                                            }
+                                            else
+                                            {
+                                                @Html.Raw(item.Answer)
+                                            }
+                                        }<span>全文</span>
+                                    </a>
+                                </div>
+                                <div class="answer-user">
+                                    <a class="photo" @wendaUrl>
+                                        <img src="@userHead" />@nickName
+                                    </a>
+                                </div>
+                                <ul class="anser-oper js-oper clearfix" data-id="@item.AnswerId">
+                                    @*<li class="see">1170 阅读</li>*@
+                                    <li @Html.Raw(item.IsPraise==-2?"class=\"zan yizan\"":"class=\"zan\"")><span class="u-num">@item.PraiseCount</span> 赞<em>+1</em></li>
+                                    <li @Html.Raw(item.IsPraise == -3 ? "class=\"cai yicai\"" : "class=\"cai\"")><span class="u-num">@item.StepCount</span> 踩</li>
+                                    <li class="comment"><a href="@item.Url" target="_blank">@(item.CommentCount) 评论</a></li>
+                                    <li class="share">
+                                        分享
+                                        <div class="hid-share">
+                                            <a href="javascript:void(0);" class="weixin">
+                                                <div class="wx-qr"><img src="@Url.Content("~/Areas/WenDa/asset/images/0302.jpg")"/></div>
+                                            </a>
+                                            <a href="javascript:void(0);"  class="qq"></a>
+                                            <a href="javascript:void(0);"  class="qzone"></a>
+                                            <a href="javascript:void(0);"  class="weibo"></a>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    }
+                    
+                    @if (item.ActivitieType == 2&&item.CommentDetail!=null)
+                    {
+                        var commentNickName = item.CommentDetail.CommentUserInfo != null && !string.IsNullOrWhiteSpace(item.CommentDetail.CommentUserInfo["NickName"].ToString()) ? item.CommentDetail.CommentUserInfo["NickName"] : "E都市网友";
+                        var commentUserHead = item.CommentDetail.CommentUserInfo != null && !string.IsNullOrWhiteSpace(item.CommentDetail.CommentUserInfo["Avatar"].ToString()) ? imgDomain + item.CommentDetail.CommentUserInfo["Avatar"] : Url.Content("~/areas/wenda/asset/images/userhead.jpg");
+                        int commentUserId = item.CommentDetail.CommentUserInfo != null && item.CommentDetail.CommentUserInfo["ID"] != null ? (int)item.CommentDetail.CommentUserInfo["ID"] : 0;
+                        var commentWendaUrl = commentUserId > 0 ? "href=/wenda/index/1-" + commentUserId + ".html target=_blank" : "";
+                        <div class="comment-box">
+                                <div class="user">
+                                    <a @commentWendaUrl>
+                                        <img src="@commentUserHead" />@commentNickName
+                                    </a>
+                                </div>
+                           
+                            <div class="comment-info">
+                                @Html.Raw(item.CommentDetail.Content)
+                            </div>
+                            @if (item.CommentDetail.ReplyModel != null)
+                            {
+                                var replyNickName = item.CommentDetail.ReplyModel.CommentUserInfo != null && !string.IsNullOrWhiteSpace(item.CommentDetail.ReplyModel.CommentUserInfo["NickName"].ToString()) ? item.CommentDetail.ReplyModel.CommentUserInfo["NickName"] : "E都市网友";
+                                var replyUserHead = item.CommentDetail.ReplyModel.CommentUserInfo != null && !string.IsNullOrWhiteSpace(item.CommentDetail.ReplyModel.CommentUserInfo["Avatar"].ToString()) ? imgDomain + item.CommentDetail.ReplyModel.CommentUserInfo["Avatar"] : Url.Content("~/areas/wenda/asset/images/userhead.jpg");
+                                int replyUserId = item.CommentDetail.ReplyModel.CommentUserInfo != null && item.CommentDetail.ReplyModel.CommentUserInfo["ID"] != null ? (int)item.CommentDetail.ReplyModel.CommentUserInfo["ID"] : 0;
+                                var replyWendaUrl = replyUserId > 0 ? "href=/wenda/index/1-" + replyUserId + ".html target=_blank" : "";
+                                <div class="replay-box">
+                                        <div class="user">
+                                            <a @replyWendaUrl>
+                                                <img src="@replyUserHead" />@replyNickName
+                                            </a>
+                                        </div>
+                                   
+                                    <div class="comment-info">
+                                      @Html.Raw(item.CommentDetail.ReplyModel.Content)
+                                    </div>
+                                </div>
+                            }
+                            
+                        </div>
+                    }
+                    
+                </div>
+            }
+        }
+</div>
+<div class="loading" style="display: none;">正在加载中</div>
+<div class="more-cnt" @Html.Raw(Model.activitieModel.PageCount > 1 ? "style=\"display:none\"" : "")>没有更多了</div>
+<script>
+    var ConfigData = {
+        "PageIndex": 1,
+        "UserId": "@Model.userId",
+        "Count": "@Model.activitieModel.PageCount",
+        "Page": "@Url.Content("~/")",
+        "Url": "wenda/GetAuthorMoreActititie.htm",
+        "Id": 0,
+        "Type": 4
+    }
+</script>
+
+<script src="@Url.Content("~/areas/wenda/asset/js/scrollload.bak.js")"></script>

@@ -1,0 +1,10 @@
+﻿@import url(Common.css);
+.periheralBus{width:310px;height:auto;overflow-y:auto;overflow-x:hidden;}
+.Station{margin:5px 0;}
+.redText{color:Red;}
+.DottedLine{background:url(../Images/SearchNavLine.gif) repeat-x left center; height:1px; font-size:0;/*for IE6*/}
+.NormalInfo{padding:3px 3px 3px 12px; cursor:pointer; background:url(../Images/DownIco.gif) no-repeat 3px 9px;}
+.ActiveInfo{padding:3px 3px 3px 12px; cursor:pointer; background:#f6f6f6 url(../Images/UpIco.gif) no-repeat 3px 9px;}
+.NormalInfo:hover,.ActiveInfo:hover{color:Red;}
+ul.BusList{display:none; margin:0 0 0 10px; padding:0; list-style-type:none;}
+ul.BusList li{height:25px; line-height:25px;}

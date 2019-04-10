@@ -1,0 +1,307 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" style="overflow: hidden" scroll="no">
+<head>
+    <meta name="Keywords" content="{$Keywords}" />
+    <meta name="Description" content="{$Description}" />
+    <title>{$Title}</title>
+    <link rel="stylesheet" type="text/css" href="/Css/style.css" />
+    <script type="text/javascript" language="javascript">
+        var GlobalConfig = {
+            'WebRootPath' :'{$WebRootPath}',
+            'Language' : '{$Language}',
+            'Domain': '{$Domain}',
+            'CityCode' : '{$CityCode}',
+            'CityName' : '{$CityName}',         
+            'EDataCenterUrl' : '{$EDataCenterUrl}',
+            'Loading' : '<div style="text-align:center; line-height:200%;"><img src="../Images/loading.gif"><br />正在加载...</div>',
+            'DianUrl' : '{$DianUrl}',
+            'HuangyeUrl' : '{$HuangyeUrl}',
+            'UserCenterUrl' : '{$UserCenterUrl}',
+            'EdizhiUrl' : '{$EdizhiUrl}',
+            'ImgUrl': '{$ImageUrl}pic_{$CityCode}/',
+            'PicUrl'   :  '{$PicUrl}',
+            'GoogleID': '{$GoogleID}',
+            'IsBDT': '{$IsBDT}',
+            'IsEStore' : '{$IsEStore}',//新增是否是E店
+            'RoadCityList':['fuzhou','beijing'], //有道路图层的城市列表         
+            'HotelState':'{$HotelState}' //是否有酒店预订功能       
+        };
+        var pageTracker = '';
+    </script>   
+    <script type="text/javascript" src="/Js/GeneralLib.js"></script>
+    <script type="text/javascript" src="/Js/Suggest.js"></script>    
+    <script type="text/javascript" src="/Controls/ControlBase.js"></script>
+    <script type="text/javascript" src="/Plugin.aspx"></script>
+    <script type="text/javascript" src="/Controls/TabControl.js"></script>
+    <script type="text/javascript" src="/Controls/EntityPopControl.js"></script>
+    <script type="text/javascript" src="/Controls/CompanyPopControl.js"></script>
+    <script type="text/javascript" src="/Controls/ThemePopControl.js"></script>
+    <script type="text/javascript" src="/Controls/CommendPopControl.js"></script>
+    <script type="text/javascript" src="/Controls/BusStationControl.js"></script>
+    <script type="text/javascript" src="/Controls/PoiPopControl.js"></script>  
+    <script type="text/javascript" src="/Js/Mark.js"></script>
+    <script type="text/javascript" src="/Js/EAddress.js"></script>
+    <script type="text/javascript" src="/Js/Init.js"></script>
+    <script type="text/javascript" src="/Controls/EShopPopControl.js?v=20091016"></script>
+    
+</head>
+<body onkeyup="fnKeyup(event)">
+    <div id="Container">
+        <div id="Header">
+            <a href="http://www.edushi.com/" target="_blank" title="E都市">
+                <img src="/Images/EdushiLogo.gif" alt="E都市" class="EdushiLogo" /></a><div id="SwitchCity">
+                    <strong>{$CityName}</strong><a href="javascript:fnSwichCity()" id="lnkSwichCity">[切换城市]</a></div>
+            <div id="CallBoard">
+                    <script type="text/javascript" language="javascript">
+                        if (GlobalConfig.IsEStore == '1') {
+                            document.write('<strong><a class="edian" href="{$DianUrl}" target="_blank" title="{$CityName}E店,为{$CityName}每一家实体店铺建E店">{$CityName}E店</a></strong>|');
+                        }
+                    </script>
+                    <script type="text/javascript" language="javascript">
+                        if (GlobalConfig.IsBDT == '1') {
+                            document.write('<a href="{$WebRootPath}bdt" target="_blank" title="包打听，有问有答本地人">包打听</a>|');
+                        }
+                    </script>
+                    <a href="http://mobile.edushi.com/download.aspx" target="_blank" title="E都市手机地图" style="color:Red;">E都市手机地图</a>
+                </div>
+            <div id="HeaderRgt">
+                <div id="RgtToBar">
+                    <ul>
+                    <li class="Bz"><a href="/MapHelp.htm" target="_blank" title="帮助">帮助</a></li>
+                        <li class="Ly"><a href="http://www.edushi.com/about/GuestBook.aspx?c={$CityCode}&l={$Language}" target="_blank" title="留言">留言</a></li>
+                        <li><a href="http://{$Domain}/adserver/index.html" target="_blank" title="广告服务">广告服务</a></li>
+                        <li class="LoginInfo" id="liLoginInfo">
+                        </li>
+                    </ul>
+                </div>
+                <div class="HackBox">
+                </div>
+                <div id="ShortcutMenu">
+                    <div id="RollArLf">
+                        <img id="ImgThemeScrollLeft" src="/Images/RollArLf.gif" alt="向前一个" /></div>
+                    <div class="RollConten" id="divThemeMask">
+                        <div id="divThemeClip" style="display: block; position: absolute; clip: rect(0 500px 22px 0)">
+                            <div style="position:relative; width: 3000px">
+                                <ul id="ulThemeList">
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="HackBox">
+                        </div>
+                    </div>
+                    <div id="RollArRgt">
+                        <img id="ImgThemeScrollRight" src="/Images/RollArRgt.gif" alt="向后一个" /></div>
+                </div>
+            </div>
+        </div>
+        <div id="Wrapper">
+            <div id="Content" style="position: relative;">
+                <div id="Toolbar">
+                    <ul id="MapToolBar">
+                        <li class="Ico31"><a href="javascript:fnCreateEAddress();" title="E地址" onfocus="this.blur()">E地址</a></li>
+                        <li class="Ico2"><a href="javascript:;" onclick="javascript:fnScale();fnGoogleStat('测距'); " title="测距" onfocus="this.blur()">测距</a></li>
+                        <li class="Ico3"><a href="javascript:;" onclick="javascript:fnLabel();fnGoogleStat('显示标签');this.innerHTML=='显示标签'?this.innerHTML='隐藏标签':this.innerHTML='显示标签' " onfocus="this.blur()">显示标签</a></li>
+                            <script type="text/javascript" language="javascript">
+                                for (var i = 0; i < GlobalConfig.RoadCityList.length; i++) {
+                                    if (GlobalConfig.RoadCityList[i] == GlobalConfig.CityCode) {
+                                        document.write('<li class="Ico41"><a href="javascript:;" onclick="javascript:fnShowRoadLayer();fnGoogleStat(\'显示道路\');this.innerHTML==\'显示道路\'?this.innerHTML=\'隐藏道路\':this.innerHTML=\'显示道路\' " onfocus="this.blur()">显示道路</a></li>');
+                                        break;
+                                    }
+                                }
+                    </script>     
+                        <li class="Ico4"><a href="javascript:fnReport(0,0,2,0,'','')" title="我要报料" onfocus="this.blur()">我要报料</a></li>
+                        <li class="Ico32"><a href="javascript:fnEShopAndCompanyJoin()" title="我要入驻" onfocus="this.blur()">我要入驻</a></li>
+                        <li class="Ico5"><a href="javascript:;" id="aFullScrenn" onclick="fnFullScreen(this);fnGoogleStat('最大化'); " title="最大化" onfocus="this.blur()">最大化</a></li>
+                    </ul>
+                    <div id="RgtPart">
+                        <ul>                            
+                            <li class="Ico11"><a href="javascript:;" onmouseover="fnShowCommonGoTo()" onmouseout="fnShowCommonGoTo()" title="常用位置">常用位置</a></li>
+                            <li class="Ico12"><a href="javascript:;" onclick="javascript:fnPrint();fnGoogleStat('打印'); ">打印</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <!--常用位置菜单-->
+                <div id="divQuickLink" style="display: none;" class="QuickLink" onmouseover="fnShowCommonGoTo()" onmouseout="fnShowCommonGoTo()">
+                    <div class="InComPlaceNav">
+                        <div class="InComPlaceUp">
+                        </div>
+                        <div class="InComPlaceDn" id="divQuickLinkList">
+                        </div>
+                    </div>
+                </div>
+                <div id="DetailMap">
+                    <!--全屏广告-->
+                    <div id="EdushiMap"></div>
+                    <div id="EagleMapNav">
+                        <div class="EagleMapCon" id="EagleMapCon">
+                            <div class="BreviaryMap" id="BreviaryMap" style="overflow: hidden">
+                                <div class="SmallArrow" id="EyeArrow" onclick="fnEyeResize(this)">
+                                </div>
+                                <div id="eyeEdushiMap">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="EagleMapDH" id="EagleMapDH">
+                            <img onclick="fnEyeExpanding(this)" id="imgEyeExpanding" style="cursor: pointer" src="/Images/DrawBack.gif"
+                                alt="收缩/展开" />
+                        </div>
+                    </div>
+                    <div id="CompassNav">
+                        <img src="/Images/CompassIco.gif" alt="指针" />
+                    </div>
+                    <div id="CopyrightNav" >
+                        {$AuditingPicCode}
+                    </div>
+                    <!--包打听滚动信息-->
+                     <script type="text/javascript" language="javascript">
+                         if (GlobalConfig.IsBDT == '1') {
+                             document.write('<div id="BdtScrollBox"><div class="Bg" id="BdtScrollBoxBg"></div><div class="Con" style="height:15px; line-height:15px" id="divBdtList"></div></div>');
+                         }
+                    </script>
+                </div>
+            </div>
+        </div>
+        <div id="Navigation">
+            <div id="NavContent">
+                <div id="SearchNav">
+                    <div class="SeaCoteNav">
+                        <ul>
+                            <li class="Current" id="liMapSearch"><a href="javascript:fnSearchChange($('liMapSearch'))">
+                                地图搜索</a></li>
+                            <li id="liBusSearch"><a href="javascript:fnSearchChange($('liBusSearch'))">公交搜索</a></li>
+                            <li id="liEShopSearch"><a href="javascript:fnSearchChange($('liEShopSearch'))">黄页搜索</a></li>
+                            <li id="liEAddress" style="margin-right:0px"><a href="javascript:fnSearchChange($('liEAddress'))">E地址</a></li>
+                        </ul>
+                    </div>
+                    <!--地图搜索-->
+                    <div class="MapSearch" id="MapSearch" style="clear: both">
+                        <div class="SearchCond">
+                            <input name="MapSearchType" type="radio" id="radioSearchType0" value="0" checked="checked"
+                                onclick="fnMapSearchChange(this.value)" /><label for="radioSearchType0">全站搜索</label>&nbsp;
+                            <input name="MapSearchType" type="radio" id="radioSearchType1" value="1" onclick="fnMapSearchChange(this.value)" /><label
+                                for="radioSearchType1">名称</label>&nbsp;
+                            <input name="MapSearchType" type="radio" id="radioSearchType2" value="2" onclick="fnMapSearchChange(this.value)" /><label
+                                for="radioSearchType2">地址</label>&nbsp;
+                            <input name="MapSearchType" type="radio" id="radioSearchType3" value="3" onclick="fnMapSearchChange(this.value)" /><label
+                                for="radioSearchType3">周边</label>&nbsp;
+                                <input name="MapSearchType" type="radio" id="radioSearchType4" value="9" onclick="fnMapSearchChange(this.value)" /><label
+                                for="radioSearchType4">道路</label>
+                        </div>
+                        <div class="SearchInput" id="divSearchInput">
+                            <div style="float: left" id="divSearch">
+                                <input style="width: 210px" type="text" id="txtSearchKey" class="InFieldSty" onblur="if(!__EdushiSuggest.IsMouseOnSuggestPanel){__EdushiSuggest.Hide();}" onkeyup="fnKeySearchSuggest('fnMapSearch()', this, 101, 125, 212, 'map', 0, event);" /></div>
+                            <div style="float: left; display: none" id="divAroundSearch">
+                                在&nbsp;<input style="width: 88px" type="text" id="txtSearchPlace" class="InFieldSty" onblur="if(!__EdushiSuggest.IsMouseOnSuggestPanel){__EdushiSuggest.Hide()}"
+                                    onkeyup="fnKeySearchSuggest('$(\'txtSearchSomething\').focus()', this, 128, 125, 170, 'map', 4, event);" />&nbsp;找&nbsp;<input
+                                        style="width: 85px" type="text" id="txtSearchSomething" class="InFieldSty" onblur="if(!__EdushiSuggest.IsMouseOnSuggestPanel){__EdushiSuggest.Hide()}" onkeyup="fnKeySearchSuggest('fnMapSearch()', this, 18, 125, 170, 'map', 5, event);" /></div>
+                            <div style="float: left; padding-left: 10px">
+                                <img style="cursor:pointer" src="/Images/SearchBtn.gif" onclick="fnMapSearch()" /></div>
+                        </div>
+                        <div class="HotConNav" id="MapHotKey">
+                            热门：<span id="MapHotKeywords"></span>
+                        </div>
+                    </div>
+                    <!--公交搜索-->
+                    <div class="BusSearch" id="BusSearch">
+                        <div class="SearchCond">
+                            <input type="radio" value="0" id="radio0" name="BusSearchType" checked="checked"
+                                onclick="fnBusSearchChange(this.value)" /><label for="radio0">两点查询</label>&nbsp;&nbsp;
+                            <input type="radio" value="1" id="radio1" name="BusSearchType" onclick="fnBusSearchChange(this.value)" /><label
+                                for="radio1">线路查询</label>&nbsp;&nbsp;
+                            <input type="radio" value="2" id="radio2" name="BusSearchType" onclick="fnBusSearchChange(this.value)" /><label
+                                for="radio2">站点查询</label>&nbsp;&nbsp;
+                        </div>
+                        <div class="SearchCond">
+                            <div style="float: left" id="BusTransfer">
+                                <input style="width: 100px; color: #999999" class="InFieldSty" id="txtBusStart" type="text"
+                                    value="起点" onchange="this.style.color='#000000'" onblur="if(!__EdushiSuggest.IsMouseOnSuggestPanel){__EdushiSuggest.Hide();}if(this.value==''){this.style.color='#999999';this.value='起点';}"
+                                    onfocus="if (this.value == '起点'){this.style.color='#000000';this.value='';}"
+                                    onkeyup="fnKeySearchSuggest('$(\'txtBusEnd\').style.color=\'#000000\';$(\'txtBusEnd\').focus()', this, 141, 125, 172, 'bus', 0, event);"><img
+                                        src="/Images/BusChangeIco.gif" />
+                                <input style="width: 100px; color: #999999" class="InFieldSty" value="终点" onchange="this.style.color='#000000'"
+                                    onblur="if(!__EdushiSuggest.IsMouseOnSuggestPanel){__EdushiSuggest.Hide();}if(this.value==''){this.style.color='#999999';this.value='终点';}" onfocus="if (this.value == '终点'){this.style.color='#000000';this.value='';}"
+                                    id="txtBusEnd" type="text" onkeyup="fnKeySearchSuggest('fnBusSearch()', this, 10, 125, 172, 'bus', 0, event);" />
+                            </div>
+                            <div style="float: left; display: none" id="BusLine">
+                                <input style="width: 210px; color: #999999" class="InFieldSty" id="txtBusLine" value="请输入要搜索的线路" onkeyup="if(window.event){if(13==window.event.keyCode){fnBusSearch();}else{window.event.cancelBubble = true;}}else{if(event.keyCode==13){fnBusSearch();}else{event.stopPropagation();}}"
+                                    type="text" onblur="if(this.value==''){this.style.color='#999999';this.value='请输入要搜索的线路';}"
+                                    onchange="this.style.color='#000000'" onfocus="if (this.value == '请输入要搜索的线路'){this.style.color='#000';this.value='';}" /></div>
+                            <div style="float: left; display: none" id="BusStation">
+                                <input style="width: 210px; color: #999999" class="InFieldSty" id="txtBusStation"
+                                    value="请输入站点名" type="text" onblur="if(!__EdushiSuggest.IsMouseOnSuggestPanel){__EdushiSuggest.Hide();}if(this.value==''){this.style.color='#999999';this.value='请输入站点名';}"
+                                    onchange="this.style.color='#000000'" onfocus="if (this.value == '请输入站点名'){this.style.color='#000000';this.value='';}"
+                                    onkeyup="fnKeySearchSuggest('fnBusSearch()', this, 101, 125, 212, 'bus', 0, event);"></div>
+                            <div style="float: left; padding-left: 10px">
+                                <img style="cursor:pointer"  src="/Images/SearchBtn.gif" onclick="fnBusSearch()" /></div>
+                        </div>
+                        <div class="HotConNav">
+                            <script type="text/javascript" language="javascript">
+                                if (GlobalConfig.IsBDT == '1') {
+                                    document.write(' 查看更多公交信息：<a href="{$WebRootPath}bdt/Class.aspx?type=3" target="_blank">[公交打听]</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="{$WebRootPath}bdt/Class.aspx?type=2" target="_blank">[问路]</a>');
+                                }
+                            </script>
+                        </div>
+                    </div>
+                    <!--地图找店-->
+                    <div class="EShopSearch" id="EShopSearch" style ="display:none">
+                        <div class="SearchCond" style="display:none">
+                            热门：<span id="EShopHotKeyWords"></span>
+                        </div>
+                        <div class="SearchInput" id="divEShopSearchInput">
+                            <div style="float: left">
+                                <input style="width: 210px" type="text" id="txtSearchEShop" class="InFieldSty" /></div>
+                            <div style="float: left; padding-left: 10px">
+                                <img style="cursor:pointer" src="/Images/SearchBtn.gif" onclick="fnYellowPageSearch()" /></div>
+                        </div>
+                        <div class="HotConNav" style="display:none">                            
+                        </div>
+                    </div>
+                    <!--E地址-->
+                    <div class="EAddress" id="EAddress">
+                        <span><strong>http://edizhi.edushi.com/</strong></span><span><input style="width: 98px;" id="txtEAddressName" onkeyup="if(window.event){if(13==window.event.keyCode){fnOpenEAddressWin($('txtEAddressName'));}else{window.event.cancelBubble = true;}}else{if(event.keyCode==13){fnOpenEAddressWin($('txtEAddressName'));}else{event.stopPropagation();}}"
+                            class="InFieldSty" type="text" /></span><span><img src="/Images/CallOnBtn.gif"
+                                alt="访问" onclick="fnOpenEAddressWin($('txtEAddressName'))" style="cursor: pointer;" /></span>
+                        <div class="HackBox"></div>
+                        <div class="ApManNav">
+                            <a href="http://edizhi.edushi.com/Index.aspx" target="_blank" title="E地址-定制您的E地址，分享给朋友很便利">E地址首页</a>&nbsp;&nbsp<a href="javascript:fnEAddressRegister();" title="创建E地址">创建E地址</a>&nbsp;&nbsp;<a href="javascript:fnEAddressManager();" title="管理E地址">管理E地址</a>
+                        </div>
+                        <div class="HotConNav">
+                            <a href="javascript:fnNewEAddressList();" class="Arrow1">最新E地址</a><a href="javascript:fnEAddressHelper();" title="E店助手" class="Arrow1">E地址助手</a>
+                        </div>
+                    </div>
+                </div>
+                <!--选项卡-->
+                <div id="ContenNav">
+                    <div class="CoteNav">
+                        <ul id="HeadContainer" style="position: relative;">
+                        </ul>
+                    </div>
+                    <div class="MoveArrow">
+                        <a href="javascript:;" id="LeftBtn">
+                            <img src="/Images/MoveArrowL.gif" alt="向左平移" /></a> <a href="javascript:;" id="RightBtn">
+                                <img src="/Images/MoveArrowR.gif" alt="向右平移" /></a></div>
+                    <div class="DeConNav" id="BodyContainer" style="height: 350px"></div>
+                </div>
+            </div>
+            <div id="ShrinkDH">
+                <img onclick="fnExpanding(this)" id="imgExpanding" style="cursor: pointer" src="/Images/DrawBack.gif" alt="收缩/展开" />
+            </div>
+        </div>
+              <div id="NewHotelImg" style="display:none;cursor:hand;"  onclick="ShowHotelPage()" >
+    </div>
+    </div>
+    <script type="text/javascript" src="http://www.google-analytics.com/ga.js"></script>
+<script type="text/javascript"> 
+var pageTracker = _gat._getTracker("{$GoogleID}");
+pageTracker._initData();
+pageTracker._trackPageview();
+</script>
+</body>
+</html>
+<script type="text/javascript" language="javascript">
+    window.onresize();
+    var __EdushiSuggest = new Suggest(18, 155, 200, document.body);
+    __EdushiSuggest._loadData();
+    ENetwork.DownloadScript('http://api3.edushi.com/?City={$CityCode}&L={$Language}&MapID=EdushiMap&x={$CenterX}&y={$CenterY}&w=' + _MapWidth + '&h=' + _MapHeight + '&eye=true&ew=190&eh=145&e=utf-8&z=1&v=1', fnLoadInit);
+</script>
+

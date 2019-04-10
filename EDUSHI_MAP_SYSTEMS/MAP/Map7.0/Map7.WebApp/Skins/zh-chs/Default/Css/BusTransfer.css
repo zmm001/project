@@ -1,0 +1,8 @@
+﻿@import url(Common.css);
+html, body{overflow-y:auto;overflow-x:hidden;}
+#BusTransferNav{height:auto; width:310px;}
+input.InFieldSty{border:1px solid #84A5CE;border-right-color:#C1D2E7;border-bottom-color:#C1D2E7;background-color:#F7FBFF;}
+
+#SetOut,#TurnUp{clear:both;margin:10px 0;}
+#SetOut span,#SetOut input,#SetOut img,#TurnUp span,#TurnUp input,#TurnUp img{float:left; line-height:21px;margin:0 3px 0 0;}
+#SetOut img,#TurnUp img{cursor:pointer;}

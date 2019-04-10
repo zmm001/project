@@ -1,0 +1,5 @@
+E:\TFS192.168.100.212\EDUSHI_MAP_SYSTEMS\MAP\Map9.0\Map9.0\Map.9.0.Model\bin\Debug\Model.dll
+E:\TFS192.168.100.212\EDUSHI_MAP_SYSTEMS\MAP\Map9.0\Map9.0\Map.9.0.Model\bin\Debug\Model.pdb
+E:\TFS192.168.100.212\EDUSHI_MAP_SYSTEMS\MAP\Map9.0\Map9.0\Map.9.0.Model\obj\Debug\Model.dll
+E:\TFS192.168.100.212\EDUSHI_MAP_SYSTEMS\MAP\Map9.0\Map9.0\Map.9.0.Model\obj\Debug\Model.pdb
+E:\TFS192.168.100.212\EDUSHI_MAP_SYSTEMS\MAP\Map9.0\Map9.0\Map.9.0.Model\obj\Debug\Model.csprojResolveAssemblyReference.cache

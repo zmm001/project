@@ -1,0 +1,2632 @@
+﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="3.5">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.21022</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{65DC5D53-A6E3-4BB3-AD46-58BD12D9D9F9}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Map.WebApp</RootNamespace>
+    <AssemblyName>Map.WebApp</AssemblyName>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AspNetPager, Version=6.0.0.0, Culture=neutral, PublicKeyToken=fb0a0fe055d40fd4, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\EDUSHI_CM_LIBRARY\Assembly_Library\Assembly_Library\AspNetPager.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Web.Mobile" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Default.aspx" />
+    <Content Include="Definition.aspx" />
+    <Content Include="Fundation\BusNoSearch.aspx" />
+    <Content Include="Fundation\BusSESearch.aspx" />
+    <Content Include="Fundation\BusStationSearch.aspx" />
+    <Content Include="Fundation\BusTransfer.aspx" />
+    <Content Include="Fundation\CompanyList.aspx" />
+    <Content Include="Fundation\LocalSearch.aspx" />
+    <Content Include="Fundation\LocalTopics.aspx" />
+    <Content Include="Fundation\NearBySearch.aspx" />
+    <Content Include="Fundation\News.aspx" />
+    <Content Include="Fundation\PeripheralBus.aspx" />
+    <Content Include="Fundation\ProMap.aspx" />
+    <Content Include="Fundation\EdushiAnnounce.aspx" />
+    <Content Include="JavaScript.aspx" />
+    <Content Include="JS\Suggest.js" />
+    <Content Include="Plugin.aspx" />
+    <Content Include="Skins\en\4.2.0925\default\Configvalues.js" />
+    <Content Include="Skins\en\4.2.0925\default\controls\BusStationControl.aspx" />
+    <Content Include="Skins\en\4.2.0925\default\controls\BusStationControl.js" />
+    <Content Include="Skins\en\4.2.0925\default\controls\CityListControl.aspx" />
+    <Content Include="Skins\en\4.2.0925\default\controls\CityListControl.js" />
+    <Content Include="Skins\en\4.2.0925\default\controls\CommendPopControl.aspx" />
+    <Content Include="Skins\en\4.2.0925\default\controls\CommendPopControl.js" />
+    <Content Include="Skins\en\4.2.0925\default\controls\ControlBase.aspx" />
+    <Content Include="Skins\en\4.2.0925\default\controls\ControlBase.js" />
+    <Content Include="Skins\en\4.2.0925\default\controls\DebugControl.aspx" />
+    <Content Include="Skins\en\4.2.0925\default\controls\DebugControl.js" />
+    <Content Include="Skins\en\4.2.0925\default\controls\EntityPopControl.aspx" />
+    <Content Include="Skins\en\4.2.0925\default\controls\EntityPopControl.js" />
+    <Content Include="Skins\en\4.2.0925\default\controls\FromSearchControl.aspx" />
+    <Content Include="Skins\en\4.2.0925\default\controls\FromSearchControl.js" />
+    <Content Include="Skins\en\4.2.0925\default\controls\NavigationControl.aspx" />
+    <Content Include="Skins\en\4.2.0925\default\controls\NavigationControl.js" />
+    <Content Include="Skins\en\4.2.0925\default\controls\OptionCardContrlBase.js" />
+    <Content Include="Skins\en\4.2.0925\default\controls\PaneSearchControl.aspx" />
+    <Content Include="Skins\en\4.2.0925\default\controls\PaneSearchControl.js" />
+    <Content Include="Skins\en\4.2.0925\default\controls\PeripheralBusControl.aspx" />
+    <Content Include="Skins\en\4.2.0925\default\controls\PeripheralBusControl.js" />
+    <Content Include="Skins\en\4.2.0925\default\controls\PeripheralSearchControl.aspx" />
+    <Content Include="Skins\en\4.2.0925\default\controls\PeripheralSearchControl.js" />
+    <Content Include="Skins\en\4.2.0925\default\controls\RotaryPictureControl.aspx" />
+    <Content Include="Skins\en\4.2.0925\default\controls\RotaryPictureControl.js" />
+    <Content Include="Skins\en\4.2.0925\default\controls\SearchControl.aspx" />
+    <Content Include="Skins\en\4.2.0925\default\controls\SearchControl.js" />
+    <Content Include="Skins\en\4.2.0925\default\controls\SearchResultControl.aspx" />
+    <Content Include="Skins\en\4.2.0925\default\controls\SearchResultControl.js" />
+    <Content Include="Skins\en\4.2.0925\default\controls\ThemePopControl.aspx" />
+    <Content Include="Skins\en\4.2.0925\default\controls\ThemePopControl.js" />
+    <Content Include="Skins\en\4.2.0925\default\controls\ToSearchControl.aspx" />
+    <Content Include="Skins\en\4.2.0925\default\controls\ToSearchControl.js" />
+    <Content Include="Skins\en\4.2.0925\default\Css\BusNoSearch.css" />
+    <Content Include="Skins\en\4.2.0925\default\Css\BusSESearch.css" />
+    <Content Include="Skins\en\4.2.0925\default\Css\BusStationSearch.css" />
+    <Content Include="Skins\en\4.2.0925\default\Css\BusTransfer.css" />
+    <Content Include="Skins\en\4.2.0925\default\Css\CityListControl.css" />
+    <Content Include="Skins\en\4.2.0925\default\Css\CompanyList.css" />
+    <Content Include="Skins\en\4.2.0925\default\Css\Dialog.css" />
+    <Content Include="Skins\en\4.2.0925\default\Css\EntityPopControl.css" />
+    <Content Include="Skins\en\4.2.0925\default\Css\LocalSearch.css" />
+    <Content Include="Skins\en\4.2.0925\default\Css\Mark.css" />
+    <Content Include="Skins\en\4.2.0925\default\Css\moz-text-overflow.xml" />
+    <Content Include="Skins\en\4.2.0925\default\Css\NearBySearch.css" />
+    <Content Include="Skins\en\4.2.0925\default\Css\News.css" />
+    <Content Include="Skins\en\4.2.0925\default\Css\PeripheralBus.css" />
+    <Content Include="Skins\en\4.2.0925\default\Css\Pop.css" />
+    <Content Include="Skins\en\4.2.0925\default\Css\SearchControl.css" />
+    <Content Include="Skins\en\4.2.0925\default\Css\SearchResultControl.css" />
+    <Content Include="Skins\en\4.2.0925\default\Css\style.css" />
+    <Content Include="Skins\en\4.2.0925\default\Css\ThemePopControl.css" />
+    <Content Include="Skins\en\4.2.0925\default\images\1.gif" />
+    <Content Include="Skins\en\4.2.0925\default\images\10t.jpg" />
+    <Content Include="Skins\en\4.2.0925\default\images\11.gif" />
+    <Content Include="Skins\en\4.2.0925\default\images\11a.gif" />
+    <Content Include="Skins\en\4.2.0925\default\images\11t.jpg" />
+    <Content Include="Skins\en\4.2.0925\default\images\12-2.png" />
+    <Content Include="Skins\en\4.2.0925\default\images\12-21.gif" />
+    <Content Include="Skins\en\4.2.0925\default\images\12-22.gif" />
+    <Content Include="Skins\en\4.2.0925\default\images\12.gif" />
+    <Content Include="Skins\en\4.2.0925\default\images\12.png" />
+    <Content Include="Skins\en\4.2.0925\default\images\12a.gif" />
+    <Content Include="Skins\en\4.2.0925\default\images\12t.jpg" />
+    <Content Include="Skins\en\4.2.0925\default\images\13t.jpg" />
+    <Content Include="Skins\en\4.2.0925\default\images\14.jpg" />
+    <Content Include="Skins\en\4.2.0925\default\images\2.jpg" />
+    <Content Include="Skins\en\4.2.0925\default\images\4-2.gif" />
+    <Content Include="Skins\en\4.2.0925\default\images\4.jpg" />
+    <Content Include="Skins\en\4.2.0925\default\images\6.jpg" />
+    <Content Include="Skins\en\4.2.0925\default\images\9.jpg" />
+    <Content Include="Skins\en\4.2.0925\default\images\9t.jpg" />
+    <Content Include="Skins\en\4.2.0925\default\images\b.gif" />
+    <Content Include="Skins\en\4.2.0925\default\images\bd.gif" />
+    <Content Include="Skins\en\4.2.0925\default\images\bg.gif" />
+    <Content Include="Skins\en\4.2.0925\default\images\bgloading.gif" />
+    <Content Include="Skins\en\4.2.0925\default\images\bg_body.gif" />
+    <Content Include="Skins\en\4.2.0925\default\images\black.jpg" />
+    <Content Include="Skins\en\4.2.0925\default\images\bloading.gif" />
+    <Content Include="Skins\en\4.2.0925\default\images\btn.jpg" />
+    <Content Include="Skins\en\4.2.0925\default\images\btna.jpg" />
+    <Content Include="Skins\en\4.2.0925\default\images\btnConfirm.gif" />
+    <Content Include="Skins\en\4.2.0925\default\images\bus01.gif" />
+    <Content Include="Skins\en\4.2.0925\default\images\bus02.gif" />
+    <Content Include="Skins\en\4.2.0925\default\images\bus02up.gif" />
+    <Content Include="Skins\en\4.2.0925\default\images\bus03.gif" />
+    <Content Include="Skins\en\4.2.0925\default\images\bus04.gif" />
+    <Content Include="Skins\en\4.2.0925\default\images\button4.gif" />
+    <Content Include="Skins\en\4.2.0925\default\images\c.gif" />
+    <Content Include="Skins\en\4.2.0925\default\images\car.jpg" />
+    <Content Include="Skins\en\4.2.0925\default\images\CarkBG.gif" />
+    <Content Include="Skins\en\4.2.0925\default\images\cc.gif" />
+    <Content Include="Skins\en\4.2.0925\default\images\close.gif" />
+    <Content Include="Skins\en\4.2.0925\default\images\close.jpg" />
+    <Content Include="Skins\en\4.2.0925\default\images\closea.gif" />
+    <Content Include="Skins\en\4.2.0925\default\images\copy.gif" />
+    <Content Include="Skins\en\4.2.0925\default\images\daohang.gif" />
+    <Content Include="Skins\en\4.2.0925\default\images\deleteMark.gif" />
+    <Content Include="Skins\en\4.2.0925\default\images\ding.png" />
+    <Content Include="Skins\en\4.2.0925\default\images\dot.gif" />
+    <Content Include="Skins\en\4.2.0925\default\images\down.gif" />
+    <Content Include="Skins\en\4.2.0925\default\images\e.gif" />
+    <Content Include="Skins\en\4.2.0925\default\images\ea.gif" />
+    <Content Include="Skins\en\4.2.0925\default\images\Edian.gif" />
+    <Content Include="Skins\en\4.2.0925\default\images\gongjiao.gif" />
+    <Content Include="Skins\en\4.2.0925\default\images\gongjiao2.gif" />
+    <Content Include="Skins\en\4.2.0925\default\images\gongjiao3.gif" />
+    <Content Include="Skins\en\4.2.0925\default\images\gou.gif" />
+    <Content Include="Skins\en\4.2.0925\default\images\h.gif" />
+    <Content Include="Skins\en\4.2.0925\default\images\ha.gif" />
+    <Content Include="Skins\en\4.2.0925\default\images\hkendaohang.gif" />
+    <Content Include="Skins\en\4.2.0925\default\images\htbg.gif" />
+    <Content Include="Skins\en\4.2.0925\default\images\htrbg.gif" />
+    <Content Include="Skins\en\4.2.0925\default\images\iconflash.gif" />
+    <Content Include="Skins\en\4.2.0925\default\images\icon_1.gif" />
+    <Content Include="Skins\en\4.2.0925\default\images\icon_2.gif" />
+    <Content Include="Skins\en\4.2.0925\default\images\icon_3.gif" />
+    <Content Include="Skins\en\4.2.0925\default\images\icon_4.gif" />
+    <Content Include="Skins\en\4.2.0925\default\images\icon_5.gif" />
+    <Content Include="Skins\en\4.2.0925\default\images\icon_dot.gif" />
+    <Content Include="Skins\en\4.2.0925\default\images\icon_dot_s.gif" />
+    <Content Include="Skins\en\4.2.0925\default\images\icon_left.gif" />
+    <Content Include="Skins\en\4.2.0925\default\images\icon_news.gif" />
+    <Content Include="Skins\en\4.2.0925\default\images\icon_right.gif" />
+    <Content Include="Skins\en\4.2.0925\default\images\j.gif" />
+    <Content Include="Skins\en\4.2.0925\default\images\left.png" />
+    <Content Include="Skins\en\4.2.0925\default\images\left3.png" />
+    <Content Include="Skins\en\4.2.0925\default\images\leftt.png" />
+    <Content Include="Skins\en\4.2.0925\default\images\link.gif" />
+    <Content Include="Skins\en\4.2.0925\default\images\loading.gif" />
+    <Content Include="Skins\en\4.2.0925\default\images\logo.gif" />
+    <Content Include="Skins\en\4.2.0925\default\images\m1.gif" />
+    <Content Include="Skins\en\4.2.0925\default\images\m2.gif" />
+    <Content Include="Skins\en\4.2.0925\default\images\m3.gif" />
+    <Content Include="Skins\en\4.2.0925\default\images\m4.gif" />
+    <Content Include="Skins\en\4.2.0925\default\images\MarkDown.gif" />
+    <Content Include="Skins\en\4.2.0925\default\images\MarkUp.gif" />
+    <Content Include="Skins\en\4.2.0925\default\images\MessageBoxBg.jpg" />
+    <Content Include="Skins\en\4.2.0925\default\images\MessageBoxIcon.jpg" />
+    <Content Include="Skins\en\4.2.0925\default\images\navclose.gif" />
+    <Content Include="Skins\en\4.2.0925\default\images\newmap00.gif" />
+    <Content Include="Skins\en\4.2.0925\default\images\newmap00a.gif" />
+    <Content Include="Skins\en\4.2.0925\default\images\newmap01.png" />
+    <Content Include="Skins\en\4.2.0925\default\images\newmap02.png" />
+    <Content Include="Skins\en\4.2.0925\default\images\newmap04.gif" />
+    <Content Include="Skins\en\4.2.0925\default\images\newmap05.gif" />
+    <Content Include="Skins\en\4.2.0925\default\images\newmap06.gif" />
+    <Content Include="Skins\en\4.2.0925\default\images\newmap07.gif" />
+    <Content Include="Skins\en\4.2.0925\default\images\newmap08.gif" />
+    <Content Include="Skins\en\4.2.0925\default\images\newmap09.gif" />
+    <Content Include="Skins\en\4.2.0925\default\images\newmap10.gif" />
+    <Content Include="Skins\en\4.2.0925\default\images\newmap10a.gif" />
+    <Content Include="Skins\en\4.2.0925\default\images\newmap11.gif" />
+    <Content Include="Skins\en\4.2.0925\default\images\newmap11a.gif" />
+    <Content Include="Skins\en\4.2.0925\default\images\newmap12.gif" />
+    <Content Include="Skins\en\4.2.0925\default\images\newmap12a.gif" />
+    <Content Include="Skins\en\4.2.0925\default\images\newmap13.gif" />
+    <Content Include="Skins\en\4.2.0925\default\images\newmap13a.gif" />
+    <Content Include="Skins\en\4.2.0925\default\images\newmap14.gif" />
+    <Content Include="Skins\en\4.2.0925\default\images\newmap15.gif" />
+    <Content Include="Skins\en\4.2.0925\default\images\newmap15a.gif" />
+    <Content Include="Skins\en\4.2.0925\default\images\newmap16.gif" />
+    <Content Include="Skins\en\4.2.0925\default\images\newmap17.gif" />
+    <Content Include="Skins\en\4.2.0925\default\images\newmap18.gif" />
+    <Content Include="Skins\en\4.2.0925\default\images\newmap19.gif" />
+    <Content Include="Skins\en\4.2.0925\default\images\newmap20.gif" />
+    <Content Include="Skins\en\4.2.0925\default\images\newmap21.gif" />
+    <Content Include="Skins\en\4.2.0925\default\images\newmap22.gif" />
+    <Content Include="Skins\en\4.2.0925\default\images\newmap22a.gif" />
+    <Content Include="Skins\en\4.2.0925\default\images\newmap23.gif" />
+    <Content Include="Skins\en\4.2.0925\default\images\newmap23a.gif" />
+    <Content Include="Skins\en\4.2.0925\default\images\newmap24.gif" />
+    <Content Include="Skins\en\4.2.0925\default\images\newmap25.gif" />
+    <Content Include="Skins\en\4.2.0925\default\images\newmap26.gif" />
+    <Content Include="Skins\en\4.2.0925\default\images\newmap27.gif" />
+    <Content Include="Skins\en\4.2.0925\default\images\newmap28.gif" />
+    <Content Include="Skins\en\4.2.0925\default\images\newmap28a.gif" />
+    <Content Include="Skins\en\4.2.0925\default\images\newmap29.gif" />
+    <Content Include="Skins\en\4.2.0925\default\images\newmap30.gif" />
+    <Content Include="Skins\en\4.2.0925\default\images\newmap30a.gif" />
+    <Content Include="Skins\en\4.2.0925\default\images\newmap31.gif" />
+    <Content Include="Skins\en\4.2.0925\default\images\newmap31a.gif" />
+    <Content Include="Skins\en\4.2.0925\default\images\newmap32.gif" />
+    <Content Include="Skins\en\4.2.0925\default\images\newmap33.gif" />
+    <Content Include="Skins\en\4.2.0925\default\images\newmap33a.gif" />
+    <Content Include="Skins\en\4.2.0925\default\images\newmap34.gif" />
+    <Content Include="Skins\en\4.2.0925\default\images\newmap34a.gif" />
+    <Content Include="Skins\en\4.2.0925\default\images\newmap35.gif" />
+    <Content Include="Skins\en\4.2.0925\default\images\newmap36.gif" />
+    <Content Include="Skins\en\4.2.0925\default\images\newmap36a.gif" />
+    <Content Include="Skins\en\4.2.0925\default\images\newmap38.png" />
+    <Content Include="Skins\en\4.2.0925\default\images\newmap39.gif" />
+    <Content Include="Skins\en\4.2.0925\default\images\newmap40.gif" />
+    <Content Include="Skins\en\4.2.0925\default\images\newmap41.gif" />
+    <Content Include="Skins\en\4.2.0925\default\images\newmap42.gif" />
+    <Content Include="Skins\en\4.2.0925\default\images\newmap43.gif" />
+    <Content Include="Skins\en\4.2.0925\default\images\newmap44.gif" />
+    <Content Include="Skins\en\4.2.0925\default\images\newmap45.png" />
+    <Content Include="Skins\en\4.2.0925\default\images\newmap46.png" />
+    <Content Include="Skins\en\4.2.0925\default\images\newmap47.png" />
+    <Content Include="Skins\en\4.2.0925\default\images\newmap48.gif" />
+    <Content Include="Skins\en\4.2.0925\default\images\newmap482d.gif" />
+    <Content Include="Skins\en\4.2.0925\default\images\newmap49.gif" />
+    <Content Include="Skins\en\4.2.0925\default\images\newmap50.gif" />
+    <Content Include="Skins\en\4.2.0925\default\images\newmap51.gif" />
+    <Content Include="Skins\en\4.2.0925\default\images\newmap52.gif" />
+    <Content Include="Skins\en\4.2.0925\default\images\newmap53.gif" />
+    <Content Include="Skins\en\4.2.0925\default\images\newmap54.gif" />
+    <Content Include="Skins\en\4.2.0925\default\images\newmap54a.gif" />
+    <Content Include="Skins\en\4.2.0925\default\images\newmap55.gif" />
+    <Content Include="Skins\en\4.2.0925\default\images\newmap56.gif" />
+    <Content Include="Skins\en\4.2.0925\default\images\newmap57.gif" />
+    <Content Include="Skins\en\4.2.0925\default\images\newmap58.png" />
+    <Content Include="Skins\en\4.2.0925\default\images\newmap59.png" />
+    <Content Include="Skins\en\4.2.0925\default\images\newmap60.gif" />
+    <Content Include="Skins\en\4.2.0925\default\images\newmap64.gif" />
+    <Content Include="Skins\en\4.2.0925\default\images\newmap65.gif" />
+    <Content Include="Skins\en\4.2.0925\default\images\newmap66.gif" />
+    <Content Include="Skins\en\4.2.0925\default\images\newmap67.gif" />
+    <Content Include="Skins\en\4.2.0925\default\images\newmap68.gif" />
+    <Content Include="Skins\en\4.2.0925\default\images\newmap69.gif" />
+    <Content Include="Skins\en\4.2.0925\default\images\NOPHOTO.jpg" />
+    <Content Include="Skins\en\4.2.0925\default\images\oblique_bg.gif" />
+    <Content Include="Skins\en\4.2.0925\default\images\q.gif" />
+    <Content Include="Skins\en\4.2.0925\default\images\qa.gif" />
+    <Content Include="Skins\en\4.2.0925\default\images\qz.gif" />
+    <Content Include="Skins\en\4.2.0925\default\images\right.gif" />
+    <Content Include="Skins\en\4.2.0925\default\images\right.png" />
+    <Content Include="Skins\en\4.2.0925\default\images\search.gif" />
+    <Content Include="Skins\en\4.2.0925\default\images\sel.gif" />
+    <Content Include="Skins\en\4.2.0925\default\images\srcexit.jpg" />
+    <Content Include="Skins\en\4.2.0925\default\images\ta.gif" />
+    <Content Include="Skins\en\4.2.0925\default\images\taa.gif" />
+    <Content Include="Skins\en\4.2.0925\default\images\text-fade.png" />
+    <Content Include="Skins\en\4.2.0925\default\images\tm.gif" />
+    <Content Include="Skins\en\4.2.0925\default\images\tma.gif" />
+    <Content Include="Skins\en\4.2.0925\default\images\toolbar_1.gif" />
+    <Content Include="Skins\en\4.2.0925\default\images\toolbar_1_1.gif" />
+    <Content Include="Skins\en\4.2.0925\default\images\toolbar_2.gif" />
+    <Content Include="Skins\en\4.2.0925\default\images\toolbar_2_1.gif" />
+    <Content Include="Skins\en\4.2.0925\default\images\toolbar_3.gif" />
+    <Content Include="Skins\en\4.2.0925\default\images\toolbar_3_1.gif" />
+    <Content Include="Skins\en\4.2.0925\default\images\toolbar_4.gif" />
+    <Content Include="Skins\en\4.2.0925\default\images\toolbar_4_1.gif" />
+    <Content Include="Skins\en\4.2.0925\default\images\toolbar_5.gif" />
+    <Content Include="Skins\en\4.2.0925\default\images\toolbar_5_1.gif" />
+    <Content Include="Skins\en\4.2.0925\default\images\toolbar_6.gif" />
+    <Content Include="Skins\en\4.2.0925\default\images\toolbar_6_1.gif" />
+    <Content Include="Skins\en\4.2.0925\default\images\top_r_b_bg.jpg" />
+    <Content Include="Skins\en\4.2.0925\default\images\VipMember.gif" />
+    <Content Include="Skins\en\4.2.0925\default\images\Warning.gif" />
+    <Content Include="Skins\en\4.2.0925\default\images\waterbg.gif" />
+    <Content Include="Skins\en\4.2.0925\default\images\wqbg.gif" />
+    <Content Include="Skins\en\4.2.0925\default\JS\BusNoSearch.js" />
+    <Content Include="Skins\en\4.2.0925\default\JS\BusSESearch.js" />
+    <Content Include="Skins\en\4.2.0925\default\JS\BusStationSearch.js" />
+    <Content Include="Skins\en\4.2.0925\default\JS\BusTransfer.js" />
+    <Content Include="Skins\en\4.2.0925\default\JS\CompanyList.js" />
+    <Content Include="Skins\en\4.2.0925\default\JS\eds_eye.js" />
+    <Content Include="Skins\en\4.2.0925\default\JS\EdushiAnnounce.js" />
+    <Content Include="Skins\en\4.2.0925\default\JS\Init.js" />
+    <Content Include="Skins\en\4.2.0925\default\JS\Language.js" />
+    <Content Include="Skins\en\4.2.0925\default\JS\LocalSearch.js" />
+    <Content Include="Skins\en\4.2.0925\default\JS\LocalTopics.js" />
+    <Content Include="Skins\en\4.2.0925\default\JS\Mark.js" />
+    <Content Include="Skins\en\4.2.0925\default\JS\NearBySearch.js" />
+    <Content Include="Skins\en\4.2.0925\default\JS\News.js" />
+    <Content Include="Skins\en\4.2.0925\default\JS\PeripheralBus.js" />
+    <Content Include="Skins\en\4.2.0925\default\JS\ProMapSearch.js" />
+    <Content Include="Skins\en\4.2.0925\default\Master_UI.html" />
+    <Content Include="Skins\zh-chs\4.2.0925\beijing\controls\NavigationControl.aspx" />
+    <Content Include="Skins\zh-chs\4.2.0925\beijing\images\bjdaohang.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\beijing\images\navclose.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\changsha\controls\NavigationControl.aspx" />
+    <Content Include="Skins\zh-chs\4.2.0925\changsha\images\daohang.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\changsha\images\navclose.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\dalian\Channels\AdServer\images\1.css" />
+    <Content Include="Skins\zh-chs\4.2.0925\dalian\Channels\AdServer\images\c1.jpg" />
+    <Content Include="Skins\zh-chs\4.2.0925\dalian\Channels\AdServer\images\c10.jpg" />
+    <Content Include="Skins\zh-chs\4.2.0925\dalian\Channels\AdServer\images\c11.jpg" />
+    <Content Include="Skins\zh-chs\4.2.0925\dalian\Channels\AdServer\images\c12.jpg" />
+    <Content Include="Skins\zh-chs\4.2.0925\dalian\Channels\AdServer\images\c13.jpg" />
+    <Content Include="Skins\zh-chs\4.2.0925\dalian\Channels\AdServer\images\c14.jpg" />
+    <Content Include="Skins\zh-chs\4.2.0925\dalian\Channels\AdServer\images\c15.jpg" />
+    <Content Include="Skins\zh-chs\4.2.0925\dalian\Channels\AdServer\images\c16.jpg" />
+    <Content Include="Skins\zh-chs\4.2.0925\dalian\Channels\AdServer\images\c17.jpg" />
+    <Content Include="Skins\zh-chs\4.2.0925\dalian\Channels\AdServer\images\c18.jpg" />
+    <Content Include="Skins\zh-chs\4.2.0925\dalian\Channels\AdServer\images\c19.jpg" />
+    <Content Include="Skins\zh-chs\4.2.0925\dalian\Channels\AdServer\images\c20.jpg" />
+    <Content Include="Skins\zh-chs\4.2.0925\dalian\Channels\AdServer\images\c21.jpg" />
+    <Content Include="Skins\zh-chs\4.2.0925\dalian\Channels\AdServer\images\c22.jpg" />
+    <Content Include="Skins\zh-chs\4.2.0925\dalian\Channels\AdServer\images\c23.jpg" />
+    <Content Include="Skins\zh-chs\4.2.0925\dalian\Channels\AdServer\images\c24.jpg" />
+    <Content Include="Skins\zh-chs\4.2.0925\dalian\Channels\AdServer\images\c25.jpg" />
+    <Content Include="Skins\zh-chs\4.2.0925\dalian\Channels\AdServer\images\c26.jpg" />
+    <Content Include="Skins\zh-chs\4.2.0925\dalian\Channels\AdServer\images\c27.jpg" />
+    <Content Include="Skins\zh-chs\4.2.0925\dalian\Channels\AdServer\images\c28.jpg" />
+    <Content Include="Skins\zh-chs\4.2.0925\dalian\Channels\AdServer\images\c29.jpg" />
+    <Content Include="Skins\zh-chs\4.2.0925\dalian\Channels\AdServer\images\c3.jpg" />
+    <Content Include="Skins\zh-chs\4.2.0925\dalian\Channels\AdServer\images\c30.jpg" />
+    <Content Include="Skins\zh-chs\4.2.0925\dalian\Channels\AdServer\images\c31.jpg" />
+    <Content Include="Skins\zh-chs\4.2.0925\dalian\Channels\AdServer\images\c32.jpg" />
+    <Content Include="Skins\zh-chs\4.2.0925\dalian\Channels\AdServer\images\c34.jpg" />
+    <Content Include="Skins\zh-chs\4.2.0925\dalian\Channels\AdServer\images\c35.jpg" />
+    <Content Include="Skins\zh-chs\4.2.0925\dalian\Channels\AdServer\images\c36.jpg" />
+    <Content Include="Skins\zh-chs\4.2.0925\dalian\Channels\AdServer\images\c4.jpg" />
+    <Content Include="Skins\zh-chs\4.2.0925\dalian\Channels\AdServer\images\c5.jpg" />
+    <Content Include="Skins\zh-chs\4.2.0925\dalian\Channels\AdServer\images\c6.jpg" />
+    <Content Include="Skins\zh-chs\4.2.0925\dalian\Channels\AdServer\images\c7.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\dalian\Channels\AdServer\images\c7.jpg" />
+    <Content Include="Skins\zh-chs\4.2.0925\dalian\Channels\AdServer\images\c8.jpg" />
+    <Content Include="Skins\zh-chs\4.2.0925\dalian\Channels\AdServer\images\c9.jpg" />
+    <Content Include="Skins\zh-chs\4.2.0925\dalian\Channels\AdServer\index.html" />
+    <Content Include="Skins\zh-chs\4.2.0925\dalian\Channels\DigCowry\Congratulate.aspx" />
+    <Content Include="Skins\zh-chs\4.2.0925\dalian\Channels\DigCowry\css\xunbao.css" />
+    <Content Include="Skins\zh-chs\4.2.0925\dalian\Channels\DigCowry\Default.aspx" />
+    <Content Include="Skins\zh-chs\4.2.0925\dalian\Channels\DigCowry\Depression.aspx" />
+    <Content Include="Skins\zh-chs\4.2.0925\dalian\Channels\DigCowry\DigCowry11111111.js" />
+    <Content Include="Skins\zh-chs\4.2.0925\dalian\Channels\DigCowry\DigFailture.aspx" />
+    <Content Include="Skins\zh-chs\4.2.0925\dalian\Channels\DigCowry\DigHelp.aspx" />
+    <Content Include="Skins\zh-chs\4.2.0925\dalian\Channels\DigCowry\DigHero.aspx" />
+    <Content Include="Skins\zh-chs\4.2.0925\dalian\Channels\DigCowry\DigSuccess.aspx" />
+    <Content Include="Skins\zh-chs\4.2.0925\dalian\Channels\DigCowry\images\#.jpg" />
+    <Content Include="Skins\zh-chs\4.2.0925\dalian\Channels\DigCowry\images\#1.jpg" />
+    <Content Include="Skins\zh-chs\4.2.0925\dalian\Channels\DigCowry\images\1.jpg" />
+    <Content Include="Skins\zh-chs\4.2.0925\dalian\Channels\DigCowry\images\10t.jpg" />
+    <Content Include="Skins\zh-chs\4.2.0925\dalian\Channels\DigCowry\images\11t.jpg" />
+    <Content Include="Skins\zh-chs\4.2.0925\dalian\Channels\DigCowry\images\12t.jpg" />
+    <Content Include="Skins\zh-chs\4.2.0925\dalian\Channels\DigCowry\images\13t.jpg" />
+    <Content Include="Skins\zh-chs\4.2.0925\dalian\Channels\DigCowry\images\2.jpg" />
+    <Content Include="Skins\zh-chs\4.2.0925\dalian\Channels\DigCowry\images\3.jpg" />
+    <Content Include="Skins\zh-chs\4.2.0925\dalian\Channels\DigCowry\images\4.jpg" />
+    <Content Include="Skins\zh-chs\4.2.0925\dalian\Channels\DigCowry\images\5.jpg" />
+    <Content Include="Skins\zh-chs\4.2.0925\dalian\Channels\DigCowry\images\9t.jpg" />
+    <Content Include="Skins\zh-chs\4.2.0925\dalian\Channels\DigCowry\images\a13t.jpg" />
+    <Content Include="Skins\zh-chs\4.2.0925\dalian\Channels\DigCowry\images\a9t.jpg" />
+    <Content Include="Skins\zh-chs\4.2.0925\dalian\Channels\DigCowry\images\digcowry.jpg" />
+    <Content Include="Skins\zh-chs\4.2.0925\dalian\Channels\DigCowry\images\DigCowryTip.jpg" />
+    <Content Include="Skins\zh-chs\4.2.0925\dalian\Channels\DigCowry\images\DigCowryTip.png" />
+    <Content Include="Skins\zh-chs\4.2.0925\dalian\Channels\DigCowry\images\digicon.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\dalian\Channels\DigCowry\images\go_btn.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\dalian\Channels\DigCowry\images\guess.jpg" />
+    <Content Include="Skins\zh-chs\4.2.0925\dalian\Channels\DigCowry\images\leftt.png" />
+    <Content Include="Skins\zh-chs\4.2.0925\dalian\Channels\DigCowry\images\nocowry.jpg" />
+    <Content Include="Skins\zh-chs\4.2.0925\dalian\Channels\DigCowry\images\spade.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\dalian\Channels\DigCowry\images\spade.swf" />
+    <Content Include="Skins\zh-chs\4.2.0925\dalian\Channels\DigCowry\images\xunbao_r1_a10.jpg" />
+    <Content Include="Skins\zh-chs\4.2.0925\dalian\Channels\DigCowry\images\xunbao_r1_a11.jpg" />
+    <Content Include="Skins\zh-chs\4.2.0925\dalian\Channels\DigCowry\images\xunbao_r1_a12.jpg" />
+    <Content Include="Skins\zh-chs\4.2.0925\dalian\Channels\DigCowry\images\xunbao_r1_a13.jpg" />
+    <Content Include="Skins\zh-chs\4.2.0925\dalian\Channels\DigCowry\images\xunbao_r1_a14.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\dalian\Channels\DigCowry\images\xunbao_r1_a15.jpg" />
+    <Content Include="Skins\zh-chs\4.2.0925\dalian\Channels\DigCowry\images\xunbao_r1_a16.jpg" />
+    <Content Include="Skins\zh-chs\4.2.0925\dalian\Channels\DigCowry\images\xunbao_r1_a17.jpg" />
+    <Content Include="Skins\zh-chs\4.2.0925\dalian\Channels\DigCowry\images\xunbao_r1_a18.jpg" />
+    <Content Include="Skins\zh-chs\4.2.0925\dalian\Channels\DigCowry\images\xunbao_r1_a9.jpg" />
+    <Content Include="Skins\zh-chs\4.2.0925\dalian\Channels\DigCowry\images\xunbao_r2_a1.jpg" />
+    <Content Include="Skins\zh-chs\4.2.0925\dalian\Channels\DigCowry\images\xunbao_r2_a10.jpg" />
+    <Content Include="Skins\zh-chs\4.2.0925\dalian\Channels\DigCowry\images\xunbao_r2_a11.jpg" />
+    <Content Include="Skins\zh-chs\4.2.0925\dalian\Channels\DigCowry\images\xunbao_r2_a12.jpg" />
+    <Content Include="Skins\zh-chs\4.2.0925\dalian\Channels\DigCowry\images\xunbao_r2_a13.jpg" />
+    <Content Include="Skins\zh-chs\4.2.0925\dalian\Channels\DigCowry\images\xunbao_r2_a14.jpg" />
+    <Content Include="Skins\zh-chs\4.2.0925\dalian\Channels\DigCowry\images\xunbao_r2_a15.jpg" />
+    <Content Include="Skins\zh-chs\4.2.0925\dalian\Channels\DigCowry\images\xunbao_r2_a16.jpg" />
+    <Content Include="Skins\zh-chs\4.2.0925\dalian\Channels\DigCowry\images\xunbao_r2_a17.jpg" />
+    <Content Include="Skins\zh-chs\4.2.0925\dalian\Channels\DigCowry\images\xunbao_r2_a18.jpg" />
+    <Content Include="Skins\zh-chs\4.2.0925\dalian\Channels\DigCowry\images\xunbao_r2_a19.jpg" />
+    <Content Include="Skins\zh-chs\4.2.0925\dalian\Channels\DigCowry\images\xunbao_r2_a2.jpg" />
+    <Content Include="Skins\zh-chs\4.2.0925\dalian\Channels\DigCowry\images\xunbao_r2_a20.jpg" />
+    <Content Include="Skins\zh-chs\4.2.0925\dalian\Channels\DigCowry\images\xunbao_r2_a21.jpg" />
+    <Content Include="Skins\zh-chs\4.2.0925\dalian\Channels\DigCowry\images\xunbao_r2_a22.jpg" />
+    <Content Include="Skins\zh-chs\4.2.0925\dalian\Channels\DigCowry\images\xunbao_r2_a23.jpg" />
+    <Content Include="Skins\zh-chs\4.2.0925\dalian\Channels\DigCowry\images\xunbao_r2_a24.jpg" />
+    <Content Include="Skins\zh-chs\4.2.0925\dalian\Channels\DigCowry\images\xunbao_r2_a25.jpg" />
+    <Content Include="Skins\zh-chs\4.2.0925\dalian\Channels\DigCowry\images\xunbao_r2_a3.jpg" />
+    <Content Include="Skins\zh-chs\4.2.0925\dalian\Channels\DigCowry\images\xunbao_r2_a4.jpg" />
+    <Content Include="Skins\zh-chs\4.2.0925\dalian\Channels\DigCowry\images\xunbao_r2_a5.jpg" />
+    <Content Include="Skins\zh-chs\4.2.0925\dalian\Channels\DigCowry\images\xunbao_r2_a6.jpg" />
+    <Content Include="Skins\zh-chs\4.2.0925\dalian\Channels\DigCowry\images\xunbao_r2_a7.jpg" />
+    <Content Include="Skins\zh-chs\4.2.0925\dalian\Channels\DigCowry\images\xunbao_r2_a8.jpg" />
+    <Content Include="Skins\zh-chs\4.2.0925\dalian\Channels\DigCowry\images\xunbao_r2_a9.jpg" />
+    <Content Include="Skins\zh-chs\4.2.0925\dalian\Channels\DigCowry\images\xunbao_r3_a1.jpg" />
+    <Content Include="Skins\zh-chs\4.2.0925\dalian\Channels\DigCowry\images\xunbao_r3_a10.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\dalian\Channels\DigCowry\images\xunbao_r3_a11.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\dalian\Channels\DigCowry\images\xunbao_r3_a12.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\dalian\Channels\DigCowry\images\xunbao_r3_a13.jpg" />
+    <Content Include="Skins\zh-chs\4.2.0925\dalian\Channels\DigCowry\images\xunbao_r3_a14.jpg" />
+    <Content Include="Skins\zh-chs\4.2.0925\dalian\Channels\DigCowry\images\xunbao_r3_a15.jpg" />
+    <Content Include="Skins\zh-chs\4.2.0925\dalian\Channels\DigCowry\images\xunbao_r3_a16.jpg" />
+    <Content Include="Skins\zh-chs\4.2.0925\dalian\Channels\DigCowry\images\xunbao_r3_a17.jpg" />
+    <Content Include="Skins\zh-chs\4.2.0925\dalian\Channels\DigCowry\images\xunbao_r3_a18.jpg" />
+    <Content Include="Skins\zh-chs\4.2.0925\dalian\Channels\DigCowry\images\xunbao_r3_a2.jpg" />
+    <Content Include="Skins\zh-chs\4.2.0925\dalian\Channels\DigCowry\images\xunbao_r3_a3.jpg" />
+    <Content Include="Skins\zh-chs\4.2.0925\dalian\Channels\DigCowry\images\xunbao_r3_a4.jpg" />
+    <Content Include="Skins\zh-chs\4.2.0925\dalian\Channels\DigCowry\images\xunbao_r3_a5.jpg" />
+    <Content Include="Skins\zh-chs\4.2.0925\dalian\Channels\DigCowry\images\xunbao_r3_a6.jpg" />
+    <Content Include="Skins\zh-chs\4.2.0925\dalian\Channels\DigCowry\images\xunbao_r3_a7.jpg" />
+    <Content Include="Skins\zh-chs\4.2.0925\dalian\Channels\DigCowry\images\xunbao_r3_a8.jpg" />
+    <Content Include="Skins\zh-chs\4.2.0925\dalian\Channels\DigCowry\images\xunbao_r3_a9.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\dalian\Channels\DigCowry\images\xunbao_r4_a1.jpg" />
+    <Content Include="Skins\zh-chs\4.2.0925\dalian\Channels\DigCowry\images\xunbao_r4_a10.jpg" />
+    <Content Include="Skins\zh-chs\4.2.0925\dalian\Channels\DigCowry\images\xunbao_r4_a2.jpg" />
+    <Content Include="Skins\zh-chs\4.2.0925\dalian\Channels\DigCowry\images\xunbao_r4_a21.jpg" />
+    <Content Include="Skins\zh-chs\4.2.0925\dalian\Channels\DigCowry\images\xunbao_r4_a22.jpg" />
+    <Content Include="Skins\zh-chs\4.2.0925\dalian\Channels\DigCowry\images\xunbao_r4_a3.jpg" />
+    <Content Include="Skins\zh-chs\4.2.0925\dalian\Channels\DigCowry\images\xunbao_r4_a4.jpg" />
+    <Content Include="Skins\zh-chs\4.2.0925\dalian\Channels\DigCowry\images\xunbao_r4_a5.jpg" />
+    <Content Include="Skins\zh-chs\4.2.0925\dalian\Channels\DigCowry\images\xunbao_r4_a6.jpg" />
+    <Content Include="Skins\zh-chs\4.2.0925\dalian\Channels\DigCowry\images\xunbao_r4_a7.jpg" />
+    <Content Include="Skins\zh-chs\4.2.0925\dalian\Channels\DigCowry\images\xunbao_r4_a8.jpg" />
+    <Content Include="Skins\zh-chs\4.2.0925\dalian\Channels\DigCowry\images\xunbao_r4_a9.jpg" />
+    <Content Include="Skins\zh-chs\4.2.0925\dalian\Channels\DigCowry\js\Check.js" />
+    <Content Include="Skins\zh-chs\4.2.0925\dalian\Channels\DigCowry\QuestionList.aspx" />
+    <Content Include="Skins\zh-chs\4.2.0925\dalian\Channels\DigCowry\Questionnaire.aspx" />
+    <Content Include="Skins\zh-chs\4.2.0925\dalian\Channels\DigCowry\QuestionnaireSuccess.aspx" />
+    <Content Include="Skins\zh-chs\4.2.0925\dalian\Channels\DigCowry\SubmitSuccess.aspx" />
+    <Content Include="Skins\zh-chs\4.2.0925\dalian\Channels\DigCowry\TrophyDetails.aspx" />
+    <Content Include="Skins\zh-chs\4.2.0925\dalian\Channels\DigCowry\TrophyShow.aspx" />
+    <Content Include="Skins\zh-chs\4.2.0925\dalian\Channels\DigCowry\TrophyVerdict.aspx" />
+    <Content Include="Skins\zh-chs\4.2.0925\dalian\Channels\DigCowry\UserControls\FootUserControl.ascx" />
+    <Content Include="Skins\zh-chs\4.2.0925\dalian\Channels\DigCowry\UserControls\GlobalADUserControl.ascx" />
+    <Content Include="Skins\zh-chs\4.2.0925\dalian\Channels\DigCowry\UserControls\LinkUserControl.ascx" />
+    <Content Include="Skins\zh-chs\4.2.0925\dalian\Channels\DigCowry\UserControls\MediumControl.ascx" />
+    <Content Include="Skins\zh-chs\4.2.0925\dalian\Channels\DigCowry\UserControls\OtherTrophysControl.ascx" />
+    <Content Include="Skins\zh-chs\4.2.0925\dalian\Channels\DigCowry\UserControls\ProviderADControl.ascx" />
+    <Content Include="Skins\zh-chs\4.2.0925\dalian\Channels\DigCowry\UserControls\TrophyDetailsControl.ascx" />
+    <Content Include="Skins\zh-chs\4.2.0925\dalian\Channels\LiveIn\AjaxHandler.aspx" />
+    <Content Include="Skins\zh-chs\4.2.0925\dalian\Channels\LiveIn\css\master.css" />
+    <Content Include="Skins\zh-chs\4.2.0925\dalian\Channels\LiveIn\Default.aspx" />
+    <Content Include="Skins\zh-chs\4.2.0925\dalian\Channels\LiveIn\images\1_r2_c11.jpg" />
+    <Content Include="Skins\zh-chs\4.2.0925\dalian\Channels\LiveIn\images\qyrz_r1_a1.jpg" />
+    <Content Include="Skins\zh-chs\4.2.0925\dalian\Channels\LiveIn\images\qyrz_r1_a10.jpg" />
+    <Content Include="Skins\zh-chs\4.2.0925\dalian\Channels\LiveIn\images\qyrz_r1_a12.jpg" />
+    <Content Include="Skins\zh-chs\4.2.0925\dalian\Channels\LiveIn\images\qyrz_r1_a2.jpg" />
+    <Content Include="Skins\zh-chs\4.2.0925\dalian\Channels\LiveIn\images\qyrz_r1_a3.jpg" />
+    <Content Include="Skins\zh-chs\4.2.0925\dalian\Channels\LiveIn\images\qyrz_r1_a4.jpg" />
+    <Content Include="Skins\zh-chs\4.2.0925\dalian\Channels\LiveIn\images\qyrz_r1_a5.jpg" />
+    <Content Include="Skins\zh-chs\4.2.0925\dalian\Channels\LiveIn\images\qyrz_r1_a6.jpg" />
+    <Content Include="Skins\zh-chs\4.2.0925\dalian\Channels\LiveIn\images\qyrz_r1_a7.jpg" />
+    <Content Include="Skins\zh-chs\4.2.0925\dalian\Channels\LiveIn\images\qyrz_r1_a8.jpg" />
+    <Content Include="Skins\zh-chs\4.2.0925\dalian\Channels\LiveIn\images\qyrz_r1_a9.jpg" />
+    <Content Include="Skins\zh-chs\4.2.0925\dalian\Channels\LiveIn\IncomeSuccessful.aspx" />
+    <Content Include="Skins\zh-chs\4.2.0925\dalian\Channels\LiveIn\IncomeSuccessful.html" />
+    <Content Include="Skins\zh-chs\4.2.0925\dalian\Channels\LiveIn\js\DoLiveIn.js" />
+    <Content Include="Skins\zh-chs\4.2.0925\dalian\Configvalues.js" />
+    <Content Include="Skins\zh-chs\4.2.0925\dalian\controls\BusStationControl.aspx" />
+    <Content Include="Skins\zh-chs\4.2.0925\dalian\controls\BusStationControl.js" />
+    <Content Include="Skins\zh-chs\4.2.0925\dalian\controls\CityListControl.aspx" />
+    <Content Include="Skins\zh-chs\4.2.0925\dalian\controls\CityListControl.js" />
+    <Content Include="Skins\zh-chs\4.2.0925\dalian\controls\CommendPopControl.aspx" />
+    <Content Include="Skins\zh-chs\4.2.0925\dalian\controls\CommendPopControl.js" />
+    <Content Include="Skins\zh-chs\4.2.0925\dalian\controls\ControlBase.aspx" />
+    <Content Include="Skins\zh-chs\4.2.0925\dalian\controls\ControlBase.js" />
+    <Content Include="Skins\zh-chs\4.2.0925\dalian\controls\DebugControl.aspx" />
+    <Content Include="Skins\zh-chs\4.2.0925\dalian\controls\DebugControl.js" />
+    <Content Include="Skins\zh-chs\4.2.0925\dalian\controls\EntityPopControl.aspx" />
+    <Content Include="Skins\zh-chs\4.2.0925\dalian\controls\EntityPopControl.js" />
+    <Content Include="Skins\zh-chs\4.2.0925\dalian\controls\FromSearchControl.aspx" />
+    <Content Include="Skins\zh-chs\4.2.0925\dalian\controls\FromSearchControl.js" />
+    <Content Include="Skins\zh-chs\4.2.0925\dalian\controls\NavigationControl.aspx" />
+    <Content Include="Skins\zh-chs\4.2.0925\dalian\controls\NavigationControl.js" />
+    <Content Include="Skins\zh-chs\4.2.0925\dalian\controls\OptionCardContrlBase.js" />
+    <Content Include="Skins\zh-chs\4.2.0925\dalian\controls\PaneSearchControl.aspx" />
+    <Content Include="Skins\zh-chs\4.2.0925\dalian\controls\PaneSearchControl.js" />
+    <Content Include="Skins\zh-chs\4.2.0925\dalian\controls\PeripheralBusControl.aspx" />
+    <Content Include="Skins\zh-chs\4.2.0925\dalian\controls\PeripheralBusControl.js" />
+    <Content Include="Skins\zh-chs\4.2.0925\dalian\controls\PeripheralSearchControl.aspx" />
+    <Content Include="Skins\zh-chs\4.2.0925\dalian\controls\PeripheralSearchControl.js" />
+    <Content Include="Skins\zh-chs\4.2.0925\dalian\controls\RotaryPictureControl.aspx" />
+    <Content Include="Skins\zh-chs\4.2.0925\dalian\controls\RotaryPictureControl.js" />
+    <Content Include="Skins\zh-chs\4.2.0925\dalian\controls\SearchControl.aspx" />
+    <Content Include="Skins\zh-chs\4.2.0925\dalian\controls\SearchControl.js" />
+    <Content Include="Skins\zh-chs\4.2.0925\dalian\controls\SearchResultControl.aspx" />
+    <Content Include="Skins\zh-chs\4.2.0925\dalian\controls\SearchResultControl.js" />
+    <Content Include="Skins\zh-chs\4.2.0925\dalian\controls\ThemePopControl.aspx" />
+    <Content Include="Skins\zh-chs\4.2.0925\dalian\controls\ThemePopControl.js" />
+    <Content Include="Skins\zh-chs\4.2.0925\dalian\controls\ToSearchControl.aspx" />
+    <Content Include="Skins\zh-chs\4.2.0925\dalian\controls\ToSearchControl.js" />
+    <Content Include="Skins\zh-chs\4.2.0925\dalian\Css\BusNoSearch.css" />
+    <Content Include="Skins\zh-chs\4.2.0925\dalian\Css\BusSESearch.css" />
+    <Content Include="Skins\zh-chs\4.2.0925\dalian\Css\BusStationSearch.css" />
+    <Content Include="Skins\zh-chs\4.2.0925\dalian\Css\BusTransfer.css" />
+    <Content Include="Skins\zh-chs\4.2.0925\dalian\Css\CityListControl.css" />
+    <Content Include="Skins\zh-chs\4.2.0925\dalian\Css\CompanyList.css" />
+    <Content Include="Skins\zh-chs\4.2.0925\dalian\Css\Dialog.css" />
+    <Content Include="Skins\zh-chs\4.2.0925\dalian\Css\EntityPopControl.css" />
+    <Content Include="Skins\zh-chs\4.2.0925\dalian\Css\LocalSearch.css" />
+    <Content Include="Skins\zh-chs\4.2.0925\dalian\Css\Mark.css" />
+    <Content Include="Skins\zh-chs\4.2.0925\dalian\Css\moz-text-overflow.xml" />
+    <Content Include="Skins\zh-chs\4.2.0925\dalian\Css\NearBySearch.css" />
+    <Content Include="Skins\zh-chs\4.2.0925\dalian\Css\News.css" />
+    <Content Include="Skins\zh-chs\4.2.0925\dalian\Css\PeripheralBus.css" />
+    <Content Include="Skins\zh-chs\4.2.0925\dalian\Css\Pop.css" />
+    <Content Include="Skins\zh-chs\4.2.0925\dalian\Css\SearchControl.css" />
+    <Content Include="Skins\zh-chs\4.2.0925\dalian\Css\SearchResultControl.css" />
+    <Content Include="Skins\zh-chs\4.2.0925\dalian\Css\style.css" />
+    <Content Include="Skins\zh-chs\4.2.0925\dalian\Css\ThemePopControl.css" />
+    <Content Include="Skins\zh-chs\4.2.0925\dalian\images\1.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\dalian\images\10t.jpg" />
+    <Content Include="Skins\zh-chs\4.2.0925\dalian\images\11.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\dalian\images\11a.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\dalian\images\11t.jpg" />
+    <Content Include="Skins\zh-chs\4.2.0925\dalian\images\12-2.png" />
+    <Content Include="Skins\zh-chs\4.2.0925\dalian\images\12-21.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\dalian\images\12-22.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\dalian\images\12.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\dalian\images\12.png" />
+    <Content Include="Skins\zh-chs\4.2.0925\dalian\images\12a.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\dalian\images\12t.jpg" />
+    <Content Include="Skins\zh-chs\4.2.0925\dalian\images\13t.jpg" />
+    <Content Include="Skins\zh-chs\4.2.0925\dalian\images\14.jpg" />
+    <Content Include="Skins\zh-chs\4.2.0925\dalian\images\2.jpg" />
+    <Content Include="Skins\zh-chs\4.2.0925\dalian\images\4-2.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\dalian\images\4.jpg" />
+    <Content Include="Skins\zh-chs\4.2.0925\dalian\images\6.jpg" />
+    <Content Include="Skins\zh-chs\4.2.0925\dalian\images\9.jpg" />
+    <Content Include="Skins\zh-chs\4.2.0925\dalian\images\9t.jpg" />
+    <Content Include="Skins\zh-chs\4.2.0925\dalian\images\b.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\dalian\images\bd.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\dalian\images\bg.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\dalian\images\bgloading.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\dalian\images\bg_body.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\dalian\images\black.jpg" />
+    <Content Include="Skins\zh-chs\4.2.0925\dalian\images\bloading.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\dalian\images\btn.jpg" />
+    <Content Include="Skins\zh-chs\4.2.0925\dalian\images\btna.jpg" />
+    <Content Include="Skins\zh-chs\4.2.0925\dalian\images\btnConfirm.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\dalian\images\bus01.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\dalian\images\bus02.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\dalian\images\bus02up.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\dalian\images\bus03.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\dalian\images\bus04.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\dalian\images\button4.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\dalian\images\c.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\dalian\images\car.jpg" />
+    <Content Include="Skins\zh-chs\4.2.0925\dalian\images\CarkBG.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\dalian\images\cc.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\dalian\images\close.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\dalian\images\close.jpg" />
+    <Content Include="Skins\zh-chs\4.2.0925\dalian\images\closea.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\dalian\images\copy.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\dalian\images\daohang.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\dalian\images\deleteMark.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\dalian\images\ding.png" />
+    <Content Include="Skins\zh-chs\4.2.0925\dalian\images\dot.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\dalian\images\down.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\dalian\images\e.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\dalian\images\ea.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\dalian\images\Edian.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\dalian\images\gongjiao.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\dalian\images\gongjiao2.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\dalian\images\gongjiao3.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\dalian\images\gou.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\dalian\images\h.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\dalian\images\ha.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\dalian\images\htbg.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\dalian\images\htrbg.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\dalian\images\iconflash.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\dalian\images\icon_1.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\dalian\images\icon_2.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\dalian\images\icon_3.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\dalian\images\icon_4.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\dalian\images\icon_5.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\dalian\images\icon_dot.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\dalian\images\icon_dot_s.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\dalian\images\icon_left.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\dalian\images\icon_news.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\dalian\images\icon_right.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\dalian\images\j.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\dalian\images\left.png" />
+    <Content Include="Skins\zh-chs\4.2.0925\dalian\images\left3.png" />
+    <Content Include="Skins\zh-chs\4.2.0925\dalian\images\leftt.png" />
+    <Content Include="Skins\zh-chs\4.2.0925\dalian\images\link.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\dalian\images\loading.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\dalian\images\logo.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\dalian\images\m1.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\dalian\images\m2.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\dalian\images\m3.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\dalian\images\m4.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\dalian\images\MarkDown.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\dalian\images\MarkUp.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\dalian\images\MessageBoxBg.jpg" />
+    <Content Include="Skins\zh-chs\4.2.0925\dalian\images\MessageBoxIcon.jpg" />
+    <Content Include="Skins\zh-chs\4.2.0925\dalian\images\navclose.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\dalian\images\newmap00.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\dalian\images\newmap00a.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\dalian\images\newmap01.png" />
+    <Content Include="Skins\zh-chs\4.2.0925\dalian\images\newmap02.png" />
+    <Content Include="Skins\zh-chs\4.2.0925\dalian\images\newmap04.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\dalian\images\newmap05.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\dalian\images\newmap06.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\dalian\images\newmap07.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\dalian\images\newmap08.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\dalian\images\newmap09.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\dalian\images\newmap10.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\dalian\images\newmap10a.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\dalian\images\newmap11.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\dalian\images\newmap11a.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\dalian\images\newmap12.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\dalian\images\newmap12a.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\dalian\images\newmap13.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\dalian\images\newmap13a.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\dalian\images\newmap14.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\dalian\images\newmap15.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\dalian\images\newmap15a.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\dalian\images\newmap16.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\dalian\images\newmap17.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\dalian\images\newmap18.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\dalian\images\newmap19.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\dalian\images\newmap20.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\dalian\images\newmap21.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\dalian\images\newmap22.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\dalian\images\newmap22a.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\dalian\images\newmap23.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\dalian\images\newmap23a.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\dalian\images\newmap24.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\dalian\images\newmap25.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\dalian\images\newmap26.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\dalian\images\newmap27.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\dalian\images\newmap28.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\dalian\images\newmap28a.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\dalian\images\newmap29.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\dalian\images\newmap30.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\dalian\images\newmap30a.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\dalian\images\newmap31.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\dalian\images\newmap31a.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\dalian\images\newmap32.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\dalian\images\newmap33.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\dalian\images\newmap33a.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\dalian\images\newmap34.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\dalian\images\newmap34a.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\dalian\images\newmap35.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\dalian\images\newmap36.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\dalian\images\newmap36a.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\dalian\images\newmap38.png" />
+    <Content Include="Skins\zh-chs\4.2.0925\dalian\images\newmap39.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\dalian\images\newmap40.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\dalian\images\newmap41.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\dalian\images\newmap42.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\dalian\images\newmap43.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\dalian\images\newmap44.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\dalian\images\newmap45.png" />
+    <Content Include="Skins\zh-chs\4.2.0925\dalian\images\newmap46.png" />
+    <Content Include="Skins\zh-chs\4.2.0925\dalian\images\newmap47.png" />
+    <Content Include="Skins\zh-chs\4.2.0925\dalian\images\newmap48.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\dalian\images\newmap482d.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\dalian\images\newmap49.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\dalian\images\newmap50.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\dalian\images\newmap51.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\dalian\images\newmap52.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\dalian\images\newmap53.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\dalian\images\newmap54.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\dalian\images\newmap54a.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\dalian\images\newmap55.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\dalian\images\newmap56.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\dalian\images\newmap57.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\dalian\images\newmap58.png" />
+    <Content Include="Skins\zh-chs\4.2.0925\dalian\images\newmap59.png" />
+    <Content Include="Skins\zh-chs\4.2.0925\dalian\images\newmap60.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\dalian\images\newmap64.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\dalian\images\newmap65.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\dalian\images\newmap66.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\dalian\images\newmap67.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\dalian\images\newmap68.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\dalian\images\newmap69.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\dalian\images\NOPHOTO.jpg" />
+    <Content Include="Skins\zh-chs\4.2.0925\dalian\images\oblique_bg.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\dalian\images\q.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\dalian\images\qa.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\dalian\images\qz.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\dalian\images\right.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\dalian\images\right.png" />
+    <Content Include="Skins\zh-chs\4.2.0925\dalian\images\search.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\dalian\images\sel.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\dalian\images\srcexit.jpg" />
+    <Content Include="Skins\zh-chs\4.2.0925\dalian\images\ta.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\dalian\images\taa.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\dalian\images\text-fade.png" />
+    <Content Include="Skins\zh-chs\4.2.0925\dalian\images\tm.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\dalian\images\tma.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\dalian\images\toolbar_1.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\dalian\images\toolbar_1_1.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\dalian\images\toolbar_2.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\dalian\images\toolbar_2_1.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\dalian\images\toolbar_3.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\dalian\images\toolbar_3_1.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\dalian\images\toolbar_4.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\dalian\images\toolbar_4_1.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\dalian\images\toolbar_5.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\dalian\images\toolbar_5_1.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\dalian\images\toolbar_6.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\dalian\images\toolbar_6_1.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\dalian\images\top_r_b_bg.jpg" />
+    <Content Include="Skins\zh-chs\4.2.0925\dalian\images\VipMember.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\dalian\images\Warning.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\dalian\images\waterbg.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\dalian\images\wqbg.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\dalian\JS\BusNoSearch.js" />
+    <Content Include="Skins\zh-chs\4.2.0925\dalian\JS\BusSESearch.js" />
+    <Content Include="Skins\zh-chs\4.2.0925\dalian\JS\BusStationSearch.js" />
+    <Content Include="Skins\zh-chs\4.2.0925\dalian\JS\BusTransfer.js" />
+    <Content Include="Skins\zh-chs\4.2.0925\dalian\JS\CompanyList.js" />
+    <Content Include="Skins\zh-chs\4.2.0925\dalian\JS\eds_eye.js" />
+    <Content Include="Skins\zh-chs\4.2.0925\dalian\JS\EdushiAnnounce.js" />
+    <Content Include="Skins\zh-chs\4.2.0925\dalian\JS\Init.js" />
+    <Content Include="Skins\zh-chs\4.2.0925\dalian\JS\Language.js" />
+    <Content Include="Skins\zh-chs\4.2.0925\dalian\JS\LocalSearch.js" />
+    <Content Include="Skins\zh-chs\4.2.0925\dalian\JS\LocalTopics.js" />
+    <Content Include="Skins\zh-chs\4.2.0925\dalian\JS\Mark.js" />
+    <Content Include="Skins\zh-chs\4.2.0925\dalian\JS\NearBySearch.js" />
+    <Content Include="Skins\zh-chs\4.2.0925\dalian\JS\News.js" />
+    <Content Include="Skins\zh-chs\4.2.0925\dalian\JS\PeripheralBus.js" />
+    <Content Include="Skins\zh-chs\4.2.0925\dalian\JS\ProMapSearch.js" />
+    <Content Include="Skins\zh-chs\4.2.0925\dalian\Master_UI.html" />
+    <Content Include="Skins\zh-chs\4.2.0925\default\Channels\LiveIn\AjaxHandler.aspx" />
+    <Content Include="Skins\zh-chs\4.2.0925\default\Channels\LiveIn\css\master.css" />
+    <Content Include="Skins\zh-chs\4.2.0925\default\Channels\LiveIn\Default.aspx" />
+    <Content Include="Skins\zh-chs\4.2.0925\default\Channels\LiveIn\images\1_r2_c11.jpg" />
+    <Content Include="Skins\zh-chs\4.2.0925\default\Channels\LiveIn\images\qyrz_r1_a1.jpg" />
+    <Content Include="Skins\zh-chs\4.2.0925\default\Channels\LiveIn\images\qyrz_r1_a10.jpg" />
+    <Content Include="Skins\zh-chs\4.2.0925\default\Channels\LiveIn\images\qyrz_r1_a12.jpg" />
+    <Content Include="Skins\zh-chs\4.2.0925\default\Channels\LiveIn\images\qyrz_r1_a2.jpg" />
+    <Content Include="Skins\zh-chs\4.2.0925\default\Channels\LiveIn\images\qyrz_r1_a3.jpg" />
+    <Content Include="Skins\zh-chs\4.2.0925\default\Channels\LiveIn\images\qyrz_r1_a4.jpg" />
+    <Content Include="Skins\zh-chs\4.2.0925\default\Channels\LiveIn\images\qyrz_r1_a5.jpg" />
+    <Content Include="Skins\zh-chs\4.2.0925\default\Channels\LiveIn\images\qyrz_r1_a6.jpg" />
+    <Content Include="Skins\zh-chs\4.2.0925\default\Channels\LiveIn\images\qyrz_r1_a7.jpg" />
+    <Content Include="Skins\zh-chs\4.2.0925\default\Channels\LiveIn\images\qyrz_r1_a8.jpg" />
+    <Content Include="Skins\zh-chs\4.2.0925\default\Channels\LiveIn\images\qyrz_r1_a9.jpg" />
+    <Content Include="Skins\zh-chs\4.2.0925\default\Channels\LiveIn\IncomeSuccessful.aspx" />
+    <Content Include="Skins\zh-chs\4.2.0925\default\Channels\LiveIn\js\DoLiveIn.js" />
+    <Content Include="Skins\zh-chs\4.2.0925\default\Images\bgloading.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\default\Images\VipMember.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\default\JS\EdushiAnnounce.js" />
+    <Content Include="Skins\zh-chs\4.2.0925\default\Master_UI.html" />
+    <Content Include="Skins\zh-chs\4.2.0925\changzhou\controls\NavigationControl.aspx" />
+    <Content Include="Skins\zh-chs\4.2.0925\changzhou\images\navclose.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\chengdu\controls\NavigationControl.aspx" />
+    <Content Include="Skins\zh-chs\4.2.0925\chengdu\images\daohang.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\chengdu\images\navclose.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\chongqing\controls\NavigationControl.aspx" />
+    <Content Include="Skins\zh-chs\4.2.0925\chongqing\images\cqdaohang.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\chongqing\images\navclose.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\default\Configvalues.js" />
+    <Content Include="Skins\zh-chs\4.2.0925\default\Controls\CityListControl.aspx" />
+    <Content Include="Skins\zh-chs\4.2.0925\default\Controls\CityListControl.js" />
+    <Content Include="Skins\zh-chs\4.2.0925\default\Controls\CommendPopControl.aspx" />
+    <Content Include="Skins\zh-chs\4.2.0925\default\Controls\CommendPopControl.js" />
+    <Content Include="Skins\zh-chs\4.2.0925\default\Controls\ControlBase.aspx" />
+    <Content Include="Skins\zh-chs\4.2.0925\default\Controls\ControlBase.js" />
+    <Content Include="Skins\zh-chs\4.2.0925\default\Controls\DebugControl.aspx" />
+    <Content Include="Skins\zh-chs\4.2.0925\default\Controls\DebugControl.js" />
+    <Content Include="Skins\zh-chs\4.2.0925\default\Controls\EntityPopControl.aspx" />
+    <Content Include="Skins\zh-chs\4.2.0925\default\Controls\EntityPopControl.js" />
+    <Content Include="Skins\zh-chs\4.2.0925\default\Controls\FromSearchControl.aspx" />
+    <Content Include="Skins\zh-chs\4.2.0925\default\Controls\FromSearchControl.js" />
+    <Content Include="Skins\zh-chs\4.2.0925\default\Controls\NavigationControl.aspx" />
+    <Content Include="Skins\zh-chs\4.2.0925\default\Controls\NavigationControl.js" />
+    <Content Include="Skins\zh-chs\4.2.0925\default\Controls\OptionCardContrlBase.js" />
+    <Content Include="Skins\zh-chs\4.2.0925\default\Controls\PaneSearchControl.aspx" />
+    <Content Include="Skins\zh-chs\4.2.0925\default\Controls\PaneSearchControl.js" />
+    <Content Include="Skins\zh-chs\4.2.0925\default\Controls\PeripheralBusControl.aspx" />
+    <Content Include="Skins\zh-chs\4.2.0925\default\Controls\PeripheralBusControl.js" />
+    <Content Include="Skins\zh-chs\4.2.0925\default\Controls\PeripheralSearchControl.aspx" />
+    <Content Include="Skins\zh-chs\4.2.0925\default\Controls\PeripheralSearchControl.js" />
+    <Content Include="Skins\zh-chs\4.2.0925\default\Controls\RotaryPictureControl.aspx" />
+    <Content Include="Skins\zh-chs\4.2.0925\default\Controls\RotaryPictureControl.js" />
+    <Content Include="Skins\zh-chs\4.2.0925\default\Controls\SearchControl.aspx" />
+    <Content Include="Skins\zh-chs\4.2.0925\default\Controls\SearchControl.js" />
+    <Content Include="Skins\zh-chs\4.2.0925\default\Controls\SearchResultControl.aspx" />
+    <Content Include="Skins\zh-chs\4.2.0925\default\Controls\SearchResultControl.js" />
+    <Content Include="Skins\zh-chs\4.2.0925\default\Controls\ThemePopControl.aspx" />
+    <Content Include="Skins\zh-chs\4.2.0925\default\Controls\ThemePopControl.js" />
+    <Content Include="Skins\zh-chs\4.2.0925\default\Controls\ToSearchControl.aspx" />
+    <Content Include="Skins\zh-chs\4.2.0925\default\Controls\ToSearchControl.js" />
+    <Content Include="Skins\zh-chs\4.2.0925\default\Controls\BusStationControl.aspx" />
+    <Content Include="Skins\zh-chs\4.2.0925\default\Controls\BusStationControl.js" />
+    <Content Include="Skins\zh-chs\4.2.0925\default\Css\BusNoSearch.css" />
+    <Content Include="Skins\zh-chs\4.2.0925\default\Css\BusSESearch.css" />
+    <Content Include="Skins\zh-chs\4.2.0925\default\Css\BusStationSearch.css" />
+    <Content Include="Skins\zh-chs\4.2.0925\default\Css\BusTransfer.css" />
+    <Content Include="Skins\zh-chs\4.2.0925\default\Css\CityListControl.css" />
+    <Content Include="Skins\zh-chs\4.2.0925\default\Css\CompanyList.css" />
+    <Content Include="Skins\zh-chs\4.2.0925\default\Css\Dialog.css" />
+    <Content Include="Skins\zh-chs\4.2.0925\default\Css\EntityPopControl.css" />
+    <Content Include="Skins\zh-chs\4.2.0925\default\Css\LocalSearch.css" />
+    <Content Include="Skins\zh-chs\4.2.0925\default\Css\Mark.css" />
+    <Content Include="Skins\zh-chs\4.2.0925\default\Css\moz-text-overflow.xml" />
+    <Content Include="Skins\zh-chs\4.2.0925\default\Css\NearBySearch.css" />
+    <Content Include="Skins\zh-chs\4.2.0925\default\Css\News.css" />
+    <Content Include="Skins\zh-chs\4.2.0925\default\Css\PeripheralBus.css" />
+    <Content Include="Skins\zh-chs\4.2.0925\default\Css\Pop.css" />
+    <Content Include="Skins\zh-chs\4.2.0925\default\Css\SearchControl.css" />
+    <Content Include="Skins\zh-chs\4.2.0925\default\Css\SearchResultControl.css" />
+    <Content Include="Skins\zh-chs\4.2.0925\default\Css\style.css" />
+    <Content Include="Skins\zh-chs\4.2.0925\default\Css\ThemePopControl.css" />
+    <Content Include="Skins\zh-chs\4.2.0925\default\Images\10t.jpg" />
+    <Content Include="Skins\zh-chs\4.2.0925\default\Images\11.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\default\Images\11a.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\default\Images\11t.jpg" />
+    <Content Include="Skins\zh-chs\4.2.0925\default\Images\12-2.png" />
+    <Content Include="Skins\zh-chs\4.2.0925\default\Images\12-21.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\default\Images\12-22.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\default\Images\12.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\default\Images\12.png" />
+    <Content Include="Skins\zh-chs\4.2.0925\default\Images\12a.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\default\Images\12t.jpg" />
+    <Content Include="Skins\zh-chs\4.2.0925\default\Images\13t.jpg" />
+    <Content Include="Skins\zh-chs\4.2.0925\default\Images\14.jpg" />
+    <Content Include="Skins\zh-chs\4.2.0925\default\Images\2.jpg" />
+    <Content Include="Skins\zh-chs\4.2.0925\default\Images\4-2.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\default\Images\4.jpg" />
+    <Content Include="Skins\zh-chs\4.2.0925\default\Images\6.jpg" />
+    <Content Include="Skins\zh-chs\4.2.0925\default\Images\9.jpg" />
+    <Content Include="Skins\zh-chs\4.2.0925\default\Images\9t.jpg" />
+    <Content Include="Skins\zh-chs\4.2.0925\default\Images\b.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\default\Images\bd.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\default\Images\bg.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\default\Images\bg_body.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\default\Images\black.jpg" />
+    <Content Include="Skins\zh-chs\4.2.0925\default\Images\bloading.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\default\Images\btn.jpg" />
+    <Content Include="Skins\zh-chs\4.2.0925\default\Images\btna.jpg" />
+    <Content Include="Skins\zh-chs\4.2.0925\default\Images\btnConfirm.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\default\Images\bus01.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\default\Images\bus02.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\default\Images\bus02up.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\default\Images\bus03.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\default\Images\bus04.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\default\Images\button4.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\default\Images\c.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\default\Images\car.jpg" />
+    <Content Include="Skins\zh-chs\4.2.0925\default\Images\CarkBG.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\default\Images\cc.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\default\Images\close.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\default\Images\close.jpg" />
+    <Content Include="Skins\zh-chs\4.2.0925\default\Images\closea.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\default\Images\copy.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\default\Images\deleteMark.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\default\Images\ding.png" />
+    <Content Include="Skins\zh-chs\4.2.0925\default\Images\dot.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\default\Images\down.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\default\Images\e.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\default\Images\ea.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\default\Images\gongjiao.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\default\Images\gongjiao2.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\default\Images\gongjiao3.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\default\Images\gou.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\default\Images\h.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\default\Images\ha.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\default\Images\iconflash.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\default\Images\j.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\default\Images\left.png" />
+    <Content Include="Skins\zh-chs\4.2.0925\default\Images\left3.png" />
+    <Content Include="Skins\zh-chs\4.2.0925\default\Images\leftt.png" />
+    <Content Include="Skins\zh-chs\4.2.0925\default\Images\link.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\default\Images\loading.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\default\Images\m1.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\default\Images\m2.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\default\Images\m3.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\default\Images\m4.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\default\Images\MarkDown.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\default\Images\MarkUp.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\default\Images\MessageBoxBg.jpg" />
+    <Content Include="Skins\zh-chs\4.2.0925\default\Images\MessageBoxIcon.jpg" />
+    <Content Include="Skins\zh-chs\4.2.0925\default\Images\navclose.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\default\Images\newmap00.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\default\Images\newmap00a.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\default\Images\newmap01.png" />
+    <Content Include="Skins\zh-chs\4.2.0925\default\Images\newmap02.png" />
+    <Content Include="Skins\zh-chs\4.2.0925\default\Images\newmap04.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\default\Images\newmap05.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\default\Images\newmap06.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\default\Images\newmap07.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\default\Images\newmap08.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\default\Images\newmap09.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\default\Images\newmap10.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\default\Images\newmap10a.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\default\Images\newmap11.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\default\Images\newmap11a.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\default\Images\newmap12.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\default\Images\newmap12a.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\default\Images\newmap13.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\default\Images\newmap13a.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\default\Images\newmap14.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\default\Images\newmap15.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\default\Images\newmap15a.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\default\Images\newmap16.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\default\Images\newmap17.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\default\Images\newmap18.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\default\Images\newmap19.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\default\Images\newmap20.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\default\Images\newmap21.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\default\Images\newmap22.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\default\Images\newmap22a.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\default\Images\newmap23.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\default\Images\newmap23a.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\default\Images\newmap24.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\default\Images\newmap25.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\default\Images\newmap26.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\default\Images\newmap27.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\default\Images\newmap28.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\default\Images\newmap28a.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\default\Images\newmap29.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\default\Images\newmap30.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\default\Images\newmap30a.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\default\Images\newmap31.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\default\Images\newmap31a.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\default\Images\newmap32.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\default\Images\newmap33.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\default\Images\newmap33a.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\default\Images\newmap34.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\default\Images\newmap34a.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\default\Images\newmap35.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\default\Images\newmap36.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\default\Images\newmap36a.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\default\Images\newmap38.png" />
+    <Content Include="Skins\zh-chs\4.2.0925\default\Images\newmap39.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\default\Images\newmap40.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\default\Images\newmap41.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\default\Images\newmap42.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\default\Images\newmap43.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\default\Images\newmap44.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\default\Images\newmap45.png" />
+    <Content Include="Skins\zh-chs\4.2.0925\default\Images\newmap46.png" />
+    <Content Include="Skins\zh-chs\4.2.0925\default\Images\newmap47.png" />
+    <Content Include="Skins\zh-chs\4.2.0925\default\Images\newmap48.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\default\Images\newmap482d.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\default\Images\newmap49.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\default\Images\newmap50.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\default\Images\newmap51.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\default\Images\newmap52.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\default\Images\newmap53.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\default\Images\newmap54.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\default\Images\newmap54a.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\default\Images\newmap55.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\default\Images\newmap56.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\default\Images\newmap57.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\default\Images\newmap58.png" />
+    <Content Include="Skins\zh-chs\4.2.0925\default\Images\newmap59.png" />
+    <Content Include="Skins\zh-chs\4.2.0925\default\Images\newmap60.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\default\Images\newmap64.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\default\Images\newmap65.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\default\Images\newmap66.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\default\Images\newmap67.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\default\Images\newmap68.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\default\Images\newmap69.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\default\Images\NOPHOTO.jpg" />
+    <Content Include="Skins\zh-chs\4.2.0925\default\Images\oblique_bg.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\default\Images\q.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\default\Images\qa.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\default\Images\qz.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\default\Images\right.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\default\Images\right.png" />
+    <Content Include="Skins\zh-chs\4.2.0925\default\Images\search.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\default\Images\sel.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\default\Images\srcexit.jpg" />
+    <Content Include="Skins\zh-chs\4.2.0925\default\Images\ta.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\default\Images\taa.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\default\Images\text-fade.png" />
+    <Content Include="Skins\zh-chs\4.2.0925\default\Images\tm.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\default\Images\tma.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\default\Images\Warning.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\default\Images\waterbg.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\default\JS\BusNoSearch.js" />
+    <Content Include="Skins\zh-chs\4.2.0925\default\JS\BusSESearch.js" />
+    <Content Include="Skins\zh-chs\4.2.0925\default\JS\BusStationSearch.js" />
+    <Content Include="Skins\zh-chs\4.2.0925\default\JS\BusTransfer.js" />
+    <Content Include="Skins\zh-chs\4.2.0925\default\JS\CompanyList.js" />
+    <Content Include="Skins\zh-chs\4.2.0925\default\JS\eds_eye.js" />
+    <Content Include="Skins\zh-chs\4.2.0925\default\JS\Init.js" />
+    <Content Include="Skins\zh-chs\4.2.0925\default\JS\Language.js" />
+    <Content Include="Skins\zh-chs\4.2.0925\default\JS\LocalSearch.js" />
+    <Content Include="Skins\zh-chs\4.2.0925\default\JS\Mark.js" />
+    <Content Include="Skins\zh-chs\4.2.0925\default\JS\NearBySearch.js" />
+    <Content Include="Skins\zh-chs\4.2.0925\default\JS\News.js" />
+    <Content Include="Skins\zh-chs\4.2.0925\default\JS\PeripheralBus.js" />
+    <Content Include="Skins\zh-chs\4.2.0925\default\JS\ProMapSearch.js" />
+    <Content Include="JS\GeneralJSLibrary.js" />
+    <Content Include="JS\Lib.js" />
+    <Content Include="Skins\zh-chs\4.2.0925\fuzhou\controls\NavigationControl.aspx" />
+    <Content Include="Skins\zh-chs\4.2.0925\fuzhou\images\navclose.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\guangzhou\controls\NavigationControl.aspx" />
+    <Content Include="Skins\zh-chs\4.2.0925\guangzhou\images\gzdaohang.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\guangzhou\images\navclose.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\haerbin\controls\NavigationControl.aspx" />
+    <Content Include="Skins\zh-chs\4.2.0925\haerbin\images\daohang.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\haerbin\images\navclose.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\hefei\controls\NavigationControl.aspx" />
+    <Content Include="Skins\zh-chs\4.2.0925\hefei\images\daohang.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\hefei\images\navclose.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\hongkong\Configvalues.js" />
+    <Content Include="Skins\zh-chs\4.2.0925\hongkong\controls\BusStationControl.aspx" />
+    <Content Include="Skins\zh-chs\4.2.0925\hongkong\controls\BusStationControl.js" />
+    <Content Include="Skins\zh-chs\4.2.0925\hongkong\controls\CityListControl.aspx" />
+    <Content Include="Skins\zh-chs\4.2.0925\hongkong\controls\CityListControl.js" />
+    <Content Include="Skins\zh-chs\4.2.0925\hongkong\controls\CommendPopControl.aspx" />
+    <Content Include="Skins\zh-chs\4.2.0925\hongkong\controls\CommendPopControl.js" />
+    <Content Include="Skins\zh-chs\4.2.0925\hongkong\controls\ControlBase.aspx" />
+    <Content Include="Skins\zh-chs\4.2.0925\hongkong\controls\ControlBase.js" />
+    <Content Include="Skins\zh-chs\4.2.0925\hongkong\controls\DebugControl.aspx" />
+    <Content Include="Skins\zh-chs\4.2.0925\hongkong\controls\DebugControl.js" />
+    <Content Include="Skins\zh-chs\4.2.0925\hongkong\controls\EntityPopControl.aspx" />
+    <Content Include="Skins\zh-chs\4.2.0925\hongkong\controls\EntityPopControl.js" />
+    <Content Include="Skins\zh-chs\4.2.0925\hongkong\controls\FromSearchControl.aspx" />
+    <Content Include="Skins\zh-chs\4.2.0925\hongkong\controls\FromSearchControl.js" />
+    <Content Include="Skins\zh-chs\4.2.0925\hongkong\controls\NavigationControl.aspx" />
+    <Content Include="Skins\zh-chs\4.2.0925\hongkong\controls\NavigationControl.js" />
+    <Content Include="Skins\zh-chs\4.2.0925\hongkong\controls\OptionCardContrlBase.js" />
+    <Content Include="Skins\zh-chs\4.2.0925\hongkong\controls\PaneSearchControl.aspx" />
+    <Content Include="Skins\zh-chs\4.2.0925\hongkong\controls\PaneSearchControl.js" />
+    <Content Include="Skins\zh-chs\4.2.0925\hongkong\controls\PeripheralBusControl.aspx" />
+    <Content Include="Skins\zh-chs\4.2.0925\hongkong\controls\PeripheralBusControl.js" />
+    <Content Include="Skins\zh-chs\4.2.0925\hongkong\controls\PeripheralSearchControl.aspx" />
+    <Content Include="Skins\zh-chs\4.2.0925\hongkong\controls\PeripheralSearchControl.js" />
+    <Content Include="Skins\zh-chs\4.2.0925\hongkong\controls\RotaryPictureControl.aspx" />
+    <Content Include="Skins\zh-chs\4.2.0925\hongkong\controls\RotaryPictureControl.js" />
+    <Content Include="Skins\zh-chs\4.2.0925\hongkong\controls\SearchControl.aspx" />
+    <Content Include="Skins\zh-chs\4.2.0925\hongkong\controls\SearchControl.js" />
+    <Content Include="Skins\zh-chs\4.2.0925\hongkong\controls\SearchResultControl.aspx" />
+    <Content Include="Skins\zh-chs\4.2.0925\hongkong\controls\SearchResultControl.js" />
+    <Content Include="Skins\zh-chs\4.2.0925\hongkong\controls\ThemePopControl.aspx" />
+    <Content Include="Skins\zh-chs\4.2.0925\hongkong\controls\ThemePopControl.js" />
+    <Content Include="Skins\zh-chs\4.2.0925\hongkong\controls\ToSearchControl.aspx" />
+    <Content Include="Skins\zh-chs\4.2.0925\hongkong\controls\ToSearchControl.js" />
+    <Content Include="Skins\zh-chs\4.2.0925\hongkong\Css\BusNoSearch.css" />
+    <Content Include="Skins\zh-chs\4.2.0925\hongkong\Css\BusSESearch.css" />
+    <Content Include="Skins\zh-chs\4.2.0925\hongkong\Css\BusStationSearch.css" />
+    <Content Include="Skins\zh-chs\4.2.0925\hongkong\Css\BusTransfer.css" />
+    <Content Include="Skins\zh-chs\4.2.0925\hongkong\Css\CityListControl.css" />
+    <Content Include="Skins\zh-chs\4.2.0925\hongkong\Css\CompanyList.css" />
+    <Content Include="Skins\zh-chs\4.2.0925\hongkong\Css\Dialog.css" />
+    <Content Include="Skins\zh-chs\4.2.0925\hongkong\Css\EntityPopControl.css" />
+    <Content Include="Skins\zh-chs\4.2.0925\hongkong\Css\LocalSearch.css" />
+    <Content Include="Skins\zh-chs\4.2.0925\hongkong\Css\Mark.css" />
+    <Content Include="Skins\zh-chs\4.2.0925\hongkong\Css\moz-text-overflow.xml" />
+    <Content Include="Skins\zh-chs\4.2.0925\hongkong\Css\NearBySearch.css" />
+    <Content Include="Skins\zh-chs\4.2.0925\hongkong\Css\News.css" />
+    <Content Include="Skins\zh-chs\4.2.0925\hongkong\Css\PeripheralBus.css" />
+    <Content Include="Skins\zh-chs\4.2.0925\hongkong\Css\Pop.css" />
+    <Content Include="Skins\zh-chs\4.2.0925\hongkong\Css\SearchControl.css" />
+    <Content Include="Skins\zh-chs\4.2.0925\hongkong\Css\SearchResultControl.css" />
+    <Content Include="Skins\zh-chs\4.2.0925\hongkong\Css\style.css" />
+    <Content Include="Skins\zh-chs\4.2.0925\hongkong\Css\ThemePopControl.css" />
+    <Content Include="Skins\zh-chs\4.2.0925\hongkong\images\1.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\hongkong\images\10t.jpg" />
+    <Content Include="Skins\zh-chs\4.2.0925\hongkong\images\11.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\hongkong\images\11a.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\hongkong\images\11t.jpg" />
+    <Content Include="Skins\zh-chs\4.2.0925\hongkong\images\12-2.png" />
+    <Content Include="Skins\zh-chs\4.2.0925\hongkong\images\12-21.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\hongkong\images\12-22.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\hongkong\images\12.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\hongkong\images\12.png" />
+    <Content Include="Skins\zh-chs\4.2.0925\hongkong\images\12a.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\hongkong\images\12t.jpg" />
+    <Content Include="Skins\zh-chs\4.2.0925\hongkong\images\13t.jpg" />
+    <Content Include="Skins\zh-chs\4.2.0925\hongkong\images\14.jpg" />
+    <Content Include="Skins\zh-chs\4.2.0925\hongkong\images\2.jpg" />
+    <Content Include="Skins\zh-chs\4.2.0925\hongkong\images\4-2.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\hongkong\images\4.jpg" />
+    <Content Include="Skins\zh-chs\4.2.0925\hongkong\images\6.jpg" />
+    <Content Include="Skins\zh-chs\4.2.0925\hongkong\images\9.jpg" />
+    <Content Include="Skins\zh-chs\4.2.0925\hongkong\images\9t.jpg" />
+    <Content Include="Skins\zh-chs\4.2.0925\hongkong\images\b.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\hongkong\images\bd.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\hongkong\images\bg.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\hongkong\images\bgloading.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\hongkong\images\bg_body.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\hongkong\images\black.jpg" />
+    <Content Include="Skins\zh-chs\4.2.0925\hongkong\images\bloading.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\hongkong\images\btn.jpg" />
+    <Content Include="Skins\zh-chs\4.2.0925\hongkong\images\btna.jpg" />
+    <Content Include="Skins\zh-chs\4.2.0925\hongkong\images\btnConfirm.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\hongkong\images\bus01.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\hongkong\images\bus02.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\hongkong\images\bus02up.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\hongkong\images\bus03.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\hongkong\images\bus04.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\hongkong\images\button4.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\hongkong\images\c.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\hongkong\images\car.jpg" />
+    <Content Include="Skins\zh-chs\4.2.0925\hongkong\images\CarkBG.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\hongkong\images\cc.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\hongkong\images\close.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\hongkong\images\close.jpg" />
+    <Content Include="Skins\zh-chs\4.2.0925\hongkong\images\closea.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\hongkong\images\copy.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\hongkong\images\daohang.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\hongkong\images\deleteMark.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\hongkong\images\ding.png" />
+    <Content Include="Skins\zh-chs\4.2.0925\hongkong\images\dot.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\hongkong\images\down.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\hongkong\images\e.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\hongkong\images\ea.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\hongkong\images\Edian.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\hongkong\images\gongjiao.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\hongkong\images\gongjiao2.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\hongkong\images\gongjiao3.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\hongkong\images\gou.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\hongkong\images\h.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\hongkong\images\ha.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\hongkong\images\htbg.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\hongkong\images\htrbg.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\hongkong\images\iconflash.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\hongkong\images\icon_1.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\hongkong\images\icon_2.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\hongkong\images\icon_3.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\hongkong\images\icon_4.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\hongkong\images\icon_5.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\hongkong\images\icon_dot.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\hongkong\images\icon_dot_s.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\hongkong\images\icon_left.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\hongkong\images\icon_news.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\hongkong\images\icon_right.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\hongkong\images\j.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\hongkong\images\left.png" />
+    <Content Include="Skins\zh-chs\4.2.0925\hongkong\images\left3.png" />
+    <Content Include="Skins\zh-chs\4.2.0925\hongkong\images\leftt.png" />
+    <Content Include="Skins\zh-chs\4.2.0925\hongkong\images\link.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\hongkong\images\loading.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\hongkong\images\logo.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\hongkong\images\m1.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\hongkong\images\m2.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\hongkong\images\m3.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\hongkong\images\m4.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\hongkong\images\MarkDown.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\hongkong\images\MarkUp.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\hongkong\images\MessageBoxBg.jpg" />
+    <Content Include="Skins\zh-chs\4.2.0925\hongkong\images\MessageBoxIcon.jpg" />
+    <Content Include="Skins\zh-chs\4.2.0925\hongkong\images\navclose.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\hongkong\images\newmap00.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\hongkong\images\newmap00a.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\hongkong\images\newmap01.png" />
+    <Content Include="Skins\zh-chs\4.2.0925\hongkong\images\newmap02.png" />
+    <Content Include="Skins\zh-chs\4.2.0925\hongkong\images\newmap04.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\hongkong\images\newmap05.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\hongkong\images\newmap06.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\hongkong\images\newmap07.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\hongkong\images\newmap08.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\hongkong\images\newmap09.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\hongkong\images\newmap10.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\hongkong\images\newmap10a.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\hongkong\images\newmap11.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\hongkong\images\newmap11a.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\hongkong\images\newmap12.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\hongkong\images\newmap12a.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\hongkong\images\newmap13.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\hongkong\images\newmap13a.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\hongkong\images\newmap14.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\hongkong\images\newmap15.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\hongkong\images\newmap15a.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\hongkong\images\newmap16.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\hongkong\images\newmap17.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\hongkong\images\newmap18.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\hongkong\images\newmap19.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\hongkong\images\newmap20.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\hongkong\images\newmap21.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\hongkong\images\newmap22.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\hongkong\images\newmap22a.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\hongkong\images\newmap23.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\hongkong\images\newmap23a.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\hongkong\images\newmap24.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\hongkong\images\newmap25.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\hongkong\images\newmap26.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\hongkong\images\newmap27.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\hongkong\images\newmap28.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\hongkong\images\newmap28a.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\hongkong\images\newmap29.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\hongkong\images\newmap30.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\hongkong\images\newmap30a.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\hongkong\images\newmap31.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\hongkong\images\newmap31a.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\hongkong\images\newmap32.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\hongkong\images\newmap33.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\hongkong\images\newmap33a.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\hongkong\images\newmap34.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\hongkong\images\newmap34a.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\hongkong\images\newmap35.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\hongkong\images\newmap36.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\hongkong\images\newmap36a.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\hongkong\images\newmap38.png" />
+    <Content Include="Skins\zh-chs\4.2.0925\hongkong\images\newmap39.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\hongkong\images\newmap40.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\hongkong\images\newmap41.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\hongkong\images\newmap42.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\hongkong\images\newmap43.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\hongkong\images\newmap44.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\hongkong\images\newmap45.png" />
+    <Content Include="Skins\zh-chs\4.2.0925\hongkong\images\newmap46.png" />
+    <Content Include="Skins\zh-chs\4.2.0925\hongkong\images\newmap47.png" />
+    <Content Include="Skins\zh-chs\4.2.0925\hongkong\images\newmap48.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\hongkong\images\newmap482d.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\hongkong\images\newmap49.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\hongkong\images\newmap50.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\hongkong\images\newmap51.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\hongkong\images\newmap52.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\hongkong\images\newmap53.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\hongkong\images\newmap54.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\hongkong\images\newmap54a.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\hongkong\images\newmap55.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\hongkong\images\newmap56.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\hongkong\images\newmap57.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\hongkong\images\newmap58.png" />
+    <Content Include="Skins\zh-chs\4.2.0925\hongkong\images\newmap59.png" />
+    <Content Include="Skins\zh-chs\4.2.0925\hongkong\images\newmap60.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\hongkong\images\newmap64.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\hongkong\images\newmap65.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\hongkong\images\newmap66.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\hongkong\images\newmap67.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\hongkong\images\newmap68.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\hongkong\images\newmap69.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\hongkong\images\NOPHOTO.jpg" />
+    <Content Include="Skins\zh-chs\4.2.0925\hongkong\images\oblique_bg.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\hongkong\images\q.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\hongkong\images\qa.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\hongkong\images\qz.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\hongkong\images\right.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\hongkong\images\right.png" />
+    <Content Include="Skins\zh-chs\4.2.0925\hongkong\images\search.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\hongkong\images\sel.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\hongkong\images\srcexit.jpg" />
+    <Content Include="Skins\zh-chs\4.2.0925\hongkong\images\ta.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\hongkong\images\taa.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\hongkong\images\text-fade.png" />
+    <Content Include="Skins\zh-chs\4.2.0925\hongkong\images\tm.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\hongkong\images\tma.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\hongkong\images\toolbar_1.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\hongkong\images\toolbar_1_1.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\hongkong\images\toolbar_2.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\hongkong\images\toolbar_2_1.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\hongkong\images\toolbar_3.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\hongkong\images\toolbar_3_1.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\hongkong\images\toolbar_4.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\hongkong\images\toolbar_4_1.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\hongkong\images\toolbar_5.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\hongkong\images\toolbar_5_1.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\hongkong\images\toolbar_6.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\hongkong\images\toolbar_6_1.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\hongkong\images\top_r_b_bg.jpg" />
+    <Content Include="Skins\zh-chs\4.2.0925\hongkong\images\VipMember.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\hongkong\images\Warning.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\hongkong\images\waterbg.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\hongkong\images\wqbg.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\hongkong\JS\BusNoSearch.js" />
+    <Content Include="Skins\zh-chs\4.2.0925\hongkong\JS\BusSESearch.js" />
+    <Content Include="Skins\zh-chs\4.2.0925\hongkong\JS\BusStationSearch.js" />
+    <Content Include="Skins\zh-chs\4.2.0925\hongkong\JS\BusTransfer.js" />
+    <Content Include="Skins\zh-chs\4.2.0925\hongkong\JS\CompanyList.js" />
+    <Content Include="Skins\zh-chs\4.2.0925\hongkong\JS\eds_eye.js" />
+    <Content Include="Skins\zh-chs\4.2.0925\hongkong\JS\EdushiAnnounce.js" />
+    <Content Include="Skins\zh-chs\4.2.0925\hongkong\JS\Init.js" />
+    <Content Include="Skins\zh-chs\4.2.0925\hongkong\JS\Language.js" />
+    <Content Include="Skins\zh-chs\4.2.0925\hongkong\JS\LocalSearch.js" />
+    <Content Include="Skins\zh-chs\4.2.0925\hongkong\JS\LocalTopics.js" />
+    <Content Include="Skins\zh-chs\4.2.0925\hongkong\JS\Mark.js" />
+    <Content Include="Skins\zh-chs\4.2.0925\hongkong\JS\NearBySearch.js" />
+    <Content Include="Skins\zh-chs\4.2.0925\hongkong\JS\News.js" />
+    <Content Include="Skins\zh-chs\4.2.0925\hongkong\JS\PeripheralBus.js" />
+    <Content Include="Skins\zh-chs\4.2.0925\hongkong\JS\ProMapSearch.js" />
+    <Content Include="Skins\zh-chs\4.2.0925\hongkong\Master_UI.html" />
+    <Content Include="Skins\zh-chs\4.2.0925\hz\Channels\DigCowry\Congratulate.aspx" />
+    <Content Include="Skins\zh-chs\4.2.0925\hz\Channels\DigCowry\css\xunbao.css" />
+    <Content Include="Skins\zh-chs\4.2.0925\hz\Channels\DigCowry\Default.aspx" />
+    <Content Include="Skins\zh-chs\4.2.0925\hz\Channels\DigCowry\Depression.aspx" />
+    <Content Include="Skins\zh-chs\4.2.0925\hz\Channels\DigCowry\DigCowry.js" />
+    <Content Include="Skins\zh-chs\4.2.0925\hz\Channels\DigCowry\DigFailture.aspx" />
+    <Content Include="Skins\zh-chs\4.2.0925\hz\Channels\DigCowry\DigHelp.aspx" />
+    <Content Include="Skins\zh-chs\4.2.0925\hz\Channels\DigCowry\DigHero.aspx" />
+    <Content Include="Skins\zh-chs\4.2.0925\hz\Channels\DigCowry\DigSuccess.aspx" />
+    <Content Include="Skins\zh-chs\4.2.0925\hz\Channels\DigCowry\images\#.jpg" />
+    <Content Include="Skins\zh-chs\4.2.0925\hz\Channels\DigCowry\images\#1.jpg" />
+    <Content Include="Skins\zh-chs\4.2.0925\hz\Channels\DigCowry\images\1.jpg" />
+    <Content Include="Skins\zh-chs\4.2.0925\hz\Channels\DigCowry\images\10t.jpg" />
+    <Content Include="Skins\zh-chs\4.2.0925\hz\Channels\DigCowry\images\11t.jpg" />
+    <Content Include="Skins\zh-chs\4.2.0925\hz\Channels\DigCowry\images\12t.jpg" />
+    <Content Include="Skins\zh-chs\4.2.0925\hz\Channels\DigCowry\images\13t.jpg" />
+    <Content Include="Skins\zh-chs\4.2.0925\hz\Channels\DigCowry\images\2.jpg" />
+    <Content Include="Skins\zh-chs\4.2.0925\hz\Channels\DigCowry\images\3.jpg" />
+    <Content Include="Skins\zh-chs\4.2.0925\hz\Channels\DigCowry\images\4.jpg" />
+    <Content Include="Skins\zh-chs\4.2.0925\hz\Channels\DigCowry\images\5.jpg" />
+    <Content Include="Skins\zh-chs\4.2.0925\hz\Channels\DigCowry\images\9t.jpg" />
+    <Content Include="Skins\zh-chs\4.2.0925\hz\Channels\DigCowry\images\a13t.jpg" />
+    <Content Include="Skins\zh-chs\4.2.0925\hz\Channels\DigCowry\images\a9t.jpg" />
+    <Content Include="Skins\zh-chs\4.2.0925\hz\Channels\DigCowry\images\digcowry.jpg" />
+    <Content Include="Skins\zh-chs\4.2.0925\hz\Channels\DigCowry\images\DigCowryTip.png" />
+    <Content Include="Skins\zh-chs\4.2.0925\hz\Channels\DigCowry\images\digicon.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\hz\Channels\DigCowry\images\guess.jpg" />
+    <Content Include="Skins\zh-chs\4.2.0925\hz\Channels\DigCowry\images\leftt.png" />
+    <Content Include="Skins\zh-chs\4.2.0925\hz\Channels\DigCowry\images\nocowry.jpg" />
+    <Content Include="Skins\zh-chs\4.2.0925\hz\Channels\DigCowry\images\spade.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\hz\Channels\DigCowry\images\spade.swf" />
+    <Content Include="Skins\zh-chs\4.2.0925\hz\Channels\DigCowry\images\xunbao_r1_a10.jpg" />
+    <Content Include="Skins\zh-chs\4.2.0925\hz\Channels\DigCowry\images\xunbao_r1_a11.jpg" />
+    <Content Include="Skins\zh-chs\4.2.0925\hz\Channels\DigCowry\images\xunbao_r1_a12.jpg" />
+    <Content Include="Skins\zh-chs\4.2.0925\hz\Channels\DigCowry\images\xunbao_r1_a13.jpg" />
+    <Content Include="Skins\zh-chs\4.2.0925\hz\Channels\DigCowry\images\xunbao_r1_a14.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\hz\Channels\DigCowry\images\xunbao_r1_a15.jpg" />
+    <Content Include="Skins\zh-chs\4.2.0925\hz\Channels\DigCowry\images\xunbao_r1_a16.jpg" />
+    <Content Include="Skins\zh-chs\4.2.0925\hz\Channels\DigCowry\images\xunbao_r1_a17.jpg" />
+    <Content Include="Skins\zh-chs\4.2.0925\hz\Channels\DigCowry\images\xunbao_r1_a18.jpg" />
+    <Content Include="Skins\zh-chs\4.2.0925\hz\Channels\DigCowry\images\xunbao_r1_a9.jpg" />
+    <Content Include="Skins\zh-chs\4.2.0925\hz\Channels\DigCowry\images\xunbao_r2_a1.jpg" />
+    <Content Include="Skins\zh-chs\4.2.0925\hz\Channels\DigCowry\images\xunbao_r2_a10.jpg" />
+    <Content Include="Skins\zh-chs\4.2.0925\hz\Channels\DigCowry\images\xunbao_r2_a11.jpg" />
+    <Content Include="Skins\zh-chs\4.2.0925\hz\Channels\DigCowry\images\xunbao_r2_a12.jpg" />
+    <Content Include="Skins\zh-chs\4.2.0925\hz\Channels\DigCowry\images\xunbao_r2_a13.jpg" />
+    <Content Include="Skins\zh-chs\4.2.0925\hz\Channels\DigCowry\images\xunbao_r2_a14.jpg" />
+    <Content Include="Skins\zh-chs\4.2.0925\hz\Channels\DigCowry\images\xunbao_r2_a15.jpg" />
+    <Content Include="Skins\zh-chs\4.2.0925\hz\Channels\DigCowry\images\xunbao_r2_a16.jpg" />
+    <Content Include="Skins\zh-chs\4.2.0925\hz\Channels\DigCowry\images\xunbao_r2_a17.jpg" />
+    <Content Include="Skins\zh-chs\4.2.0925\hz\Channels\DigCowry\images\xunbao_r2_a18.jpg" />
+    <Content Include="Skins\zh-chs\4.2.0925\hz\Channels\DigCowry\images\xunbao_r2_a19.jpg" />
+    <Content Include="Skins\zh-chs\4.2.0925\hz\Channels\DigCowry\images\xunbao_r2_a2.jpg" />
+    <Content Include="Skins\zh-chs\4.2.0925\hz\Channels\DigCowry\images\xunbao_r2_a20.jpg" />
+    <Content Include="Skins\zh-chs\4.2.0925\hz\Channels\DigCowry\images\xunbao_r2_a21.jpg" />
+    <Content Include="Skins\zh-chs\4.2.0925\hz\Channels\DigCowry\images\xunbao_r2_a22.jpg" />
+    <Content Include="Skins\zh-chs\4.2.0925\hz\Channels\DigCowry\images\xunbao_r2_a23.jpg" />
+    <Content Include="Skins\zh-chs\4.2.0925\hz\Channels\DigCowry\images\xunbao_r2_a24.jpg" />
+    <Content Include="Skins\zh-chs\4.2.0925\hz\Channels\DigCowry\images\xunbao_r2_a25.jpg" />
+    <Content Include="Skins\zh-chs\4.2.0925\hz\Channels\DigCowry\images\xunbao_r2_a3.jpg" />
+    <Content Include="Skins\zh-chs\4.2.0925\hz\Channels\DigCowry\images\xunbao_r2_a4.jpg" />
+    <Content Include="Skins\zh-chs\4.2.0925\hz\Channels\DigCowry\images\xunbao_r2_a5.jpg" />
+    <Content Include="Skins\zh-chs\4.2.0925\hz\Channels\DigCowry\images\xunbao_r2_a6.jpg" />
+    <Content Include="Skins\zh-chs\4.2.0925\hz\Channels\DigCowry\images\xunbao_r2_a7.jpg" />
+    <Content Include="Skins\zh-chs\4.2.0925\hz\Channels\DigCowry\images\xunbao_r2_a8.jpg" />
+    <Content Include="Skins\zh-chs\4.2.0925\hz\Channels\DigCowry\images\xunbao_r2_a9.jpg" />
+    <Content Include="Skins\zh-chs\4.2.0925\hz\Channels\DigCowry\images\xunbao_r3_a1.jpg" />
+    <Content Include="Skins\zh-chs\4.2.0925\hz\Channels\DigCowry\images\xunbao_r3_a10.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\hz\Channels\DigCowry\images\xunbao_r3_a11.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\hz\Channels\DigCowry\images\xunbao_r3_a12.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\hz\Channels\DigCowry\images\xunbao_r3_a13.jpg" />
+    <Content Include="Skins\zh-chs\4.2.0925\hz\Channels\DigCowry\images\xunbao_r3_a14.jpg" />
+    <Content Include="Skins\zh-chs\4.2.0925\hz\Channels\DigCowry\images\xunbao_r3_a15.jpg" />
+    <Content Include="Skins\zh-chs\4.2.0925\hz\Channels\DigCowry\images\xunbao_r3_a16.jpg" />
+    <Content Include="Skins\zh-chs\4.2.0925\hz\Channels\DigCowry\images\xunbao_r3_a17.jpg" />
+    <Content Include="Skins\zh-chs\4.2.0925\hz\Channels\DigCowry\images\xunbao_r3_a18.jpg" />
+    <Content Include="Skins\zh-chs\4.2.0925\hz\Channels\DigCowry\images\xunbao_r3_a2.jpg" />
+    <Content Include="Skins\zh-chs\4.2.0925\hz\Channels\DigCowry\images\xunbao_r3_a3.jpg" />
+    <Content Include="Skins\zh-chs\4.2.0925\hz\Channels\DigCowry\images\xunbao_r3_a4.jpg" />
+    <Content Include="Skins\zh-chs\4.2.0925\hz\Channels\DigCowry\images\xunbao_r3_a5.jpg" />
+    <Content Include="Skins\zh-chs\4.2.0925\hz\Channels\DigCowry\images\xunbao_r3_a6.jpg" />
+    <Content Include="Skins\zh-chs\4.2.0925\hz\Channels\DigCowry\images\xunbao_r3_a7.jpg" />
+    <Content Include="Skins\zh-chs\4.2.0925\hz\Channels\DigCowry\images\xunbao_r3_a8.jpg" />
+    <Content Include="Skins\zh-chs\4.2.0925\hz\Channels\DigCowry\images\xunbao_r3_a9.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\hz\Channels\DigCowry\images\xunbao_r4_a1.jpg" />
+    <Content Include="Skins\zh-chs\4.2.0925\hz\Channels\DigCowry\images\xunbao_r4_a10.jpg" />
+    <Content Include="Skins\zh-chs\4.2.0925\hz\Channels\DigCowry\images\xunbao_r4_a2.jpg" />
+    <Content Include="Skins\zh-chs\4.2.0925\hz\Channels\DigCowry\images\xunbao_r4_a21.jpg" />
+    <Content Include="Skins\zh-chs\4.2.0925\hz\Channels\DigCowry\images\xunbao_r4_a22.jpg" />
+    <Content Include="Skins\zh-chs\4.2.0925\hz\Channels\DigCowry\images\xunbao_r4_a3.jpg" />
+    <Content Include="Skins\zh-chs\4.2.0925\hz\Channels\DigCowry\images\xunbao_r4_a4.jpg" />
+    <Content Include="Skins\zh-chs\4.2.0925\hz\Channels\DigCowry\images\xunbao_r4_a5.jpg" />
+    <Content Include="Skins\zh-chs\4.2.0925\hz\Channels\DigCowry\images\xunbao_r4_a6.jpg" />
+    <Content Include="Skins\zh-chs\4.2.0925\hz\Channels\DigCowry\images\xunbao_r4_a7.jpg" />
+    <Content Include="Skins\zh-chs\4.2.0925\hz\Channels\DigCowry\images\xunbao_r4_a8.jpg" />
+    <Content Include="Skins\zh-chs\4.2.0925\hz\Channels\DigCowry\images\xunbao_r4_a9.jpg" />
+    <Content Include="Skins\zh-chs\4.2.0925\hz\Channels\DigCowry\js\Check.js" />
+    <Content Include="Skins\zh-chs\4.2.0925\hz\Channels\DigCowry\QuestionList.aspx" />
+    <Content Include="Skins\zh-chs\4.2.0925\hz\Channels\DigCowry\Questionnaire.aspx" />
+    <Content Include="Skins\zh-chs\4.2.0925\hz\Channels\DigCowry\QuestionnaireSuccess.aspx" />
+    <Content Include="Skins\zh-chs\4.2.0925\hz\Channels\DigCowry\SubmitSuccess.aspx" />
+    <Content Include="Skins\zh-chs\4.2.0925\hz\Channels\DigCowry\TrophyDetails.aspx" />
+    <Content Include="Skins\zh-chs\4.2.0925\hz\Channels\DigCowry\TrophyShow.aspx" />
+    <Content Include="Skins\zh-chs\4.2.0925\hz\Channels\DigCowry\TrophyVerdict.aspx" />
+    <Content Include="Skins\zh-chs\4.2.0925\hz\Channels\DigCowry\UserControls\FootUserControl.ascx" />
+    <Content Include="Skins\zh-chs\4.2.0925\hz\Channels\DigCowry\UserControls\GlobalADUserControl.ascx" />
+    <Content Include="Skins\zh-chs\4.2.0925\hz\Channels\DigCowry\UserControls\LinkUserControl.ascx" />
+    <Content Include="Skins\zh-chs\4.2.0925\hz\Channels\DigCowry\UserControls\MediumControl.ascx" />
+    <Content Include="Skins\zh-chs\4.2.0925\hz\Channels\DigCowry\UserControls\OtherTrophysControl.ascx" />
+    <Content Include="Skins\zh-chs\4.2.0925\hz\Channels\DigCowry\UserControls\ProviderADControl.ascx" />
+    <Content Include="Skins\zh-chs\4.2.0925\hz\Channels\DigCowry\UserControls\TrophyDetailsControl.ascx" />
+    <Content Include="Skins\zh-chs\4.2.0925\hz\Configvalues.js" />
+    <Content Include="Skins\zh-chs\4.2.0925\hz\controls\BusStationControl.aspx" />
+    <Content Include="Skins\zh-chs\4.2.0925\hz\controls\BusStationControl.js" />
+    <Content Include="Skins\zh-chs\4.2.0925\hz\controls\CityListControl.aspx" />
+    <Content Include="Skins\zh-chs\4.2.0925\hz\controls\CityListControl.js" />
+    <Content Include="Skins\zh-chs\4.2.0925\hz\controls\CommendPopControl.aspx" />
+    <Content Include="Skins\zh-chs\4.2.0925\hz\controls\CommendPopControl.js" />
+    <Content Include="Skins\zh-chs\4.2.0925\hz\controls\ControlBase.aspx" />
+    <Content Include="Skins\zh-chs\4.2.0925\hz\controls\ControlBase.js" />
+    <Content Include="Skins\zh-chs\4.2.0925\hz\controls\DebugControl.aspx" />
+    <Content Include="Skins\zh-chs\4.2.0925\hz\controls\DebugControl.js" />
+    <Content Include="Skins\zh-chs\4.2.0925\hz\controls\EntityPopControl.aspx" />
+    <Content Include="Skins\zh-chs\4.2.0925\hz\controls\EntityPopControl.js" />
+    <Content Include="Skins\zh-chs\4.2.0925\hz\controls\FromSearchControl.aspx" />
+    <Content Include="Skins\zh-chs\4.2.0925\hz\controls\FromSearchControl.js" />
+    <Content Include="Skins\zh-chs\4.2.0925\hz\controls\NavigationControl.aspx" />
+    <Content Include="Skins\zh-chs\4.2.0925\hz\controls\NavigationControl.js" />
+    <Content Include="Skins\zh-chs\4.2.0925\hz\controls\OptionCardContrlBase.js" />
+    <Content Include="Skins\zh-chs\4.2.0925\hz\controls\PaneSearchControl.aspx" />
+    <Content Include="Skins\zh-chs\4.2.0925\hz\controls\PaneSearchControl.js" />
+    <Content Include="Skins\zh-chs\4.2.0925\hz\controls\PeripheralBusControl.aspx" />
+    <Content Include="Skins\zh-chs\4.2.0925\hz\controls\PeripheralBusControl.js" />
+    <Content Include="Skins\zh-chs\4.2.0925\hz\controls\PeripheralSearchControl.aspx" />
+    <Content Include="Skins\zh-chs\4.2.0925\hz\controls\PeripheralSearchControl.js" />
+    <Content Include="Skins\zh-chs\4.2.0925\hz\controls\RotaryPictureControl.aspx" />
+    <Content Include="Skins\zh-chs\4.2.0925\hz\controls\RotaryPictureControl.js" />
+    <Content Include="Skins\zh-chs\4.2.0925\hz\controls\SearchControl.aspx" />
+    <Content Include="Skins\zh-chs\4.2.0925\hz\controls\SearchControl.js" />
+    <Content Include="Skins\zh-chs\4.2.0925\hz\controls\SearchResultControl.aspx" />
+    <Content Include="Skins\zh-chs\4.2.0925\hz\controls\SearchResultControl.js" />
+    <Content Include="Skins\zh-chs\4.2.0925\hz\controls\ThemePopControl.aspx" />
+    <Content Include="Skins\zh-chs\4.2.0925\hz\controls\ThemePopControl.js" />
+    <Content Include="Skins\zh-chs\4.2.0925\hz\controls\ToSearchControl.aspx" />
+    <Content Include="Skins\zh-chs\4.2.0925\hz\controls\ToSearchControl.js" />
+    <Content Include="Skins\zh-chs\4.2.0925\hz\Css\BusNoSearch.css" />
+    <Content Include="Skins\zh-chs\4.2.0925\hz\Css\BusSESearch.css" />
+    <Content Include="Skins\zh-chs\4.2.0925\hz\Css\BusStationSearch.css" />
+    <Content Include="Skins\zh-chs\4.2.0925\hz\Css\BusTransfer.css" />
+    <Content Include="Skins\zh-chs\4.2.0925\hz\Css\CityListControl.css" />
+    <Content Include="Skins\zh-chs\4.2.0925\hz\Css\CompanyList.css" />
+    <Content Include="Skins\zh-chs\4.2.0925\hz\Css\Dialog.css" />
+    <Content Include="Skins\zh-chs\4.2.0925\hz\Css\EntityPopControl.css" />
+    <Content Include="Skins\zh-chs\4.2.0925\hz\Css\LocalSearch.css" />
+    <Content Include="Skins\zh-chs\4.2.0925\hz\Css\Mark.css" />
+    <Content Include="Skins\zh-chs\4.2.0925\hz\Css\moz-text-overflow.xml" />
+    <Content Include="Skins\zh-chs\4.2.0925\hz\Css\NearBySearch.css" />
+    <Content Include="Skins\zh-chs\4.2.0925\hz\Css\News.css" />
+    <Content Include="Skins\zh-chs\4.2.0925\hz\Css\PeripheralBus.css" />
+    <Content Include="Skins\zh-chs\4.2.0925\hz\Css\Pop.css" />
+    <Content Include="Skins\zh-chs\4.2.0925\hz\Css\SearchControl.css" />
+    <Content Include="Skins\zh-chs\4.2.0925\hz\Css\SearchResultControl.css" />
+    <Content Include="Skins\zh-chs\4.2.0925\hz\Css\style.css" />
+    <Content Include="Skins\zh-chs\4.2.0925\hz\Css\ThemePopControl.css" />
+    <Content Include="Skins\zh-chs\4.2.0925\hz\images\1.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\hz\images\10t.jpg" />
+    <Content Include="Skins\zh-chs\4.2.0925\hz\images\11.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\hz\images\11a.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\hz\images\11t.jpg" />
+    <Content Include="Skins\zh-chs\4.2.0925\hz\images\12-2.png" />
+    <Content Include="Skins\zh-chs\4.2.0925\hz\images\12-21.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\hz\images\12-22.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\hz\images\12.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\hz\images\12.png" />
+    <Content Include="Skins\zh-chs\4.2.0925\hz\images\12a.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\hz\images\12t.jpg" />
+    <Content Include="Skins\zh-chs\4.2.0925\hz\images\13t.jpg" />
+    <Content Include="Skins\zh-chs\4.2.0925\hz\images\14.jpg" />
+    <Content Include="Skins\zh-chs\4.2.0925\hz\images\2.jpg" />
+    <Content Include="Skins\zh-chs\4.2.0925\hz\images\4-2.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\hz\images\4.jpg" />
+    <Content Include="Skins\zh-chs\4.2.0925\hz\images\6.jpg" />
+    <Content Include="Skins\zh-chs\4.2.0925\hz\images\9.jpg" />
+    <Content Include="Skins\zh-chs\4.2.0925\hz\images\9t.jpg" />
+    <Content Include="Skins\zh-chs\4.2.0925\hz\images\b.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\hz\images\bd.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\hz\images\bg.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\hz\images\bgloading.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\hz\images\bg_body.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\hz\images\black.jpg" />
+    <Content Include="Skins\zh-chs\4.2.0925\hz\images\bloading.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\hz\images\btn.jpg" />
+    <Content Include="Skins\zh-chs\4.2.0925\hz\images\btna.jpg" />
+    <Content Include="Skins\zh-chs\4.2.0925\hz\images\btnConfirm.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\hz\images\bus01.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\hz\images\bus02.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\hz\images\bus02up.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\hz\images\bus03.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\hz\images\bus04.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\hz\images\button4.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\hz\images\c.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\hz\images\car.jpg" />
+    <Content Include="Skins\zh-chs\4.2.0925\hz\images\CarkBG.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\hz\images\cc.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\hz\images\close.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\hz\images\close.jpg" />
+    <Content Include="Skins\zh-chs\4.2.0925\hz\images\closea.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\hz\images\copy.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\hz\images\daohang.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\hz\images\deleteMark.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\hz\images\ding.png" />
+    <Content Include="Skins\zh-chs\4.2.0925\hz\images\dot.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\hz\images\down.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\hz\images\e.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\hz\images\ea.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\hz\images\Edian.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\hz\images\gongjiao.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\hz\images\gongjiao2.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\hz\images\gongjiao3.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\hz\images\gou.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\hz\images\h.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\hz\images\ha.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\hz\images\htbg.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\hz\images\htrbg.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\hz\images\iconflash.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\hz\images\icon_1.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\hz\images\icon_2.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\hz\images\icon_3.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\hz\images\icon_4.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\hz\images\icon_5.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\hz\images\icon_dot.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\hz\images\icon_dot_s.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\hz\images\icon_left.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\hz\images\icon_news.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\hz\images\icon_right.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\hz\images\j.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\hz\images\left.png" />
+    <Content Include="Skins\zh-chs\4.2.0925\hz\images\left3.png" />
+    <Content Include="Skins\zh-chs\4.2.0925\hz\images\leftt.png" />
+    <Content Include="Skins\zh-chs\4.2.0925\hz\images\link.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\hz\images\loading.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\hz\images\logo.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\hz\images\logo.png" />
+    <Content Include="Skins\zh-chs\4.2.0925\hz\images\m1.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\hz\images\m2.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\hz\images\m3.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\hz\images\m4.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\hz\images\MarkDown.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\hz\images\MarkUp.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\hz\images\MessageBoxBg.jpg" />
+    <Content Include="Skins\zh-chs\4.2.0925\hz\images\MessageBoxIcon.jpg" />
+    <Content Include="Skins\zh-chs\4.2.0925\hz\images\navclose.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\hz\images\newmap00.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\hz\images\newmap00a.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\hz\images\newmap01.png" />
+    <Content Include="Skins\zh-chs\4.2.0925\hz\images\newmap02.png" />
+    <Content Include="Skins\zh-chs\4.2.0925\hz\images\newmap04.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\hz\images\newmap05.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\hz\images\newmap06.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\hz\images\newmap07.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\hz\images\newmap08.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\hz\images\newmap09.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\hz\images\newmap10.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\hz\images\newmap10a.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\hz\images\newmap11.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\hz\images\newmap11a.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\hz\images\newmap12.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\hz\images\newmap12a.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\hz\images\newmap13.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\hz\images\newmap13a.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\hz\images\newmap14.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\hz\images\newmap15.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\hz\images\newmap15a.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\hz\images\newmap16.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\hz\images\newmap17.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\hz\images\newmap18.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\hz\images\newmap19.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\hz\images\newmap20.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\hz\images\newmap21.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\hz\images\newmap22.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\hz\images\newmap22a.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\hz\images\newmap23.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\hz\images\newmap23a.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\hz\images\newmap24.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\hz\images\newmap25.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\hz\images\newmap26.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\hz\images\newmap27.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\hz\images\newmap28.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\hz\images\newmap28a.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\hz\images\newmap29.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\hz\images\newmap30.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\hz\images\newmap30a.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\hz\images\newmap31.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\hz\images\newmap31a.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\hz\images\newmap32.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\hz\images\newmap33.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\hz\images\newmap33a.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\hz\images\newmap34.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\hz\images\newmap34a.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\hz\images\newmap35.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\hz\images\newmap36.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\hz\images\newmap36a.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\hz\images\newmap38.png" />
+    <Content Include="Skins\zh-chs\4.2.0925\hz\images\newmap39.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\hz\images\newmap40.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\hz\images\newmap41.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\hz\images\newmap42.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\hz\images\newmap43.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\hz\images\newmap44.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\hz\images\newmap45.png" />
+    <Content Include="Skins\zh-chs\4.2.0925\hz\images\newmap46.png" />
+    <Content Include="Skins\zh-chs\4.2.0925\hz\images\newmap47.png" />
+    <Content Include="Skins\zh-chs\4.2.0925\hz\images\newmap48.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\hz\images\newmap482d.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\hz\images\newmap49.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\hz\images\newmap50.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\hz\images\newmap51.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\hz\images\newmap52.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\hz\images\newmap53.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\hz\images\newmap54.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\hz\images\newmap54a.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\hz\images\newmap55.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\hz\images\newmap56.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\hz\images\newmap57.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\hz\images\newmap58.png" />
+    <Content Include="Skins\zh-chs\4.2.0925\hz\images\newmap59.png" />
+    <Content Include="Skins\zh-chs\4.2.0925\hz\images\newmap60.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\hz\images\newmap64.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\hz\images\newmap65.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\hz\images\newmap66.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\hz\images\newmap67.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\hz\images\newmap68.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\hz\images\newmap69.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\hz\images\NOPHOTO.jpg" />
+    <Content Include="Skins\zh-chs\4.2.0925\hz\images\oblique_bg.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\hz\images\q.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\hz\images\qa.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\hz\images\qz.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\hz\images\right.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\hz\images\right.png" />
+    <Content Include="Skins\zh-chs\4.2.0925\hz\images\search.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\hz\images\sel.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\hz\images\srcexit.jpg" />
+    <Content Include="Skins\zh-chs\4.2.0925\hz\images\Subject_Qiucuo.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\hz\images\Subject_QiucuoTip.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\hz\images\ta.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\hz\images\taa.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\hz\images\text-fade.png" />
+    <Content Include="Skins\zh-chs\4.2.0925\hz\images\tm.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\hz\images\tma.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\hz\images\toolbar_1.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\hz\images\toolbar_1_1.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\hz\images\toolbar_2.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\hz\images\toolbar_2_1.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\hz\images\toolbar_3.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\hz\images\toolbar_3_1.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\hz\images\toolbar_4.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\hz\images\toolbar_4_1.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\hz\images\toolbar_5.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\hz\images\toolbar_5_1.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\hz\images\toolbar_6.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\hz\images\toolbar_6_1.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\hz\images\top_r_b_bg.jpg" />
+    <Content Include="Skins\zh-chs\4.2.0925\hz\images\VipMember.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\hz\images\Warning.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\hz\images\waterbg.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\hz\images\wqbg.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\hz\JS\BusNoSearch.js" />
+    <Content Include="Skins\zh-chs\4.2.0925\hz\JS\BusSESearch.js" />
+    <Content Include="Skins\zh-chs\4.2.0925\hz\JS\BusStationSearch.js" />
+    <Content Include="Skins\zh-chs\4.2.0925\hz\JS\BusTransfer.js" />
+    <Content Include="Skins\zh-chs\4.2.0925\hz\JS\CompanyList.js" />
+    <Content Include="Skins\zh-chs\4.2.0925\hz\JS\eds_eye.js" />
+    <Content Include="Skins\zh-chs\4.2.0925\hz\JS\EdushiAnnounce.js" />
+    <Content Include="Skins\zh-chs\4.2.0925\hz\JS\Init.js" />
+    <Content Include="Skins\zh-chs\4.2.0925\hz\JS\Language.js" />
+    <Content Include="Skins\zh-chs\4.2.0925\hz\JS\LocalSearch.js" />
+    <Content Include="Skins\zh-chs\4.2.0925\hz\JS\LocalTopics.js" />
+    <Content Include="Skins\zh-chs\4.2.0925\hz\JS\Mark.js" />
+    <Content Include="Skins\zh-chs\4.2.0925\hz\JS\NearBySearch.js" />
+    <Content Include="Skins\zh-chs\4.2.0925\hz\JS\News.js" />
+    <Content Include="Skins\zh-chs\4.2.0925\hz\JS\PeripheralBus.js" />
+    <Content Include="Skins\zh-chs\4.2.0925\hz\JS\ProMapSearch.js" />
+    <Content Include="Skins\zh-chs\4.2.0925\hz\Master_UI.html" />
+    <Content Include="Skins\zh-chs\4.2.0925\jinan\controls\NavigationControl.aspx" />
+    <Content Include="Skins\zh-chs\4.2.0925\jinan\images\daohang.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\jinan\images\navclose.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\linyi\Channels\AdServer\images\1.css" />
+    <Content Include="Skins\zh-chs\4.2.0925\linyi\Channels\AdServer\images\c1.jpg" />
+    <Content Include="Skins\zh-chs\4.2.0925\linyi\Channels\AdServer\images\c10.jpg" />
+    <Content Include="Skins\zh-chs\4.2.0925\linyi\Channels\AdServer\images\c11.jpg" />
+    <Content Include="Skins\zh-chs\4.2.0925\linyi\Channels\AdServer\images\c12.jpg" />
+    <Content Include="Skins\zh-chs\4.2.0925\linyi\Channels\AdServer\images\c13.jpg" />
+    <Content Include="Skins\zh-chs\4.2.0925\linyi\Channels\AdServer\images\c14.jpg" />
+    <Content Include="Skins\zh-chs\4.2.0925\linyi\Channels\AdServer\images\c15.jpg" />
+    <Content Include="Skins\zh-chs\4.2.0925\linyi\Channels\AdServer\images\c16.jpg" />
+    <Content Include="Skins\zh-chs\4.2.0925\linyi\Channels\AdServer\images\c17.jpg" />
+    <Content Include="Skins\zh-chs\4.2.0925\linyi\Channels\AdServer\images\c18.jpg" />
+    <Content Include="Skins\zh-chs\4.2.0925\linyi\Channels\AdServer\images\c19.jpg" />
+    <Content Include="Skins\zh-chs\4.2.0925\linyi\Channels\AdServer\images\c20.jpg" />
+    <Content Include="Skins\zh-chs\4.2.0925\linyi\Channels\AdServer\images\c21.jpg" />
+    <Content Include="Skins\zh-chs\4.2.0925\linyi\Channels\AdServer\images\c22.jpg" />
+    <Content Include="Skins\zh-chs\4.2.0925\linyi\Channels\AdServer\images\c23.jpg" />
+    <Content Include="Skins\zh-chs\4.2.0925\linyi\Channels\AdServer\images\c24.jpg" />
+    <Content Include="Skins\zh-chs\4.2.0925\linyi\Channels\AdServer\images\c25.jpg" />
+    <Content Include="Skins\zh-chs\4.2.0925\linyi\Channels\AdServer\images\c26.jpg" />
+    <Content Include="Skins\zh-chs\4.2.0925\linyi\Channels\AdServer\images\c27.jpg" />
+    <Content Include="Skins\zh-chs\4.2.0925\linyi\Channels\AdServer\images\c28.jpg" />
+    <Content Include="Skins\zh-chs\4.2.0925\linyi\Channels\AdServer\images\c29.jpg" />
+    <Content Include="Skins\zh-chs\4.2.0925\linyi\Channels\AdServer\images\c3.jpg" />
+    <Content Include="Skins\zh-chs\4.2.0925\linyi\Channels\AdServer\images\c30.jpg" />
+    <Content Include="Skins\zh-chs\4.2.0925\linyi\Channels\AdServer\images\c31.jpg" />
+    <Content Include="Skins\zh-chs\4.2.0925\linyi\Channels\AdServer\images\c32.jpg" />
+    <Content Include="Skins\zh-chs\4.2.0925\linyi\Channels\AdServer\images\c34.jpg" />
+    <Content Include="Skins\zh-chs\4.2.0925\linyi\Channels\AdServer\images\c35.jpg" />
+    <Content Include="Skins\zh-chs\4.2.0925\linyi\Channels\AdServer\images\c36.jpg" />
+    <Content Include="Skins\zh-chs\4.2.0925\linyi\Channels\AdServer\images\c4.jpg" />
+    <Content Include="Skins\zh-chs\4.2.0925\linyi\Channels\AdServer\images\c5.jpg" />
+    <Content Include="Skins\zh-chs\4.2.0925\linyi\Channels\AdServer\images\c6.jpg" />
+    <Content Include="Skins\zh-chs\4.2.0925\linyi\Channels\AdServer\images\c7.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\linyi\Channels\AdServer\images\c7.jpg" />
+    <Content Include="Skins\zh-chs\4.2.0925\linyi\Channels\AdServer\images\c8.jpg" />
+    <Content Include="Skins\zh-chs\4.2.0925\linyi\Channels\AdServer\images\c9.jpg" />
+    <Content Include="Skins\zh-chs\4.2.0925\linyi\Channels\AdServer\index.html" />
+    <Content Include="Skins\zh-chs\4.2.0925\linyi\Channels\LiveIn\AjaxHandler.aspx" />
+    <Content Include="Skins\zh-chs\4.2.0925\linyi\Channels\LiveIn\css\master.css" />
+    <Content Include="Skins\zh-chs\4.2.0925\linyi\Channels\LiveIn\Default.aspx" />
+    <Content Include="Skins\zh-chs\4.2.0925\linyi\Channels\LiveIn\images\1_r2_c11.jpg" />
+    <Content Include="Skins\zh-chs\4.2.0925\linyi\Channels\LiveIn\images\qyrz_r1_a1.jpg" />
+    <Content Include="Skins\zh-chs\4.2.0925\linyi\Channels\LiveIn\images\qyrz_r1_a10.jpg" />
+    <Content Include="Skins\zh-chs\4.2.0925\linyi\Channels\LiveIn\images\qyrz_r1_a12.jpg" />
+    <Content Include="Skins\zh-chs\4.2.0925\linyi\Channels\LiveIn\images\qyrz_r1_a2.jpg" />
+    <Content Include="Skins\zh-chs\4.2.0925\linyi\Channels\LiveIn\images\qyrz_r1_a3.jpg" />
+    <Content Include="Skins\zh-chs\4.2.0925\linyi\Channels\LiveIn\images\qyrz_r1_a4.jpg" />
+    <Content Include="Skins\zh-chs\4.2.0925\linyi\Channels\LiveIn\images\qyrz_r1_a5.jpg" />
+    <Content Include="Skins\zh-chs\4.2.0925\linyi\Channels\LiveIn\images\qyrz_r1_a6.jpg" />
+    <Content Include="Skins\zh-chs\4.2.0925\linyi\Channels\LiveIn\images\qyrz_r1_a7.jpg" />
+    <Content Include="Skins\zh-chs\4.2.0925\linyi\Channels\LiveIn\images\qyrz_r1_a8.jpg" />
+    <Content Include="Skins\zh-chs\4.2.0925\linyi\Channels\LiveIn\images\qyrz_r1_a9.jpg" />
+    <Content Include="Skins\zh-chs\4.2.0925\linyi\Channels\LiveIn\IncomeSuccessful.aspx" />
+    <Content Include="Skins\zh-chs\4.2.0925\linyi\Channels\LiveIn\IncomeSuccessful.html" />
+    <Content Include="Skins\zh-chs\4.2.0925\linyi\Channels\LiveIn\js\DoLiveIn.js" />
+    <Content Include="Skins\zh-chs\4.2.0925\linyi\controls\NavigationControl.aspx" />
+    <Content Include="Skins\zh-chs\4.2.0925\linyi\images\daohang.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\linyi\images\navclose.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\nanchang\controls\NavigationControl.aspx" />
+    <Content Include="Skins\zh-chs\4.2.0925\nanchang\images\daohang.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\nanchang\images\navclose.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\nanchang\Master_UI.html" />
+    <Content Include="Skins\zh-chs\4.2.0925\ningbo\controls\NavigationControl.aspx" />
+    <Content Include="Skins\zh-chs\4.2.0925\ningbo\images\navclose.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\ningbo\images\ningbodaohang.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\qd\controls\NavigationControl.aspx" />
+    <Content Include="Skins\zh-chs\4.2.0925\qd\images\daohang.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\qd\images\navclose.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\shanghai\Configvalues.js" />
+    <Content Include="Skins\zh-chs\4.2.0925\shanghai\controls\BusStationControl.aspx" />
+    <Content Include="Skins\zh-chs\4.2.0925\shanghai\controls\BusStationControl.js" />
+    <Content Include="Skins\zh-chs\4.2.0925\shanghai\controls\CityListControl.aspx" />
+    <Content Include="Skins\zh-chs\4.2.0925\shanghai\controls\CityListControl.js" />
+    <Content Include="Skins\zh-chs\4.2.0925\shanghai\controls\CommendPopControl.aspx" />
+    <Content Include="Skins\zh-chs\4.2.0925\shanghai\controls\CommendPopControl.js" />
+    <Content Include="Skins\zh-chs\4.2.0925\shanghai\controls\ControlBase.aspx" />
+    <Content Include="Skins\zh-chs\4.2.0925\shanghai\controls\ControlBase.js" />
+    <Content Include="Skins\zh-chs\4.2.0925\shanghai\controls\DebugControl.aspx" />
+    <Content Include="Skins\zh-chs\4.2.0925\shanghai\controls\DebugControl.js" />
+    <Content Include="Skins\zh-chs\4.2.0925\shanghai\controls\EntityPopControl.aspx" />
+    <Content Include="Skins\zh-chs\4.2.0925\shanghai\controls\EntityPopControl.js" />
+    <Content Include="Skins\zh-chs\4.2.0925\shanghai\controls\FromSearchControl.aspx" />
+    <Content Include="Skins\zh-chs\4.2.0925\shanghai\controls\FromSearchControl.js" />
+    <Content Include="Skins\zh-chs\4.2.0925\shanghai\controls\NavigationControl.aspx" />
+    <Content Include="Skins\zh-chs\4.2.0925\shanghai\controls\NavigationControl.js" />
+    <Content Include="Skins\zh-chs\4.2.0925\shanghai\controls\OptionCardContrlBase.js" />
+    <Content Include="Skins\zh-chs\4.2.0925\shanghai\controls\PaneSearchControl.aspx" />
+    <Content Include="Skins\zh-chs\4.2.0925\shanghai\controls\PaneSearchControl.js" />
+    <Content Include="Skins\zh-chs\4.2.0925\shanghai\controls\PeripheralBusControl.aspx" />
+    <Content Include="Skins\zh-chs\4.2.0925\shanghai\controls\PeripheralBusControl.js" />
+    <Content Include="Skins\zh-chs\4.2.0925\shanghai\controls\PeripheralSearchControl.aspx" />
+    <Content Include="Skins\zh-chs\4.2.0925\shanghai\controls\PeripheralSearchControl.js" />
+    <Content Include="Skins\zh-chs\4.2.0925\shanghai\controls\RotaryPictureControl.aspx" />
+    <Content Include="Skins\zh-chs\4.2.0925\shanghai\controls\RotaryPictureControl.js" />
+    <Content Include="Skins\zh-chs\4.2.0925\shanghai\controls\SearchControl.aspx" />
+    <Content Include="Skins\zh-chs\4.2.0925\shanghai\controls\SearchControl.js" />
+    <Content Include="Skins\zh-chs\4.2.0925\shanghai\controls\SearchResultControl.aspx" />
+    <Content Include="Skins\zh-chs\4.2.0925\shanghai\controls\SearchResultControl.js" />
+    <Content Include="Skins\zh-chs\4.2.0925\shanghai\controls\ThemePopControl.aspx" />
+    <Content Include="Skins\zh-chs\4.2.0925\shanghai\controls\ThemePopControl.js" />
+    <Content Include="Skins\zh-chs\4.2.0925\shanghai\controls\ToSearchControl.aspx" />
+    <Content Include="Skins\zh-chs\4.2.0925\shanghai\controls\ToSearchControl.js" />
+    <Content Include="Skins\zh-chs\4.2.0925\shanghai\Css\BusNoSearch.css" />
+    <Content Include="Skins\zh-chs\4.2.0925\shanghai\Css\BusSESearch.css" />
+    <Content Include="Skins\zh-chs\4.2.0925\shanghai\Css\BusStationSearch.css" />
+    <Content Include="Skins\zh-chs\4.2.0925\shanghai\Css\BusTransfer.css" />
+    <Content Include="Skins\zh-chs\4.2.0925\shanghai\Css\CityListControl.css" />
+    <Content Include="Skins\zh-chs\4.2.0925\shanghai\Css\CompanyList.css" />
+    <Content Include="Skins\zh-chs\4.2.0925\shanghai\Css\Dialog.css" />
+    <Content Include="Skins\zh-chs\4.2.0925\shanghai\Css\EntityPopControl.css" />
+    <Content Include="Skins\zh-chs\4.2.0925\shanghai\Css\LocalSearch.css" />
+    <Content Include="Skins\zh-chs\4.2.0925\shanghai\Css\Mark.css" />
+    <Content Include="Skins\zh-chs\4.2.0925\shanghai\Css\moz-text-overflow.xml" />
+    <Content Include="Skins\zh-chs\4.2.0925\shanghai\Css\NearBySearch.css" />
+    <Content Include="Skins\zh-chs\4.2.0925\shanghai\Css\News.css" />
+    <Content Include="Skins\zh-chs\4.2.0925\shanghai\Css\PeripheralBus.css" />
+    <Content Include="Skins\zh-chs\4.2.0925\shanghai\Css\Pop.css" />
+    <Content Include="Skins\zh-chs\4.2.0925\shanghai\Css\SearchControl.css" />
+    <Content Include="Skins\zh-chs\4.2.0925\shanghai\Css\SearchResultControl.css" />
+    <Content Include="Skins\zh-chs\4.2.0925\shanghai\Css\style.css" />
+    <Content Include="Skins\zh-chs\4.2.0925\shanghai\Css\ThemePopControl.css" />
+    <Content Include="Skins\zh-chs\4.2.0925\shanghai\images\1.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\shanghai\images\10t.jpg" />
+    <Content Include="Skins\zh-chs\4.2.0925\shanghai\images\11.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\shanghai\images\11a.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\shanghai\images\11t.jpg" />
+    <Content Include="Skins\zh-chs\4.2.0925\shanghai\images\12-2.png" />
+    <Content Include="Skins\zh-chs\4.2.0925\shanghai\images\12-21.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\shanghai\images\12-22.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\shanghai\images\12.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\shanghai\images\12.png" />
+    <Content Include="Skins\zh-chs\4.2.0925\shanghai\images\12a.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\shanghai\images\12t.jpg" />
+    <Content Include="Skins\zh-chs\4.2.0925\shanghai\images\13t.jpg" />
+    <Content Include="Skins\zh-chs\4.2.0925\shanghai\images\14.jpg" />
+    <Content Include="Skins\zh-chs\4.2.0925\shanghai\images\2.jpg" />
+    <Content Include="Skins\zh-chs\4.2.0925\shanghai\images\4-2.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\shanghai\images\4.jpg" />
+    <Content Include="Skins\zh-chs\4.2.0925\shanghai\images\6.jpg" />
+    <Content Include="Skins\zh-chs\4.2.0925\shanghai\images\9.jpg" />
+    <Content Include="Skins\zh-chs\4.2.0925\shanghai\images\9t.jpg" />
+    <Content Include="Skins\zh-chs\4.2.0925\shanghai\images\b.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\shanghai\images\bd.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\shanghai\images\bg.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\shanghai\images\bgloading.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\shanghai\images\bg_body.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\shanghai\images\black.jpg" />
+    <Content Include="Skins\zh-chs\4.2.0925\shanghai\images\bloading.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\shanghai\images\btn.jpg" />
+    <Content Include="Skins\zh-chs\4.2.0925\shanghai\images\btna.jpg" />
+    <Content Include="Skins\zh-chs\4.2.0925\shanghai\images\btnConfirm.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\shanghai\images\bus01.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\shanghai\images\bus02.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\shanghai\images\bus02up.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\shanghai\images\bus03.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\shanghai\images\bus04.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\shanghai\images\button4.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\shanghai\images\c.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\shanghai\images\car.jpg" />
+    <Content Include="Skins\zh-chs\4.2.0925\shanghai\images\CarkBG.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\shanghai\images\cc.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\shanghai\images\close.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\shanghai\images\close.jpg" />
+    <Content Include="Skins\zh-chs\4.2.0925\shanghai\images\closea.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\shanghai\images\copy.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\shanghai\images\daohang.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\shanghai\images\deleteMark.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\shanghai\images\ding.png" />
+    <Content Include="Skins\zh-chs\4.2.0925\shanghai\images\dot.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\shanghai\images\down.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\shanghai\images\e.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\shanghai\images\ea.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\shanghai\images\Edian.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\shanghai\images\gongjiao.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\shanghai\images\gongjiao2.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\shanghai\images\gongjiao3.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\shanghai\images\gou.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\shanghai\images\h.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\shanghai\images\ha.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\shanghai\images\htbg.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\shanghai\images\htrbg.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\shanghai\images\iconflash.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\shanghai\images\icon_1.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\shanghai\images\icon_2.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\shanghai\images\icon_3.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\shanghai\images\icon_4.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\shanghai\images\icon_5.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\shanghai\images\icon_dot.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\shanghai\images\icon_dot_s.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\shanghai\images\icon_left.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\shanghai\images\icon_news.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\shanghai\images\icon_right.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\shanghai\images\j.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\shanghai\images\left.png" />
+    <Content Include="Skins\zh-chs\4.2.0925\shanghai\images\left3.png" />
+    <Content Include="Skins\zh-chs\4.2.0925\shanghai\images\leftt.png" />
+    <Content Include="Skins\zh-chs\4.2.0925\shanghai\images\link.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\shanghai\images\loading.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\shanghai\images\logo.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\shanghai\images\m1.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\shanghai\images\m2.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\shanghai\images\m3.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\shanghai\images\m4.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\shanghai\images\MarkDown.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\shanghai\images\MarkUp.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\shanghai\images\MessageBoxBg.jpg" />
+    <Content Include="Skins\zh-chs\4.2.0925\shanghai\images\MessageBoxIcon.jpg" />
+    <Content Include="Skins\zh-chs\4.2.0925\shanghai\images\navclose.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\shanghai\images\newmap00.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\shanghai\images\newmap00a.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\shanghai\images\newmap01.png" />
+    <Content Include="Skins\zh-chs\4.2.0925\shanghai\images\newmap02.png" />
+    <Content Include="Skins\zh-chs\4.2.0925\shanghai\images\newmap04.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\shanghai\images\newmap05.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\shanghai\images\newmap06.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\shanghai\images\newmap07.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\shanghai\images\newmap08.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\shanghai\images\newmap09.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\shanghai\images\newmap10.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\shanghai\images\newmap10a.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\shanghai\images\newmap11.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\shanghai\images\newmap11a.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\shanghai\images\newmap12.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\shanghai\images\newmap12a.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\shanghai\images\newmap13.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\shanghai\images\newmap13a.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\shanghai\images\newmap14.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\shanghai\images\newmap15.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\shanghai\images\newmap15a.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\shanghai\images\newmap16.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\shanghai\images\newmap17.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\shanghai\images\newmap18.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\shanghai\images\newmap19.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\shanghai\images\newmap20.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\shanghai\images\newmap21.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\shanghai\images\newmap22.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\shanghai\images\newmap22a.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\shanghai\images\newmap23.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\shanghai\images\newmap23a.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\shanghai\images\newmap24.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\shanghai\images\newmap25.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\shanghai\images\newmap26.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\shanghai\images\newmap27.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\shanghai\images\newmap28.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\shanghai\images\newmap28a.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\shanghai\images\newmap29.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\shanghai\images\newmap30.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\shanghai\images\newmap30a.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\shanghai\images\newmap31.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\shanghai\images\newmap31a.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\shanghai\images\newmap32.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\shanghai\images\newmap33.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\shanghai\images\newmap33a.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\shanghai\images\newmap34.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\shanghai\images\newmap34a.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\shanghai\images\newmap35.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\shanghai\images\newmap36.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\shanghai\images\newmap36a.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\shanghai\images\newmap38.png" />
+    <Content Include="Skins\zh-chs\4.2.0925\shanghai\images\newmap39.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\shanghai\images\newmap40.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\shanghai\images\newmap41.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\shanghai\images\newmap42.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\shanghai\images\newmap43.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\shanghai\images\newmap44.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\shanghai\images\newmap45.png" />
+    <Content Include="Skins\zh-chs\4.2.0925\shanghai\images\newmap46.png" />
+    <Content Include="Skins\zh-chs\4.2.0925\shanghai\images\newmap47.png" />
+    <Content Include="Skins\zh-chs\4.2.0925\shanghai\images\newmap48.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\shanghai\images\newmap482d.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\shanghai\images\newmap49.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\shanghai\images\newmap50.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\shanghai\images\newmap51.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\shanghai\images\newmap52.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\shanghai\images\newmap53.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\shanghai\images\newmap54.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\shanghai\images\newmap54a.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\shanghai\images\newmap55.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\shanghai\images\newmap56.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\shanghai\images\newmap57.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\shanghai\images\newmap58.png" />
+    <Content Include="Skins\zh-chs\4.2.0925\shanghai\images\newmap59.png" />
+    <Content Include="Skins\zh-chs\4.2.0925\shanghai\images\newmap60.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\shanghai\images\newmap64.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\shanghai\images\newmap65.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\shanghai\images\newmap66.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\shanghai\images\newmap67.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\shanghai\images\newmap68.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\shanghai\images\newmap69.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\shanghai\images\NOPHOTO.jpg" />
+    <Content Include="Skins\zh-chs\4.2.0925\shanghai\images\oblique_bg.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\shanghai\images\q.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\shanghai\images\qa.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\shanghai\images\qz.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\shanghai\images\right.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\shanghai\images\right.png" />
+    <Content Include="Skins\zh-chs\4.2.0925\shanghai\images\search.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\shanghai\images\sel.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\shanghai\images\srcexit.jpg" />
+    <Content Include="Skins\zh-chs\4.2.0925\shanghai\images\ta.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\shanghai\images\taa.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\shanghai\images\text-fade.png" />
+    <Content Include="Skins\zh-chs\4.2.0925\shanghai\images\tm.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\shanghai\images\tma.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\shanghai\images\toolbar_1.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\shanghai\images\toolbar_1_1.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\shanghai\images\toolbar_2.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\shanghai\images\toolbar_2_1.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\shanghai\images\toolbar_3.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\shanghai\images\toolbar_3_1.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\shanghai\images\toolbar_4.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\shanghai\images\toolbar_4_1.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\shanghai\images\toolbar_5.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\shanghai\images\toolbar_5_1.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\shanghai\images\top_r_b_bg.jpg" />
+    <Content Include="Skins\zh-chs\4.2.0925\shanghai\images\VipMember.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\shanghai\images\Warning.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\shanghai\images\waterbg.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\shanghai\images\wqbg.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\shanghai\JS\BusNoSearch.js" />
+    <Content Include="Skins\zh-chs\4.2.0925\shanghai\JS\BusSESearch.js" />
+    <Content Include="Skins\zh-chs\4.2.0925\shanghai\JS\BusStationSearch.js" />
+    <Content Include="Skins\zh-chs\4.2.0925\shanghai\JS\BusTransfer.js" />
+    <Content Include="Skins\zh-chs\4.2.0925\shanghai\JS\CompanyList.js" />
+    <Content Include="Skins\zh-chs\4.2.0925\shanghai\JS\eds_eye.js" />
+    <Content Include="Skins\zh-chs\4.2.0925\shanghai\JS\EdushiAnnounce.js" />
+    <Content Include="Skins\zh-chs\4.2.0925\shanghai\JS\Init.js" />
+    <Content Include="Skins\zh-chs\4.2.0925\shanghai\JS\Language.js" />
+    <Content Include="Skins\zh-chs\4.2.0925\shanghai\JS\LocalSearch.js" />
+    <Content Include="Skins\zh-chs\4.2.0925\shanghai\JS\LocalTopics.js" />
+    <Content Include="Skins\zh-chs\4.2.0925\shanghai\JS\Mark.js" />
+    <Content Include="Skins\zh-chs\4.2.0925\shanghai\JS\NearBySearch.js" />
+    <Content Include="Skins\zh-chs\4.2.0925\shanghai\JS\News.js" />
+    <Content Include="Skins\zh-chs\4.2.0925\shanghai\JS\PeripheralBus.js" />
+    <Content Include="Skins\zh-chs\4.2.0925\shanghai\JS\ProMapSearch.js" />
+    <Content Include="Skins\zh-chs\4.2.0925\shanghai\Master_UI.html" />
+    <Content Include="Skins\zh-chs\4.2.0925\shijiazhuang\controls\NavigationControl.aspx" />
+    <Content Include="Skins\zh-chs\4.2.0925\shijiazhuang\images\daohang.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\shijiazhuang\images\navclose.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\suzhou\controls\NavigationControl.aspx" />
+    <Content Include="Skins\zh-chs\4.2.0925\suzhou\images\daohang.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\suzhou\images\navclose.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\sz\controls\NavigationControl.aspx" />
+    <Content Include="Skins\zh-chs\4.2.0925\sz\images\daohang.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\sz\images\navclose.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\weihai\controls\NavigationControl.aspx" />
+    <Content Include="Skins\zh-chs\4.2.0925\weihai\images\daohang.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\weihai\images\navclose.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\wulumuqi\Channels\AdServer\images\1.css" />
+    <Content Include="Skins\zh-chs\4.2.0925\wulumuqi\Channels\AdServer\images\c1.jpg" />
+    <Content Include="Skins\zh-chs\4.2.0925\wulumuqi\Channels\AdServer\images\c10.jpg" />
+    <Content Include="Skins\zh-chs\4.2.0925\wulumuqi\Channels\AdServer\images\c11.jpg" />
+    <Content Include="Skins\zh-chs\4.2.0925\wulumuqi\Channels\AdServer\images\c12.jpg" />
+    <Content Include="Skins\zh-chs\4.2.0925\wulumuqi\Channels\AdServer\images\c13.jpg" />
+    <Content Include="Skins\zh-chs\4.2.0925\wulumuqi\Channels\AdServer\images\c14.jpg" />
+    <Content Include="Skins\zh-chs\4.2.0925\wulumuqi\Channels\AdServer\images\c15.jpg" />
+    <Content Include="Skins\zh-chs\4.2.0925\wulumuqi\Channels\AdServer\images\c16.jpg" />
+    <Content Include="Skins\zh-chs\4.2.0925\wulumuqi\Channels\AdServer\images\c17.jpg" />
+    <Content Include="Skins\zh-chs\4.2.0925\wulumuqi\Channels\AdServer\images\c18.jpg" />
+    <Content Include="Skins\zh-chs\4.2.0925\wulumuqi\Channels\AdServer\images\c19.jpg" />
+    <Content Include="Skins\zh-chs\4.2.0925\wulumuqi\Channels\AdServer\images\c20.jpg" />
+    <Content Include="Skins\zh-chs\4.2.0925\wulumuqi\Channels\AdServer\images\c21.jpg" />
+    <Content Include="Skins\zh-chs\4.2.0925\wulumuqi\Channels\AdServer\images\c22.jpg" />
+    <Content Include="Skins\zh-chs\4.2.0925\wulumuqi\Channels\AdServer\images\c23.jpg" />
+    <Content Include="Skins\zh-chs\4.2.0925\wulumuqi\Channels\AdServer\images\c24.jpg" />
+    <Content Include="Skins\zh-chs\4.2.0925\wulumuqi\Channels\AdServer\images\c25.jpg" />
+    <Content Include="Skins\zh-chs\4.2.0925\wulumuqi\Channels\AdServer\images\c26.jpg" />
+    <Content Include="Skins\zh-chs\4.2.0925\wulumuqi\Channels\AdServer\images\c27.jpg" />
+    <Content Include="Skins\zh-chs\4.2.0925\wulumuqi\Channels\AdServer\images\c28.jpg" />
+    <Content Include="Skins\zh-chs\4.2.0925\wulumuqi\Channels\AdServer\images\c29.jpg" />
+    <Content Include="Skins\zh-chs\4.2.0925\wulumuqi\Channels\AdServer\images\c3.jpg" />
+    <Content Include="Skins\zh-chs\4.2.0925\wulumuqi\Channels\AdServer\images\c30.jpg" />
+    <Content Include="Skins\zh-chs\4.2.0925\wulumuqi\Channels\AdServer\images\c31.jpg" />
+    <Content Include="Skins\zh-chs\4.2.0925\wulumuqi\Channels\AdServer\images\c32.jpg" />
+    <Content Include="Skins\zh-chs\4.2.0925\wulumuqi\Channels\AdServer\images\c34.jpg" />
+    <Content Include="Skins\zh-chs\4.2.0925\wulumuqi\Channels\AdServer\images\c35.jpg" />
+    <Content Include="Skins\zh-chs\4.2.0925\wulumuqi\Channels\AdServer\images\c36.jpg" />
+    <Content Include="Skins\zh-chs\4.2.0925\wulumuqi\Channels\AdServer\images\c4.jpg" />
+    <Content Include="Skins\zh-chs\4.2.0925\wulumuqi\Channels\AdServer\images\c5.jpg" />
+    <Content Include="Skins\zh-chs\4.2.0925\wulumuqi\Channels\AdServer\images\c6.jpg" />
+    <Content Include="Skins\zh-chs\4.2.0925\wulumuqi\Channels\AdServer\images\c7.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\wulumuqi\Channels\AdServer\images\c7.jpg" />
+    <Content Include="Skins\zh-chs\4.2.0925\wulumuqi\Channels\AdServer\images\c8.jpg" />
+    <Content Include="Skins\zh-chs\4.2.0925\wulumuqi\Channels\AdServer\images\c9.jpg" />
+    <Content Include="Skins\zh-chs\4.2.0925\wulumuqi\Channels\AdServer\Index.html" />
+    <Content Include="Skins\zh-chs\4.2.0925\wulumuqi\Channels\LiveIn\AjaxHandler.aspx" />
+    <Content Include="Skins\zh-chs\4.2.0925\wulumuqi\Channels\LiveIn\css\master.css" />
+    <Content Include="Skins\zh-chs\4.2.0925\wulumuqi\Channels\LiveIn\Default.aspx" />
+    <Content Include="Skins\zh-chs\4.2.0925\wulumuqi\Channels\LiveIn\images\1_r2_c11.jpg" />
+    <Content Include="Skins\zh-chs\4.2.0925\wulumuqi\Channels\LiveIn\images\qyrz_r1_a1.jpg" />
+    <Content Include="Skins\zh-chs\4.2.0925\wulumuqi\Channels\LiveIn\images\qyrz_r1_a10.jpg" />
+    <Content Include="Skins\zh-chs\4.2.0925\wulumuqi\Channels\LiveIn\images\qyrz_r1_a12.jpg" />
+    <Content Include="Skins\zh-chs\4.2.0925\wulumuqi\Channels\LiveIn\images\qyrz_r1_a2.jpg" />
+    <Content Include="Skins\zh-chs\4.2.0925\wulumuqi\Channels\LiveIn\images\qyrz_r1_a3.jpg" />
+    <Content Include="Skins\zh-chs\4.2.0925\wulumuqi\Channels\LiveIn\images\qyrz_r1_a4.jpg" />
+    <Content Include="Skins\zh-chs\4.2.0925\wulumuqi\Channels\LiveIn\images\qyrz_r1_a5.jpg" />
+    <Content Include="Skins\zh-chs\4.2.0925\wulumuqi\Channels\LiveIn\images\qyrz_r1_a6.jpg" />
+    <Content Include="Skins\zh-chs\4.2.0925\wulumuqi\Channels\LiveIn\images\qyrz_r1_a7.jpg" />
+    <Content Include="Skins\zh-chs\4.2.0925\wulumuqi\Channels\LiveIn\images\qyrz_r1_a8.jpg" />
+    <Content Include="Skins\zh-chs\4.2.0925\wulumuqi\Channels\LiveIn\images\qyrz_r1_a9.jpg" />
+    <Content Include="Skins\zh-chs\4.2.0925\wulumuqi\Channels\LiveIn\IncomeSuccessful.aspx" />
+    <Content Include="Skins\zh-chs\4.2.0925\wulumuqi\Channels\LiveIn\IncomeSuccessful.html" />
+    <Content Include="Skins\zh-chs\4.2.0925\wulumuqi\Channels\LiveIn\js\DoLiveIn.js" />
+    <Content Include="Skins\zh-chs\4.2.0925\wulumuqi\controls\NavigationControl.aspx" />
+    <Content Include="Skins\zh-chs\4.2.0925\wulumuqi\controls\SearchControl.aspx" />
+    <Content Include="Skins\zh-chs\4.2.0925\wulumuqi\Css\SearchControl.css" />
+    <Content Include="Skins\zh-chs\4.2.0925\wulumuqi\images\link.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\wulumuqi\images\navclose.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\wulumuqi\images\newmap15.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\wulumuqi\images\newmap16.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\wulumuqi\images\newmap17.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\wulumuqi\images\newmap18.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\wulumuqi\images\newmap19.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\wulumuqi\images\ta.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\wulumuqi\images\taa.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\wulumuqi\images\tm.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\wulumuqi\images\tma.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\wulumuqi\images\wulumuqidaohang.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\xiamen\controls\NavigationControl.aspx" />
+    <Content Include="Skins\zh-chs\4.2.0925\xiamen\images\daohang.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\xiamen\images\navclose.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\xian\controls\NavigationControl.aspx" />
+    <Content Include="Skins\zh-chs\4.2.0925\xian\images\daohang.gif" />
+    <Content Include="Skins\zh-chs\4.2.0925\xian\images\navclose.gif" />
+    <Content Include="Style.aspx" />
+    <Content Include="Vir\Vir.aspx" />
+    <None Include="Web References\com.edushi.wse\UploadService.disco" />
+    <Content Include="Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Definition.aspx.cs">
+      <DependentUpon>Definition.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Definition.aspx.designer.cs">
+      <DependentUpon>Definition.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Fundation\BusNoSearch.aspx.cs">
+      <DependentUpon>BusNoSearch.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Fundation\BusNoSearch.aspx.designer.cs">
+      <DependentUpon>BusNoSearch.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Fundation\BusSESearch.aspx.cs">
+      <DependentUpon>BusSESearch.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Fundation\BusSESearch.aspx.designer.cs">
+      <DependentUpon>BusSESearch.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Fundation\BusStationSearch.aspx.cs">
+      <DependentUpon>BusStationSearch.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Fundation\BusStationSearch.aspx.designer.cs">
+      <DependentUpon>BusStationSearch.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Fundation\BusTransfer.aspx.cs">
+      <SubType>ASPXCodeBehind</SubType>
+      <DependentUpon>BusTransfer.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Fundation\BusTransfer.aspx.designer.cs">
+      <DependentUpon>BusTransfer.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Fundation\CompanyList.aspx.cs">
+      <SubType>ASPXCodeBehind</SubType>
+      <DependentUpon>CompanyList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Fundation\CompanyList.aspx.designer.cs">
+      <DependentUpon>CompanyList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Fundation\LocalSearch.aspx.cs">
+      <DependentUpon>LocalSearch.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Fundation\LocalSearch.aspx.designer.cs">
+      <DependentUpon>LocalSearch.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Fundation\LocalTopics.aspx.cs">
+      <SubType>ASPXCodeBehind</SubType>
+      <DependentUpon>LocalTopics.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Fundation\LocalTopics.aspx.designer.cs">
+      <DependentUpon>LocalTopics.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Fundation\NearBySearch.aspx.cs">
+      <SubType>ASPXCodeBehind</SubType>
+      <DependentUpon>NearBySearch.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Fundation\NearBySearch.aspx.designer.cs">
+      <DependentUpon>NearBySearch.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Fundation\News.aspx.cs">
+      <DependentUpon>News.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Fundation\News.aspx.designer.cs">
+      <DependentUpon>News.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Fundation\PeripheralBus.aspx.cs">
+      <DependentUpon>PeripheralBus.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Fundation\PeripheralBus.aspx.designer.cs">
+      <DependentUpon>PeripheralBus.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Fundation\ProMap.aspx.cs">
+      <DependentUpon>ProMap.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Fundation\ProMap.aspx.designer.cs">
+      <DependentUpon>ProMap.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Fundation\EdushiAnnounce.aspx.cs">
+      <DependentUpon>EdushiAnnounce.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Fundation\EdushiAnnounce.aspx.designer.cs">
+      <DependentUpon>EdushiAnnounce.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="JavaScript.aspx.cs">
+      <DependentUpon>JavaScript.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="JavaScript.aspx.designer.cs">
+      <DependentUpon>JavaScript.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Plugin.aspx.cs">
+      <SubType>ASPXCodeBehind</SubType>
+      <DependentUpon>Plugin.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Plugin.aspx.designer.cs">
+      <DependentUpon>Plugin.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="Skins\zh-chs\4.2.0925\default\Channels\LiveIn\AjaxHandler.aspx.cs">
+      <DependentUpon>AjaxHandler.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Skins\zh-chs\4.2.0925\default\Channels\LiveIn\AjaxHandler.aspx.designer.cs">
+      <DependentUpon>AjaxHandler.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Skins\zh-chs\4.2.0925\default\Channels\LiveIn\Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Skins\zh-chs\4.2.0925\default\Channels\LiveIn\Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Skins\zh-chs\4.2.0925\default\Controls\CityListControl.aspx.cs">
+      <DependentUpon>CityListControl.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Skins\zh-chs\4.2.0925\default\Controls\CityListControl.aspx.designer.cs">
+      <DependentUpon>CityListControl.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Skins\zh-chs\4.2.0925\default\Controls\DebugControl.aspx.cs">
+      <DependentUpon>DebugControl.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Skins\zh-chs\4.2.0925\default\Controls\DebugControl.aspx.designer.cs">
+      <DependentUpon>DebugControl.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Skins\zh-chs\4.2.0925\default\Controls\EntityPopControl.aspx.cs">
+      <DependentUpon>EntityPopControl.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Skins\zh-chs\4.2.0925\default\Controls\EntityPopControl.aspx.designer.cs">
+      <DependentUpon>EntityPopControl.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Skins\zh-chs\4.2.0925\default\Controls\FromSearchControl.aspx.cs">
+      <DependentUpon>FromSearchControl.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Skins\zh-chs\4.2.0925\default\Controls\FromSearchControl.aspx.designer.cs">
+      <DependentUpon>FromSearchControl.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Skins\zh-chs\4.2.0925\default\Controls\NavigationControl.aspx.cs">
+      <DependentUpon>NavigationControl.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Skins\zh-chs\4.2.0925\default\Controls\NavigationControl.aspx.designer.cs">
+      <DependentUpon>NavigationControl.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Skins\zh-chs\4.2.0925\default\Controls\PaneSearchControl.aspx.cs">
+      <DependentUpon>PaneSearchControl.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Skins\zh-chs\4.2.0925\default\Controls\PaneSearchControl.aspx.designer.cs">
+      <DependentUpon>PaneSearchControl.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Skins\zh-chs\4.2.0925\default\Controls\PeripheralBusControl.aspx.cs">
+      <DependentUpon>PeripheralBusControl.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Skins\zh-chs\4.2.0925\default\Controls\PeripheralBusControl.aspx.designer.cs">
+      <DependentUpon>PeripheralBusControl.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Skins\zh-chs\4.2.0925\default\Controls\PeripheralSearchControl.aspx.cs">
+      <DependentUpon>PeripheralSearchControl.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Skins\zh-chs\4.2.0925\default\Controls\PeripheralSearchControl.aspx.designer.cs">
+      <DependentUpon>PeripheralSearchControl.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Skins\zh-chs\4.2.0925\default\Controls\SearchControl.aspx.cs">
+      <DependentUpon>SearchControl.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Skins\zh-chs\4.2.0925\default\Controls\SearchControl.aspx.designer.cs">
+      <DependentUpon>SearchControl.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Skins\zh-chs\4.2.0925\default\Controls\SearchResultControl.aspx.cs">
+      <DependentUpon>SearchResultControl.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Skins\zh-chs\4.2.0925\default\Controls\SearchResultControl.aspx.designer.cs">
+      <DependentUpon>SearchResultControl.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Skins\zh-chs\4.2.0925\default\Controls\ThemePopControl.aspx.cs">
+      <DependentUpon>ThemePopControl.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Skins\zh-chs\4.2.0925\default\Controls\ThemePopControl.aspx.designer.cs">
+      <DependentUpon>ThemePopControl.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Skins\zh-chs\4.2.0925\default\Controls\ToSearchControl.aspx.cs">
+      <DependentUpon>ToSearchControl.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Skins\zh-chs\4.2.0925\default\Controls\ToSearchControl.aspx.designer.cs">
+      <DependentUpon>ToSearchControl.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Skins\zh-chs\4.2.0925\hz\Channels\DigCowry\Congratulate.aspx.cs">
+      <DependentUpon>Congratulate.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Skins\zh-chs\4.2.0925\hz\Channels\DigCowry\Congratulate.aspx.designer.cs">
+      <DependentUpon>Congratulate.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Skins\zh-chs\4.2.0925\hz\Channels\DigCowry\Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Skins\zh-chs\4.2.0925\hz\Channels\DigCowry\Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Skins\zh-chs\4.2.0925\hz\Channels\DigCowry\Depression.aspx.cs">
+      <DependentUpon>Depression.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Skins\zh-chs\4.2.0925\hz\Channels\DigCowry\Depression.aspx.designer.cs">
+      <DependentUpon>Depression.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Skins\zh-chs\4.2.0925\hz\Channels\DigCowry\DigFailture.aspx.cs">
+      <DependentUpon>DigFailture.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Skins\zh-chs\4.2.0925\hz\Channels\DigCowry\DigFailture.aspx.designer.cs">
+      <DependentUpon>DigFailture.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Skins\zh-chs\4.2.0925\hz\Channels\DigCowry\DigHelp.aspx.cs">
+      <DependentUpon>DigHelp.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Skins\zh-chs\4.2.0925\hz\Channels\DigCowry\DigHelp.aspx.designer.cs">
+      <DependentUpon>DigHelp.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Skins\zh-chs\4.2.0925\hz\Channels\DigCowry\DigHero.aspx.cs">
+      <DependentUpon>DigHero.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Skins\zh-chs\4.2.0925\hz\Channels\DigCowry\DigHero.aspx.designer.cs">
+      <DependentUpon>DigHero.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Skins\zh-chs\4.2.0925\hz\Channels\DigCowry\DigSuccess.aspx.cs">
+      <DependentUpon>DigSuccess.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Skins\zh-chs\4.2.0925\hz\Channels\DigCowry\DigSuccess.aspx.designer.cs">
+      <DependentUpon>DigSuccess.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Skins\zh-chs\4.2.0925\hz\Channels\DigCowry\QuestionList.aspx.cs">
+      <DependentUpon>QuestionList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Skins\zh-chs\4.2.0925\hz\Channels\DigCowry\QuestionList.aspx.designer.cs">
+      <DependentUpon>QuestionList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Skins\zh-chs\4.2.0925\hz\Channels\DigCowry\Questionnaire.aspx.cs">
+      <DependentUpon>Questionnaire.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Skins\zh-chs\4.2.0925\hz\Channels\DigCowry\Questionnaire.aspx.designer.cs">
+      <DependentUpon>Questionnaire.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Skins\zh-chs\4.2.0925\hz\Channels\DigCowry\QuestionnaireSuccess.aspx.cs">
+      <DependentUpon>QuestionnaireSuccess.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Skins\zh-chs\4.2.0925\hz\Channels\DigCowry\QuestionnaireSuccess.aspx.designer.cs">
+      <DependentUpon>QuestionnaireSuccess.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Skins\zh-chs\4.2.0925\hz\Channels\DigCowry\SubmitSuccess.aspx.cs">
+      <DependentUpon>SubmitSuccess.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Skins\zh-chs\4.2.0925\hz\Channels\DigCowry\SubmitSuccess.aspx.designer.cs">
+      <DependentUpon>SubmitSuccess.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Skins\zh-chs\4.2.0925\hz\Channels\DigCowry\TrophyDetails.aspx.cs">
+      <DependentUpon>TrophyDetails.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Skins\zh-chs\4.2.0925\hz\Channels\DigCowry\TrophyDetails.aspx.designer.cs">
+      <DependentUpon>TrophyDetails.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Skins\zh-chs\4.2.0925\hz\Channels\DigCowry\TrophyShow.aspx.cs">
+      <DependentUpon>TrophyShow.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Skins\zh-chs\4.2.0925\hz\Channels\DigCowry\TrophyShow.aspx.designer.cs">
+      <DependentUpon>TrophyShow.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Skins\zh-chs\4.2.0925\hz\Channels\DigCowry\TrophyVerdict.aspx.cs">
+      <DependentUpon>TrophyVerdict.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Skins\zh-chs\4.2.0925\hz\Channels\DigCowry\TrophyVerdict.aspx.designer.cs">
+      <DependentUpon>TrophyVerdict.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Skins\zh-chs\4.2.0925\hz\Channels\DigCowry\UserControls\FootUserControl.ascx.cs">
+      <DependentUpon>FootUserControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Skins\zh-chs\4.2.0925\hz\Channels\DigCowry\UserControls\FootUserControl.ascx.designer.cs">
+      <DependentUpon>FootUserControl.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Skins\zh-chs\4.2.0925\hz\Channels\DigCowry\UserControls\GlobalADUserControl.ascx.cs">
+      <DependentUpon>GlobalADUserControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Skins\zh-chs\4.2.0925\hz\Channels\DigCowry\UserControls\GlobalADUserControl.ascx.designer.cs">
+      <DependentUpon>GlobalADUserControl.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Skins\zh-chs\4.2.0925\hz\Channels\DigCowry\UserControls\LinkUserControl.ascx.cs">
+      <DependentUpon>LinkUserControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Skins\zh-chs\4.2.0925\hz\Channels\DigCowry\UserControls\LinkUserControl.ascx.designer.cs">
+      <DependentUpon>LinkUserControl.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Skins\zh-chs\4.2.0925\hz\Channels\DigCowry\UserControls\MediumControl.ascx.cs">
+      <DependentUpon>MediumControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Skins\zh-chs\4.2.0925\hz\Channels\DigCowry\UserControls\MediumControl.ascx.designer.cs">
+      <DependentUpon>MediumControl.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Skins\zh-chs\4.2.0925\hz\Channels\DigCowry\UserControls\OtherTrophysControl.ascx.cs">
+      <DependentUpon>OtherTrophysControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Skins\zh-chs\4.2.0925\hz\Channels\DigCowry\UserControls\OtherTrophysControl.ascx.designer.cs">
+      <DependentUpon>OtherTrophysControl.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Skins\zh-chs\4.2.0925\hz\Channels\DigCowry\UserControls\ProviderADControl.ascx.cs">
+      <DependentUpon>ProviderADControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Skins\zh-chs\4.2.0925\hz\Channels\DigCowry\UserControls\ProviderADControl.ascx.designer.cs">
+      <DependentUpon>ProviderADControl.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Skins\zh-chs\4.2.0925\hz\Channels\DigCowry\UserControls\TrophyDetailsControl.ascx.cs">
+      <DependentUpon>TrophyDetailsControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Skins\zh-chs\4.2.0925\hz\Channels\DigCowry\UserControls\TrophyDetailsControl.ascx.designer.cs">
+      <DependentUpon>TrophyDetailsControl.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Style.aspx.cs">
+      <DependentUpon>Style.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Style.aspx.designer.cs">
+      <DependentUpon>Style.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Vir\Vir.aspx.cs">
+      <DependentUpon>Vir.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Vir\Vir.aspx.designer.cs">
+      <DependentUpon>Vir.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\com.edushi.wse\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Skins\zh-chs\4.2.0925\dalian\Channels\DigCowry\images\Thumbs.db" />
+    <None Include="Skins\zh-chs\4.2.0925\dalian\Channels\LiveIn\images\Thumbs.db" />
+    <None Include="Skins\zh-chs\4.2.0925\default\Channels\LiveIn\images\Thumbs.db" />
+    <None Include="Skins\zh-chs\4.2.0925\linyi\Channels\LiveIn\images\Thumbs.db" />
+    <None Include="Skins\zh-chs\4.2.0925\wulumuqi\Channels\AdServer\Index.html.bak" />
+    <None Include="Skins\zh-chs\4.2.0925\wulumuqi\Channels\LiveIn\images\Thumbs.db" />
+    <None Include="Web References\com.edushi.wse\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\com.edushi.wse\UploadService.wsdl" />
+    <None Include="Web References\com.edushi.wse\UploadStatus.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\..\EDUSHI_FRAMEWORK\Aladdin.Tools\Aladdin.Tools\Aladdin.Tools.csproj">
+      <Project>{6B4C9F1C-AF42-4D24-A300-17D4FAD7D145}</Project>
+      <Name>Aladdin.Tools</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\EDUSHI_INFORMATION_SYSTEMS\DataCenter\DataCenter2.0\DataCenterDataAccess\DataCenter.DataAccess.csproj">
+      <Project>{5DF54884-7FC2-4409-991B-2C7ABC7B0D2D}</Project>
+      <Name>DataCenter.DataAccess</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Map.BLL\Map.BLL.csproj">
+      <Project>{673D2998-2751-4A45-BFED-A06E950A91A3}</Project>
+      <Name>Map.BLL</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferences Include="Web References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferenceUrl Include="http://wse.edushi.com/UploadService.asmx">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\com.edushi.wse\</RelPath>
+      <UpdateFromURL>http://wse.edushi.com/UploadService.asmx</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>Map_WebApp_com_edushi_wse_UploadService</CachedSettingsPropName>
+    </WebReferenceUrl>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Skins\en\4.2.0925\default\Channels\" />
+    <Folder Include="Skins\zh-chs\4.2.0925\beijing\Channels\" />
+    <Folder Include="Skins\zh-chs\4.2.0925\changsha\Channels\" />
+    <Folder Include="Skins\zh-chs\4.2.0925\changzhou\Channels\" />
+    <Folder Include="Skins\zh-chs\4.2.0925\chengdu\Channels\" />
+    <Folder Include="Skins\zh-chs\4.2.0925\chongqing\Channels\" />
+    <Folder Include="Skins\zh-chs\4.2.0925\fuzhou\Channels\" />
+    <Folder Include="Skins\zh-chs\4.2.0925\guangzhou\Channels\" />
+    <Folder Include="Skins\zh-chs\4.2.0925\haerbin\Channels\" />
+    <Folder Include="Skins\zh-chs\4.2.0925\hefei\Channels\" />
+    <Folder Include="Skins\zh-chs\4.2.0925\hongkong\Channels\" />
+    <Folder Include="Skins\zh-chs\4.2.0925\jinan\Channels\" />
+    <Folder Include="Skins\zh-chs\4.2.0925\ningbo\Channels\" />
+    <Folder Include="Skins\zh-chs\4.2.0925\qd\Channels\" />
+    <Folder Include="Skins\zh-chs\4.2.0925\shanghai\Channels\" />
+    <Folder Include="Skins\zh-chs\4.2.0925\shijiazhuang\Channels\" />
+    <Folder Include="Skins\zh-chs\4.2.0925\suzhou\Channels\" />
+    <Folder Include="Skins\zh-chs\4.2.0925\sz\Channels\" />
+    <Folder Include="Skins\zh-chs\4.2.0925\weihai\Channels\" />
+    <Folder Include="Skins\zh-chs\4.2.0925\xiamen\Channels\" />
+    <Folder Include="Skins\zh-chs\4.2.0925\xian\Channels\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v9.0\WebApplications\Microsoft.WebApplication.targets" Condition="" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>False</UseIIS>
+          <AutoAssignPort>False</AutoAssignPort>
+          <DevelopmentServerPort>50758</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://hz.edushi.com</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>

@@ -1,0 +1,8 @@
+E:\TFS192.168.100.212\EDUSHI_DATA_CENTER\EdushiDataCenter\v2.0\EdushiDataCenterSolution\EDC.Framework\bin\Debug\EDC.Framework.dll.config
+E:\TFS192.168.100.212\EDUSHI_DATA_CENTER\EdushiDataCenter\v2.0\EdushiDataCenterSolution\EDC.Framework\bin\Debug\EDC.Framework.dll
+E:\TFS192.168.100.212\EDUSHI_DATA_CENTER\EdushiDataCenter\v2.0\EdushiDataCenterSolution\EDC.Framework\bin\Debug\EDC.Framework.pdb
+E:\TFS192.168.100.212\EDUSHI_DATA_CENTER\EdushiDataCenter\v2.0\EdushiDataCenterSolution\EDC.Framework\bin\Debug\Enyim.Caching.dll
+E:\TFS192.168.100.212\EDUSHI_DATA_CENTER\EdushiDataCenter\v2.0\EdushiDataCenterSolution\EDC.Framework\bin\Debug\log4net.dll
+E:\TFS192.168.100.212\EDUSHI_DATA_CENTER\EdushiDataCenter\v2.0\EdushiDataCenterSolution\EDC.Framework\obj\Debug\EDC.Framework.dll
+E:\TFS192.168.100.212\EDUSHI_DATA_CENTER\EdushiDataCenter\v2.0\EdushiDataCenterSolution\EDC.Framework\obj\Debug\EDC.Framework.pdb
+E:\TFS192.168.100.212\EDUSHI_DATA_CENTER\EdushiDataCenter\v2.0\EdushiDataCenterSolution\EDC.Framework\bin\Debug\EDC.Framework.XML

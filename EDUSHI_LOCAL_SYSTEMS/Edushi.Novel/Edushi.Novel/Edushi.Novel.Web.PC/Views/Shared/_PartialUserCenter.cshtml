@@ -1,0 +1,27 @@
+﻿
+<a  onclick="logins(1)"  class="shelf">我的书架</a>
+<a  onclick="logins(2)"  class="read">最近阅读</a>
+<script>
+    function logins(flag) {
+        $.ajax({
+            type: "post",
+            url: "/Home/IsLogin",
+            success: function (data) {
+                if (data == "OK") {
+                    if (flag == 1) {
+                        window.location.href = "http://user.edushi.com/xiaoshuo/mybookrack.html";
+                    } else {
+                        window.location.href = "http://user.edushi.com/xiaoshuo/recentlyread.html";
+                    }
+                }
+                else {
+                    var backUrl = escape(window.location.href);
+                    window.location.href = "http://user.edushi.com/Login.html?BackUrl=" + backUrl;
+                }
+            },
+            error: function (data) {
+                console.log(data);
+            }
+        })
+    }
+</script>

@@ -1,0 +1,7 @@
+E:\TFS192.168.100.212\EDUSHI_CHANNEL_SYSTEM\Edushi.UserCenter\Edushi.UserCenter2.0.VS2013\Edushi.UserCenter2.0\Edushi.MongoDB\bin\Debug\Edushi.MongoDB.dll
+E:\TFS192.168.100.212\EDUSHI_CHANNEL_SYSTEM\Edushi.UserCenter\Edushi.UserCenter2.0.VS2013\Edushi.UserCenter2.0\Edushi.MongoDB\bin\Debug\Edushi.MongoDB.pdb
+E:\TFS192.168.100.212\EDUSHI_CHANNEL_SYSTEM\Edushi.UserCenter\Edushi.UserCenter2.0.VS2013\Edushi.UserCenter2.0\Edushi.MongoDB\bin\Debug\MongoDB.Bson.dll
+E:\TFS192.168.100.212\EDUSHI_CHANNEL_SYSTEM\Edushi.UserCenter\Edushi.UserCenter2.0.VS2013\Edushi.UserCenter2.0\Edushi.MongoDB\bin\Debug\MongoDB.Driver.dll
+E:\TFS192.168.100.212\EDUSHI_CHANNEL_SYSTEM\Edushi.UserCenter\Edushi.UserCenter2.0.VS2013\Edushi.UserCenter2.0\Edushi.MongoDB\obj\Debug\Edushi.MongoDB.dll
+E:\TFS192.168.100.212\EDUSHI_CHANNEL_SYSTEM\Edushi.UserCenter\Edushi.UserCenter2.0.VS2013\Edushi.UserCenter2.0\Edushi.MongoDB\obj\Debug\Edushi.MongoDB.pdb
+E:\TFS192.168.100.212\EDUSHI_CHANNEL_SYSTEM\Edushi.UserCenter\Edushi.UserCenter2.0.VS2013\Edushi.UserCenter2.0\Edushi.MongoDB\obj\Debug\Edushi.MongoDB.csprojResolveAssemblyReference.cache

@@ -1,0 +1,159 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+<meta name="Keywords" content="{$Keywords}" />
+<meta name="Description" content="{$Description}" />
+<link href="{$SkinPath}css/style.css" rel="stylesheet" type="text/css" />
+<title>{$PageTitle}</title>
+<script type="text/javascript" src="JS/lib.js"></script>
+<script type="text/javascript" src="JS/GeneralJSLibrary.js"></script>
+<script language="javascript" type="text/javascript" src="Definition.aspx?l={$Language}"></script>
+<script language="javascript" type="text/javascript" src="Javascript.aspx?l={$Language}&t=controls"></script>
+<script language="javascript" type="text/javascript" src="Plugin.aspx?l={$Language}"></script>
+<script type="text/javascript" src="Javascript.aspx?l={$Language}&f=Language.js"></script>
+<script type="text/javascript" src="Javascript.aspx?l={$Language}&f=eds_eye.js"></script>
+<script type="text/javascript" src="Javascript.aspx?l={$Language}&f=Mark.js"></script>
+<script type="text/javascript" src="Javascript.aspx?l={$Language}&f=Init.js"></script>
+</head>
+<body style="overflow:hidden;">
+<div id="BG" style="display:none"></div>
+<div id="EdushiMenu">
+<div class="top">
+    <div class="top_l"><a href ="http://www.edushi.com" target ="_blank"><img src="images/logo.gif" alt="E都市" border="0" /></a></div>
+    <div class="top_m"><img src="images/wqbg.gif" /></div>
+    <div class="top_r">
+	    <div class="top_r_t">
+		    <div class="qlink">
+		    <!--
+		       <a href="/yp/" target="_blank">{$CityName}黄页</a>/
+		        <a href="http://www.edushi.com/about/MapSign.aspx" target="_blank">三维标注</a> / 
+		        <a href="LiveIn/Default.aspx" target="_blank">企业入驻</a> / 
+		        <a href="AdServer/index.html?L={$Language}" target="_blank">广告服务</a>
+		        -->
+		    </div>
+		    <div class="city">Current City：<span class="currentcity">{$CityName}</span> 
+		    <span  style="color:#000;"><a href="?L=en" target="_top"> <span style="color:#F96912">{简体中文}</span></a></span>
+		    <a href="http://www.edushi.com/?id=citylist" target="_blank" style="margin-right:26px;">[Citys]</a> 
+		    <a href="http://www.edushi.com/help/help.html" target="_blank">Help</a> 
+		    <a href="http://www.edushi.com/about/GuestBook.aspx?c={$CityCode}&l={$Language}" target="_blank">Contact us</a></div>
+	    </div>
+	    <div class="top_r_b">
+	        <div id="btnThemeScrollLeft" style="float:left; width:10px; margin-top:4px; cursor:pointer; display:none;">
+	            <img src="images/icon_left.gif" alt="" />
+	        </div>
+	        <div id="divThemeMask" style="float:left; width:500px; height:22px; margin:0 5px 0 2px;">
+	            <div id="divThemeClip" style="display:block; position:absolute;clip:rect(0 500px 22px 0)">
+	                <div style="position:absolute; width:3000px;">
+		            <ul id="ulThemeList">
+		            </ul>
+		            </div>
+		        </div>
+		    </div>
+		    <div id="btnThemeScrollRight" style="float:left; width:10px; margin-top:5px; cursor:pointer; display:none;">
+		        <img src="images/icon_right.gif" alt="" />
+		    </div>
+	    </div>
+    </div>
+</div>
+<div class="bottom">
+    <div class="news">
+        <div id="divNews" style="margin:3px 0 5px 0; height:20px;"></div>
+    </div>
+    <div class="maptoolbar">
+	    <ul>
+		    <li class="toolbar_1"><a onfocus="this.blur()" href="javascript:fnSelectMarkPoint();">New Mark</a></li>
+		    <li class="toolbar_2"><a onfocus="this.blur()" href="javascript:fnScale();">Survey Distance</a></li>
+		    <li class="toolbar_3"><a onfocus="this.blur()" href="javascript:fnPanel();">Pane Choose</a></li>
+		    <li class="toolbar_4"><a onfocus="this.blur()" href="javascript:fnShowNav();">navigation</a></li>
+		    <li class="toolbar_6"><a onfocus="this.blur()" href="javascript:fnFullSrc();">Fullscreen</a></li>
+		    <li class="toolbar_5"><a onfocus="this.blur()" href="javascript:fnLabel();" onclick="this.innerHTML=='Show Tag'? this.innerHTML='Hide Tag':this.innerHTML='Show Tag'">Show Tag</a></li>
+		    <li class="mapset" onmouseover="fnShowLayer('divQuickLink', 'block')" onmouseout="fnShowLayer('divQuickLink', 'none')" ><a onfocus="this.blur()">General Location</a></li>
+		    <li class="mapset" onmouseover="fnShowLayer('divMark', 'block')" onmouseout="fnShowLayer('divMark', 'none')"><a id="txtMyMark" onfocus="this.blur()" href="javascript:;">MyMark</a></li>
+		    <li class="mapset" onmouseover="fnShowLayer('divMapSetting', 'block')" onmouseout="fnShowLayer('divMapSetting', 'none')"><a onfocus="this.blur()" href="javascript:;">MapSet</a></li>
+		    <li class="mapset" onmouseover="fnShowLayer('divHistory', 'block')" onmouseout="fnShowLayer('divHistory', 'none')"><a id="txtHistoryFont" onfocus="this.blur()" href="javascript:;">History Location</a></li>
+	    </ul>
+    </div>
+    <div style="clear:both; display:block;"></div>
+</div>
+<div class="BlackBg"></div>
+<div style="position:absolute; z-index:200; width:100%; height:28px; top:91px;">
+    <div style="position: absolute; top: -5px; right: 194px; display:none;" id="divQuickLink" onmouseover="fnShowLayer('divQuickLink', 'block')" onmouseout="fnShowLayer('divQuickLink', 'none')">
+        <div class="menulist" id="ulQickLinkList">
+        </div>
+    </div>
+    <div style="position: absolute; top: -5px; right: 135px; display:none;" id="divMark" onmouseover="fnShowLayer('divMark', 'block')" onmouseout="fnShowLayer('divMark', 'none')">
+        <div class="menulist">
+            <a class="line" href="javascript:fnSelectMarkPoint();">Create New Mark</a> 
+            <a class="gou" href="javascript:;" onclick="_Mark.ShowAll();$('divHideAllMark').className='line';this.className='gou';" id="divShowAllMark">Show whole</a> 
+            <a class="line" href="javascript:;" onclick="_Mark.Hidden();$('divShowAllMark').className='';this.className='gou line';" id="divHideAllMark">Hide whole</a> 
+            <a href="javascript:;" onmouseover="fnShowLayer('divMarkHistory', 'block')" onmouseout="fnShowLayer('divMarkHistory', 'none')">Created Tag></a>
+        </div>
+    </div>
+    <div style="position: absolute; top: 60px; right: 45px; display:none;" id="divMarkHistory" onmouseover="fnShowLayer('divMarkHistory', 'block');fnShowLayer('divMark', 'block')" onmouseout="fnShowLayer('divMarkHistory', 'none');fnShowLayer('divMark', 'none')">
+        <div class="menulist" id="divMyMark">
+            <a class="line" href="javascript:;" onclick="if(confirm('Confirm Clear All Tag')){_Mark.Clear()}">Clear All Tag</a> 
+        </div>
+    </div>
+    <div style="position: absolute; top: -5px; right: 75px; display:none;" id="divMapSetting" onmouseover="fnShowLayer('divMapSetting', 'block')" onmouseout="fnShowLayer('divMapSetting', 'none')">
+        <div class="menulist">
+            <a class="gou" href="javascript:fnRoad();" onclick="this.className=='gou'?this.className='':this.className='gou'">Guidepost</a> 
+            <a class="gou" href="javascript:fnStation();" onclick="this.className=='gou'?this.className='':this.className='gou'">Bus Station</a> 
+            <a class="gou" href="javascript:fnSubWay();" onclick="this.className=='gou'?this.className='':this.className='gou'">Subway</a> 
+            <a class="gou line" href="javascript:fnPack();" onclick="this.className=='gou line'?this.className='line':this.className='gou line'">Stop Park</a> 
+            <a class="gou" href="javascript:fnDisplayTool('Tool');" onclick="this.className=='gou'?this.className='':this.className='gou'">Search Panel</a> 
+            <a class="gou" href="javascript:fnDisplayTool('Eye');" onclick="this.className=='gou'?this.className='':this.className='gou'">Bird's Eve</a>
+        </div>
+    </div>
+    <div style="position: absolute; top: -5px; right: 15px; display:none;" id="divHistory" onmouseover="fnShowLayer('divHistory', 'block')" onmouseout="fnShowLayer('divHistory', 'none')">
+        <div class="menulist" id="divHistoryList">
+        </div>
+    </div>
+</div>
+</div>
+
+<!--加载地图-->
+<div id="EdushiMap" style="position: absolute; z-index:1; width:1020px; height:500px; top:63px;"></div>
+	
+<!--搜索工具条-->
+<div id="Tool" class="Tool">
+    <div style="position:absolute; height:30px; width:20px; z-index:9999; cursor:move;"></div>
+</div>
+
+
+<!--鹰眼-->
+<div id="Eye" class="Eye" >
+    <div id="eyeEdushiMap" class="Map">
+    </div>  
+    <div id="EyeMapDiv" class="Emin"></div>
+    <div id="EzoomBar" class="Level" onselectstart="return false" >
+    	<div id="Change2D3D" class="Change2D3D"><img src="images/newmap482d.gif"></div>
+        <div id="EzoomMax" class="MapBig" title="Max"></div>
+        <div id="Ezoom0"  class="UnAction"></div>
+        <div id="Ezoom1"  class="UnAction"></div>
+        <div id="Ezoom2"  class="UnAction"></div>
+        <div id="Ezoom3"  class="UnAction"></div>
+        <div id="MapSilder"  title="Zoom"></div>
+        <div id="EzoomMin" class="MapSamll" title="Min" ></div>
+    </div>
+    <a id="EbottomMM" class="Edu" ></a>
+    <a id="Eout" class="Eout" ></a>    
+</div>
+<div id="Ein" style="display:none;"><a id="Eina" class="Eina" ></a></div>
+<!--搜索结果面板-->
+<div id="DragWindow" class="Result" style="top:209px; left:0px; position:absolute; z-index:10">
+    <div style="position:absolute; height:30px; width:20px; z-index:9999; cursor:move;"></div>
+</div>
+
+<div id="srcExit" onclick="fnFullSrc();" style="display:none;"><img alt="退出" src="images/srcexit.jpg" /></div>
+<div id="CopyRight"><div class="bg"></div><div class="con" onselectstart="return false;">{$CityName} Greenfield Operator：<a href="{$ProprietorUrl}" style="color:#fff;" target="_blank">{$Proprietor}</a> </div></div>
+<div id="EdushiAnnounce"><div class="bg"></div><div id="EdushiAnnounceText" class="con" onselectstart="return false;" style="height:20px;">
+
+</div></div>
+
+</body>
+</html>
+<script type="text/javascript" src="http://api2.edushi.com/0710/api.js/Api2.aspx?City={$CityCode}&L={$Language}&MapID=EdushiMap&x={$X}&y={$Y}&w=1020&h=500&eye=1&ew=190&eh=145&e=utf-8&v=0"></script>
+<script type="text/javascript">
+    fnLoadInit(); 
+</script>
+

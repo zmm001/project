@@ -1,0 +1,123 @@
+﻿@using Edushi.Common
+@model Edushi.UserCenter.Web.Mobile.Models.MyAttentionModel
+@{
+    ViewBag.Title = string.Format("\"{0}\"-E都市", Model.UserInfo.UI_NickName);
+    var imgDomain = Common.GetConfigString("UserHeadPic");
+    var loginId = Model.UserInfo.UI_ID;
+}
+<div id="app" class="my">
+    <!--头部-->
+    <header-bar :data="header" @@back="back()"></header-bar>
+    <!--内容-->
+    @if (Model.List != null && Model.List.Any())
+    {
+        var authorNewsController = new Edushi.UserCenter.Web.Mobile.Controllers.AuthorNewsController();
+        <div class="container">
+            <div class="follow-list">
+                <ul id="datalist">
+                    @foreach (var item in Model.List)
+                    {
+                        <li @Html.Raw(item.Num <= 0 ? "" : (item.Num > 99 ? "data-number=\"99+\"" : string.Format("data-number=\"{0}\"", item.Num)))>
+                            <a href="@string.Format(Url.Content("~/index/{0}-{1}.html"), Convert.ToInt32(item.UserInfo["Type"].ToString()) == 3 ? 5 : 1, item.UserInfo["FansId"])">
+                                <div class="photo">
+                                    <img src="@(imgDomain + item.UserInfo["Avatar"])">
+                                </div>
+                                <div class="info">
+                                    <span class="name">@Html.Raw(item.UserInfo["NickName"])</span>
+
+                                    <span class="text">@Html.Raw(item.Title)</span>
+                                </div>
+                            </a>
+                            @{
+                        //  我所关注的人
+                        /*
+                         * 判断当前用户有无登录
+                         * 1.有
+                         *  判断我有没有关注关注列表中的人
+                         *  1.有
+                         *      判断关注列表中的人有没有关注我
+                         *      1.有  --》互相关注
+                         *      2.无  --》已关注
+                         *  2.无
+                         *      判断关注列表中的人有没有关注我
+                         *      1.有 --》+ TA关注我
+                         *      2.无 --》+
+                         * 2.无--》全部都是关注状态
+                         */
+                        
+                        var userId = item.UserInfo["FansId"] == null ? 0 : Convert.ToInt32(item.UserInfo["FansId"].ToString());
+
+                        if (userId != ViewBag.loginId)
+                        {
+                            var isAttentioned = userId <= 0 ? 0 : authorNewsController.GetIsAttentioned(userId);
+                        if (isAttentioned != 0 && isAttentioned == -2)
+                        {
+                            var isAttentioneds = userId <= 0 ? 0 : authorNewsController.GetIsFansed(userId);
+                            if (isAttentioneds != 0 && isAttentioneds == -2)
+                            {
+                                // 互相关注
+                                <div class="follow-btn eachother" onclick="attention(changeStyle,this,@userId)"></div>
+                            }
+                            else
+                            {
+                                // 已关注
+                                <div class="follow-btn followed" onclick="attention(changeStyle,this,@userId)"></div>
+                            }
+                        }
+                        else
+                        {
+                            var isAttentioneds = userId <= 0 ? 0 : authorNewsController.GetIsFansed(userId);
+                            if (isAttentioneds != 0 && isAttentioneds == -2)
+                            {
+                                // + TA关注我
+                                <div class="add-follow eachother" onclick="attention(changeStyle,this,@userId)"></div>
+                                <div class="follow-tips">TA关注了我</div>
+                            }
+                            else
+                            {
+                                // +
+                                <div class="add-follow" onclick="attention(changeStyle,this,@userId)"></div>
+                            }
+                        }
+                        }
+                        
+                            }
+                        </li>
+                    }
+                </ul>
+                <div class="loding">正在加载更多</div>
+            </div>
+        </div>
+    }
+
+</div>
+<script>
+    var my = new Vue({
+        el: '#app',
+        data: function () {
+            return {
+                header: {
+                    title: "TA的粉丝",
+                    number: "@Model.TotalCount"
+                }
+            }
+        },
+        methods: {
+            //返回
+            back: function () {
+                window.history.back();
+            }
+        }
+    });
+    var ConfigData = {
+        Count: "@Model.PageCount",
+        Url: "@Url.Content("~/")",
+        Page: "GetMorefanss.htm",
+        PageIndex: 1,
+        Contaiter: $("#datalist"),
+        Type: 6,
+        UserId: "@Model.UserInfo.UI_ID"
+    };
+</script>
+<script src="@Url.Content("~/asset/js/attention.common.js")"></script>
+<script src="@Url.Content("~/asset/js/scrollLoad.bak.js")"></script>

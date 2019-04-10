@@ -1,0 +1,208 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+    <title>三维地图APP版</title>
+    @Html.Partial("/Views/Shared/_PartialHead.cshtml")
+    <style>
+        #search-page {
+            box-sizing: border-box;
+            width: 100%;
+            height: auto;
+        }
+
+            #search-page .search-header {
+                position: fixed;
+                font-size: 0.32rem;
+                width: 100%;
+                background-color: #999999;
+                top: 0;
+                z-index: 999;
+                padding-top: 1.5rem;
+                height: auto;
+            }
+
+        .comment-head {
+            box-sizing: border-box;
+            background-color: #fff;
+            border-top-left-radius: 30px;
+            border-top-right-radius: 30px;
+            padding-top: 0.3rem;
+            height: 1.32rem;
+        }
+
+        #search-page .wraper {
+            box-sizing: border-box;
+            background-color: #fff;
+            margin-top: 3.58rem;
+        }
+
+        .editFooter {
+            border: 1px solid red;
+            line-height: 1.03rem;
+            background-color: #FFF;
+            margin-top: 23px;
+            margin-left: 12px;
+            margin-right: 12px;
+        }
+
+            .editFooter input {
+                width: 77%;
+                outline: none;
+                border: 0.02rem solid #F5F5F6;
+                font-size: 0.3rem;
+                margin-left: 0.24rem;
+                padding-left: 0.34rem;
+                height: 34px;
+                background: rgba(245,245,246,1);
+                border-radius: 20px;
+            }
+
+        .search-history {
+            margin-left: 12px;
+            margin-right: 12px;
+        }
+
+            .search-history .zuijin {
+                display: inline-block;
+            }
+
+            .search-history .clear {
+                display: inline-block;
+                float: right;
+            }
+
+        .search-lib {
+            margin-top: 10px;
+            margin-left: 12px;
+            margin-right: 12px;
+        }
+
+            .search-lib ul > li {
+                border-bottom: 1px solid #DADBDA;
+                height: 40px;
+                line-height: 40px;
+            }
+    </style>
+</head>
+
+<body id="by">
+
+    <section id="search-page">
+        <div class="search-header">
+            <div class="comment-head">
+                <div class="editFooter">
+                    <input type="text" placeholder="搜索位置" id="content" maxlength="300">
+                    <div style="display: inline-block;">
+                        <span id="publish">取消</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="wraper">
+            <div class="111">
+                <section class="search-history">
+                    <div class="zuijin">最近搜索</div>
+                    <div class="clear">清空</div>
+                </section>
+                <section class="search-lib">
+                    <ul>
+                        <li>杭州市人民医院</li>
+                        <li>银丰大厦</li>
+                        <li>杭州阿拉丁股份有限公司</li>
+                    </ul>
+                </section>
+            </div>
+            <div class="222" style="display:none;">
+                <section class="search-history">
+                    <div class="zuijin">在<span class="cityType">二</span>维地图中搜索"<span class="cityName">杭州</span>"</div>
+                </section>
+                <section class="search-lib">
+                    <ul>
+                        <li>杭州市人民医院</li>
+                        <li>银丰大厦</li>
+                        <li>杭州阿拉丁股份有限公司</li>
+                    </ul>
+                </section>
+            </div>
+        </div>
+    </section>
+    <script>
+        $(function () {
+            searchHistroy();
+            // 获取当前城市信息
+            // 判断当前城市是否为3d城市                       
+            var cityName = getQueryString("cityName");
+            //var citytype = getQueryString("is3D");
+            $('.cityName').text(cityName);
+           // $('.cityType').text(citytype);
+            // 判断中文输入
+            var flag = true;
+            $('#content').on('compositionstart', function () {
+                flag = false;
+            })
+            $('#content').on('compositionend', function () {
+                flag = true;
+            })
+            $('#content').on('input', function () {
+                var _this = this;
+                if ($(_this).val().length > 0) {     // 输入框内有值
+                    $("#publish").text("搜索")
+                }
+                setTimeout(function () {
+                    if (flag) {
+                        var word = $(_this).val();
+                        goSearch(cityName, word)
+                    }
+                }, 0)
+            })
+            
+            // 输入框获取焦点(最近搜索记录隐藏)
+            $("#content").on('focus', function () {
+                $('.222').show()
+                $('.111').hide()
+                if ($("#content").val().length > 0) {     // 输入框内有值
+                    $("#publish").text("搜索")
+                }
+            })
+            $("#content").on('blur', function () {
+                if ($('#content').val().length == 0) {
+                    $('.222').hide()
+                    $('.111').show()
+                    $("#publish").text("取消")
+                }
+            })
+        });
+        // 获取搜索历史记录
+        function searchHistroy() {
+            $.ajax({
+                url: '/Shared/getUserSearchWordHisList',
+                type: 'POST',
+                data: {
+                    "userId_app": 1233,
+                },
+                dataType: 'json',
+                success: function (data) {},
+                error: function () {
+
+                    }
+                })
+        }
+        // 实时搜索
+        function goSearch(cityName, keyword) {
+            if (keyword != "") {
+                $.ajax({
+                    type: 'POST', //GET
+                    url: '@Url.Content("~/Shared/getSuggestData")',
+                    data: { 'cityName': cityName, 'keyword': keyword },
+                    success: function (data) {
+                        console.log(data);
+                    },
+                    error: function (xhr, type) {
+                    }
+                })
+            }
+        }
+    </script>
+</body>
+</html>

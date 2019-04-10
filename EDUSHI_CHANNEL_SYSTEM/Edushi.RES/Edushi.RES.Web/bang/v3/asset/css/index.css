@@ -1,0 +1,41 @@
+@charset "utf-8";
+/* CSS Document */
+body{ font-size:14px; font-family: Microsoft Yahei, SimHei; color:#333;}
+a:link, a:visited{
+	color:#333;
+}
+a:hover{ color:#cc2900;}
+a:active{ color:#333;}
+.f-l{ display:inline; float:left;}
+.f-r{ display:inline; float:right;}
+.m-b20{ margin-bottom:20px;}
+.rel{ position:relative;}
+.wrapper{width:1000px; margin:0 auto;}
+
+.clear{ clear:both;}
+.clearfix:before, .clearfix:after{ content:""; display:table;}
+.clearfix:after{ clear:both;}
+.clearfix{ *zoom:1;}
+
+.channel-recom{ margin-top:20px;}
+.sub-newsnav{ height:37px; margin-bottom:11px; border:1px solid #ddd; border-top:2px solid #2b2a2a; background:url(http://www.edushi.com/asset/images/sub_navbg.gif) repeat-x; font-size:18px; font-weight:bold; color:#b31200; line-height:37px;}
+.sub-newsnav p{ position:relative; top:-2px; float:left; padding:0 33px; text-align:center; border-top:2px solid #b31200; border-right:1px solid #ddd; border-bottom:1px solid #fff; background:url(http://www.edushi.com/asset/images/sub_navcbg.gif) repeat-x;}
+.channel-right{ width:478px;}
+.channel-right li{ display:inline; float:left; width:216px; height:150px; margin:15px 18px 0 0; padding:1px; background:#fff; border:1px solid #ebebeb; overflow:hidden;}
+.channel-right li img{ display:block; width:216px; height:118px;}
+.channel-right li p{ height:32px; padding:0 5px; background:#4d4d4d; text-align:center; line-height:32px; overflow:hidden;}
+.channel-right li p a{ color:#fff;}
+.channel-right li:hover p a{ color:#ffff66;}
+.channel-left{ width:500px;}
+.channel-list{ width:470px; margin-left:18px;}
+.channel-list li{ height:32px; line-height:32px; color:#999; overflow:hidden;}
+.channel-list li span a{ color:#b20077;}
+.channel-list li.bold{ height:39px; margin:3px 0 2px; font-size:16px; font-weight:bold; line-height:39px; text-align:center;}
+.channel-list li.bold a{ color:#cc0000;}
+
+.page-footer{ width:100%; margin-top:20px; padding:18px 0; border-top:1px solid #dadada; border-bottom:1px solid #dadada; background:url(http://www.edushi.com/asset/images/footer_bg.gif) repeat-x left top #fdfdfd;}
+.footer-nav{  margin:0 auto 12px; padding:0 0 18px 0px; background:url(http://www.edushi.com/asset/images/footer_linebg.png) no-repeat left bottom; text-align:center; *zoom:1;}
+.footer-nav li{ display:inline-block; color:#999;}
+.footer-nav li a{ margin:0 17px; font-weight:bold;}
+.footer-copyright{ text-align:center; font-size:12px; color:#808080; line-height:18px;}
+.footer-copyright p{ margin-bottom:8px;}

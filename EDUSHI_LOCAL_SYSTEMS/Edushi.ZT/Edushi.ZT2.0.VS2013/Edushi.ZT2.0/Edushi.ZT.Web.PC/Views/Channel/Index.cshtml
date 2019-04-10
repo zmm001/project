@@ -1,0 +1,103 @@
+﻿@using Edushi.ZT.Special
+@model Edushi.ZT.Web.PC.Models.ChannelModel
+@{
+    string sub = string.Empty;
+    List<Edushi.ZT.Model.TopicTypeModel> myType = Model.AllTopicType.FindAll(p => p.TT_ParentID == Model.CurrentModel.TT_ID);
+    if (myType.Count > 0)
+    {
+        sub = string.Join(",", myType.Select(p => p.TT_Name));
+
+    }
+    var pType = Model.AllTopicType.FindAll(p => p.TT_ParentID == 0);
+    string mobileUrl;
+    string URI = Request.Url.AbsoluteUri.ToLower();
+    if (URI.IndexOf("www.", StringComparison.Ordinal) > -1)
+    {
+        mobileUrl = URI.Replace("www.", "m.");
+    }
+    else
+    {
+        mobileUrl = URI.Replace("edushi.com", "m.edushi.com");
+    }
+}
+@{
+    ViewBag.Title = string.Format("{0}频道-专题汇总-E都市", Model.CurrentModel.TT_Name);
+}
+
+@section meta{
+    <meta name="Keywords" content="@(Model.CurrentModel.TT_Name),@sub" />
+    <meta name="Description" content="E都市@(Model.CurrentModel.TT_Name)频道是全面专业的@(Model.CurrentModel.TT_Name)资讯信息平台，提供@(sub.Replace(",", "、"))等@(Model.CurrentModel.TT_Name)资讯，构建新型互联网媒体平台为互联网用户提供价值资讯。" />
+    <meta http-equiv="mobile-agent" content="format=html5; url=@mobileUrl" />
+}
+<link href="@Url.Content("~/asset/css/style7.0.css")" rel="stylesheet" type="text/css" />
+<div class="container">
+    <div class="channel-header">
+        <div class="wrapper">
+            <div class="logo">
+                <a href="http://www.edushi.com/" target="_blank"><img src="@Url.Content("~/asset/images/logo.png")"></a>
+                <a href="@Url.Content("~/")" target="_blank" class="channel-name">专题</a>
+            </div>
+        </div>
+        <div class="sub-nav">
+            <div class="wrapper">
+                <a href="@Url.Content("~/")" target="_blank">首页</a>
+                @if (pType.Any())
+                {
+                    foreach (var item in pType)
+                    {
+                        <a href="@Common.GetInfoListUrl(Url.Content("~/"),item.TT_ParentID,item.TT_ID)" target="_blank" @Html.Raw(item.TT_ID == Model.CurrentModel.TT_ID ? "class=\"current\"" : "")>@item.TT_Name</a>
+                    }
+                }
+            </div>
+        </div>
+    </div>
+    @if (Model.ListRecommend != null && Model.ListRecommend.Any())
+    {
+        <div class="wrapper middle">
+            <div class="middle-l middle-c">
+                <a href="javascript:void(0);" class="btn-page-left" style="display: none;"></a>
+                @if (Model.PageCount > 0)
+                {
+                    <a href="javascript:void(0);" class="btn-page-right"></a>
+                }
+                <div class="center-tip"></div>
+                <div class="cont-wrap">
+                    <div class="cont-scroller">
+                        <div class="water-wrapper">
+                            <ul class="clearfix">
+                                @foreach (var item in Model.ListRecommend)
+                                {
+                                    <li>
+                                        <a href="@item.Url" target="_blnak" class="img">
+                                            <img src="@item.Pic" onerror="this.src='@Url.Content("~/asset/images/default_photo.png")'">
+                                            <span class="zt">专题</span>
+                                        </a>
+                                        <div class="tit">
+                                            @*<a href="@item.TypeUrl" target="_blnak" class="category">@item.TypeName</a>*@
+                                            <a href="@item.Url" target="_blnak" class="info">@Html.Raw(item.Title)</a>
+                                        </div>
+                                    </li>
+                                }
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="loading"></div>
+                </div>
+            </div>
+        </div>
+    }
+
+</div>
+
+<script type="text/javascript">
+    var configData = {
+        pageCount: "@Model.PageCount",
+        pageIndex: 0,
+        Page: "@Url.Content("~/")",
+        Url: "GetMoreData.htm",
+        PId: "@Model.CurrentModel.TT_ID"
+    };
+</script>
+<script type="text/javascript" src="@Url.Content("~/asset/js/jquery.mousewheel.js")"></script>
+<script type="text/javascript" src="@Url.Content("~/asset/js/imgScroll.js")"></script>
+

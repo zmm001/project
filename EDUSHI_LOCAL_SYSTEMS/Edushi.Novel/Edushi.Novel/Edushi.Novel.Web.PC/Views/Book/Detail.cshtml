@@ -1,0 +1,207 @@
+﻿@using Edushi.Novel.Model
+@using Edushi.Novel.Common
+@model  BookModel
+@{
+    ViewBag.Title = "爱上头条（E都市）小说频道";
+}
+<body>
+    <div class="header-box wrapper clearfix">
+        @Html.Partial("/Views/Shared/_PartialSearch.cshtml")
+        <div class="fr tips">
+            @Html.Partial("/Views/Shared/_PartialUserCenter.cshtml")
+        </div>
+    </div>
+
+    <div class="main-nav">
+        <div class="wrapper">
+            @Html.Partial("/Views/Shared/_PartialMenu.cshtml")
+            <div class="show-classify">
+                <div class="hover-pos"></div>
+                <div class="classify-list category-list">
+                    @Html.Partial("/Views/Shared/_PartialCagoryList.cshtml")
+                </div>
+            </div>
+        </div>
+    </div>
+    @if (Model != null)
+    {
+        <div class="wrapper">
+            <div class="urhere">
+                <a href="@Url.Content("~")" target="_blank">首页</a>
+                <a href="@Url.Content(string.Format("~/info/bookstore.html?category1={0}&category2={1}", Model.CategoryInfo.Category1, Model.CategoryInfo.Category2))" target="_blank">@Model.CategoryInfo.CategoryName3</a>
+                <span>@Model.Name</span>
+            </div>
+            <div class="book-content-wrap clearfix">
+                <div class="fl left-wrap">
+                    <div class="book-information clearfix">
+                        <div class="fl book-img"><img src="@Model.CoverImage"></div>
+                        <div class="fl book-info">
+                            <div class="name">
+                                <h1>@Model.Name</h1>
+                                <span>@Model.Author 著</span>
+                            </div>
+                            <div class="tags">
+                                <div class="tips"><span>@(Model.WordNum / 10000) 万字</span><span>@Model.Status.GetDescription()</span><span>@Model.CategoryInfo.CategoryName3</span></div>
+                            </div>
+                            <div class="tools">
+                                <span class="read">开始阅读</span>
+                                <input type="hidden" id="hidUrl" value="@(Url.Content("~/"))" />
+                                <span id="bookstore"></span> <!-- 已添加到书架后样式改为 in-shelf -->
+                            </div>
+                        </div>
+                    </div>
+                    <div class="nav-tab-title">
+                        <a class="act">作品简介</a>
+                    </div>
+                    <div class="book-intro" id="bookIntro">
+                        @Model.Description
+                    </div>
+                    @if (Model.ChapterList != null && Model.ChapterList.Any())
+                    {
+                        <div class="catalog-box" id="catalog">
+                            <div class="book-title">正文卷 · 共 @Model.ChapterList.Count 章@*<span>免费本卷共240936字</span>*@</div>
+                            <ul class="clearfix">
+                                @{
+                        int cnt = 1;
+                        foreach (var chapter in Model.ChapterList)
+                        {
+                            <li><a href="@Url.Content(string.Format("~/info/read.html?BookId={0}&chapter={1}",Model.SourceBookId,cnt))" value="@chapter.ID">@chapter.Title</a></li>
+                            cnt++;
+                            if (cnt > 9)
+                            {
+                                break;
+                            }
+                        }
+                                }
+                            </ul>
+                        </div>
+                    }
+                    @if (Model.Recommends != null && Model.Recommends.Any())
+                    {
+                        <div class="recommend-title">同类推荐</div>
+                        <div class="recommend-list">
+                            <div class="book-scroll-box">
+                                <ul class="clearfix books-list">
+                                    @foreach (var item in Model.Recommends)
+                                    {
+                                        <li>
+                                            <a href=@item.Href target="_blank">
+                                                <div class="pic"><img src=@item.CoverImage></div>
+                                                <div class="text">
+                                                    <p class="name">@item.Name</p>
+                                                    <p class="author">@item.Author 著</p>
+                                                </div>
+                                            </a>
+                                        </li>
+                                    }
+                                </ul>
+                            </div>
+                            <div class="btn">
+                                <span class="prev"></span>
+                                <span class="next"></span>
+                            </div>
+                        </div>
+                    }
+                </div>
+                @if (Model.RankList != null && Model.RankList.Any())
+                {
+                    <div class="fr right-wrap">
+                        <div class="current-rank">
+                            <div class="nav-title"><span>本期</span>排行</div>
+                            <ul>
+                                @foreach (var item in Model.RankList)
+                                {
+                                    <li>
+                                        <a href=@item.Href target="_blank" class="clearfix">
+                                            <div class="fl pic">
+                                                <img src=@item.CoverImage>
+                                            </div>
+                                            <div class="fr text">
+                                                <p class="name">@item.Name</p>
+                                                <p class="author">@item.Author 著</p>
+                                                <div class="intro">@item.Description</div>
+                                            </div>
+                                        </a>
+                                    </li>
+                                }
+                            </ul>
+                        </div>
+                    </div>
+
+                }
+            </div>
+        </div>
+    }
+    <div class="pop-content">
+        <div class="pop-box">
+            <div class="msg" id="msg">已成功加入书架</div>
+            <span class="btn cancel">知道了</span>
+            <a class="btn confirm" href="javascript:void(0);" style="display: none;">去看看</a>
+        </div>
+    </div>
+    <script src="~/asset/js/indexbanner.js"></script>
+    <script src="~/asset/js/common.js"></script>
+    <script type="text/javascript">
+        var data = {
+            UserID: "@UserCenter.GetUserId()",
+            BookID: "@Model.ID",
+            AddedDate: "@DateTime.Now",
+            ChapterID: 1,
+            ReadTime: "@DateTime.Now"
+        }
+        $(function () {
+            //同类推荐滚动
+            var bookScroll = new imgScroll();
+            bookScroll.init({
+                ulWidth: ".recommend-list ul",
+                moveUl: ".recommend-list ul",
+                moveTime: 500,
+                moveNum: 6,
+                prev: ".recommend-list .prev",
+                next: ".recommend-list .next"
+            });
+            var obj = { bookName: '@Model.Name', categoryName: '@Model.CategoryInfo.CategoryName3', category1: '@Model.CategoryInfo.Category1', category2: '@Model.CategoryInfo.Category2' }
+            var str = JSON.stringify(obj)
+            sessionStorage.obj = str;
+
+            var isLogin = getCookie();
+            if (isLogin == "OK") {
+                var url = $("#hidUrl").val() + "IsExistBookRack.htm";
+                $.ajax({
+                    url: url,
+                    type: 'post',
+                    async: true,
+                    data: { "BookID": data.BookID },
+                    success: function (response) {
+                        if (response != null && response != "false") {
+                            $("#bookstore").attr("class", "in-shelf");
+                        } else {
+                            $("#bookstore").attr("class", "shelf");
+                        }
+                    }
+                })
+            } else {
+                $("#bookstore").attr("class", "shelf");
+            }
+        })
+        $('#bookstore').on("click", function () {
+            if (!$('#bookstore').hasClass('in-shelf'))
+                addBookRack(data, this)
+        })
+        $('.tools .read').on("click", function () {
+            addReadRecord(data)
+            window.location.href = window.location.origin + "/info/read.html?BookId=" +@Model.SourceBookId +"&chapter=1"
+            //window.location.href = "http://xiaoshuo.edushi.com/info/read.html?BookId=" +@Model.SourceBookId +"&chapter=1"
+        })
+        function popUp(msg, flag, url, text) {
+            $(".pop-content").show();
+            $("#msg").text(msg);
+            if (flag && flag == 1) {
+                $(".pop-content .confirm").text(text).attr("href", url).show();
+            }
+        }
+        $(".pop-box .cancel").click(function () {
+            $(".pop-content").hide();
+        })
+    </script>
+</body>

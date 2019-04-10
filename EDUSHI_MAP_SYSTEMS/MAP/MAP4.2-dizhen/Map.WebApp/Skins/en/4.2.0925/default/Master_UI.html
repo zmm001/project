@@ -1,0 +1,170 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+<meta name="Keywords" content="{$Keywords}" />
+<meta name="Description" content="{$Description}" />
+<link href="{$SkinPath}css/style.css" rel="stylesheet" type="text/css" />
+<title>{$PageTitle}</title>
+<script type="text/javascript" src="JS/lib.js"></script>
+<script type="text/javascript" src="JS/GeneralJSLibrary.js"></script>
+<script language="javascript" type="text/javascript" src="Definition.aspx?l={$Language}"></script>
+<script language="javascript" type="text/javascript" src="Javascript.aspx?l={$Language}&t=controls"></script>
+<script language="javascript" type="text/javascript" src="Plugin.aspx?l={$Language}"></script>
+<script type="text/javascript" src="Javascript.aspx?l={$Language}&f=Language.js"></script>
+<script type="text/javascript" src="Javascript.aspx?l={$Language}&f=eds_eye.js"></script>
+<script type="text/javascript" src="Javascript.aspx?l={$Language}&f=Mark.js"></script>
+<script type="text/javascript" src="Javascript.aspx?l={$Language}&f=Init.js"></script>
+</head>
+<body style="overflow:hidden;">
+<div id="BG" style="display:none"></div>
+<!--<div id="BGLoading">
+    <img src="images/bgloading.gif" alt="loading" /><br />
+    地图加载中,请稍候....
+</div>
+<script type="text/javascript">
+    $('BG').style.height = fnGetWindowHeight() + 'px';
+    $('BGLoading').style.top = fnGetWindowHeight()/2-50 + 'px';
+    $('BGLoading').style.left = fnGetWindowWidth()/2-100 + 'px';
+</script>-->
+<div id="Top" class="Top"> 
+    <!--菜单栏-->
+	<div style="position: absolute; z-index: 307; width: 100%; height: 70px; overflow: hidden; filter:progid:DXImageTransform.Microsoft.BasicImage(grayscale=1)">
+		<div class="Sign" style="filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='images/newmap03.png',sizingMethod='image');"><!--[if !IE]><!--><img src="images/newmap03.png" alt="" /><!--<![endif]--></div>
+		<div class="Left" style="filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='images/newmap02.png',sizingMethod='image');"><!--[if !IE]><!--><img src="images/newmap02.png" alt="" /><!--<![endif]--></div>
+		<div class="Over">
+		    <span style=" padding-top:4px;"><img  src="images/c.gif" alt="Edushi.com" /></span>
+		    <span  style="color:#000;">Current City：<span id="T_City" style=" font-weight:bold">{$CityName}</span></span>
+		    <span  style="color:#000;"><a href="?L=zh-chs" target="_top"> <span style="color:#F96912">{简体中文}</span></a></span>
+			<img src="images/newmap04.gif" alt="" /><a href="javascript:fnShowCityList();">Citys</a> |
+			<!--<img src="images/newmap05.gif" alt="" /><a href="/yp/" target="_blank">{$CityName}Yellow Page</a> |	-->		
+			<img src="images/newmap08.gif" alt="" /><a href="http://www.edushi.com/help/help.html" target="_blank">Help</a> |			
+			<a href="http://www.edushi.com/about/GuestBook.aspx?c={$CityCode}&l={$Language}" target="_blank">Contact us</a>
+	    </div>
+		<div class="MLeft" id="news">
+		    <div id="newsC"></div>	
+		</div>
+		<div class="MCenter">
+			<ul id="MapToolBar">
+				<li id="tnote" onclick="fnSelectMarkPoint();"><a title="New Mark" ></a></li>				
+				<li id="tscale" onclick="fnScale();"><a title="Survey Distance"></a></li>
+				<li id="tsel" onclick="fnPanel();"><a title="Pane Choose"></a></li>
+				<li id="tnav"><a  title="Navingation" href="javascript:fnShowNav();"></a></li>
+				<li id="tfull" onclick="fnFullSrc();"><a title="Fullscreen"></a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="BlackB"></div>
+</div>
+<!--加载地图-->
+<div id="EdushiMap" style="position: absolute; z-index:1; top: 32px; left: 0px; width:1020px; height:500px;"></div>
+	
+<!--搜索工具条-->
+<div id="Tool" class="Tool" style="FILTER: Alpha(opacity=100);" >
+    <div style="position:absolute; height:30px; width:20px; z-index:9999; cursor:move;"></div>
+</div>
+
+
+<!--鹰眼-->
+<div id="Eye" class="Eye" >
+    <div id="eyeEdushiMap" class="Map">
+    </div>  
+    <div id="EyeMapDiv" class="Emin"></div>
+    <div id="EzoomBar" class="Level" onselectstart="return false" >
+    	<div id="Change2D3D" class="Change2D3D"><img src="images/newmap482d.gif"></div>
+        <div id="EzoomMax" class="MapBig" title="Zoom to max"></div>
+        <div id="Ezoom0"  class="UnAction"></div>
+        <div id="Ezoom1"  class="UnAction"></div>
+        <div id="Ezoom2"  class="UnAction"></div>
+        <div id="Ezoom3"  class="UnAction"></div>
+        <div id="MapSilder"  title="Zoom Bar"></div>
+        <div id="EzoomMin" class="MapSamll" title="Zoom to min" ></div>
+    </div>
+    <a id="EbottomMM" class="Edu" ></a>
+    <a id="Eout" class="Eout" ></a>    
+</div>
+<div id="Ein" style="display:none;"><a id="Eina" class="Eina" ></a></div>
+<!--搜索结果面板-->
+<div id="DragWindow" class="Result" style="top:175px; left:0px;">
+    <div style="position:absolute; height:30px; width:20px; z-index:9999; cursor:move;"></div>
+</div>
+
+<div id="srcExit" onclick="fnFullSrc();" style="display:none;"><img alt="Exit" src="images/srcexit.jpg" /></div>
+<div id="CopyRight"><div class="bg"></div><div class="con" onselectstart="return false;"><a href="{$ProprietorUrl}" style="color:#fff;" target="_blank">{$Proprietor}</a> </div></div>
+<div id="EdushiAnnounce"><div class="bg"></div><div id="EdushiAnnounceText" class="con" onselectstart="return false;" style="height:20px;">
+</div></div>
+
+<div id="proMapTool">
+    <div id="proMap_out" class="pout" onclick="fnProMapOut();" style="display:none;"></div>
+    <div id="proMap" class="proMap" style=" display:none;">
+        <div class="left" style="filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='images/left.png',sizingMethod='image');"><!--[if !IE]><!--><img height="217px" src="images/left.png"/><!--<![endif]--></div>
+        <div id="proMapC" class="center" style=" filter:progid:DXImageTransform.Microsoft.BasicImage(grayscale=1)"></div>
+        <div class="right" style="filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='images/right.png',sizingMethod='image');"><!--[if !IE]><!--><img height="217px" src="images/right.png"/><!--<![endif]--></div>
+    </div>
+</div>
+<!--下拉工具条-->
+<div class="menu" id="EdushiMenu" >
+        <ul>
+        <li onmouseover="ShowUL('aMark','JDMark')" onmouseout="HideUL('aMark','JDMark')" style="width:65px; margin-right:2px;">
+            <a id="aMark" class="unactive" href="#" style="width: 65px;">My Marks</a><ul id="JDMark">
+            <li onmouseover="OverBackground(this)" onmouseout="OutBackground(this)" onclick="fnSelectMarkPoint();HideUL('aMark','JDMark');">New Mark</li>
+            <li style="border:2px solid #8f8f8f;border-width:1px 0px 0px 0px;" id="MarkShowall" onmouseover="OverBackground(this)" onmouseout="OutBackground(this)" onclick="_Mark.ShowAll();fnMarkLi(this);" class="unaction" ><div><img src="images/gou.gif"/></div><a>Display</a></li>
+            <li id="MarkHiddinall" onmouseover="OverBackground(this)" onmouseout="OutBackground(this)" onclick="_Mark.Hidden();fnMarkLi(this);" class="action"><div><img src="images/gou.gif"/></div><a>Hide</a></li>
+            <li style="border:2px solid #8f8f8f;border-width:1px 0px 0px 0px;" onmouseover="ShowLIUL(this);OverBackground(this);" onmouseout="OutBackground(this);HideLIUL(this.childNodes[1])">Marks &gt;
+                <ul id="MarkLi" onmouseout="HideLIUL(this)" style=" width:150px; ">
+                <li onclick="alert(3);">Clear</li>
+                </ul>
+            </li>
+            </ul>
+        </li>                         
+        <li onmouseover="ShowUL('aShow','JDShow')" onmouseout="HideUL('aShow','JDShow')">
+            <a id="aShow" href="#" class="unactive">Display</a>
+            <ul onmouseout="HideUL('aShow','JDShow')" id="JDShow">
+                <li onmouseover="OverBackground(this)" onmouseout="OutBackground(this)" onclick="fnLabel();fnShowli(this);" class="unaction"><div><img src="images/gou.gif"/></div><a>Mark</a></li>	                       
+                <li onmouseover="OverBackground(this)" onmouseout="OutBackground(this)" onclick="fnRoad();fnShowli(this);" class="action"><div><img src="images/gou.gif"/></div><a>Guidepost</a></li>
+                <li onmouseover="OverBackground(this)" onmouseout="OutBackground(this)" onclick="fnStation();fnShowli(this);" class="action"><div><img src="images/gou.gif"/></div><a>Bus Station</a></li>
+                <li onmouseover="OverBackground(this)" onmouseout="OutBackground(this)" onclick="fnSubWay();fnShowli(this);" class="action"><div><img src="images/gou.gif"/></div><a>Subway</a></li>
+                <li style="padding-bottom:3px;" onmouseover="OverBackground(this)" onmouseout="OutBackground(this)" onclick="fnPack();fnShowli(this);" class="action"><div><img src="images/gou.gif"/></div><a>Park</a></li>
+                <li style="border:2px solid #8f8f8f;border-width:1px 0px 0px 0px; padding-top:2px;" id="Li1" onmouseover="OverBackground(this)" onmouseout="OutBackground(this)" onclick="fnDisplayTool('Tool');fnShowli(this);" class="action" >
+                    <div><img src="images/gou.gif"/></div><a>Search Panel</a>
+                </li>
+                <li class="action" onclick="fnDisplayTool('Eye');fnShowli(this);" onmouseout="OutBackground(this)" onmouseover="OverBackground(this)">
+                    <div><img src="images/gou.gif" /></div>
+                    <a>Bird's Eve</a> 
+                </li>
+                <li class="action" onclick="fnDisplayTool('proMapTool');fnShowli(this);" onmouseout="OutBackground(this)" onmouseover="OverBackground(this)">
+                    <div><img src="images/gou.gif" /></div>
+                    <a>Theme Panel</a> 
+                </li>
+            </ul>
+        </li>
+        <li onmouseover="ShowUL('aHistroy','JDhistroy')" onmouseout="HideUL('aHistroy','JDhistroy')">
+        <a id="aHistroy" href="#" class="unactive" style="width:65px;">History</a>
+            <ul onmouseout="HideUL('aHistroy','JDhistroy')" id="JDhistroy">
+                <li id="NoHistoryLi">no-records</li>
+            </ul>
+        </li>
+        </ul>
+</div>
+</body>
+</html>
+<script type="text/javascript" src="http://api2.edushi.com/0710/api.js/Api2.aspx?City={$CityCode}&L={$Language}&MapID=EdushiMap&x={$X}&y={$Y}&w=1020&h=500&eye=1&ew=190&eh=145&e=utf-8&v=1"></script>
+<script type="text/javascript">
+    fnLoadInit();
+</script>
+<script language="javascript" type="text/javascript" src="http://count.edushi.com/cf.aspx?user_name={$CityCode}"></script>
+<script language="javascript" type="text/javascript">
+	var cc_oImg = document.getElementsByTagName('a');
+	for(var i=0;i<cc_oImg.length;i++)
+	{
+		if(cc_oImg[i].href.indexOf('count.edushi.com')>0)
+		{
+			cc_oImg[i].style.display = 'none';
+			if(cc_oImg[i+1] && cc_oImg[i+1].href.indexOf('count.edushi.com')>0)
+			{
+				cc_oImg[i+1].style.display = 'none';
+			}
+			break;
+		}
+	}
+	cc_oImg = null;
+</script>

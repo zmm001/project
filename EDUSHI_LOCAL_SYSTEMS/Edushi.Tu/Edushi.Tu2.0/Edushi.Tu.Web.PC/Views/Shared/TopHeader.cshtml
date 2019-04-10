@@ -1,0 +1,23 @@
+﻿@{
+    string channelUrl = ViewBag.ChannelUrl;
+    string channelName = ViewBag.ChannelName;
+}
+@Html.Raw(ViewBag.HeaderHtml)
+
+@if (!string.IsNullOrWhiteSpace(channelUrl))
+{
+    <div class="special-top">
+        <div class="fl-tips">
+            <a href="http://www.edushi.com/" target="_blank" class="logo"><img src="@Url.Content("~/asset/images/logo_d.png")"></a>
+            <a href="@Url.Content("~/")" target="_blank" class="tu-logo"></a> 
+            <span class="urhere">
+                <a href="http://www.edushi.com/" target="_blank">首页</a>
+                <a href="@Url.Content("~/")" target="_blank">图闻</a>
+                <a href="@channelUrl" target="_blank">@(channelName)图闻</a>
+                <span>正文</span>
+            </span>
+        </div>
+    </div>
+}
+
+

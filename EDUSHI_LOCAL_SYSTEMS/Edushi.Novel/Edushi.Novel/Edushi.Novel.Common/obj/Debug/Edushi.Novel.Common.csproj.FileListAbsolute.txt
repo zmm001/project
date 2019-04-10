@@ -1,0 +1,11 @@
+E:\TFS192.168.100.212\EDUSHI_LOCAL_SYSTEMS\Edushi.Novel\Edushi.Novel\Edushi.Novel.Common\bin\Debug\Edushi.Novel.Common.dll
+E:\TFS192.168.100.212\EDUSHI_LOCAL_SYSTEMS\Edushi.Novel\Edushi.Novel\Edushi.Novel.Common\bin\Debug\Edushi.Novel.Common.pdb
+E:\TFS192.168.100.212\EDUSHI_LOCAL_SYSTEMS\Edushi.Novel\Edushi.Novel\Edushi.Novel.Common\bin\Debug\Edushi.Novel.Cache.dll
+E:\TFS192.168.100.212\EDUSHI_LOCAL_SYSTEMS\Edushi.Novel\Edushi.Novel\Edushi.Novel.Common\bin\Debug\Edushi.User.dll
+E:\TFS192.168.100.212\EDUSHI_LOCAL_SYSTEMS\Edushi.Novel\Edushi.Novel\Edushi.Novel.Common\bin\Debug\log4net.dll
+E:\TFS192.168.100.212\EDUSHI_LOCAL_SYSTEMS\Edushi.Novel\Edushi.Novel\Edushi.Novel.Common\bin\Debug\Newtonsoft.Json.dll
+E:\TFS192.168.100.212\EDUSHI_LOCAL_SYSTEMS\Edushi.Novel\Edushi.Novel\Edushi.Novel.Common\bin\Debug\Edushi.Novel.Cache.pdb
+E:\TFS192.168.100.212\EDUSHI_LOCAL_SYSTEMS\Edushi.Novel\Edushi.Novel\Edushi.Novel.Common\bin\Debug\Newtonsoft.Json.xml
+E:\TFS192.168.100.212\EDUSHI_LOCAL_SYSTEMS\Edushi.Novel\Edushi.Novel\Edushi.Novel.Common\obj\Debug\Edushi.Novel.Common.csprojResolveAssemblyReference.cache
+E:\TFS192.168.100.212\EDUSHI_LOCAL_SYSTEMS\Edushi.Novel\Edushi.Novel\Edushi.Novel.Common\obj\Debug\Edushi.Novel.Common.dll
+E:\TFS192.168.100.212\EDUSHI_LOCAL_SYSTEMS\Edushi.Novel\Edushi.Novel\Edushi.Novel.Common\obj\Debug\Edushi.Novel.Common.pdb

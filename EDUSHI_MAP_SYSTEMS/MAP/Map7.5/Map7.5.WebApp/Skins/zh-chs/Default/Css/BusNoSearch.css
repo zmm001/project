@@ -1,0 +1,55 @@
+﻿@import url(Common.css);
+.Bus{height:auto; width:310px;overflow-x:hidden;overflow-y:auto;}
+.EachRow{margin:5px 0;}
+.DottedLine{background:url(../Images/SearchNavLine.gif) repeat-x left center; height:1px; font-size:0;/*for IE6*/}
+.BusLineNormal{padding:3px 3px 3px 12px; cursor:pointer; background:url(../Images/DownIco.gif) no-repeat 3px 7px;}
+.BusLineActive{padding:3px 3px 3px 12px; cursor:pointer; background:#f6f6f6 url(../Images/UpIco.gif) no-repeat 3px 7px;}
+
+.BusLineNormal strong,.BusLineActive strong{color:#FF6600;}
+
+ul.Info{margin:0; padding:0; list-style-type:none;}
+ul.Info li{ height:21px; line-height:21px; padding-left:16px; background:url(../Images/ArrowCircle1.gif) no-repeat 6px center;}
+
+.Bus .Info li font{color:#FF6600;}
+
+.NameHead{height:25px; line-height:25px; text-align:center; width:267px;}
+.ActionLeft,.UnActionLeft,.ActionRight,.UnActionRight{float:left;text-align:center;height:25px;cursor:pointer;overflow:hidden;}
+
+.ActionLeft,.ActionRight{border:solid #CCC; border-width:1px 1px 0 1px; width:134px;background:url(../Images/NameHeadBg.gif) repeat-x left top; font-weight:bold;}
+.UnActionLeft{border:1px solid #CCC;border-width:1px 0 1px 1px;width:130px;height:24px;}
+.UnActionRight{border:solid #adadad; border-width:1px 1px 1px 0px;width:130px;height:24px;}
+
+.BusShow{ width:268px;}
+.BusRemark{border-bottom:1px solid #CCC; padding:0px;}
+.BusRemark p{padding:1px 0;margin:0;}
+
+ul.BusName{padding:1px 0; margin:5px 4px; color:#666;}
+ul.BusName li{padding-left:5px; height:25px; margin:1px 0; line-height:25px; background:url(../Images/SearchNavLine.gif) repeat-x left bottom;}
+
+.BusShow .BusName li span{ color:#369; margin-left:5px; cursor:pointer;}
+.Photo{height:60px;width:269px; margin:5px 0;}
+
+
+/*新公交*/
+.bus_box{width:310px; overflow:auto;}
+.bus_pubsearch{ width:305px; height:49px; margin:5px 0 0 3px; background:url(../images/search.gif) no-repeat; }
+.pub_search{ float:left;margin:11px 0 0 13px;width:208px;height:13px; font-size:12px; border:0;}
+.pub_btn{width:45px; height:20px;cursor: pointer; border:0; background:url(../images/bus_btn.gif) no-repeat; float:left;margin:8px 0 0 14px !important;margin:8px 0 0 10px;}
+.pub_text{ float:left; width:220px;font-size:12px; line-height:20px; color:#827f7f; margin:-2px 0 0 14px; display:inline;}
+.bus_line{ float:left;margin:5px 0 0 4px;width:305px; padding:0 0 3px 0; display:inline;overflow-y:auto;overflow-x:hidden;}
+.bus_line h1{width:265px;font-size:12px; color:#333; font-weight:normal; text-align:left; text-indent:8px;margin:0px;}
+.bus_line_top{ width:271px; height:3px;background:url(../images/line_top.gif) no-repeat; margin-top:2px; overflow:hidden;}
+.bus_line_mid{ width:269px;border:1px solid #bbb9b9; border-width:0 1px; padding:0; margin:0; display:block; float:left;}
+.bus_line_mid h2{width:268px; height:23px; background:url(../images/line_bg.gif) repeat-x;overflow:hidden; margin:0 0 0 1px;}
+.bus_line_down{ width:270px; height:3px;background:url(../images/line_down.gif) no-repeat; margin-bottom:8px;padding:0;overflow:hidden;}
+.mid_sc{ width:10px; height:10px; margin:5px 0 0 7px;}
+.mid_name{font-size:12px;text-align:left; text-indent:28px; color:#333333; font-weight:normal; text-align:left; float:left; margin:-12px 0 0 -2px;overflow:hidden; text-overflow:ellipsis;white-space:nowrap;width:265px}
+.bus_sx{ width:268px; height:26px; background:url(../images/shangxing.gif) no-repeat;}
+.bus_sx_s a{ font-size:13px;display:block;width:130px; height:22px; color:#333; text-indent:50px; line-height:30px; text-decoration:none; letter-spacing:12px; overflow:hidden; float:left;}
+.bus_zhan_con{width:269px; height:42px; margin:5px 0 0 0; padding:0; }
+.bus_zhan_con li{ float:left; text-align:left;background:url(../images/bus_ico10.gif) no-repeat 2px 5px; font-size:12px; font-weight:normal; margin:3px 11px 3px 3px; text-indent:12px; list-style-type:none; padding:0;}
+.bus_zhan_btn img{ margin:0 1px 0 1px}
+
+.bus_zhanming{ float:left;width:261px;margin:3px 0 0 2px; padding:0;}
+.bus_zhanming li{font-size:12px; background:url(../images/bus_ico11.gif) no-repeat 0 5px; text-indent:14px; color:#666; list-style-type:none; line-height:18px; margin:0 0 0 8px;}
+.bus_zhanming li a{ color:#336699;margin:0px 0 0 6px;}

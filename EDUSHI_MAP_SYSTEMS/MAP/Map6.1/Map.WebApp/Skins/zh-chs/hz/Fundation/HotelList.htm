@@ -1,0 +1,57 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head>
+    <title>酒店预订</title>
+        <script language="javascript" type="text/javascript" src="/Js/GeneralLib.js"></script>
+         <script language="javascript" type="text/javascript" src="HotelSearch.js"></script>
+         
+    <link  rel="stylesheet" href="/Css/LocalSearch.css" type="text/css" />
+    <script type="text/javascript">
+     var _PrevElement = null;
+    </script>
+    <style type="text/css">
+        #btsearch
+        {
+            width: 104px;
+        }
+        #hoteladv  {margin-top:5px; }
+        #hoteladv ul{list-style-type:none;padding:0;margin:0;}       
+        #hoteladv ul li{background:url(../Images/jianadv.gif) left  no-repeat; padding-left:22px; line-height:180%;}
+        #hoteladv ul li a{ color:#f35b08}
+        #hoteladv ul li a:link  { color:#f35b08;}
+        #hoteladv ul li a:visited { color:#f35b08;}
+        #hoteladv ul li a:hover { color:#f35b08;}
+        #hoteladv ul li a:active { color:#f35b08;}     
+    </style>
+</head>
+<body>
+
+ <div class="LocalResult" id="TabContent" style="position:relative">
+        <div id="divResult" style="height:20px;position:relative"></div>
+        <div>
+<!--    <script type="text/javascript">
+                google_ad_client = "pub-6571762537302535";
+                /* 地图搜索列表广告，234x60 */
+                google_ad_slot = "9399502436";
+                google_ad_width = 234;
+                google_ad_height = 60;
+            </script>
+            <script type="text/javascript" src="http://pagead2.googlesyndication.com/pagead/show_ads.js"></script>-->
+        </div>
+       <div>
+        <input type="text" id="txkeyword" 
+               
+               style="border-left: 1px solid #84A5CE; border-right: 1px solid #C1D2E7; border-top: 1px solid #84A5CE; border-bottom: 1px solid #C1D2E7; background-color:#F7FBFF; width: 170px;"  />&nbsp; <img src="../Images/jdydsearch.gif" style="border:0px; vertical-align:bottom "  onclick="searchkeyword()" />
+      </div>  
+ 
+      <div  id='hoteladv'>
+     
+      </div>
+ 
+  <div  id="divContent">
+
+   </div>
+  </div>
+
+</body>
+</html>

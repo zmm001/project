@@ -1,0 +1,50 @@
+﻿@{
+    ViewBag.Title = "BookList";
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>爱上头条（E都市）小说频道-排行</title>
+    @Html.Partial("/Views/Shared/_PartialHead.cshtml")
+</head>
+<body>
+    <div id="app" v-cloak>
+        <header>
+            <span class="back" onclick="javascript:history.go(-1);"></span>
+            <span class="title">排行榜</span>
+            <span class="nav"></span>
+            @Html.Partial("/Views/Shared/_PartialMenu.cshtml")
+        </header>
+        <div class="main-container">
+            <section class="module">
+                <ul class="books-list rank-list">
+                    <li v-for="item in booksList">
+                        <a v-bind:href="item.Href" v-cloak>
+                            <div class="img"><img v-bind:src="item.CoverImage"></div>
+                            <div class="info">
+                                <div class="name">{{item.Name}}</div>
+                                <div class="book-info">{{item.Description}}</div>
+                                <div class="book-tags">
+                                    <div class="author">{{item.Author}}</div>
+                                    <div class="tags">
+                                        <span>{{item.Status==1?"已完结":"连载中"}}</span>
+                                        <span>{{item.CategoryName}}</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </li>
+
+                </ul>
+                <div class="loading">加载中</div>
+            </section>
+        </div>
+        @Html.Partial("/Views/Shared/_PartialUserCenter.cshtml")
+        @Html.Partial("~/Views/Shared/_PartialFooter.cshtml")
+    </div>
+    
+    <script type="text/javascript" src="~/Content/asset/js/common.js"></script>
+    <script type="text/javascript" src="~/Content/asset/js/Novel/rank.js?v=20180808"></script>
+
+</body>
+</html>

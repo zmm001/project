@@ -1,0 +1,749 @@
+﻿@using Edushi.Common
+@using Edushi.WenDa.Web.PC.Helper
+@model Edushi.WenDa.Web.PC.Models.DetailModel
+@{
+    ViewBag.Title = string.Format("{0}-{1}频道-E都市问答", Html.Raw(Model.Question.IQ_Title), Model.TypeName);
+    var sub = string.Empty;
+    if (Model.Tags != null && Model.Tags.Any())
+    {
+        sub = string.Join(",", Model.Tags);
+    }
+    var loginUserId = DataHelper.GetUserId();
+    var smallSize = Common.GetConfigString("SmallImgSize");
+    var userUrl = Common.GetConfigString("domain_UserCenter");
+}
+
+@section meta
+{
+    <meta name="Keywords" content="@(string.IsNullOrWhiteSpace(sub)?"":sub+"-")@(Model.Question.IQ_Title)" />
+    <meta name="Description" content="@(string.IsNullOrWhiteSpace(Model.Question.IQ_Content) ? "" : Model.Question.IQ_Content + "-")@(Model.Question.IQ_Title)" />
+}
+<link rel="stylesheet" type="text/css" href="@Url.Content("~/asset/css/detail.css")">
+<link rel="stylesheet" type="text/css" href="@Url.Content("~/asset/css/quill.snow.css")">
+
+@Html.Partial("_HeaderWithSearch", string.Empty)
+
+<div class="wrapper main-container clearfix">
+    <div class="fl main-box">
+        <div class="question">
+            @if (Model.Tags != null && Model.Tags.Any())
+            {
+                <div class="tags">
+                    @foreach (var keyword in Model.Tags)
+                    {
+                        <a href="@string.Format("{0}info/search.html?keyword={1}", Url.Content("~/"), HttpUtility.UrlEncode(keyword))" target="_blank">@keyword</a>
+                    }
+                </div>
+            }
+
+            <div class="content">
+                <h1>@Html.Raw(Model.Question.IQ_Title)</h1>
+                <div class="text">
+                    <p>@Html.Raw(Model.Question.IQ_Content)</p>
+                </div>
+                <div class="img">
+                    @if (Model.imgs != null && Model.imgs.Count > 0)
+                    {
+                        foreach (var img in Model.imgs)
+                        {
+                            <div>
+                                <a href="@img.href" target="_blank"><img src="@img.src"></a>
+                            </div> 
+                        } 
+                    }
+                </div>
+            </div>
+            @*todo:邀请回答*@
+            <ul class="oper js-oper">
+                <li class="writer">
+                    @{
+                        var qNickName = Model.QuestionUserInfo != null ? Model.QuestionUserInfo["NickName"] : "E都市网友";
+                        var qUserHead = Model.QuestionUserInfo != null ? ViewBag.UserHeaderDomain + Model.QuestionUserInfo["Avatar"] : Url.Content("~/asset/images/userhead.jpg");
+                        int qUserId = Model.QuestionUserInfo != null ? (int)Model.QuestionUserInfo["ID"] : 0;
+                        var qWendaUserUrl = qUserId > 0 ? "href=" + userUrl + "wenda/index/1-" + qUserId + ".html target=_blank" : "";
+                    }
+                    <a @qWendaUserUrl class="photo">
+                        <img src="@qUserHead" />@qNickName
+                    </a>
+                    <span>@Common.TimeInterval(Model.Question.IQ_CreateDate.Value, DateTime.Now)</span>
+                </li>
+                <li class="favorite">收藏问题 ( @(Model.CollectionCount)人收藏 )</li> <!-- 点击收藏后添加样式 on -->
+                <script>
+                    $.post("/GetIsFavorites.htm",
+                        { "id": "@Model.Question.IQ_ID" },
+                        function (data) {
+                            if (data) {
+                                if (data.ResultCode == -2) {
+                                    $(".favorite").addClass("on").text("已收藏");
+                                }
+                            }
+                        });
+                </script>
+                <li class="report"><a href="http://report.edushi.com/report" target="_blank">举报</a></li>
+                <li class="share">
+                    分享
+                    <div class="hid-share">
+                        <a href="javascript:void(0);" class="weixin">
+                            <div class="wx-qr">
+                                <img src="@Url.Content("~/asset/images/0302.jpg")" />
+                            </div>
+                        </a>
+                        <a href="javascript:void(0);" class="qq"></a>
+                        <a href="javascript:void(0);" class="qzone"></a>
+                        <a href="javascript:void(0);" class="weibo"></a>
+                    </div>
+                </li>
+                @if (Model.QuestionUserInfo != null && loginUserId != Convert.ToInt32(Model.QuestionUserInfo["ID"]))
+                {
+                    var isAttention = Edushi.WenDa.Web.PC.Controllers.DetailController.GetIsAttentioned(int.Parse(Model.QuestionUserInfo["ID"].ToString()));
+                    <li @Html.Raw(isAttention == -2 ? "class=\"follow-btn on\"" : "class=\"follow-btn\"") data-uid="@Model.QuestionUserInfo["ID"]">@(isAttention == -2 ? "已关注" : "关注")</li>         
+                }
+            </ul>
+        </div>
+
+        <div class="editor">
+            <div id="editor-container">
+            </div>
+            <form id="upAnswerImgForm" method="post" enctype="multipart/form-data">
+                <input type="file" name="upfile" class="file" accept="image/jpeg, image/png, image/jpg" title="上传图片">
+            </form>
+            <div class="warn">
+                <p>你的IE浏览器版本过低，为了提升体验,</p>
+                <p>建议升级到IE10以上或使用Chrome、搜狗等浏览器!</p>
+            </div>
+            <textarea class="ietext"></textarea>
+            <div class="publish">
+                <a href="javascript:void(0);" class="publish-btn fr" id="submit_answer">发表答案</a>
+            </div>
+        </div>
+
+        <div class="answer">
+            <div class="header">
+                <span class="title">@(Model.Question.IQ_AnswerCount)个答案</span>
+                <div class="sort fr">
+                    <a href="@Common.GetInfoUrl(Url.Content("~/"),Model.Question.IT_ID_Parent,Model.Question.IQ_ID)" @Html.Raw(Model.SortType == 1 ? "class=\"current\"" : "")>按赞数排</a>
+                    <span>|</span>
+                    <a href="@Common.GetInfoUrl(Url.Content("~/"), Model.Question.IT_ID_Parent, Model.Question.IQ_ID, 2)" @Html.Raw(Model.SortType == 2 ? "class=\"current\"" : "")>按时间排</a>
+                </div>
+            </div>
+            @if (Model.Answers != null && Model.Answers.Any())
+            {
+                <ul class="list js-votebox">
+                    @foreach (var item in Model.Answers)
+                    {
+                        var nickName = item.UserInfo != null ? item.UserInfo["NickName"] : "E都市网友";
+                        var userHead = item.UserInfo != null ? ViewBag.UserHeaderDomain + item.UserInfo["Avatar"] : Url.Content("~/asset/images/userhead.jpg");
+                        int userId = item.UserInfo != null && item.UserInfo["ID"] != null ? (int)item.UserInfo["ID"] : 0;
+                        var wendaUserUrl = userId > 0 ? "href=" + userUrl + "wenda/index/1-" + userId + ".html target=_blank" : "";
+                        <li class="js-votelist" data-id="@item.Id">
+
+                            <div class="answer-user">
+                                <a class="photo" @wendaUserUrl><img src="@userHead" onerror="this.src='@Url.Content("~/asset/images/userhead.jpg")'"></a>
+                                <div>
+                                    <a class="name" @wendaUserUrl>@nickName</a>
+                                    @*<span class="line">|</span>
+                                        <span class="tip">历史问答达人</span>*@
+                                    <span class="time">@item.Time</span>
+                                </div>
+                                @if (item.UserInfo != null && loginUserId != Convert.ToInt32(item.UserInfo["ID"]))
+                                {
+                                    var isAttention = Edushi.WenDa.Web.PC.Controllers.DetailController.GetIsAttentioned(int.Parse(item.UserInfo["ID"].ToString()));
+                                    <a href="javascript:void(0);" @Html.Raw(isAttention == -2 ? "class=\"follow-btn fr on\"" : "class=\"follow-btn fr\"") data-uid="@item.UserInfo["ID"]">@(isAttention == -2 ? "已关注" : "关注")</a>
+                                }
+
+                            </div>
+
+                            <div class="answer-content">
+                                @Html.Raw(item.Content)
+                            </div>
+                            <div class="oper js-oper clearfix" data-id="@item.Id">
+                                @{
+                                    var isZan = Edushi.WenDa.Web.PC.Controllers.SharedController.GetIsUpvoteDownvote(item.Id);
+                                }
+                                <a href="javascript:;" @Html.Raw(isZan == -2 ? "class=\"zan yizan\"" : "class=\"zan\"")><span class="u-num">@item.PraiseCount</span> 赞<em>+1</em></a>
+                                <a href="javascript:;" @Html.Raw(isZan == -3 ? "class=\"cai yicai\"" : "class=\"cai\"")><span class="u-num">@item.StepCount</span> 踩<em>+1</em></a>
+                                <a href="javascript:;" class="comment">@(item.CommentCount) 评论</a>
+
+                                @*<span class="report"><a href="#" target="_blank">举报</a></span>*@
+                            </div>
+                            <div class="anser-comment">
+                                <div class="my-comment">
+                                    @{
+                                        var userImg = Model.LoginUserInfo == null || string.IsNullOrWhiteSpace(Model.LoginUserInfo["Avatar"].ToString()) ? Url.Content("~/asset/images/userhead.jpg") : ViewBag.UserHeaderDomain + Model.LoginUserInfo["Avatar"];
+                                    }
+                                    <a class="photo"><img src="@userImg"></a>
+                                    <textarea placeholder="写下你的评论" class="answer_txt"></textarea>
+                                    <a href="javascript:;;" class="publish-btn">评论</a>
+                                </div>
+                            </div>
+                        </li>
+                    }
+                </ul>
+                if (Model.Answers != null && Model.AnswerCount > Model.Answers.Count)
+                {
+                    <a href="javascript:void(0);" class="fold" id="load_answer"><span>@(Model.AnswerCount - Model.Answers.Count)</span>个回答被折叠</a>
+                }
+            }
+        </div>
+        @if (Model.MoreWendaList != null && Model.MoreWendaList.Any())
+        {
+            <div class="question-list js-votebox" id="datalist">
+                <div class="header">
+                    <span class="title">更多阅读</span>
+                </div>
+                @foreach (var item in Model.MoreWendaList)
+                {
+                    var moreQNickName = item.QUserInfo != null ? item.QUserInfo["NickName"] : "E都市网友";
+                    var moreQUserHead = item.QUserInfo != null ? ViewBag.UserHeaderDomain + item.QUserInfo["Avatar"] : Url.Content("~/asset/images/userhead.jpg");
+                    int moreQUserId = item.QUserInfo != null ? (int)item.QUserInfo["ID"] : 0;
+                    var MoreQWendaUserUrl = moreQUserId > 0 ? "href=" + userUrl + "wenda/index/1-" + moreQUserId + ".html target=_blank" : "";
+                    <div class="question-cnt js-votelist">
+                        <h2 class="q-tit">
+                            <a href="@item.Url" target="_blank">@Html.Raw(item.QTitle)</a>
+                        </h2>
+                        <div class="q-info">
+                            <a @MoreQWendaUserUrl class="photo">
+                                <img src="@moreQUserHead" onerror="this.src='@Url.Content("~/asset/images/userhead.jpg")'" />@moreQNickName
+                            </a>
+                            <span>@item.CreateDate</span><span>@(item.ReplyCount)回答</span><span class="last">@(item.CollectionCount)人收藏</span>
+                        </div>
+                        @if (!string.IsNullOrWhiteSpace(item.Answer))
+                        {
+                            var nickName = item.UserInfo != null ? item.UserInfo["NickName"] : "E都市网友";
+                            var userHead = item.UserInfo != null ? ViewBag.UserHeaderDomain + item.UserInfo["Avatar"] : Url.Content("~/asset/images/userhead.jpg");
+                            int userId = item.UserInfo != null ? (int)item.UserInfo["ID"] : 0;
+                            var wendaUserUrl = userId > 0 ? "href=" + userUrl + "wenda/index/1-" + userId + ".html target=_blank" : ""; 
+                            <div class="answer-info clearfix">
+                                @if (!string.IsNullOrWhiteSpace(item.Pic))
+                                {
+                                    <div class="pic"><img src="@item.Pic" onerror="this.src='@Url.Content("~/asset/images/default_photo.png")'"></div>
+                                }
+                                <div class="anser-item">
+                                    <div class="anser-item-i">
+                                        <a href="@item.Url" target="_blank">@Html.Raw(item.Answer)<span>全文</span></a>
+                                    </div>
+                                    <div class="answer-user">
+                                        <a @wendaUserUrl class="photo">
+                                            <img src="@userHead" onerror="this.src='@Url.Content("~/asset/images/default_photo.png")'">@nickName
+                                        </a>
+                                    </div>
+                                    <ul class="anser-oper js-oper clearfix" data-id="@item.AnswerId">
+                                        <li @Html.Raw(item.IsPraise == -2 ? "class=\"yizan zan\"" : "class=\"zan\"")><span class="u-num">@(item.PraiseCount)</span> 赞<em>+1</em></li>
+                                        <li @Html.Raw(item.IsPraise == -2 ? "class=\"yicai cai\"" : "class=\"cai\"")><span class="u-num">@(item.StepCount)</span> 踩<em>+1</em></li>
+                                        <li class="comment">@(item.CommentCount) 评论</li>
+                                        <li class="share">
+                                            分享
+                                            <div class="hid-share">
+                                                <a href="javascript:void(0);" class="weixin">
+                                                    <div class="wx-qr">
+                                                        <img src="@Url.Content("~/asset/images/0302.jpg")" />
+                                                    </div>
+                                                </a>
+                                                <a href="javascript:void(0);" class="qq"></a>
+                                                <a href="javascript:void(0);" class="qzone"></a>
+                                                <a href="javascript:void(0);" class="weibo"></a>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        }
+
+                    </div>
+                }
+            </div>
+            <div class="loading" style="display: none;">正在加载中</div>
+            <div class="end">没有更多了</div>
+        }
+
+    </div>
+    <div class="fr sidebar-box">
+        @{ Html.RenderAction("_LoginUser", "Shared");}
+
+        @if (Model.WaitAnswers != null && Model.WaitAnswers.Any())
+        {
+            <div class="invite-quest">
+                <div class="nav-tit"><span>等我</span>回答<a href="@Url.Content("~/info/2.html")" target="_blank">更多</a></div>
+                <ul class="invite-list">
+                    @foreach (var item in Model.WaitAnswers)
+                    {
+                        var url = Common.GetInfoUrl(Url.Content("~/"), item.IT_ID_Parent, item.IQ_ID);
+                        var userInfo = item.IQ_UserID == null || item.IQ_UserID <= 0 ? null : DataHelper.GetUserSimpleInfoByUIID(item.IQ_UserID.Value);
+                        var nickName = userInfo != null ? userInfo["NickName"] : "E都市网友";
+                        var userHead = userInfo != null ? ViewBag.UserHeaderDomain + userInfo["Avatar"] : Url.Content("~/asset/images/userhead.jpg");
+                        int userId = userInfo != null ? (int)userInfo["ID"] : 0;
+                        var wendaUserUrl = userId > 0 ? "href=" + userUrl + "wenda/index/1-" + userId + ".html target=_blank" : "";
+                        var collectionCount = DataHelper.GetUserFavoritesCount(item.IQ_ID.ToString());
+                        <li>
+                            <a href="@url" target="_blank" class="clearfix">
+                                <div class="invite-item">@Html.Raw(item.IQ_Title)</div>
+                            </a>
+                            <div class="qa-info">
+                                <a @wendaUserUrl class="photo">
+                                    <img src="@userHead" />@nickName
+                                </a>
+                                <span>@Common.TimeInterval(item.IQ_CreateDate.Value, DateTime.Now)</span><span>@(item.IQ_AnswerCount)回答</span><span class="last">@(collectionCount)人收藏</span>
+                            </div>
+                            <a href="@url" target="_blank" class="answer-btn">回答</a>
+                        </li>
+                    }
+                </ul>
+            </div> 
+        }
+    </div>
+</div>
+<!--read_data：@Model.read_data_time-->
+@* 底部悬浮 *@
+@Html.Partial("_FooterFloat")
+@*<script type="text/javascript" src="@Url.Content("~/asset/js/wangEditor.min.js")"></script>*@
+
+<script type="text/javascript">
+    var ConfigData = {
+        "PageIndex": 0,
+        "Count": "@Model.MoreWenDaPageCount",
+        "Page": "@Url.Content("~/")",
+        "Url": "MoreReadData.htm",
+        "QId": "@Model.Question.IQ_ID",
+        "ItId": "@Model.ItId",
+        "Type": 3
+    }
+    var editor;
+    function createEditor() {
+        var ischeckLogin = false;
+        $.getScript("@Url.Content("~/asset/js/quill.js")", function () {  //加载test.js,成功后，并执行回调函数
+            editor = new Quill('#editor-container');
+            editor = new Quill('#editor-container', {
+                modules: {
+                    toolbar: [
+                      [{ 'size': [false, 'large'] }],
+                      ['bold'],
+                      ['underline'],
+                      ['italic'],
+                      ['strike'],
+                      [{ 'color': [] }],
+                      [{ 'background': [] }],
+                      [{ 'align': [] }],
+                      ['blockquote'],
+                      ['link'],
+                      ['image'],
+                    ]
+                },
+                placeholder: '',
+                theme: 'snow'
+            });
+        });
+    }
+
+    $(".question").on("click", ".share a:not(.weixin)", function () {
+        var type = $(this).attr("class");
+        var url = window.location.href;
+        var title = "@Model.Question.IQ_Title";
+
+        $.post("/ShareUrl.htm",
+            { type: type, url: url, title: title },
+            function (data) {
+                if (data) {
+                    window.open(data);
+                }
+            });
+    });
+
+    $(".question").on("click", ".share a.weixin", function () {
+        if (!$(this).hasClass("ok")) {
+            var url = window.location.href;
+            var that = $(this);
+            $.post("/ShareUrl.htm",
+                { type: "weixin", url: url, title: "" },
+                function (data) {
+                    if (data) {
+                        that.addClass("ok");
+                        that.find(".wx-qr img").attr("src", data);
+                        that.find(".wx-qr").show();
+                    }
+                });
+        } else {
+            $(this).find(".wx-qr").show();
+        }
+
+    });
+
+    //显示回复框
+    function showReplyBox(obj) {
+        var newLeft = obj.prev(".time").outerWidth(true) + 10;
+        obj.parents("li").find(".replay-area").toggle();
+        obj.parents("li").siblings().find(".replay-area").hide();
+        obj.parents("li").find(".replay-area i").css({ "left": newLeft });
+    }
+
+
+    //加载剩余评论
+    function loadAllComment(obj) {
+        var iaId = obj.parents("js-votelist").data("id");
+        $.ajax({
+            type: "post",
+            url: "/LastComment.htm",
+            data: { "iaId": iaId },
+            success: function (data) {
+                if (data) {
+                    obj.parents(".js-votelist").find(".comment-list").append(data);
+                    obj.remove();
+                }
+            }
+        });
+    }
+
+    //加载剩余回复
+    function loadAllReply(obj, commentId) {
+        var iaId = obj.parents(".js-votelist").data("id");
+        $.ajax({
+            type: "post",
+            url: "/LastReply.htm",
+            data: { "iaId": iaId, "commentId": commentId },
+            success: function (data) {
+                if (data) {
+                    obj.before(data);
+                    obj.remove();
+                }
+            }
+        });
+    }
+
+    $("body").on("click", ".js-votelist > .js-oper > .comment", function () {
+        if ($(this).hasClass("ok")) {
+            $(this).parents(".js-votelist").find(".anser-comment").toggle();
+        } else {
+            var iaId = $(this).parents(".js-votelist").data("id");
+            var that = $(this);
+            $.ajax({
+                type: "post",
+                url: "/FirstLoadComment.htm",
+                data: { "iaId": iaId },
+                success: function (data) {
+                    if (data) {
+                        that.parents(".js-votelist").find(".anser-comment").append(data);
+                        that.addClass("ok");
+                    }
+                    that.parents(".js-votelist").find(".anser-comment").toggle();
+                }
+            });
+        }
+
+    });
+
+    var _isFavClick = true; //防止重复点击
+    //添加收藏
+    $(".favorite").click(function () {
+        if (_isFavClick) {
+            _isFavClick = false;
+            var id = "@Model.Question.IQ_ID";
+
+            if (!$(this).hasClass("on")) {
+                var that = $(this);
+                $.ajax({
+                    type: "post",
+                    dataType: "json",
+                    url: "/AddFavorite.htm",
+                    data: { "id": id },
+                    success: function (data) {
+                        _isFavClick = true;
+                        if (data.ResultCode == 1) {
+                            that.addClass("on").text("已收藏");
+
+                        } else if (data.ResultCode == 2) {
+                            window.location.href = 'http://user.edushi.com/Login.html?BackUrl=' + window.location.href;
+
+                        } else {
+                            showMsg(data.Msg);
+                        }
+                    }
+                });
+            }
+        }
+    });
+
+    //评论赞与踩
+    $(".js-votebox").on("click",
+        ".js-votelist .anser-comment .zan",
+        function () {
+            if (!$(this).hasClass("yizan") && !$(this).siblings(".cai").hasClass("yicai")) {
+                var _this = $(this);
+                var commentId = _this.parents(".oper").data("id");
+                $.ajax({
+                    type: "post",
+                    dataType: "json",
+                    url: "/AddCommentUpvoteDownvote.htm",
+                    data: { "commendId": commentId, "action": 1 },
+                    success: function (data) {
+                        if (data.ResultCode == 1) {
+                            var _number = _this.find("span").text();
+                            _this.find("span").text(parseInt(_number) + 1);
+                            zanCai(_this, "yizan");
+                        } else if (data.ResultCode == 2) {
+                            window.location.href = 'http://user.edushi.com/Login.html?BackUrl=' + window.location.href;
+                        } else {
+                            showMsg(data.Msg);
+                        }
+                    }
+                });
+
+
+            }
+
+        });
+    $(".js-votebox").on("click",
+        ".js-votelist .anser-comment .cai",
+        function () {
+            if (!$(this).hasClass("yicai") && !$(this).siblings(".zan").hasClass("yizan")) {
+                var _this = $(this);
+                var commentId = _this.parents(".oper").data("id");
+                $.ajax({
+                    type: "post",
+                    dataType: "json",
+                    url: "/AddAnswerUpvoteDownvote.htm",
+                    data: { "commendId": commentId, "action": 2 },
+                    success: function (data) {
+                        _isClick = true;
+                        if (data.ResultCode == 1) {
+                            var _number = _this.find("span").text();
+                            _this.find("span").text(parseInt(_number) + 1);
+                            zanCai(_this, "yicai");
+                        } else if (data.ResultCode == 2) {
+                            window.location.href = 'http://user.edushi.com/Login.html?BackUrl=' + window.location.href;
+
+                        } else {
+                            showMsg(data.Msg);
+                        }
+                    }
+                });
+
+            }
+        });
+
+    //添加回复
+    function AddCommentReply(obj, commentId) {
+        var parentObj = obj.parents(".js-votelist");
+        var aId = parentObj.data("id");
+        var commentTxt = parentObj.find(".answer_reply").val();
+        if (commentTxt == "") {
+            showMsg("评论内容不能为空");
+            return false;
+        }
+        $.ajax({
+            type: "post",
+            dataType: "json",
+            url: "/PostComment.htm",
+            data: { "Id": aId, "FatherId": commentId, "Content": commentTxt },
+            success: function (data) {
+                if (data) {
+                    if (data.ResultCode == 1) {
+                        showMsg("评论成功，等待管理员审核!");
+                        obj.siblings(".answer_reply").val("");
+                    } else {
+                        showMsg(data.Msg);
+                    }
+                }
+            }
+        });
+    }
+
+    $(function () {
+        //判断低版本IE
+        var theUA = window.navigator.userAgent.toLowerCase();
+        if ((theUA.match(/msie\s\d+/) && theUA.match(/msie\s\d+/)[0]) || (theUA.match(/trident\s?\d+/) && theUA.match(/trident\s?\d+/)[0])) {
+            var ieVersion = theUA.match(/msie\s\d+/)[0].match(/\d+/)[0] || theUA.match(/trident\s?\d+/)[0];
+            if (ieVersion < 10) {
+                $(".ietext").show().blur();
+                $(".warn").show();
+            } else {
+                createEditor();
+            }
+        } else {
+            createEditor();
+        }
+
+        $("#editor-container").bind("click", function () {
+            if (event.target == this) editor.focus();
+        });
+
+        $(".ietext, .warn").click(function () {
+            $(".warn").hide();
+        });
+        $(".ietext").blur(function () {
+            if ($(".ietext").text() == "") {
+                $(".warn").show();
+            }
+        });
+        //添加/取消关注
+        $("body").on("click",
+            ".follow-btn",
+            function () {
+                var userid = $(this).data("uid");
+                var that = $(this);
+                if ($(this).hasClass("on")) {
+                    $.post("/CancelAttention.htm",
+                        { "userId": userid },
+                        function (data) {
+                            if (data.ResultCode == 1) {
+                                that.removeClass("on").text("关注");
+                            }
+                            else if (data.ResultCode == 2) {
+                                var backUrl = escape(window.location.href);
+                                window.location.href = "http://user.edushi.com/Login.html?BackUrl=" + backUrl;
+                            } else {
+                                showMsg(data.Msg);
+                            }
+                        });
+
+                } else {
+                    $.post("/AddAttention.htm",
+                        { "userId": userid },
+                        function (data) {
+                            if (data.ResultCode == 1) {
+                                that.addClass("on").text("已关注");
+                            } else if (data.ResultCode == 2) {
+                                var backUrl = escape(window.location.href);
+                                window.location.href = "http://user.edushi.com/Login.html?BackUrl=" + backUrl;
+                            }
+                        });
+                }
+
+            });
+
+        //加载更多回答
+        var canLoadAnswer = true;
+        var answerPageIndex = 0;
+        $("#load_answer").click(function () {
+            if (canLoadAnswer) {
+                canLoadAnswer = false;
+                var lastAnswerCount = $(this).find("span").text();
+                if (lastAnswerCount > 0) {
+                    answerPageIndex++;
+                    var qId = "@Model.Question.IQ_ID";
+                    var sortType = "@Model.SortType";
+                    var that = $(this);
+                    $.ajax({
+                        type: "post",
+                        url: "/MoreAnswerData.htm",
+                        data: { "qId": qId, "pageIndex": answerPageIndex, "sortModel": sortType },
+                        success: function (data) {
+                            if (data) {
+                                that.parents(".answer").find(".js-votebox").append(data);
+                                lastAnswerCount = lastAnswerCount - 10;
+                                if (lastAnswerCount <= 0) {
+                                    that.remove();
+                                } else {
+                                    that.find("span").text(lastAnswerCount);
+                                }
+
+                                canLoadAnswer = true;
+                            }
+                        }
+                    });
+
+                }
+            }
+
+        });
+        //提交答案
+        $("#submit_answer").click(function () {
+            var qId = "@Model.Question.IQ_ID";
+            var answerTxt = editor ? $(".ql-editor").text() : $(".ietext").val(); 
+            if (answerTxt == "") {
+                showMsg("请填写答案!");
+                return false;
+            }
+            var answerHtml = editor ? $(".ql-editor").html() : $(".ietext").val();
+            $.ajax({
+                type: "post",
+                dataType: "json",
+                url: "/AddAnswer.htm",
+                data: { "qId": qId, "content": answerHtml },
+                success: function (data) {
+                    if (data) {
+                        if (data.ResultCode == 1) {
+                            showMsg(data.Msg);
+                            if (editor) {
+                                $(".ql-editor").text("");
+                            } else {
+                                $(".ietext").val("");
+                            }
+                        } else {
+                            showMsg(data.Msg);
+                        }
+                    }
+                }
+            });
+
+        });
+
+        //添加评论
+        $(".js-votebox").on("click", "li .anser-comment .publish-btn", function () {
+            var parentObj = $(this).parents(".js-votelist");
+            var aId = parentObj.data("id");
+            var commentTxt = parentObj.find(".answer_txt").val();
+
+            if (commentTxt == "") {
+                showMsg("评论内容不能为空");
+                return false;
+            }
+            $.ajax({
+                type: "post",
+                dataType: "json",
+                url: "/PostComment.htm",
+                data: { "Id": aId, "FatherId": 0, "Content": commentTxt },
+                success: function (data) {
+                    if (data) {
+                        if (data.ResultCode == 1) {
+                            showMsg("评论成功，等待管理员审核!");
+                            parentObj.find(".answer_txt").val("");
+                        } else {
+                            showMsg(data.Msg);
+                        }
+                    }
+                }
+            });
+        });
+
+        $(".file").change(function () {
+            if ($(this).val().length > 0) {
+                $('#upAnswerImgForm').ajaxSubmit({
+                    url: '/UploadImg.htm',
+                    type: 'post',
+                    success: function (data) {
+                        if (data) {
+                            if (data.errno == "0") {
+                                if (editor.getSelection() == null) editor.focus();
+                                editor.insertEmbed(editor.getSelection().index, 'image', data.data[0]);
+                            }
+                            else {
+                                alert(data.Msg);
+                            }
+                        }
+                    },
+                    error: function (xhr, type) {
+                        alert('上传图片失败，请检查图片是否过大！');
+                    }
+                });
+            }
+        });
+
+        $("#upAnswerImgForm").mouseenter(function () {
+            $(".ql-image").addClass("hover")
+        })
+        $("#upAnswerImgForm").mouseleave(function () {
+            $(".ql-image").removeClass("hover")
+        })
+
+        $(".editor").on("click", ".ql-link", function () {
+            $(".ql-editing").find("input[type=text]").val("");
+        });
+        $(".editor").on("hover,click", ".ql-editing a.ql-action", function () {
+            var url = $(".ql-editing").find("input[type=text]").val();
+            var reg = /^htt(?:p|ps):/;
+            if (!reg.test(url)) url = 'http://' + url;
+            $(".ql-editing").find("input[type=text]").val(url);
+        });
+    });
+</script>
+
+<script src="@Url.Content("~/asset/js/scrollload.bak.js")"></script>

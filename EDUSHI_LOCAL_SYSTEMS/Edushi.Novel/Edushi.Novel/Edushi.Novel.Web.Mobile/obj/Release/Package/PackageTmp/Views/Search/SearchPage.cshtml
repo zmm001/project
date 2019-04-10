@@ -1,0 +1,34 @@
+﻿@{
+    ViewBag.Title = "SearchPage";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title></title>
+    @Html.Partial("/Views/Shared/_PartialHead.cshtml")
+</head>
+<body>
+    <div id="app">
+        <header>
+            <span class="back" onclick="javascript:history.go(-1);"></span>
+            <div class="search-box">
+                <input type="text" name="" id="search" placeholder="搜索书名" />
+                <p class="del"></p>
+            </div>
+            <a href="#" class="search-btn">搜索</a>
+        </header>
+        <div class="main-container">
+            <div class="search-tag">
+                <p>大家都在搜</p>
+                <div class="tag-tips">
+                    <a v-for="(item,index) in recommendLists" v-bind:href="getUrl(item.Name)" v-bind:class="getclassId(index + 1)">{{item.Name}}</a>
+                </div>
+
+            </div>
+        </div>
+        <script type="text/javascript" src="~/Content/asset/js/common.js"></script>
+        <script src="~/Content/asset/js/Novel/searchPage.js"></script>
+    </div>
+</body>
+</html>

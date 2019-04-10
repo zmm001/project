@@ -1,0 +1,6 @@
+E:\TFS192.168.100.212\EDUSHI_MAP_SYSTEMS\MAP\Map9.0\Map9.0\Map9.0.Entity\bin\Debug\Entity.dll
+E:\TFS192.168.100.212\EDUSHI_MAP_SYSTEMS\MAP\Map9.0\Map9.0\Map9.0.Entity\bin\Debug\Entity.pdb
+E:\TFS192.168.100.212\EDUSHI_MAP_SYSTEMS\MAP\Map9.0\Map9.0\Map9.0.Entity\bin\Debug\MongoDB.Bson.dll
+E:\TFS192.168.100.212\EDUSHI_MAP_SYSTEMS\MAP\Map9.0\Map9.0\Map9.0.Entity\obj\Debug\Entity.dll
+E:\TFS192.168.100.212\EDUSHI_MAP_SYSTEMS\MAP\Map9.0\Map9.0\Map9.0.Entity\obj\Debug\Entity.pdb
+E:\TFS192.168.100.212\EDUSHI_MAP_SYSTEMS\MAP\Map9.0\Map9.0\Map9.0.Entity\obj\Debug\Entity.csprojResolveAssemblyReference.cache

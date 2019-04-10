@@ -1,0 +1,62 @@
+﻿@using Edushi.Common
+@model Edushi.UserCenter.Web.PC.Areas.WenDa.Models.MyNoticeModel
+@{
+    ViewBag.Title = "我的通知-E都市问答";
+    ViewBag.PageType = 7;
+    var imgDomain = Common.GetConfigString("UserHeadPic");
+}
+
+<div class="fl main-box">
+    <ul class="tab-nav clearfix">
+        <li class="on">通知</li>
+        @*<li>邀请</li>*@
+    </ul>
+    <div class="tab-box" style="display: block;" id="datalist" >
+        <div class="number-tip">共<span>@(Model.TotalCount)</span>条!</div>
+        @if (Model.List != null && Model.List.Any())
+        {
+            foreach (var item in Model.List)
+            {
+                var nickName = item.UserInfo != null && !string.IsNullOrWhiteSpace(item.UserInfo["NickName"].ToString()) ? item.UserInfo["NickName"] : "E都市网友";
+                var userHead = item.UserInfo != null && !string.IsNullOrWhiteSpace(item.UserInfo["Avatar"].ToString()) ? imgDomain + item.UserInfo["Avatar"] : Url.Content("~/areas/wenda/asset/images/userhead.jpg");
+                int userId = item.UserInfo != null && item.UserInfo["ID"] != null ? (int)item.UserInfo["ID"] : 0;
+                var wendaUrl = userId > 0 ? "href=/wenda/index/1-" + userId + ".html target=_blank" : "";
+                 <div class="tab-list clearfix">
+                    <a @wendaUrl><img src="@userHead" class="fl" /></a>
+                    <div class="fl content">
+                        <div>
+                            <a class="user" @wendaUrl>@nickName</a> 回答了你的问题
+                            <span class="info">「<a href="@item.QUrl" target="_blank">@Html.Raw(item.Title)</a>」</span>
+                        </div>
+                        <span class="time">@Common.TimeInterval(item.AnswerTime,DateTime.Now)</span>
+                    </div>
+                </div>
+            }
+        }
+       
+    </div>
+    <div class="loading" style="display: none;">正在加载中</div>
+    <div class="more-cnt" @Html.Raw(Model.PageCount > 1 ? "style=\"display:none\"" : "")>没有更多了</div>
+    
+</div>
+<script type="text/javascript">
+    var ConfigData = {
+        "PageIndex":1,
+        "Count": "@Model.PageCount",
+        "Page": "@Url.Content("~/")",
+        "Url": "wenda/GetMoreNotice.htm",
+        "Id": 0,
+        "Type": 1
+    }
+    $(function () {
+        $(".tab-nav li").click(function() {
+            var index = $(this).index();
+            $(this).addClass("on").siblings().removeClass("on");
+
+            $(".tab-box").eq(index).show().siblings(".tab-box").hide();
+        });
+    })
+</script>
+
+
+<script src="@Url.Content("~/areas/wenda/asset/js/scrollload.bak.js")"></script>

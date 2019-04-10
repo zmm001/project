@@ -1,0 +1,5 @@
+E:\TFS192.168.100.212\EDUSHI_LOCAL_SYSTEMS\Edushi.Novel\Edushi.Novel\Edushi.Novel.Cache\bin\Debug\Edushi.Novel.Cache.dll
+E:\TFS192.168.100.212\EDUSHI_LOCAL_SYSTEMS\Edushi.Novel\Edushi.Novel\Edushi.Novel.Cache\bin\Debug\Edushi.Novel.Cache.pdb
+E:\TFS192.168.100.212\EDUSHI_LOCAL_SYSTEMS\Edushi.Novel\Edushi.Novel\Edushi.Novel.Cache\obj\Debug\Edushi.Novel.Cache.dll
+E:\TFS192.168.100.212\EDUSHI_LOCAL_SYSTEMS\Edushi.Novel\Edushi.Novel\Edushi.Novel.Cache\obj\Debug\Edushi.Novel.Cache.pdb
+E:\TFS192.168.100.212\EDUSHI_LOCAL_SYSTEMS\Edushi.Novel\Edushi.Novel\Edushi.Novel.Cache\obj\Debug\Edushi.Novel.Cache.csprojResolveAssemblyReference.cache

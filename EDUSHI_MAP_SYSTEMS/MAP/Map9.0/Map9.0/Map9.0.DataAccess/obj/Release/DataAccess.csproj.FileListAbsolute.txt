@@ -1,0 +1,14 @@
+E:\TFS192.168.100.212\EDUSHI_MAP_SYSTEMS\MAP\Map9.0\Map9.0\Map9.0.DataAccess\bin\Release\DataAccess.dll
+E:\TFS192.168.100.212\EDUSHI_MAP_SYSTEMS\MAP\Map9.0\Map9.0\Map9.0.DataAccess\bin\Release\DataAccess.pdb
+E:\TFS192.168.100.212\EDUSHI_MAP_SYSTEMS\MAP\Map9.0\Map9.0\Map9.0.DataAccess\bin\Release\Common.dll
+E:\TFS192.168.100.212\EDUSHI_MAP_SYSTEMS\MAP\Map9.0\Map9.0\Map9.0.DataAccess\bin\Release\Entity.dll
+E:\TFS192.168.100.212\EDUSHI_MAP_SYSTEMS\MAP\Map9.0\Map9.0\Map9.0.DataAccess\bin\Release\Model.dll
+E:\TFS192.168.100.212\EDUSHI_MAP_SYSTEMS\MAP\Map9.0\Map9.0\Map9.0.DataAccess\bin\Release\Newtonsoft.Json.dll
+E:\TFS192.168.100.212\EDUSHI_MAP_SYSTEMS\MAP\Map9.0\Map9.0\Map9.0.DataAccess\bin\Release\log4net.dll
+E:\TFS192.168.100.212\EDUSHI_MAP_SYSTEMS\MAP\Map9.0\Map9.0\Map9.0.DataAccess\bin\Release\Model.pdb
+E:\TFS192.168.100.212\EDUSHI_MAP_SYSTEMS\MAP\Map9.0\Map9.0\Map9.0.DataAccess\bin\Release\Common.pdb
+E:\TFS192.168.100.212\EDUSHI_MAP_SYSTEMS\MAP\Map9.0\Map9.0\Map9.0.DataAccess\bin\Release\Entity.pdb
+E:\TFS192.168.100.212\EDUSHI_MAP_SYSTEMS\MAP\Map9.0\Map9.0\Map9.0.DataAccess\bin\Release\Newtonsoft.Json.xml
+E:\TFS192.168.100.212\EDUSHI_MAP_SYSTEMS\MAP\Map9.0\Map9.0\Map9.0.DataAccess\obj\Release\DataAccess.csprojResolveAssemblyReference.cache
+E:\TFS192.168.100.212\EDUSHI_MAP_SYSTEMS\MAP\Map9.0\Map9.0\Map9.0.DataAccess\obj\Release\DataAccess.dll
+E:\TFS192.168.100.212\EDUSHI_MAP_SYSTEMS\MAP\Map9.0\Map9.0\Map9.0.DataAccess\obj\Release\DataAccess.pdb

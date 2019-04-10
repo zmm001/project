@@ -1,0 +1,22 @@
+﻿@{
+    ViewBag.Title = "错误页-E都市问答";
+}
+@section meta
+{
+    <meta name="Keywords" content="" />
+    <meta name="Description" content="" />
+}
+
+<link rel="stylesheet" type="text/css" href="@Url.Content("~/asset/css/error.css")">
+@Html.Partial("_HeaderWithSearch")
+<div class="error">
+    <div class="bg"></div>
+    <div class="not-found">
+        @*<div class="tit">页面被转移，请点击下面的地址</div>
+        <a href="#" class="link">
+            <span>新加坡建筑师打造水上全景漂浮屋</span>http://hz.edushi.com/bang/info/3-116-n562866-p2.html
+        </a>*@
+        <p><a href="@Url.Content("~/")" class="backhome">返回问答首页</a>
+        </p>
+    </div>
+</div>

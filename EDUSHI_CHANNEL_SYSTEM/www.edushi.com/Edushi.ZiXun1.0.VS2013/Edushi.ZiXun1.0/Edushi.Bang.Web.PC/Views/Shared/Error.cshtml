@@ -1,0 +1,140 @@
+﻿@model Edushi.Bang.Web.PC.Models.SharedModel
+@{
+    string url = string.Empty;
+    string title = string.Empty;
+    if (!string.IsNullOrEmpty(Request.QueryString["f"]))
+    {
+        if (Request.QueryString["f"].ToString() == "1")
+        {
+            long IA_ID = 0;
+            Int64.TryParse(Request.QueryString["id"], out IA_ID);
+            if (IA_ID > 0)
+            {
+                Edushi.Bang.Model.InfoArticleModel item = new Edushi.Bang.BLL.InfoArticleBLL().GetArticleDetailInfo((int)IA_ID);
+                if (item != null)
+                {
+                    url = "http://" + item.IA_CityCode.Replace("hangzhou", "hz").Replace("shanghai", "sh") + ".edushi.com/bang/" + "info/" + item.IT_ParentPath + "-" + item.IT_ID + "-n" + item.IA_ID + ".html";//Model.Base.BangUrl
+                    title = item.IA_Title;
+                }
+            }
+        }
+    }
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>未找到页_@(Model.Base.CityName)生活帮—E都市</title>
+    <link rel="stylesheet" type="text/css" href="http://res.edushi.com/bang/v4/asset/css/error.css">
+    <meta http-equiv="refresh" content="3; url=http://www.edushi.com/" />
+</head>
+<body>
+    <div class="top-nav-box">
+        <div class="top-nav-wrap">
+            <div class="wrapper clearfix">
+                <a href="http://www.edushi.com/" target="_blank" class="fl e-home">E都市首页</a>
+                <div class="fr nav-tips">
+                    <a href="http://apps.edushi.com/news/app-pc.html" target="_blank" class="mobile">E都市<em></em></a>
+                    <a href="http://www.edushi.com/mapcity.html" target="_blank" class="map">三维地图<em></em></a>
+                    <a href="http://wenda.edushi.com/" target="_blank" class="bdt">问答<em></em></a>
+                    <a href="http://lvyou.edushi.com/" target="_blank" class="yl">旅游景点<em></em></a>
+                    <a href="http://lvyou.edushi.com/Hotel" target="_blank" class="jdyd">酒店预订<em></em></a>
+                    <a href="http://fangtoo.edushi.com/es/" target="_blank" class="fang">二手房<em></em></a>
+                    <a href="http://fangtoo.edushi.com/cz/" target="_blank" class="zf">租房<em></em></a>
+                    <span id="member"></span>
+                    <a href="javascript:void(0);" class="more">更多<em></em></a>
+                </div>
+            </div>
+            <div class="sitemap">
+                <div class="wrapper">
+                    <ul class="clearfix">
+                        @Html.Raw(Model.HtmlAllCategory)
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="error">
+        <div class="bg"></div>
+@if (string.IsNullOrEmpty(url))
+        {
+        <div>sorry</div>
+        <span>页面报错啦！</span>
+        <span>你访问的页面已经离开地球</span>
+    <a href="http://www.edushi.com/" class="backhome">返回E都市首页</a>
+        }
+else
+{
+    <div class="not-found">
+		<div class="tit">页面被转移，请点击下面的地址</div>
+		<a href="@url">
+			<span>@title</span>
+            @Html.Raw(url)
+		</a>
+		<p><a href="http://www.edushi.com/" class="backhome">返回E都市首页</a></p>
+	</div>
+
+}
+    </div>
+
+    <div class="page-footer">
+        <div class="wrapper clearfix">
+            <div class="fl">
+                浙网文[2015]0464-184号&nbsp;&nbsp;&nbsp;广告经营许可证号:3301082100176&nbsp;&nbsp;&nbsp;甲测资字:3300168&nbsp;&nbsp;&nbsp;浙公网安备 33010502000262号&nbsp;&nbsp;&nbsp;© 2004 - 2017 EDUSHI. All Rights Reserved
+            </div>
+            <div class="fr">
+                <a href="http://www.edushi.com/about/" target="_blank">关于E都市</a>
+                <a href="http://www.edushi.com/about/Declear.htm" target="_blank">法律声明</a>
+                <a href="http://www.edushi.com/about/ContactUs.htm" target="_blank">联系我们</a>
+            </div>
+        </div>
+        <div class="back-top">
+            <img src="http://res.edushi.com/bang/v4/asset/images/eds_app_code.png">
+            <span></span>
+        </div>
+    </div>    <script type="text/javascript" src="http://res.edushi.com/bang/v4/asset/js/jquery-1.8.3.min.js"></script>
+    <script type="text/javascript" src="http://res.edushi.com/bang/v4/asset/js/common.js"></script>
+    @*登录*@
+    <script src="http://res.edushi.com/Common/pc/js/Common.js"></script>
+    <script type="text/javascript">
+        //验证是否登录
+        $.ajax({
+            type: "post",
+            url: "http://www.edushi.com/IsLogin.htm",
+            dataTpe: "json",
+            xhrFields: {
+                withCredentials: true
+            },
+            success: function (data) {
+                var $userHtml = "";
+                var backUrl = escape(window.location.href);
+                if (data.ResultCode == 1 && data.NickName) {
+                    $("#submitBtn").val("发布");
+                    $userHtml = " <a href=\"http://user.edushi.com/\" target='_blank' class='user-nave'>" +
+                        data.NickName +
+                        "</a>\r\n" +
+                        "<a href=\"http://user.edushi.com/exitlogin.htm?BackUrl=" + backUrl + "\" class='logout'>安全退出</a>";
+
+                } else {
+                    $("#submitBtn").val("登录并发布");
+                    $userHtml = "<a href=\"javascript:void(0);\" onclick=\"window.location.href = 'http://user.edushi.com/Login.html?BackUrl=" + backUrl + "'\" class=\"login\">登录</a>";
+                }
+                $("#member").append($userHtml);
+            }
+        });
+    </script>
+    @*<script type="text/javascript">
+        var m = $("#member");
+        var nick = (new CookieHelper().getCookie("MemberNickName"));
+        var backUrl = escape(window.location.href);
+        if (nick != null) {
+            m.html("<a href=\"http://my.edushi.com/Index.aspx\" target='_blank' class='user-nave'>" + nick + "</a>" +
+                    "<a href=\"http://my.edushi.com/loginout.aspx?BackUrl=" + backUrl + "\" target='_blank' class='logout'>安全退出</a>");
+        }
+        else {
+            m.html("<a href=\"http://my.edushi.com/Login.aspx?BackUrl=" + backUrl + "\" target=\"_blank\" class=\"login\">登录</a>");
+        }
+    </script>*@
+</body>
+</html>

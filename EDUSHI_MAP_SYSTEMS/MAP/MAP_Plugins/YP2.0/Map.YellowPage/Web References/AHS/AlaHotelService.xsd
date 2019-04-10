@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://tempuri.org/" elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="GetAllSite">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAllSiteResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetAllSiteResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAllProvince">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="countryID" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAllProvinceResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetAllProvinceResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAllCity">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="countryID" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAllCityResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetAllCityResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetHotelState">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="siteCode" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="cityCode" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="hotelName" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetHotelStateResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetHotelStateResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetHotelInfo">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="cityCode" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="siteCode" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="hotelID" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetHotelInfoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetHotelInfoResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetListHotelInfo">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="cityCode" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="siteCode" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="arrHotelName" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetListHotelInfoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetListHotelInfoResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetHotelStateByAddress">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="siteCode" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="cityCode" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="hotelName" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="address" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetHotelStateByAddressResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetHotelStateByAddressResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

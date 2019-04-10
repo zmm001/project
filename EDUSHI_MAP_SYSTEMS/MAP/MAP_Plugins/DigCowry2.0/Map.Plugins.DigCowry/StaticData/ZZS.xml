@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8" ?> 
+<!--
+<Sponsors>
+    <SP>
+        <Title>赞助商名称</Title>
+        <Img>图片地址</Img>
+        <Url>连接</Url>
+    </SP>
+</Sponsors>
+
+赞助商-->
+
+<Sponsors>
+    <SP>
+        <Title>赞助商250</Title>
+        <Img>images/logo_1.jpg</Img>
+        <Url>http://www.google1.com</Url>
+    </SP>
+    <SP>
+        <Title>赞助商251</Title>
+        <Img>images/logo_1.jpg</Img>
+        <Url>http://www.google2.com</Url>
+    </SP>
+    <SP>
+        <Title>赞助商252</Title>
+        <Img>images/logo_1.jpg</Img>
+        <Url>http://www.google3.com</Url>
+    </SP>
+</Sponsors>

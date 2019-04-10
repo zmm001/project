@@ -1,0 +1,94 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{4B4CC543-0BE4-4054-96DF-436D081D015F}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Edushi.UserCenter.MongoDBDAL</RootNamespace>
+    <AssemblyName>Edushi.UserCenter.MongoDBDAL</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="MongoDB.Bson">
+      <HintPath>..\..\..\..\..\EDUSHI_CM_LIBRARY\Assembly_Library\EDC.Framework\MongoDB1.10\MongoDB.Bson.dll</HintPath>
+    </Reference>
+    <Reference Include="MongoDB.Driver">
+      <HintPath>..\..\..\..\..\EDUSHI_CM_LIBRARY\Assembly_Library\EDC.Framework\MongoDB1.10\MongoDB.Driver.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="InfoAnswerDAL.cs" />
+    <Compile Include="InfoAnswerUpvoteDownvoteDAL.cs" />
+    <Compile Include="InfoArticleDAL.cs" />
+    <Compile Include="InfoQuestionDAL.cs" />
+    <Compile Include="InfoTypeDAL.cs" />
+    <Compile Include="PicArticleDAL.cs" />
+    <Compile Include="PicArticleImageDAL.cs" />
+    <Compile Include="PicTypeDAL.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TopicArticleDAL.cs" />
+    <Compile Include="TopicDAL.cs" />
+    <Compile Include="TopicTypeDAL.cs" />
+    <Compile Include="UserAttentionDAL.cs" />
+    <Compile Include="UserBookrackDAL.cs" />
+    <Compile Include="UserCommentDAL.cs" />
+    <Compile Include="UserFavoritesDAL.cs" />
+    <Compile Include="UserReadRecordDAL.cs" />
+    <Compile Include="UserUpvoteDAL.cs" />
+    <Compile Include="WdInfoTypeDAL.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Edushi.Common\Edushi.Common.csproj">
+      <Project>{88a22847-6b99-4241-8b15-536beec8b829}</Project>
+      <Name>Edushi.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Edushi.MongoDB\Edushi.MongoDB.csproj">
+      <Project>{59909cfc-d09f-4ccd-b2b1-df0079f3e698}</Project>
+      <Name>Edushi.MongoDB</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Edushi.UserCenter.Model\Edushi.UserCenter.Model.csproj">
+      <Project>{75791969-d14f-4df1-b3d6-36badebd30a6}</Project>
+      <Name>Edushi.UserCenter.Model</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

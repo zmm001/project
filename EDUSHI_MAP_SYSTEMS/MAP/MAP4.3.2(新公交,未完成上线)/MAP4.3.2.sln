@@ -1,0 +1,60 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Studio 2008
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Map.BLL", "Map.BLL\Map.BLL.csproj", "{673D2998-2751-4A45-BFED-A06E950A91A3}"
+EndProject
+Project("{00000000-0000-0000-0000-000000000000}") = "Map.WebApp", "Map.WebApp\Map.WebApp.csproj", "{65DC5D53-A6E3-4BB3-AD46-58BD12D9D9F9}"
+	ProjectSection(WebsiteProperties) = preProject
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.Debug = "False"
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Aladdin.Tools", "..\..\..\EDUSHI_FRAMEWORK\Aladdin.Tools\Aladdin.Tools\Aladdin.Tools.csproj", "{6B4C9F1C-AF42-4D24-A300-17D4FAD7D145}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataCenter.DataAccess", "..\..\..\EDUSHI_INFORMATION_SYSTEMS\DataCenter\DataCenter2.0\DataCenterDataAccess\DataCenter.DataAccess.csproj", "{5DF54884-7FC2-4409-991B-2C7ABC7B0D2D}"
+EndProject
+Global
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 5
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = http://192.168.100.67:8080/
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = Map.BLL\\Map.BLL.csproj
+		SccProjectName1 = Map.BLL
+		SccLocalPath1 = Map.BLL
+		SccProjectUniqueName2 = Map.WebApp\\Map.WebApp.csproj
+		SccProjectName2 = Map.WebApp
+		SccLocalPath2 = Map.WebApp
+		SccProjectUniqueName3 = ..\\..\\..\\EDUSHI_FRAMEWORK\\Aladdin.Tools\\Aladdin.Tools\\Aladdin.Tools.csproj
+		SccProjectName3 = ../../../EDUSHI_FRAMEWORK/Aladdin.Tools/Aladdin.Tools
+		SccLocalPath3 = ..\\..\\..\\EDUSHI_FRAMEWORK\\Aladdin.Tools\\Aladdin.Tools
+		SccProjectUniqueName4 = ..\\..\\..\\EDUSHI_INFORMATION_SYSTEMS\\DataCenter\\DataCenter2.0\\DataCenterDataAccess\\DataCenter.DataAccess.csproj
+		SccProjectName4 = ../../../EDUSHI_INFORMATION_SYSTEMS/DataCenter/DataCenter2.0/DataCenterDataAccess
+		SccLocalPath4 = ..\\..\\..\\EDUSHI_INFORMATION_SYSTEMS\\DataCenter\\DataCenter2.0\\DataCenterDataAccess
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{673D2998-2751-4A45-BFED-A06E950A91A3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{673D2998-2751-4A45-BFED-A06E950A91A3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{673D2998-2751-4A45-BFED-A06E950A91A3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{673D2998-2751-4A45-BFED-A06E950A91A3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{65DC5D53-A6E3-4BB3-AD46-58BD12D9D9F9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{65DC5D53-A6E3-4BB3-AD46-58BD12D9D9F9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{65DC5D53-A6E3-4BB3-AD46-58BD12D9D9F9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{65DC5D53-A6E3-4BB3-AD46-58BD12D9D9F9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6B4C9F1C-AF42-4D24-A300-17D4FAD7D145}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6B4C9F1C-AF42-4D24-A300-17D4FAD7D145}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6B4C9F1C-AF42-4D24-A300-17D4FAD7D145}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6B4C9F1C-AF42-4D24-A300-17D4FAD7D145}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5DF54884-7FC2-4409-991B-2C7ABC7B0D2D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5DF54884-7FC2-4409-991B-2C7ABC7B0D2D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5DF54884-7FC2-4409-991B-2C7ABC7B0D2D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5DF54884-7FC2-4409-991B-2C7ABC7B0D2D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

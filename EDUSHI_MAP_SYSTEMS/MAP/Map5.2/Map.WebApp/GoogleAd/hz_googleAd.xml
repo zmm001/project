@@ -1,0 +1,100 @@
+﻿<?xml version="1.0"?>
+<GoogleAdConfig>
+  <KeyWords defaultvalue="写字楼住宅租售">
+    <KeyWord value="1">
+      <KeyName>医院</KeyName>
+      <KeyOtherName>医院</KeyOtherName>
+    </KeyWord>
+    <KeyWord value="1">
+      <KeyName>学校</KeyName>
+      <KeyOtherName>教育</KeyOtherName>
+    </KeyWord>
+	<KeyWord value="1">
+      <KeyName>大学</KeyName>
+      <KeyOtherName>教育</KeyOtherName>
+    </KeyWord>
+	<KeyWord value="1">
+      <KeyName>中学</KeyName>
+      <KeyOtherName>教育</KeyOtherName>
+    </KeyWord>
+	<KeyWord value="1">
+      <KeyName>小学</KeyName>
+      <KeyOtherName>教育</KeyOtherName>
+    </KeyWord>
+	<KeyWord value="1">
+      <KeyName>学院</KeyName>
+      <KeyOtherName>教育</KeyOtherName>
+    </KeyWord>
+    <KeyWord value="1">
+      <KeyName>宾馆</KeyName>
+      <KeyOtherName>酒店</KeyOtherName>
+    </KeyWord>
+    <KeyWord value="1">
+      <KeyName>酒店</KeyName>
+      <KeyOtherName>酒店</KeyOtherName>
+    </KeyWord>
+  </KeyWords>
+  <CompanyTypes>
+    <CompanyType>
+      <TypeID>1</TypeID>
+      <TypeName>宾馆旅游</TypeName>
+      <TypeOtherName>酒店 旅游</TypeOtherName>
+    </CompanyType>
+    <CompanyType>
+      <TypeID>1</TypeID>
+      <TypeName>餐饮美食</TypeName>
+      <TypeOtherName>餐饮</TypeOtherName>
+    </CompanyType>
+    <CompanyType>
+      <TypeID>1</TypeID>
+      <TypeName>公共机构</TypeName>
+      <TypeOtherName>宾馆</TypeOtherName>
+    </CompanyType>
+    <CompanyType>
+      <TypeID>1</TypeID>
+      <TypeName>房产服务</TypeName>
+      <TypeOtherName>房产</TypeOtherName>
+    </CompanyType>
+    <CompanyType>
+      <TypeID>1</TypeID>
+      <TypeName>公司企业</TypeName>
+      <TypeOtherName>加工制造</TypeOtherName>
+    </CompanyType>
+    <CompanyType>
+      <TypeID>1</TypeID>
+      <TypeName>购物广场</TypeName>
+      <TypeOtherName>购物</TypeOtherName>
+    </CompanyType>
+    <CompanyType>
+      <TypeID>1</TypeID>
+      <TypeName>家政服务</TypeName>
+      <TypeOtherName>家政</TypeOtherName>
+    </CompanyType>
+    <CompanyType>
+      <TypeID>1</TypeID>
+      <TypeName>教育培训</TypeName>
+      <TypeOtherName>教育培训</TypeOtherName>
+    </CompanyType>
+    <CompanyType>
+      <TypeID>1</TypeID>
+      <TypeName>金融机构</TypeName>
+      <TypeOtherName>宾馆</TypeOtherName>
+    </CompanyType>
+    <CompanyType>
+      <TypeID>1</TypeID>
+      <TypeName>汽车服务</TypeName>
+      <TypeOtherName>汽车</TypeOtherName>
+    </CompanyType>
+    <CompanyType>
+      <TypeID>1</TypeID>
+      <TypeName>休闲娱乐</TypeName>
+      <TypeOtherName>娱乐</TypeOtherName>
+    </CompanyType>
+    <CompanyType>
+      <TypeID>1</TypeID>
+      <TypeName>医疗保健</TypeName>
+      <TypeOtherName>医院</TypeOtherName>
+    </CompanyType>
+  </CompanyTypes>
+  <KeyHtml> 更多杭州{$Content}信息尽在E都市!</KeyHtml>
+</GoogleAdConfig>

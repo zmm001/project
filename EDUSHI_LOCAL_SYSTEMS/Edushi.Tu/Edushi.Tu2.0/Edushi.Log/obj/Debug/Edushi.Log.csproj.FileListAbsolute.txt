@@ -1,0 +1,8 @@
+E:\TFS192.168.100.212\EDUSHI_LOCAL_SYSTEMS\Edushi.Tu\Edushi.Tu2.0\Edushi.Log\bin\Debug\Edushi.Log.dll
+E:\TFS192.168.100.212\EDUSHI_LOCAL_SYSTEMS\Edushi.Tu\Edushi.Tu2.0\Edushi.Log\bin\Debug\Edushi.Log.pdb
+E:\TFS192.168.100.212\EDUSHI_LOCAL_SYSTEMS\Edushi.Tu\Edushi.Tu2.0\Edushi.Log\bin\Debug\log4net.dll
+E:\TFS192.168.100.212\EDUSHI_LOCAL_SYSTEMS\Edushi.Tu\Edushi.Tu2.0\Edushi.Log\obj\Debug\Edushi.Log.dll
+E:\TFS192.168.100.212\EDUSHI_LOCAL_SYSTEMS\Edushi.Tu\Edushi.Tu2.0\Edushi.Log\obj\Debug\Edushi.Log.pdb
+E:\TFS192.168.100.212\EDUSHI_LOCAL_SYSTEMS\Edushi.Tu\Edushi.Tu2.0\Edushi.Log\obj\Debug\Edushi.Log.csprojAssemblyReference.cache
+E:\TFS192.168.100.212\EDUSHI_LOCAL_SYSTEMS\Edushi.Tu\Edushi.Tu2.0\Edushi.Log\obj\Debug\Edushi.Log.csproj.CoreCompileInputs.cache
+E:\TFS192.168.100.212\EDUSHI_LOCAL_SYSTEMS\Edushi.Tu\Edushi.Tu2.0\Edushi.Log\obj\Debug\Edushi.Log.csproj.CopyComplete

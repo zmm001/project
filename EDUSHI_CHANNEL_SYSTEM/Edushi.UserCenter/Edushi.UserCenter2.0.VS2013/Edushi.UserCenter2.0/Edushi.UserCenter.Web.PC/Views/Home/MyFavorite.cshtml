@@ -1,0 +1,199 @@
+﻿@using Edushi.Common
+@model Edushi.UserCenter.Web.PC.Models.MyFavoriteModel
+@{
+    Layout = "~/Views/Home/User_Layout.cshtml";
+    ViewBag.PageFlag = "2";
+}
+
+<div class="main">
+    <div class="tab-box">
+        <div class="tab">
+            <a href="@Url.Content("~/my/favorite.html")" @Html.Raw(Model.Type == 0 ? "class=\"current\"" : "")>全部</a>
+            <a href="@Url.Content("~/my/favorite/1-1.html")" @Html.Raw(Model.Type == 1 ? "class=\"current\"" : "")>新闻</a>
+            <a href="@Url.Content("~/my/favorite/3-1.html")" @Html.Raw(Model.Type == 3 ? "class=\"current\"" : "")>专题</a>
+            <a href="@Url.Content("~/my/favorite/2-1.html")" @Html.Raw(Model.Type == 2 ? "class=\"current\"" : "")>图闻</a>
+        </div>
+        <div class="info">
+            <span>共<em>@Model.TotalCount</em>篇收藏文章!</span>
+            <div class="edit-option">
+                <label class="checkall">
+                    <input type="checkbox">
+                    <span>全选</span>
+                </label>
+                <label class="del"><span>取消收藏</span></label>
+            </div>
+            <a href="javascript:void(0);" class="edit-btn">
+                <span class="cancel">返回</span>
+                <span class="edit">收藏管理</span>
+            </a>
+        </div>
+    </div>
+    <ul class="news-list slide-box">
+
+        @if (Model.List != null && Model.List.Any())
+        {
+            foreach (var item in Model.List)
+            {
+                var liClass = "";//默认为资讯
+                var imgBox = string.Empty;
+                var url = string.Empty;
+                //var updateTime = Common.TimeInterval(item.UpdateTime, DateTime.Now);
+
+                if (item.type == "1") //资讯
+                {
+                    url = string.Format("http://www.edushi.com/zixun/info/{1}-{2}-n{3}.html", item.CityCode, item.ParentTypeID, item.TypeID, item.ID);
+                    if (!string.IsNullOrEmpty(item.Pic))
+                    {
+                        imgBox = string.Format("<a href=\"{0}\" target=\"_blank\">{1}</a>\r\n", url, "<img src=\"" + item.Pic.GetPicReplace("", "") + "\" onerror=\"this.src='" + Url.Content("~/asset/images/default_photo.png") + "'\">");//一张图
+                    }
+                }
+                else if (item.type == "2")  //图闻
+                {
+                    url = string.Format("http://tu.edushi.com/info/{0}-{1}-n{2}.html", item.ParentTypeID, item.TypeID, item.ID);
+                    liClass = string.Format(" class=\"picture\" data-picture=\"{0}\"", item.PicCount);
+                    if (!string.IsNullOrWhiteSpace(item.Pic) && !string.IsNullOrWhiteSpace(item.Pic1) && !string.IsNullOrWhiteSpace(item.Pic2))
+                    {
+                        imgBox = string.Format("<a href=\"{0}\" target=\"_blank\">{1}</a>\r\n<a href=\"{0}\" target=\"_blank\">{2}</a>\r\n<a href=\"{0}\" target=\"_blank\">{3}</a>\r\n", url, "<img src=\"" + item.Pic.GetPicReplace("", "") + "\" onerror=\"this.src='" + Url.Content("~/asset/images/default_photo.png") + "'\">", "<img src=\"" + item.Pic1.GetPicReplace("", "") + "\" onerror=\"this.src='" + Url.Content("~/asset/images/default_photo.png") + "'\">", "<img src=\"" + item.Pic2.GetPicReplace("", "") + "\" onerror=\"this.src='" + Url.Content("~/asset/images/default_photo.png") + "'\">");
+                    }
+                    else if (!string.IsNullOrWhiteSpace(item.Pic))
+                    {
+                        imgBox = string.Format("<a href=\"{0}\" target=\"_blank\">{1}</a>\r\n", url, "<img src=\"" + item.Pic.GetPicReplace("", "") + "\" onerror=\"this.src='" + Url.Content("~/asset/images/default_photo.png") + "'\">");
+                        liClass = string.Format(" class=\"tu singletu\" data-picture=\"{0}\"", item.PicCount);
+                    }
+
+                }
+                else if (item.type == "3") //专题
+                {
+                    url = string.Format("http://www.edushi.com/zt/info/{0}-{1}-n{2}.html", item.ParentTypeID, item.TypeID, item.ID);
+                    liClass = " class=\"topic\"";//topic
+                    imgBox = string.Format("<a href=\"{0}\">{1}</a>\r\n", url, "<img src=\"" + item.Pic.GetPicReplace("", "") + "\" onerror=\"this.src='" + Url.Content("~/asset/images/default_photo.png") + "'\">");//一张图
+                }
+
+                <li @Html.Raw(liClass) data-type="@item.type" data-sourceid="@item.ID">
+                    @Html.Raw(imgBox)
+                    <div>
+                        <a href="@url" class="title" target="_blank">@Html.Raw(item.Title)</a>
+                        <div class="info">
+                            <a href="@item.TypeUrl" class="sub" target="_blank">@item.TypeName</a>
+                            <span class="comment"><a href="javascript:void(0);">评论</a></span>
+                            <span class="time">@item.CreateTime.ToString("yyyy-MM-dd HH:mm")</span>
+                            <label class="checkbox"><input type="checkbox"></label>
+                            <a class="cancel">取消收藏</a>
+                        </div>
+                    </div>
+                </li>
+            }
+        }
+    </ul>
+    <div class="page-box">
+        @Html.Raw(Html.Pager(Model.TotalCount, Model.PageSize, Model.PageIndex, "", "", new PagerOptions { PageIndexParameterName = "pageIndex", ShowDisabledPagerItems = false, NumericPagerItemCount = 10, CurrentPageNumberFormatString = "<span>{0}</span>", ShowFirstLast = false }, Model.PageRouteName, new { ufType = Model.Type }, null).ToString().Replace("&lt;", "<").Replace("&gt;", ">").Replace("'", "\""))
+    </div>
+</div>
+
+<script type="text/javascript">
+
+    $(".edit-btn").bind("click",
+        function () {
+            if ($(this).parents(".main").hasClass("edit")) {
+                $(this).parents(".main").removeClass("edit");
+            } else {
+                $(this).parents(".main").addClass("edit");
+            }
+        });
+
+    $(".checkbox").bind("click", function () {
+        if ($(this).find("input").prop("checked")) {
+            $(this).removeClass("checked");
+            $(this).find("input").attr("checked", false);
+        } else {
+            $(this).addClass("checked");
+            $(this).find("input").attr("checked", true);
+        }
+    });
+
+    $(".checkall").bind("click", function () {
+        if ($(this).find("input").prop("checked")) {
+            $(this).removeClass("checked");
+            $(this).find("input").attr("checked", false);
+            $(".checkbox").removeClass("checked");
+            $(".checkbox").find("input").attr("checked", false);
+        } else {
+            $(this).addClass("checked");
+            $(this).find("input").attr("checked", true);
+            $(".checkbox").addClass("checked");
+            $(".checkbox").find("input").attr("checked", true);
+        }
+    });
+
+    $(function () {
+
+        $(".pop-box .cancel").click(function () {
+            $(".pop-box").hide();
+        });
+
+
+        $(".news-list li .cancel").click(function () {
+            var $del = $(this);
+            popUp("确定要删除吗？",
+                function () {
+                    var parentli = $del.parents("li");
+                    var list = [];
+                    var obj = { "Type": parentli.data("type"), "SourceId": parentli.data("sourceid") };
+                    list.push(obj);
+                    cancel(list);
+                }, 1);
+
+
+        });
+
+        $(".del").click(function () {
+
+            var checkedObj = $(".news-list li input:checkbox:checked");
+            if (checkedObj.length > 0) {
+                popUp("确定要删除吗？",
+                    function () {
+                        var list = [];
+                        $.each(checkedObj,
+                            function (i, v) {
+                                var obj = {
+                                    "Type": $(v).parents("li").data("type"),
+                                    "SourceId": $(v).parents("li").data("sourceid")
+                                };
+                                list.push(obj);
+
+                            });
+                        cancel(list);
+                    }, 1);
+            } else {
+                popUp("请选择要删除的内容！");
+            }
+        });
+
+        function cancel(list) {
+            $.ajax({
+                type: "post",
+                dataType: "json",
+                url: "/CancelFavorites.htm",
+                data: { "data": JSON.stringify(list) },
+                success: function (data) {
+                    if (data.ResultCode == 1) {
+                        var url = window.location.href;
+                        var index = url.indexOf("-");
+                        if (index > -1) {
+                            var newUrl = url.substring(0, url.indexOf("-")) + "-1.html";
+                            window.location.href = newUrl;
+                        } else {
+                            window.location.href = "/my/favorite.html";
+                        }
+
+
+                    } else {
+                        popUp(data.Msg);
+                    }
+                }
+            });
+        }
+    });
+
+
+</script>

@@ -1,0 +1,248 @@
+﻿<script src="@Url.Content("~/asset/js/jquery.form.js")"></script>
+<script src="@Url.Content("~/asset/js/common.js")"></script>
+<script src="@Url.Content("~/asset/js/User.js")"></script>
+<script>
+    getAppId(0);
+</script>
+@{
+               ViewBag.Title = "发布提问";
+}
+<style>
+    .error-item {
+        margin: 0 auto;
+        box-sizing: border-box;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        /*margin-top: 238px;*/
+    }
+
+        .error-item img {
+            box-sizing: border-box;
+            margin: 0 auto;
+            width: 3.8rem;
+            height: 2.8rem;
+        }
+
+    .error-tip {
+        margin-top: 0.36rem;
+        font-size: 0.24rem;
+        color: #999999;
+        text-align: center;
+    }
+
+    #submit-btn {
+        width: 1.58rem;
+        height: 0.68rem;
+        background-color: #fff;
+        background: rgba(245, 245, 246, 1);
+        border-radius: 0.34rem;
+        border: none;
+        color: rgba(176, 179, 184, 1);
+        outline: none;
+        font-size: 0.3rem;
+        font-weight: 500;
+        position: fixed;
+        right: 0.26rem;
+        top: 0.26rem;
+        z-index: 99999;
+    }
+    .search-result {
+        margin-top: 2.2rem;
+    }
+    
+</style>
+<div id="searchPage" v-cloak>
+    <div class="">
+        <div class="search-list">
+           <div><input type="text" name="search" id="search" placeholder="请输入问题[最多40字]" maxlength="41"><p class="del-icon" style="display:none;"></p><button id="submit-btn" class="button">发布</button></div>
+            <div class="search-result" >
+                <div v-for="item in searchList" v-show="isShow">
+                    <div class="search-content">
+                        <h3><a href="javascript:void(0);" v-on:click="open(item.url)">{{item.title}}</a></h3>
+                        <div class="q-info">
+                            <div style="width: 50%;display: inline-block;line-height: 0.5rem;vertical-align: middle">
+                                <a href="javascript:void(0);" class="photo" v-on:click="openUser(item.appId)"><img v-bind:src="item.avatar" alt="">{{item.nickname}}</a>
+                                <span class="datetime">{{item.gmt_create}}</span>
+                            </div>
+                            <div style="width: 50%;display: inline-block;text-align: right;">
+                                <span>{{item.answerCount}}回答</span>
+                                <span>|</span>
+                                <span>{{item.favorites}}人收藏</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+            <div class="error-box" v-show="noResult">
+                <div class="error-item"><img src="@(Edushi.WenDa.Web.App.Helper.DataHelper.checkPlatType() == 1 ? Url.Content("~/asset/images/noResult-ios.png") : Url.Content("~/asset/images/noResult-andriod.png"))" /></div><div class="error-tip">搜索无结果</div>
+            </div>
+
+            <div id="ask-question" v-show="isAsk">
+                <textarea placeholder="请输入详细描述内容[描述不能超过300字]" name="" id="question_desc" cols="30" rows="10" maxlength="300"></textarea>
+                <div class="img-upload">
+                    <div class="img-list">
+                    </div>
+                    <form id="addform" method="post" enctype="multipart/form-data">
+                        <div class="file-ipt">
+                            <input type="file" name="upfile" id="file" accept="image/jpeg,image/jpg,image/png">
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="footer">
+            <p v-on:click="addAsk" id="add">点击添加问题描述</p>
+        </div>
+
+        <section class="pop-content" id="popUp">
+            <div class="pop-box">
+                <div class="msg" id="msg"></div>
+                <span class="btn cancel">知道了</span>
+                <a class="btn confirm" href="javascript:void(0);" style="display: none;">去看看</a>
+            </div>
+        </section>
+        @Html.Partial("~/Views/Shared/_PartialConfim.cshtml")
+    </div>
+</div>
+<script src="@Url.Content(string.Format("~/asset/js/ask.js?v={0}",new Random().Next(1,100000)))"></script>
+<script type="text/javascript">
+    var datas = new Vue({
+        el: '#searchPage',
+        data: {
+            isShow: false,
+            isAsk: false,
+            noResult:false,
+            searchList: [{}]
+        },
+        methods: {
+            search: function (word) {
+                $.ajax({
+                    type: 'POST', //GET
+                    url: '@Url.Content("~/Search/getSearchResult")',
+                    data: { 'keyword': word },
+                    success: function (data) {
+                        console.log(data);
+                        if (data.list.length > 0) {
+                            datas.searchList = data.list
+                            datas.noResult = false
+                            datas.isShow = true
+                        } else {
+                            datas.noResult = true
+                            datas.isShow = false
+                        }
+                       
+                    },
+                    error: function (xhr, type) {
+                    }
+                });
+            },
+            // 添加提问
+            addAsk: function () {
+                datas.isShow = false
+                datas.isAsk = true
+                datas.noResult = false
+                $('.footer').hide()
+                $('.search-result').css("margin-top", "1.1rem")
+            },
+            open: function (url) {
+                openPage(url);
+            },
+            openUser: function (appId) {
+                openUserIndexPage(appId);
+            }
+        }
+    })
+
+    $(function () {
+        // 清空输入框内数据
+        $(".del-icon").click(function () {
+            $(this).prev("input").val("");
+            // 清空输入框后重新请求数据
+            datas.search($('#search').val());
+            $(this).hide();
+            $("#submit-btn").removeClass("fabu-tiwen")
+        });
+        // 选择图片上传
+        $("#file").change(function () {
+            if ($(this).val().length > 0) {
+                ask.submitForm('@Url.Content("~/UploadImg.htm")', $('#addform'))
+            }
+        });
+        // 删除图片
+        $(".img-upload").on("click", ".img-close", function () {
+            $(this).parent(".img-item").remove();
+            var myFileName = $(this).prev().find('img').attr('src');
+            ask.deleteImg("@Url.Content("~/DeleteImg.htm")", myFileName);
+            $("#file").val("");
+            if ($(".img-item img").length < 3) {
+                $("#addform").show();
+            }
+        });
+        $("#submit-btn").click(function () {
+            if (EId <= 0)//通知APP登录
+            {
+                getAppId(1);
+                return;
+            }
+            if (!$(this).hasClass("fabu-tiwen")) {
+                return
+            }
+            var title = $('#search').val();
+            if (title == "") {
+                popUp("标题不能为空!");
+                return false;
+            } else if (title.length > 40) {
+                //popUp("标题不能超过40个字!");
+                return false;
+            }
+            var desc = $('#question_desc').val();
+            var imgs = "";
+            $.each($(".img-list .img-item img"), function (i, v) {
+                if (i > 0) {
+                    imgs += ",";
+                }
+                imgs += $(v).attr("src");
+            });
+            var options = { "Title": title, "Desc": desc, "Imgs": imgs, "EId": EId }
+            //var elementObj = { "Title": $("#search"), "Desc": $("#question_desc"), "Imgs": $(".img-list .img-item"), "imgupload": $("#addform"), "searchResult": $(".search-result") }
+            ask.submit("@Url.Content("~/AddQuestion.htm")", options, null)
+        })
+    })
+
+    var flag = true;
+    $('#search').on('compositionstart', function () {
+        flag = false;
+    })
+    $('#search').on('compositionend', function () {
+        flag = true;
+    })
+    $('#search').on('input', function () {
+        var _this = this;
+        if ($(_this).val().length > 40) {
+            TostUp('#tost', '超过长度')
+        }
+        if ($(_this).val() == '') {
+            $(_this).next(".del-icon").hide();
+            $("#submit-btn").removeClass("fabu-tiwen")
+        } else {
+            $(_this).next(".del-icon").show();
+            $("#submit-btn").addClass("fabu-tiwen")
+        }
+        setTimeout(function () {
+            if (flag) {
+                var word = $(_this).val();
+                if (!datas.isAsk)
+                    datas.search(word);
+            }
+        }, 0)
+    })
+
+</script>
+<script>
+    var EId = 0;
+    setTimeout(function () {
+        EId = getEIdByAppId("@Url.Content("~/Shared/GetEIdByAppId")", appId);
+    }, 100);
+</script>

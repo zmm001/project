@@ -1,0 +1,102 @@
+﻿@{
+    Layout = null;
+}
+@{
+    string inviteCode = Edushi.User.common.CookieHelper.GetCookieValue("inviteCode");
+}
+
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" id="viewport" content="width=device-width,initial-scale=1.0, maximum-scale=1.0,minimum-scale=1.0,user-scalable=no" />
+    <title>用户中心</title>
+    <link rel="stylesheet" type="text/css" href="@Url.Content("~/asset/css/common.css")">
+    <link rel="stylesheet" type="text/css" href="@Url.Content("~/asset/css/style.css")">
+    <script src="@Url.Content("~/asset/js/jquery-1.8.3.min.js")"></script>
+    @*<script type="text/javascript" src="asset/js/user.js"></script>*@
+    <script>
+        //rem单位自适应
+        document.documentElement.style.fontSize = 100 * ((document.documentElement.clientWidth) / 750) + "px";
+        //ios10 以上监听方式禁止缩放
+        window.onload = function () {
+            document.addEventListener('touchstart', function (event) {
+                if (event.touches.length > 1) {
+                    event.preventDefault();
+                }
+            })
+            var lastTouchEnd = 0;
+            document.addEventListener('touchend', function (event) {
+                var now = (new Date()).getTime();
+                if (now - lastTouchEnd <= 300) {
+                    event.preventDefault();
+                }
+                lastTouchEnd = now;
+            }, false)
+        };
+
+    </script>
+
+    <body>
+        <div class="app-download-box">
+            <a href="javascript:void(0);" class="download-btn" id="app_down"></a>@*https://client.makezixun.com/lp.html#/wzwdsp_gr8*@
+            <a href="javascript:void(0);" class="invite-btn" id="btn" data-clipboard-action="copy" data-clipboard-text="https://client.makezixun.com/weixinShare.html?activities=normal&inviteCode=@inviteCode"></a>
+            <div class="invite-tips-show">链接复制成功，可发给好友！</div>
+        </div>
+        <script type="text/javascript" src="@Url.Content("~/asset/js/clipboard.min.js")"></script>
+        <script>
+            var clipboard = new ClipboardJS('.invite-btn');
+
+            clipboard.on('success', function (e) {
+                $(".invite-tips-show").fadeIn(500).delay(2000).fadeOut(500);
+            });
+
+            clipboard.on('error', function (e) {
+                console.log(e);
+            });
+        </script>
+    </body>
+    <script>
+        var _hmt = _hmt || [];
+        (function () {
+            var hm = document.createElement("script");
+            hm.src = "https://hm.baidu.com/hm.js?99a36e54478482e04c158ab069a3e598";
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
+    <script>
+        function downApp() {
+            var u = navigator.userAgent;
+            isAndroid = u.indexOf('Android') > -1 || u.indexOf('Adr') > -1;
+            isiOS = !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/);
+            urls = {
+                'android': '@System.Configuration.ConfigurationManager.AppSettings["app_url_android"]',
+                'ios': '@System.Configuration.ConfigurationManager.AppSettings["app_url_ios"]'
+            };
+            //简化
+            if (isAndroid) {
+                window.location.href = urls.android;
+            }
+            else if (isiOS) {
+                window.location.href = urls.ios;
+            }
+        }
+        function checkPlatType() {
+            if (/(iPhone|iPad|iPod|iOS)/i.test(navigator.userAgent)) {
+                return 1;
+            } else if (/(Android)/i.test(navigator.userAgent)) {
+                return 2;
+            } else {
+                return 3;
+            }
+        }
+
+        $(document).ready(function () {
+            $("#app_down").click(function () {
+                downApp();
+            });
+        });
+    </script>
+</html>

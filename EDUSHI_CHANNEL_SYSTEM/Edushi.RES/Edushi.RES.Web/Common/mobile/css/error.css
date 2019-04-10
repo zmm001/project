@@ -1,0 +1,111 @@
+@charset "utf-8";
+/* CSS Document */
+
+body{ margin:0; padding:0; color:#333; font-family: Microsoft Yahei; font-size:16px; background:#fafafa; border-bottom:1px solid #e0d9ce;}
+p, ul, h1, h2, h3, h4, h5, h6, fieldset, dl, dt, dd, form, input, select, marquee{ margin:0; padding:0;}
+ul li{ list-style-type:none;}
+input, textarea{ -webkit-appearance: none; border-radius:0;}
+article, aside, details, figcaption, figure, footer, header, hgroup, nav, section{ display:block;}
+img, object, embed, video{ max-width:100%; border:none;}
+a{ outline-style:none; color:#333; text-decoration:none;}
+a:link, a:visited{ color:#333;}
+a:hover{ color:#cc2900; text-decoration:none;}
+a:acitve{ color:#333;}
+
+@media screen and (-webkit-min-device-pixel-ratio:0) { 
+    input[type='text']{ line-height:normal !important;}
+	button, input, select, textarea{ outline:none;}
+}
+
+/* HEADINGS   
+----------------------------------------------------------*/
+h1, h2, h3, h4, h5, h6{ font-size:1.5em;}
+h1{ font-size:2em;}
+h3{ font-size:1.2em;}
+h4{ font-size:1.1em;}
+h5, h6{ font-size:1em;}
+
+/* TABLE
+----------------------------------------------------------*/
+table{ border-collapse:collapse; border-spacing:0; font-size:100%;}
+table th{ font-weight:normal;}
+
+/* MISC  
+----------------------------------------------------------*/
+.clear{ clear:both;}
+.clearfix:before, .clearfix:after{ content:""; display:table;}
+.clearfix:after{ clear:both;}
+.clearfix{ *zoom:1;}
+
+* {
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+}
+*:before,
+*:after {
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.wrapper{ width:100%; margin:0 auto;}
+.f-l{ display:inline; float:left;}
+.f-r{ display:inline; float:right;}
+
+
+/*
+	头部 底部
+*/
+.page-header{ position:relative; width:100%; height:50px; z-index:99;}
+.edushi-logo{ position:fixed; width:100%; height:50px; padding:0 2.5%; z-index:100; border-top:4px solid #ff4d00; background:#fafafa;}
+.edushi-logo .e-logo{ display:inline-block; float:left; width:82px; height:26px; margin-top:7px; margin-right:10px;}
+.top-img{ float:left; width:138px; height:14px; margin-top:16px; background:url(http://m.edushi.com/asset/images/top_img@2x.png) no-repeat; background-size:100% 100%;}
+
+.page-footer{ margin-top:20px; margin-bottom:9px;}
+.page-footer nav{ width:75%; margin:0 auto 9px; padding:11px 0; line-height:16px; text-align:center; border:1px solid #cdcdcc; border-radius:5px;
+	background:-moz-linear-gradient(top, #fefefd, #e7e6e6);
+	background:-webkit-linear-gradient(top,#fefefd,#e7e6e6);
+	background:-o-linear-gradient(top,#fefefd,#e7e6e6);
+	background:-ms-linear-gradient(top,#fefefd,#e7e6e6);
+}
+.page-footer nav a{ margin:0 2.2%; padding:0 3%; color:#333;}
+.copyright{ font-size:13px; line-height:26px; text-align:center; color:#999;}
+
+/*
+	导航栏
+*/
+.main-nav{ border-top:1px solid #d95600; border-bottom:1px solid #cc3d00;}
+.main-nav ul{ padding:7px 5%; border-top:1px solid #f8be60; border-bottom:1px solid #e69a60; font-weight:bold; line-height:28px; text-align:center; white-space:nowrap;
+	background:-moz-linear-gradient(#f07b00, #d55400 50%,#cc3300);
+	background:-webkit-linear-gradient(#f07b00, #d55400 50%,#cc3300);
+	background:-o-linear-gradient(#f07b00, #d55400 50%,#cc3300);
+	background:-ms-linear-gradient(#f07b00, #d55400 50%,#cc3300);
+}
+.main-nav ul li{ float:left; width:25%;}
+.main-nav ul li a{ display:inline-block; padding:0 8%; color:#fff; border:1px solid transparent;}
+.main-nav ul li a.current{ border:1px solid #cccccc; color:#cc2900; box-shadow:inset 0 0 0 1px #fff;
+	background:-moz-linear-gradient(#f3f3f3, #fefefe 58%,#ebebeb);
+	background:-webkit-linear-gradient(#f3f3f3, #fefefe 58%,#ebebeb);
+	background:-o-linear-gradient(#f3f3f3, #fefefe 58%,#ebebeb);
+	background:-ms-linear-gradient(#f3f3f3, #fefefe 58%,#ebebeb);
+}
+.index-main-nav ul li{ width:20%;}
+
+.error-msg{ padding:40px 0;  border-bottom:1px solid #e0d9ce;}
+.not-found{ padding:0 2%;}
+.not-found img{ margin:0 auto 28px;}
+.back-home{ width:90%; margin:0 auto; height:45px; border:1px solid #dddddd; line-height:45px; text-align:center; box-shadow:inset 0 0 0 1px #fff;
+	background:-moz-linear-gradient(#efefef,#f5f5f5 50%,#ffffff);
+	background:-webkit-linear-gradient(#efefef,#f5f5f5 50%,#ffffff);
+	background:-o-linear-gradient(#efefef,#f5f5f5 50%,#ffffff);	
+}
+.back-home a{ color:#bf1300;}
+.back-home span{ font-size:12px; color:#333;}
+.home-icon { display:inline-block; width:14px; height:19px; margin-right:5px; background:url(http://res.edushi.com/bang/v3/mobile/asset/images/logo_icon@2x.png) no-repeat; background-size:cover;}
+.not-found-a{ display:-webkit-box; width:87%; margin:0 auto 28px; padding-bottom:10px; font-size:13px; font-weight:bold; line-height:18px;color:#999999; background:url(http://res.edushi.com/bang/v3/mobile/asset/images/line_bg.png) no-repeat center bottom; background-size:100%;}
+.error-icon{ width:57px; height:57px; margin-right:5%; background:url(http://res.edushi.com/bang/v3/mobile/asset/images/notfound_@2x.png) no-repeat; background-size:100% 100%;}
+.error-text{ -webkit-flex:1; -webkit-box-flex:1; width:78%; margin-top:2px;}
+.not-found-a h3{font-size:12px;}
+.not-found-a h3 a{ color:#007bd9;}
+.not-found-a h3 a span{ display:block; width:100%; height:18px; color:#cc3600; overflow:hidden;}

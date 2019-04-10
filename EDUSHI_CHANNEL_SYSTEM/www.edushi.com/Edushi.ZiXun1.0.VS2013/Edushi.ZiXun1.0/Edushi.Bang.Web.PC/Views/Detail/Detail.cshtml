@@ -1,0 +1,696 @@
+﻿@model Edushi.Bang.Web.PC.Models.DetailModel
+@using Edushi.Bang.Special
+@using Edushi.Bang.Web.PC.Controllers;
+@{
+    var mobileUrl = "http://m.edushi.com/zixun/info/" + Request.Url.AbsoluteUri.ToLower().Substring(Request.Url.AbsoluteUri.ToLower().LastIndexOf("/") + 1);
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+    <meta http-equiv="mobile-agent" content="format=html5;url=@mobileUrl" />@*<link rel="alternate" media="only screen and (max-width: 640px)" href="@Request.Url.AbsoluteUri.ToLower().Replace("/bang", "/bang/3g")" >*@
+    <link rel="alternate" media="only screen and(max-width: 640px)" href="@mobileUrl" />
+    <title>@(Model.article.IA_Title)-@*@(Model.Base.CityName)*@@(Model.parentTypeName + Model.TypeName)-E都市</title>
+    <meta name="keywords" content="@(Model.article.IA_Keyword)-@(Model.article.IA_Title)" />
+    <meta name="description" content="@(Model.description)" />
+    <script src="http://res.edushi.com/js/jquery-1.7.2.min.js" type="text/javascript"></script>
+    @*评论*@
+    <script src="http://res.edushi.com/bang/v4/asset/js/Comment.js" type="text/javascript"></script>
+    <link href="http://res.edushi.com/bang/v4/asset/css/detail.css" rel="stylesheet" />
+    <link href="http://res.edushi.com/bang/v4/asset/css/login.css" rel="stylesheet" />
+    <script src="http://dup.baidustatic.com/js/ds.js"></script>
+    <script>
+        var _hmt = _hmt || [];
+        (function () {
+            var hm = document.createElement("script");
+            hm.src = "https://hm.baidu.com/hm.js?99a36e54478482e04c158ab069a3e598";
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
+</head>
+<body>
+    <div class="top-nav-box">
+        <div class="top-nav-wrap">
+            <div class="wrapper clearfix">
+                <a href="http://www.edushi.com/" target="_blank" class="fl e-home">爱上头条首页</a>
+                <div class="fr nav-tips">
+                    <a href="http://apps.edushi.com/news/app-pc.html" target="_blank" class="mobile">E都市<em></em></a>
+                    <a href="http://www.edushi.com/mapcity.html" target="_blank" class="map">三维地图<em></em></a>
+                    <a href="http://wenda.edushi.com/" target="_blank" class="bdt">问答<em></em></a>
+                    <a href="http://xiaoshuo.edushi.com/" target="_blank" class="xiaoshuo">小说<em></em></a>
+                    <a href="http://lvyou.edushi.com/" target="_blank" class="yl">旅游景点<em></em></a>
+                    @*<a href="http://lvyou.edushi.com/Hotel" target="_blank" class="jdyd">酒店预订<em></em></a>*@
+                    <a href="http://fangtoo.edushi.com/es/" target="_blank" class="fang">二手房<em></em></a>
+                    <a href="http://fangtoo.edushi.com/cz/" target="_blank" class="zf">租房<em></em></a>
+                    <span id="member"></span>
+                    <a href="javascript:void(0);" class="more">更多<em></em></a>
+                </div>
+            </div>
+            <div class="sitemap">
+                <div class="wrapper">
+                    <ul class="clearfix">
+                        @Html.Raw(Model.HtmlAllCategory)
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="wrapper pb60">
+        <div class="mt30">
+            <!-- 广告位：【A05-01】 -->
+            <script>
+                (function () {
+                    var s = "_" + Math.random().toString(36).slice(2);
+                    document.write('<div id="' + s + '"></div>');
+                    (window.slotbydup = window.slotbydup || []).push({
+                        id: '5296263',
+                        container: s,
+                        size: '1200,125',
+                        display: 'inlay-fix'
+                    });
+                })();
+            </script>
+        </div>
+        <div class="urhere">
+            <a href="http://www.edushi.com/" target="_blank">首页</a>
+            <a href="@Model.parentTypeURL" target="_blank">@Model.parentTypeName</a>
+            @Html.Raw(Model.currentLink)
+            <span>正文</span>
+        </div>
+        <div class="clearfix">
+            <div class="fl main-body">
+                
+                <div class="main-text-cnt">
+                    <div class="share-box">
+                     @if(!string.IsNullOrEmpty(Model.NickName))
+                       {
+                        <div class="eds-name-box">
+                            
+                            <div class="eds-name">
+                                <a href="@Model.EditorUrl" target="_blank">
+                                    <div class="photo">
+                                        <img src="@Model.Avatar">
+                                    </div>
+                                    <div class="name">@Model.article.IA_Author</div>
+                                </a>
+                                <div class="info">@Model.Tags</div>
+                                <div class="tips clearfix">
+                                    <div>
+                                        <p>@Model.ArticleCount</p>篇文章
+                                    </div>
+                                    <div>
+                                        <p>@Model.FansCount</p>人关注
+                                    </div>
+                                </div>
+
+                            </div>
+                            
+                           <div  id="fansfollow"></div>
+                            
+                        </div>
+                        }
+                        <div class="write"><a href="#comments-area" class="tie"><i></i>@Model.TotalCountComment</a></div>
+                        @*分享*@
+                        <ul>
+                            <li>
+                                <a href="javascript:void(0);" class="weixin"><i></i>微信</a>
+                                <div class="js-qrcode-wrap">
+                                    @*<div class="close js-close"></div>
+                                    <div class="qrcode-img"><img src="" /></div><p>用微信扫码二维码</p><p>分享至好友和朋友圈</p>*@
+                                </div>
+                            </li>
+                            <li><a href="@Model.ShareUrlDic["QQ"]" target="_blank" class="qq"><i></i>QQ</a></li>
+                            <li><a href="@Model.ShareUrlDic["QQZone"]" target="_blank" class="qzone"><i></i>QQ空间</a></li>
+                            <li><a href="@Model.ShareUrlDic["Sina"]" target="_blank" class="weibo"><i></i>微博</a></li>
+                        </ul>
+                        </div>
+                        <h1>@Html.Raw(Model.article.IA_Title)</h1>
+                        <div class="time-source clearfix">
+                            <div class="fl">
+                                @Model.article.IA_CreateDate.ToLocalTime().ToString("yyyy年MM月dd日 HH:mm:ss")&nbsp;&nbsp;来源：@Model.article.IA_FromTitle&nbsp;&nbsp;编辑：@Model.article.IA_Author
+                            </div>
+                        </div>
+                        <div class="main-text">
+                            @*内容*@
+                            @Html.Raw(Model.IA_Content)
+
+                            @*<a href="http://www.edushi.com/" target="_blank" class="bank-link"><img src="http://res.edushi.com/bang/v3/asset/images/logo_icon.png" />返回E都市网首页>></a>*@
+                            @if (Model.totalCount > 1)
+                            {
+                                <div class="text-page-box">
+                                    @Html.Raw(Html.Pager(Model.totalCount, Model.pageSize, Model.pageCurrentIndex, "", "", new PagerOptions { PageIndexParameterName = "pageno", ShowDisabledPagerItems = false, NumericPagerItemCount = 5, CurrentPageNumberFormatString = "<span>{0}</span>", ShowFirstLast = false }, Model.PageRouteName, null, null).ToString().Replace("&lt;", "<").Replace("&gt;", ">").Replace("<div>", "").Replace("</div>", ""))
+                                    <a href="@Model.HtmlAllUrl" class="show-all">显示全文</a>
+                                </div>
+                            }
+                            
+                            <div class="glod-container">
+                                <div id="unLogin" style="display:none">
+                                    <a><img src="http://res.edushi.com/bang/v4/asset/images/gold_reg.png"></a>
+                                </div>
+                                <div class="gload-box" id="hasLogin" style="display:none">
+                                    <a href="http://user.edushi.com/">
+                                        <h3>本文已阅&nbsp;&nbsp;奖励<span>+20金币</span><i></i></h3>
+                                        <div class="tips">
+                                            <div>金币 <span id="goldCount"></span> <i>枚</i></div>
+                                            <div>零钱 <span id="moneyCount"></span> <i>元</i></div>
+                                        </div>
+                                        <p>继续阅读新闻 赚取更多金币</p>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="article-operation clearfix">
+                                <a href="http://report.edushi.com/report" target="_blank" class="report">举报本文</a>
+                                <div  id="Downvote"><i></i><em>+1</em><span class="u-num" id="DownvoteNum">@Model.DownvoteCount</span></div> <!-- 已踩添加样式 visited -->
+                                <div  id="Upvote"><i></i><em>+1</em><span class="u-num" id="UpvoteNum">@Model.UpvoteCount</span></div> <!-- 已赞添加样式 visited --> 
+                                <a href="javascript:void(0);"  id="favorite"></a><!-- 收藏添加样式 success -->
+					        </div>
+                            <p class="text-imf">
+                                依据《信息网络传播权保护条例》第二十二条之规定，即“避风港原则”，本站所有文章及内容系第三方作者上传，如有侵权行为请及时联系本站客服删除，本站不对内容传播行为承担赔偿责任。
+                            </p>
+                            <div id="XinWenJuJi"></div>
+                            <div class="mt30">
+                                <script type="text/javascript" src="//nba.emohe.com/pkcgghgsm.js"></script>
+                            </div>
+                            @*相关剧迷*@
+                            @if (Model.JumiList != null && Model.JumiList.Any())
+                            {
+                                foreach (var item in Model.JumiList)
+                                {
+                                    <p class="m t">
+                                        <a href="@item.Url" target="_blank">
+                                            <span class="photo"><img src="@item.Pic" alt=""></span>
+                                            <span class="name">@(item.Title)</span>
+                                        </a>
+                                        <a href="@item.Url" class="more" target="_blank">更多>>  </a>
+                                    </p>
+                                    <p class="m ii">
+                                        @Html.Raw(item.Desc)
+                                    </p>
+                                }
+                            }
+                            @*相关人物*@
+                            @if (Model.RenWuList != null && Model.RenWuList.Any())
+                            {
+                                foreach (var item in Model.RenWuList)
+                                {
+                                    <p class="p t">
+                                        <a href="@item.Url" target="_blank">
+                                            <span class="photo">
+                                                <img src="@item.Pic" alt="">
+                                            </span> <span class="name">@(item.Title)</span>
+                                        </a><a href="@item.Url" class="more" target="_blank">
+                                            更多>>
+                                        </a>
+                                    </p>
+                                    <p class="p ii">@Html.Raw(item.Desc)</p>
+                                }
+                            }
+                            @*相关专题*@
+                            @if (Model.TopicRelation != null && Model.TopicRelation.Any())
+                            {
+                                foreach (var item in Model.TopicRelation)
+                                {
+                                    var topicUrl = Common.GetInfoUrl("http://www.edushi.com/zt/", item.TT_ID_Parent, item.TT_ID, item.T_ID);
+                                    <p class="t z">
+                                        <a href="@topicUrl" target="_blank">
+                                            @if (!string.IsNullOrWhiteSpace(item.T_BackGroundPic))
+                                            {
+                                                <img src="@item.T_BackGroundPic.GetPicReplace("http://cpic7.edushi.com/", Edushi.Bang.Special.Common.GetConfigString("CdnPicUrl"))" />
+                                            }
+                                            <span>@Html.Raw(item.T_Title)</span>
+                                        </a>
+                                    </p>
+                                    <p class="i z">
+                                        @Html.Raw(item.T_Lead)
+                                    </p>
+                                }
+                            }
+                            @*相关新闻*@
+                            @if (Model.NewsRelation != null && Model.NewsRelation.Any())
+                            {
+                                <div style="margin-bottom:20px;padding-bottom:10px;border-bottom:1px solid #eeeeee;">
+                                    <script type="text/javascript" src="//nba.emohe.com/pkcgghgsm.js"></script>
+                                 </div>
+                                foreach (var item in Model.NewsRelation)
+                                {
+                                    var newsUrl = Common.GetPCInfoUrl(item.IA_CityCode, item.IT_ParentID, item.IT_ID, item.IA_ID);
+                                    <p class="t">
+                                        <a href="@newsUrl" target="_blank">
+                                            @if (!string.IsNullOrWhiteSpace(item.IA_Pic))
+                                            {
+                                                <img src="@item.IA_Pic.GetPicReplace("http://cpic7.edushi.com/", Edushi.Bang.Special.Common.GetConfigString("CdnPicUrl"))" />
+                                            }
+
+                                            <span>@Html.Raw(item.IA_Title)</span>
+                                        </a>
+                                    </p>
+                                    <p class="i">
+                                        @Html.Raw(item.IA_Lead)
+                                    </p>
+                                }
+                            }
+                        </div>
+                    <div class="mt20" style="padding-top:8px;border-top:1px solid #eeeeee;">
+                        <script type="text/javascript" src="//nba.emohe.com/pkcgghgsm.js"></script>
+                    </div>
+                        <div class="mt30">
+                            <script type="text/javascript" src="//nba.emohe.com/bwofsvfxf.js"></script><!--高度为124px -->
+                        </div>
+                    </div>
+                @*评论发帖区*@
+                <div class="comment-box" id="comments-area">
+                    <div class="comment-line"></div>
+                    <div class="comment-toolbar">
+                        <div class="comment-logo"></div>
+                        <div class="count">跟贴 <span>@Model.CountComment</span></div>
+                        <div class="join-count">参与 <span>@Model.TotalCountComment</span></div>
+                        <a href="#comments-area" class="fatie">发贴</a>
+                    </div>
+                    <div class="tie-cnt">
+                        <div class="js-tieba">
+                            <div class="tie-area clearfix">
+                                <textarea name="" id="comment0" class="comments-area"></textarea>
+                                
+                                <div class="publist-btn" onclick="SubmitGuestBook(0);">
+                                    @if (Model.eUser != null&&Model.eUser.UI_ID!=0)
+                                    {
+
+                                        <input type="button" name="" id="" value="发贴" />
+                                    }
+                                    else
+                                    {
+                                        <input type="button" name="" id="" value="登录并发贴" />
+                                    }
+
+                                </div>
+                                
+                                @*隐藏域*@
+                                <input type="hidden" id="hidCount" value="@Model.CountComment" />
+                                <input type="hidden" id="hidUrl" value="@(Url.Content("~/"))" />
+                                <input type="hidden" id="hidID" value="@(Model.article.IA_ID)" />
+                                <input type="hidden" id="hidTID" value="@Model.article.IT_ParentID" />
+                                <input type="hidden" id="hidWebChat" value="@Model.ShareUrlDic["WeChat"]" />
+
+                                <input type="hidden" id="hidUid" value="@Model.EditorId" />
+                                <input type="hidden" id="hidFansId" value="@Model.eUser.UI_ID" />
+                              
+                                <input type="hidden" id="hidIsUpvote" value="@Model.IsUpvoteDownvote" />
+                                <input type="hidden" id="hidNickName" value="@Model.eUser.UI_NickName" />
+                              
+
+                            </div>
+                            <div class="tips">网友评论仅供其表达个人看法，并不表明E都市立场。</div>
+                            <div id="msg0" style=" display:none;" class="msg"></div>
+                        </div>
+
+                        @if(Model.lstComment!=null&&Model.lstComment.Count>0)
+                        {
+                            var ArticleCommentList = Model.lstComment.FindAll(p => p.UC_FatherID == 0).ToList();
+                           
+                            int acount=10;
+                            if (ArticleCommentList.Count < 10)
+                            {
+                                acount = ArticleCommentList.Count;
+                            }
+                            if(ArticleCommentList!=null&&ArticleCommentList.Count>0)
+                            { 
+                            <div class="tie-hot" id="allcomment">
+                           @for(int k=0;k<acount;k++)
+                           {
+                               Edushi.Bang.Model.UserCommentModel item = ArticleCommentList[k];
+                               var UserRepeaterList = Model.lstComment.FindAll(p => p.UC_FatherID == item.UC_ID);
+                               Edushi.User.model.UserInfoModel user = Custom.GetUser(int.Parse(item.UC_UserID.ToString()));
+                               string mpic =user.UI_Avatar;
+                               if (string.IsNullOrEmpty(mpic))
+                               {
+                                   mpic = "http://res.edushi.com/bang/v3/asset/images/userhead.jpg";
+                               }
+                                         
+                            <div class="tie-list clearfix">
+                                <a href="@string.Format("http://user.edushi.com/index/{0}-{1}.html", user.UI_Type == 3 ? 5 : 1, item.UC_UserID.ToString())" target="_blank" class="fl photo">
+                                    <img src="@mpic">
+                                </a>
+                                <div class="fr tieba">
+                                    <div class="author clearfix">
+                                        <div class="fl">
+                                            <a target="_blank" href="@string.Format("http://user.edushi.com/index/{0}-{1}.html", user.UI_Type == 3 ? 5 : 1, item.UC_UserID.ToString())" class="name">@(user.UI_NickName == "" || user.UI_NickName == "匿名" ? "E都市网友" : user.UI_NickName)</a>
+                                            <span class="time">@DateTime.Parse(item.UC_CreateDate.ToString()).AddHours(8).ToString("yyyy-MM-dd HH:mm:ss")</span>
+                                        </div>
+                                        <div><input type="hidden" id="currentUserId" value="@Model.eUser.UI_ID" /></div>
+                                        @*<div class="follow-btn" id="@item.UC_UserID.ToString()">关注</div>*@
+                                        @if (@Model.eUser.UI_ID != user.UI_ID)
+                                        {
+                                             <div class="js-follow-btn follow-btn" id="@user.UI_ID.ToString()" onclick="AddAttention('@user.UI_ID.ToString()')">关注</div>
+                                        }
+                                    </div>         
+                                    <div class="comment">@Html.Raw(item.UC_Content)</div>
+                                    <div class="tool-bar clearfix">
+                                        <ul class="tool">
+                                            <li class="zan @(Custom.GetIsUpvoteDownvote(item.UC_ID) ? "" : " up-btn")" id="zan@(item.UC_ID)" onclick="CommentUpvote(@item.UC_ID)"><em>+1</em>赞<span class="u-num" id="zanNum@(item.UC_ID)">@item.UC_UpvoteTotal</span></li>
+                                            <li class="cai @(Custom.GetIsUpvoteDownvote(item.UC_ID) ? "" : " down-btn")" id="cai@(item.UC_ID)" onclick="CommentDownvote(@item.UC_ID)"><em>+1</em>踩<span class="u-num" id="caiNum@(item.UC_ID)">@item.UC_DownvoteTotal</span></li>
+                                            <li class="replay-btn js-replay-btn" >回复</li> 
+                                        </ul>
+                                    </div>
+                                    <!-- 点击回复时的评论框 -->
+                                    <div class="tie-input-bar" id="tieinputbar@(item.UC_ID)">
+                                        <div class="tie-input-box">
+                                            <textarea name="" id="comment@(item.UC_ID)" class="cnt-box"></textarea>
+                                            <div class="submit-row clearfix">
+                                                <input type="button" class="btn-input" value="发布" onclick="SubmitGuestBook(@item.UC_ID);" />
+                                            </div>
+
+                                        </div>
+                                        <div class="tie-msg" id="msg@(item.UC_ID)">评论内容不能为空。</div>
+                                    </div> 
+                                  
+                                    @if(UserRepeaterList!=null&&UserRepeaterList.Count>0)
+                                    {
+                                        int rcount = 3;
+                                        if (UserRepeaterList.Count < 3)
+                                        {
+                                            rcount = UserRepeaterList.Count;
+                                        }
+                                    <div class="replay-box" id="allreplay@(item.UC_ID)" >
+                                       @for (int i = 0; i < rcount;i++ )
+                                       {
+                                           var sitem = UserRepeaterList[i];
+                                           Edushi.User.model.UserInfoModel suser = Custom.GetUser(int.Parse(sitem.UC_UserID.ToString()));
+                                           string spic = suser.UI_Avatar;
+                                           if (string.IsNullOrEmpty(spic))
+                                           {
+                                               spic = "http://res.edushi.com/bang/v3/asset/images/userhead.jpg";
+                                           }
+                                        <div class="replay-list clearfix">
+                                            <a href="@string.Format("http://user.edushi.com/index/{0}-{1}.html", user.UI_Type == 3 ? 5 : 1, @suser.UI_ID.ToString())" target="_blank" class="fl photo">
+                                                <img src="@spic">
+                                            </a>
+                                            <div class="fr replay-tie">
+                                                <div class="author clearfix">
+                                                    <div class="fl">
+                                                        <a target="_blank" href="@string.Format("http://user.edushi.com/index/{0}-{1}.html", user.UI_Type == 3 ? 5 : 1, @suser.UI_ID.ToString())" class="name">@suser.UI_NickName</a>
+                                                        <span class="time">@DateTime.Parse(sitem.UC_CreateDate.ToString()).AddHours(8).ToString("yyyy-MM-dd HH:mm:ss")</span>
+                                                    </div>
+                                                    @if (@Model.eUser.UI_ID != user.UI_ID)
+                                                    {
+                                                        <div class="js-follow-btn follow-btn" id="@suser.UI_ID.ToString()" onclick="AddAttention('@suser.UI_ID.ToString()')">关注</div>
+                                                        @*<div class="js-follow-btn follow-btn" id="@user.UI_ID.ToString()" onclick="AddAttention('@user.UI_ID.ToString()')">关注</div>*@
+                                                    }
+                                                    
+                                                </div>  
+                                                <div class="comment">@Html.Raw(sitem.UC_Content)</div>
+                                                <ul class="replay-tips">
+                                                    <li class="zan @(Custom.GetIsUpvoteDownvote(sitem.UC_ID)?"":" up-btn")" id="zan@(sitem.UC_ID)" onclick="CommentUpvote(@sitem.UC_ID)"><em>+1</em>赞<span class="u-num" id="zanNum@(sitem.UC_ID)">@sitem.UC_UpvoteTotal</span></li>
+                                                    <li class="cai @(Custom.GetIsUpvoteDownvote(sitem.UC_ID) ? "" : " down-btn")" id="cai@(sitem.UC_ID)" onclick="CommentDownvote(@sitem.UC_ID)"><em>+1</em>踩<span class="u-num" id="caiNum@(sitem.UC_ID)">@sitem.UC_DownvoteTotal</span></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        
+                                       } 
+                                    </div>
+                                        if (UserRepeaterList.Count > 3)
+                                        {
+                                            <p  class="replay-all" id="divMoreRepeater@(item.UC_ID)"><span onclick="MoreRepeater(@item.UC_ID)">展开全部@(UserRepeaterList.Count - 3)条回复</span></p>
+                                        }
+                                    }
+                                </div>
+                            </div>
+                                
+                           }
+
+                        </div>
+                                if (ArticleCommentList.Count > 10)
+                                {
+                                    <p class="more" style=" display:block;" id="divMoreComment" onclick="MoreComment()"><span>加载更多评论</span></p>
+                                }
+                            }
+                        } 
+                         
+                        
+                        
+                     </div>
+                </div>
+                </div>
+            <div class="fr slide-cnt">
+                <div class="jsfixed">
+                    <script type="text/javascript" src="//nba.emohe.com/ytcclpzss.js"></script><!-- 高度为250px -->
+                </div>
+                @*右侧专题推荐*@     
+                <div class="zt-list mt30" id="divTopicRecommend">  </div>
+                <div class="mt20">
+                    <script async=async async=async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+                    <!-- 300x250,生活包详细页09-6-25 -->
+                    <ins class="adsbygoogle"
+                         style="display:inline-block;width:300px;height:250px"
+                         data-ad-client="ca-pub-6571762537302535"
+                         data-ad-slot="6995263122"></ins>
+                    <script>
+                        (adsbygoogle = window.adsbygoogle || []).push({});
+                    </script>
+                    <!-- 广告位 高度为250px -->
+                </div>
+
+                @*图闻推荐*@
+                @Html.Raw(Model.RecommendPicHtml)               
+                <div class="mt30">
+                    <script type="text/javascript" src="//nba.emohe.com/ytcclpzss.js"></script><!-- 高度为250px -->
+                </div>
+                @*文章推荐*@
+                @Html.Raw(Model.RecomendInfoArticleHtml)
+                <div class="mt20">
+                    <script async=async async=async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+                    <!-- 300x250,生活包详细页09-6-25 -->
+                    <ins class="adsbygoogle"
+                         style="display:inline-block;width:300px;height:250px"
+                         data-ad-client="ca-pub-6571762537302535"
+                         data-ad-slot="6995263122"></ins>
+                    <script>
+                        (adsbygoogle = window.adsbygoogle || []).push({});
+                    </script><!-- 广告位 高度为250px -->
+                </div>
+
+                @if (Model.RenWuHot != null && Model.RenWuHot.Any())
+                {
+                    <div class="per-box side red mt30">
+                        <div class="tit-nav"><a href="http://www.edushi.com/renwu/" target="_blank">热门人物</a></div>
+                        <ul>
+                            @foreach (var item in Model.RenWuHot)
+                            {
+                                <li>
+                                    <a href="@item.Url" target="_blank">
+                                        <div>
+                                            <img src="@item.Pic" alt="">
+                                        </div>
+                                        <span class="name">@Html.Raw(item.Title)</span>
+                                    </a>
+                                </li>
+                            }
+                        </ul>
+                    </div>
+                }
+                @if (Model.JuMiHot != null && Model.JuMiHot.Any())
+                {
+                    <div class="movies-list orange mt30">
+                        <div class="tit-nav"><a href="http://www.edushi.com/jumi/info/1.html" target="_blank">热门电视</a></div>
+                        <ul>
+                            @foreach (var item in Model.JuMiHot)
+                            {
+                                <li>
+                                    <a href="@item.Url" target="_blank">
+                                        <img src="@item.Pic" alt="">
+                                        <span>@Html.Raw(item.Title)</span>
+                                    </a>
+                                </li>
+                            }
+                        </ul>
+                    </div>
+                }
+
+            </div>
+        </div>
+       
+    </div>
+
+    <div class="page-footer">
+        <div class="wrapper clearfix">
+            <div class="fl">
+                浙网文[2015]0464-184号&nbsp;&nbsp;&nbsp;广告经营许可证号:3301082100176&nbsp;&nbsp;&nbsp;甲测资字:3300168&nbsp;&nbsp;&nbsp;浙公网安备 33010802009347号&nbsp;&nbsp;&nbsp;浙B2-20050306-1
+            </div>
+            <div class="fr">
+                <a href="http://www.edushi.com/about/" target="_blank">关于爱上头条</a>
+                <a href="http://www.edushi.com/about/Declear.htm" target="_blank">法律声明</a>
+                <a href="http://www.edushi.com/about/ContactUs.htm" target="_blank">联系我们</a>
+            </div>
+        </div>
+        <div class="back-top">
+            <img src="http://res.edushi.com/bang/v4/asset/images/eds_app_code.png">
+            <span></span>
+        </div>
+    </div>
+
+    
+    <div class="flag-mask"></div>
+    <div class="flag-msg"></div>
+    <script type="text/javascript" src="http://res.edushi.com/bang/v4/asset/js/jquery-1.8.3.min.js"></script>
+    <script type="text/javascript" src="http://res.edushi.com/bang/v4/asset/js/common.js"></script>
+    <script type="text/javascript">
+        $(function () {
+            $(".main-text p.i").each(function () {
+                if ($(this).prev("p.t").find("img").length > 0 && $(this).height() < 110) {
+                    $(this).height(72);
+                }
+                if ($(this).text().length > 125) {
+                    $(this).text($(this).text().substring(0, 110));
+                    $(this).html($(this).text() + '......');
+                }
+                $(this).wrap("<div class='i'></div>");
+            });
+            //$(".share-box .weixin").click(function (e) {
+            //    $(".js-qrcode-wrap").show();
+            //    e.stopPropagation();
+            //});
+           
+            $(document).click(function () { 
+                $(".js-qrcode-wrap").html("");
+                $(".js-qrcode-wrap").hide();
+            });
+            //$(".js-qrcode-wrap").click(function (e) {
+            //    e.stopPropagation();
+            //});
+           
+            setTimeout(function () {
+                //分享悬浮
+                var textTop = $(".main-text-cnt").offset().top;
+                var commentTop = $(".comment-box").offset().top;
+                $(window).bind("scroll", function () {
+                    var windowTop = $(window).scrollTop();
+                    if (windowTop >= textTop && windowTop <= commentTop - $(".share-box").height()) {
+                        $(".share-box").addClass("fixed");
+                    } else {
+                        $(".share-box").removeClass("fixed");
+                    }
+                    if (windowTop >= commentTop - $(".share-box").height()) {
+                        $(".share-box").addClass("abs");
+                    } else {
+                        $(".share-box").removeClass("abs");
+                    }
+                    //跟贴悬浮
+                    if (windowTop >= commentTop) {
+                        $(".comment-toolbar").addClass("fixed");
+                    } else {
+                        $(".comment-toolbar").removeClass("fixed");
+                    }
+                    if (windowTop > commentTop + $(".js-tieba").height()) {
+                        $(".comment-toolbar .fatie").css({ "display": "block" });
+                    } else {
+                        $(".comment-toolbar .fatie").hide();
+                    }
+                });
+                toFixed($(".jsfixed"), $(".slide-cnt").outerHeight(true) + $(".slide-cnt").offset().top);
+            }, 3000);
+        });
+        
+        //    $(window).on("load", function () {
+        //    var textTop = $(".main-text-cnt").offset().top;
+        //    var commentTop = $(".comment-box").offset().top;
+        //    $(window).bind("scroll", function () {
+        //        var windowTop = $(window).scrollTop();
+        //        if (windowTop >= textTop && windowTop <= commentTop - $(".share-box").height()) {
+        //            $(".share-box").addClass("fixed");
+        //        } else {
+        //            $(".share-box").removeClass("fixed");
+        //        }
+        //        if (windowTop >= commentTop - $(".share-box").height()) {
+        //            $(".share-box").addClass("abs");
+        //        } else {
+        //            $(".share-box").removeClass("abs");
+        //        }
+        //        //跟贴悬浮
+        //        if (windowTop >= commentTop) {
+        //            $(".comment-toolbar").addClass("fixed");
+        //        } else {
+        //            $(".comment-toolbar").removeClass("fixed");
+        //        }
+        //        if (windowTop > commentTop + $(".js-tieba").height()) {
+        //            $(".comment-toolbar .fatie").css({ "display": "block" });
+        //        } else {
+        //            $(".comment-toolbar .fatie").hide();
+        //        }
+        //    });
+        //    toFixed($(".jsfixed"), $(".slide-cnt").outerHeight(true) + $(".slide-cnt").offset().top);
+        //});
+     
+    </script>
+   
+    @*最新推荐专题*@
+    <script src="http://res.edushi.com/bang/v4/asset/js/Html.js" type="text/javascript"></script>   
+    @*登录*@
+    <script src="http://res.edushi.com/Common/pc/js/Common.js"></script> 
+    <script>
+        //验证是否登录
+        var url = $("#hidUrl").val() + "GetLoginUser.htm";
+        $.post(url, function (data) {
+            var $userHtml = "";
+            var backUrl = escape(window.location.href);
+            if (data.ResultCode == 1 && data.NickName) {
+                $userHtml = " <a href=\"http://user.edushi.com/\" target='_blank' class='user-nave'>" +
+                    data.NickName +
+                    "</a>\r\n" +
+                    "<a href=\"http://user.edushi.com/exitlogin.htm?BackUrl=" + backUrl + "\" class='logout'>安全退出</a>";
+
+            } else {
+                $userHtml = "<a href = \"http://user.edushi.com/Login.html?BackUrl=" + backUrl + "\" class=\"login\">登录</a>";
+            }
+            $("#member").append($userHtml);
+        }, "json");
+
+    </script>
+   
+    @*<script type="text/javascript">
+        var JsData = {
+            CityCode: "@(Model.Base.CityCode.Replace("shanghai", "sh").Replace("hangzhou", "hz"))",
+            parentTypeURL: "@Model.parentTypeURL",
+            parentTypeName: "@(Model.parentTypeName)"
+        }
+    </script>*@
+    
+    <script type="text/javascript">
+        /*生活帮_PC版_图+*/
+        var cpro_id = "u1682351";
+    </script>
+    <script type="text/javascript" src="//cpro.baidustatic.com/cpro/ui/i.js"></script>
+    <script>
+        (function () {
+            var bp = document.createElement('script');
+            bp.src = '//push.zhanzhang.baidu.com/push.js';
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(bp, s);
+        })();
+    </script>
+
+    @if (System.Configuration.ConfigurationManager.AppSettings["CooperationFlag"].ToString() == "1")
+    {
+        <script type="text/javascript">
+            var cooperationURL = "@System.Configuration.ConfigurationManager.AppSettings["CooperationURL"].ToString()";
+        </script>
+        <script src="http://res.edushi.com/bang/v4/asset/js/cooperation.js" type="text/javascript"></script>
+    }
+    
+    <script src="http://res.edushi.com/bang/v4/asset/js/Helper.js" type="text/javascript"></script>
+    <script src="http://res.edushi.com/bang/v4/asset/js/Reward.min.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        var nick = (new CookieHelper().getCookie("MemberNickName"));
+        if (nick != null) {
+            $("#hasLogin").show();
+            getReadReward();
+        }
+        else {
+            $("#unLogin").show();
+            $("#unLogin a").attr("href", "http://user.edushi.com/login.html?BackUrl=" + encodeURIComponent(window.location.href));
+        }
+    </script>
+</body>
+</html>

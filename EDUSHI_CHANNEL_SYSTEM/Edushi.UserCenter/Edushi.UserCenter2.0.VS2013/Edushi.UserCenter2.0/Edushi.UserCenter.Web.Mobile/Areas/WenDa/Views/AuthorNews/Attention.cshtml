@@ -1,0 +1,121 @@
+﻿@model Edushi.UserCenter.Web.Mobile.Areas.WenDa.Models.WenDaCustomModel
+@{
+    int loginUserId = ViewBag.LoginUserId != null ? (int)ViewBag.LoginUserId : 0;
+}
+<div id="app">
+    <div class="my">
+        <!--头部-->
+        <header-bar :data="header"></header-bar>
+        @if (Model.attentionModel != null && Model.attentionModel.List != null && Model.attentionModel.List.Any())
+        {
+            <!--内容-->
+            <div class="container">
+                <div class="follow-list follow-list-wd">
+                    <ul id="datalist">
+                        @foreach (var item in Model.attentionModel.List)
+                        {
+                            <li>
+                                <a href="/user/wenda/index/1-@(item.UserId).html">
+                                    <div class="photo">
+                                        <img src="@item.Avatar">
+                                    </div>
+                                </a>
+                                <div class="info">
+                                    <a href="/user/wenda/index/1-@(item.UserId).html">
+                                        <span class="name">@Html.Raw(item.NickName)</span>
+                                        <span class="text">@Html.Raw(item.Desc)</span>
+                                    </a>
+                                    @*粉丝去掉当前登录用户*@
+                                    @if (loginUserId != item.UserId)
+                                    {
+                                        string attentionStyle = "";
+                                        if (item.IsMutualConcern) { attentionStyle = "friends"; }
+                                        else if (item.IsAttentioned ){  attentionStyle = "following";}
+                                        else { attentionStyle = "add-follow"; }
+                                        <span class="follow-btn @attentionStyle" data-id="@item.UserId"><span></span>关注</span>
+                                    }
+                                </div>
+                            </li>
+                        }
+                    </ul>
+                    <div class="loading" style="display: none;">加载中...</div>
+                    <div class="end" @Html.Raw(Model.attentionModel.PageCount > 1 ? "style=\"display:none\"" : "")>没有更多了</div>
+                </div>
+            </div>
+        }
+    </div>
+</div>
+
+<script type="text/javascript">
+    var my = new Vue({
+        el: '#app',
+        data: function () {
+            return {
+                header: {
+                    title: 'TA的关注',
+                    number: '@(Model.attentionModel.TotalCount)人',
+                },
+            }
+        },
+        methods: {
+
+        },
+        mounted: function () {
+            //取消关注
+            $("#datalist").on("click",
+                "li .friends,li .following",
+                function () {
+                    var userId = $(this).data("id");
+                    $.ajax({
+                        type: "post",
+                        dataType: "json",
+                        url: "@Url.Content("~/CancelAttention.htm")",
+                        data: { "userId": userId },
+                        success: function (data) {
+                            if (data.ResultCode == 1) {
+                                window.location.reload();
+                            } else if (data.ResultCode == 2) {
+                                window.location.href = 'http://m.edushi.com/user/Login.html?BackUrl=' + window.location.href;
+                            } else {
+                                alert(data.Msg);
+                            }
+                        }
+                    });
+                });
+
+            //添加关注
+            $("#datalist").on("click",
+                "li .add-follow",
+                function () {
+                    var userId = $(this).data("id");
+                    $.ajax({
+                        type: "post",
+                        dataType: "json",
+                        url: "@Url.Content("~/AddAttention.htm")",
+                        data: { "userId": userId },
+                        success: function (data) {
+                            if (data.ResultCode == 1) {
+                                window.location.reload();
+                            } else if (data.ResultCode == 2) {
+                                window.location.href = 'http://m.edushi.com/user/Login.html?BackUrl=' + window.location.href;
+                            } else {
+                                alert(data.Msg);
+                            }
+                        }
+                    });
+                });
+        }
+
+    })
+
+    var ConfigData = {
+        "PageIndex": 1,
+        "UserId": "@Model.userId",
+        "Count": "@Model.attentionModel.PageCount",
+        "Page": "@Url.Content("~/")",
+        "Url": "wenda/GetAuthorMoreAttention.htm",
+        "Id": 0,
+        "Type": 4
+    }
+</script>
+<script src="@Url.Content("~/areas/wenda/asset/js/scrollload.bak.js")"></script>

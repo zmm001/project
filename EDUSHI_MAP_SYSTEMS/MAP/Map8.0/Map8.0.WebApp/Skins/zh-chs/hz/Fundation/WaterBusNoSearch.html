@@ -1,0 +1,214 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>BusLineSearch</title>
+
+    <script language="javascript" type="text/javascript" src="/Js/GeneralLib.js"></script>
+
+    <script language="javascript" type="text/javascript" src="../Js/WaterBusNoSearch.js?v=20111104"></script>
+
+    <style>
+    body, ul, dl, dd, dt, ol, li, p, h1, h2, h3, h4, h5, h6, form, fieldset, table, img, td, div, input{
+	margin:0;padding:0;
+	}
+	body{ background:#fff; font-family:Microsoft Yahei; font-size:12px;}
+	ul, li{ list-style:none;}
+	a{ outline-style:none; color:#545454 ;text-decoration:none;}
+	a:hover{ color:#ff8500; text-decoration:underline; outline:0;}
+	.clear{ clear:both;}
+	.clearfix:before,.clearfix:after{ display:table; content:" ";}
+	.clearfix:after{ clear:both;}
+	.clearfix{ *zoom:1;}
+	.f-l{ display:inline; float:left;}
+	.f-r{ display:inline; float:right;}	
+	.m-r8{ margin-right:8px;}
+	.position-re{position:relative;}
+	@media screen and (-webkit-min-device-pixel-ratio:0) { 
+		body, button, input, select, textarea{line-height:normal !important;}
+		input, select, textarea{outline-style:none;}
+	}   
+	.qd, .zd, .zt{
+		float: left;
+		margin-right: 5px;
+	}
+	.qd a, .zd a{
+		display: block;
+		float: left;
+		margin-top: 6px;
+		width: 58px;
+		text-overflow: ellipsis;
+		overflow: hidden;
+		white-space: nowrap;
+	}
+	.icon_q, .icon_q2{
+		background: url(../images/icon.jpg) no-repeat 0 -20px;
+		width: 27px;
+		height: 32px;
+		display: inline-block;
+		margin-right: 10px;
+		float: left;
+	}
+	.icon_q2{
+		background-position: -27px -20px;
+	}
+	.icon_q3{
+		background: url(../images/icon.jpg) -54px -33px;
+		width: 21px;
+		height: 18px;
+		float: left;
+	}
+	.zt{
+		margin-top: 3px;
+	}
+	.zt a{
+		display: block;
+		float: left;
+		margin: 2px 0 0 5px;
+	}
+	.z3{
+		margin: 10px 0 10px 10px;
+	}
+	.gj_03{
+		width: 308px;
+		background: #fff;
+		border: solid 1px #bad7e7;
+		height: 635px;
+		overflow: auto;
+		background: #f1f9fc;
+		position: relative;
+	}
+	.gj_a{
+		margin: 5px;
+		background: #fff;
+	}
+	.gj_a1 .T_right span{
+		display: inline-block;
+		float: left;
+		padding-right: 5px;
+	}
+	.gj_a1 .T_right .icon_t, .gj_a1 .T_right .icon_t2{
+		display: inline-block;
+		background: url(../images/icon.jpg) no-repeat -54px -20px;
+		width: 13px;
+		height: 13px;
+		padding-right: 0px;
+	}
+	.T_right .icon_t2{
+		background-position: -67px -20px;
+	}
+	
+	.water-bus-result{ width:333px; margin:0 auto;}
+	.sidebar-bus-search{ width:333px; margin:10px 0 8px;}
+	.bus-search-ipt{ width:243px; height:32px; margin-right:5px; background:#fff; border:1px solid #d8d8d8; text-indent:12px; line-height:32px; box-shadow:inset 0 0 1px 1px rgba(104,104,104,.2);}
+	.bus-search-btn{ width:82px; height:32px; text-align:center; line-height:32px; cursor:pointer; background:url(/images/search_btnbg_gray.gif) repeat-x; border:none; border-bottom:1px solid #b2b2b2;}
+	.bus-search-btn a{ font-size:14px; color:#000;}
+	.bus-line-result{ width:334px;overflow-y: auto; overflow-x: hidden;}
+	.first-end-time{ margin-right:4px; padding:1px 3px; background:#0099ff; color:#fff;}
+	.lineInfo-tips{ margin-bottom:10px; font-size:13px; font-weight:bold; color:#999;}
+
+	.gj_title .diva{
+		width: 297px; height: 36px; margin: 1px; padding-left: 5px; padding-top: 5px; background: #f1f9fc; border: solid 1px #f1f9fc;
+	}
+	.gj_title .diva span{
+		float: left; display: inline-block; width: 16px; height: 15px; margin-right: 10px; background: url(../images/icon.jpg) no-repeat -80px -20px;	
+	}
+	.gj_title{
+		width: 333px; height: 28px; margin-bottom: 7px; border-top: dotted 1px #cfcfcf; border-bottom: dotted 1px #cfcfcf;
+	}
+	.gj_title div{
+		height: 19px; margin: 1px 0; padding-left: 5px; padding-top: 5px; background: #f1f9fc; border: solid 1px #f1f9fc;	
+	}
+	.gj_title div span{
+		float: left; display:inline-block; width: 16px;height: 15px; margin-right: 10px; background: url(../images/icon.jpg) no-repeat -80px -20px;
+	}
+	.gj_title i, .gj_title a{
+		margin:0 2px;font-style: normal; color: #1c81b9;
+	}
+	.gj_a1{
+		margin-bottom: 5px; position: relative;
+	}
+	.gj_a2 .title{
+		margin-bottom:8px; cursor:pointer;
+	}
+	.number2{
+		float: left; width:8px; height:8px; margin-top:3px; background:#fff; border:1px solid #5c8cd1; font: 10px Arial, Helvetica, sans-serif; line-height:8px; color:#5c8cd1;  
+	}
+	.gj_a2 .T_left{
+		float: left; display: inline ;margin-left:8px; color: #3a83ed;          
+	}
+	.gj_a1 .T_right{
+		float: right; margin-right:5px;
+	}
+	.xlxx{
+		display: block; border: solid 1px #cdcdcd; border-bottom:0;
+	}
+	.time_bus{
+		padding-bottom:8px; border-bottom: solid 1px #cdcdcd; overflow:hidden;
+	}
+	.title_S{
+	  float: left; width: 80px; padding: 8px;margin-bottom:-100px; padding-bottom:100px;text-align: center;line-height: 18px; background: #f4f4f4;
+	}
+	.text_S{
+		float: left;width:62.1%;padding:8px;margin-bottom:-100px; padding-bottom:100px;line-height: 18px; color:#858585; border-left: solid 1px #cdcdcd;
+	}
+	.time_bus2{
+		padding: 10px 0px;
+		background:#fff; 
+	}
+	.time_bus2 a{
+		display: inline-block; margin-right:40px; margin-left:50px; color:#999999;
+	}
+	.time_bus2 a span{
+		 display:inline-block; margin-right:3px; background:url(/images/map_icon.png) no-repeat;
+	}
+	.time_bus2 span.a1{
+		 width:8px; height:11px; background-position:-19px -20px;
+	}
+	.time_bus2 span.a2{
+		width:12px; height:11px; background-position:-32px -21px;
+	}
+	.time_bus2 span.a3{
+		width:16px; height:10px; background-position:-16px -295px;
+	}
+	.xl{
+		margin: 5px 0 8px;
+	}
+	.xl .title_xl{
+		 margin-bottom:10px; border:1px solid #dce4e8; background:#f2f5f7;
+	}
+	.xl .title_xl .left, .xl .title_xl .right{
+		float: left; width: 50.6%; height: 32px; text-align: center; line-height: 32px; cursor: pointer;
+	}
+	.xl .title_xl .left{
+	   width: 49%; border-right: solid 1px #dce4e8;
+	}
+	.xl .title_xl .current{
+		background: #e2e9ec; font-weight:bold;
+	}
+	.xl ul{
+		margin-left:18px;
+	}
+	.xl ul li{
+		 display:inline; float:left; width:112px; margin-left:15px; margin-bottom:5px; line-height:22px;
+	}
+	.xl ul li a{
+	   display: inline-block; width: 112px; color:#6197e5; text-overflow: ellipsis; overflow: hidden; white-space: nowrap;
+	}
+    </style>
+</head>
+<body>
+<div class="water-bus-result">
+    <div class="search sidebar-bus-search clearfix">
+    	<input type="text" id="textKeyWords"  class="f-l bus-search-ipt">
+    	<p class="f-l bus-search-btn"><a id="BusSearch_Btn" style="cursor:pointer;">搜索</a></p>
+    </div>
+    
+    <div class="gj_title">
+        <div id="resultDiv"></div>
+    </div>
+    <div class="bus-line-result" id="TabContent" style="overflow-x: hiddin;">
+       
+    </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,283 @@
+﻿@model Edushi.UserCenter.Web.Mobile.Models.MyActivitiesModel
+@using Edushi.UserCenter.Web.Mobile.Models
+@using Edushi.Common
+@{
+    ViewBag.Title = string.Format("\"{0}\"个人中心-E都市", Model.UserInfo.UI_NickName);
+}
+@*<script>
+    //rem单位自适应
+    document.documentElement.style.fontSize = 100 * ((document.documentElement.clientWidth) / 750) + "px";
+    //ios10 以上监听方式禁止缩放
+    window.onload = function () {
+        document.addEventListener('touchstart', function (event) {
+            if (event.touches.length > 1) {
+                event.preventDefault();
+            }
+        })
+        var lastTouchEnd = 0;
+        document.addEventListener('touchend', function (event) {
+            var now = (new Date()).getTime();
+            if (now - lastTouchEnd <= 300) {
+                event.preventDefault();
+            }
+            lastTouchEnd = now;
+        }, false)
+    };
+
+</script>*@
+
+<div id="app" class="my">
+    @*<header>
+            <span class="back"></span>
+            <a href="http://m.edushi.com" class="logo"></a>
+            <span class="current">@Model.UserInfo.UI_NickName</span>
+            <span class="fr">
+                <a href="#" class="user"></a>
+                <a href="http://m.edushi.com/Navigation.html" class="category"></a>
+            </span>
+        </header>*@
+
+    <!--头部-->
+    <header-bar :data="header" @@back="back()"></header-bar>
+
+
+    <!--内容-->
+    @{
+        var url = string.Empty;    // 链接地址
+        int parentCommentId = -1;
+        if (Model != null && Model.CommentList != null && Model.CommentList.Count > 0)
+        {
+            var newsComments = Model.CommentList;
+        }
+    }
+    <div class="container ordinary">
+        <div class="act-list">
+            <ul id="datalist">
+                @foreach (UserCommentInfo news in Model.CommentList)
+                {
+                    <li class="act">
+                        <div class="type"></div>
+                        @if (news.article_model != null)
+                        {
+
+                            switch (news.article_model.Type)
+                            {
+                                case 1:
+                                    ViewBag.newsType = "新闻";
+                                    url = string.Format("http://m.edushi.com/zixun/info/{1}-{2}-n{3}.html", news.article_model.CityCode, news.article_model.ParentTypeId, news.article_model.TypeId, news.article_model.Id);
+                                    break;
+                                case 2:
+                                    ViewBag.newsType = "图闻";
+                                    url = string.Format("http://m.tu.edushi.com/info/{0}-{1}-n{2}.html", news.article_model.ParentTypeId, news.article_model.TypeId, news.article_model.Id);
+                                    break;
+                                case 3:
+                                    ViewBag.newsType = "专题";
+                                    url = string.Format("http://m.edushi.com/zt/info/{0}-{1}-n{2}.html", news.article_model.ParentTypeId, news.article_model.TypeId, news.article_model.Id);
+                                    break;
+                                default:
+                                    ViewBag.newsType = "新闻";
+                                    break;
+                            }
+                            <a href=@url  class="source">
+                                <img src=@news.article_model.Pic>
+                                <div>
+                                    <h1>@news.article_model.Title</h1>
+                                    <div class="info">
+                                        @{
+                            news.article_model.Type = news.article_model.Type + 1;
+                                        }
+                                        @if (news.article_model.Type == (int)DataEnum.NewsType.News || (news.article_model.Type - 1) == (int)DataEnum.NewsType.Comprehensive)
+                                        {
+                                            <span class="sub">  @ViewBag.newsType </span>
+                                        }
+                                        else if (news.article_model.Type == (int)DataEnum.NewsType.PicArticle)
+                                        {
+                                            <span class="sub tu">  @ViewBag.newsType </span>
+                                        }
+                                        else if (news.article_model.Type == (int)DataEnum.NewsType.Topic)
+                                        {
+                                            <span class="sub zt">  @ViewBag.newsType </span>
+                                        }
+                                        <span class="time">@news.article_model.UpdateTime</span>
+                                    </div>
+                                </div>
+                            </a>
+
+                            foreach (var comment in news.comment_list)
+                            {
+                                if (comment.comment_detail != null)
+                                {
+                                    if (comment.Flag == 1 && comment.comment_detail_parent != null)
+                                    {
+                                        if (parentCommentId != comment.comment_detail_parent.CommentId)
+                                        {
+                                            parentCommentId = comment.comment_detail_parent.CommentId;
+                                            <div class="comment-box">
+                                                <a href="@Html.Raw(string.Format("{0}index/{1}-{2}.html", Url.Content("~/"), comment.userInfo_parent.UserType == 3 ? 5 : 1, comment.userInfo_parent.UserId.ToString()))"  class="photo"><img src=@comment.userInfo_parent.Avatar></a>
+                                                <div class="box">
+                                                    <span class="name">
+                                                        <a href="@Html.Raw(string.Format("{0}index/{1}-{2}.html", Url.Content("~/"), comment.userInfo.UserType == 3 ? 5 : 1, comment.userInfo_parent.UserId.ToString()))" >@comment.userInfo_parent.NickName</a>
+                                                        <span class="time">@comment.comment_detail_parent.Time</span>
+                                                    </span>
+                                                    <p>@comment.comment_detail_parent.Content</p>
+                                                    @if (comment.commnetUpvoteInfo_parent != null)
+                                                    {
+                                                        <div class="like" data-like=@comment.commnetUpvoteInfo_parent.TotalUpvoteCount>
+                                                            @if (comment.commnetUpvoteInfo_parent != null && comment.commnetUpvoteInfo_parent.UserUpvoteList.Count > 0)
+                                                            {
+                                                                foreach (var subItem in comment.commnetUpvoteInfo_parent.UserUpvoteList)
+                                                                {
+                                                                    <a href="@Html.Raw(string.Format("{0}index/{1}-{2}.html", Url.Content("~/"), subItem["UserType"].ToString() == "1" ? 1 : 5, comment.userInfo_parent.UserId))"  class="red">@subItem["NickName"]</a>
+                                                                }
+                                                            }
+                                                        </div>
+                                                    }
+                                                </div>
+                                            </div>
+                                        }
+                                        <div class="reply-box">
+                                            <ul>
+                                                <li>
+                                                    @*<a href="@Html.Raw(string.Format("{0}index/{1}-{2}.html", Url.Content("~/"), @comment.userInfo.UserType == 3 ? 5 : 1, @comment.userInfo.UserId.ToString()))"  class="photo"><img src=@comment.userInfo.Avatar></a>*@
+                                                    <div class="box">
+                                                        <span class="name">
+                                                            <a href="@Html.Raw(string.Format("{0}index/{1}-{2}.html", Url.Content("~/"), @comment.userInfo.UserType == 3 ? 5 : 1, @comment.userInfo.UserId.ToString()))" >@comment.userInfo.NickName</a>
+                                                            <span class="time">@comment.comment_detail.Time</span>
+                                                        </span>
+                                                        <p>@comment.comment_detail.Content</p>
+                                                        @if (comment.commnetUpvoteInfo != null && comment.commnetUpvoteInfo.TotalUpvoteCount > 0)
+                                                        {
+                                                            <div class="like" data-like=@comment.commnetUpvoteInfo.TotalUpvoteCount>
+                                                                @if (comment.commnetUpvoteInfo.UserUpvoteList != null && comment.commnetUpvoteInfo.UserUpvoteList.Count > 0)
+                                                                {
+                                                                    foreach (var subItem in comment.commnetUpvoteInfo.UserUpvoteList)
+                                                                    {
+                                                                        <a href="@Html.Raw(string.Format("{0}index/{1}-{2}.html", Url.Content("~/"), Convert.ToInt32(@subItem["UserType"]) == 3 ? 5 : 1, comment.userInfo.UserId))"  class="red">@subItem["NickName"]</a>
+                                                                    }
+                                                                }
+                                                            </div>
+                                                        }
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    }
+                                    else
+                                    {
+                                        <div class="comment-box">
+                                            <a href="@Html.Raw(string.Format("{0}index/{1}-{2}.html", Url.Content("~/"), comment.userInfo.UserType == 3 ? 5 : 1, comment.userInfo.UserId.ToString()))"  class="photo"><img src=@comment.userInfo.Avatar></a>
+                                            <div class="box">
+                                                <span class="name">
+                                                    <a href="@Html.Raw(string.Format("{0}index/{1}-{2}.html", Url.Content("~/"), comment.userInfo.UserType == 3 ? 5 : 1, comment.userInfo.UserId.ToString()))" >@comment.userInfo.NickName</a>
+                                                    <span class="time">@comment.comment_detail.Time</span>
+                                                </span>
+                                                <p>@comment.comment_detail.Content</p>
+                                                @if (comment.commnetUpvoteInfo != null && comment.commnetUpvoteInfo.TotalUpvoteCount > 0)
+                                                {
+                                                    <div class="like" data-like=@comment.commnetUpvoteInfo.TotalUpvoteCount>
+                                                        @if (comment.commnetUpvoteInfo.UserUpvoteList != null && comment.commnetUpvoteInfo.UserUpvoteList.Count > 0)
+                                                        {
+                                                            foreach (var subItem in comment.commnetUpvoteInfo.UserUpvoteList)
+                                                            {
+                                                                <a href="@Html.Raw(string.Format("{0}index/{1}-{2}.html", Url.Content("~/"), subItem["UserType"].ToString() == "1" ? 1 : 5, subItem["ID"]))"  class="red">@subItem["NickName"]</a>
+                                                            }
+                                                        }
+                                                    </div>
+                                                }
+                                            </div>
+                                        </div>
+                                    }
+                                    if (comment.ListReplyOthers != null && comment.ListReplyOthers.Count > 0)
+                                    {
+                                        foreach (var reply in comment.ListReplyOthers)
+                                        {
+                                            <div class="reply-box">
+                                                <ul>
+                                                    <li>
+                                                        @*<a href="@Html.Raw(string.Format("{0}index/{1}-{2}.html", Url.Content("~/"), @reply.userInfo.UserType == 3 ? 5 : 1, @reply.userInfo.UserId.ToString()))"  class="photo"><img src=@reply.userInfo.Avatar></a>*@
+                                                        <div class="box">
+                                                            <span class="name">
+                                                                <a href="@Html.Raw(string.Format("{0}index/{1}-{2}.html", Url.Content("~/"), @reply.userInfo.UserType == 3 ? 5 : 1, @reply.userInfo.UserId.ToString()))" >@reply.userInfo.NickName</a>
+                                                                <span class="time">@reply.comment_detail.Time</span>
+                                                            </span>
+                                                            <p>@reply.comment_detail.Content</p>
+                                                            @if (reply.commnetUpvoteInfo != null && reply.commnetUpvoteInfo.TotalUpvoteCount > 0)
+                                                            {
+                                                                <div class="like" data-like=@reply.commnetUpvoteInfo.TotalUpvoteCount>
+                                                                    @if (reply.commnetUpvoteInfo.UserUpvoteList != null && reply.commnetUpvoteInfo.UserUpvoteList.Count > 0)
+                                                                    {
+                                                                        foreach (var subItem in reply.commnetUpvoteInfo.UserUpvoteList)
+                                                                        {
+                                                                            <a href="@Html.Raw(string.Format("{0}index/{1}-{2}.html", Url.Content("~/"), Convert.ToInt32(@subItem["UserType"]) == 3 ? 5 : 1, Convert.ToInt32(@subItem["ID"])))"  class="red">@subItem["NickName"]</a>
+                                                                        }
+                                                                    }
+                                                                </div>
+                                                            }
+                                                        </div>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    </li>
+                }
+            </ul>
+            <div class="loding" style="display: none;">正在加载更多</div>
+        </div>
+    </div>
+</div>
+<script>
+
+    var login = new Vue({
+        el: '#app',
+        data: function () {
+            return {
+                header: {
+                    title: "我的动态",
+                    number: '@Model.TotalCount'
+                }
+            }
+        },
+        methods: {
+            back: function () {
+                window.history.back();
+            }
+        }
+    });
+    var ConfigData = {
+        Count: "@Model.PageCount",
+        Url: "@Url.Content("~/")",
+        Page: "GetMoreActivities2.htm",
+        PageIndex: 1,
+        Contaiter: $("#datalist"),
+        Type: 5,
+        UserId: "@Model.UserInfo.UI_ID"
+    };
+
+    @*$(function () {
+
+        $("#datalist").on("click", "li .comment-delete", function () {
+            var id = $(this).data("commentid");
+            var that = $(this);
+            $.ajax({
+                type: "post",
+                dataType: "json",
+                url: "@Url.Content("~/DeleteComment.htm")",
+                data: { "id": id },
+                success: function (data) {
+                    if (data.ResultCode == 1) {
+                        that.parents("li").remove();
+                    } else {
+                        alert(data.Msg);
+                    }
+                }
+            });
+        });
+    });*@
+
+</script>
+<script src="@Url.Content("~/asset/js/scrollLoad.bak.js")"></script>
+

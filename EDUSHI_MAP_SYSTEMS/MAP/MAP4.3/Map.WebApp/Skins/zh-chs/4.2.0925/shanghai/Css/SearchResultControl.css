@@ -1,0 +1,50 @@
+﻿html{overflow:hidden;}
+body{ overflow:hidden;margin:0;padding:0; font-size:12px; color:#333; line-height:22px; width:100%;background-color:Transparent;}
+a {font-size: 12px;color: #1a70c7;text-decoration: none; cursor:pointer}
+.Result {z-index: 307;width: 303px;color: #000;position: absolute;height: 418px}
+.Result .SHead {background: url(../images/newmap21.gif) no-repeat;padding-top: 1px;height: 28px}
+#draghandle {float: left;width: 13px;cursor: move;height: 30px}
+.Result .SHead .Close{margin-top: 8px;left: 265px;position: absolute}
+
+.Result .SHead .Close .m_h_l{position:absolute;background:url(../images/newmap30.gif) no-repeat;width:9px; height:12px;}
+.Result .SHead .Close .m_h_l:hover{background:url(../images/newmap30.gif) no-repeat;width:9px; height:12px;}
+.Result .SHead .Close .m_h_m{position:absolute;background:url(../images/tm.gif) no-repeat;width:15px; height:17px;}
+.Result .SHead .Close .m_h_m:hover{background:url(../images/tma.gif) no-repeat;width:15px; height:17px;}
+.Result .SHead .Close .m_h_max{position:absolute;background:url(../images/ta.gif) no-repeat;width:15px; height:17px;}
+.Result .SHead .Close .m_h_max:hover{background:url(../images/taa.gif) no-repeat;width:15px; height:17px;}
+.Result .SHead .Close .m_h_c{position:absolute;background:url(../images/newmap33.gif) no-repeat;width:15px; height:17px; margin-left:17px;}
+.Result .SHead .Close .m_h_c:hover{background:url(../images/newmap33a.gif) no-repeat;width:15px; height:17px;}
+
+.Result .CRight {display: none;left: 250px;float: left;margin: 15px 0px 0px 3px;width: 9px;line-height: 5px;position: absolute;height: 5px}
+.Result .SHead .CRight .r {background: url(../images/newmap31.gif) no-repeat;float: left;width: 9px;position: absolute;height: 10px}
+.Result .CLeft {display: none;float: left;margin: 15px 0px 0px 3px;width: 9px;line-height: 5px;height: 5px}
+.Result .SHead .CLeft .l {background: url(../images/newmap30.gif) no-repeat;width: 9px;position: absolute;height: 10px}
+.Result .SHead .HInput {left: 24px;float: left;margin: 10px 0px 0px 5px;overflow: hidden;width: 220px;position: absolute;height: 19px}
+
+.Result .SHead .HInput .UlPanel{margin:0;padding:0;list-style:none;position:relative;       }
+.Result .SHead .HInput .UlPanel:after{content: "."; display: block;height: 0; clear: both; visibility: hidden;}
+.Result .SHead .HInput .UlPanel li{margin:0;padding:0;list-style:none;position:relative;  display:block;width:80px;height:25px;float:left;cursor:pointer;overflow:hidden;}
+
+.Result .SHead .HInput .UlPanel .active{background:url('../images/CarkBG.gif') 0 -20px no-repeat;}                
+.Result .SHead .HInput .UlPanel .default{background:url('../images/CarkBG.gif') 0 0px no-repeat;}
+.Result .SHead .HInput .UlPanel  .title{font-size:12px;line-height:19px;padding-left:8px;display:block;width:60px;height:19px;white-space: nowrap;overflow: hidden; text-overflow: ellipsis;-o-text-overflow: ellipsis;-moz-binding:url("moz-text-overflow.xml#XBLDocument");}
+.Result .SHead .HInput .UlPanel  .close{position:absolute;top:5px;right:5px;display:block;width:10px;height:10px;overflow:hidden;}
+
+.Result .SHead .HInput .UlPanel .active .title{color:#000000;}
+.Result .SHead .HInput .UlPanel .active .close{background:url('../images/CarkBG.gif') 0 -40px no-repeat;} 
+.Result .SHead .HInput .UlPanel .active .close:hover{background:url('../images/CarkBG.gif') -10px -40px no-repeat;}
+
+.Result .SHead .HInput .UlPanel .default .title{color:#444444;}
+.Result .SHead .HInput .UlPanel .default .close{background:url('../images/CarkBG.gif') -20px -40px no-repeat;}
+.Result .SHead .HInput .UlPanel .default .close:hover{background:url('../images/CarkBG.gif') -30px -40px no-repeat;}
+
+.Result .SBody {background: url(../images/newmap22.gif) repeat-y;width: 303px;color: #333;letter-spacing: 1px;height: 370px}
+.Result .SBody iframe {margin-left: 5px}
+.Result .SBody .iframevis{width:290px;height:370px;border:0px solid #ffffff; padding-left:5px; margin:0;display:block;}
+.Result .SBody .iframehid{display:none;}
+.Result .SFoot {font-size: 1px;background: url(../images/newmap23.gif) no-repeat;width: 303px;height: 12px}
+
+
+
+/*为了兼容firefox中的省略符*/
+.Result .SHead .HInput .UlPanel  .title ins{position:absolute;right:15px; display:none; bottom:-0.2em;width:1.5em;text-align:right;height:2em;min-width:30px;text-decoration:none;background:url(../images/text-fade.png) repeat-y;}

@@ -1,0 +1,165 @@
+﻿@model Edushi.RenWu.Web.PC.Models.HomeModel
+@using Edushi.RenWu.Special
+@{
+    ViewBag.Title = "人物频道-E都市";
+
+
+    var sub = string.Empty;
+    var myType = Model.AllRwType.FindAll(p => p.IT_ParentID == 0);
+    if (myType.Any())
+    {
+        sub = string.Join(",", myType.Select(p => p.IT_Name));
+    }
+
+    var keywords = string.Format("人物,{0}", sub);
+    var description = string.Format("E都市人物频道是全面专业的人物资讯信息平台，提供集{0}等人物资讯，构建新型互联网媒体平台为互联网用户提供价值资讯。", sub.Replace(",", "、"));
+
+    string mobileUrl = "http://m.edushi.com/renwu/";
+
+    ViewBag.IsIndex = true;
+
+}
+@section meta{
+    <meta name="Keywords" content="@keywords" />
+    <meta name="Description" content="@description" />
+    <meta http-equiv="mobile-agent" content="format=html5; url=@mobileUrl" />
+    <link rel="alternate" media="only screen and(max-width: 640px)" href="@mobileUrl">
+}
+
+<div class="container mt20">
+    <!--频道导航-->
+    @{Html.RenderPartial("ChannelNavigation");}
+
+    <div class="content-main mt30">
+        <div class="web-width">
+            @*搜索框*@
+            @{Html.RenderAction("Search", "Home", new { itId = 0, isIndex = true });}
+            <div class="a-top-box mt20">
+                @if (Model.TopRenWu != null && Model.TopRenWu.Any())
+                {
+                    <div class="carousel">
+                        <div class="focus-box">
+                            <ul class="swiper-wrapper">
+                                @foreach (var item in Model.TopRenWu)
+                                {
+                                    <li class="swiper-slide">
+                                        <a href="@item.Url" target="_blank"><img src="@item.Pic"></a>
+                                        <p class="text">
+                                            <a href="@item.Url" target="_blank">@Html.Raw(item.Title)</a><span class="shadow"></span>
+                                        </p>
+                                    </li>
+                                }
+
+                            </ul>
+                        </div>
+                        <div class="pic-num channel-pic-num">
+                            <div class="number">
+                                <p class="on-num">1</p>
+                                /
+                                <p class="total-num">@(Model.TopRenWu.Count)</p>
+                            </div>
+                        </div>
+                        <div class="swiper-pagination">
+                        </div>
+                    </div>
+                }
+
+
+                <div class="t-news">
+                    <p class="a-tit"><a href="javascript:void(0);"><span>头条</span>推荐</a></p>
+                    @if (Model.RecommendNews != null && Model.RecommendNews.Any())
+                    {
+                        <ul>
+                            @for (var i = 0; i < Model.RecommendNews.Count; i++)
+                            {
+                                if (i > 3)
+                                {
+                                    break;
+                                }
+                                var item = Model.RecommendNews[i];
+                                <li @Html.Raw(i == 0 ? "class='b'" : "")><a href="@item.Url" target="_blank">@Html.Raw(item.Title)</a></li>
+                            }
+                        </ul>
+                        <hr />
+                        if (Model.RecommendNews.Count > 4)
+                        {
+                            <ul>
+                                @for (var i = 4; i < Model.RecommendNews.Count; i++)
+                                {
+                                    if (i > 7)
+                                    {
+                                        break;
+                                    }
+                                    var item = Model.RecommendNews[i];
+                                    <li @Html.Raw(i == 4 ? "class='b'" : "")><a href="@item.Url" target="_blank">@Html.Raw(item.Title)</a></li>
+                                }
+                            </ul>
+                            <hr />
+                        }
+                        if (Model.RecommendNews.Count > 8)
+                        {
+                            <ul>
+                                @for (var i = 8; i < Model.RecommendNews.Count; i++)
+                                {
+                                    var item = Model.RecommendNews[i];
+                                    <li @Html.Raw(i == 8 ? "class='b'" : "")><a href="@item.Url" target="_blank">@Html.Raw(item.Title)</a></li>
+                                }
+                            </ul>
+                        }
+
+                    }
+                </div>
+            </div>
+
+            @if (Model.channelRwList != null && Model.channelRwList.Any())
+            {
+                foreach (var item in Model.channelRwList)
+                {
+
+                    <div class="per-box">
+                        <div class="per-tit">
+                            <a href="@Common.GetPcInfoListUrl(Url.Content("~/"),0,item.CurrentModel.IT_ID)" target="_blank"><span>更多>></span><em>@(item.CurrentModel.IT_Name)</em>人物</a>
+                        </div>
+                        <ul>
+                            @if (item.RwList != null && item.RwList.Any())
+                            {
+                                foreach (var subItem in item.RwList)
+                                {
+                                    <li>
+                                        <a href="@subItem.Url" target="_blank">
+                                            <div>
+                                                <img src="@subItem.Pic" alt="">
+                                            </div>
+                                            <span class="name">@Html.Raw(subItem.Title)</span>
+                                        </a>
+                                    </li>
+                                }
+                            }
+
+                        </ul>
+                    </div>
+                }
+            }
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript" src="@Url.Content("~/asset/js/swiper.min.js")"></script>
+<script type="text/javascript">
+    //轮播
+    var mySwiper = new Swiper('.focus-box', {
+        autoplay: 5000,
+        autoplayDisableOnInteraction: false,
+        loop: true,
+        pagination: '.swiper-pagination',
+        paginationClickable: true,
+        preventClicks: false,
+        onInit: function (swiper) {
+            $(".total-num").text(swiper.slides.length - 2);
+        },
+        onSlideChangeStart: function (swiper) {
+            var newText = parseInt($(".swiper-slide-active").attr("data-swiper-slide-index"));
+            $(".on-num").text(newText + 1);
+        }
+    });
+</script>

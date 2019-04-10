@@ -1,0 +1,46 @@
+﻿<header @Html.Raw(ViewBag.IsNeedBack != null?"class=\"other clearfix\"":"class=\"clearfix\"")>
+    @if (ViewBag.IsNeedBack != null)
+    {
+        <a href="javascript:history.go(-1);" class="fl back"></a>
+    }
+    <div class="fl logo">
+        <a href="http://m.edushi.com/" class="eds"></a>
+        <a href="@Url.Content("~/")" class="wenda"></a>
+    </div>
+    <div class="fl search-box">
+        <input type="text" name="" placeholder="搜索你感兴趣的…" value="@ViewBag.KeyWord" id="search_text" />
+        <input type="button" name="" value="" class="search-btn" />
+    </div>
+    <div class="fr tips" id="member">
+        <a href="@Url.Content("~/info/ask.html")" class="ask"><i></i><span>提问</span></a>
+    </div>
+</header>
+
+<script>
+
+    $(function () {
+        //验证是否登录
+        $.post("@Url.Content("~/IsLogin.htm")", function (data) {
+            var $userHtml = "";
+            var backUrl = escape(window.location.href);
+            if (data.ResultCode == 1 && data.NickName) {
+                $userHtml = " <a href=\"http://m.edushi.com/user/wenda/\"  class='my'><i></i><span>我的</span></a>\r\n";
+                $("#user_islogin").val(1);
+            } else {
+                $userHtml = "<a onclick=\"window.location.href = 'http://m.edushi.com/user/Login.html?BackUrl=" + backUrl + "'\" class=\"my\"><i></i><span>登录</span></a>";
+                $("#user_islogin").val(0);
+            }
+            $("#member").append($userHtml);
+        }, "json");
+       
+        $(".search-btn").click(function () {
+            var text = $("#search_text").val();
+            if (text != "") {
+                window.location.href = "/wenda/info/search.html?keyword=" + encodeURIComponent(text);
+            } else {
+                alert("请输入关键词");
+            }
+        });
+
+    });
+</script>

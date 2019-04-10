@@ -1,0 +1,51 @@
+﻿@model Edushi.User.model.UserInfoModel
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" id="viewport" content="width=device-width,initial-scale=1.0, maximum-scale=1.0,minimum-scale=1.0,user-scalable=no"/>
+	<meta name="format-detection" content="telephone=no" />
+	<title>爱上头条（E都市）小说频道</title>
+    <link href="~/Areas/Xiaoshuo/asset/css/user.css" rel="stylesheet" />
+	<script>
+		document.documentElement.style.fontSize=100*( (document.documentElement.clientWidth)/750 )+"px";
+	</script>
+    <script src="~/Areas/Xiaoshuo/asset/js/jquery-1.8.3.min.js"></script>
+</head>
+<body>
+<header>
+	<span class="back" onclick="javascript:history.go(-1);"></span>
+	<span class="title">个人中心</span>
+	<a href="http://m.xiaoshuo.edushi.com" class="back-home"></a>
+</header>
+<div class="main-container">
+	<div class="photo-box">
+		<div class="photo"><img src="@(ViewBag.UserImgDomain + Model.UI_Avatar)" /></div>
+		<div class="info">
+			<div class="name">@Model.UI_NickName </div>
+            @if (!string.IsNullOrEmpty(Model.UI_Tags))
+            {
+                <p>@Model.UI_Tags</p> <!-- 没有个性签名时整个P标签不显示 -->
+            }
+		</div>
+	</div>
+	<ul class="menu">
+		<li>
+            <a href='@Url.RouteUrl("mybookrack")' class="mybook">我的书架</a>
+            <a href='@Url.RouteUrl("recentlyread")' class="history">最近阅读</a>
+		</li>
+		<li>
+            <a href="@Url.Content("~/my/baseinfo.html?type=3")" class="basicinfo">基本资料</a>
+		</li>
+		<li>
+            <a href="/user/exitlogin.htm?BackUrl=http://m.xiaoshuo.edushi.com/" class="logout">退出账号</a>
+		</li>
+	</ul>
+</div>
+<footer>
+    浙B2-20050306  浙江网安备 33010502000262号
+</footer>
+    <script src="~/Areas/Xiaoshuo/asset/js/common.js"></script>
+</body>
+</html>

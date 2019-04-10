@@ -1,0 +1,602 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>三维地图APP版</title>
+    @Html.Partial("/Views/Shared/_PartialHead.cshtml")
+    <script src="@Url.Content("~/asset/js/map.js")"></script>
+    <script src="@Url.Content("~/asset/js/citys.js")"></script>
+    <script src="@Url.Content("~/asset/js/vue.min.js")"></script>
+    <script src="@Url.Content("~/asset/js/SearchHis.js")"></script>
+    <script>
+        //getAppId(0);
+        //getUserLocation();
+    </script>
+</head>
+<body id="by">
+    <div style="overflow-y:hidden">
+        <div id="container"></div>
+        <!-- 右上角显示 -->
+        <section class="show-fnc">
+            <div class="layer-change"><img src="@Url.Content("~/asset/images/ic_change@3x.png")" id="layer-changes" /></div>
+            <div class="search-query"><img src="@Url.Content("~/asset/images/bt_search@3x.png")" id="goSearch" /></div>
+        </section>
+
+        <!-- 天气显示 -->
+        <section class="my-tool">
+            <div class="hangzhou"><img src="@Url.Content("~/asset/images/ic_locate@3x.png")" /><span id="currCity">杭州</span></div>
+            <div class="tainqi"><span>-2</span><img src="@Url.Content("~/asset/images/ic_cloudy@3x.png")" /></div>
+        </section>
+
+        <section class="layer-list">
+            <ul>
+                <li>二维</li>
+                <li>三维</li>
+                <li>卫星</li>
+            </ul>
+        </section>
+
+        <div id="app">
+            <!-- iframe多条件搜索 -->
+            @*<div id="iframe-wrap" style="position: absolute; z-index: 10000; width: 100%; top: 8.6rem;  ">
+                    <iframe id="iframe" src="@Url.Content("~/Home/DropSearch")" frameborder="0" width="100%"></iframe>
+                </div>*@
+
+            <div id="iframe-wrap">
+                <div class="iframe-wraper" style="">
+                    <div id="tuowo">
+                        <div class="fenge"></div>
+                        <div class="go-back" v-on:click="delSearchDetail"><p class="del-icon"></p></div>
+                    </div>
+                    <div class="search-list">
+                        <ul class="lists">
+                            <li v-for="item in searchRecord" v-on:click="queryDetail(item)">
+                                <div class="companyName"><span>{{item.companyName}}</span></div>
+                                <div class="companyAddr"><span>{{item.companyDetail}}</span></div>
+                                <div class="companyType"><span>{{item.companyType}}</span></div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 搜索 -->
+            <div id="iframe-Search">
+                <div class="cotains">
+                    <div class="editFooter">
+                        <img src="@Url.Content("../asset/images/返回@2x.png")" class="back-img" v-on:click="backMap" />
+                        <input type="text" placeholder="搜索位置" id="content">
+                        <p class="input-del"></p>
+                        <div class="cotains-right">
+                            <span id="publish" v-on:click="gotoSearch">取消</span>
+                        </div>
+                    </div>
+
+                    <div class="wraper">
+                        <div class="search-history-warper1">
+                            <section class="search-history">
+                                <div class="zuijin">最近搜索</div>
+                                <div class="clear" v-on:click="clearHistory">清空</div>
+                            </section>
+                            <section class="search-lib">
+                                <ul>
+                                    <li v-for="item in historyList" v-on:click="querySearch(item)"><span class="search-list-span">{{item.search_content}}</span><p class="search-del"></p></li>
+                                </ul>
+                            </section>
+                        </div>
+                        <div class="search-history-warper2" style="display:none;">
+                            <section class="search-history">
+                                <!-- 根据当前城市判断是否为三维，如果是三维则显示"在二维地图中搜索",反之...-->
+                                <div class="zuijin" v-on:click="qiehuan">在<span class="cityType">{{isSanD?"二":"三"}}</span>维地图中搜索"<span class="cityName">{{currtySearch}}</span>"</div>
+                            </section>
+                            <section class="search-lib">
+                                <ul v-show="isShow">
+                                    <li v-for="item in gaodeSearchRecord" v-on:click="goQuery(item)"><span class="search-list-span">{{item.name}} {{item.district}}</span><p class="search-del"></p></li>
+                                </ul>
+                            </section>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript">
+        // 城市切换
+        $("#currCity").on("click", function () {
+            var url = "/home/city?name=" + escape($("#currCity").text());
+            window.location.href = url;
+        });
+
+        // 图层点击切换
+        var onclickCount = 0;
+        $("#layer-changes").on("click", function () {
+            onclickCount++;
+            if (onclickCount % 2 == 0) {
+                $(".layer-list").hide();
+            } else {
+                $(".layer-list").show();
+            }
+        });
+
+
+    </script>
+
+    <script>
+        setTimeout(function () {
+            //重新修改用户的位置信息，地图初始化时，默认按API提供的基站定位方式
+            if (UserLocation != null && UserLocation.length > 0) {
+                alert(UserLocation[0]);
+                alert(UserLocation[1]);
+            }
+        }, 100);
+    </script>
+
+    <script>
+     
+        var datas = new Vue({
+            el: '#app',
+            data: {
+                searchList: [{}],
+                historyList: [{}],
+                searchRecord: [{}],
+                gaodeSearchRecord: [{}],
+                autoComplete: {},
+                isSanD: true,
+                currtySearch: "",
+                isShow:false
+            },
+            beforeMount:function(){
+                this.isSanDCity("杭州市")
+            }  ,
+            methods: {
+                // 隐藏全部元素
+                hideAllElement:function(){
+                    $("#iframe-Search").hide();
+                    $(".amap-sug-result").hide();
+                    $("#iframe-wrap").hide();
+                },
+                // 上拉列表显示
+                showShangLa:function(){
+                    $("#iframe-Search").hide();
+                    $(".amap-sug-result").hide();
+                    $("#iframe-wrap").show();
+                },
+                // 删除搜索详情
+                delSearchDetail:function(){
+                    this.hideAllElement();
+                }  ,
+                // 搜索结果页查询具体地图信息
+                queryDetail:function(e){
+                    var placeSearch = new AMap.PlaceSearch({
+                        map: window.map
+                    }); //构造地点查询类
+                    if (!datas.isSanD) {   // 高德二维搜索记录
+                        map.setCenter([e.location.lng, e.location.lat])
+                    } else {
+                        placeSearch.setCity(e.adcode);
+                    }
+                    placeSearch.search(e.name); //关键字查询查询
+                    // 添加点
+                    var mmarker = new AMap.Marker({
+                        position: [e.location.lng, e.location.lat], // 经纬度对象，也可以是经纬度构成的一维数组[116.39, 39.9]
+                        title: e.name,
+                        offset: new AMap.Pixel(-13, -30)
+                    });
+                    marker.setPosition(e.location.lng, e.location.lat);
+                    marker.setMap(map);
+                }  ,
+                delUserSearchWordHis:function(type,delValue){
+                    $.ajax({
+                        type: 'POST', //GET
+                        url: '@Url.Content("~/Shared/DelUserSearchWordHis")',
+                        data: { 'type': type, 'delValue': delValue },
+                        success: function (data) {
+                            // 1.全部清除后，更改历史记录数量为空
+                            // 2.清除单条记录后，移除当前记录
+                                console.log(data)
+                        },
+                        error: function (xhr, type) {
+                            console.log(type)
+                        }
+                    })
+                },
+                // 清空历史记录（1.不传值：清除全部 2：传值:清除单个记录）
+                clearHistory:function(value){
+                    if (value) {
+                          this.delUserSearchWordHis(1,12345)
+                    } else {
+                        this.delUserSearchWordHis(2, 12345)
+                    }
+                },
+                // 最近搜索记录
+                querySearch:function(e){
+                    datas.goSearch(currentCity, e.search_content, function () {
+                        var placeSearch = new AMap.PlaceSearch({
+                            map: window.map
+                        }); //构造地点查询类
+                        if (datas.gaodeSearchRecord.length > 0) {
+                            let myArray = [];
+                            datas.gaodeSearchRecord.map(function (item) {
+                                let obj = { "name": item.name, "district": item.district, "address": null, "location": { "lng": item.location.lng, "lat": item.location.lat } }
+                                myArray.push(obj)
+                            })
+                            datas.bindElementValue(myArray)
+                        } else {
+                            // 没有数据
+                            datas.bindElementValue(null)
+                        }
+                    })
+                },
+                // 根据当前城市判断是否为三维城市
+                isSanDCity: function (cityName) {
+                    for (var cityinfo in cities) {
+                        if ((cityinfo.indexOf(cityName) > -1))
+                            break;
+                        else
+                            this.isSanD = false;
+                    }
+                }  ,
+                // 实时搜索(三维地图)
+                goSearch: function (cityName, keyword,callback) {
+                    $.ajax({
+                        type: 'POST', //GET
+                        url: '@Url.Content("~/Shared/getSearchDataByPage")',
+                        data: { 'cityName': cityName, 'keyword': keyword, 'pageIndex': 1 },
+                        success: function (data) {
+                            // 两种情况 1：单条点击 2：多条点击
+                            if (data.list.length > 0) {
+                                datas.isShow = true;
+                                let myArray = [];
+                                data.list.map(function (item) {
+                                    let obj = { "name": item.Name, "district": item.Name,"address": null, "location": { "lng": item.CenterX, "lat": item.CenterY, } }
+                                    myArray.push(obj)
+                                })
+                                datas.gaodeSearchRecord = myArray
+                            } else {
+                                // 没有数据清空
+                                datas.gaodeSearchRecord =data.list;
+                            }
+                            if (callback)
+                                callback()
+                        },
+                        error: function (xhr, type) {
+                            console.log(type)
+                        }
+                    })
+                },
+                //获取用户搜索历史
+                getHistroyList: function (userId_app) {
+                    $.ajax({
+                        type: 'POST', //GET
+                        url: '@Url.Content("~/Shared/getUserSearchWordHisList")',
+                        data: { 'userId_app': userId_app },
+                        success: function (data) {
+                            datas.historyList = data.data
+                        },
+                        error: function (xhr, type) {
+                            console.log(type)
+                        }
+                    })
+                },
+                // 绑定数据到上拉列表上
+                bindElementValue: function (list) {
+                    datas.searchRecord = list
+                    datas.showShangLa();
+                },
+                // 获取高德下拉数据列表
+                getGaoDeSuggestData: function () {
+                    //输入提示
+                    var autoOptions = {
+                        input: "content",
+                        city: "杭州"
+                    };
+                    datas.autoComplete = new AMap.Autocomplete(autoOptions);
+                    datas.autoComplete.search($("#content").val(), function (status, result) {
+                        if (result.info == "OK") {
+                            datas.isShow = true;    
+                            datas.gaodeSearchRecord = result.tips
+                        }
+                    })
+                },
+                // 点击调整到指定城市（单条处理情况）
+                goQuery: function (e) {
+                    datas.showShangLa();
+                    AddUserSearchWordHis("@Url.Content("~/Shared/AddUserSearchWordHis")", 12345, e.name)
+                    var placeSearch = new AMap.PlaceSearch({
+                        map: window.map
+                    }); //构造地点查询类
+                    if (!datas.isSanD) {   // 高德二维搜索记录
+                        map.setCenter([e.location.lng, e.location.lat])
+                    } else {
+                        placeSearch.setCity(e.adcode);
+                    }
+                    placeSearch.search(e.name); //关键字查询查询
+                    // 添加点
+                    var mmarker = new AMap.Marker({
+                        position: [e.location.lng, e.location.lat], // 经纬度对象，也可以是经纬度构成的一维数组[116.39, 39.9]
+                        title: e.name,
+                        offset: new AMap.Pixel(-13, -30)
+                    });
+                    marker.setPosition(e.location.lng, e.location.lat);
+                    marker.setMap(map);
+                    datas.bindElementValue([{ "companyName": e.name, "companyDetail": e.district +"-" + e.address?"hangzhou":e.address, "companyType": "写字楼" }])
+                },
+                //搜索按钮点击(多条处理情况)
+                gotoSearch: function () {
+                    /**
+                    注意：分别要处理二维搜索记录和三维搜索记录，并且组装数据
+                    */
+                    if ($("#publish").text() == "取消") {
+                        datas.hideAllElement();
+                    } else {
+                        // 添加到搜索记录中
+                        AddUserSearchWordHis("@Url.Content("~/Shared/AddUserSearchWordHis")", 12345, $("#content").val())
+                        if (datas.gaodeSearchRecord.length > 0) {
+                            let myArray = [];
+                            datas.gaodeSearchRecord.map(function (item) {
+                                let obj = { "companyName": item.name, "companyDetail": item.district + "-" + item.address, "companyType": "写字楼" , "location": { "lng": item.location.lng, "lat": item.location.lat }, "name": item.name}
+                                myArray.push(obj)
+                            })
+                            datas.bindElementValue(myArray)
+                        } else {
+                            // 点击搜索没有数据显示
+                            datas.bindElementValue(null);
+                        }
+                    }
+                },
+                // 切换二/三维
+                /**
+                1.当是三维城市时，点击切换到二维搜索结果列表
+                2.当是二维城市时，点击切换到三维搜索结果列表
+                */
+                qiehuan: function () {
+                    // 默认是三维搜索，点击就是二维
+                    // 1.1 先查询高德二维数据列表集合，绑定到搜索记录列表中
+                    AddUserSearchWordHis("@Url.Content("~/Shared/AddUserSearchWordHis")", 12345, $("#content").val())
+                    if (!datas.isSanD) {
+                        datas.showShangLa();
+                            var word = $("#content").val();
+                            if (word!="")
+                                datas.goSearch("杭州市", word, function () {
+                                    setTimeout(function () {
+                                        if (datas.gaodeSearchRecord.length > 0) {
+                                            let myArray = [];
+                                            datas.gaodeSearchRecord.map(function (item) {
+                                                let obj = { "companyName": item.name, "companyDetail": item.district + "-" + item.address, "companyType": "写字楼", "location": { "lng": item.location.lng, "lat": item.location.lat }, "name": item.name }
+                                                myArray.push(obj)
+                                            })
+                                            datas.bindElementValue(myArray)
+                                        } else {
+                                            datas.bindElementValue(null)
+                                        }
+                                    }, 0)
+                                })
+                    } else {
+                        datas.getGaoDeSuggestData()
+                        setTimeout(function () {
+                            datas.showShangLa();
+                            if (datas.gaodeSearchRecord.length > 0) {
+                                let myArray = [];
+                                datas.gaodeSearchRecord.map(function (item) {
+                                    let obj = { "companyName": item.name, "companyDetail": item.district + "-" + item.address, "companyType": "写字楼", "location": { "lng": item.location.lng, "lat": item.location.lat }, "adcode": item.adcode, "name": item.name }
+                                    myArray.push(obj)
+                                })
+                                datas.bindElementValue(myArray)
+                            } else {
+                                datas.bindElementValue(null)
+                            }
+                        }, 200)
+                    }
+                },
+                // 重置输入框默认值
+                resetInputDefault: function () {
+                    datas.currtySearch = "";
+                    $("#iframe-Search").show();
+                    $("#content").val("")
+                    $('.search-history-warper2').hide()
+                    $('.search-history-warper1').show()
+                    $("#publish").text("取消")
+                    $(".cotains-right").removeClass("search-div");
+                    $("#publish").removeClass("search-wenzi");
+                    $(".back-img").hide();
+                    $("#content").css("width", "77%")
+                    $(".input-del").hide();
+                },
+                // 返回
+                backMap: function () {
+                    $("#iframe-Search").hide();
+                    $(".amap-sug-result").hide();
+                    $("#iframe-wrap").hide();
+                }
+            }
+        })
+        $(function () {
+            marker = new AMap.Marker({});
+            // 搜索点击->1.查询搜索记录
+            $("#goSearch").on("click", function () {
+                datas.resetInputDefault();
+                // 获取当前用户搜索历史记录，当用户信息不存在时不记录用户搜索信息
+                datas.getHistroyList(12345)
+            });
+
+            // 清空输入框内数据
+            $(".input-del").click(function () {
+                $(this).prev("input").val("");
+                // 清空输入框后重新请求数据
+                $(this).hide();
+                datas.currtySearch = "";
+                $("#publish").text("取消")
+                $(".cotains-right").removeClass("search-div");
+                $("#publish").removeClass("search-wenzi");
+                $(".back-img").hide();
+                $("#content").css("width", "77%")
+                datas.gaodeSearchRecord = [];
+            });
+
+            // 判断中文输入
+            var flag = true;
+            $('#content').on('compositionstart', function () {
+                flag = false;
+            })
+            $('#content').on('compositionend', function () {
+                flag = true;
+            })
+            $('#content').on('input', function () {
+                var _this = this;
+                if ($(_this).val().length > 0) {     // 输入框内有值
+                    $(".input-del").show(); // 显示删除
+                    datas.currtySearch = $(_this).val();
+                    $("#publish").text("搜索")
+                    $(".cotains-right").addClass("search-div");
+                    $("#publish").addClass("search-wenzi");
+                    $(".back-img").show();
+                    $("#content").css("width", "69%")
+                } else {
+                    $(".input-del").hide(); // 隐藏删除
+                    $("#publish").text("取消")
+                    $(".cotains-right").removeClass("search-div");
+                    $("#publish").removeClass("search-wenzi");
+                    $(".back-img").hide();
+                    $("#content").css("width", "77%")
+                }
+                if (!datas.isSanD) {            //搜搜二维
+                    datas.getGaoDeSuggestData()
+                } else {         // 三维城市搜索
+                    setTimeout(function () {
+                        if (flag) {
+                            var word = $(_this).val();
+                            if(word!="")
+                                datas.goSearch("杭州市", word)
+                        }
+                    }, 0)
+                }
+            })
+
+            // 输入框获取焦点(最近搜索记录隐藏)
+            $("#content").on('focus', function () {
+                $('.search-history-warper2').show()
+                $('.search-history-warper1').hide()
+                if ($("#content").val().length > 0) {     // 输入框内有值
+                    $("#publish").text("搜索")
+                    $(".cotains-right").addClass("search-div");
+                    $("#publish").addClass("search-wenzi");
+                } else {
+                    // 输入框没有值清除搜素记录
+                    datas.gaodeSearchRecord = [];
+                }
+            })
+            $("#content").on('blur', function () {
+                if ($('#content').val().length == 0) {
+                    $('.search-history-warper2').hide()
+                    $('.search-history-warper1').show()
+                    $("#publish").text("取消")
+                    $(".cotains-right").removeClass("search-div");
+                    $("#publish").removeClass("search-wenzi");
+                }
+            })
+        });
+
+        function poiPickerReady(poiPicker) {
+            var marker = new AMap.Marker();
+            //选取了某个POI
+            poiPicker.on('poiPicked', function (poiResult) {
+                marker.setMap(map);
+            });
+        }
+        function gaoDeSuggestData() {
+            //输入提示
+            var autoOptions = {
+                input: "content",
+                city:"杭州"
+            };
+
+            var autoComplete = new AMap.Autocomplete(autoOptions);
+            autoComplete.search($("#content").val(), function (status, result) {
+                // 搜索成功时，result即是对应的匹配数据
+                console.log(result)
+            })
+            return;
+            auto = new AMap.Autocomplete(autoOptions);
+            var placeSearch = new AMap.PlaceSearch({
+                map: map
+            }); //构造地点查询类
+            AMap.event.addListener(auto, "select", select); //注册监听，当选中某条记录时会触发
+            function select(e) {
+                $("#iframe-Search").hide();
+                $(".amap-sug-result").hide();
+                $("#iframe-wrap").show();
+               
+                AddUserSearchWordHis("@Url.Content("~/Shared/AddUserSearchWordHis")", 12345, e.poi.name)
+                placeSearch.setCity(e.poi.adcode);
+                placeSearch.search(e.poi.name); //关键字查询查询
+                // 添加点
+                var mmarker = new AMap.Marker({
+                    position: [e.poi.location.lng, e.poi.location.lat], // 经纬度对象，也可以是经纬度构成的一维数组[116.39, 39.9]
+                    title: e.poi.name,
+                    offset: new AMap.Pixel(-13, -30)
+                });
+                marker.setPosition(e.poi.location.lng, e.poi.location.lat);
+                marker.setMap(map);
+                //map.setCenter(e.poi.location.lng, e.poi.location.lat);
+                //选取了某个POI
+               
+                //map.setFitView()
+                datas.bindElementValue([{ "companyName": e.poi.name, "companyDetail": e.poi.district + "-" + e.poi.address, "companyType": "写字楼"}])
+            }
+        }
+    </script>
+
+
+    <!--页面上下滑动区域代码-->
+    <script>
+        var startX, //触摸时的坐标
+          startY,
+          x, //滑动的距离
+          y,
+          aboveY = 0; //设一个全局变量记录上一次内部块滑动的位置
+
+        var inner = document.getElementById("iframe-wrap");
+
+        function touchSatrt(e) { //触摸
+            e.preventDefault();
+            var touch = e.touches[0];
+            startY = touch.pageY; //刚触摸时的坐标
+           // alert("触摸：" + startY)
+        }
+
+        function touchMove(e) { //滑动
+            e.preventDefault();
+            var touch = e.touches[0];
+            y = touch.pageY - startY; //滑动的距离
+            //inner.style.webkitTransform = 'translate(' + 0+ 'px, ' + y + 'px)';  //也可以用css3的方式
+            // alert("滑动后的位置：" + (startY + y))
+            console.log("滑动后的位置：" + (startY + y))
+            if ((startY + y) > 70 && (startY + y) < 511)
+            {
+                inner.style.top = (startY + y) + "px"; //这一句中的aboveY是inner上次滑动后的位置
+            }
+        }
+
+        function touchEnd(e) { //手指离开屏幕
+            e.preventDefault();
+            aboveY = parseInt(inner.style.top); //touch结束后记录内部滑块滑动的位置 在全局变量中体现 一定要用parseInt()将其转化为整数字;
+            //alert("手指离开屏幕：" + aboveY)
+        } //
+        document.getElementById("tuowo").addEventListener('touchstart', touchSatrt, false);
+        document.getElementById("tuowo").addEventListener('touchmove', touchMove, false);
+        document.getElementById("tuowo").addEventListener('touchend', touchEnd, false);
+    </script>
+
+    <script src="https://res.wx.qq.com/mmbizwap/zh_CN/htmledition/js/vconsole/3.0.0/vconsole.min.js"></script>
+    <script>
+        window.vConsole = new window.VConsole();
+        // 然后点击右下角 vConsole 按钮即可查看到 log
+    </script>
+
+</body>
+
+</html>

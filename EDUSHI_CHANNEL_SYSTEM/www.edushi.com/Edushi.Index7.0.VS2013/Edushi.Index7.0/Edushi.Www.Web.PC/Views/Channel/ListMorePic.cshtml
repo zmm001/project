@@ -1,0 +1,194 @@
+﻿@model Edushi.Www.Web.PC.Models.ChannelSubModel
+@using Edushi.Common;
+@{
+    ViewBag.Title = Model.CurrentType.IT_Name + "-" + Model.ParentType.IT_Name + "频道-E都市";
+}
+
+@section meta{
+    <meta name="Keywords" content="@(Model.CurrentType.IT_Name)" />
+    <meta name="Description" content="@(Model.CurrentType.IT_Name)资讯频道提供@(Model.CurrentType.IT_Name)相关的信息、新闻、资讯，构建新型互联网媒体平台为互联网用户提供价值资讯。" />
+}
+<link href="@Url.Content("~/asset/css/channel.css")" rel="stylesheet" />
+
+<!--频道页顶部导航-->
+@{Html.RenderAction("TopNavigation", "Channel");}
+
+<div class="container mt20">
+    <div class="channel-header">
+        <div class="wrapper">
+            <div class="logo">
+                <a href="@Url.Content("~/")" target="_blank"><img src="@Url.Content("~/asset/images/logo.png")"></a>
+                <a href="@Model.CurrentParentURL" class="channel-name" target="_blank">@Model.ParentType.IT_Name</a>
+                <div class="urhere">
+                    <a href="@Url.Content("~/")" target="_blank">首页</a>
+                    <a href="@Model.CurrentParentURL" target="_blank">@Model.ParentType.IT_Name</a>
+                    <a href="@Model.CurrentTypeUrl">@Model.CurrentType.IT_Name</a>
+                </div>
+            </div>
+        </div>
+        <div class="sub-nav tu-sub-nav">
+            <div class="wrapper">
+                <p class="home"><a href="@Model.CurrentParentURL" target="_blank">首页</a></p>
+                @if (Model.SubType != null && Model.SubType.Any())
+                {
+                    <div class="nav">
+                        @foreach (var item in Model.SubType)
+                        {
+                            var className = item.IT_ID == Model.CurrentType.IT_ID ? "class='current'" : "";
+                            var url = Common.GetInfoListUrl(item.IT_ParentPath, item.IT_ID);
+                            <span><a href="@url" target="_blank" @Html.Raw(className)>@item.IT_Name</a></span>
+                        }
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+    <div class="wrapper">
+        <div class="col left">
+            <div class="left-side-list">
+                <div class="yule-tit"><span><a href="http://www.edushi.com/zt/" target="_blank">专题</a></span></div>
+                <ul>
+                    @Html.Raw(Model.Topic)
+                </ul>
+                <span class='white_bg'></span>
+            </div>
+        </div>
+        <div class="col middle">
+            @if (Model.InfoTopDay != null && Model.InfoTopDay.Any())
+            {
+                <ul class="photo-list">
+                    @{
+                var topDayNum = Model.InfoTopDay.Count == 3 ? 3 : 1;
+                for (var i = 0; i < topDayNum; i++)
+                {
+                    var item = Model.InfoTopDay[i];
+                    var detailReg = new System.Text.RegularExpressions.Regex(@"^http://[A-Za-z]+\.edushi.com/bang/");
+                    <li>
+                        <a href="@detailReg.Replace(item.ITD_PcUrl, "http://www.edushi.com/zixun/")" target="_blank">
+                            <div class="photo"><img src="@item.ITD_PicUrl.GetPicReplace("", "")" onerror="this.src='@Url.Content("~/asset/images/default_photo.png")'"></div>
+                            <span>@Html.Raw(item.ITD_Title)</span>
+                        </a>
+                    </li>
+                }
+                    }
+                </ul>
+            }
+            <ul class="news-list js-newslist" id="datalist">
+                @if (Model.RecommendedNews != null && Model.RecommendedNews.Count > 8)
+                {
+                    for (int i = 8; i < Model.RecommendedNews.Count; i++)
+                    {
+                        var item = Model.RecommendedNews[i];
+                        var url = Common.GetInfoUrl(item.IA_CityCode, item.IT_ParentPath, item.IT_ID, item.IA_ID);
+                        <li>
+                            @if (!string.IsNullOrWhiteSpace(item.IA_Pic))
+                            {
+                                <a href="@url" target="_blank"><img src="@item.IA_Pic.GetPicReplace("", "")" onerror="this.src='@Url.Content("~/asset/images/default_photo.png")'"></a>
+                            }
+
+                            <div>
+                                <a href="@url" target="_blank" class="title">@Html.Raw(item.IA_Title)</a>
+                                <div class="info">
+                                    <span class="keyword">
+                                        <span>@item.IA_Author</span>
+                                    </span>
+                                    <span class="time">@item.IA_UpdateDate.ToString("yyyy-MM-dd")</span>
+                                </div>
+                            </div>
+                        </li>
+                    }
+                }
+
+            </ul>
+            @if (Model.PageCount > 0)
+            {
+                <a href="javascript:void(0);" class="load-btn">加载更多</a>
+                <a href="@Url.Content("~/info/"+Model.ParentType.IT_ID+"-"+Model.CurrentType.IT_ID+"-p1.html")" target="_blank" class="see-more">查看全部</a>
+            }
+        </div>
+        <div class="col right">
+            @if (Model.SixContent != null && Model.SixContent.Any())
+            {
+                for (int i = 0; i < Model.SixContent.Count; i++)
+                {
+                    var item = Model.SixContent[i];
+                    string className = i == 0 ? "class='right-side-list yule-side-list'" : (i == 1 ? "class='right-side-list yule-side-list mt30'" : "class='right-side-list yule-side-list mt20'");
+
+                    <div @Html.Raw(className)>
+                        <div class="tit"><span><a href="@Common.GetInfoListUrl(item.SubType.IT_ParentPath,item.SubType.IT_ID)" target="_blank">@item.SubType.IT_Name</a></span></div>
+                        <ul>
+                            @for (int j = 0; j < item.Content.Count; j++)
+                            {
+                                var subItem = item.Content[j];
+                                if (j == 0 && !string.IsNullOrWhiteSpace(subItem.Pic))
+                                {
+                                    <li class="b">
+                                        <a href="@subItem.Url" target="_blank">
+                                            <span>@Html.Raw(subItem.Title)</span>
+                                            <img src="@subItem.Pic.GetPicReplace("", "")" onerror="this.src='@Url.Content("~/asset/images/default_photo.png")'">
+                                        </a>
+                                    </li>
+                                }
+                                else
+                                {
+                                    <li>
+                                        <a href="@subItem.Url" target="_blank"><span>@Html.Raw(subItem.Title)</span></a>
+                                    </li>
+                                }
+                            }
+                        </ul>
+                    </div>
+                    if (i == 0)
+                    {
+                        <div class="jsfixed mt20">
+                            <!-- 广告位：【A03-02】 -->
+                            <script>
+                                (function () {
+                                    var s = "_" + Math.random().toString(36).slice(2);
+                                    document.write('<div id="' + s + '"></div>');
+                                    (window.slotbydup = window.slotbydup || []).push({
+                                        id: '5296257',
+                                        container: s,
+                                        size: '300,250',
+                                        display: 'inlay-fix'
+                                    });
+                                })();
+                            </script>
+                        </div>
+                    }
+                    @*else if (i == 2)
+                        {
+                            <div class="mt20">
+                                <img src="@Url.Content("~/asset/images/img_02/r_ad_02.png")"><!-- 【A02-03】   300px × 250px  -->
+                            </div>
+                        }
+                        else if (i == 4)
+                        {
+                            <div class="mt20">
+                                <img src="@Url.Content("~/asset/images/img_02/r_ad_01.png")">><!-- 【A02-03】   300px × 250px  -->
+                            </div>
+                        }*@
+                }
+            }
+
+        </div>
+    </div>
+    <!--底部导航-->
+    @{Html.RenderAction("ChannelFooter", "Channel", new { currentId = Model.ParentType.IT_ID });}
+    <!--read_data：@Model.read_data_time-->
+</div>
+<script>
+    var configData = {
+        Count: "@Model.PageCount",
+        Url: "@Url.Content("~/")",
+        Page: "GetMoreSmData.htm",
+        ID: "@Model.CurrentType.IT_ID"
+    }
+</script>
+<script src="@Url.Content("~/asset/js/jquery.slimscroll.js")"></script>
+<script type="text/javascript" src="@Url.Content("~/asset/js/channel.js")"></script>
+<script type="text/javascript">
+    $(function () {
+        toFixed($(".jsfixed"), $(".col.right").outerHeight(true) + $(".col.right").offset().top);
+    });
+</script>

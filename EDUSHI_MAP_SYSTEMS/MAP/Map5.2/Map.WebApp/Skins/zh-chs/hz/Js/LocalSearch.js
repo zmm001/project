@@ -1,0 +1,268 @@
+﻿var _SearchType;    //搜索类型
+var _Key;           //搜索关键字
+var _Address;       //搜索地址
+
+var _PrevElement = null;   //保存上次点击的div
+
+var _Page = 1;
+var _PageCount = 1;
+var _RecordCount = 0;
+var _PageSize = 5;
+
+var _SearchData = {};
+var _Begin;
+var _End;
+var HasLoadAd = false;
+window.onload = fnOnload;
+window.onresize = function() {
+    $('TabContent1').style.height = fnGetWindowHeight() - 5 + 'px';
+};
+function reLoadPageSize(iVouchAdLength)
+{
+    _PageSize = Math.floor((fnGetWindowHeight()-65-20*iVouchAdLength)/50);
+    if(_PageSize < 5)
+    {
+        _PageSize = 5;
+    }
+}
+function fnOnload()
+{
+    if (!window.Config)
+    {
+        setTimeout('fnOnload()', 200);
+        return;
+    }
+    $('divContent').innerHTML = window.Config.Loading;
+    var sSearchType = fnRequest('type');
+    _SearchType = sSearchType;
+    var sKeyword1 = fnRequest('keyword1');
+    _Key = unescape(sKeyword1);
+    var sSearchUrl;
+    switch (sSearchType)
+    {        
+        case '0':        //模糊搜索  
+            sSearchUrl = window.Config.EDataCenterUrl + 'Commmap5.0/search.aspx?domain='+window.Config.Domain+'&l='+window.Config.Language+'&req=1&kw='+fnRequest('keyword1')+'&pagenum=1&pagesize=100';
+            ENetwork.DownloadScript(sSearchUrl,function(){fnShowData();});
+            break;
+        case '1':       //名称搜索
+            sSearchUrl = window.Config.EDataCenterUrl + 'Commmap5.0/search.aspx?domain='+window.Config.Domain+'&l='+window.Config.Language+'&req=5&kw='+fnRequest('keyword1')+'&pagenum=1&pagesize=100';
+            ENetwork.DownloadScript(sSearchUrl,function(){fnShowData();});        
+            break;
+        case '2':       //地址搜索
+            sSearchUrl = window.Config.EDataCenterUrl + 'Commmap5.0/search.aspx?domain='+window.Config.Domain+'&l='+window.Config.Language+'&req=6&kw='+fnRequest('keyword1')+'&pagenum=1&pagesize=100';
+            ENetwork.DownloadScript(sSearchUrl,function(){fnShowData();});        
+            break;
+        case '3':       //名称+地址
+            _Key = unescape(fnRequest('keyword1'));
+            _Address = unescape(fnRequest('keyword2'));
+            sSearchUrl = window.Config.EDataCenterUrl + 'Commmap5.0/search.aspx?domain='+window.Config.Domain+'&l='+window.Config.Language+'&req=7&kw='+fnRequest('keyword2')+'&address='+fnRequest('keyword1')+'&pagenum=1&pagesize=100';
+            ENetwork.DownloadScript(sSearchUrl,function(){fnShowData();});  
+            break;
+        case '4':
+            _Key = unescape(fnRequest('keyword1'));
+            sSearchUrl = window.Config.EDataCenterUrl + 'Commmap5.0/search.aspx?domain='+window.Config.Domain+'&l='+window.Config.Language+'&req=3&kw='+fnRequest('keyword1')+'&x='+fnRequest('x')+'&y='+fnRequest('y')+'&len='+fnRequest('len')+'&pagenum=1&pagesize=100';
+            ENetwork.DownloadScript(sSearchUrl,function(){fnShowData();});  
+            break;                  
+    }
+}
+//显示搜索到的数据
+function fnShowData()
+{
+    if(typeof _Search =='undefined')
+    {
+        _Search = {};
+        _Search.SearchTable = [];
+    }
+    _SearchData = _Search;
+    var sLocalSearchHtml = '';
+    if (_Search.SearchTable.length > 0) {
+        var sResult = '共有<strong>' + _Search.SearchTable.length + '项</strong>符合<strong>' + _Key + '</strong>的查询结果';
+        $('divResult').innerHTML = sResult;
+        sLocalSearchHtml = '<table id="tbCommend" border="0" cellpadding="1" cellspacing="1" style="line-height:17px;"><!--_Tr--><tr><td style="width:15px;">'
+                    + '<img src="' + window.Config.SkinPath + 'Images/button4.gif" /></td><th>{$Acontent}</th></tr><!--/_Tr--></table>'
+                    + '<ul class="LocalList"><!--_Li--><li style="height:auto;"><div class="Number"><span>{$No}</span></div><div class="DetailCon"><div class="TitleNav"><span class="HeadLine"><a href="javascript:;" title="{$Title}" onclick="if(_PrevElement != null){_PrevElement.className=\'Number\';};this.parentNode.parentNode.parentNode.previousSibling.className=\'Number Currently\';_PrevElement=this.parentNode.parentNode.parentNode.previousSibling;parent.fnShowSearchPop({$oid},{$cid},{$lstid},{$X},{$Y});">{$Title}</a></span>{$IsVip}</div><div class="Address">{$Address}</div></div>'
+                    + '<div class="DottedLine"></div></li><!--/_Li--></ul><div class="Paginate">{$Page}</div>'
+                    + '<!--{$RandomTopicList}-->';
+    }
+    else {
+        sLocalSearchHtml = '<div class="NoResult">很抱歉，没有找到与"<font style="color:red; font-weight:blod;">{$Key}</font>"相匹配的信息</div>'
+                    +'<div class="EdushiAd"><p class="Til">E都市建议您：</p>'
+                    +'<p>1.请检查输入的关键字/词是否有误；</p>'
+                    +'<p>2.缩短或更改关键词(去掉空格或不必要的词)；</p>'
+                    +'<p>3.去<a href="'+window.Config.DianUrl+'" target="_blank" title="杭州E店,为杭州每一家实体店铺建E店">杭州E店</a>查找，逛街我就逛E店！</p>'
+                    + '<p>4.有问题上<a href="' + window.Config.WebRootPath + 'bdt/SearchResult.aspx?keyword={$EKey}" target="_blank" title="包打听-有问有答本地人">包打听</a>，有问有答本地人！</p></div>'
+                    + '<table id="tbCommend" border="0" cellpadding="1" cellspacing="1" style="line-height:17px;"><!--_Tr--><tr><td style="width:15px;">'
+                    + '<img src="' + window.Config.SkinPath + 'Images/button4.gif" /></td><th>{$Acontent}</th></tr><!--/_Tr--></table>'
+                    + '<ul class="LocalList"><!--_Li--><li style="height:auto;"><div class="Number"><span>{$No}</span></div><div class="DetailCon"><div class="TitleNav"><span class="HeadLine"><a href="javascript:;" title="{$Title}" onclick="if(_PrevElement != null){_PrevElement.className=\'Number\';};this.parentNode.parentNode.parentNode.previousSibling.className=\'Number Currently\';_PrevElement=this.parentNode.parentNode.parentNode.previousSibling;parent.fnShowSearchPop({$oid},{$cid},{$lstid},{$X},{$Y})">{$Title}</a></span>{$IsVip}</div><div class="Address">{$Address}</div></div>'
+                    + '<div class="DottedLine"></div></li><!--/_Li--></ul><div class="Paginate">{$Page}</div>'
+                    + '<!--{$RandomTopicList}-->';
+    }
+    var TrHtml=fnReadSign('_Tr',sLocalSearchHtml);
+    var LiHtml=fnReadSign('_Li',sLocalSearchHtml);
+        
+    var r=sLocalSearchHtml.replace(LiHtml,'{$Li}').replace(TrHtml,'{$Tr}'); 
+    var s='';
+    var c='';  
+    
+    if(typeof _Search.VouchAd != 'undefined')
+    {
+        for(var i=0;i<_Search.VouchAd.length;i++)
+        {
+            if(_Search.VouchAd[i].BAC_OPenType=='2')
+            {
+                c+=TrHtml.replace('{$Acontent}','<a  style="text-decoration:underline;font-weight:bold;color:red;font-size:12px;" href="javascript:parent.ShowCommendPopByContent(\''+_Search.VouchAd[i].BAC_Title+'\',_Search.VouchAd['+i+'].BAC_Content,'+_Search.VouchAd[i].BAC_LogincalX+','+_Search.VouchAd[i].BAC_LogincalY+')">'+_Search.VouchAd[i].BAC_Title+'</a>');
+            }
+            else
+            {
+                c+=TrHtml.replace("{$Acontent}","<a style=\"color:#F60;\" href=\"http://{$LinkUrl}\" target=\"_blank\">{$Title}</a>").replace('{$Title}',_Search.VouchAd[i].BAC_Title).replace('{$LinkUrl}',_Search.VouchAd[i].BAC_LinkUrl.replace('http://',''));
+            }
+        }
+        reLoadPageSize(_Search.VouchAd.length); //根据是否有推荐关键字计算分页数
+    }
+    else
+    {
+        reLoadPageSize(0);
+    }
+    _RecordCount=_Search.SearchTable.length; 
+    if((_RecordCount%_PageSize)==0)
+    {
+        _PageCount=_RecordCount/(_PageSize);
+    }
+    else
+    {
+        _PageCount=int(_RecordCount,_PageSize)+1;
+    }
+    var Begin  = (_Page-1)*(_PageSize);
+    var End    = _Page*_PageSize;
+    if(End>_RecordCount)End=_RecordCount;
+    _Begin = Begin;
+    _End = End;
+    for(i=Begin;i<End;i++){
+        if (_SearchType == 0 || _SearchType == 4)   //模糊
+        {           
+            
+            var t=_Search.SearchTable[i].OCName;
+            var sAddress = _Search.SearchTable[i].Address;
+            var arrKeyword = _Key.split(' ');
+            for (var n=0; n<arrKeyword.length; n++)
+            {
+                t=t.replaceAll(arrKeyword[n],'<span style="color:#ff6400;">'+arrKeyword[n]+'</span>');
+                sAddress = sAddress.replaceAll(arrKeyword[n],'<span style="color:#ff6400">'+arrKeyword[n]+'</span>');
+            }        
+        }
+        else if (_SearchType == 1) //名称
+        {
+            var t = _Search.SearchTable[i].OCName;
+            var sAddress = _Search.SearchTable[i].Address;
+            var arrKeyword = _Key.split(' ');
+            for (var n=0; n<arrKeyword.length; n++)
+            {
+                t=t.replaceAll(arrKeyword[n],'<span style="color:#ff6400;">'+arrKeyword[n]+'</span>');
+            }            
+        }
+        else if (_SearchType == 2)  //地址
+        {
+            var t=_Search.SearchTable[i].OCName;
+            var sAddress = _Search.SearchTable[i].Address;  
+            var arrKeyword = _Key.split(' ');
+            for (var n=0; n<arrKeyword.length; n++)
+            {
+                sAddress = sAddress.replaceAll(arrKeyword[n],'<span style="color:#ff6400">'+arrKeyword[n]+'</span>');
+            }          
+        }
+        else if(_SearchType == 3)  //名称+地址
+        {            
+            var t=_Search.SearchTable[i].OCName.replaceAll(_Address,'<span style="color:#ff6400;">'+_Address+'</span>');
+            var sAddress = _Search.SearchTable[i].Address.replaceAll(_Key,'<span style="color:#ff6400;">'+_Key+'</span>');
+        }
+        var sTmpHtml = LiHtml.replace('{$No}', i + 1).replace('{$Title}', _Search.SearchTable[i].OCName).replace('{$Title}', t).replace('{$Address}', sAddress).replace('{$EID}', _Search.SearchTable[i].Eaddress).replace('{$AppDomain}', window.Config.Domain).replace('{$X}', _Search.SearchTable[i].X).replace('{$Y}', _Search.SearchTable[i].Y).replace('{$oid}', _Search.SearchTable[i].OwnerID).replaceAll('{$cid}', _Search.SearchTable[i].CompanyID).replaceAll('{$lstid}', _Search.SearchTable[i].LST_ID);
+        
+        //杭州添加E店链接及图标
+        var sUrl='',sVipIcon='';            
+        if(_Search.SearchTable[i].LST_ID*1 > 0)
+        {
+            if(_Search.SearchTable[i].Domain != '')
+            {
+                sUrl = 'http://'+ _Search.SearchTable[i].Domain + '.' + window.Config.Domain;
+            }
+            else
+            {
+                sUrl = window.Config.DianUrl + 'VipStore/' + _Search.SearchTable[i].LST_ID + '/Index.aspx?StoreID=' + _Search.SearchTable[i].CompanyID;
+            }            
+        }
+        else
+        {
+            sUrl= window.Config.HuangyeUrl + 'ShopView.aspx?id='+ _Search.SearchTable[i].CompanyID;
+        }
+        if (_Search.SearchTable[i].LST_ID * 1 == 2) {
+            sVipIcon = '<a href="' + sUrl + '" target="_blank"><img src="' + window.Config.SkinPath + 'Images/ComMapIco1.gif" alt="商务地图" /></a>';
+        }
+        if (_Search.SearchTable[i].LST_ID * 1 == 1) {
+            if (_Search.SearchTable[i].Vip * 1 > 1) {
+                sVipIcon = '<a href="' + sUrl + '" target="_blank"><img src="' + window.Config.SkinPath + 'Images/VipEdian.gif" alt="Vip E店" /></a>';
+            }
+            else if (_Search.SearchTable[i].Vip * 1 > 0) {
+                sVipIcon = '<a href="' + sUrl + '" target="_blank"><img src="' + window.Config.SkinPath + 'Images/Edian.gif" alt="E店" /></a>';
+            }
+        }
+        var sJuanIcon='';
+        if(_Search.SearchTable[i].LV_ID*1 > 0)
+        {
+            sJuanIcon = '<img src="'+window.Config.SkinPath+'images/Juan.gif" alt="免费下载本店优惠券" />';
+        }
+        var sCuIcon = '';
+        if(_Search.SearchTable[i].LT_ID*1 > 0)
+        {
+            sCuIcon = '<img src="'+window.Config.SkinPath+'images/Cu.gif"alt="本店正在促销打折" />';
+        }
+        var sYingIcon = '';
+        if(_Search.SearchTable[i].LCE_ShopCard*1 > 0)
+        {
+            sYingIcon = '<img src="'+window.Config.SkinPath+'images/Ying.gif" alt="本店已通过营业执照认证" />';
+        }
+        sTmpHtml = sTmpHtml.replace('{$IsVip}', '<span class="IsVipIco">'+sVipIcon+sYingIcon+sJuanIcon+'&nbsp;'+sCuIcon+'</span>');
+        s+=sTmpHtml;
+    }
+    var strPage=fnPager(6, _Page, _PageSize, _PageCount, 'window.fnShowByPage');
+    if(_SearchType == 3)
+    {
+        r=r.replace('{$Li}',s).replace('{$Tr}',c).replace('{$Count}',_RecordCount).replace('{$Key}','在'+_Key+'找'+_Address).replace('{$EKey}', escape(_Key)).replace('{$Page}',strPage);
+    }
+    else
+    {
+        r=r.replace('{$Li}',s).replace('{$Tr}',c).replace('{$Count}',_RecordCount).replace('{$Key}',_Key).replace('{$EKey}', escape(_Key)).replace('{$Page}',strPage);
+    }    
+
+    r = r.replaceAll('{$DisPlay}','display:block');
+
+    $('divContent').innerHTML = r;
+    $('TabContent1').style.height = fnGetWindowHeight() - 5 + 'px';  //初始化高度
+    //原来老的广告
+    //$('AD_script').src = this.Config.EDataCenterUrl + 'Ad/ImageAd.aspx?domain=' + this.Config.Domain + '&l=' + this.Config.Language + '&req=SEARCHLIST&domid=Photo';
+    ENetwork.DownloadScript(this.Config.EDataCenterUrl + 'ad/ads.aspx?citycode=' + this.Config.CityCode + '&l=' + this.Config.Language + '&key=sousuoliebiao&domid=Photo');
+    parent.onSearchDataLoadComplete(_Search.SearchTable,Begin,End);
+}
+
+function fnShowByPage(iPage)
+{
+    if(iPage)
+    {
+        _Page = iPage;
+    }
+    fnShowData();
+}
+
+function fnActive(){
+    if(typeof  _SearchData.SearchTable!= 'undefined' && _SearchData.SearchTable.length > 0)
+    {
+        parent.onSearchDataLoadComplete(_SearchData.SearchTable,_Begin,_End);
+    }
+    else
+    {
+        parent.onSearchDataLoadComplete(null,0,0);
+    }
+}
+function fnExit()
+{
+    parent.onSearchDataLoadComplete(null,0,0);
+}

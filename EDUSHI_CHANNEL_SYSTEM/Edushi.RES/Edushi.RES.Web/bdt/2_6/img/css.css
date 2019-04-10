@@ -1,0 +1,24 @@
+.top-box{width:689px;margin:0;float:left;height:32px;}
+.tb-cont{width:689px;margin:0;background:url(b-cent.gif) top left repeat-y;float:left;}
+.tb-ul{width:655px;float:left;margin:10px 0 5px 20px;display:inline;list-style-type:none;padding:0;}
+.tb-ul li{float:left;font:normal 14px 宋体;margin:0 20px 0 0;}
+.tb-ul li a{text-decoration:none;}
+.tb-ul li a:hover{text-decoration:underline;color:#c00;cursor:pointer;}
+.tb-li01 a{color:#106abf;}
+.tb-li02 a{color:#cf2062;}
+.tb-li03 a{color:#e2b604;}
+.tb-li04 a{color:#c218e1;}
+.tb-li05 a{color:#1dae35;}
+.tb-li06 a{color:#cf3708;}
+.tb-li07 a{color:#06b6c1;}
+.bottom-box{width:689px;margin:0 0 10px;float:left;height:6px;}
+.clear {clear:both;height:1px;overflow:hidden;}
+
+.tb-ul a.Sty1{ font-size:14px; font-weight:bold; font-family:宋体; color:#936;}
+.tb-ul a.Sty2{ font-size:14px; font-weight:bold; font-family:宋体; color:#33CCCC;}
+.tb-ul a.Sty3{ font-size:14px; font-weight:bold; font-family:宋体; color:#FF00FF;}
+.tb-ul a.Sty4{ font-size:14px; font-weight:bold; font-family:宋体; color:#0066CC;}
+.tb-ul a.Sty5{ font-size:14px; font-weight:bold; font-family:宋体; color:#FF0000;}
+.tb-ul a.Sty6{ font-size:14px; font-weight:bold; font-family:宋体; color:#333333;}
+.tb-ul a.Sty7{ font-size:14px; font-weight:bold; font-family:宋体; color:#993300;}
+.tb-ul a.Sty8{ font-size:14px; font-weight:bold; font-family:宋体; color:#99CC00;}

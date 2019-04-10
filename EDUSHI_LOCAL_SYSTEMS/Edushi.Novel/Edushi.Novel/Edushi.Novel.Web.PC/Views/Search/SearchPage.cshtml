@@ -1,0 +1,206 @@
+﻿@{
+    ViewBag.Title = "爱上头条（E都市）小说频道";
+}
+<body>
+    <input type="hidden" id="hidUrl" value="@(Url.Content("~/"))" />
+    <div id="app">
+        <div class="header-box wrapper clearfix">
+            <a href="@Url.Content("~")" target="_blank" class="fl logo"></a>
+            <div class="fr tips">
+                @Html.Partial("/Views/Shared/_PartialUserCenter.cshtml")
+            </div>
+        </div>
+        <div class="search-container">
+            <div class="search-box">
+                <div class="search">
+                    <input type="text" id="seachStart" v-bind:value="placeholder" v-bind:placeholder="placeholder">
+                    <input type="button" name="" value="" v-on:click='search($("#seachStart").val())'>
+                </div>
+            </div>
+            <div class="wrapper clearfix">
+                <div class="fl content-wrap">
+                    <div class="search-filter">
+                        <a href="#" class="on">全部</a>
+                        @*<a href="#">小说</a>
+                            <a href="#">作者</a>*@
+                    </div>
+
+                    <!-- 搜索有结果时 -->
+                    <div class="result-list" v-if="isShow">
+                        <div class="result-tips">共{{count}}条 <span>{{placeholder}}</span> 相关的搜索结果</div>
+                        <dl class="book-list-wrap clearfix" v-for="item in searchResult">
+                            <dt class="fl">
+                                <a v-bind:href="item.Href" target="_blank"><img v-bind:src="item.CoverImage"></a>
+                            </dt>
+                            <dd class="fr">
+                                <div class="fl book-info">
+                                    <a v-bind:href="item.Href" target="_blank">
+                                        <p class="name">{{item.Name}}</p>
+                                        <p class="author"><span>{{item.Author}}</span>&nbsp;&nbsp;|&nbsp;&nbsp;{{item.StatusDesc}} [{{((item.wordNum/10000).toFixed(1))}}万字]&nbsp;&nbsp;|&nbsp;&nbsp;{{item.CategoryName}}</p>
+                                        <div class="intro">{{item.Description}}</div>
+                                    </a>
+                                </div>
+                                <div class="fr tool-bar">
+                                    <span v-bind:id="item.ID" v-bind:class="item.IsBookStore?'in-shelf':'shelf'" v-on:click="addBookrack(item.ID,this)"></span>
+                                    <span class="read" v-on:click="addReadRecord(item.ID,item.SourceBookId,item.Name,item.CategoryName,item.Category1ID,item.CategoryId)">开始阅读</span>
+
+                                </div>
+                            </dd>
+                        </dl>
+                    </div>
+                    <!-- 搜索无结果时 -->
+                    <div class="no-result" v-else>
+                        <div class="result-tips">共0条 <span>{{placeholder}}</span> 相关的搜索结果</div>
+                        <div class="no-result-box">
+                            <p>你也可以去 <a href="@Url.Content("~/info/bookstore.html")" target="_blank">全部作品</a> 找书</p>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="fr hot-search-tag">
+                    <div class="title">热门搜索关键字</div>
+                    <div class="tag-list">
+                        <a href="javascript:void(0);" v-on:click='search(item.Name)' target="_blank" v-for="item in hotSearchList">{{item.Name}}</a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <div class="pop-content">
+        <div class="pop-box">
+            <div class="msg" id="msg">已成功加入书架</div>
+            <span class="btn cancel">知道了</span>
+            <a class="btn confirm" href="javascript:void(0);" style="display: none;">去看看</a>
+        </div>
+    </div>
+    <script src="~/asset/js/common.js"></script>
+    <script>
+        var datas = new Vue({
+            el: '#app',
+            data: {
+                placeholder: '',
+                isShow: true,
+                count: 0,
+                searchResult: [{}],
+                hotSearchList: [{}]
+            },
+            created: function () {
+                this.hotSearch()
+                var str = sessionStorage.keyword
+                var obj = JSON.parse(str)
+                this.placeholder = obj.keyword
+                this.search(this.placeholder)
+            },
+            methods: {
+                addReadRecord: function (id, sourceId, name, categoryName, category1, category2) {
+                    var entity = {
+                        BookID: id,
+                        ChapterID: 1,
+                    }
+                    var obj = { bookName: name, categoryName: categoryName, category1: category1, category2: category2 }
+                    var str = JSON.stringify(obj)
+                    sessionStorage.obj = str;
+                    addReadRecord(entity)
+                    window.location.href = "http://xiaoshuo.edushi.com/info/read.html?BookId=" + sourceId + "&chapter=1"
+                },
+                addBookrack: function (id, _this) {
+                    if (!$('#' + id).hasClass('in-shelf')) {
+                        var entity = {
+                            BookID: id
+                        }
+                        addBookRack(entity, "#" + id)
+                    }
+                },
+                getIsLog: function (bookid) {
+                    var isLogin = getCookie();
+                    if (isLogin == "OK") {
+                        var url = $("#hidUrl").val() + "IsExistBookRack.htm";
+                        $.ajax({
+                            url: url,
+                            type: 'post',
+                            //async: false,
+                            data: { "BookID": bookid },
+                            success: function (response) {
+                                if (response != null && response != "false") {
+                                    $("#" + bookid).attr("class", "in-shelf");
+                                } else {
+                                    $("#" + bookid).attr("class", "shelf");
+                                }
+                            }
+                        })
+                    } else {
+                        $("#" + bookid).attr("class", "shelf");
+                    }
+                },
+                search: function (kw) {
+                    if (kw != null && kw != ' ' && !(new RegExp("^[ ]+$").test(kw))) {
+                        var obj = { keyword: kw }
+                        var str = JSON.stringify(obj)
+                        sessionStorage.keyword = str;
+                        $.ajax({
+                            type: 'POST', //GET
+                            url: "/Search/GetSearchList",
+                            data: { "kw": kw },
+                            dataType: "json",
+                            success: function (data) {
+                                datas.placeholder = kw
+                                if (data != null) {
+                                    datas.isShow = true
+                                    datas.count = data.length
+                                    datas.searchResult = data
+                                } else {
+                                    datas.isShow = false
+                                }
+                            },
+                            error: function (xhr, type) {
+                                // showMsg('加载异常，请刷新页面重试！');
+                            }
+                        });
+                    } else {
+                        this.isShow = false
+                    }
+                },
+                hotSearch: function () {
+                    $.ajax({
+                        type: 'GET', //GET
+                        url: "/Search/GetSearchPageHotSearch",
+                        dataType: "json",
+                        success: function (data) {
+                            datas.hotSearchList = data;
+                        },
+                        error: function (xhr, type) {
+                            // showMsg('加载异常，请刷新页面重试！');
+                        }
+                    });
+                },
+                getQueryString: function (name) {
+                    if (name.length > 0) {
+                        var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)");
+                        var r = window.location.search.substr(1).match(reg);
+                        if (r != null) {
+                            return unescape(r[2]);
+                        }
+                    }
+                    return null;
+                },
+            }
+        });
+        //window.addEventListener('load', function () {
+        //    for (var i = 0; i < datas.searchResult.length; i++) {
+        //        datas.getIsLog(datas.searchResult[i].ID)
+        //    }
+        //})
+        $(".search-container").css({ "min-height": $(window).height() - $(".search-container").offset().top - $(".page-footer").outerHeight(true) })
+        function popUp(msg, flag, url, text) {
+            $(".pop-content").show();
+            $("#msg").text(msg);
+            if (flag && flag == 1) {
+                $(".pop-content .confirm").text(text).attr("href", url).show();
+            }
+        }
+        $(".pop-box .cancel").click(function () {
+            $(".pop-content").hide();
+        })
+    </script>
+</body>

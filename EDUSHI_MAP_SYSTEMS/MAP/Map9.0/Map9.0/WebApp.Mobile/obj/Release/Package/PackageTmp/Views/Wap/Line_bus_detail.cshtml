@@ -1,0 +1,134 @@
+﻿@{
+    ViewBag.Title = "E都市地图";
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" id="viewport" content="width=device-width,initial-scale=1.0, maximum-scale=1.0,minimum-scale=1.0,user-scalable=no" />
+
+    <link href="~/Content/common.css" rel="stylesheet" />
+    <link href="~/Content/navigation.css" rel="stylesheet" />
+    <script type="text/javascript" src="https://webapi.amap.com/maps?v=1.4.4&key=e8c07f64d6c9803cff6f05258b065221&plugin=AMap.Walking,AMap.LineSearch"></script>
+    <script>
+        document.documentElement.style.fontSize = 100 * ((document.documentElement.clientWidth) / 750) + "px";
+    </script>
+    <script src="~/Scripts/jquery-1.8.3.min.js"></script>
+    <script src="~/Scripts/common.js"></script>
+</head>
+<body style="background: #fff;">
+    <script>
+        $(function () {
+            start = getQueryString('start');
+            end = getQueryString('end');
+            line = getQueryString('line');
+
+            lineSearch();
+
+            //$('header').append("<p class='line'>" + line + "</p>");
+            $('header').append("<p>从" + start + "到" + end + "</p>");
+        });
+
+        function lineSearch() {
+            var currentCity = getQueryString('city');
+            //实例化公交线路查询类，只取回一条路线
+            var linesearch = new AMap.LineSearch({
+                pageIndex: 1,
+                city: currentCity,
+                pageSize: 1,
+                extensions: 'all'
+            });
+            //搜索“536”相关公交线路
+            linesearch.search(line, function (status, result) {
+                if (status === 'complete' && result.info === 'OK') {
+                    lineSearch_Callback(result);
+                } else {
+                    alert(result);
+                }
+            });
+        }
+        /*公交路线查询服务返回数据解析概况*/
+        function lineSearch_Callback(data) {
+            var lineArr = data.lineInfo;
+            if (lineArr) {
+                busInfo(lineArr[0]);
+            }
+            var lineNum = data.lineInfo.length;
+            if (lineNum == 0) {
+            }
+            else {
+                for (var i = 0; i < lineNum; i++) {
+                    var pathArr = lineArr[i].path;
+                    var stops = lineArr[i].via_stops;
+                    addLines(stops);
+                    var startPot = stops[0].location;
+                    var endPot = stops[stops.length - 1].location;
+                }
+            }
+        }
+
+        function busInfo(lineInfo) {
+            var lineName = lineInfo.name.substr(0, lineInfo.name.indexOf('('));
+            var totalPrice = lineInfo.total_price;
+            var time = lineInfo.stime;
+            var distance = lineInfo.distance;
+            $("h3").text(lineName);
+          
+            $("#distance").text('(' + distance + '公里) | ').append("<span class='red' id='cost'>"+ totalPrice + '元' + "</span>");
+            $("p #cost").text(totalPrice + '元');
+        }
+
+
+        function addLines(lineInfo) {
+            var begin = lineInfo.length;
+            var finish = 0;
+            var cnt = 0;
+            var isMatch = false;
+            for (var idx = 0; idx < lineInfo.length; idx++) {
+                if (lineInfo[idx].name.indexOf(start) > -1) {
+                    $("#panel").append("<p class='start'><b>" + start + "</b>-上车</p>");
+                    begin = idx;
+                    continue;
+                }
+
+                if (idx > begin) {
+                    if (lineInfo[idx].name.indexOf(end) > -1) {
+                        finish = idx;
+                        $("#panel").append("<p class='end'><b>" + end + "</b>-下车</p>");
+                        if (finish > begin) {
+                            isMatch = true;
+                            cnt = finish - begin;
+                            //$("#panel").append("<p>共" + cnt + "站</p>");
+                        }
+                        break;
+                    }
+                    else {
+                        $("#panel").append("<p>" + lineInfo[idx].name + "</p>");
+                    }
+                }
+            }
+            if (!isMatch) {
+                for (var index in lineInfo) {
+                    $("#panel").append("<p>" + lineInfo[index].name + "</p>");
+                }
+            }
+        }
+
+    </script>
+    <header><a href="javascript:history.go(-1);" class="back"></a></header>
+    <div class="map-lib-driving amap-lib-transfer">
+        <div class="planTitle">
+            <h3>49路</h3>
+            <p id="distance">115分钟 (13.35公里) | <span class="red" id="cost">5元</span></p>
+        </div>
+
+        <!-- 走路去 -->
+        <div id="panel" class="bus-panel">
+
+        </div>
+    </div>
+
+
+
+</body>
+</html>

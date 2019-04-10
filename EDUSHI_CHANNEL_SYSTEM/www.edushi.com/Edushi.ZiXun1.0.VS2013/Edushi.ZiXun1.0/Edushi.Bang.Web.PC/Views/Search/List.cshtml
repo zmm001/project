@@ -1,0 +1,81 @@
+﻿@model Edushi.Bang.Web.PC.Models.SearchModel
+@using Edushi.Bang.Special
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>@(Model.title)</title>
+    <meta name="keywords" content="@(Model.keywords)" />
+    <meta name="description" content="@(Model.description)" />
+    <meta http-equiv="mobile-agent" content="format=html5; url=@Request.Url.AbsoluteUri.ToLower().Replace("/bang", "/bang/3g").GetRedirectPermanentURL1()" />
+    <script src="http://res.edushi.com/js/jquery-1.7.2.min.js"></script>
+    <script src="http://res.edushi.com/dian/5_0/js/main.js"></script>
+    <link href="http://res.edushi.com/dian/5_0/css/base.css" rel="stylesheet"/>
+    <link href="http://res.edushi.com/dian/5_0/css/Sub.css" rel="stylesheet"/>
+    <script type="text/javascript" src="http://res.edushi.com/dian/5_0/js/koala.min.1.5.js"></script>
+    <script type="text/javascript" src="http://res.edushi.com/dian/5_0/js/noPic.js"></script>
+    <script type="text/javascript">
+
+        $(document).ready(function () {
+            var $thisli = $('.SubNewsList li');
+            $thisli.mouseover(function () {
+                $(this).addClass('MouseOver').mouseout(function () {
+                    $(this).removeClass('MouseOver');
+                })
+            })
+        })
+
+        $(function () {
+            $('#TState').click(function () {
+                $(this).prev('p.TitleIcon').css('display', 'block');
+                $(this).prev('p.PicTextIcon').css('display', 'none');
+                if ($('.MyNewsList').is(':hidden')) {
+                    $('.MyNewsList').slideDown('slow');
+                    $(this).text('只显标题');
+
+
+                } else {
+                    $('.MyNewsList').slideUp('slow');
+                    $(this).text('显示图文');
+
+                }
+            });
+        });
+		
+    </script>
+</head>
+<body>
+@{
+    int id = -1;
+    if (Model.currentID != 0)
+    {
+        id = Model.currentID;
+    }
+    }
+    @{Html.RenderAction("_header", "Shared", new { id = id });}
+
+<div id="SubContainer" class="clr">
+  <div class="SubLeft">
+    <div class="SubTitle clr"> <span class="CurrentBar">@(Model.currentLink)</span> <span class="ShowStyle">
+      <p class="TitleIcon"></p>
+      <p class="PicTextIcon"></p>
+      <b id="TState">只显标题</b></span> <span class="amount">共<b>@(Model.totalCount)</b>条资讯</span></div>
+    <div class="SubNewsList">
+      <ul>
+        @Html.Raw(Model.HtmlArticleList)
+      </ul>
+      <div class="page">
+                        @Html.Raw(Html.Pager(Model.totalCount, Model.pageSize, Model.pageCurrentIndex, "", "", new PagerOptions { PageIndexParameterName = "pageno", ShowDisabledPagerItems = false, NumericPagerItemCount = 5 }, Model.PageRouteName,new {currentID=Model.currentID}, null).ToString())
+      </div>
+    </div>
+  </div>
+  @{Html.RenderAction("_rightNews", "Shared", new { topNum = 15 });}
+</div>
+<div class="clr"></div>
+    @{Html.RenderAction("_footer", "Shared");}
+<script type="text/javascript">
+        /*搜索推荐*/
+        var cpro_id = "u2126864";
+</script>
+<script src=" http://su.bdimg.com/static/dspui/js/uf.js" type="text/javascript"></script>
+</body>
+</html>

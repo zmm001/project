@@ -1,0 +1,97 @@
+﻿@model Edushi.UserCenter.Web.Mobile.Areas.WenDa.Models.UserModel
+@{
+    ViewBag.Title = string.Format("{0}个人中心-E都市问答", Model.UserInfo.UI_NickName);
+}
+
+<div id="app" class="my center">
+    <div class="header-box">
+        <!--头部-->
+        <header-bar v-bind:data="header"></header-bar>
+        <!--内容-->
+        <div class="photo-box">
+            <div class="photo">
+                <img v-bind:src="info.photo">
+            </div>
+            <span class="name" v-text="info.name"></span>
+            <span class="text" v-text="info.signature"></span>
+        </div>
+        <div class="follow-box">
+            <a v-bind:href="path.following">
+                <h3 v-text="info.following"></h3>
+                <span>关注</span>
+            </a>
+            <a v-bind:href="path.follower">
+                <h3 v-text="info.follower"></h3>
+                <span>粉丝</span>
+            </a>
+        </div>
+    </div>
+    <ul class="nav-top">
+        <li class="activities">
+            <a v-bind:href="path.activities">我的动态</a>
+        </li>
+        <li class="favorite">
+            <a v-bind:href="path.favorite">我的收藏</a>
+        </li>
+        <li class="ask">
+            <a v-bind:href="path.ask">我的提问</a>
+        </li>
+        <li class="answer">
+            <a v-bind:href="path.answer">我的回答</a>
+        </li>
+    </ul>	
+    <ul class="nav">
+        <li class="notice">
+            <a v-bind:href="path.notice">我的通知</a>
+        </li>
+        <li class="info">
+            <a v-bind:href="path.info">基本资料</a>
+        </li>
+        <li class="quit">
+            <a v-bind:href="path.quit">退出</a>
+        </li>
+    </ul>
+</div>
+<script>
+
+
+    var my = new Vue({
+        el: '#app',
+        data: function () {
+            return {
+                //头部
+                header: {
+                    title: '个人中心',
+                },
+                //用户信息
+                info: {
+                    photo: '@(ViewBag.imgDomain + Model.UserInfo.UI_Avatar)',//头像
+                    name: '@Model.UserInfo.UI_NickName',//姓名
+                    signature: '@(Html.Raw(Model.UserInfo.UI_Tags))',//签名
+                    following: '@Model.AttentionCount',//关注数量
+                    follower: '@Model.FansCount',//粉丝数量
+                },
+                //链接
+                path: {
+                    following: '@Url.Content("~/wenda/attention.html")',//关注
+                    follower: '@Url.Content("~/wenda/fans.html")',//粉丝
+                    activities: '@Url.Content("~/wenda/ativitie.html")',//我的动态
+                    favorite: '@Url.Content("~/wenda/favorite.html")',//我的收藏
+                    ask: '@Url.Content("~/wenda/myquestions.html")',//我的提问
+                    answer: '@Url.Content("~/wenda/myanswers.html")',//我的回答
+                    notice: '@Url.Content("~/wenda/mynotice.html")',//我的通知
+                    info: '@Url.Content("~/my/baseinfo.html?type=2")',//基本资料
+                    quit: '@Url.Content("~/exitlogin.htm?BackUrl=" + HttpUtility.HtmlEncode(Request.Url))',//退出
+                }
+            }
+        },
+        methods: {
+            //返回
+            back: function () {
+                window.history.back();
+            },
+        },
+    })
+
+
+</script>

@@ -1,0 +1,115 @@
+﻿@{
+    Layout = null;
+}
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" id="viewport" content="width=device-width,initial-scale=1.0, maximum-scale=1.0,minimum-scale=1.0,user-scalable=no" />
+    <title>用户中心---金币活动</title>
+    <link href="@Url.Content("~/asset/css/common.css")" rel="stylesheet" />
+    <link href="@Url.Content("~/asset/css/style.css")" rel="stylesheet" />
+    <script type="text/javascript" src="@Url.Content("~/asset/js/vue.min.js")"></script>
+    <script src="@Url.Content("~/asset/js/jquery-1.8.3.min.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/asset/js/components/components.js")"></script>
+    <script>
+        //rem单位自适应
+        document.documentElement.style.fontSize = 100 * ((document.documentElement.clientWidth) / 750) + "px";
+        //ios10 以上监听方式禁止缩放
+        window.onload = function () {
+            document.addEventListener('touchstart', function (event) {
+                if (event.touches.length > 1) {
+                    event.preventDefault();
+                }
+            })
+            var lastTouchEnd = 0;
+            document.addEventListener('touchend', function (event) {
+                var now = (new Date()).getTime();
+                if (now - lastTouchEnd <= 300) {
+                    event.preventDefault();
+                }
+                lastTouchEnd = now;
+            }, false)
+        };
+
+    </script>
+
+    <body>
+        <div id="app" class="my">
+            <!--头部-->
+            <header-bar :data="header" @@back="back()"></header-bar>
+            <div class="container">
+                <div class="main-box">
+                    <div class="item-li">
+                        <h3>一、金币</h3>
+                        <div class="itme-info">
+                            <p>金币是什么？</p>
+                            <div class="text">
+                                金币是「爱上头条」app里面的货币单位。当天所赚取的金币会在第二天凌晨0-6点自动转换为零钱，并累计到您的账户。在门户手机端也能正常赚金币。
+                            </div>
+                        </div>
+                        <div class="itme-info">
+                            <p>金币如何换算成零钱？</p>
+                            <div class="text">
+                                零钱=昨日金币*昨日汇率/1000，这里有一个汇率的概念，汇率值与平台运营收益有关。因平台每天的运营收益都不一样，汇率也会受影响而上下浮动，每日凌晨系统会自动计算出汇率和您的收益情况。
+                            </div>
+                        </div>
+                        <div class="itme-info">
+                            <p>为什么看了文章没有金币？</p>
+                            <div class="text">
+                                为了鼓励大家认真阅读，仔细阅读文章将会获得金币奖励，每天有100次机会获得阅读奖励。具体阅读条件与您平常的阅读习惯有关，例如短时间内快速频繁浏览资讯、文章没看完、随意滚屏等，获得金币的概率就很低，请以平常心阅读您感兴趣的内容。
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item-li">
+                        <h3>二、零钱</h3>
+                        <div class="itme-info">
+                            <p>如何提现？</p>
+                            <div class="text">
+                                提现请下载「爱上头条」app，当零钱达到一定金额，您可打开app，进入【我的】-【兑换提现】一栏，选择对应的金额提现，为确保款项顺利到账，提现前请再三确认支付宝仍在正常使用。
+                                <a href="@Url.Content("~/my/app.html")"><img src="@Url.Content("~/asset/images/appimg_2.png")" /></a>
+                            </div>
+                        </div>
+                        <div class="itme-info">
+                            <p>提现多久到账？</p>
+                            <div class="text">
+                                提现申请提交后，次日开始计算2-3个工作日内处理完成（双休日、节假日顺延）
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </body>
+
+    <script>
+
+
+        var my = new Vue({
+            el: '#app',
+            data: function () {
+                return {
+                    header: {
+                        title: "金币活动",
+                    },
+                }
+            },
+            methods: {
+                //返回
+                back: function () {
+                    window.history.back()
+                },
+            },
+        })
+        $(function () {
+            $(".itme-info p").click(function () {
+                $(this).parent(".itme-info").toggleClass("on");
+            })
+        })
+
+    </script>
+
+</html>

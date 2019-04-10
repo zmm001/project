@@ -1,0 +1,10 @@
+﻿
+@if (ViewBag.PageType != null)
+{
+    Html.RenderAction("IndexHeader", "Shared", new { currentId = Model is Edushi.RenWu.Web.Mobile.Models.HomeModel || Model.CurrentModel == null ? 0 : Model.CurrentModel.IT_ID });
+    
+}
+else
+{
+    Html.RenderAction("DetailHeader", "Shared", new { currentId = Model.CurrentModel.IT_ID });
+}

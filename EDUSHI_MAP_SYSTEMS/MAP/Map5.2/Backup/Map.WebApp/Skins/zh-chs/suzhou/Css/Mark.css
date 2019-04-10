@@ -1,0 +1,64 @@
+﻿html,body{margin:0;padding:0}
+body{font-size:12px; color:#333;text-align:left;}
+img{border-width:0px}
+form{padding:0;margin:0}
+a{color:#369;text-decoration:none;}
+a:hover{color:red; text-decoration:underline;}
+.HackBox{clear:both;border-top:transparent 0px solid;height:0;overflow:hidden;}
+.TagNav{position:relative;top: 0px;left: 0px;}
+.PinIco{
+    width:35px; height:34px;
+    /*---- IE6 png bug ----*/
+    background:url('../Images/PinIco.png') !important;
+	background:none;}
+.InTagCon{position:relative;width:305px; height:180px;}
+.InTagConBg{
+    width:305; height:180px;
+    /*---- IE6 png bug ----*/
+    background:url('../Images/InTagBg.png') !important;
+	background:none;}
+.InTagDetCon{position:absolute; top:0; left:0;width:290px; height:170px; padding:5px 15px 5px 10px;}
+.InTagDetCon h3,.ViewTagDetCon h3{font-size:14px; padding:0; margin:0 0 3px; height:23px; line-height:23px;width:280px;overflow:hidden;-o-text-overflow:ellipsis; text-overflow:ellipsis; white-space:nowrap; line-height:23px;}
+.InTagDetCon table{width:280px; font-size:12px;}
+.InTagDetCon table tr th{ font-weight:normal; width:40px;}
+.InTagDetCon table tr th,.InTagDetCon table tr td{ vertical-align:middle;}
+td.Explain{color:#666;}
+td.Explain span{color: #C30; margin: 0 1px;}
+
+.ViewTagConMax{position:relative;width:305px; height:132px;text-align:left;font-size:12px;}
+.ViewTagConMax .ViewTagConBg{
+    width:305px;
+    height:132px;
+    background:url('../Images/ViewTagBg.png') !important;
+    background:none;}
+.ViewTagDetCon{position:absolute; top:0; left:0;width:290px; height:122px; padding:5px 15px 5px 10px;}
+.AutoText{width:270px; height:60px; overflow-x:hidden; overflow-y:auto; line-height:120%;
+          scrollbar-face-color: #DBEBFE; /*滚动条凸出部分的颜色*/
+          scrollbar-shadow-color: #B8D6FA; /*滚动条空白部分的颜色*/
+          scrollbar-highlight-color: #FFFFFF; /*立体滚动条阴影的颜色*/
+          scrollbar-3dlight-color: #DBEBFE; /*滚动条亮边的颜色*/
+          scrollbar-darkshadow-color:#458CE4; /*上下按钮上三角箭头的颜色*/
+          scrollbar-track-color: #FFFFFF; /*滚动条的背景颜色*/
+          scrollbar-arrow-color: #458CE4;/*滚动条强阴影的颜色*/          
+          } 
+.ViewTagDetCon p{padding:0;margin:3px 0;line-height:120%;}
+.WkButton{margin-top:6px;text-align:center;}
+.SwNav,.SwNavOver,.SwNavOut{position:absolute; top:10px; right:15px; cursor:hand; width:15px; height:15px; overflow:hidden;background:url(../Images/SwitchBtn.gif) no-repeat left top;}
+.SwNavOver{background-position:left -20px;}
+
+.ViewTagConMin{position:relative;width:305px; height:36px;text-align:left;font-size:12px;}
+.ViewTagConMin .ViewTagConBg{ 
+    width:303px;
+    height:36px;
+    /*---- IE6 png bug ----*/
+    background:url('../Images/ShowTagBg.png') !important;
+	background:none;}
+.ViewTagConMin .ViewTagDetCon{position:absolute; top:0; left:0;width:290px; height:26px; padding:5px 15px 5px 10px;}
+.ViewTagConMin .AutoText{ display:none;} 
+.ViewTagConMin .ViewTagDetCon p{padding:0;margin:3px 0;line-height:120%;}
+.ViewTagConMin .WkButton{display:none;}
+.ViewTagConMin .SwNav,.ViewTagConMin .SwNavOver,.ViewTagConMin .SwNavOut{position:absolute; top:10px; right:15px; cursor:hand; width:15px; height:15px; overflow:hidden;background:url(../Images/SwitchBtn.gif) no-repeat right top;}
+.ViewTagConMin .SwNavOver{background-position:right -20px;}
+
+.CloseWin,.CloseBtnOver,.CloseBtnOut{position:absolute; top:9px; right:15px; cursor:hand; width:13px; height:13px; overflow:hidden;background:url(../Images/CloseBtn.gif) no-repeat left top;}
+.CloseBtnOver{background-position:left -13px;}

@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://tempuri.org/" elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:53968/BdtNoSqlHandle.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/Edushi.BDT.Contract.Model" />
+  <xs:element name="InsertTopic">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/Edushi.BDT.Contract.Model" minOccurs="0" name="model" nillable="true" type="q1:Topic" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="InsertTopicResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="InsertTopicResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="InsertTopicComment">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/Edushi.BDT.Contract.Model" minOccurs="0" name="model" nillable="true" type="q2:TopicComment" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="InsertTopicCommentResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="InsertTopicCommentResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateTopic">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/Edushi.BDT.Contract.Model" minOccurs="0" name="model" nillable="true" type="q3:Topic" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateTopicResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="UpdateTopicResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateTopicComment">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/Edushi.BDT.Contract.Model" minOccurs="0" name="model" nillable="true" type="q4:TopicComment" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateTopicCommentResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="UpdateTopicCommentResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteTopic">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="sCity" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="iId" type="xs:int" />
+        <xs:element minOccurs="0" name="delComment" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteTopicResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="DeleteTopicResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteTopicBatch">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="sCity" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="sIds" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="delComment" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteTopicBatchResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="DeleteTopicBatchResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteTopicComment">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="sCity" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="iId" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteTopicCommentResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="DeleteTopicCommentResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteTopicCommentBatch">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="sCity" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="sIds" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteTopicCommentBatchResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="DeleteTopicCommentBatchResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SetBestComment">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="sCity" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="iLtId" type="xs:int" />
+        <xs:element minOccurs="0" name="iLtcId" type="xs:int" />
+        <xs:element minOccurs="0" name="isBest" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SetBestCommentResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="SetBestCommentResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

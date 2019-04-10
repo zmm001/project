@@ -1,0 +1,162 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Edushi.Log", "Edushi.Log\Edushi.Log.csproj", "{00EA4A8A-2BAF-475C-90CB-13133CB057E3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Edushi.MongoDB", "Edushi.MongoDB\Edushi.MongoDB.csproj", "{8D15F835-F6A1-456C-BAA8-E52E5AFD34BA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Edushi.Tu.BLL", "Edushi.Tu.BLL\Edushi.Tu.BLL.csproj", "{E600B6CA-9A42-4281-82B2-CF93C5D522B0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Edushi.Tu.DALFactory", "Edushi.Tu.DALFactory\Edushi.Tu.DALFactory.csproj", "{E1F3E486-5763-4FAB-A636-D01B7C1A9906}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Edushi.Tu.IDAL", "Edushi.Tu.IDAL\Edushi.Tu.IDAL.csproj", "{4C3EA3CC-674E-4C6C-B15A-E95759E093E1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Edushi.Tu.Model", "Edushi.Tu.Model\Edushi.Tu.Model.csproj", "{BFAA0302-07F9-4CEE-897A-27914760B1D4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Edushi.Tu.MongoDBDAL", "Edushi.Tu.MongoDBDAL\Edushi.Tu.MongoDBDAL.csproj", "{1B2692AC-21EC-4002-8DD0-1DC21C1CE362}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Edushi.Tu.Special", "Edushi.Tu.Special\Edushi.Tu.Special.csproj", "{27D27C1E-A179-4459-981A-E681EDA81614}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Edushi.Tu.SQLServerDAL", "Edushi.Tu.SQLServerDAL\Edushi.Tu.SQLServerDAL.csproj", "{9A6C4CFF-001E-4865-B3C4-D662EDA5A59A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Edushi.CacheConfigSection", "Edushi.CacheConfigSection\Edushi.CacheConfigSection.csproj", "{A39EDAF4-8E8C-42C0-908F-3EFD0B8BF968}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MvcPager", "MvcPager\MvcPager.csproj", "{4BA9F10C-67B7-4CD6-87B1-0519ADBCA2A1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Edushi.Tu.Web.PC", "Edushi.Tu.Web.PC\Edushi.Tu.Web.PC.csproj", "{989BF794-0C93-4689-8D89-87096CFBD02B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Edushi.Tu.Web.3G", "Edushi.Tu.Web.3G\Edushi.Tu.Web.3G.csproj", "{7A4474EE-907C-415C-99F1-ECFA4426DD31}"
+EndProject
+Global
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 13
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = http://192.168.100.212:8080/tfs/defaultcollection
+		SccProjectUniqueName0 = Edushi.Log\\Edushi.Log.csproj
+		SccProjectName0 = Edushi.Log
+		SccAuxPath0 = http://192.168.100.212:8080/tfs/defaultcollection
+		SccLocalPath0 = Edushi.Log
+		SccProvider0 = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccProjectUniqueName1 = Edushi.MongoDB\\Edushi.MongoDB.csproj
+		SccProjectName1 = Edushi.MongoDB
+		SccAuxPath1 = http://192.168.100.212:8080/tfs/defaultcollection
+		SccLocalPath1 = Edushi.MongoDB
+		SccProvider1 = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccProjectUniqueName2 = Edushi.Tu.BLL\\Edushi.Tu.BLL.csproj
+		SccProjectName2 = Edushi.Tu.BLL
+		SccAuxPath2 = http://192.168.100.212:8080/tfs/defaultcollection
+		SccLocalPath2 = Edushi.Tu.BLL
+		SccProvider2 = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccProjectUniqueName3 = Edushi.Tu.DALFactory\\Edushi.Tu.DALFactory.csproj
+		SccProjectName3 = Edushi.Tu.DALFactory
+		SccAuxPath3 = http://192.168.100.212:8080/tfs/defaultcollection
+		SccLocalPath3 = Edushi.Tu.DALFactory
+		SccProvider3 = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccProjectUniqueName4 = Edushi.Tu.IDAL\\Edushi.Tu.IDAL.csproj
+		SccProjectName4 = Edushi.Tu.IDAL
+		SccAuxPath4 = http://192.168.100.212:8080/tfs/defaultcollection
+		SccLocalPath4 = Edushi.Tu.IDAL
+		SccProvider4 = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccProjectUniqueName5 = Edushi.Tu.Model\\Edushi.Tu.Model.csproj
+		SccProjectName5 = Edushi.Tu.Model
+		SccAuxPath5 = http://192.168.100.212:8080/tfs/defaultcollection
+		SccLocalPath5 = Edushi.Tu.Model
+		SccProvider5 = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccProjectUniqueName6 = Edushi.Tu.MongoDBDAL\\Edushi.Tu.MongoDBDAL.csproj
+		SccProjectName6 = Edushi.Tu.MongoDBDAL
+		SccAuxPath6 = http://192.168.100.212:8080/tfs/defaultcollection
+		SccLocalPath6 = Edushi.Tu.MongoDBDAL
+		SccProvider6 = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccProjectUniqueName7 = Edushi.Tu.Special\\Edushi.Tu.Special.csproj
+		SccProjectName7 = Edushi.Tu.Special
+		SccAuxPath7 = http://192.168.100.212:8080/tfs/defaultcollection
+		SccLocalPath7 = Edushi.Tu.Special
+		SccProvider7 = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccProjectUniqueName8 = Edushi.Tu.SQLServerDAL\\Edushi.Tu.SQLServerDAL.csproj
+		SccProjectName8 = Edushi.Tu.SQLServerDAL
+		SccAuxPath8 = http://192.168.100.212:8080/tfs/defaultcollection
+		SccLocalPath8 = Edushi.Tu.SQLServerDAL
+		SccProvider8 = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccProjectUniqueName9 = Edushi.CacheConfigSection\\Edushi.CacheConfigSection.csproj
+		SccProjectName9 = Edushi.CacheConfigSection
+		SccAuxPath9 = http://192.168.100.212:8080/tfs/defaultcollection
+		SccLocalPath9 = Edushi.CacheConfigSection
+		SccProvider9 = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccProjectUniqueName10 = Edushi.Tu.Web.3G\\Edushi.Tu.Web.3G.csproj
+		SccProjectName10 = Edushi.Tu.Web.3G
+		SccAuxPath10 = http://192.168.100.212:8080/tfs/defaultcollection
+		SccLocalPath10 = Edushi.Tu.Web.3G
+		SccProvider10 = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccProjectUniqueName11 = Edushi.Tu.Web.PC\\Edushi.Tu.Web.PC.csproj
+		SccProjectName11 = Edushi.Tu.Web.PC
+		SccAuxPath11 = http://192.168.100.212:8080/tfs/defaultcollection
+		SccLocalPath11 = Edushi.Tu.Web.PC
+		SccProvider11 = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccProjectUniqueName12 = MvcPager\\MvcPager.csproj
+		SccProjectName12 = MvcPager
+		SccAuxPath12 = http://192.168.100.212:8080/tfs/defaultcollection
+		SccLocalPath12 = MvcPager
+		SccProvider12 = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{00EA4A8A-2BAF-475C-90CB-13133CB057E3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{00EA4A8A-2BAF-475C-90CB-13133CB057E3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{00EA4A8A-2BAF-475C-90CB-13133CB057E3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{00EA4A8A-2BAF-475C-90CB-13133CB057E3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8D15F835-F6A1-456C-BAA8-E52E5AFD34BA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8D15F835-F6A1-456C-BAA8-E52E5AFD34BA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8D15F835-F6A1-456C-BAA8-E52E5AFD34BA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8D15F835-F6A1-456C-BAA8-E52E5AFD34BA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E600B6CA-9A42-4281-82B2-CF93C5D522B0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E600B6CA-9A42-4281-82B2-CF93C5D522B0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E600B6CA-9A42-4281-82B2-CF93C5D522B0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E600B6CA-9A42-4281-82B2-CF93C5D522B0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E1F3E486-5763-4FAB-A636-D01B7C1A9906}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E1F3E486-5763-4FAB-A636-D01B7C1A9906}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E1F3E486-5763-4FAB-A636-D01B7C1A9906}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E1F3E486-5763-4FAB-A636-D01B7C1A9906}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4C3EA3CC-674E-4C6C-B15A-E95759E093E1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4C3EA3CC-674E-4C6C-B15A-E95759E093E1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4C3EA3CC-674E-4C6C-B15A-E95759E093E1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4C3EA3CC-674E-4C6C-B15A-E95759E093E1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BFAA0302-07F9-4CEE-897A-27914760B1D4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BFAA0302-07F9-4CEE-897A-27914760B1D4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BFAA0302-07F9-4CEE-897A-27914760B1D4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BFAA0302-07F9-4CEE-897A-27914760B1D4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1B2692AC-21EC-4002-8DD0-1DC21C1CE362}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1B2692AC-21EC-4002-8DD0-1DC21C1CE362}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1B2692AC-21EC-4002-8DD0-1DC21C1CE362}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1B2692AC-21EC-4002-8DD0-1DC21C1CE362}.Release|Any CPU.Build.0 = Release|Any CPU
+		{27D27C1E-A179-4459-981A-E681EDA81614}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{27D27C1E-A179-4459-981A-E681EDA81614}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{27D27C1E-A179-4459-981A-E681EDA81614}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{27D27C1E-A179-4459-981A-E681EDA81614}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9A6C4CFF-001E-4865-B3C4-D662EDA5A59A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9A6C4CFF-001E-4865-B3C4-D662EDA5A59A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9A6C4CFF-001E-4865-B3C4-D662EDA5A59A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9A6C4CFF-001E-4865-B3C4-D662EDA5A59A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A39EDAF4-8E8C-42C0-908F-3EFD0B8BF968}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A39EDAF4-8E8C-42C0-908F-3EFD0B8BF968}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A39EDAF4-8E8C-42C0-908F-3EFD0B8BF968}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A39EDAF4-8E8C-42C0-908F-3EFD0B8BF968}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4BA9F10C-67B7-4CD6-87B1-0519ADBCA2A1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4BA9F10C-67B7-4CD6-87B1-0519ADBCA2A1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4BA9F10C-67B7-4CD6-87B1-0519ADBCA2A1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4BA9F10C-67B7-4CD6-87B1-0519ADBCA2A1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{989BF794-0C93-4689-8D89-87096CFBD02B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{989BF794-0C93-4689-8D89-87096CFBD02B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{989BF794-0C93-4689-8D89-87096CFBD02B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{989BF794-0C93-4689-8D89-87096CFBD02B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7A4474EE-907C-415C-99F1-ECFA4426DD31}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7A4474EE-907C-415C-99F1-ECFA4426DD31}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7A4474EE-907C-415C-99F1-ECFA4426DD31}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7A4474EE-907C-415C-99F1-ECFA4426DD31}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

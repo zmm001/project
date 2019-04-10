@@ -1,0 +1,34 @@
+﻿@model List<Edushi.RenWu.Model.ZiXunInfoTypeModel>
+@{
+    var parentType = Model.FindAll(p => p.IT_ParentID == 0);
+}
+<div class="top-category">
+    <div class="wrapper clearfix">
+        @foreach (var item in parentType)
+        {
+            <a href="@Edushi.RenWu.Special.Common.GetInfoListUrl("http://www.edushi.com/",item.IT_ParentID,item.IT_ID)" target="_blank">@item.IT_Name.Substring(0, 2)</a>
+        }
+        @*<a href="http://caijing.edushi.com/" target="_blank">财经</a>*@
+        <a href="http://hangzhou.fangtoo.com/" target="_blank">房产</a>
+        <a href="http://lvyou.edushi.com" target="_blank">出行</a>
+        <a href="http://www.edushi.com/zt/" target="_blank">专题</a>
+        <a href="http://tu.edushi.com/" target="_blank">图闻</a>
+    </div>
+</div>
+<div class="wrapper">
+    <div class="index-top-ad mt20">
+        <!-- 广告位：【A02-01】 -->
+        <script>
+            (function () {
+                var s = "_" + Math.random().toString(36).slice(2);
+                document.write('<div id="' + s + '"></div>');
+                (window.slotbydup = window.slotbydup || []).push({
+                    id: '5296247',
+                    container: s,
+                    size: '1200,125',
+                    display: 'inlay-fix'
+                });
+            })();
+        </script>
+    </div>
+</div>

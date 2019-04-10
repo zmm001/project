@@ -1,0 +1,527 @@
+﻿@model Edushi.Novel.Web.PC.Models.Channel.ChannelViewModel
+@using Edushi.Novel.Web.PC.Models;
+@{
+    ViewBag.Title = "爱上头条（E都市）小说频道";
+}
+
+<body>
+    <div class="header-box wrapper clearfix">
+        @Html.Partial("/Views/Shared/_PartialSearch.cshtml")
+        <div class="fr tips">
+            @Html.Partial("/Views/Shared/_PartialUserCenter.cshtml")
+        </div>
+    </div>
+    <div class="male-banner"></div>
+    <div class="wrapper">
+        <div class="module-box clearfix">
+            <div class="fl module-l">
+                <div class="male-nav">
+                    <div class="male-nav-title">男生频道</div>
+                    <ul>
+                        <li class="dushi"><a href="@Url.Content("~/info/bookstore.html?category1=1&category2=3")" target="_blank">都市校园</a></li>
+                        <li class="linyi"><a href="@Url.Content("~/info/bookstore.html?category1=1&category2=4")" target="_blank">灵异悬疑</a></li>
+                        <li class="xuanhuan"><a href="@Url.Content("~/info/bookstore.html?category1=1&category2=5")" target="_blank">玄幻奇幻</a></li>
+                        <li class="wuxia"><a href="@Url.Content("~/info/bookstore.html?category1=1&category2=6")" target="_blank">武侠仙侠</a></li>
+                        <li class="kehuan"><a href="@Url.Content("~/info/bookstore.html?category1=1&category2=7")" target="_blank">科幻灵异</a></li>
+                        <li class="lishi"><a href="@Url.Content("~/info/bookstore.html?category1=1&category2=8")" target="_blank">历史军事</a></li>
+                        <li class="youxi"><a href="@Url.Content("~/info/bookstore.html?category1=1&category2=9")" target="_blank">游戏竞技</a></li>
+                        @*@if (Model != null && Model.Category != null && Model.Category.CategoryList.Any())
+                            {
+                                foreach (var cg in Model.Category.CategoryList)
+                                {
+                                    <li class="module-title categoryid_@cg.ID"><a href="#" target="_blank">@cg.CategoryName</a></li>
+                                }
+                            }*@
+                    </ul>
+                </div>
+                <div>
+                    <a href=@Url.Content("~/info/1-n66.html") target="_blank">
+                        <img src="~/asset/images/male_img.jpg" />
+                    </a>
+                </div>
+            </div>
+            <div class="fl module-c">
+                <div class="new-book-box">
+                    <div class="nav-title">
+                        <span>新书</span>推荐
+                    </div>
+                    <div class="clearfix">
+                        @if (Model != null && Model.NewBookList.Any())
+                        {
+                            var tempNewBookList = Model.NewBookList.Take(4);
+                            foreach (var nb in tempNewBookList)
+                            {
+                                <div class="column-r-t">
+                                    <a href=@nb.Href target="_blank">
+                                        <div class="fl pic">
+                                            <img src="@nb.CoverImage">
+                                        </div>
+                                        <div class="fl text">
+                                            <p class="name">@nb.Name</p>
+                                            <p class="author">@nb.Author 著</p>
+                                            <div class="intro">@nb.Description</div>
+                                        </div>
+                                    </a>
+                                </div>
+                            }
+                        }
+                    </div>
+                    <ul class="column-c-b clearfix">
+                        @if (Model != null && Model.NewBookList.Any())
+                        {
+                            var tempNewBookList = Model.NewBookList.Skip(4).Take(8);
+                            foreach (var nb in tempNewBookList)
+                            {
+                                <li>
+                                    <a href=@nb.Href target="_blank">
+                                        <span class="tags">@nb.StatusDesc</span>
+                                        <span class="name">@nb.Name</span>
+                                        <span class="author">@nb.Author</span>
+                                    </a>
+                                </li>
+                            }
+                        }
+                    </ul>
+                </div>
+            </div>
+            <div class="fr module-r current-rank-box">
+                <div class="nav-title">
+                    <span>本期</span>排行
+                </div>
+                <div class="rank-list">
+                    <ul>
+                        @if (Model != null && Model.RankBookList.Any())
+                        {
+                            for (int i = 0; i < Model.RankBookList.Count; i++)
+                            {
+                                var rb = Model.RankBookList[i];
+                                if (i == 0)
+                                {
+                                    <li data-num="1" class="first">
+                                        <a href=@rb.BookInfo.Url target="_blank">
+                                            <div class="photo">
+                                                <img src=@rb.BookInfo.BookImg>
+                                            </div>
+                                            <p>
+                                                <span class="text">@rb.BookInfo.BookName</span>
+                                                <span class="author">@rb.BookInfo.Author 著</span>
+                                                <span class="num">@rb.BookInfo.ClickCount</span>
+                                            </p>
+                                        </a>
+                                    </li>
+                                }
+                                else
+                                {
+                                    <li data-num=@(i+1)>
+                                        <a href=@rb.BookInfo.Url target="_blank">
+                                            <span class="text">@rb.BookInfo.BookName</span>
+                                            <span class="num">@rb.BookInfo.ClickCount</span>
+                                        </a>
+                                    </li>
+                                }
+                            }
+                        }
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="finish-box clearfix">
+            <div class="fl finish-text">
+                <p>男频完结</p><span>452,000 人气</span>
+            </div>
+            <ul class="books-list clearfix">
+                @if (Model != null && Model.FinishedBookList.Any())
+                {
+                    foreach (var hb in Model.FinishedBookList)
+                    {
+                        <li>
+                            <a href=@hb.Href target="_blank">
+                                <div class="pic">
+                                    <img src=@hb.CoverImage>
+                                </div>
+                                <div class="text">
+                                    <p class="name">@hb.Name</p>
+                                    <p class="author">@hb.Author 著</p>
+                                </div>
+                            </a>
+                        </li>
+                    }
+                }
+            </ul>
+        </div>
+
+
+        <div class="module-box male-module-box">
+            <div class="nav-title">男频书城推荐</div>
+            @if (Model != null && Model.CategoryBookList.Any())
+            {
+                var firstSections = Model.CategoryBookList[0];
+                var secondSections = Model.CategoryBookList[1];
+                var thirdSections = Model.CategoryBookList[2];
+                <div class="module-li bgcolor_@firstSections.CategoryID">
+                    <div class="module-title categoryid_@firstSections.CategoryID">@firstSections.CategoryName</div>
+                    @if (firstSections.Books != null && firstSections.Books.Any())
+                    {
+                        var tempBooks = firstSections.Books.Take(3);
+                        <div class="clearfix">
+                            <div class="fl column-l exhibition-hall">
+                                <div class="roundabout-box">
+                                    <ul id="img-slider">
+                                        @foreach (var item in tempBooks)
+                                        {
+                                            <li>
+                                                <a href=@item.Href target="_blank"><img src=@item.CoverImage></a>
+                                            </li>
+                                        }
+                                    </ul>
+                                </div>
+                                <div class="roundabout-text">
+                                    @{
+                                        var i = 1;
+                                        foreach (var item in tempBooks)
+                                        {
+                                            var style = "none;";
+                                            if (i == 1)
+                                            {
+                                                style = "block;";
+                                            }
+                                            <div class="info-box" style="display:@style">
+                                                <a href=@item.Href target="_blank" class="name">@item.Name</a>
+                                                <div class="tags"><span>@item.Author</span> | @item.StatusDesc<i>@item.CategoryName</i></div>
+                                                <div class="intro">@item.Description</div>
+                                                <a href=@item.Href target="_blank" class="link">书籍详情</a>
+                                            </div>
+                                            i++;
+                                        }
+                                    }
+                                </div>
+                            </div>
+                            <div class="fl column-c">
+                                <div class="clearfix">
+                                    @if (firstSections.Books != null && firstSections.Books.Any())
+                                    {
+                                        var topValue = firstSections.Books.Skip(3).Take(2);
+                                        foreach (var item in topValue)
+                                        {
+                                            <a href=@item.Href target="_blank" class="column-r-t clearfix">
+                                                <div class="fl pic"><img src=@item.CoverImage></div>
+                                                <div class="fl text">
+                                                    <p class="name">@item.Name</p>
+                                                    <p class="author">@item.Author 著</p>
+                                                    <div class="intro">@item.Description</div>
+                                                </div>
+                                            </a>
+                                        }
+                                    }
+                                </div>
+                                <ul class="column-c-b clearfix">
+                                    @if (firstSections.Books != null && firstSections.Books.Any())
+                                    {
+                                        var bottomValue = firstSections.Books.Skip(5).Take(10);
+                                        foreach (var item in bottomValue)
+                                        {
+                                            <li>
+                                                <a href=@item.Href target="_blank">
+                                                    <span class="tags">@item.StatusDesc</span>
+                                                    <span class="name">@item.Name</span>
+                                                    <span class="author">@item.Author</span>
+                                                </a>
+                                            </li>
+                                        }
+                                    }
+                                </ul>
+                            </div>
+                            <div class="fr column-r">
+                                <div class="column-tit">畅销榜</div>
+                                @if (firstSections.RankBookList != null && firstSections.RankBookList.Any())
+                                {
+                                    <div class="rank-list">
+                                        <ul>
+                                            @for (int j = 0; j < firstSections.RankBookList.Count; j++)
+                                            {
+                                                var tb = firstSections.RankBookList[j];
+                                                if (j == 0)
+                                                {
+                                                    <li data-num="@(j + 1)" class="first">
+                                                        <a href=@tb.Href target="_blank">
+                                                            <div class="photo"><img src=@tb.CoverImage></div>
+                                                            <p>
+                                                                <span class="text">@tb.Name</span>
+                                                                <span class="author">@tb.Author 著</span>
+                                                                <span class="num">@tb.ClickCount</span>
+                                                            </p>
+                                                        </a>
+                                                    </li>
+                                                }
+                                                else
+                                                {
+                                                    <li data-num="@(j + 1)">
+                                                        <a href=@tb.Href target="_blank">
+                                                            <span class="text">@tb.Name</span>
+                                                            <span class="num">@tb.ClickCount</span>
+                                                        </a>
+                                                    </li>
+                                                }
+                                            }
+                                        </ul>
+                                    </div>
+                                }
+                            </div>
+                        </div>
+                    }
+                </div>
+                <div class="module-li bgcolor_@secondSections.CategoryID">
+                    <div class="module-title categoryid_@secondSections.CategoryID">@secondSections.CategoryName</div>
+                    @if (secondSections.Books != null && secondSections.Books.Any())
+                    {
+                        var tempBooks = secondSections.Books.Take(3);
+                        <div class="clearfix">
+                            <div class="fl column-l exhibition-hall-two">
+                                <div class="roundabout-box">
+                                    <ul id="img-slider-two">
+                                        @foreach (var item in tempBooks)
+                                        {
+                                            <li>
+                                                <a href=@item.Href target="_blank"><img src=@item.CoverImage></a>
+                                            </li>
+                                        }
+                                    </ul>
+                                </div>
+                                <div class="roundabout-text">
+                                    @{
+                                        var j = 1;
+                                        foreach (var item in tempBooks)
+                                        {
+                                            var style = "none;";
+                                            if (j == 1)
+                                            {
+                                                style = "block;";
+                                            }
+                                            <div class="info-box" style="display:@style">
+                                                <a href=@item.Href target="_blank" class="name">@item.Name</a>
+                                                <div class="tags"><span>@item.Author</span> | @item.StatusDesc<i>@item.CategoryName</i></div>
+                                                <div class="intro">@item.Description</div>
+                                                <a href=@item.Href target="_blank" class="link">书籍详情</a>
+                                            </div>
+                                            j++;
+                                        }
+                                    }
+                                </div>
+                            </div>
+                            <div class="fl column-c">
+                                <ul class="books-list clearfix">
+                                    @if (secondSections.Books != null && secondSections.Books.Any())
+                                    {
+                                        var topValue = secondSections.Books.Skip(3).Take(5);
+                                        foreach (var item in topValue)
+                                        {
+                                            <li>
+                                                <a href=@item.Href target="_blank">
+                                                    <div class="pic"><img src=@item.CoverImage></div>
+                                                    <div class="text">
+                                                        <p class="name">@item.Name</p>
+                                                        <p class="author">@item.Author 著</p>
+                                                    </div>
+                                                </a>
+                                            </li>
+                                        }
+                                    }
+                                </ul>
+                                <div class="other-list">
+                                    <ul class="clearfix">
+                                        @if (secondSections.Books != null && secondSections.Books.Any())
+                                        {
+                                            var bottomValue = secondSections.Books.Skip(8).Take(4);
+                                            foreach (var item in bottomValue)
+                                            {
+                                                <li>
+                                                    <a href=@item.Href target="_blank"><span>@item.Name</span>@item.Description</a>
+                                                </li>
+                                            }
+                                        }
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="fr column-r">
+                                <div class="column-tit">畅销榜</div>
+                                @if (secondSections.RankBookList != null && secondSections.RankBookList.Any())
+                                {
+                                    <div class="rank-list">
+                                        <ul>
+                                            @for (int i = 0; i < secondSections.RankBookList.Count; i++)
+                                            {
+                                                var tb = secondSections.RankBookList[i];
+                                                if (i == 0)
+                                                {
+                                                    <li data-num="@(i + 1)" class="first">
+                                                        <a href=@tb.Href target="_blank">
+                                                            <div class="photo"><img src=@tb.CoverImage></div>
+                                                            <p>
+                                                                <span class="text">@tb.Name</span>
+                                                                <span class="author">@tb.Author 著</span>
+                                                                <span class="num">@tb.ClickCount</span>
+                                                            </p>
+                                                        </a>
+                                                    </li>
+                                                }
+                                                else
+                                                {
+                                                    <li data-num="@(i + 1)">
+                                                        <a href=@tb.Href target="_blank">
+                                                            <span class="text">@tb.Name</span>
+                                                            <span class="num">@tb.ClickCount</span>
+                                                        </a>
+                                                    </li>
+                                                }
+                                            }
+                                        </ul>
+                                    </div>
+                                }
+                            </div>
+                        </div>
+                    }
+                </div>
+                <div class="module-li bgcolor_@thirdSections.CategoryID">
+                    <div class="module-title categoryid_@thirdSections.CategoryID">@thirdSections.CategoryName</div>
+                    @if (thirdSections.Books != null && thirdSections.Books.Any())
+                    {
+                        var tempBooks = thirdSections.Books.Take(3);
+                    <div class="clearfix">
+                        <div class="fl column-l exhibition-hall-three">
+                            <div class="roundabout-box">
+                                <ul id="img-slider-three">
+                                    @foreach (var item in tempBooks)
+                                        {
+                                        <li>
+                                            <a href=@item.Href target="_blank"><img src=@item.CoverImage></a>
+                                        </li>
+                                        }
+                                </ul>
+                            </div>
+                            <div class="roundabout-text">
+                                @{
+                                        var j = 1;
+                                        foreach (var item in tempBooks)
+                                        {
+                                            var style = "none;";
+                                            if (j == 1)
+                                            {
+                                                style = "block;";
+                                            }
+                                    <div class="info-box" style="display:@style">
+                                        <a href=@item.Href target="_blank" class="name">@item.Name</a>
+                                        <div class="tags"><span>@item.Author</span> | @item.StatusDesc<i>@item.CategoryName</i></div>
+                                        <div class="intro">@item.Description</div>
+                                        <a href=@item.Href target="_blank" class="link">书籍详情</a>
+                                    </div>
+                                            j++;
+                                        }
+                                }
+                            </div>
+                        </div>
+                        <div class="fl column-c">
+                            <div class="clearfix">
+                                @if (thirdSections.Books != null && thirdSections.Books.Any())
+                                    {
+                                        var topValue = thirdSections.Books.Skip(3).Take(2);
+                                        foreach (var item in topValue)
+                                        {
+                                    <a href=@item.Href target="_blank" class="column-r-t clearfix">
+                                        <div class="fl pic"><img src=@item.CoverImage></div>
+                                        <div class="fl text">
+                                            <p class="name">@item.Name</p>
+                                            <p class="author">@item.Author 著</p>
+                                            <div class="intro">@item.Description</div>
+                                        </div>
+                                    </a>
+                                        }
+                                    }
+                            </div>
+                            <ul class="column-c-b clearfix">
+                                @if (thirdSections.Books != null && thirdSections.Books.Any())
+                                    {
+                                        var bottomValue = thirdSections.Books.Skip(5).Take(10);
+                                        foreach (var item in bottomValue)
+                                        {
+                                    <li>
+                                        <a href=@item.Href target="_blank">
+                                            <span class="tags">@item.StatusDesc</span>
+                                            <span class="name">@item.Name</span>
+                                            <span class="author">@item.Author</span>
+                                        </a>
+                                    </li>
+                                        }
+                                    }
+                            </ul>
+                        </div>
+                        <div class="fr column-r">
+                            <div class="column-tit">畅销榜</div>
+                            @if (thirdSections.RankBookList != null && thirdSections.RankBookList.Any())
+                                {
+                                <div class="rank-list">
+                                    <ul>
+                                        @for (int i = 0; i < thirdSections.RankBookList.Count; i++)
+                                            {
+                                                var tb = thirdSections.RankBookList[i];
+                                                if (i == 0)
+                                                {
+                                            <li data-num="@(i + 1)" class="first">
+                                                <a href=@tb.Href target="_blank">
+                                                    <div class="photo"><img src=@tb.CoverImage></div>
+                                                    <p>
+                                                        <span class="text">@tb.Name</span>
+                                                        <span class="author">@tb.Author 著</span>
+                                                        <span class="num">@tb.ClickCount</span>
+                                                    </p>
+                                                </a>
+                                            </li>
+                                                }
+                                                else
+                                                {
+                                            <li data-num="@(i + 1)">
+                                                <a href=@tb.Href target="_blank">
+                                                    <span class="text">@tb.Name</span>
+                                                    <span class="num">@tb.ClickCount</span>
+                                                </a>
+                                            </li>
+                                                }
+                                            }
+                                    </ul>
+                                </div>
+                                }
+                        </div>
+                    </div>
+                    }
+                </div>
+            }
+        </div>
+
+        <script type="text/javascript" src="~/asset/js/jquery.roundabout.js"></script>
+        <script type="text/javascript">
+            $(function () {
+                $(".male-nav li:even").css({ "background": "#d8e9ed" });
+                $(".module-box .column-c-b li:odd").css({ "margin-right": 0 });
+
+                //书城推荐的轮播
+                $("#img-slider, #img-slider-two, #img-slider-three").roundabout({
+                    duration: 1000, // 运动速度
+                    autoplay: true,  // 自动播放
+                    autoplayDuration: 5000, // 自动播放的时间
+                    minOpacity: 1,
+                    minScale: 0.67,
+                    maxScale: 1,
+                    startingChild: 0
+                }).bind({
+                    animationEnd: function (e) {
+                        var index = $("#img-slider").roundabout("getChildInFocus");
+                        var index2 = $("#img-slider-two").roundabout("getChildInFocus");
+                        var index3 = $("#img-slider-three").roundabout("getChildInFocus");
+                        $(".exhibition-hall .info-box").eq(index).show().siblings().hide();
+                        $(".exhibition-hall-two .info-box").eq(index2).show().siblings().hide();
+                        $(".exhibition-hall-three .info-box").eq(index3).show().siblings().hide();
+                    }
+                });
+            })
+        </script>
+    </div>
+</body>

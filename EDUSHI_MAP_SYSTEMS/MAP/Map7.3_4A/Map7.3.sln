@@ -1,0 +1,44 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Map7.WebApp", "Map7.WebApp\Map7.WebApp.csproj", "{E5F4934A-B316-4BFA-9588-BA02C17FA1EA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Map7.WebBLL", "Map7.WebBLL\Map7.WebBLL.csproj", "{3C605C8D-E4B9-4C2A-BE12-765D0CA92130}"
+EndProject
+Global
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 2
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = http://192.168.100.212:8080/tfs/defaultcollection
+		SccProjectUniqueName0 = Map7.WebApp\\Map7.WebApp.csproj
+		SccProjectName0 = Map7.WebApp
+		SccAuxPath0 = http://192.168.100.212:8080/tfs/defaultcollection
+		SccLocalPath0 = Map7.WebApp
+		SccProvider0 = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccProjectUniqueName1 = Map7.WebBLL\\Map7.WebBLL.csproj
+		SccProjectName1 = Map7.WebBLL
+		SccAuxPath1 = http://192.168.100.212:8080/tfs/defaultcollection
+		SccLocalPath1 = Map7.WebBLL
+		SccProvider1 = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E5F4934A-B316-4BFA-9588-BA02C17FA1EA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E5F4934A-B316-4BFA-9588-BA02C17FA1EA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E5F4934A-B316-4BFA-9588-BA02C17FA1EA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E5F4934A-B316-4BFA-9588-BA02C17FA1EA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3C605C8D-E4B9-4C2A-BE12-765D0CA92130}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3C605C8D-E4B9-4C2A-BE12-765D0CA92130}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3C605C8D-E4B9-4C2A-BE12-765D0CA92130}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3C605C8D-E4B9-4C2A-BE12-765D0CA92130}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(PowerDesigner) = preSolution
+		HasSWS = 1
+	EndGlobalSection
+EndGlobal

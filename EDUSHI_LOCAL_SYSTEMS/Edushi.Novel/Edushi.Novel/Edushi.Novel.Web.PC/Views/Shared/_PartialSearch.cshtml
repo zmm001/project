@@ -1,0 +1,65 @@
+﻿
+    <a href="@Url.Content("~")" target="_blank" class="fl logo"></a>
+    <div class="fl search-box" id="app">
+        <div class="search-wrap">
+            <input type="text" id="search" v-bind:placeholder="firstSearch[0].Name" v-bind:value="firstSearch[0].Name">
+            <input type="button" name="" value="" v-on:click="gotoSearch()">
+        </div>
+        <div class="hot-tags">
+            搜索热词：
+            <a  v-on:click="clickSeach(item.Name)"  v-for="item in otherSearch">{{item.Name}}</a>
+        </div>
+        <script>
+            var dataModel = {
+
+            }
+            var datas = new Vue({
+                el: '#app',
+                data: {
+                    hotSearchList: [{}]
+                },
+                created: function () {
+                    this.hotSearch()
+                },
+                computed: {
+                    firstSearch: function () {
+                        return this.hotSearchList.slice(0, 1)
+                    },
+                    otherSearch: function () {
+                        return this.hotSearchList.slice(1)
+                    }
+                },
+                methods: {
+                    gotoSearch: function () {
+                        var kw = $("#search").val();
+                        var obj = { keyword: kw }
+                        var str = JSON.stringify(obj)
+                        sessionStorage.keyword = str;
+                        window.location.href = "http://xiaoshuo.edushi.com/info/search.html"
+                    },
+                    clickSeach: function (kw) {
+                        var obj = { keyword: kw }
+                        var str = JSON.stringify(obj)
+                        sessionStorage.keyword = str;
+                        window.location.href = "http://xiaoshuo.edushi.com/info/search.html"
+                    },
+                    hotSearch: function () {
+                        $.ajax({
+                            type: 'GET', //GET
+                            url: "/Search/GetHotSearch",
+                            dataType: "json",
+                            success: function (data) {
+                                $('.header-box .search-box').show()
+                                datas.hotSearchList = data
+                            },
+                            error: function (xhr, type) {
+                                // showMsg('加载异常，请刷新页面重试！');
+                            }
+                        });
+                    }
+                }
+            })
+
+
+        </script>
+    </div>

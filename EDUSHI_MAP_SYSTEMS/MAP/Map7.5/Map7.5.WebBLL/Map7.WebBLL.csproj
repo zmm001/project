@@ -1,0 +1,89 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{0D65FBEF-B2E7-4389-967A-A52FE8CE50D9}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Map7.WebBLL</RootNamespace>
+    <AssemblyName>Map7.WebBLL</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EDC.Framework, Version=4.0.12.213, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\EDUSHI_CM_LIBRARY\Assembly_Library\EDC.Framework\EDC.Framework.dll</HintPath>
+    </Reference>
+    <Reference Include="Enyim.Caching, Version=1.2.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\EDUSHI_CM_LIBRARY\Assembly_Library\EDC.Framework\Enyim.Caching.dll</HintPath>
+    </Reference>
+    <Reference Include="log4net, Version=1.2.10.0, Culture=neutral, PublicKeyToken=1b44e1d426115821, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\EDUSHI_CM_LIBRARY\Assembly_Library\EDC.Framework\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BLL\EShopJoinBLL.cs" />
+    <Compile Include="BLL\Income_CompanyInfoBLL.cs" />
+    <Compile Include="BLL\MapDataPrivodeBLL.cs" />
+    <Compile Include="BLL\NewsFeedBLL.cs" />
+    <Compile Include="BLL\WebData.cs" />
+    <Compile Include="DAL\EShopJoinDAL.cs" />
+    <Compile Include="DAL\Income_CompanyInfoDAL.cs" />
+    <Compile Include="DAL\MapDataPrivoderDAL.cs" />
+    <Compile Include="DAL\MarkLocationDAL.cs" />
+    <Compile Include="DAL\NewsFeedDAL.cs" />
+    <Compile Include="GoogleAdConfig.cs" />
+    <Compile Include="MapHttpHandler.cs" />
+    <Compile Include="MDL\EShopJoinMDL.cs" />
+    <Compile Include="MDL\Income_CompanyInfoMDL.cs" />
+    <Compile Include="MDL\NewsFeedMDL.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="WebGlobalConfig.cs" />
+    <Compile Include="WebPagebase.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

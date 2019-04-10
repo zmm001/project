@@ -1,0 +1,175 @@
+﻿@{
+    ViewBag.Title = "Index";
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>阿拉丁三维地图</title>
+    <link href="~/Content/style.css" rel="stylesheet" />
+    <script src="~/Scripts/jquery-1.8.3.min.js"></script>
+    <script type="text/javascript" src="http://webapi.amap.com/maps?v=1.4.4&key=e8c07f64d6c9803cff6f05258b065221&plugin=AMap.Driving,AMap.Transfer,AMap.Walking,AMap.RangingTool,AMap.Autocomplete,AMap.PlaceSearch,AMap.AdvancedInfoWindow,AMap.Geolocation"></script>
+    <script src="http://webapi.amap.com/ui/1.0/main.js?v=1.0.11"></script>
+    <style>
+        #panel {
+            position: absolute;
+            background-color: white;
+            max-height: 600px;
+            overflow-y: auto;
+            top: 190px;
+            width: 380px;
+        }
+
+        #tooltip {
+            position: absolute;
+            display: none;
+            border: #ff5051 1PX solid;
+            background: #fff;
+            color: #ff5051;
+            padding: 1px 5px;
+        }
+
+    </style>
+</head>
+<body>
+    <div id="container" class="tooltip">
+    </div>
+
+    <!-- 搜索 -->
+    <div class="button-group clearfix">
+        <input id="keyword" class="inputtext" placeholder="请输入关键字" type="text">
+        <input id="query" class="button" value="" type="button">
+        <div class="navigate-icon">
+            <span class="navigate"></span>
+        </div>
+        <span class="search-lay">搜索</span>
+        <span class="navigate-lay">路线</span>
+    </div>
+
+    <!-- 线路 -->
+    <div class="dir-line-box">
+        <div class="dirbox">
+            <i class="icon-close"></i>
+            <ul class="traffic-tab clearfix">
+                <li><span class="icon-car on"><i></i></span></li>
+                <li><span class="icon-bus"><i></i></span></li>
+                <li><span class="icon-walk"><i></i></span></li>
+            </ul>
+            <div class="line-search clearfix">
+                <div class="fl dir_exchange" id="dir_exchange"></div>
+                <div class="fl line-search-form">
+                    <div class="line-search-ipt clearfix">
+                        <span class="fl start"></span>
+                        <input type="text" name="" id="start_point" placeholder="请输入起点" class="dir-from-ipt">
+                        <span class="fl del-item"></span>
+                    </div>
+                    <div class="line-search-ipt clearfix">
+                        <span class="fl end"></span>
+                        <input type="text" name="" id="end_point" placeholder="请输入终点" class="dir-to-ipt">
+                        <span class="fl del-item"></span>
+                    </div>
+                </div>
+            </div>
+            <div class="dir-submit">开车去</div>
+        </div>
+        <div class="dir-history">
+            <h2>路线搜索记录</h2>
+            <ul class="history-list">
+                <li>
+                    <span class="dir-his-elli">我的位置→汉舍小雅</span>
+                    <span class="his-del"></span>
+                </li>
+                <li>
+                    <span class="dir-his-elli">我的位置→汉舍小雅</span>
+                    <span class="his-del"></span>
+                </li>
+            </ul>
+        </div>
+        <div class="map-lib-driving" style="display: block;">
+            <div id="panel" style="top: 190px;">
+            </div>
+        </div>
+
+    </div>
+
+    <!-- 城市 -->
+    @Html.Partial("~/Views/Home/CitySearch.cshtml")
+
+    <!-- 路况 测距 -->
+    <div class="layerbox">
+        <span class="traffic" id="trafficId">路况</span>
+        <span class="ranging" id="rangTool">测距</span>
+    </div>
+    <div class="traffic-box">
+        <div class="traffic-header clearfix">
+            <ul>
+                <li class="on" id="traffic_current">实时</li>
+                @*  <li id="traffic_forecast">预测</li>*@
+            </ul>
+            <div class="traffic-tag">
+                <span>畅通</span>
+                <span class="level"></span>
+                <span>拥堵</span>
+            </div>
+        </div>
+        <div class="traffic-info">
+            <div class="time"><span class="lbl">更新时间：</span><span class="date">2018/03/02&nbsp; 17:18</span></div>
+            <div class="week clearfix" style="display: none">
+                <span>星期</span>
+                <ul>
+                    <li>一（今天）</li>
+                    <li>二</li>
+                    <li class="select">三</li>
+                    <li>四</li>
+                    <li>五</li>
+                    <li>六</li>
+                    <li>日</li>
+                </ul>
+            </div>
+            <div class="time-line clearfix" style="display: none">
+                <span class="tit">时间</span>
+                <div class="time-drag">
+                    <div class="thumb-time-wrap"><div class="thumb-time">16:00</div></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <!-- 放大 缩小 三维切换 -->
+    @* <div class="maptools">
+            <div class="map-controls"><span></span></div>
+        <div class="zoom-in"><span></span></div>
+             <div class="zoom-out"><span></span></div>
+            <div class="controls-lay">我的位置</div>
+        </div>*@
+    <ul class="map-style-control">
+
+        <li class="map-3d on"><span>三维</span></li>
+        <li class="map-2d"><span>二维</span></li>
+        <li class="map-sat map-satellite"><span>卫星</span></li>
+    </ul>
+    <!-- 定位 -->
+    <div class="map-location"></div>
+    <!-- 弹出详情 -->
+    @*@Html.Partial("~/Views/Home/Map_Details.cshtml");*@
+    <script>
+       
+        var map = new AMap.Map('container', {
+            resizeEnable: true,
+            zooms: [3, 18],
+            zoom: 18,
+            isHotspot: true,
+            expandZoomRange: true,
+            //features: ['bg'],
+            layers: []
+        });
+
+    </script>
+    <script src="~/Scripts/Constants.js"></script>
+    <script src="~/Scripts/almap_init.js"></script>
+    <script src="~/Scripts/almap_TravelRoute.js"></script>
+    <script src="~/Scripts/common.js"></script>
+</body>
+</html>

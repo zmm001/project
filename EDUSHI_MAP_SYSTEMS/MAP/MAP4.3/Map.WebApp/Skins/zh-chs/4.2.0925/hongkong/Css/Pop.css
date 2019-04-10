@@ -1,0 +1,68 @@
+body
+{
+	margin:0;
+}
+.m_h_c{position:absolute;background:url(../images/newmap33.gif) no-repeat;width:15px; height:17px; margin-left:17px;}
+.m_h_c:hover{background:url(../images/newmap33a.gif) no-repeat;width:15px; height:17px;}
+
+.Popo{width:345px; height:335px; position:absolute; z-index:308;}
+.Popo .PLeft{ position:relative; left:1px; top:100px; filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/newmap38.png',sizingMethod='image'); width:42px; height:235px; float:left}
+.Popo .PRight{ float:right; width:303px; height:335px;}
+.Popo .PRight .PHead{ height:33px; background:url(../images/newmap34.gif) no-repeat; cursor:move; overflow:hidden;}
+.Popo .PRight .PHead .Title{ float:left; margin-left:5px; line-height:30px; color:#000; font-size:14px; font-weight:bold}
+.Popo .PRight .PHead .Close{ float:right; margin:5px 3px 0 0;}
+.Popo .PRight .PHead .Close img{ cursor:pointer;}
+.Popo .PRight .PContent{ height:293px; background:url(../images/newmap35.gif) repeat-y; padding:0 8px 0 8px}
+[class].Popo .PRight .PContent{ height:298px}
+.Popo .PRight .PContent .AdImg{height:60px;}
+[class].Popo .PRight .PContent .AdImg{height:70px;}
+.Popo .PRight .PContent .AdImg .AILeft{float:left; width:85px; height:60px; border:1px solid #ccc; padding:2px}
+.Popo .PRight .PContent .AdImg .AIRight{float:left; margin-left:10px;}
+.Popo .PRight .PContent .AdImg .AIRight .AIOver{ height:18px; line-height:18px; color:#000}
+.Popo .PRight .PContent .AdImg .AIRight .AIUnder{ height:22px; margin-top:5px}
+.Popo .PRight .PContent .AdImg .AIRight .AIUnder span{float:left}
+.Popo .PRight .PContent .AdImg .AIRight .AIUnder img{margin-right:3px}
+.Popo .PRight .PContent .AdImg .AIRight .AIUnder a{ text-decoration:underline}
+.Popo .PRight .PContent .AdImg .AIRight .AIUnder a:hover{ text-decoration:none}
+.Popo .PRight .PContent .CPage{height:150px}
+.Popo .PRight .PContent .CPage .Change{ height:20px; background:#F4F4F4}
+.Popo .PRight .PContent .CPage .Change .Action{ height:20px; line-height:20px; border:solid #A4A4A4; border-width:1px 1px 0px 1px; padding:0 5px 0 5px; float:left; color:#000; position:relative; top:1px; background:#fff; cursor:pointer}
+[class].Popo .PRight .PContent .CPage .Change .Action{ top:0px}
+.Popo .PRight .PContent .CPage .Change .UnAction{ height:20px; line-height:20px; background:#F4F4F4; float:left; color:#FD8401;padding:0 5px 0 5px; cursor:pointer}
+.Popo .PRight .PContent .CPage .Show{ height:130px; border:1px solid #A4A4A4; font-size:12px;}
+.Popo .PRight .PContent .CPage .Show .Number{ height:20px; line-height:20px; color:#666; margin-top:5px;}
+.Popo .PRight .PContent .CPage .Show .Number span{ float:left; margin:0 5px 0 5px}
+.Popo .PRight .PContent .CPage .Show .Number span a{ color:#FD8401;}
+.Popo .PRight .PContent .CPage .Show .Number span a:hover{ color:#FD8401;}
+.Popo .PRight .PContent .CPage .Show .ShowList{ height:78px; margin:0 3px 0 3px;}
+.Popo .PRight .PContent .CPage .Show .ShowList li{ height:20px; line-height:20px;}
+.Popo .PRight .PContent .CPage .Show .Fpage{ text-align:center; height:22px; border-top:1px solid #ccc; margin:0 3px 0 3px}
+.Popo .PRight .PContent .CPage .EAD{ height:20px; margin-top:3px}
+.Popo .PRight .PContent .CPage .EAD span{ float:left; margin-right:5px}
+.Popo .PRight .PContent .CPage .EAD span img{ margin-right:2px}
+.Popo .PRight .PContent .CPage .EAD span input{height:16px; width:215px; border:1px solid #6A6A6A; font-size:10px}
+.Popo .PRight .PContent .CPage .Photo{ border:1px solid #ccc; height:45px; margin-top:5px;}
+.Popo .PRight .PContent .CPage .Photo img{width:285px; height:45px;}
+.Popo .PRight .PFoot{ height:9px; font-size:1px; background:url(../images/newmap36.gif) no-repeat}
+
+.Popo .PRight .PContent .CPage .Show .ShowList li{ height:20px; line-height:20px;}
+.Popo .PRight .PContent .CPage .Show .ShowList1{ height:20px; margin:3px 3px 0 3px;}
+.Popo .PRight .PContent .CPage .Show .ShowList1 li{ height:20px; margin:0 3px 0 3px; margin-right:10px; float:left; line-height:16px; }
+.Popo .PRight .PContent .CPage .Show .in{ height:25px; margin:0 3px 5px 5px; }
+.Popo .PRight .PContent .CPage .Show .in input{ width:189px; height:20px; border:1px solid #7f9db9;}
+.Popo .PRight .PContent .CPage .Show .in .chaxun{background-image:url(../images/newmap62.gif); background-repeat:no-repeat; width:48px; height:20px; text-align:center; margin-bottom:2px;}
+.Popo .PRight .PContent .CPage .Show .huancheng{ height:40px; padding:5px 0 0 5px;  margin-top:20px;}
+.Popo .PRight .PContent .CPage .Show .huancheng .se{ margin:1px 0 0 0;}
+.Popo .PRight .PContent .CPage .Show .huancheng li{ float:left; height:22px;}
+.Popo .PRight .PContent .CPage .Show .huancheng li input{ width:130px; margin-left:2px;}
+.Popo .PRight .PContent .CPage .Show .huancheng .chaxun1{background-image:url(../images/newmap62.gif); background-repeat:no-repeat; width:48px; height:22px; line-height:22px; text-align:center; margin:2px 0 0 2px;}
+.Popo .PRight .PContent .CPage .Show .bus{ height:31px; border-bottom:#666 dashed 1px; line-height:31px; }
+.Popo .PRight .PContent .CPage .Show .bus .jieguo{ margin-left:5px;}
+.Popo .PRight .PContent .CPage .Show .bus li{ float:left;}
+.Popo .PRight .PContent .CPage .Show .bus .jieguo .key{ color:#FF0000; font-size:12px; }
+.Popo .PRight .PContent .CPage .Show .buslist { width:270px; padding-left:5px;}
+.Popo .PRight .PContent .CPage .Show .buslist li{ float:left;}
+.Popo .PRight .PContent .CPage .Show .buslist .name{ width:230px; margin:1px 0 0 2px;}
+.Popo .PRight .PContent .CPage .Show .buslist img{ margin-top:15px;}
+.Popo .PRight .PContent .CPage .Show .buslist .num{ width:40px;}
+.Popo .PRight .PContent .CPage .gundong{ overflow-y:scroll; height:160px}

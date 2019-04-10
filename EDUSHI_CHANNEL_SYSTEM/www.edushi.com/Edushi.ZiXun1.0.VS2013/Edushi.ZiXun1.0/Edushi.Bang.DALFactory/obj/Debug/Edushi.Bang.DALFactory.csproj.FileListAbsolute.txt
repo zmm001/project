@@ -1,0 +1,8 @@
+E:\TFS192.168.100.212\EDUSHI_CHANNEL_SYSTEM\www.edushi.com\Edushi.ZiXun1.0.VS2013\Edushi.ZiXun1.0\Edushi.Bang.DALFactory\bin\Debug\Edushi.Bang.DALFactory.dll
+E:\TFS192.168.100.212\EDUSHI_CHANNEL_SYSTEM\www.edushi.com\Edushi.ZiXun1.0.VS2013\Edushi.ZiXun1.0\Edushi.Bang.DALFactory\bin\Debug\Edushi.Bang.DALFactory.pdb
+E:\TFS192.168.100.212\EDUSHI_CHANNEL_SYSTEM\www.edushi.com\Edushi.ZiXun1.0.VS2013\Edushi.ZiXun1.0\Edushi.Bang.DALFactory\bin\Debug\Edushi.Log.dll
+E:\TFS192.168.100.212\EDUSHI_CHANNEL_SYSTEM\www.edushi.com\Edushi.ZiXun1.0.VS2013\Edushi.ZiXun1.0\Edushi.Bang.DALFactory\bin\Debug\log4net.dll
+E:\TFS192.168.100.212\EDUSHI_CHANNEL_SYSTEM\www.edushi.com\Edushi.ZiXun1.0.VS2013\Edushi.ZiXun1.0\Edushi.Bang.DALFactory\bin\Debug\Edushi.Log.pdb
+E:\TFS192.168.100.212\EDUSHI_CHANNEL_SYSTEM\www.edushi.com\Edushi.ZiXun1.0.VS2013\Edushi.ZiXun1.0\Edushi.Bang.DALFactory\obj\Debug\Edushi.Bang.DALFactory.csprojResolveAssemblyReference.cache
+E:\TFS192.168.100.212\EDUSHI_CHANNEL_SYSTEM\www.edushi.com\Edushi.ZiXun1.0.VS2013\Edushi.ZiXun1.0\Edushi.Bang.DALFactory\obj\Debug\Edushi.Bang.DALFactory.dll
+E:\TFS192.168.100.212\EDUSHI_CHANNEL_SYSTEM\www.edushi.com\Edushi.ZiXun1.0.VS2013\Edushi.ZiXun1.0\Edushi.Bang.DALFactory\obj\Debug\Edushi.Bang.DALFactory.pdb

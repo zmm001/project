@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="BdtNoSqlHandle" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://localhost:53968/BdtNoSqlHandle.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://localhost:53968/BdtNoSqlHandle.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://localhost:53968/BdtNoSqlHandle.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/Edushi.BDT.Contract.Model" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IBdtNoSqlHandle_InsertTopic_InputMessage">
+    <wsdl:part name="parameters" element="tns:InsertTopic" />
+  </wsdl:message>
+  <wsdl:message name="IBdtNoSqlHandle_InsertTopic_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InsertTopicResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBdtNoSqlHandle_InsertTopicComment_InputMessage">
+    <wsdl:part name="parameters" element="tns:InsertTopicComment" />
+  </wsdl:message>
+  <wsdl:message name="IBdtNoSqlHandle_InsertTopicComment_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InsertTopicCommentResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBdtNoSqlHandle_UpdateTopic_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateTopic" />
+  </wsdl:message>
+  <wsdl:message name="IBdtNoSqlHandle_UpdateTopic_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateTopicResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBdtNoSqlHandle_UpdateTopicComment_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateTopicComment" />
+  </wsdl:message>
+  <wsdl:message name="IBdtNoSqlHandle_UpdateTopicComment_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateTopicCommentResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBdtNoSqlHandle_DeleteTopic_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteTopic" />
+  </wsdl:message>
+  <wsdl:message name="IBdtNoSqlHandle_DeleteTopic_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteTopicResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBdtNoSqlHandle_DeleteTopicBatch_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteTopicBatch" />
+  </wsdl:message>
+  <wsdl:message name="IBdtNoSqlHandle_DeleteTopicBatch_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteTopicBatchResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBdtNoSqlHandle_DeleteTopicComment_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteTopicComment" />
+  </wsdl:message>
+  <wsdl:message name="IBdtNoSqlHandle_DeleteTopicComment_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteTopicCommentResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBdtNoSqlHandle_DeleteTopicCommentBatch_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteTopicCommentBatch" />
+  </wsdl:message>
+  <wsdl:message name="IBdtNoSqlHandle_DeleteTopicCommentBatch_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteTopicCommentBatchResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBdtNoSqlHandle_SetBestComment_InputMessage">
+    <wsdl:part name="parameters" element="tns:SetBestComment" />
+  </wsdl:message>
+  <wsdl:message name="IBdtNoSqlHandle_SetBestComment_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SetBestCommentResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IBdtNoSqlHandle">
+    <wsdl:operation name="InsertTopic">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBdtNoSqlHandle/InsertTopic" message="tns:IBdtNoSqlHandle_InsertTopic_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBdtNoSqlHandle/InsertTopicResponse" message="tns:IBdtNoSqlHandle_InsertTopic_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertTopicComment">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBdtNoSqlHandle/InsertTopicComment" message="tns:IBdtNoSqlHandle_InsertTopicComment_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBdtNoSqlHandle/InsertTopicCommentResponse" message="tns:IBdtNoSqlHandle_InsertTopicComment_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateTopic">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBdtNoSqlHandle/UpdateTopic" message="tns:IBdtNoSqlHandle_UpdateTopic_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBdtNoSqlHandle/UpdateTopicResponse" message="tns:IBdtNoSqlHandle_UpdateTopic_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateTopicComment">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBdtNoSqlHandle/UpdateTopicComment" message="tns:IBdtNoSqlHandle_UpdateTopicComment_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBdtNoSqlHandle/UpdateTopicCommentResponse" message="tns:IBdtNoSqlHandle_UpdateTopicComment_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteTopic">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBdtNoSqlHandle/DeleteTopic" message="tns:IBdtNoSqlHandle_DeleteTopic_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBdtNoSqlHandle/DeleteTopicResponse" message="tns:IBdtNoSqlHandle_DeleteTopic_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteTopicBatch">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBdtNoSqlHandle/DeleteTopicBatch" message="tns:IBdtNoSqlHandle_DeleteTopicBatch_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBdtNoSqlHandle/DeleteTopicBatchResponse" message="tns:IBdtNoSqlHandle_DeleteTopicBatch_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteTopicComment">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBdtNoSqlHandle/DeleteTopicComment" message="tns:IBdtNoSqlHandle_DeleteTopicComment_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBdtNoSqlHandle/DeleteTopicCommentResponse" message="tns:IBdtNoSqlHandle_DeleteTopicComment_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteTopicCommentBatch">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBdtNoSqlHandle/DeleteTopicCommentBatch" message="tns:IBdtNoSqlHandle_DeleteTopicCommentBatch_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBdtNoSqlHandle/DeleteTopicCommentBatchResponse" message="tns:IBdtNoSqlHandle_DeleteTopicCommentBatch_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SetBestComment">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBdtNoSqlHandle/SetBestComment" message="tns:IBdtNoSqlHandle_SetBestComment_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBdtNoSqlHandle/SetBestCommentResponse" message="tns:IBdtNoSqlHandle_SetBestComment_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_IBdtNoSqlHandle" type="tns:IBdtNoSqlHandle">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="InsertTopic">
+      <soap:operation soapAction="http://tempuri.org/IBdtNoSqlHandle/InsertTopic" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertTopicComment">
+      <soap:operation soapAction="http://tempuri.org/IBdtNoSqlHandle/InsertTopicComment" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateTopic">
+      <soap:operation soapAction="http://tempuri.org/IBdtNoSqlHandle/UpdateTopic" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateTopicComment">
+      <soap:operation soapAction="http://tempuri.org/IBdtNoSqlHandle/UpdateTopicComment" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteTopic">
+      <soap:operation soapAction="http://tempuri.org/IBdtNoSqlHandle/DeleteTopic" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteTopicBatch">
+      <soap:operation soapAction="http://tempuri.org/IBdtNoSqlHandle/DeleteTopicBatch" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteTopicComment">
+      <soap:operation soapAction="http://tempuri.org/IBdtNoSqlHandle/DeleteTopicComment" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteTopicCommentBatch">
+      <soap:operation soapAction="http://tempuri.org/IBdtNoSqlHandle/DeleteTopicCommentBatch" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetBestComment">
+      <soap:operation soapAction="http://tempuri.org/IBdtNoSqlHandle/SetBestComment" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="BdtNoSqlHandle">
+    <wsdl:port name="BasicHttpBinding_IBdtNoSqlHandle" binding="tns:BasicHttpBinding_IBdtNoSqlHandle">
+      <soap:address location="http://localhost:53968/BdtNoSqlHandle.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

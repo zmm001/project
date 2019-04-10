@@ -1,0 +1,501 @@
+body {
+	background: #f9f9f9;
+	overflow-y: auto;
+}
+.top-box {
+	position: relative;
+	padding-bottom: 0.2rem;
+}
+.line-search {
+	border-bottom: 1px solid #d4d4d4;
+}
+.line-search .dir-exchange {
+	width: 0.32rem;
+	height: 0.32rem;
+	margin: 0.83rem 0.23rem 0.83rem 0.3rem;
+	background: url(../images/sprite_icon.png) no-repeat 0 -7.88rem;
+	background-size: 1rem 10rem;
+}
+.line-search-form {
+	width: 5.01rem;
+}
+.line-search-ipt {
+	height: 0.99rem;
+}
+.line-search-ipt:first-child {
+	border-bottom: 1px solid #d4d4d4;
+}
+.line-search-ipt .start, .line-search-ipt .end {
+	display: inline-block;
+	width: 0.32rem;
+	height: 0.46rem;
+	margin-top: 0.28rem;
+	margin-right: 0.15rem;
+	background: url(../images/sprite_icon.png) no-repeat;
+	background-size: 1rem 10rem;
+}
+.line-search-ipt .start {
+	background-position: 0 -5.83rem;
+}
+.line-search-ipt .end {
+	background-position: -0.42rem -5.83rem;
+}
+.line-search-ipt input {
+	display: inline-block;
+	width: 4.1rem;
+	height: 0.99rem;
+	border: none;
+	outline: none;
+	font-size: 0.32rem;
+	color: #333333;
+	vertical-align: top;
+}
+.line-search-ipt input::-webkit-input-placeholder {
+	color: #bbbbbb;
+}
+.line-search-ipt .del-item {
+	display: none;
+	float: right;
+	width: 0.4rem;
+	height: 0.4rem;
+	margin-top: 0.34rem;
+	background: url(../images/sprite_icon.png) no-repeat -0.51rem -7.36rem;
+	background-size: 1rem 10rem;
+}
+.dir-submit {
+	width: 1.08rem;
+	height: 0.58rem;
+	margin-top: 0.69rem;
+	margin-left: 0.25rem;
+	border: 1px solid #007ef3;
+	border-radius: 0.4rem;
+	font-size: 0.32rem;
+	text-align: center;
+	line-height: 0.58rem;
+	color: #007ef3;
+}
+
+.top-travel-mode {
+	position: absolute;
+	left: 0;
+	top: 0;
+	z-index: 1000;
+	width: 7.5rem;
+	height: 0.88rem;
+	background: #f9f9f9;
+}
+.top-travel-mode .travel-tab, .transfer-mode .travel-tab {
+	display: inline-block;
+	width: 6.66rem;
+	padding-left: 0;
+	border-bottom: none;
+	vertical-align: top;
+}
+.top-travel-mode .travel-tab li {
+	height: 0.88rem;
+}
+.top-travel-mode .back, .transfer-mode .back {
+	display: inline-block;
+	width: 0.17rem;
+	height: 0.32rem;
+	margin: 0.28rem 0.37rem 0 0.3rem;
+	background: url(../images/sprite_icon.png) no-repeat 0 -3.94rem;
+	background-size: 1rem 10rem;
+}
+.transfer-mode {
+	border-bottom: 1px solid #eeeeee;
+    background: #f9f9f9;
+}
+
+header {
+	position: relative;
+	font-size: 0.32rem;
+	color: #333333;
+	line-height: 0.87rem;
+	text-align: center;
+	border-bottom: 1px solid #eeeeee;
+	background: #f9f9f9;
+}
+header .back {
+	position: absolute;
+	left: 0.3rem;
+	top: 0.28rem;
+	display: block;
+	width: 0.17rem;
+	height: 0.32rem;
+	background: url(../images/sprite_icon.png) no-repeat 0 -3.94rem;
+	background-size: 1rem 10rem;
+}
+header p{
+	width: 6rem;
+	margin: 0 auto;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+.amap-call {
+	display: none;
+}
+.map-lib-driving {
+	width: 6.9rem;
+	height: calc(100% - 0.88rem);
+	padding: 0 0.3rem;
+	background: #fff;
+	margin-top: 0.28rem;
+}
+.amap-lib-driving, .amap-lib-transfer, .amap-lib-walking {
+	border: none;
+}
+.amap-lib-driving .planTitle, .amap-lib-transfer .planTitle, .amap-lib-walking .planTitle {
+	position: relative;
+	margin-top: 0.28rem;
+	padding: 0.25rem 0.22rem;
+	background: #f4f9fd;
+	border-top: 1px solid #e6e6e6;
+	border-bottom: none;
+}
+.amap-lib-driving .planTitle h3, .amap-lib-transfer .planTitle h3, .amap-lib-walking .planTitle h3 {
+	margin-bottom: 0.04rem;
+	font-size: 0.28rem;
+	color: #333333;
+	line-height: 0.4rem;
+}
+.amap-lib-driving .planTitle p, .amap-lib-transfer .planTitle p, .amap-lib-walking .planTitle p {
+	margin-bottom: 0;
+	font-size: 0.22rem;
+	color: #666666;
+	line-height: 0.32rem;
+}
+.amap-lib-driving .blue {
+	color: #007eff;
+}
+.amap-lib-driving .plan dt, .amap-lib-transfer .plan dt,
+.amap-lib-transfer .plan dd, .amap-lib-walking .plan dt {
+	margin-left: 0.55rem;
+	padding: 0.23rem 0;
+	font-size: 0.26rem;
+	color: #666666;
+	line-height: 0.33rem;
+	border-bottom: 1px solid #eeeeee;
+}
+.amap-lib-driving .plan dt:first-child, .amap-lib-driving .plan dt.end,
+.amap-lib-transfer .plan dt:first-child, .amap-lib-transfer .plan dt.end,
+.amap-lib-walking .plan dt:first-child, .amap-lib-walking .plan dt.end {
+	font-size: 0.28rem;
+	font-weight: bold;
+	color: #333333;
+	border-top: none;
+}
+.amap-lib-driving .plan-nobus dt .beforedt, .amap-lib-transfer .plan dt .beforedt, .amap-lib-walking .plan dt .beforedt {
+	position: absolute;
+	left: -0.6rem;
+	top: 0.2rem;
+	display: block;
+	width: 0.4rem;
+	height: 0.4rem;
+	margin-top: 0;
+	background-image: none;
+}
+.amap-lib-driving .plan-nobus dt .beforedt:after, .amap-lib-walking .plan dt .beforedt:after {
+	content: "";
+	display: block;
+	width: 0.4rem;
+	height: 0.4rem;
+	background-image: url(../images/diricon.png);
+	background-size: 1.68rem 3.7rem;
+}
+.amap-lib-driving .plan-nobus dt.turn-leftback .beforedt:after,
+.amap-lib-walking .plan-nobus dt.turn-leftback .beforedt:after {
+	background-position: -0.8rem 0;
+}
+.amap-lib-driving .plan-nobus dt.turn-rightback .beforedt:after,
+.amap-lib-walking .plan-nobus dt.turn-rightback .beforedt:after {
+	background-position: -1.2rem 0;
+}
+.amap-lib-driving .plan-nobus dt.turn-left .beforedt:after,
+.amap-lib-walking .plan-nobus dt.turn-left .beforedt:after{
+	background-position: -0.4rem 0;
+}
+.amap-lib-driving .plan-nobus dt.turn-leftup .beforedt:after,
+.amap-lib-walking .plan-nobus dt.turn-leftup .beforedt:after {
+	background-position: -0.8rem -0.4rem;
+}
+.amap-lib-driving .plan-nobus dt.turn-leftdown .beforedt:after,
+.amap-lib-walking .plan-nobus dt.turn-leftdown .beforedt:after {
+	background-position: 0 -0.8rem;
+}
+.amap-lib-driving .plan-nobus dt.turn-advance .beforedt:after,
+.amap-lib-walking .plan-nobus dt.turn-advance .beforedt:after {
+	background-position: 0 -0.4rem;
+}
+.amap-lib-driving .plan-nobus dt.turn-slow .beforedt:after,
+.amap-lib-walking .plan-nobus dt.turn-slow .beforedt:after {
+	background-position: -0.4rem -0.4rem;
+}
+.amap-lib-driving .plan-nobus dt.turn-rightup .beforedt:after,
+.amap-lib-walking .plan-nobus dt.turn-rightup .beforedt:after {
+	background-position: -1.2rem -0.4rem;
+}
+.amap-lib-driving .plan-nobus dt.turn-rightdown .beforedt:after,
+.amap-lib-walking .plan-nobus dt.turn-rightdown .beforedt:after {
+	background-position: -0.4rem -0.8rem;
+}
+.amap-lib-driving .plan-nobus dt.turn-right .beforedt:after,
+.amap-lib-walking .plan-nobus dt.turn-right .beforedt:after {
+	background-position: 0 0;
+}
+.amap-lib-driving .plan-nobus dt.turn-keepleft .beforedt:after,
+.amap-lib-walking .plan-nobus dt.turn-keepleft .beforedt:after {
+	background-position: -0.8rem -0.8rem;
+}
+.amap-lib-driving .plan-nobus dt.turn-keepright .beforedt:after,
+.amap-lib-walking .plan-nobus dt.turn-keepright .beforedt:after {
+	background-position: -1.2rem -0.8rem;
+}
+.amap-lib-driving .plan-nobus dt.turn-enterRing .beforedt:after,
+.amap-lib-walking .plan-nobus dt.turn-enterRing .beforedt:after {
+	background-position: -0.4rem -1.2rem;
+}
+.amap-lib-driving .plan-nobus dt.turn-leaveRing .beforedt:after,
+.amap-lib-walking .plan-nobus dt.turn-leaveRing .beforedt:after {
+	background-position: -0.8rem -1.2rem;
+}
+.amap-lib-driving .plan-nobus dt.turn-crosswalk .beforedt:after,
+.amap-lib-walking .plan-nobus dt.turn-crosswalk .beforedt:after {
+	background-position: -0.4rem -1.6rem;
+}
+.amap-lib-driving .plan-nobus dt.turn-overpass .beforedt:after,
+.amap-lib-walking .plan-nobus dt.turn-overpass .beforedt:after {
+	background-position: -0.8rem -1.6rem;
+}
+.amap-lib-driving .plan-nobus dt.turn-underpass .beforedt:after,
+.amap-lib-walking .plan-nobus dt.turn-underpass .beforedt:after {
+	background-position: 0 -1.6rem;
+}
+.amap-lib-driving .plan-nobus dt.turn-squarepass .beforedt:after,
+.amap-lib-walking .plan-nobus dt.turn-squarepass .beforedt:after {
+	background-position: -1.2rem -1.6rem;
+}
+.amap-lib-driving .plan dt.start .beforedt:after,.amap-lib-driving .plan dt.end .beforedt:after,
+.amap-lib-walking .plan dt.start .beforedt:after,.amap-lib-walking .plan dt.end .beforedt:after {
+	display: none;
+}
+.amap-lib-driving .plan dt.start .beforedt, .amap-lib-driving .plan dt.end .beforedt,
+.amap-lib-transfer .plan dt.start .beforedt, .amap-lib-transfer .plan dt.end .beforedt,
+.amap-lib-walking .plan dt.start .beforedt, .amap-lib-walking .plan dt.end .beforedt {
+	width: 0.4rem;
+	height: 0.4rem;
+	margin-top: 0;
+	left: -0.57rem;
+	background: url(../images/sprite_icon.png) no-repeat 0 -6.37rem;
+    background-size: 1rem 10rem;
+}
+.amap-lib-driving .plan dt.end .beforedt,
+.amap-lib-walking .plan dt.end .beforedt {
+	background-position: -0.46rem -6.37rem;
+}
+.amap-lib-driving .afterdt, .amap-lib-transfer .afterdt, .amap-lib-transfer .afterdd, .amap-lib-walking .afterdt {
+	position: absolute;
+	left: -0.4rem;
+	top: 0.25rem;
+	display: block;
+	width: 0.06rem;
+	height: 110% !important;
+}
+.amap-lib-transfer .plan dt.end .afterdt {
+	height: 0 !important;
+}
+.amap-lib-transfer .planTitle ul {
+	display: none !important;
+}
+
+.amap-lib-transfer .plan dt.walk .beforedt {
+	position: absolute;
+	left: -0.55rem;
+	top: 0.25rem;
+	display: block;
+	width: 0.3rem;
+	height: 0.3rem;
+	margin-top: 0;
+	background: #fff;
+	border: 1px solid #e5e7e8;
+	border-radius: 50%;
+}
+.amap-lib-transfer .plan dt.bus .beforedt, .amap-lib-transfer .plan dt.railway .beforedt, .amap-lib-transfer .plan dt.subway .beforedt {
+	position: absolute;
+	left: -0.6rem;
+	top: 0.2rem;
+	display: block;
+	width: 0.4rem;
+	height: 0.4rem;
+	margin-top: 0;
+	background-image: none;
+}
+.amap-lib-transfer .plan dt.bus .beforedt:after, .amap-lib-transfer .plan dt.railway .beforedt:after, .amap-lib-transfer .plan dt.subway .beforedt:after {
+	content: "";
+	display: block;
+	width: 0.42rem;
+	height: 0.42rem;
+	background-image: url(../images/diricon.png);
+	background-size: 1.68rem 1.6rem;
+}
+.amap-lib-transfer .plan dt.bus .beforedt:after {
+	background-position: 0 -0.75rem;
+}
+.amap-lib-transfer .plan dt.subway .beforedt:after {
+	background-position: -0.51rem -0.75rem;
+}
+.amap-lib-transfer .plan dt.railway .beforedt:after {
+	background-position: -1.05rem -0.75rem;
+}
+.amap-lib-transfer .planTitle h3 span {
+	margin-right: 0.32rem;
+	margin-bottom: 0;
+	font-size: 0.25rem;
+}
+.amap-lib-transfer span.busline {
+	margin-left: 0.3rem;
+}
+.amap-lib-transfer span.line .beforespan {
+	left: -0.3rem;
+	width: 0.24rem;
+}
+.amap-lib-transfer span.busline .beforespan {
+	background-image: url(../images/diricon.png);
+	background-position: 0 -1.24rem;
+	background-size: 1.68rem 1.6rem;
+}
+.amap-lib-transfer span.subwayline .beforespan {
+	background-image: url(../images/diricon.png);
+	background-position: -0.29rem -1.24rem;
+	background-size: 1.68rem 1.6rem;
+}
+.amap-lib-transfer .planTitle h3 span .afterspan {
+	right: -0.2rem;
+}
+
+header p.line {
+	width: 7.5rem;
+	border-bottom: 1px solid #eeeeee;
+}
+#buslist .planTitlebus {
+	margin-bottom: 0.15rem;
+	padding: 0.3rem;
+	background: #fff;
+}
+#buslist .planTitlebus h3 {
+	margin-bottom: 0.1rem;
+	font-size: 0.28rem;
+}
+#buslist .planTitlebus h3 .line.busline {
+	margin-right: 0.12rem;
+}
+#buslist .planTitlebus h3 .line.busline:last-child {
+	margin-right: 0;
+}
+#buslist .planTitlebus h3 .line.busline:after {
+	content: "→";
+	font-size: 0.3rem;
+	color: #999;
+	margin-left: 0.12rem;
+}
+#buslist .planTitlebus h3 .line.busline:last-child:after {
+	display: none;
+}
+#buslist .planTitlebus p {
+	display: inline-block;
+	font-size: 0.24rem;
+	color: #999;
+	vertical-align: top;
+}
+#buslist .planTitlebus p span {
+	margin-left: 0.12rem;
+}
+#buslist .planTitlebus p em {
+	margin-left: 0.08rem;
+	font-style: normal;
+}
+#buslist .planTitlebus #detail {
+	float: right;
+	font-size: 0.28rem;
+	color: #007ef3;
+}
+.map-lib-driving .bus-panel {
+	position: relative;
+}
+.map-lib-driving .bus-panel p {
+	position: relative;
+	margin-left: 0.55rem;
+	padding: 0.23rem 0;
+	font-size: 0.26rem;
+	color: #666666;
+	line-height: 0.33rem;
+	border-bottom: 1px solid #eeeeee;
+}
+.map-lib-driving .bus-panel p b {
+	font-size: 0.28rem;
+	color: #333333;
+}
+.map-lib-driving .bus-panel p:after {
+	content: "";
+	position: absolute;
+	left: -0.4rem;
+	top: 0.25rem;
+	display: block;
+	width: 0.06rem;
+	height: 110%;
+	background: #e5e7e8;
+}
+.map-lib-driving .bus-panel p:first-child, .map-lib-driving .bus-panel p:last-child {
+    font-weight: bold;
+}
+.map-lib-driving .bus-panel p.end:after, .map-lib-driving .bus-panel p:last-child:after {
+	height: 40%;
+}
+.map-lib-driving .bus-panel p:before {
+	content: "";
+	position: absolute;
+	top: 0.2rem;
+	left: -0.55rem;
+	display: block;
+	z-index: 10;
+	width: 0.3rem;
+    height: 0.3rem;
+    background: #fff;
+    border: 1px solid #e5e7e8;
+    border-radius: 50%;
+}
+.map-lib-driving .bus-panel p.start:before, .map-lib-driving .bus-panel p:first-child:before {
+	left: -0.57rem;
+	width: 0.4rem;
+	height: 0.4rem;
+	background: url(../images/sprite_icon.png) no-repeat 0 -6.37rem;
+	background-size: 1rem 10rem;
+	border: none;
+}
+.map-lib-driving .bus-panel p.end:before, .map-lib-driving .bus-panel p:last-child:before {
+	width: 0.4rem;
+    height: 0.4rem;
+    left: -0.57rem;
+    background: url(../images/sprite_icon.png) no-repeat -0.46rem -6.37rem;
+    background-size: 1rem 10rem;
+    border: none;
+}
+.amap-lib-transfer .planTitle span.red {
+	color: #ff4546;
+}
+.map-lib-driving .bus-panel p.number {
+	display: none;
+}
+
+
+/* 自动输入 */
+.amap-sug-result {
+	top: 3.74rem !important;
+	background: #f8f8f8;
+}
+.landscape .amap-sug-result {
+	top: 2.35rem !important;
+	max-height: 1.53rem;
+}

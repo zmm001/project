@@ -1,0 +1,175 @@
+body {
+	background: #f9f9f9;
+	overflow-y: auto;
+}
+.top-fixed {
+	position: relative;
+	width: 7.5rem;
+	height: 0.88rem;
+}
+header {
+	position: fixed;
+	left: 0;
+	top: 0;
+	z-index: 1000;
+	width: 7.5rem;
+	font-size: 0.36rem;
+	color: #333333;
+	line-height: 0.87rem;
+	text-align: center;
+	border-bottom: 1px solid #e6e6e6;
+	background: #f9f9f9;
+}
+header .back {
+	position: absolute;
+	left: 0.3rem;
+	top: 0.28rem;
+	display: block;
+	width: 0.17rem;
+	height: 0.32rem;
+	background: url(../images/sprite_icon.png) no-repeat 0 -3.94rem;
+	background-size: 1rem 10rem;
+}
+.city-search-box {
+	position: fixed;
+	left: 0;
+	top: 0.88rem;
+	z-index: 1000;
+	width: 7.5rem;
+	background: #f9f9f9;
+	border-bottom: 1px solid #dddddd;
+}
+.city-search {
+	width: 6.88rem;
+	height: 0.62rem;
+	margin: 0.24rem 0.3rem 0.23rem;
+	background: #fff;
+	border: 1px solid #cccccc;
+	border-radius: 0.08rem;
+	overflow: hidden;
+}
+.city-search .text-ipt {
+	display: inline-block;
+	width: 6.15rem;
+	height: 0.62rem;
+	padding: 0 0.1rem;
+	background: #fff;
+	border: none;
+	outline: none;
+	font-size: 0.28rem;
+	vertical-align: top;
+}
+.city-search .text-ipt::-webkit-input-placeholder {
+	color: #bbb;
+}
+.city-search .submit-btn {
+	display: inline-block;
+	width: 0.36rem;
+	height: 0.34rem;
+	background: url(../images/sprite_icon.png) no-repeat -0.4rem -3.48rem;
+	background-size: 1rem 10rem;
+	position: relative;
+	top: 0.14rem;
+	border: none;
+	outline: none;
+}
+.city-box {
+	position: relative;
+	padding-top: 0.3rem;
+	background: #fff;
+	
+}
+.current-city, .hot-city {
+	margin-left: 0.3rem;
+}
+.hot-city {
+	margin-top: 0.3rem;
+}
+.current-city span, .hot-city span {
+	position: relative;
+	display: inline-block;
+	width: 1.48rem;
+	height: 0.56rem;
+	margin: 0 0.24rem 0.3rem 0;
+	border: 1px solid #e6e6e6;
+	font-size: 0.28rem;
+	color: #333333;
+	line-height: 0.56rem;
+	text-align: center;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	overflow: hidden;
+	border-radius: 0.08rem;
+}
+.current-city .map3d:before {
+	content: "";
+	position: absolute;
+	right: 0;
+	top: 0;
+	display: block;
+	width: 0.28rem;
+	height: 0.16rem;
+	background: url(../images/sprite_icon.png) no-repeat 0 -3.22rem;
+	background-size: 1rem 10rem;
+}
+.hot-city span {
+	margin-bottom: 0.25rem;
+}
+.city-box .title {
+	padding-left: 0.3rem;
+	font-size: 0.28rem;
+	color: #666666;
+	line-height: 0.5rem;
+	background: #eeeeee;
+}
+.city-list ul {
+	margin-left: 0.3rem;
+}
+.city-list ul li {
+	font-size: 0.32rem;
+	color: #333333;
+	line-height: 0.79rem;
+	border-bottom: 1px solid #e6e6e6;
+}
+.city-list ul li:last-child {
+	border-bottom: none;
+}
+.city-list ul li.sand:after {
+	content: "";
+	display: inline-block;
+	width: 0.28rem;
+	height: 0.16rem;
+	margin-left: 0.1rem;
+	background: url(../images/sprite_icon.png) no-repeat -0.32rem -3.22rem;
+	background-size: 1rem 10rem;
+}
+.city-anchor {
+	position: fixed;
+	top: 2.2rem;
+	right: 0.05rem;
+	z-index: 1000;
+	width: 0.3rem;
+}
+.city-anchor span {
+	display: block;
+	font-size: 0.26rem;
+	color: #555555;
+	line-height: 0.38rem;
+	text-align: center;
+}
+.letter-style {
+	display: none;
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	margin-left: -0.55rem;
+	margin-top: -0.55rem;
+	width: 1.1rem;
+	height: 1.1rem;
+	line-height: 1.1rem;
+	text-align: center;
+	color: #fff;
+	font-size: 0.45rem;
+	background: rgba(0,0,0,.5);
+	border-radius: 3px;
+}

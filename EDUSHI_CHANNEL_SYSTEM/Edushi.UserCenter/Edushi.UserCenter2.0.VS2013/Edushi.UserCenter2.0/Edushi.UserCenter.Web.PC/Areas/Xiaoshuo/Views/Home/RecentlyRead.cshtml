@@ -1,0 +1,170 @@
+﻿@model    Edushi.UserCenter.Web.PC.Models.UserCenterBookList
+@using Edushi.Common
+@{
+    ViewBag.Title = "最近阅读-E都市";
+    var imgDomain = Common.GetConfigString("UserHeadPic");
+}
+
+<div class="main">
+    <div class="title">
+        <h1>最近阅读</h1>
+        <div class="option">
+            <span class="sort" onclick="states.sort=states.sort?false:true"></span>
+            <span class="del" onclick="states.del=states.del?false:true"></span>
+        </div>
+    </div>
+    <ul class="list recentlyread">
+        <li v-for="item in bookRackList">
+            <a class="img">
+                <img v-bind:src="item.CoverImage">
+            </a>
+            <div class="text">
+                <a v-bind:href="item.Href" class="name">{{item.Name}}</a>
+                <div class="info">
+                    <span class="author">{{item.Author}}</span>
+                    <span>{{item.Status}}</span>
+                    <span class="size">{{(item.wordNum / 10000).toFixed(2)}}</span>
+                    <span class="category">{{item.CategoryName}}</span>
+                </div>
+                <div class="tips">更新至[{{item.ChapterNum}}]章</div>
+            </div>
+            <span class="button" v-on:click="handler(states.del,item.ID,item.BooKID,item.SourceBookId,item.Name,item.CategoryName,item.category1ID,item.category2ID)"></span>
+        </li>
+    </ul>
+</div>
+
+<div class="layer-box">
+    <div class="layer del">
+        <div class="content">
+            <p>是否确定删除?</p>
+        </div>
+        <div class="buttons">
+            <span class="cancel" onclick="states.del=true">取消</span>
+            <span class="del">删除</span>
+        </div>
+    </div>
+</div>
+
+<script>
+    var datas = new Vue({
+        el: '#app',
+        data: {
+            bookRackList: [{}],
+            userInfo: {},
+            count: 0
+        },
+        created: function () {
+            this.getBookRackList()
+        },
+        methods: {
+            handler: function (status, id, bookid, sourceId, name, categoryName, category1, category2) {
+                if (status) { // 删除
+                    $('.layer-box, .layer.del').show()
+                    $(".cancel").click(function () {
+                        $(".layer-box, .layer.del").hide()
+                    })
+                    $(".layer-box .layer.del .del").click(function () {
+                        $(".layer-box, .layer.del").hide()
+                        datas.delCurrtyRecord(bookid)
+                    })
+                } else {
+                    this.goReadBook(id, sourceId, name, categoryName, category1, category2)
+                }
+            },
+            delCurrtyRecord: function (NB_ID) {
+                $.ajax({
+                    type: "POST",
+                    url: "@Url.Content("~/xiaoshuo/deleteRecord.html")",
+                    data: { BooK_ID: NB_ID, flag: 2 },
+                    success: function (data) {
+                        datas.getBookRackList()
+                    },
+                    error: function (data) {
+                        //console.log(data);
+                    }
+                })
+            },
+            goReadBook: function (id, sourceId, name, categoryName, category1, category2) {
+                var entity = {
+                    BookID: id,
+                    ChapterID: 1,
+                }
+                var obj = { bookName: name, categoryName: categoryName, category1: category1, category2: category2 }
+                var str = JSON.stringify(obj)
+                this.addReadRecord(entity)
+                window.location.href = "http://xiaoshuo.edushi.com/info/read.html?BookId=" + sourceId + "&chapter=1" + "&descript=" + escape(str)
+            },
+            addReadRecord: function (entity) {
+                $.ajax({
+                    url: "@Url.Content("~/xiaoshuo/readRecord.html")",
+                    type: 'post',
+                    async: true,
+                    data: { "BookID": entity.BookID, "ChapterID": entity.ChapterID },
+                    success: function (response) {
+                    }
+                })
+            },
+            // 我的书架
+            getBookRackList: function () {
+                $.ajax({
+                    type: "POST",
+                    url: "@Url.Content("~/xiaoshuo/getReadRecordList.html")",
+                    success: function (data) {
+                        if (data.BookList != null ) {
+                            datas.bookRackList = data.BookList
+                            datas.count = data.BookList.length
+                        }
+                        $('.recentlyread').show()
+                        $('.recentlyread').attr("data-number", datas.count)
+                    },
+                    error: function (data) {
+                        console.log(data);
+                    }
+                })
+            },
+        }
+    })
+    var states = {
+        //删除状态，允许布尔值、数字和数组，默认为false，
+        //当值为true时列表右边的按钮从 开始阅读 变成 删除，并具备删除功能
+        //当值为数字或数组时显示删除弹层，这里的值是要删除列表序数，暂时只做了单项删除功能
+        del: false,
+        //上一个是控制显示删除的界面，这个是执行删除操作，赋值即删除,值同样为列表序数，删除成功后重置为false
+        deleteRecord: false,
+        //列表数据，赋值后将数据渲染为列表
+        list: [],
+        //true为升序，false为降序
+        sort: true
+    }
+    createState('sort', function (data) {
+        data
+        ? $('.option .sort').addClass('shengxu')
+        : $('.option .sort').removeClass('shengxu')
+
+        datas.bookRackList = datas.bookRackList.reverse()
+
+    })
+    createState('del', function (index) {
+        index === 0 || index
+        ? $('.list, .option').addClass('del')
+        : $('.list, .option').removeClass('del')
+
+        index.constructor == Number || index.constructor == Array
+        ? $('.layer-box, .layer.del').addClass('show')
+        : $('.layer-box, .layer.del').removeClass('show')
+    })
+    function createState(name, handle, storage) {
+        var _state = states[name]
+        Object.defineProperty(states, name, {
+            get: function () { return _state },
+            set: function (val) {
+                storage
+                ? _state = window.localStorage['$' + name] = val
+                : _state = val
+                handle(_state)
+            }
+        })
+        states[name] = window.localStorage['$' + name] ? window.localStorage['$' + name] : _state
+    }
+</script>
+

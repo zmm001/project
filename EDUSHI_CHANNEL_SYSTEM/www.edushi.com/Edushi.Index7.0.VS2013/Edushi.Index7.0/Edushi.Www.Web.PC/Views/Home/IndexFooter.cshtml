@@ -1,0 +1,12 @@
+﻿<div class="footer-nav">
+    <div class="wrapper">
+        @Html.Raw(ViewBag.Footer)
+    </div>
+</div>
+<script>
+    $(".footer-sitemap li").each(function () {
+        if ($(this).find("a").length > 11) {
+            $(this).addClass("w40");
+        }
+    });
+</script>

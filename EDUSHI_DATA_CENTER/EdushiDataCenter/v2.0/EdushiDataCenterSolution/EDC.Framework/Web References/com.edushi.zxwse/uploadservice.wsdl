@@ -1,0 +1,551 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://www.edushi.com/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://www.edushi.com/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://www.edushi.com/">
+      <s:element name="UploadPicFileClipByMaxSize">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="bufferData" type="s:base64Binary" />
+            <s:element minOccurs="0" maxOccurs="1" name="sUploadPathAndFileName" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="nMaxSize" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="MaxMode" type="tns:ThumbnailMode" />
+            <s:element minOccurs="1" maxOccurs="1" name="position" type="tns:WaterPositionOptions" />
+            <s:element minOccurs="1" maxOccurs="1" name="nWidth" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="nHeight" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="mode" type="tns:ThumbnailMode" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:simpleType name="ThumbnailMode">
+        <s:restriction base="s:string">
+          <s:enumeration value="HW" />
+          <s:enumeration value="W" />
+          <s:enumeration value="H" />
+          <s:enumeration value="Cut" />
+          <s:enumeration value="Ration" />
+          <s:enumeration value="Fill" />
+        </s:restriction>
+      </s:simpleType>
+      <s:simpleType name="WaterPositionOptions">
+        <s:restriction base="s:string">
+          <s:enumeration value="LeftTop" />
+          <s:enumeration value="RightTop" />
+          <s:enumeration value="Middle" />
+          <s:enumeration value="LeftBottom" />
+          <s:enumeration value="RightBottom" />
+        </s:restriction>
+      </s:simpleType>
+      <s:element name="UploadPicFileClipByMaxSizeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UploadPicFileClipByMaxSizeResult" type="tns:UploadStatus" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:simpleType name="UploadStatus">
+        <s:restriction base="s:string">
+          <s:enumeration value="Success" />
+          <s:enumeration value="Fail" />
+        </s:restriction>
+      </s:simpleType>
+      <s:element name="UploadFile">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="bufferData" type="s:base64Binary" />
+            <s:element minOccurs="0" maxOccurs="1" name="sUploadPathAndFileName" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UploadFileResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UploadFileResult" type="tns:UploadStatus" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UploadPicFile">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="bufferData" type="s:base64Binary" />
+            <s:element minOccurs="0" maxOccurs="1" name="sUploadPathAndFileName" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UploadPicFileResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UploadPicFileResult" type="tns:UploadStatus" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UploadPicFileToWater">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="bufferData" type="s:base64Binary" />
+            <s:element minOccurs="0" maxOccurs="1" name="sUploadPathAndFileName" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="position" type="tns:WaterPositionOptions" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UploadPicFileToWaterResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UploadPicFileToWaterResult" type="tns:UploadStatus" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UploadPicFileToThumbnail">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="bufferData" type="s:base64Binary" />
+            <s:element minOccurs="0" maxOccurs="1" name="sUploadPathAndFileName" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="nWidth" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="nHeight" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="mode" type="tns:ThumbnailMode" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UploadPicFileToThumbnailResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UploadPicFileToThumbnailResult" type="tns:UploadStatus" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UploadPicFileToWaterAndThumbnail">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="bufferData" type="s:base64Binary" />
+            <s:element minOccurs="0" maxOccurs="1" name="sUploadPathAndFileName" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="position" type="tns:WaterPositionOptions" />
+            <s:element minOccurs="1" maxOccurs="1" name="nWidth" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="nHeight" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="mode" type="tns:ThumbnailMode" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UploadPicFileToWaterAndThumbnailResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UploadPicFileToWaterAndThumbnailResult" type="tns:UploadStatus" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ToThumbnail">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sUploadPathAndFileName" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="nWidth" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="nHeight" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="mode" type="tns:ThumbnailMode" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ToThumbnailResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ToThumbnailResult" type="tns:UploadStatus" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteFile">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sUploadPathAndFileName" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteFileResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="DeleteFileResult" type="tns:UploadStatus" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeletePicFile">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sUploadPathAndFileName" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeletePicFileResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="DeletePicFileResult" type="tns:UploadStatus" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteWaterAndThumbnailPicFile">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sUploadPathAndFileName" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteWaterAndThumbnailPicFileResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="DeleteWaterAndThumbnailPicFileResult" type="tns:UploadStatus" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetFilesByDirectory">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sRemotePath" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetFilesByDirectoryResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetFilesByDirectoryResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="UploadPicFileClipByMaxSizeSoapIn">
+    <wsdl:part name="parameters" element="tns:UploadPicFileClipByMaxSize" />
+  </wsdl:message>
+  <wsdl:message name="UploadPicFileClipByMaxSizeSoapOut">
+    <wsdl:part name="parameters" element="tns:UploadPicFileClipByMaxSizeResponse" />
+  </wsdl:message>
+  <wsdl:message name="UploadFileSoapIn">
+    <wsdl:part name="parameters" element="tns:UploadFile" />
+  </wsdl:message>
+  <wsdl:message name="UploadFileSoapOut">
+    <wsdl:part name="parameters" element="tns:UploadFileResponse" />
+  </wsdl:message>
+  <wsdl:message name="UploadPicFileSoapIn">
+    <wsdl:part name="parameters" element="tns:UploadPicFile" />
+  </wsdl:message>
+  <wsdl:message name="UploadPicFileSoapOut">
+    <wsdl:part name="parameters" element="tns:UploadPicFileResponse" />
+  </wsdl:message>
+  <wsdl:message name="UploadPicFileToWaterSoapIn">
+    <wsdl:part name="parameters" element="tns:UploadPicFileToWater" />
+  </wsdl:message>
+  <wsdl:message name="UploadPicFileToWaterSoapOut">
+    <wsdl:part name="parameters" element="tns:UploadPicFileToWaterResponse" />
+  </wsdl:message>
+  <wsdl:message name="UploadPicFileToThumbnailSoapIn">
+    <wsdl:part name="parameters" element="tns:UploadPicFileToThumbnail" />
+  </wsdl:message>
+  <wsdl:message name="UploadPicFileToThumbnailSoapOut">
+    <wsdl:part name="parameters" element="tns:UploadPicFileToThumbnailResponse" />
+  </wsdl:message>
+  <wsdl:message name="UploadPicFileToWaterAndThumbnailSoapIn">
+    <wsdl:part name="parameters" element="tns:UploadPicFileToWaterAndThumbnail" />
+  </wsdl:message>
+  <wsdl:message name="UploadPicFileToWaterAndThumbnailSoapOut">
+    <wsdl:part name="parameters" element="tns:UploadPicFileToWaterAndThumbnailResponse" />
+  </wsdl:message>
+  <wsdl:message name="ToThumbnailSoapIn">
+    <wsdl:part name="parameters" element="tns:ToThumbnail" />
+  </wsdl:message>
+  <wsdl:message name="ToThumbnailSoapOut">
+    <wsdl:part name="parameters" element="tns:ToThumbnailResponse" />
+  </wsdl:message>
+  <wsdl:message name="DeleteFileSoapIn">
+    <wsdl:part name="parameters" element="tns:DeleteFile" />
+  </wsdl:message>
+  <wsdl:message name="DeleteFileSoapOut">
+    <wsdl:part name="parameters" element="tns:DeleteFileResponse" />
+  </wsdl:message>
+  <wsdl:message name="DeletePicFileSoapIn">
+    <wsdl:part name="parameters" element="tns:DeletePicFile" />
+  </wsdl:message>
+  <wsdl:message name="DeletePicFileSoapOut">
+    <wsdl:part name="parameters" element="tns:DeletePicFileResponse" />
+  </wsdl:message>
+  <wsdl:message name="DeleteWaterAndThumbnailPicFileSoapIn">
+    <wsdl:part name="parameters" element="tns:DeleteWaterAndThumbnailPicFile" />
+  </wsdl:message>
+  <wsdl:message name="DeleteWaterAndThumbnailPicFileSoapOut">
+    <wsdl:part name="parameters" element="tns:DeleteWaterAndThumbnailPicFileResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetFilesByDirectorySoapIn">
+    <wsdl:part name="parameters" element="tns:GetFilesByDirectory" />
+  </wsdl:message>
+  <wsdl:message name="GetFilesByDirectorySoapOut">
+    <wsdl:part name="parameters" element="tns:GetFilesByDirectoryResponse" />
+  </wsdl:message>
+  <wsdl:portType name="UploadServiceSoap">
+    <wsdl:operation name="UploadPicFileClipByMaxSize">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">上传图片打水印并生成缩略图(缩略图名称前加小写的英文字母“s”)</wsdl:documentation>
+      <wsdl:input message="tns:UploadPicFileClipByMaxSizeSoapIn" />
+      <wsdl:output message="tns:UploadPicFileClipByMaxSizeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UploadFile">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">上传通用文件（任何文件）</wsdl:documentation>
+      <wsdl:input message="tns:UploadFileSoapIn" />
+      <wsdl:output message="tns:UploadFileSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UploadPicFile">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">上传图片</wsdl:documentation>
+      <wsdl:input message="tns:UploadPicFileSoapIn" />
+      <wsdl:output message="tns:UploadPicFileSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UploadPicFileToWater">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">上传图片打水印</wsdl:documentation>
+      <wsdl:input message="tns:UploadPicFileToWaterSoapIn" />
+      <wsdl:output message="tns:UploadPicFileToWaterSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UploadPicFileToThumbnail">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">上传图片生成缩略图</wsdl:documentation>
+      <wsdl:input message="tns:UploadPicFileToThumbnailSoapIn" />
+      <wsdl:output message="tns:UploadPicFileToThumbnailSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UploadPicFileToWaterAndThumbnail">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">上传图片打水印并生成缩略图(缩略图名称前加小写的英文字母“s”)</wsdl:documentation>
+      <wsdl:input message="tns:UploadPicFileToWaterAndThumbnailSoapIn" />
+      <wsdl:output message="tns:UploadPicFileToWaterAndThumbnailSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ToThumbnail">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">生成缩略图(缩略图名称前加小写的英文字母“s”)</wsdl:documentation>
+      <wsdl:input message="tns:ToThumbnailSoapIn" />
+      <wsdl:output message="tns:ToThumbnailSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteFile">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">删除文件（任何文件）</wsdl:documentation>
+      <wsdl:input message="tns:DeleteFileSoapIn" />
+      <wsdl:output message="tns:DeleteFileSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DeletePicFile">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">删除UploadPicFile、UploadPicFileToWater、UploadPicFileToThumbnail方法上传的图片</wsdl:documentation>
+      <wsdl:input message="tns:DeletePicFileSoapIn" />
+      <wsdl:output message="tns:DeletePicFileSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteWaterAndThumbnailPicFile">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">删除UploadPicFileToWaterAndThumbnail方法上传的图片</wsdl:documentation>
+      <wsdl:input message="tns:DeleteWaterAndThumbnailPicFileSoapIn" />
+      <wsdl:output message="tns:DeleteWaterAndThumbnailPicFileSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetFilesByDirectory">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">获取指定目录的所有文件及目录列表,不包含子目录</wsdl:documentation>
+      <wsdl:input message="tns:GetFilesByDirectorySoapIn" />
+      <wsdl:output message="tns:GetFilesByDirectorySoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="UploadServiceSoap" type="tns:UploadServiceSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="UploadPicFileClipByMaxSize">
+      <soap:operation soapAction="http://www.edushi.com/UploadPicFileClipByMaxSize" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UploadFile">
+      <soap:operation soapAction="http://www.edushi.com/UploadFile" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UploadPicFile">
+      <soap:operation soapAction="http://www.edushi.com/UploadPicFile" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UploadPicFileToWater">
+      <soap:operation soapAction="http://www.edushi.com/UploadPicFileToWater" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UploadPicFileToThumbnail">
+      <soap:operation soapAction="http://www.edushi.com/UploadPicFileToThumbnail" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UploadPicFileToWaterAndThumbnail">
+      <soap:operation soapAction="http://www.edushi.com/UploadPicFileToWaterAndThumbnail" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ToThumbnail">
+      <soap:operation soapAction="http://www.edushi.com/ToThumbnail" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteFile">
+      <soap:operation soapAction="http://www.edushi.com/DeleteFile" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeletePicFile">
+      <soap:operation soapAction="http://www.edushi.com/DeletePicFile" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteWaterAndThumbnailPicFile">
+      <soap:operation soapAction="http://www.edushi.com/DeleteWaterAndThumbnailPicFile" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFilesByDirectory">
+      <soap:operation soapAction="http://www.edushi.com/GetFilesByDirectory" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="UploadServiceSoap12" type="tns:UploadServiceSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="UploadPicFileClipByMaxSize">
+      <soap12:operation soapAction="http://www.edushi.com/UploadPicFileClipByMaxSize" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UploadFile">
+      <soap12:operation soapAction="http://www.edushi.com/UploadFile" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UploadPicFile">
+      <soap12:operation soapAction="http://www.edushi.com/UploadPicFile" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UploadPicFileToWater">
+      <soap12:operation soapAction="http://www.edushi.com/UploadPicFileToWater" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UploadPicFileToThumbnail">
+      <soap12:operation soapAction="http://www.edushi.com/UploadPicFileToThumbnail" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UploadPicFileToWaterAndThumbnail">
+      <soap12:operation soapAction="http://www.edushi.com/UploadPicFileToWaterAndThumbnail" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ToThumbnail">
+      <soap12:operation soapAction="http://www.edushi.com/ToThumbnail" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteFile">
+      <soap12:operation soapAction="http://www.edushi.com/DeleteFile" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeletePicFile">
+      <soap12:operation soapAction="http://www.edushi.com/DeletePicFile" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteWaterAndThumbnailPicFile">
+      <soap12:operation soapAction="http://www.edushi.com/DeleteWaterAndThumbnailPicFile" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFilesByDirectory">
+      <soap12:operation soapAction="http://www.edushi.com/GetFilesByDirectory" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="UploadService">
+    <wsdl:port name="UploadServiceSoap" binding="tns:UploadServiceSoap">
+      <soap:address location="http://zxwse.edushi.com/uploadservice.asmx" />
+    </wsdl:port>
+    <wsdl:port name="UploadServiceSoap12" binding="tns:UploadServiceSoap12">
+      <soap12:address location="http://zxwse.edushi.com/uploadservice.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

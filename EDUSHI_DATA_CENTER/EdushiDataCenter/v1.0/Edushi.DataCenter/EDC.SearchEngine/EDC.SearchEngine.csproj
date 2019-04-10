@@ -1,0 +1,186 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{0196C386-44F6-4D89-8A55-CD241B17CD09}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>EDC.SearchEngine</RootNamespace>
+    <AssemblyName>EDC.SearchEngine</AssemblyName>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>4.0</OldToolsVersion>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>bin\Debug\EDC.SearchEngine.XML</DocumentationFile>
+    <CodeAnalysisRules>
+    </CodeAnalysisRules>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Analysis\ICTCLASAnalyzer.cs" />
+    <Compile Include="Analysis\ICTCLASStopWords.cs" />
+    <Compile Include="Analysis\ICTCLASTokenizer .cs" />
+    <Compile Include="Analysis\ICTCLASContext.cs" />
+    <Compile Include="ANN\AbstractNearson.cs" />
+    <Compile Include="ANN\INearson.cs" />
+    <Compile Include="ANN\INeuralJunction.cs" />
+    <Compile Include="ANN\NearsonNetwork.cs" />
+    <Compile Include="ANN\NeuronType.cs" />
+    <Compile Include="ConstVal.cs" />
+    <Compile Include="Convertor\ConvertorBase.cs" />
+    <Compile Include="Convertor\SortConvertor.cs" />
+    <Compile Include="Convertor\TypeStatConvertor.cs" />
+    <Compile Include="DataProvider\BusRetionBaseProvider.cs" />
+    <Compile Include="DataProvider\Map2DDataProvider.cs" />
+    <Compile Include="DataProvider\IndexUpdateFlagHelper.cs" />
+    <Compile Include="DataProvider\Map6DataProvider.cs" />
+    <Compile Include="DataProvider\MapMergeDataProvider.cs" />
+    <Compile Include="Filter\StandFilter.cs" />
+    <Compile Include="DataProvider\BusDataProvider.cs" />
+    <Compile Include="DataProvider\BizDataProvider.cs" />
+    <Compile Include="DataProvider\KeywordDataProvider.cs" />
+    <Compile Include="DataProvider\TopicDataProvider.cs" />
+    <Compile Include="DataProvider\ProductDataProvider.cs" />
+    <Compile Include="DataProvider\TypeDataProvider.cs" />
+    <Compile Include="DataProvider\YellowPageDataProvider.cs" />
+    <Compile Include="Formula\Expression.cs" />
+    <Compile Include="Formula\FactorOperation.cs" />
+    <Compile Include="Formula\StandFormula.cs" />
+    <Compile Include="Action\DoubleHandler.cs" />
+    <Compile Include="IFormula.cs" />
+    <Compile Include="Index\BuildItem.cs" />
+    <Compile Include="Index\IncrementIndexAdapter.cs" />
+    <Compile Include="IFilter.cs" />
+    <Compile Include="IConvertor.cs" />
+    <Compile Include="Index\AbstractIndexAdapter.cs" />
+    <Compile Include="Index\ThreadPoolIndexAdapter.cs" />
+    <Compile Include="Options\BuildTypeOption.cs" />
+    <Compile Include="Options\RecordStateOPtion.cs" />
+    <Compile Include="SearchParam.cs" />
+    <Compile Include="Reflect\ObjectInterface.cs" />
+    <Compile Include="Reflect\FastActivator.cs" />
+    <Compile Include="Reflect\HashCodeCombiner.cs" />
+    <Compile Include="Reflect\MultiArgObjectFactory.cs" />
+    <Compile Include="Reflect\NoArgsObjectFactory.cs" />
+    <Compile Include="Reflect\ObjectFactoryHelper.cs" />
+    <Compile Include="Search\AbstractSearchAdapter.cs" />
+    <Compile Include="Action\DECodeHandler.cs" />
+    <Compile Include="Convertor\StandConvertor.cs" />
+    <Compile Include="Search\DistributedSearchAdapter.cs" />
+    <Compile Include="DataProvider\EShopDataProvider.cs" />
+    <Compile Include="IIndexable.cs" />
+    <Compile Include="IndexDataProviderFactory.cs" />
+    <Compile Include="IDataProvider.cs" />
+    <Compile Include="ISearchable.cs" />
+    <Compile Include="SearchEngineEventArgs.cs" />
+    <Compile Include="DataProvider\ShopMapDataProvider.cs" />
+    <Compile Include="Index\SingleThreadIndexAdapter.cs" />
+    <Compile Include="Index\IndexUpdate.cs" />
+    <Compile Include="IAction.cs" />
+    <Compile Include="Action\IntHandler.cs" />
+    <Compile Include="DataProvider\LocalDataProvider.cs" />
+    <Compile Include="DataProvider\MapDataProvider.cs" />
+    <Compile Include="Index\MultiThreadIndexAdapter.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Search\StandSearchAdapter.cs" />
+    <Compile Include="SearchEngineCore.cs" />
+    <Compile Include="Index\UpdateConfig.cs" />
+    <Compile Include="Search\StatSearchAdapter.cs" />
+    <Compile Include="Task\CreateIndex.cs" />
+    <Compile Include="Utility\SearchHekper.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\EDC.Framework\EDC.Framework.csproj">
+      <Project>{A2E154FC-DDE6-45B9-82C0-0C2F1307567C}</Project>
+      <Name>EDC.Framework</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Lucene.Net2.3.1\Lucene.Net-2.3.1.csproj">
+      <Project>{371291B1-9AAE-4D38-B0C3-6E08604E0F14}</Project>
+      <Name>Lucene.Net-2.3.1</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SharpICTCLAS\SharpICTCLAS.csproj">
+      <Project>{E27DB382-5785-40F9-B671-197FD5B77569}</Project>
+      <Name>SharpICTCLAS</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ClassDiagram1.cd" />
+    <None Include="Migrated rules for EDC.SearchEngine.ruleset" />
+    <None Include="搜索配置文件说明.doc" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Distribute\" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

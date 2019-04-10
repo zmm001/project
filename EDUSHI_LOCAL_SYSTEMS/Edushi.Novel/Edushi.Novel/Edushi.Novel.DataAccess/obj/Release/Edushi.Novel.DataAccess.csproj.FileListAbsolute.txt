@@ -1,0 +1,17 @@
+E:\TFS192.168.100.212\EDUSHI_LOCAL_SYSTEMS\Edushi.Novel\Edushi.Novel\Edushi.Novel.DataAccess\bin\Release\Edushi.Novel.DataAccess.dll
+E:\TFS192.168.100.212\EDUSHI_LOCAL_SYSTEMS\Edushi.Novel\Edushi.Novel\Edushi.Novel.DataAccess\bin\Release\Edushi.Novel.DataAccess.pdb
+E:\TFS192.168.100.212\EDUSHI_LOCAL_SYSTEMS\Edushi.Novel\Edushi.Novel\Edushi.Novel.DataAccess\bin\Release\Edushi.MongoDB_2115.dll
+E:\TFS192.168.100.212\EDUSHI_LOCAL_SYSTEMS\Edushi.Novel\Edushi.Novel\Edushi.Novel.DataAccess\bin\Release\Edushi.Novel.Common.dll
+E:\TFS192.168.100.212\EDUSHI_LOCAL_SYSTEMS\Edushi.Novel\Edushi.Novel\Edushi.Novel.DataAccess\bin\Release\Edushi.Novel.Entity.dll
+E:\TFS192.168.100.212\EDUSHI_LOCAL_SYSTEMS\Edushi.Novel\Edushi.Novel\Edushi.Novel.DataAccess\bin\Release\Edushi.User.dll
+E:\TFS192.168.100.212\EDUSHI_LOCAL_SYSTEMS\Edushi.Novel\Edushi.Novel\Edushi.Novel.DataAccess\bin\Release\Newtonsoft.Json.dll
+E:\TFS192.168.100.212\EDUSHI_LOCAL_SYSTEMS\Edushi.Novel\Edushi.Novel\Edushi.Novel.DataAccess\bin\Release\log4net.dll
+E:\TFS192.168.100.212\EDUSHI_LOCAL_SYSTEMS\Edushi.Novel\Edushi.Novel\Edushi.Novel.DataAccess\bin\Release\Edushi.Novel.Cache.dll
+E:\TFS192.168.100.212\EDUSHI_LOCAL_SYSTEMS\Edushi.Novel\Edushi.Novel\Edushi.Novel.DataAccess\bin\Release\MongoDB.Bson.dll
+E:\TFS192.168.100.212\EDUSHI_LOCAL_SYSTEMS\Edushi.Novel\Edushi.Novel\Edushi.Novel.DataAccess\bin\Release\Edushi.Novel.Common.pdb
+E:\TFS192.168.100.212\EDUSHI_LOCAL_SYSTEMS\Edushi.Novel\Edushi.Novel\Edushi.Novel.DataAccess\bin\Release\Edushi.Novel.Entity.pdb
+E:\TFS192.168.100.212\EDUSHI_LOCAL_SYSTEMS\Edushi.Novel\Edushi.Novel\Edushi.Novel.DataAccess\bin\Release\Newtonsoft.Json.xml
+E:\TFS192.168.100.212\EDUSHI_LOCAL_SYSTEMS\Edushi.Novel\Edushi.Novel\Edushi.Novel.DataAccess\bin\Release\Edushi.Novel.Cache.pdb
+E:\TFS192.168.100.212\EDUSHI_LOCAL_SYSTEMS\Edushi.Novel\Edushi.Novel\Edushi.Novel.DataAccess\obj\Release\Edushi.Novel.DataAccess.csprojResolveAssemblyReference.cache
+E:\TFS192.168.100.212\EDUSHI_LOCAL_SYSTEMS\Edushi.Novel\Edushi.Novel\Edushi.Novel.DataAccess\obj\Release\Edushi.Novel.DataAccess.dll
+E:\TFS192.168.100.212\EDUSHI_LOCAL_SYSTEMS\Edushi.Novel\Edushi.Novel\Edushi.Novel.DataAccess\obj\Release\Edushi.Novel.DataAccess.pdb

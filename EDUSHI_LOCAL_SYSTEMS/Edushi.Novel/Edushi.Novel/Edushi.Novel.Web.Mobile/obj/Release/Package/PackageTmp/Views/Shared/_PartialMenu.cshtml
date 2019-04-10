@@ -1,0 +1,51 @@
+﻿
+<nav class="all-sort js-visib">
+    <a href="@Url.Content("~")" class="home">首页</a>
+    <a href="@Url.Content("~/info/search.html")" class="search">搜索</a>
+    <a onclick="bookStore()" class="book">书架</a>
+    <a onclick="logins()" class="my">我的</a>
+    <a href="@Url.Content("~/info/bookstore.html")" class="sort">书库</a>
+    <a href="@Url.Content("~/info/rank.html")" class="rank">排行</a>
+    <a href="@Url.Content("~/info/male.html")" class="male">男频</a>
+    <a href="@Url.Content("~/info/female.html")" class="female">女频</a>
+</nav>
+<script>
+    function logins() {
+        $.ajax({
+            type: "get",
+            url: "/Home/IsLogin",
+            success: function (data) {
+                if (data == "OK") {
+                    //datas.loginMsg = data;
+                    window.location.href = "http://m.edushi.com/user/Xiaoshuo/Home/Personal";
+                }
+                else {
+                    var backUrl = escape(window.location.href);
+                    window.location.href = "http://m.edushi.com/user/Login.html?BackUrl=" + backUrl;
+                }
+            },
+            error: function (data) {
+                console.log(data);
+            }
+        })
+    }
+    function bookStore() {
+        $.ajax({
+            type: "get",
+            url: "/Home/IsLogin",
+            success: function (data) {
+                if (data == "OK") {
+                    //datas.loginMsg = data;
+                    window.location.href = "http://m.edushi.com/user/xiaoshuo/mybookrack.html";
+                }
+                else {
+                    var backUrl = escape(window.location.href);
+                    window.location.href = "http://m.edushi.com/user/Login.html?BackUrl=" + backUrl;
+                }
+            },
+            error: function (data) {
+                console.log(data);
+            }
+        })
+    }
+</script>

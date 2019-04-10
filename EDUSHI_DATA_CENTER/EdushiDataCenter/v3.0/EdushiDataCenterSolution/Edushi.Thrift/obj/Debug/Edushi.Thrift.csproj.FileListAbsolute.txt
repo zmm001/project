@@ -1,0 +1,4 @@
+E:\TFS192.168.100.212\EDUSHI_DATA_CENTER\EdushiDataCenter\v3.0\EdushiDataCenterSolution\Edushi.Thrift\bin\Debug\Edushi.Thrift.dll
+E:\TFS192.168.100.212\EDUSHI_DATA_CENTER\EdushiDataCenter\v3.0\EdushiDataCenterSolution\Edushi.Thrift\bin\Debug\Edushi.Thrift.pdb
+E:\TFS192.168.100.212\EDUSHI_DATA_CENTER\EdushiDataCenter\v3.0\EdushiDataCenterSolution\Edushi.Thrift\obj\Debug\Edushi.Thrift.dll
+E:\TFS192.168.100.212\EDUSHI_DATA_CENTER\EdushiDataCenter\v3.0\EdushiDataCenterSolution\Edushi.Thrift\obj\Debug\Edushi.Thrift.pdb

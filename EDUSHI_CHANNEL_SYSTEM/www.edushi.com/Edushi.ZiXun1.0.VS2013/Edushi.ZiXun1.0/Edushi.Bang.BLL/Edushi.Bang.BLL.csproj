@@ -1,0 +1,90 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{DE29DC88-4C1F-45C5-8080-9DADFE768F5B}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Edushi.Bang.BLL</RootNamespace>
+    <AssemblyName>Edushi.Bang.BLL</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Caching" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="InfoArticleBLL.cs" />
+    <Compile Include="InfoArticleCommentBLL.cs" />
+    <Compile Include="InfoSubjectBLL.cs" />
+    <Compile Include="InfoTopDayBLL.cs" />
+    <Compile Include="InfoTypeBLL.cs" />
+    <Compile Include="JuMiInfoArticleBLL.cs" />
+    <Compile Include="PicArticleBLL.cs" />
+    <Compile Include="PicTypeBLL.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RelationRecommendBLL.cs" />
+    <Compile Include="RenWuInfoArticleBLL.cs" />
+    <Compile Include="TopicArticleBLL.cs" />
+    <Compile Include="TopicBLL.cs" />
+    <Compile Include="TopicTypeBLL.cs" />
+    <Compile Include="UserCommentBLL.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Edushi.Bang.DALFactory\Edushi.Bang.DALFactory.csproj">
+      <Project>{D583D022-C48B-4AD6-A2BB-985E6A5BFF80}</Project>
+      <Name>Edushi.Bang.DALFactory</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Edushi.Bang.IDAL\Edushi.Bang.IDAL.csproj">
+      <Project>{35aa5df1-4c3b-42f6-8f4b-cc4ca9774e16}</Project>
+      <Name>Edushi.Bang.IDAL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Edushi.Bang.Model\Edushi.Bang.Model.csproj">
+      <Project>{1E4215E2-46C9-4E03-ACA2-93A02BF3D520}</Project>
+      <Name>Edushi.Bang.Model</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Edushi.Bang.MongoDBDAL\Edushi.Bang.MongoDBDAL.csproj">
+      <Project>{6b5e3d76-cc27-4903-b186-971a75d0f3c8}</Project>
+      <Name>Edushi.Bang.MongoDBDAL</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

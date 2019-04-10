@@ -1,0 +1,119 @@
+﻿@{
+    ViewBag.Title = "Line";
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" id="viewport" content="width=device-width,initial-scale=1.0, maximum-scale=1.0,minimum-scale=1.0,user-scalable=no" />
+    <link href="~/Content/common.css" rel="stylesheet" />
+    <link href="~/Content/navigation.css" rel="stylesheet" />
+    <script type="text/javascript" src="https://webapi.amap.com/maps?v=1.4.4&key=e8c07f64d6c9803cff6f05258b065221&plugin=AMap.Driving,AMap.Transfer,AMap.Walking,AMap.RangingTool,AMap.Autocomplete,AMap.PlaceSearch,AMap.AdvancedInfoWindow,AMap.Geolocation"></script>
+    <script>
+        document.documentElement.style.fontSize = 100 * ((document.documentElement.clientWidth) / 750) + "px";
+    </script>
+    <script src="~/Scripts/jquery-1.8.3.min.js"></script>
+</head>
+<body>
+    <section class="top-box">
+        <div class="top-nav clearfix">
+            <a class="fl eds-logo" href="http://m.edushi.com/"></a>
+            <a href="/Wap" class="fl map-logo"></a>
+            <a  class="fl city" id="currtyCity"><span>杭州</span></a>
+            <div class="fr">
+                <a href="/Wap" class="fl map">地图</a>
+                <a href="/wap/line" class="fl route current">路线</a>
+            </div>
+        </div>
+    </section>
+    <section class="travel-mode">
+        <ul class="travel-tab">
+            <li class="car on"><span></span></li>
+            <li class="bus"><span></span></li>
+            <li class="walk"><span></span></li>
+        </ul>
+        <div class="line-search clearfix">
+            <div class="fl dir-exchange"></div>
+            <div class="fl line-search-form">
+                <div class="line-search-ipt">
+                    <span class="start"></span>
+                    <input type="text" id="start" name="" placeholder="输入起点" class="start-point">
+                    <span class="del-item"></span>
+                </div>
+                <div class="line-search-ipt">
+                    <span class="end"></span>
+                    <input type="text" id="end" name="" placeholder="输入终点" value="" class="end-point">
+                    <span class="del-item"></span>
+                </div>
+            </div>
+            <div class="fl dir-submit">搜索</div>
+        </div>
+    </section>
+    <script type="text/javascript">
+        $(function () {
+            if (getQueryString('endpoint')) {
+                $('#end').val(unescape(getQueryString('endpoint')));
+            }
+            //终点与起点转换
+            $(".dir-exchange").click(function () {
+                var startVal = $(".start-point").val();
+                var endVal = $(".end-point").val();
+                $(".start-point").val(endVal);
+                $(".end-point").val(startVal);
+            });
+
+            $("#currtyCity").click(function() {
+                window.location.href = "/wap/city?name=" + escape($('#currtyCity').text());
+            });
+
+            $(".line-search-ipt input").keydown(function () {
+                $(this).next(".del-item").show();
+            });
+            $(".end-point").click(function () {
+                if ($(this).val()) {
+                    $(this).next(".del-item").show();
+                } else {
+                    return;
+                }
+            });
+            $(".line-search-ipt input").bind("input propertychange", function () {
+                var val = $(this).val();
+                if (val == "") {
+                    $(this).next(".del-item").hide();
+                }
+            });
+            $(".line-search-ipt .del-item").click(function () {
+                $(this).prev("input").val("");
+                $(this).hide();
+            });
+
+            $(".travel-tab li").click(function () {
+                $(this).addClass("on").siblings().removeClass("on");               
+            });
+            $(".dir-submit").click(function () {
+                var start = $('#start').val().trim();
+                var end = $('#end').val().trim();
+                if (start == '') { alert('请输入起点') } else if (end == '') { alert(alert('请输入终点')) } else {
+                    if ($(".travel-tab .bus").hasClass("on")) {
+                        window.location.href = "/wap/Bus_list?start=" + escape(start) + "&end=" + escape(end) + "&currCity=" + escape($('#currtyCity').text());
+                    } else if ($(".travel-tab .walk").hasClass("on")) {                                                                         
+                        window.location.href = "/wap/?action=3&start=" + escape(start) + "&end=" + escape(end)+"&isLocation=1";
+                    } else {                                                                                                                                    
+                        window.location.href = "/wap/?action=1&start=" + escape(start) + "&end=" + escape(end)+"&isLocation=1";
+                    }
+                }
+            });
+            AMap.plugin(['AMap.Autocomplete'], function () {
+                var city = $('#currtyCity').text();
+                var start = createAutoComplete('start',city);
+                var end = createAutoComplete('end',city);
+            });
+            function createAutoComplete(inputNameID,city) {
+                return new AMap.Autocomplete({ input: inputNameID, city:city,outPutDirAuto: false });
+            }
+        })
+    </script>
+    <script src="~/Scripts/common.js"></script>
+    
+</body>
+</html>

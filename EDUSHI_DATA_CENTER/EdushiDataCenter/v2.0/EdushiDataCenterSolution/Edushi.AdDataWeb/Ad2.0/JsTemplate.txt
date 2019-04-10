@@ -1,0 +1,125 @@
+﻿
+document.write('<div id="edushi_ad_HotFeature" style="position:relative;width:{$Width}px; height:{$Height}px; overflow:hidden; margin:0 2px;" onmouseover="if(_Repeat){_Repeat.ClearTimer();}" onmouseout="if(_Repeat){_Repeat.Start();}">');
+document.write('    <a><img id="edushi_ad_ImageRepeat" border="0" width="{$Width}" height="{$Height}"/></a>');
+document.write('</div>');
+function ImageRepeat(arrAdData)//广告轮换
+{
+    this.Count = arrAdData.length;
+    this.Timer = null;
+    this.CurrentImg = -1;    //当前图片数组下标
+    this.TransType = 'reveal'; // 'reveal' | 'blend' 
+    this.DurationTime = 2000; //毫秒
+    this.Transition = 23; //滤镜总数
+    this.IntermissionTime = 6000; //毫秒 间隔   
+    this.ImgData = arrAdData;        
+    this.DoFilter = function () //滤镜的启动 
+    {     
+        if(this.CurrentImg == -1)
+        {
+            document.getElementById('0').style.color = 'White';
+            document.getElementById('0').style.backgroundColor = '#fc6602';            
+        }
+        else
+        {
+            document.getElementById(this.CurrentImg).style.color = 'White';
+            document.getElementById(this.CurrentImg).style.backgroundColor = '#fc6602';            
+        }                    
+     
+        if( this.CurrentImg == (this.ImgData.length - 1)) { 
+            this.CurrentImg = -1;                 
+        }
+        if(document.all){ 
+            with(document.getElementById('edushi_ad_ImageRepeat')) { 
+                if(this.TransType == 'reveal') { 
+                    filters(0).transition = this.Transition; 
+                } 
+                this.CurrentImg++;
+                filters(0).apply(); 
+                src = this.ImgData[this.CurrentImg].ImagePath; 
+                filters(0).play();
+            } 
+        } 
+        else{
+            this.CurrentImg++; 
+            document.getElementById('edushi_ad_ImageRepeat').src = this.ImgData[this.CurrentImg].ImagePath;
+        }
+        document.getElementById('edushi_ad_ImageRepeat').parentNode.target = this.ImgData[this.CurrentImg].Target;
+        document.getElementById('edushi_ad_ImageRepeat').parentNode.href = this.ImgData[this.CurrentImg].LinkUrl;
+        document.getElementById(this.CurrentImg).style.color = '#fc6602'; 
+        document.getElementById(this.CurrentImg).style.backgroundColor = 'White';       
+    };
+    this.ClearTimer = function()
+    {
+        window.clearInterval(this.Timer); 
+    };
+    this.Start = function()
+    {
+        var repeat = this;
+        this.Timer = window.setInterval(function ()
+        {
+            repeat.DoFilter(); 
+        },this.IntermissionTime); 
+    };
+    //构造
+    (function()
+    { 
+        var repeat = this;           
+        for(var i=0; i<this.ImgData.length; i++)
+        {
+            if(i==0)
+            {
+                document.getElementById('edushi_ad_HotFeature').innerHTML += '<span id="'+i+'" onclick="spanClick(this.id)" style="font-size:12px;cursor:pointer;color:#fc6602;border:solid 1px #f0510a;padding:2px 4px;position:absolute;bottom:10px;right:'+(10+(this.ImgData.length-i-1)*20)+'px;background-color:#fffff;font-family:宋体">'+(i+1)+'</span>';
+            }
+            else
+            {
+                document.getElementById('edushi_ad_HotFeature').innerHTML += '<span id="'+i+'" onclick="spanClick(this.id)" style="font-size:12px;cursor:pointer;color:White;border:solid 1px #f0510a;padding:2px 4px;position:absolute;bottom:10px;right:'+(10+(this.ImgData.length-i-1)*20)+'px;background-color:#fc6602;font-family:宋体">'+(i+1)+'</span>';
+            }
+        }                
+
+        if(document.all)
+        {
+            with(document.getElementById('edushi_ad_ImageRepeat')){ 
+               style.filter = (this.TransType == 'reveal')? 'revealTrans':'blendTrans'; 
+               style.filter.duration = this.DurationTime; 
+               style.filter.transition = this.Transition; 
+             } 
+        }
+        this.DoFilter();            
+        this.Start();
+    }).call(this);
+}
+function spanClick(id) 
+{
+    for(var i=0; i<_Repeat.ImgData.length;i++)
+    {
+        if(i==parseInt(id))
+        {
+            document.getElementById(i.toString()).style.color = '#fc6602'; 
+            document.getElementById(i.toString()).style.backgroundColor = 'White';  
+        }
+        else
+        {
+            document.getElementById(i.toString()).style.color = 'White';
+            document.getElementById(i.toString()).style.backgroundColor = '#fc6602';
+        }
+    }
+    _Repeat.CurrentImg = parseInt(id);
+     if(document.all){ 
+        with(document.getElementById('edushi_ad_ImageRepeat')) { 
+            if(_Repeat.TransType == 'reveal') { 
+                filters(0).transition = _Repeat.Transition; 
+            }                 
+            filters(0).apply(); 
+            src = _Repeat.ImgData[_Repeat.CurrentImg].ImagePath; 
+            filters(0).play();
+        } 
+    } 
+    else{
+        document.getElementById('edushi_ad_ImageRepeat').src = _Repeat.ImgData[_Repeat.CurrentImg].ImagePath;
+    }
+    document.getElementById('edushi_ad_ImageRepeat').parentNode.target = _Repeat.ImgData[_Repeat.CurrentImg].Target;
+    document.getElementById('edushi_ad_ImageRepeat').parentNode.href = _Repeat.ImgData[_Repeat.CurrentImg].LinkUrl;
+    document.getElementById('edushi_ad_ImageRepeat').parentNode.title = _Repeat.ImgData[_Repeat.CurrentImg].Alt;
+}
+{$AdDataJson}
+var _Repeat = new ImageRepeat(_EdushiAd);

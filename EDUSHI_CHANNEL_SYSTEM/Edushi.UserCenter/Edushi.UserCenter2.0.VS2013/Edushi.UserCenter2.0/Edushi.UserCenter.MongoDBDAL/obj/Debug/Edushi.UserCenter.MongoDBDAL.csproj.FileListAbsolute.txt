@@ -1,0 +1,14 @@
+E:\TFS192.168.100.212\EDUSHI_CHANNEL_SYSTEM\Edushi.UserCenter\Edushi.UserCenter2.0.VS2013\Edushi.UserCenter2.0\Edushi.UserCenter.MongoDBDAL\bin\Debug\Edushi.UserCenter.MongoDBDAL.dll
+E:\TFS192.168.100.212\EDUSHI_CHANNEL_SYSTEM\Edushi.UserCenter\Edushi.UserCenter2.0.VS2013\Edushi.UserCenter2.0\Edushi.UserCenter.MongoDBDAL\bin\Debug\Edushi.UserCenter.MongoDBDAL.pdb
+E:\TFS192.168.100.212\EDUSHI_CHANNEL_SYSTEM\Edushi.UserCenter\Edushi.UserCenter2.0.VS2013\Edushi.UserCenter2.0\Edushi.UserCenter.MongoDBDAL\bin\Debug\Edushi.Common.dll
+E:\TFS192.168.100.212\EDUSHI_CHANNEL_SYSTEM\Edushi.UserCenter\Edushi.UserCenter2.0.VS2013\Edushi.UserCenter2.0\Edushi.UserCenter.MongoDBDAL\bin\Debug\Edushi.MongoDB.dll
+E:\TFS192.168.100.212\EDUSHI_CHANNEL_SYSTEM\Edushi.UserCenter\Edushi.UserCenter2.0.VS2013\Edushi.UserCenter2.0\Edushi.UserCenter.MongoDBDAL\bin\Debug\Edushi.UserCenter.Model.dll
+E:\TFS192.168.100.212\EDUSHI_CHANNEL_SYSTEM\Edushi.UserCenter\Edushi.UserCenter2.0.VS2013\Edushi.UserCenter2.0\Edushi.UserCenter.MongoDBDAL\bin\Debug\MongoDB.Bson.dll
+E:\TFS192.168.100.212\EDUSHI_CHANNEL_SYSTEM\Edushi.UserCenter\Edushi.UserCenter2.0.VS2013\Edushi.UserCenter2.0\Edushi.UserCenter.MongoDBDAL\bin\Debug\MongoDB.Driver.dll
+E:\TFS192.168.100.212\EDUSHI_CHANNEL_SYSTEM\Edushi.UserCenter\Edushi.UserCenter2.0.VS2013\Edushi.UserCenter2.0\Edushi.UserCenter.MongoDBDAL\bin\Debug\ThoughtWorks.QRCode.dll
+E:\TFS192.168.100.212\EDUSHI_CHANNEL_SYSTEM\Edushi.UserCenter\Edushi.UserCenter2.0.VS2013\Edushi.UserCenter2.0\Edushi.UserCenter.MongoDBDAL\bin\Debug\Edushi.Common.pdb
+E:\TFS192.168.100.212\EDUSHI_CHANNEL_SYSTEM\Edushi.UserCenter\Edushi.UserCenter2.0.VS2013\Edushi.UserCenter2.0\Edushi.UserCenter.MongoDBDAL\bin\Debug\Edushi.MongoDB.pdb
+E:\TFS192.168.100.212\EDUSHI_CHANNEL_SYSTEM\Edushi.UserCenter\Edushi.UserCenter2.0.VS2013\Edushi.UserCenter2.0\Edushi.UserCenter.MongoDBDAL\bin\Debug\Edushi.UserCenter.Model.pdb
+E:\TFS192.168.100.212\EDUSHI_CHANNEL_SYSTEM\Edushi.UserCenter\Edushi.UserCenter2.0.VS2013\Edushi.UserCenter2.0\Edushi.UserCenter.MongoDBDAL\obj\Debug\Edushi.UserCenter.MongoDBDAL.csprojResolveAssemblyReference.cache
+E:\TFS192.168.100.212\EDUSHI_CHANNEL_SYSTEM\Edushi.UserCenter\Edushi.UserCenter2.0.VS2013\Edushi.UserCenter2.0\Edushi.UserCenter.MongoDBDAL\obj\Debug\Edushi.UserCenter.MongoDBDAL.dll
+E:\TFS192.168.100.212\EDUSHI_CHANNEL_SYSTEM\Edushi.UserCenter\Edushi.UserCenter2.0.VS2013\Edushi.UserCenter2.0\Edushi.UserCenter.MongoDBDAL\obj\Debug\Edushi.UserCenter.MongoDBDAL.pdb

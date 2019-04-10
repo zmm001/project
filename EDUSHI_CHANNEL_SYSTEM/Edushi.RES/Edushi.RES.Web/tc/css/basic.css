@@ -1,0 +1,180 @@
+@charset "utf-8";
+/* CSS Document */
+*{ list-style:none; margin:0; padding:0; font-family:Arial, Helvetica, sans-serif, "宋体"; text-decoration:none;}
+img{ border:none}
+dl,dt,dd,ul,li{ display:block}
+br,.clear{ clear:both; height:0px;line-height: 0px; overflow:hidden;}
+.tyl{ color:#f60;}
+.tred{ color:#f00; font-weight:bold;}
+.t12{ font-size:12px;}
+.tgral{ color:#666;}
+h1{font-size:18px;font-family:"微软雅黑";font-weight:normal;}
+
+
+.container{ width:960px; margin:0 auto; clear:both; font-size:14px;}
+#topbar_basic{height:40px; background:#f90; font-size:12px; line-height:40px;}
+#topbar_basic #logo{ background:url(../images/sprite.png) no-repeat 0 -60px; width:120px; height:40px; float:left;}
+#topbar_basic #city{ float:left; padding:0 10px;font-size:12px; }
+#topbar_basic #menu{ font-size:12px; line-height:40px; float:left; font-weight:bold;position: relative; }
+#topbar_basic #menu .moremenu{ width:60px; position: absolute; z-index:11;padding:5px 0; background:#f90; right:-12px; top:14px; border:1px solid #f90;}
+#topbar_basic #menu .moremenu a{ display:block; line-height:30px; margin:0; padding:0 5px; }
+#topbar_basic #menu .moremenu a:hover{ color:#f60; background:#fff}
+#topbar_basic #menu a,#topbar_basic #user a{ margin:0 6px;}
+#topbar_basic a{ color:#fff;}
+#topbar_basic #user{float: right; width:210px; text-align:right; color:#ff0;font-size:12px; }
+
+ #city{ float:left; position:relative; }
+ #city .citylist{line-height:24px;position:absolute; width:120px; background:#fff; left: 10px; top: 30px; border:1px solid #ccc; padding:10px;}
+ #city .citylist dt{ font-family:Arial; font-weight:bold; font-size:14px; color:#09f; float:left; width:20px;}
+ #city .citylist dd{ float:left; width:100px;}
+ #city .citylist dd a{ display:inline-block;color:#666;margin-right:5px;}
+ #city .citylist dd a:hover{ color:#36f; text-decoration:underline}
+ #city .citylist a.close{position:absolute;right:5px;top:2px;cursor:pointer;}
+
+#navmb{ margin:20px auto 15px auto; color:#333;}
+#navmb a{ color:#666;}
+#navmb a.freefb{ width:100px; height:30px; display:block; margin-top:-8px; background:url(../images/sprite.png) no-repeat 0 -190px; float:right; font-size:14px; font-weight:bold; color:#fff; line-height:30px; text-align:center}
+#navmb .on{ font-weight:bold; color:#f60}
+
+.nav_menu{ border:1px solid #ddd; border-top:2px solid #ffcb7f; width:930px; padding:15px; background:#fffbf3; margin-bottom:20px;}
+.nav_menu dl{ float:left; width:290px; padding:0 18px 20px 0; line-height:24px;}
+.nav_menu dl dt{ font-weight:bold;}
+.nav_menu dl dt a:hover{ text-decoration: underline;}
+.nav_menu dl dd{ font-size:12px;}
+.nav_menu dl dd a{ color:#666; margin-right:8px;}
+.nav_menu .searchbar{ clear:both;height:30px;}
+.nav_menu .searchbar input{ margin-right:5px;}
+.nav_menu .searchbar .box{float:left; border:1px solid #ccc; width:280px; height:20px;padding:2px 5px; font-size:12px;}
+.nav_menu .searchbar .btn1{float:left; width:68px; height:26px; border:0 none; background:url(../images/sprite.png) no-repeat 0 -110px; cursor:pointer;}
+.nav_menu .searchbar .btn2{ width:68px; height:26px; border:0 none; background:url(../images/sprite.png) no-repeat -72px -110px;}
+
+.listbox dl{ width:470px; float:left; margin-bottom:20px;}
+.box1{padding-right:20px;}
+.listbox dl dt{ padding-bottom:5px; border-bottom:1px solid #ddd; height:20px; line-height:20px;}
+.listbox dl dt span{ font-weight:bold; float:left;}
+.listbox dl dt a{ float:right; color:#f60; font-size:12px;}
+.listbox dl dd ul{ border-bottom:1px dashed #eee; padding:10px 0; clear:both}
+.listbox dl dd ul li{ float:left; line-height:24px;}
+.listbox dl dd ul li.timg{ width:74px; padding-right:10px;}
+.listbox dl dd ul li.timg img{ width:70px; height:45px; border:2px solid #fd9;}
+.listbox dl dd ul li.info{ width:300px;}
+.listbox dl dd ul li.price{ width:80px; color:#666; text-align:right}
+
+.flnav{ font-size:12px; line-height:20px}
+.flnav span{ font-weight:bold;margin-right:10px}
+.flnav a{ margin-right:10px; color:#0066cc;}
+
+.list{ width:760px; float:left;}
+.list ul{ border-bottom:1px dashed #ddd; height:40px; padding-bottom:6px; margin-bottom:10px;}
+.list ul li{ float:left; line-height:20px;}
+.list ul li.tt{ width:500px; overflow:hidden;}
+.list ul li.all{ width:750px; overflow:hidden;}
+.list ul li.all .add{ margin-left:10px; font-size:12px; color:#666;}
+.tu{ color:#f60; font-size:12px; margin-left:5px;}
+a.dw{ display:inline-block; width:16px; height:25px; background:url(../images/sprite.png) -30px -270px no-repeat;}
+.list ul li .wz{ color:#999; font-size:12px; overflow:hidden; white-space:nowrap; text-overflow: ellipsis;width:550px;}
+.list ul li .wz a{ font-size:12px; color:#666;}
+.list ul li.lx{ width:130px; text-align:center; font-size:12px; color:#666;}
+.list ul li.pr{ width:120px; text-align:center;}
+.list dt{ border-bottom:2px solid #f90; margin-bottom:20px; height:26px;}
+.list dt a{ display:block; float:left; padding:5px 15px; margin-right:10px; background:#eee; color:#333; overflow:hidden; line-height:16px;}
+.list dt a.on{background:#f90; color:#fff; font-weight:bold;}
+.list dd table{ font-size:12px; color:#999; line-height:34px;}
+.list dd table td{ border-bottom:1px dashed #ccc;}
+.list dd table td a{ color:#666;}
+.list dd .t{ font-weight:bold; color:#333;}
+.list dd table td.bt a{ color:#00c; font-size:14px;}
+
+.page{ text-align:center; font-size:12px; margin:10px 0 20px 0;}
+.page a{ display: inline-block; height:20px; margin:0 2px; border:1px solid #ddd; line-height:20px; overflow:hidden;padding:0 6px;}
+.page a.next,.page a.prev{ width:48px;}
+.page .strong{ display: inline-block; height:20px; margin:0 2px; border:1px solid #f90; background:#f90; color:#fff; line-height:20px; overflow:hidden; }
+
+.adv{ width:200px; float:right;}
+.adv2{ margin:10px 0;}
+.adv3{ width:300px; height:250px; float:right;}
+
+.infobox{}
+.infobox dt{ line-height:30px; border-bottom:1px solid #ccc; margin-bottom:10px; height:30px;}
+.infobox dt .title{font-family:"微软雅黑"; font-size:18px; float:left;}
+.infobox dt .data{float:right; font-size:12px; color:#999;}
+
+.leftbox{ width:760px; float:left;}
+.rightbox{ width:200px; float:right}
+.leftbox ul{ padding-bottom:15px; border-bottom:1px dashed #ddd; margin-bottom:15px;}
+.leftbox .img{ width:250px; height:200px; padding-right:20px; float:left;}
+.leftbox .info{ width:490px; float:right;}
+.leftbox .info p{ width:50%; float:left; display:block; line-height:30px; color:#666;}
+.leftbox .elseinfo{ width:450px; float:left;}
+.leftbox .elseinfo p{line-height:30px; color:#333;}
+.leftbox h1{ font-size:14px; margin-bottom:20px;}
+.leftbox ul.jianjie{ line-height:24px;}
+.map{ border:1px solid #ccc; padding:4px; margin-bottom:15px; font-size:12px; color:#333;}
+.map .maptt{ height:20px;}
+.map .maptt span{ float:left; font-weight:bold;}
+.map .maptt a{ float:right; color:#f60;}
+
+.fenlei{ padding-bottom:10px; border-bottom:2px solid #f90;}
+#navmb span a{ color:#00c;}
+.dalei{ }
+.dalei li{ float:left; width:192px; height:38px;}
+.dalei li a{border: solid 1px #fff; border-bottom:1px solid #ddd;padding:10px 15px; display:block;line-height: 18px;}
+.dalei li a.on{ border:1px solid #ddd; border-bottom:1px solid #fff; font-weight:bold; color:#f60;}
+.xiaolei{clear: both; width: 960px;}
+.xiaolei li{ padding:10px 14px; display:none;height: 200px;}
+.xiaolei li.on{ display:block; border:1px solid #ddd;border-top: none;}
+.xiaolei li a{ display:block; width:155px; float:left; line-height:30px;}
+.xiaolei li a:hover{ text-decoration:underline; color:#f60;}
+
+
+#footer{ clear:both; line-height:24px; color:#999; font-size:12px; width:960px; margin:10px auto; border-top:1px solid #ddd; padding-top:15px;}
+#footer .foot{ text-align:center; border-top:1px solid #ddd; padding:10px 0 0 0; margin-top:10px;}
+#footer .foot a{ margin:0 10px;}
+#footer a{ color:#999}
+.hotcity dt{ float:left; width:70px; color:#999;}
+.hotcity dd{ float:right; width:890px;}
+.hotcity dd a{line-height:18px; color:#666; margin:0 2px; display:inline-block}
+
+
+.info_input *{ font-size:12px;}
+.fbbtn{ width:100px; height:30px; display:block;background:url(../images/sprite.png) no-repeat 0 -190px; font-size:14px; font-weight:bold; color:#fff; line-height:30px; text-align:center}
+.success,.error{ background:#fffbf3; margin:40px auto; list-style:40px; padding:30px 40px; border:1px solid #f90; width:600px;}
+.success li{ margin-bottom:20px;}
+.error li{ margin-bottom:10px;}
+.success .suc{ background:url(../images/suc.png) no-repeat; height:40px; line-height:40px; font-size:18px; font-family:"微软雅黑"; color:#333; font-weight:bold; padding-left:50px;}
+.success .suc a{ font-family:"微软雅黑"; font-weight:bold; }
+.success .erl{ margin-left:100px; list-style: disc; display:list-item;}
+.error .err{ background:url(../images/err.png) no-repeat; height:40px; line-height:40px; font-size:18px; font-family:"微软雅黑"; color:#333; font-weight:bold; padding-left:50px;}
+.error .erl{ font-size:12px;}
+
+.ptxt{border: solid 1px #ccc;height: 18px;line-height: 18px;}
+.pselect{ border: solid 1px #ccc;}
+
+/*swfupload*/
+.progressBarInProgress,
+.progressBarComplete,
+.progressBarError {font-size: 0;width: 0%;height: 2px;background-color: blue;margin-top: 2px;}
+.progressBarComplete {width: 100%;background-color: green;	visibility: hidden;}
+.progressBarError {width: 100%;background-color: red;visibility: hidden;}
+.progressBarStatus {margin-top: 2px;width: 74px;font-size: 7pt;	font-family: Arial;text-align: left;white-space: nowrap;}
+/*fulh*/
+#thumbnails { width: 320px;font-size: 0;line-height: 0;}
+
+.progressWrapper {overflow: hidden;height: 49px;width: 74px;float: left;position: relative;display: inline;margin-right: 5px;margin-top: 5px;line-height: 1em;}
+
+.progressName {font-size: 8pt;	font-weight: 700;	color: #555;height: 14px;text-align: left;white-space: nowrap;overflow: hidden;}
+.progressContainer{ padding: 1px;border: solid 1px #ccc;height: 45px;width: 70px;float: left;overflow: hidden;background-color: #ff0;}
+a.progressCancel{ position: absolute;top: 1px;right: 1px;font-size: 0;display: block;height: 14px;width: 14px;background-image: url(http://res.edushi.com/swfupload/cancelbutton.gif);background-repeat: no-repeat;background-position: -14px 0px;}
+a.progressCancel:hover {background-position: 0px 0px;}
+
+/* -- SWFUpload Object Styles ------------------------------- */
+.swfupload {vertical-align: top;}
+
+/* Message */
+.message {margin: 1em 0;padding: 10px 20px;border: solid 1px #FFDD99;background-color: #FFFFCC;overflow: hidden;}
+/* Error */
+.red {	border: solid 1px #B50000;	background-color: #FFEBEB;}
+/* Current */
+.green {border: solid 1px #DDF0DD;background-color: #EBFFEB;}
+/* Complete */
+.blue {border: solid 1px #CEE2F2;background-color: #F0F5FF;}

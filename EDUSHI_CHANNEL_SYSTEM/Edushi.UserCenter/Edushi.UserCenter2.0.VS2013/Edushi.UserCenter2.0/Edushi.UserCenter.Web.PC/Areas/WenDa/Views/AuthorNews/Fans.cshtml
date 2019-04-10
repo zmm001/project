@@ -1,0 +1,127 @@
+﻿@model Edushi.UserCenter.Web.PC.Models.WenDaCustomModel
+@{
+    int loginUserId = ViewBag.LoginUserId != null ? (int)ViewBag.LoginUserId : 0;
+}
+
+@if (Model.fansModel != null && Model.fansModel.List != null  && Model.fansModel.List.Any())
+{ 
+<div class="info-tips">共有粉丝<span>@Model.fansModel.TotalCount</span>人!</div>
+<div class="follow-box" id="datalist">
+    @foreach (var item in Model.fansModel.List)
+    { 
+        <div class="follow-list clearfix">
+            <a href="/wenda/index/1-@(item.UserId).html" target="_blank">
+                <div class="fl follow-user">
+                    <img src="@item.Avatar" class="photo" />
+                    <div class="info">
+                        <div class="user">@Html.Raw(item.NickName)</div>
+                        <p>@Html.Raw(item.Desc)</p>
+                    </div>
+                </div>
+            </a>
+            @*粉丝去掉当前登录用户*@
+            @if (loginUserId != item.UserId){
+                if (item.IsMutualConcern)
+                {
+                    <div class="fr follow-btn" data-id="@item.UserId">互相关注</div>
+                }
+                else if (item.IsAttentioned)
+                {
+                    <div class="fr follow-btn followed" data-id="@item.UserId">已关注</div>
+                }
+                else if (item.IsEachAttentioned)
+                {
+                    <div class="fr add-follow" data-id="@item.UserId">关注</div>
+                    <div class="follow-tips">TA关注了我</div>
+                }
+                else
+                {
+                    <div class="fr add-follow" data-id="@item.UserId">关注</div>
+                }
+            }
+        </div>
+    }
+</div>
+<div class="loading" style="display: none;">正在加载中</div>
+<div class="more-cnt" @Html.Raw(Model.fansModel.PageCount > 1 ? "style=\"display:none\"" : "")>没有更多了</div>
+}
+<script type="text/javascript">
+    var ConfigData = {
+        "PageIndex": 1,
+        "UserId": "@Model.userId",
+        "Count": "@Model.fansModel.PageCount",
+        "Page": "@Url.Content("~/")",
+        "Url": "wenda/GetAuthorMoreFans.htm",
+        "Id": 0,
+        "Type": 4
+    }
+
+    $(function () {
+        $("#datalist").on("mouseover",
+            ".follow-list .follow-btn",
+            function () {
+                $(this).addClass("dis-follow");
+                $(".dis-follow").text("取消关注");
+            });
+
+        $("#datalist").on("mouseleave",
+            ".follow-list .follow-btn",
+            function () {
+                $(this).removeClass("dis-follow");
+                if ($(this).hasClass("followed")) {
+                    $(this).text("已关注");
+                } else {
+                    $(this).text("互相关注");
+                }
+            });
+
+
+        //取消关注
+        $("#datalist").on("click",
+            ".follow-list .follow-btn",
+            function () {
+                var userId = $(this).data("id");
+                var that = $(this);
+                $.ajax({
+                    type: "post",
+                    dataType: "json",
+                    url: "/CancelAttention.htm",
+                    data: { "userId": userId },
+                    success: function (data) {
+                        if (data.ResultCode == 1) {
+                            window.location.reload();
+                        } else if (data.ResultCode == 2) {
+                            window.location.href = '/Login.html?BackUrl=' + window.location.href;
+                        } else {
+                            popUp(data.Msg);
+                        }
+                    }
+                });
+            });
+
+        //添加关注
+        $("#datalist").on("click",
+            ".follow-list .add-follow",
+            function () {
+                var userId = $(this).data("id");
+                var that = $(this);
+                $.ajax({
+                    type: "post",
+                    dataType: "json",
+                    url: "/AddAttention.htm",
+                    data: { "userId": userId },
+                    success: function (data) {
+                        if (data.ResultCode == 1) {
+                            window.location.reload();
+                        } else if (data.ResultCode == 2) {
+                            window.location.href = '/Login.html?BackUrl=' + window.location.href;
+                        } else {
+                            popUp(data.Msg);
+                        }
+                    }
+                });
+            });
+    })
+</script>
+<script src="@Url.Content("~/areas/wenda/asset/js/scrollload.bak.js")"></script>
+

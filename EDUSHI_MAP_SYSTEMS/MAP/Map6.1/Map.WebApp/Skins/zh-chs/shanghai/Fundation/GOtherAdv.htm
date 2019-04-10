@@ -1,0 +1,32 @@
+﻿ <div id="adcontainer" style="margin-left:8px; ">
+  <script src="http://www.google.com/jsapi" type="text/javascript"></script>
+        <script type="text/javascript">
+           
+            var skey = "";
+            google.load('ads.search', '1'); 
+            skey = unescape(fnRequest('key'));
+            skey += ' ' + '{$keyxml}';
+            skey = '{$CityName}' +' '+ skey;
+            google.setOnLoadCallback(init);
+         
+            function init() 
+            {
+                var options1 =
+                {
+                    'pubId' : 'pub-6571762537302535',
+                    'query' : skey,
+                    'container' : 'adcontainer',
+                    'format' : 'narrow', 
+                    'number' : 5,
+                    'linkTarget': '_blank',
+                    'channel' : '8005853050'
+                }; 
+                var dynamicAd = new google.ads.search.Ad(options1);
+            }
+  
+         </script> 
+         </div>
+<script language="javascript">
+    document.getElementById("googleTitle").style.display ='block';
+    document.getElementById("divline").style.display = 'block';
+</script>

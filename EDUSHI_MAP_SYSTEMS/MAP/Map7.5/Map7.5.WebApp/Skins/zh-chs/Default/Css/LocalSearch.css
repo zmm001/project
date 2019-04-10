@@ -1,0 +1,50 @@
+﻿@import url(Common.css);
+body{font-family:"宋体";}
+ul{ list-style-type:none; margin:0; padding:0;}    
+.LocalResult{height:auto; width:310px;overflow-y:auto;overflow-x:hidden;}
+
+.LocalResult h1{ padding:0; margin:0; height:25px; line-height:25px; font-weight:100; font-size:12px; border-bottom:1px dashed #ccc;}
+.LocalResult h2{ padding:0; margin:0; height:20px; line-height:20px; font-weight:100; font-size:12px; text-align:center}
+.LocalResult h1 span{ color:#FF0000}
+
+.LocalResult ul.LocalList{height:auto; color:#666;}
+.LocalResult ul.LocalList li{display:block; margin:3px 0;}
+
+.Number,.Number span{float:left;overflow:hidden;}
+.Number,.Currently{margin:4px 3px 0 0; background:url(../Images/Numberbg.gif) no-repeat right top; color:White; padding:0 3px 0 0;}
+.Number span,.Currently span{height:13px; line-height:13px; display:block; background:url(../Images/Numberbg.gif) no-repeat left top; padding:0 0 0 3px;}
+.Currently{background-position:right -17px;}
+.Currently span{background-position:left -17px;}
+
+.DetailCon{float:left;}
+.TitleNav,.Address{line-height:21px;}
+.Address{clear:both; max-width:260px;}
+span.HeadLine{float:left; line-height:21px;}
+span.IsVipIco{margin:0 3px; float:left; line-height:21px;}
+span.IsVipIco img{ padding:0 1px;}
+.DottedLine{clear:both;background:url(../Images/SearchNavLine.gif) repeat-x left center; height:1px; font-size:0;/*for IE6*/}
+
+.Paginate{margin:5px 0; font-family:Arial;}
+.ThemeMapCopy{clear:both;margin:5px 0;height:21px;}
+.ThemeMapCopy input{float:left; border:1px solid #84A5CE;border-right-color:#C1D2E7;border-bottom-color:#C1D2E7;background-color:#F7FBFF; width:190px; height:17px; margin-right:2px;}
+.ThemeMapCopy div{ float:left;}
+
+.LocalResult .LocalList li font{ color:#FF8503; font-size:12px}
+.Photo{height:60px;width:310px; margin:5px 0;}
+
+.Sea3DTil,.Sea2DTil{ line-height:120%;}
+.Sea3DTil strong,.Sea2DTil strong{ margin:0 1px;}
+
+.Search2D { padding:5px 0 5px 18px; margin-top:10px; background:#EFF2FA url(../images/SearchIco1.gif) no-repeat 4px 4px;}
+.Search2D a,.NoResult a{ color:Blue; text-decoration:underline; margin:0 1px;}
+.Search2D a:hover,.NoResult a:hover{ color:Red; text-decoration:none;}
+
+/*无搜索结果*/
+.NoResult{ margin:3px 0; background:url(../images/ClewIco1.gif) no-repeat left top; line-height:16px; padding-left:18px;}
+
+/*E都市建议您*/
+.EdushiAd{ margin:10px 0 5px; background-color:#EFF2FA; padding:5px 0;}
+.EdushiAd a{ text-decoration:underline; color:Blue; margin:0 1px;}
+.EdushiAd a:hover{ color:Red; text-decoration:none;}
+.EdushiAd p{ margin:0 0 5px; padding:0 0 0 6px;}
+.EdushiAd p.Til{ font-weight:bold; height:13px; color:#666; background:url(../Images/SearchIco1.gif) no-repeat 4px top; padding-left:18px;}

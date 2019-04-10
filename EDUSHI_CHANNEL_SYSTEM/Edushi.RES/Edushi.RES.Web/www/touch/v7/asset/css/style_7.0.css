@@ -1,0 +1,414 @@
+/* 导航 */
+.main-nav-box {
+  position: relative;
+}
+.main-nav-box.fixed {
+  position: fixed;
+  top: 0;
+  z-index: 1000;
+}
+.main-nav {
+  position: relative;
+  width: 7.5rem;
+  height: 0.84rem;
+  background: #fff;
+  border-bottom: 1px solid #eceff6;
+}
+.main-nav:before {
+  content: " ";
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 2;
+  display: block;
+  width: 0.3rem;
+  height: 0.84rem;
+  background: linear-gradient(to left, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.95),#ffffff);
+}
+.main-nav:after {
+  content: " ";
+  position: absolute;
+  right: 0.73rem;
+  top: 0;
+  display: block;
+  width: 0.05rem;
+  height: 0.84rem;
+  background: linear-gradient(to right, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.95));
+}
+.main-nav nav::-webkit-scrollbar {
+  height: 0px;
+}
+.main-nav nav {
+  float: left;
+  width: 6.78rem;
+  white-space: nowrap;
+  overflow: hidden;
+  overflow-x: auto;
+}
+.main-nav nav a {
+  display: inline-block;
+  width: 1.17rem;
+  font-size: 0.32rem;
+  color: #2f3133;
+  line-height: 0.84rem;
+  text-align: center;
+}
+.main-nav nav a.on {
+  position: relative;
+  font-size: 0.34rem;
+  color: #f54528;
+}
+.main-nav nav a.on:after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  display: block;
+  width: 0.4rem;
+  height: 0.04rem;
+  margin-left: -0.2rem;
+  background: #f54528;
+  border-radius: 0.02rem;
+}
+.main-nav .btn {
+  float: left;
+  width: 0.7rem;
+  height: 0.84rem;
+}
+.main-nav .btn:after {
+  content: " ";
+  display: block;
+  width: 0.36rem;
+  height: 0.22rem;
+  margin: 0.34rem 0 0 0.12rem;
+  background: url(../images/icon.png) no-repeat 0 -0.55rem;
+  background-size: 0.5rem 3rem;
+}
+.more-nav {
+  display: none;
+  position: absolute;
+  z-index: 10;
+  width: 7.5rem;
+  padding: 0.2rem 0 0.38rem;
+  background: rgba(255, 255, 255, .9);
+  box-shadow: 0 0.04rem 0.03rem 0 rgba(29, 15, 20, .1);
+}
+.more-nav a {
+  display: inline-block;
+  width: 1.5rem;
+  font-size: 0.32rem;
+  color: #2f3133;
+  text-align: center;
+  line-height: 0.83rem;
+  white-space: nowrap;
+}
+.sub-nav:after {
+  right: 0.3rem;
+}
+.sub-nav nav {
+  width: 7.2rem;
+}
+.sub-nav nav a {
+  position: relative;
+  width: auto;
+  padding: 0 0.41rem;
+  font-size: 0.3rem;
+}
+.sub-nav nav a.on {
+  font-size: 0.3rem;
+}
+.sub-nav nav a:after {
+  content: "/";
+  position: absolute;
+  right: 0;
+  font-size: 0.3rem;
+  color: #989898;
+}
+.sub-nav nav a:last-child:after {
+  display: none;
+}
+.main-nav.sub-nav nav a.on:after {
+  content: "/";
+  position: absolute;
+  left: 93%;
+  top: 0;
+  width: 0;
+  margin-left: 0;
+  font-size: 0.3rem;
+  color: #989898;
+  background: none;
+}
+
+/* 轮播 */
+.carousel {
+  position: relative;
+  width: 7.5rem;
+  height: 4.12rem;
+  overflow: hidden;
+}
+.carousel ul {
+  position: relative;
+  height: 4.12rem;
+  white-space: nowrap;
+}
+.carousel ul li {
+  position: relative;
+  display: inline-block;
+}
+.carousel ul li a img {
+  width: 7.5rem;
+  height: 4.12rem;
+}
+.carousel ul li .text {
+  position: absolute;
+  bottom: 0;
+  width: 7.5rem;
+  height: 0.88rem;
+  line-height: 0.88rem;
+  background: linear-gradient(to top, rgba(0, 0, 0, 1),rgba(255, 255, 255, 0));
+}
+.carousel ul li .text a {
+  display: inline-block;
+  padding-left: 0.2rem;
+  width: 6rem;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  font-size: 0.3rem;
+  color: #fff;
+}
+.carousel .pic-num {
+  position: absolute;
+  bottom: 0;
+  right: 0.3rem;
+  width: 1.24rem;
+  height: 0.88rem;
+  font-size: 0.28rem;
+  line-height: 0.88rem;
+  color: #fff;
+  text-align: right;
+}
+.carousel .pic-num .number .on-num {
+  margin-right: 0.05rem;
+  font-size: 0.34rem;
+  color: #ff413e;
+}
+.carousel .pic-num .number .total-num {
+  margin-left: 0.05rem;
+}
+/* 新闻列表 */
+.news-list {
+  width: 7.5rem;
+  overflow: hidden;
+}
+.news-list ul {
+  width: 6.9rem;
+  margin: 0 0.3rem;
+}
+.news-list li.tu .img-box {
+  position: relative;
+}
+.news-list li.tu .img-box:after {
+  content: " ";
+  display: table;
+  clear: both;
+}
+.news-list li.tu .img-box p {
+  float: right;
+  width: 2.26rem;
+  height: 1.24rem;
+  overflow: hidden;
+}
+.news-list li.tu .img-box p img {
+  width: 2.26rem;
+  height: auto;
+}
+.news-list li.tu .img-box p:first-child {
+  float: left;
+  width: 4.58rem;
+  height: 2.54rem;
+}
+.news-list li.tu .img-box p:nth-child(3) {
+  margin-top: 0.06rem;
+}
+.news-list li.tu .img-box p:first-child img {
+  width: 4.58rem;
+  height: 2.54rem;
+}
+.news-list li.tu .number{
+  position: absolute;
+  right: 0;
+  bottom: 0.2rem;
+  width: 0.72rem;
+  height: 0.4rem;
+  font-size: 0.24rem;
+  color: #fff;
+  line-height: 0.4rem;
+  background: url(../images/sprite_icon.png) 0 -1.28rem;
+  background-size: 0.8rem 8rem;
+}
+.news-list li.tu .number span {
+  display: inline-block;
+  width: 0.32rem;
+  margin-left: 0.08rem;
+  text-align: center;
+}
+.news-list li.singletu .img-box p, .news-list li.singletu .img-box p:first-child {
+  float: none;
+  width: 6.9rem;
+  height: 3.8rem;
+}
+.news-list li.singletu .img-box p img, .news-list li.singletu .img-box p:first-child img {
+  width: 6.9rem;
+  height: 3.8rem;
+}
+.news-list li.topic .img-box {
+  position: relative;
+}
+.news-list li.topic .img-box img {
+  width: 6.9rem;
+  height: 3.8rem;
+}
+.news-list li.topic .img-box:after {
+  position: absolute;
+  right: 0;
+  bottom: 0.2rem;
+  content: "专题";
+  display: inline-block;
+  width: 0.72rem;
+  height: 0.4rem;
+  font-family: 'Microsoft YaHei';
+  font-size: 0.22rem;
+  color: #fff;
+  text-align: center;
+  line-height: 0.4rem;
+  background: linear-gradient(to right, #ff706c,#ff413e);
+  border-radius: 0.3rem 0 0 0.3rem;
+}
+
+.more-news {
+  margin-bottom: 0.2rem;
+  font-size: 0.28rem;
+  color: #3996fe;
+  text-align: center;
+    display: block;
+}
+.more-news:after {
+  content: " ";
+  display: inline-block;
+  width: 0.14rem;
+  height: 0.24rem;
+  margin-left: 0.1rem;
+  background:  url(../images/sprite_icon.png) 0 -5.48rem;
+  background-size: 0.8rem 8rem;
+  vertical-align: -0.03rem;
+}
+.page-box {
+  line-height: 0.9rem;
+  text-align: center;
+}
+.page-box a, .page-box span {
+  display: inline-block;
+  font-size: 0.3rem;
+  color: #888896;
+}
+.page-box span {
+  margin: 0 0.68rem;
+  color: #ff413e;
+}
+.page-box a.gray {
+  color: #dfe3ea;
+}
+/* 快速导航 */
+.content-nav {
+  position: relative;
+  width: 7.5rem;
+  overflow: hidden;
+  padding-bottom: 0.25rem;
+}
+.content-nav:before {
+  content: " ";
+  position: absolute;
+  top: -0.13rem;
+  left: 0;
+  z-index: 2;
+  display: block;
+  width: 7.5rem;
+  height: 0.13rem;
+  box-shadow: 0 0.08rem 0.08rem #e5ecfa;
+}
+.recommend-nav {
+  margin-top: 0.23rem;
+  margin-bottom: 0.1rem;
+  text-align: center;
+}
+.recommend-nav a {
+  display: inline-block;
+  width: 1.6rem;
+  height: 0.56rem;
+  margin: 0.09rem;
+  font-size: 0.26rem;
+  color: #888896;
+  text-align: center;
+  line-height: 0.56rem;
+  background: #eceff6;
+  border-radius: 0.06rem;
+}
+.fast-nav {
+  margin-bottom: 0.1rem;
+}
+.fast-nav > a {
+  display: block;
+  margin: 0 0.3rem;
+  font-size: 0.32rem;
+  color: #2f3133;
+  line-height: 0.7rem;
+  border-bottom: 1px solid #e3e3e3;
+}
+.fast-nav div {
+  margin-left: 0.21rem;
+}
+.fast-nav div a {
+  display: inline-block;
+  width: 1.22rem;
+  height: 0.54rem;
+  margin: 0.18rem 0.08rem 0;
+  font-size: 0.26rem;
+  color: #888896;
+  text-align: center;
+  line-height: 0.56rem;
+  border: 1px solid #eceff6;
+  border-radius: 0.06rem;
+}
+.recom-nav-f {
+    position: relative;
+    margin-top: 0.3rem;
+    padding-top: 0.21rem;
+}
+.recom-nav-f:before {
+    content: " ";
+    display: block;
+    position: absolute;
+    top: 0;
+    width: 6.9rem;
+    height: 1px;
+    margin-left: 0.3rem;
+    background: #eaeaea;
+}
+.goback {
+    display: block;
+    margin-top: 0.25rem;
+    font-size: 0.28rem;
+    color: #3996fe;
+    text-align: center;
+}
+.goback:before {
+    content: " ";
+    display: inline-block;
+    width: 0.14rem;
+    height: 0.24rem;
+    margin-right: 0.12rem;
+    background: url(../images/sprite_icon.png) no-repeat 0 -6.32rem;
+    background-size: 0.8rem 8rem;
+    vertical-align: middle;
+}

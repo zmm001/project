@@ -1,0 +1,17 @@
+E:\TFS192.168.100.212\EDUSHI_LOCAL_SYSTEMS\Edushi.ZT\Edushi.ZT2.0.VS2013\Edushi.ZT2.0\Edushi.ZT.BLL\bin\Debug\Edushi.ZT.BLL.dll
+E:\TFS192.168.100.212\EDUSHI_LOCAL_SYSTEMS\Edushi.ZT\Edushi.ZT2.0.VS2013\Edushi.ZT2.0\Edushi.ZT.BLL\bin\Debug\Edushi.ZT.BLL.pdb
+E:\TFS192.168.100.212\EDUSHI_LOCAL_SYSTEMS\Edushi.ZT\Edushi.ZT2.0.VS2013\Edushi.ZT2.0\Edushi.ZT.BLL\bin\Debug\Edushi.ZT.DALFactory.dll
+E:\TFS192.168.100.212\EDUSHI_LOCAL_SYSTEMS\Edushi.ZT\Edushi.ZT2.0.VS2013\Edushi.ZT2.0\Edushi.ZT.BLL\bin\Debug\Edushi.ZT.IDAL.dll
+E:\TFS192.168.100.212\EDUSHI_LOCAL_SYSTEMS\Edushi.ZT\Edushi.ZT2.0.VS2013\Edushi.ZT2.0\Edushi.ZT.BLL\bin\Debug\Edushi.ZT.Model.dll
+E:\TFS192.168.100.212\EDUSHI_LOCAL_SYSTEMS\Edushi.ZT\Edushi.ZT2.0.VS2013\Edushi.ZT2.0\Edushi.ZT.BLL\bin\Debug\Edushi.CacheConfigSection.dll
+E:\TFS192.168.100.212\EDUSHI_LOCAL_SYSTEMS\Edushi.ZT\Edushi.ZT2.0.VS2013\Edushi.ZT2.0\Edushi.ZT.BLL\bin\Debug\Edushi.Log.dll
+E:\TFS192.168.100.212\EDUSHI_LOCAL_SYSTEMS\Edushi.ZT\Edushi.ZT2.0.VS2013\Edushi.ZT2.0\Edushi.ZT.BLL\bin\Debug\MongoDB.Bson.dll
+E:\TFS192.168.100.212\EDUSHI_LOCAL_SYSTEMS\Edushi.ZT\Edushi.ZT2.0.VS2013\Edushi.ZT2.0\Edushi.ZT.BLL\bin\Debug\log4net.dll
+E:\TFS192.168.100.212\EDUSHI_LOCAL_SYSTEMS\Edushi.ZT\Edushi.ZT2.0.VS2013\Edushi.ZT2.0\Edushi.ZT.BLL\bin\Debug\Edushi.ZT.DALFactory.pdb
+E:\TFS192.168.100.212\EDUSHI_LOCAL_SYSTEMS\Edushi.ZT\Edushi.ZT2.0.VS2013\Edushi.ZT2.0\Edushi.ZT.BLL\bin\Debug\Edushi.ZT.IDAL.pdb
+E:\TFS192.168.100.212\EDUSHI_LOCAL_SYSTEMS\Edushi.ZT\Edushi.ZT2.0.VS2013\Edushi.ZT2.0\Edushi.ZT.BLL\bin\Debug\Edushi.ZT.Model.pdb
+E:\TFS192.168.100.212\EDUSHI_LOCAL_SYSTEMS\Edushi.ZT\Edushi.ZT2.0.VS2013\Edushi.ZT2.0\Edushi.ZT.BLL\bin\Debug\Edushi.CacheConfigSection.pdb
+E:\TFS192.168.100.212\EDUSHI_LOCAL_SYSTEMS\Edushi.ZT\Edushi.ZT2.0.VS2013\Edushi.ZT2.0\Edushi.ZT.BLL\bin\Debug\Edushi.Log.pdb
+E:\TFS192.168.100.212\EDUSHI_LOCAL_SYSTEMS\Edushi.ZT\Edushi.ZT2.0.VS2013\Edushi.ZT2.0\Edushi.ZT.BLL\obj\Debug\Edushi.ZT.BLL.csprojResolveAssemblyReference.cache
+E:\TFS192.168.100.212\EDUSHI_LOCAL_SYSTEMS\Edushi.ZT\Edushi.ZT2.0.VS2013\Edushi.ZT2.0\Edushi.ZT.BLL\obj\Debug\Edushi.ZT.BLL.dll
+E:\TFS192.168.100.212\EDUSHI_LOCAL_SYSTEMS\Edushi.ZT\Edushi.ZT2.0.VS2013\Edushi.ZT2.0\Edushi.ZT.BLL\obj\Debug\Edushi.ZT.BLL.pdb

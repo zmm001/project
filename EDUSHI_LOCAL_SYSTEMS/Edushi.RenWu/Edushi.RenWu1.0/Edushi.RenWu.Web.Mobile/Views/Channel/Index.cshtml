@@ -1,0 +1,19 @@
+﻿@model Edushi.RenWu.Web.Mobile.Models.ChannelIndexModel
+@{
+    Layout = "~/Views/Channel/ChannelLayout.cshtml";
+
+
+}
+<p class="more-link" style="display: none;"><i></i><a href="@string.Format("{0}info/{1}-p1.html",Url.Content("~/"),Model.CurrentModel.IT_ID)">更多<em>@(Model.CurrentModel.IT_Name)</em>人物</a></p>
+
+<script>
+
+    var ConfigData = {
+        Url: "@Url.Content("~/")",
+        Page: "ChannelMoreContent.htm",
+        currentID:"@Model.CurrentModel.IT_ID",
+        Count:"@Model.PageCount",
+        obj: $("#datalist")
+    }
+</script>
+<script src="@Url.Content("~/asset/js/NextPageLoad.js")" type="text/javascript"></script>

@@ -1,0 +1,28 @@
+body{margin:2px;padding:0; font-size:12px; color:#333; line-height:22px; height:370px;font-family:Arial, Helvetica, sans-serif; overflow:auto;}
+a{ color:#1A70C7; font-size:12px; text-decoration:none; cursor:pointer}
+a:hover{color:#1A70C7; font-size:12px; text-decoration:underline}
+.se{width:285px; font-size:12px; color:#000; height:370px;margin-left:5px;}
+.se div span{ color:#fe0000;}
+.se div select{ margin-left:12px;width: 250px}
+.se .title { text-indent : 15px; margin:5px 5px 15px 0;}
+.btn{ margin:20px 0 0 100px; width:74px; height:24px; cursor:pointer; background-image:url(images/search.gif)}
+
+.jie{width:285px; font-size:12px; color:#000; height:370px;margin-left:5px;overflow-y:auto; overflow-x:hidden;}
+.jie .title{ text-indent:12px;}
+.jie .title span {color:#fe0000;}
+.fangan{ border:1px solid #d0d0d0; height:26px; background-image:url(images/bg.gif) ; font-weight:bold; line-height:28px; width:270px; overflow:hidden;}
+.fangan span{color:#fe0000; margin-left:3px;}
+.shuomimg div{ height:20px; line-height:20px; float:left;border:1px solid #fff; background-color:#e9f6ff; }
+.shuomimg .left{width:48px;}
+.shuomimg .right{width:220px;}
+.xianlu{border-bottom:#666 dashed 1px;width:270px; height:auto; overflow:hidden; }
+.xianlu div{float:left;}
+.xianlu .left{color:#fd8703; text-align:center; cursor:pointer;}
+.xianlu .right span{ color:#1872ca;}
+
+.xianlu .right{width:226px; clear:both;}
+ul {margin:10px; list-style-type:inherit; }
+li { margin:10px 5px; color:#333; border-bottom:dashed 1px #999;}
+.Bus { color:Green; }
+.Station { color:Blue; cursor:pointer; }
+.Building { color:Red; cursor:pointer;}

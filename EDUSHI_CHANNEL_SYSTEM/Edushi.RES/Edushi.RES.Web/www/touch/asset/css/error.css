@@ -1,0 +1,365 @@
+/* 变量 */
+/*CSS Reset*/
+html {
+  font-size: 24px;
+  margin: 0;
+  font-family: 'STHeiti', 'Microsoft YaHei', Helvetica, Arial;
+}
+div,
+form,
+acronym,
+img,
+ul,
+ol,
+li,
+dl,
+dt,
+dd,
+header {
+  margin: 0;
+  padding: 0;
+  border: none;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin: 0;
+  padding: 0 ;
+}
+body {
+  position: relative;
+  margin: 0;
+  padding: 0;
+  font-size: 0 ;
+  background: #fff;
+  width: 100%;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+a {
+  text-decoration: none;
+}
+input[type=button],
+input[type=submit],
+input[type=file],
+button,
+textarea {
+  cursor: pointer;
+  -webkit-appearance: none;
+}
+/**/
+.f-l {
+  float: left;
+}
+.f-r {
+  float: right;
+}
+.clearfix:after,
+.clr:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+.hidden {
+  display: none;
+}
+.ovhidden {
+  overflow: hidden;
+}
+
+.notfound-icon {
+  display: inline-block;
+  width: 1.12rem;
+  height: 1.12rem;
+  background-image: url(http://res.edushi.com/www/touch/asset/images/notfound_icon.png);
+  background-size: 1.12rem 1.12rem;
+}
+
+/*
+	头部
+*/
+.page-header {
+  height: 1rem;
+  background-image: url(http://res.edushi.com/www/touch/asset/images/header_bg.png);
+  background-size: 7.2rem 1rem;
+}
+.page-header .header-box .top-topic .logo-3g {
+  display: inline-block;
+}
+.page-header .header-box .top-topic .logo-3g a {
+  display: inline-block;
+  margin-top: 0.2rem;
+  margin-left: 0.2rem;
+}
+.page-header .header-box .top-topic .logo-3g a img {
+  width: 1.54rem;
+  height: 0.48rem;
+}
+.page-header .header-box .top-topic .ur-here {
+  display: inline-block;
+  height: 0.4rem;
+  line-height: 0.4rem;
+  margin-left: 0.2rem;
+  vertical-align: 0.05rem;
+  font-size: 0.28rem;
+}
+.page-header .header-box .top-topic .ur-here .current {
+  display: inline-block;
+  height: 0.38rem;
+  line-height: 0.38rem;
+  padding-bottom: 0.02rem;
+  color: #fff;
+  padding: 0 0.1rem;
+  background-color: #cc2900;
+  border-radius: 0.1rem;
+}
+.page-header .header-box .top-topic .ur-here i {
+  display: inline-block;
+  width: 0.23rem;
+  height: 0.3rem;
+  background-image: url(http://res.edushi.com/www/touch/asset/images/icons.png);
+  background-size: 0.7rem 20rem;
+  background-position: 0 0;
+  margin: 0 0.15rem;
+  vertical-align: -0.03rem;
+}
+.page-header .header-box .top-topic .ur-here a {
+  color: #cc2900;
+  font-size: 0.28rem;
+}
+.page-header .header-box .top-topic .topic-radio {
+  float: right;
+}
+.page-header .header-box .top-topic .topic-radio .zt-icon {
+  float: right;
+  display: inline-block;
+  text-align: center;
+  width: 0.58rem;
+  line-height: 0.15rem;
+  margin-top: 0.15rem;
+  margin-right: 0.2rem;
+}
+.page-header .header-box .top-topic .topic-radio .zt-icon:before {
+  content: "";
+  display: inline-block;
+  width: 0.44rem;
+  height: 0.44rem;
+  background-image: url(http://res.edushi.com/www/touch/asset/images/top_icon1.png);
+  background-position: 0 -0.88rem;
+  background-size: cover;
+}
+.page-header .header-box .top-topic .topic-radio .zt-icon a {
+  color: #0090ff;
+  font-size: 0.22rem;
+}
+.page-header .header-box .top-topic .topic-radio .show-category {
+  display: inline-block;
+  text-align: center;
+  width: 0.58rem;
+  line-height: 0.15rem;
+  margin-top: 0.15rem;
+  margin-right: 0.2rem;
+  color: #0090ff;
+  font-size: 0.22rem;
+}
+.page-header .header-box .top-topic .topic-radio .show-category:before {
+  content: "";
+  display: inline-block;
+  width: 0.44rem;
+  height: 0.44rem;
+  background-image: url(http://res.edushi.com/www/touch/asset/images/top_icon1.png);
+  background-position: 0 0;
+  background-size: cover;
+  margin-bottom: 0.07rem;
+}
+
+.footer-nav {
+  position: relative;
+}
+.footer-nav nav {
+  position: relative;
+  height: 0.9rem;
+  line-height: 0.9rem;
+  background-color: #ff5e00;
+  white-space: nowrap;
+  overflow-x: auto;
+  overflow-y: hidden;
+}
+.footer-nav nav a {
+  position: relative;
+  display: inline-block;
+  width: auto;
+  padding: 0 0.15rem;
+  text-align: center;
+  color: #fff;
+  font-size: 0.34rem;
+}
+.footer-nav nav a.on {
+  font-weight: bold;
+}
+.footer-nav nav a.on:after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: 0.16rem;
+  margin-left: -0.125rem;
+  width: 0.25rem;
+  height: 0.04rem;
+  background-color: #fff;
+  border-radius: 1rem;
+}
+.footer-nav:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0.39rem;
+  height: 0.9rem;
+  background: linear-gradient(to left, rgba(255, 102, 0, 0), rgba(255, 102, 0, 0.95), #ff5e00);
+  z-index: 9;
+}
+.footer-nav:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 1rem;
+  height: 0.9rem;
+  background: linear-gradient(to right, rgba(255, 102, 0, 0), rgba(255, 102, 0, 0.95), #ff5e00);
+  z-index: 9;
+}
+.wrapper .page-footer {
+  background-color: #eee;
+  padding-bottom: 0.2rem;
+}
+.wrapper .page-footer nav {
+  position: relative;
+  margin: 0 0.2rem;
+  height: 1.7rem;
+  background-image: url(http://res.edushi.com/www/touch/asset/images/footer_app_bg.png);
+  background-size: 6.8rem 1.7rem;
+  border-bottom: 1px solid #ddd;
+}
+.wrapper .page-footer nav a:first-child {
+  position: absolute;
+  top: 0.87rem;
+  left: 3.36rem;
+  display: inline-block;
+  padding: 0.12rem 0.26rem;
+  border: 1px solid #ddd;
+  color: #ff5e00;
+  font-size: 0.24rem;
+  border-radius: 0.1rem;
+}
+.wrapper .page-footer p {
+  text-align: center;
+  line-height: 0.7rem;
+  font-size: 0.22rem;
+  color: #989898;
+}
+/*返回顶部按钮*/
+.gototop {
+  position: fixed;
+  display: none;
+  right: 0.3rem;
+  bottom: 2.2rem;
+  width: 0.8rem;
+  height: 0.8rem;
+  background-image: url(http://res.edushi.com/www/touch/asset/images/gototop_icon.png);
+  background-size: cover;
+  background-color: rgba(0, 0, 0, 0.4);
+  border-radius: 50%;
+  cursor: pointer;
+  z-index: 999999;
+}
+.notfound {
+  height: 7.4rem;
+}
+.notfound > div {
+  text-align: center;
+  margin-top: 1.6rem;
+}
+.notfound > div i {
+  margin-bottom: 0.12rem;
+}
+.notfound > div .title {
+  color: #333;
+  font-size: 0.32rem;
+  margin-bottom: 0.1rem;
+}
+.notfound > div .text {
+  color: #989898;
+  font-size: 0.24rem;
+  margin-bottom: 0.5rem;
+}
+.notfound > div .home-btn {
+  display: inline-block;
+  height: 0.6rem;
+  line-height: 0.6rem;
+  background-color: #ff5e00;
+  border-radius: 0.08rem;
+  color: #fff;
+  font-size: 0.24rem;
+  padding: 0  0.5rem;
+  margin-bottom: 0.07rem;
+}
+.notfound > div .countdown {
+  display: block;
+  color: #989898;
+  font-size: 0.20rem;
+}
+.notfound-2 {
+  height: 7.4rem;
+}
+.notfound-2 > div {
+  text-align: center;
+  margin-top: 1.6rem;
+}
+.notfound-2 > div i {
+  margin-bottom: 0.12rem;
+}
+.notfound-2 > div .right-wrap {
+  display: inline-block;
+  width: 4.5rem;
+  vertical-align: top;
+  text-align: left;
+  margin-left: 0.25rem;
+}
+.notfound-2 > div .right-wrap .title {
+  color: #989898;
+  font-size: 0.28rem;
+  margin-bottom: 0.2rem;
+}
+.notfound-2 > div .right-wrap .text {
+  color: #333;
+  font-size: 0.24rem;
+  margin-bottom: 0.05rem;
+}
+.notfound-2 > div .right-wrap .link {
+  display: block;
+  color: #3399ff;
+  font-size: 0.24rem;
+  margin-bottom: 0.3rem;
+}
+.notfound-2 > div .right-wrap .btn {
+  display: inline-block;
+  height: 0.6rem;
+  line-height: 0.6rem;
+  background-color: #ff5e00;
+  border-radius: 0.08rem;
+  color: #fff;
+  font-size: 0.24rem;
+  padding: 0  0.5rem;
+  margin-bottom: 0.07rem;
+}
+.notfound-2 > div .right-wrap .countdown {
+  margin-left: 0.2rem;
+  color: #989898;
+  font-size: 0.20rem;
+  display: inline-block;
+  line-height: 0.4rem;
+}

@@ -1,0 +1,241 @@
+html{overflow:hidden;}
+body{ overflow:hidden;margin:0;padding:0; font-size:12px; color:#333; line-height:22px; width:100%;}
+a{ color:#1A70C7; font-size:12px; text-decoration:none; cursor:pointer}
+a:hover{color:#1A70C7; font-size:12px; text-decoration:underline}
+ul{ list-style-type:none; margin:0; padding:0;}
+#BG{ width:100%; height:100%; position:absolute; z-index:1000; background-color:#000;filter:alpha(opacity=60); opacity:.6;}
+#BGLoading{ position:absolute; z-index:1001; width:200px; height:200px; color:#999; }
+/*top*/
+.Top{height:75px; background:url(../images/newmap01.png) repeat-x}
+.TopHiddin{height:75px; background:url(../images/newmap01.png) repeat-x;filter:alpha(opacity=0); opacity:.0}
+.TopHiddin div{ display:none;}
+.Top .Left{ float:left; height:70px; width:250px;}
+.Top .Sign{width:160px; height:51px; top:5px; left:5px; position:absolute; z-index:2}
+.Top .Right{ height:60px; overflow:hidden;float:right;margin-right:100px; position:relative; z-index:309;}
+.Top .Over{ text-align:right; padding:5px 30px 0px 0px; height:27px; overflow:hidden; widt:100%; background-color:#FFFFFF;}
+.Top .MLeft{ margin-top:5px; float:left; height:20px; width:300px;color:#FDB40A; background:url(../images/newmap09.gif) no-repeat 0px 5px; padding-left:15px; overflow:hidden;  }
+.Top .MLeft div{ overflow:hidden; height:20px;}
+.Top .MLeft div td{color:#fff;font-size:12px; height:20px; cursor:pointer;}
+.Top .Over img{ margin:0 5px 0 5px;}
+.MCenter{ position:absolute; z-index:309; top:34px; right:265px;border-left:1px solid #8F8F8F; border-right:1px solid #8F8F8F; height:20px; width:200px;}
+.MCenter ul li{ margin:3px 8px 0 5px; float:left;}
+.MCenter ul li a{float:left; width:23px; height:23px;}
+.MCenter ul li#tnote a{background:url(../images/newmap10.gif) no-repeat;}
+.MCenter ul li#tscale a{background:url(../images/newmap11.gif) no-repeat;}
+.MCenter ul li#tsel a{background:url(../images/newmap12.gif) no-repeat;}
+.MCenter ul li#tnav a{background:url(../images/newmap00.gif) no-repeat;}
+.MCenter ul li#tfull a{background:url(../images/newmap13.gif) no-repeat;}
+.MCenter ul li#tnote a:hover{background:url(../images/newmap10a.gif) no-repeat;}
+.MCenter ul li#tscale a:hover{background:url(../images/newmap11a.gif) no-repeat;}
+.MCenter ul li#tsel a:hover{background:url(../images/newmap12a.gif) no-repeat;}
+.MCenter ul li#tnav a:hover{background:url(../images/newmap00a.gif) no-repeat;}
+.MCenter ul li#tfull a:hover{background:url(../images/newmap13a.gif) no-repeat;}
+/*.MCenter ul li a:hover{ background-color:#ff0000; float:left;}*/
+
+.Top .BlackB{background:#000; height:27px;position:absolute; z-index:305; top:32px; left:0; width:100%;filter:alpha(opacity=65); opacity:.65}
+#CopyRight{border:1px solid #000;position:absolute; z-index:305;height:27px;bottom:10px; right:10px; width:300px;}
+#CopyRight .bg{height:27px;filter:alpha(opacity=45); opacity:.45;background:#000;}
+#CopyRight .con{ position:absolute; top:0px; width:100%; height:28px; color:#fff; margin:5px 0 0 3px;}
+
+#EdushiAnnounce{border:1px solid #000;position:absolute; z-index:305;height:27px;bottom:10px; left:10px; width:300px; display:none;}
+#EdushiAnnounce .bg{height:27px;filter:alpha(opacity=45); opacity:.45;background:#000;}
+#EdushiAnnounce .con{ position:absolute; top:0px; width:100%; height:28px; color:#fff; margin:5px 0 0 3px;}
+
+.Tool{width:303px; height:103px; color:#000; z-index:307; position:absolute;}
+.Tool .Head .Shrink{ position:relative; right:5px; text-align:right; margin-left:265px; }
+.Tool .Head .Shrink .min{background:url(../images/tm.gif) no-repeat;width:15px; height:15px;}
+.Tool .Head .Shrink .min:hover{background:url(../images/tma.gif) no-repeat;width:15px; height:15px;}
+.Tool .Head .Shrink .max{background:url(../images/ta.gif) no-repeat;width:15px; height:15px;}
+.Tool .Head .Shrink .max:hover{background:url(../images/taa.gif) no-repeat;width:15px; height:15px;}
+#Tcontent{height:76px; background:url(../images/newmap16.gif) no-repeat; position:absolute;width:303px; top:23px;}
+#Tool .collapsed .bg{background:url(../images/link.gif) no-repeat;display:block;height:3px;width:303px;}
+#Tool .expanded .bg{background:url(../images/link.gif) no-repeat;display:none;}
+.Tool .Head{ height:22px; background:url(../images/newmap15.gif) no-repeat; padding:5px 0 0 18px; position:absolute; width:303PX; z-index:307;}
+.Tool .Head a{color:#000; font-size:12px; text-decoration:none;width:69px; height:16px; line-height:16px; padding-top:2px;float:left; text-align:center}
+.Tool .Head a:hover{ background:url(../images/newmap17.gif) no-repeat;}
+.Tool .Head .Action{width:69px; height:16px; line-height:16px; padding-top:2px; background:url(../images/newmap17.gif) no-repeat; float:left; margin:0px 1px 0 1px;  position:relative; top:1px; text-align:center}
+.Tool .Head .UnAction{width:69px; height:16px; line-height:16px; padding-top:2px; background:url(../images/newmap18.gif) no-repeat; float:left; margin:0 1px 0 1px; text-align:center}
+[class]#Tcontent{height:76px; background:url(../images/newmap16.gif) no-repeat; position:absolute;width:303px; top:27px;}
+[class].Tool .Head .Action{ top:5px}
+[class].Tool .Head .UnAction{ position:relative;top:4px}
+.Tool  .Local{ margin-left:18px}
+.Tool  .Local .LocalInput{ height:40px;}
+.Tool  .Local .LocalInput input{ border:1px solid #898989;  width:210px}
+.Tool  .Local .LocalInput span{ float:left; margin:15px 2px 0 0}
+.Tool  .Local .LocalTxt{ height:30px; line-height:30px;}
+.Tool  .Local .LocalInput #sbusse input{ width:53px; margin-right:2px; margin-left:2px; }
+.Tool  .Local .LocalInput #stext input{ width:129px; }
+#cbus{ display:none;}
+#cyellow{ display:none;}/*width:235px; height:155px;*/
+.Eye{ position:absolute; z-index:307; width:206px; right:10px;}
+.Eye .ELeft{ position:absolute ;left:-11px;width:11px; height:100%;float:left;filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/newmap47.png',sizingMethod='image');}
+.Eye .ECenter{width:198px; height:155px; float:left; background:#000; filter:alpha(opacity=70); opacity:.7}
+.Eye .Edu{background:url(../images/11.gif) no-repeat; width:12px; height:12px; position:absolute; bottom:0px; z-index:308; left:-20px;}
+.Eye .Edu:hover{background:url(../images/11a.gif) no-repeat; width:12px; height:12px;}
+[class].Eye .Edu{ bottom:5px;}
+.Eye .Eduu{background:url(../images/12.gif) no-repeat; width:12px; height:12px; position:absolute; bottom:0px; z-index:308; left:-20px;}
+.Eye .Eduu:hover{background:url(../images/12a.gif) no-repeat; width:12px; height:12px;}
+
+#EyeMapDiv{background:#000 none repeat scroll 0% 50%; z-index: 2; position: relative; width: 200px; height: 155px; filter:alpha(opacity=70); opacity:.7; float:left; right:25px;}
+.Eout{background:url(../images/newmap54.gif) no-repeat; width:12px; height:12px;position:absolute; z-index:308; float:left; top:78px; left:-25px; }
+.Eina{background:url(../images/newmap54a.gif) no-repeat; width:12px; height:12px;position:absolute; z-index:308; float:left; top:78px; left:3px; }
+.Eye .ERight{width:26px;height:155px; float:left; filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/newmap45.png',sizingMethod='image');}
+.Eye .JTRight{ position:absolute;  width:4px; height:7px; top:70px; left:-5px;z-index:3;}
+.Eye .Level{ position:absolute; filter:alpha(opacity=70); opacity:.7;right:0px; z-index:3;width:26px;height:155px;background:url(../images/newmap45.png) no-repeat; padding-left:5px;}
+.Eye .Level .Change2D3D{width:17px; height:18px; margin-top:5px; cursor:pointer;}
+.Eye .Level .MapBig{width:16px; height:18px;background:url(../images/newmap49.gif) no-repeat; margin-top:5px;cursor:pointer;}
+.Eye .Level .Action{width:16px; height:21px; background:url(../images/newmap51.gif) no-repeat;}
+.Eye .Level .UnAction{ width:16px; height:21px; background:url(../images/newmap50.gif) no-repeat; cursor:pointer;}
+.Eye .Level .MapSamll{width:16px; height:20px;background:url(../images/newmap53.gif) no-repeat;cursor:pointer;}
+.Eye .Map{width:190px; height:145px; position:absolute;right:36px; top:5px; z-index:306;}
+#Ein{background:url(../images/newmap47.png) no-repeat;position: relative; width: 11px; height: 155px; float: right; right:36px; z-index:308;filter:alpha(opacity=70); opacity:.7; }
+#MapSilder{position:absolute;top:50px;cursor:pointer;width:16px;height:14px;background:url(../images/newmap52.gif) no-repeat}
+#srcExit{ width:90px; height:32px;position:absolute; z-index:307; right:10px; top:10px; cursor:pointer;}
+#mobile{ position:absolute; z-index:307; top:200px;width:303px; height:418px; color:#000;}
+#mobile .head{height:30px; background:url(../images/newmap21.gif) no-repeat;}
+#draghandle{ cursor:move; width:13px; height:30px; float:left;}
+#mobile .head .hdl{ padding: 15px 0px 0px 12px; float: left; position: absolute; width: 10px; height: 10px;}
+
+
+.m_h_l{position:absolute;background:url(../images/newmap30.gif) no-repeat;width:9px; height:12px;}
+.m_h_l:hover{background:url(../images/newmap30.gif) no-repeat;width:9px; height:12px;}
+.m_h_m{position:absolute;background:url(../images/tm.gif) no-repeat;width:15px; height:17px;}
+.m_h_m:hover{background:url(../images/tma.gif) no-repeat;width:15px; height:17px;}
+.m_h_max{position:absolute;background:url(../images/ta.gif) no-repeat;width:15px; height:17px;}
+.m_h_max:hover{background:url(../images/taa.gif) no-repeat;width:15px; height:17px;}
+.m_h_c{position:absolute;background:url(../images/newmap33.gif) no-repeat;width:15px; height:17px; margin-left:17px;}
+.m_h_c:hover{background:url(../images/newmap33a.gif) no-repeat;width:15px; height:17px;}
+
+
+#mobile .content{}
+#mobile .foot{ height:12px; background:url(../images/newmap23.gif) no-repeat;}
+
+.hdc{ width:35px;}
+
+.Result{position:absolute; z-index:307;}
+
+[class]#MContents div{ margin-left:0px;}
+#MContents div{ margin-left:5px;}
+.Result .SFoot{ width:303px;height:12px; font-size:1px; background:url(../images/newmap23.gif) no-repeat;}
+/*ËÑË÷½á¹ûÄÚÈÝ*/
+
+
+.downup{background-image:url(../images/newmap65.gif); width:5px; height:3px;}
+.downup1{background-image:url(../images/newmap64.gif);width:5px; height:3px;}
+
+.AIUnder a{height:21px; width:21px;  margin-left:5px;position:absolute; }
+#Entro_home{background:url(../images/h.gif) no-repeat;}
+#Entro_edit{background:url(../images/e.gif) no-repeat;}
+#Entro_error{background:url(../images/q.gif) no-repeat;}
+#Entro_home:hover{background:url(../images/ha.gif) no-repeat}
+#Entro_edit:hover{background:url(../images/ea.gif) no-repeat}
+#Entro_error:hover{background:url(../images/qa.gif) no-repeat}
+
+.keyBg{   width:120px; border:1px solid #979797; z-index:1000;BACKGROUND: #fff;	FILTER: progid:DXImageTransform.Microsoft.Shadow(color=black,direction=135,strength=4);}
+.keyBg ul {margin:4px;list-style-type: none;} 
+[class].keyBg ul{margin:4px 6px 4px 2px}
+.keyBg ul a{ text-decoration:none;display: block;  text-align:left;}
+.keyBg ul a:hover {color:#000;text-decoration:none;} 
+.keyBg ul li { float: left;font-size:12px;height:23px; line-height:23px;  } 
+.keyBg ul li img{border:0px; margin-right:7px; line-height:23px; } 
+.keyBg ul li a:hover{ background:#eaeaea;height:23px; line-height:23px; } 
+.noico{ padding-left:25px;width:110px }
+[class].noico{ padding-left:25px;width:90px }
+[class].ico{ padding-left:5px; width:110px;}
+.ico{ padding-left:5px; width:110px;}
+
+
+.lspop{ background-image:url(../images/12-22.gif); width:27px; height:32px; text-align:center; padding-top:5px; cursor:pointer;}
+.lspop a{width:27px; height:20px; text-align:center; margin-top:0px; color:#000; font-size:12px;}
+.slspop{ background-image:url(../images/12-21.gif); width:14px; height:14px; text-align:center; padding-top:2px; cursor:pointer;}
+.slspop a{width:14px; height:14px; text-align:center; margin-top:0px; color:#000; font-size:10px; line-height:10px;} 
+
+[class].f{ width:296px;height:370px;}
+.f{ width:293px;height:370px;}
+
+.Kmain{ border:solid 2px #a2e3ff; float:right; }
+.Kmain .bg{background-color:#a2e3ff;filter:alpha(opacity=50); opacity:.5;  width:100%; height:100%; position: absolute; z-index:-10;}
+.Kmain .sel{ width:48px; height:20px; background-image:url(../images/sel.gif); float:right; text-align:right; cursor:pointer;}
+.ding{height:45px;filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/ding.png',sizingMethod='image');}
+.proMap{ position:absolute; height:217px;top: 260px;z-index:308; right:10px;}
+.proMap .left{ width:3px; float:left; height:217px;}
+.proMap .center{float:left; width:35px; height:216px;background:#000;filter:alpha(opacity=80); opacity:.8; overflow:hidden; padding-right:0 !important;}
+.proMap .center .lei{ float:right; width:33px; height:216px;}
+.proMap .center .lei img{ float:right; right:-1px; margin-top:9px; cursor:pointer;}
+.proMap .right{ width:3px;float:left; height:217px;}
+.pout{width:6px; height:6px; position:absolute;  color:#fff; right:42px;top:370px; z-index:309;background:url(../images/newmap54a.gif) no-repeat; cursor:pointer;}
+.pouta{width:6px; height:6px; position:absolute;  color:#fff; top:370px; z-index:309;background:url(../images/newmap54.gif) no-repeat; cursor:pointer;}
+
+
+.menu {width:250px; font-size:12px;height:20px; position:absolute; z-index:309; top:37px; right:5px;}
+.menu ul {list-style-type: none;height: auto;}
+.menu ul li {float:left;width:55px;position:relative;}
+.menu ul li a {display:block; text-decoration:none; color:#ffffff; width:45px; padding-left:5px; line-height:20px;height:auto;}
+.unactive{background:url(../images/newmap14.gif) right center no-repeat;}
+.active{background:url(../images/newmap64.gif) right center no-repeat;}
+.menu ul li ul {display:none; cursor:pointer; position:absolute;border:1px solid #8f8f8f;border-width:0px 1px 1px 1px; margin-left:-1px;}
+.menu ul li ul li{ float:none;width:105px;background:#ffffff;color:#1670C8;line-height:20px;height:auto; padding-left:10px;}
+.menu ul li ul li a{text-decoration:none; color:#1670C8; width:70px;}
+.menu ul li ul li a:hover{text-decoration:none; color:#1670C8;width:70px;}
+.menu ul li ul li img{ line-height:20px; float:left; margin-top:5px;}
+.menu ul li ul li div{ width:10px; height:20px; float:left;}
+.menu ul li ul li ul {position:absolute;display:none; left:115px;margin-top:-4px;background:#ffffff;}
+[class]..menu ul li ul li ul {margin-top:-20px;}
+
+.menu ul li ul li ul li{width:auto;background:#ffffff;color:#1670C8;line-height:20px;height:auto; padding-left:10px;}
+.action img{ display:block;}
+.unaction img{ display:none;}
+.DaoXiang {
+background-color:#FFFFFF;
+border:1px solid #ACB9C2;
+height:25px;
+position:absolute;white-space: nowrap;
+}
+.DaoXiang .title {
+background-image:url('../images/2.jpg');
+border:1px solid #ACB9C2;
+height:18px;
+float:left;white-space: nowrap;
+margin-left:1px; margin-right:1px; margin-top:1px; margin-bottom:1px
+}
+.DaoXiang .title div {
+color:#314F67;
+float:left;
+font-size:12px;
+font-weight:bold;
+line-height:18px;white-space: nowrap;
+
+}
+.DaoXiang .title a {
+background-image:url('../images/close.gif');
+float:left;
+height:15px;
+width:15px; 
+font-size:1px;
+}
+.DaoXiang .title a:hover {
+background-image:url('../images/closea.gif');
+}
+
+#wrap{width:398px;height:auto;}
+#tjgg{ height:29px;background:url(../images/9t.jpg); margin-left:43px;}
+#tjgg-1{float:left;width:150px;height:29px;line-height: 29px;height: 29px;font-size:14px;color:#000000;font-weight: bold;text-indent: 5px;}
+#tjgg-2{float:right;width:24px;height:29px;}
+#tjgg-3{float:left;width:5px;height:222px;background-image: url(../images/11t.jpg);}
+#tjgg-4{float:left;height:222px;width: 345px;background-color:#ffffff;margin:auto; text-indent:2em; padding-left:5px;white-space:normal; word-break:break-all; overflow:hidden;}
+#tjgg-5{float:right;width:5px;height:222px;background-image: url(../images/12t.jpg);}
+.tleft{margin-top:85px;float:left; width:43px; height:35px; background:none;filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled=true, sizingMethod=scale, src="../images/leftt.png");}
+[class].tleft{ background:url(../images/leftt.png)}
+#footer{float:right;width:355px;height:7px;background-image:url(../images/13t.jpg);margin-left:43px;}
+.box p, .h {display:table-cell; *display:inline; zoom:1; vertical-align:middle; } 
+.h {height:26px; width:0; overflow:hidden;}
+
+
+
+.Card {
+	BACKGROUND: url(../images/newmap22.gif) repeat-y;
+	WIDTH: 303px;
+	COLOR: #333;
+	LETTER-SPACING: 1px;
+	HEIGHT: 370px
+}

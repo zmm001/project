@@ -1,0 +1,61 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" id="viewport" content="width=device-width,initial-scale=1.0, maximum-scale=1.0,minimum-scale=1.0,user-scalable=no" />
+    <meta name="applicable-device" content="mobile" />
+    <title>错误页-E都市问答-E都市</title>
+    <meta name="keywords" content="" />
+    <meta name="description" content="" />
+    <script>
+            document.documentElement.style.fontSize = 100 * ((document.documentElement.clientWidth) / 750) + "px";
+    window.onresize = window.onorientationchange = function () {
+        document.documentElement.style.fontSize = 100 * ((document.documentElement.clientWidth) / 750) + "px";
+    }
+    </script>
+    <script>
+        var _hmt = _hmt || [];
+        (function () {
+            var hm = document.createElement("script");
+            hm.src = "https://hm.baidu.com/hm.js?99a36e54478482e04c158ab069a3e598";
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
+    <style>
+        .error-item {
+            margin: 0 auto;
+            box-sizing: border-box;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            margin-top: 4.76rem;
+        }
+        .error-item img {
+            box-sizing: border-box;
+            margin: 0 auto;
+            width: 3.8rem;
+            height: 2.8rem;
+        }
+        .error-tip {
+            margin-top: 0.36rem;
+            font-size: 0.24rem;
+            color: #999999;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <section class="error-box">
+            <div class="error-item"><img src="@(Edushi.WenDa.Web.App.Helper.DataHelper.checkPlatType() == 1 ? Url.Content("~/asset/images/nocontent.png") : Url.Content("~/asset/images/nocontent-andriod.png"))" /></div>
+            <div class="error-tip">暂时没有内容</div>
+        </section>
+    </header>
+</body>
+</html>

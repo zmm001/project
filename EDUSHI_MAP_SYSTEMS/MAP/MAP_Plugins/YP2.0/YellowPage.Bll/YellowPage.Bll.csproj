@@ -1,0 +1,114 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="3.5" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.21022</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{E6838001-F84E-444E-ABBC-20FDF6D094B9}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>YellowPage.Bll</RootNamespace>
+    <AssemblyName>YellowPage.Bll</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EDC.Framework, Version=2.0.1.325, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\EDUSHI_DATA_CENTER\EdushiDataCenter\v1.0\Edushi.DataCenter\EDC.Framework\bin\Debug\EDC.Framework.dll</HintPath>
+    </Reference>
+    <Reference Include="EDC.LocalSystem, Version=2.0.0.1012, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\EDUSHI_LOCAL_SYSTEMS\LocalSystem2.0\LocalSystem.Web\bin\EDC.LocalSystem.dll</HintPath>
+    </Reference>
+    <Reference Include="EDC.Member, Version=2.0.0.1012, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\EDUSHI_LOCAL_SYSTEMS\LocalSystem2.0\LocalSystem.Web\bin\EDC.Member.dll</HintPath>
+    </Reference>
+    <Reference Include="Enyim.Caching, Version=1.2.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Libs\Enyim.Caching.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework, Version=9.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+    <Reference Include="Microsoft.VisualStudio.TeamSystem.Data.UnitTesting, Version=9.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Bll\AdvertisementBll.cs" />
+    <Compile Include="Bll\EStoreBll.cs" />
+    <Compile Include="Bll\YellowOtherLogicBll.cs" />
+    <Compile Include="Bll\CompanyBll.cs" />
+    <Compile Include="Bll\LocalSearchBll.cs" />
+    <Compile Include="Bll\OwnerBll.cs" />
+    <Compile Include="Bll\YellowPageBll.cs" />
+    <Compile Include="Dal\AdvertisementDal.cs" />
+    <Compile Include="Dal\CompanyDal.cs" />
+    <Compile Include="Bll\MemberSettingBLL.cs" />
+    <Compile Include="Dal\EStoreDal.cs" />
+    <Compile Include="Dal\LocalSearchDal.cs" />
+    <Compile Include="Dal\MemberSettingDal.cs" />
+    <Compile Include="Dal\OwnerDal.cs" />
+    <Compile Include="Dal\YellowOtherLogicDal.cs" />
+    <Compile Include="Dal\YellowPageDal.cs" />
+    <Compile Include="MemcachedConfig\CacheBll.cs" />
+    <Compile Include="MemcachedConfig\CacheDal.cs" />
+    <Compile Include="MemcachedConfig\CacheModel.cs" />
+    <Compile Include="Model\CorrectionInfoEntity.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Tools\GetFullPY.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Tools\DataCenterUtility.cs" />
+    <Compile Include="Tools\RegexMatch.cs" />
+    <Compile Include="Tools\xmlBase.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="MemcachedConfig\Config.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="CityConfig\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

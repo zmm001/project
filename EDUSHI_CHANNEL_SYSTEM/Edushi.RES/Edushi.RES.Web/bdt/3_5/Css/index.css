@@ -1,0 +1,84 @@
+﻿.R1 .top
+{
+	background: url(../images/btn.jpg) no-repeat 0 -231px;
+	height: 6px;
+	width: 233px;
+}
+.R1 .center
+{
+	width: 231px;
+	margin-top: -2px;
+	_margin-top: -3px;
+	overflow: hidden;
+}
+.R1 .top
+{
+	background: url(../images/btn.jpg) no-repeat 0 -231px;
+	height: 6px;
+	width: 233px;
+}
+.R1 .bottom
+{
+	background: url(../images/btn.jpg) no-repeat 0 -241px;
+	height: 6px;
+	width: 233px;
+}
+.rightbar
+{
+	width: 233px;
+}
+.a2
+{
+	background: url(../images/btn.jpg) no-repeat 0 0;
+	width: 207px;
+	height: 30px;
+	display: block;
+}
+.R1
+{
+	width: 233px;
+}
+.login_box .submit
+{
+	overflow: hidden;
+	padding: 0 0 0 45px;
+	_padding-left: 40px;
+	margin-bottom: 8px;
+}
+.texta1
+{
+	width: 140px;
+	height: 16px;
+	border: solid 1px #88abcf;
+}
+.R1_ul li
+{
+	padding-top: 7px;
+	width: 205px;
+}
+.Rh_ul
+{
+	margin-left: 0px;
+}
+.Rh_ul li
+{
+	padding-top: 7px;
+	width: 165px;
+}
+.L2 ul
+{
+	margin:8px;
+}
+.L2 ul li a
+{
+	font-size: 12px;
+	margin-left: 0px;
+	font-weight: normal;
+}
+
+.trMargin
+{
+	margin-bottom: 8px;
+}
+
+.fbbtn{padding:2px 10px; height:30px;}

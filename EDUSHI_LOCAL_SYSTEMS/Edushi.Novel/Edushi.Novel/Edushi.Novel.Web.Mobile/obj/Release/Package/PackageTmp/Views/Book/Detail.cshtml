@@ -1,0 +1,138 @@
+﻿@using Edushi.Novel.Model
+@using Edushi.Novel.Common
+@model  BookModel
+@{
+    
+}
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>@ViewBag.Title</title>
+    @Html.Partial("/Views/Shared/_PartialHead.cshtml")
+</head>
+<body>
+    <header>
+        <span class="back" onclick="javascript:history.go(-1);"></span>
+        <div class="search-link">
+            <a href="/info/search.html"></a>
+        </div>
+        <span class="nav"></span>
+        @Html.Partial("/Views/Shared/_PartialMenu.cshtml")
+    </header>
+    @if (Model != null)
+    {
+        <div class="main-container">
+            <div class="cover-content">
+                <section class="cover-header">
+                    <div class="img"><img src="@Model.CoverImage"></div>
+                    <div class="info">
+                        <div class="name">@Model.Name</div>
+                        <div class="author">@*<img src="@Model.CoverImage" />*@@Model.Author</div>
+                        <div class="score"><span class="four-stars"></span>@Model.Score (@(Convert.ToString(Model.CommentNum))人评价)</div>
+                        <div class="tips">
+                            <div class="meta">@(Convert.ToString(Model.WordNum / 10000))万字 | <span> @Model.Status.GetDescription()</span></div>
+                            <div class="fr"><span>@Model.CategoryInfo.CategoryName3</span></div>
+                        </div>
+                    </div>
+                </section>
+                <section class="cover-buttons">
+                    <a  class="bookshelf" onclick="addBookrack(data,this)" id="bookstore">加入书架</a>
+                    <input type="hidden" id="hidUrl" value="@(Url.Content("~/"))" />
+                    <a href="@Url.Content(string.Format("~/info/read.html?BookId={0}&chapter={1}",Model.SourceBookId,1))" class="read" onclick="addReadRecord(data)">开始阅读</a>
+                    @*<a href="https://sso.alliread.com/account?product=202&showBarHeader=1&price=null&payUrl=https%3A%2F%2Faikan.i5read.com%2Fpay%2Fpay_sign_item.html%3Fitem%3D1000%26product%3D202%26chargeType%3D2%26showBarHeader%3D1%26packageId%3D400%26channel%3Dfdafdsafdsafdsa%26originUrlId%3D7920%26publishChannelType%3D1%26isInSubscriptionsEnv%3D0&channel=fdafdsafdsafdsa&redirect=https%3A%2F%2Faikan.i5read.com%2Fapp%2Freader%2F640827%2F21%3FbookStore%3D3%26inner%3D1%26pkg%3D400%26progress%3D0%26channel%3Dfdafdsafdsafdsa%26isInSubscriptionsEnv%3D0%26originUrlId%3D7920" class="subscribe">直接订阅</a>*@
+                    @*<a href="https://aikan.i5read.com/pay/pay_sign_item.html?item=1000&product=202&chargeType=2&showBarHeader=1&packageId=400&channel=fdafdsafdsafdsa&originUrlId=7920&publishChannelType=1&isInSubscriptionsEnv=0&userid=16967224&extra=%7B%22price%22%3A0.12%2C%22balance%22%3A0%7D&redirect=https%3A%2F%2Faikan.i5read.com%2Fapp%2Freader%2F640827%2F21%3FbookStore%3D3%26inner%3D1%26pkg%3D400%26progress%3D0%26channel%3Dfdafdsafdsafdsa%26isInSubscriptionsEnv%3D0%26originUrlId%3D7920" class="subscribe">直接订阅</a>*@
+                    @*<a href="https://sso.alliread.com/account?product=202&showBarHeader=1&redirect=https%3A%2F%2Faikan.i5read.com%2F%3F" class="subscribe">直接订阅</a>*@
+                </section>
+                <section class="cover-mate">
+                    <div class="book-desc">
+                        <div class="title">【<i></i>简介】</div>
+                        <p>@Model.Description</p>
+                        <span class="extend-button"><i></i></span>
+                    </div>
+                    <div class="book-directory">
+                        <div class="title">【<i></i>目录】</div>
+                        <ul>
+                            @if (@Model.ChapterList != null && @Model.ChapterList.Any())
+                            {
+                                int cnt = 1;
+                                foreach (var chapter in @Model.ChapterList)
+                                {
+                                    <li><a href="@Url.Content(string.Format("~/info/read.html?BookId={0}&chapter={1}",Model.SourceBookId,cnt))" value="@chapter.ID">@chapter.Title</a></li>
+                                    cnt++;
+                                    if (cnt > 10)
+                                    {
+                                        break;
+                                    }
+                                }
+                            }
+                        </ul>
+                        <a href="@Url.Content(string.Format("~/info/read.html?BookId={0}&chapter={1}",Model.SourceBookId,1))" class="all-directory">查看所有目录</a>
+                    </div>
+                </section>
+            </div>
+            <section class="line"></section>
+
+            @if (@Model.Recommends != null && @Model.Recommends.Any())
+            {
+                <section class="module detail">
+                    <div class="module-title">同类推荐</div>
+                    <ul>
+                        @foreach (var item in @Model.Recommends)
+                        {
+                            <li>
+                                <a href="@item.Href">
+                                    <div class="img"><img src="@item.CoverImage"></div>
+                                    <p class="name">@item.Name</p>
+                                    <p class="author">@item.Author</p>
+                                </a>
+                            </li>
+                        }
+                    </ul>
+                    <div class="loading">加载中</div>
+                </section>
+            }
+            <section class="pop-content">
+                <div class="pop-box">
+                    <div class="msg" id="msg">已成功加入书架</div>
+                    <span class="btn cancel">知道了</span>
+                    <a class="btn confirm" href="javascript:void(0);" style="display: none;">去看看</a>
+                </div>
+            </section>
+        </div>
+    }
+    
+    @Html.Partial("/Views/Shared/_PartialUserCenter.cshtml")
+    @Html.Partial("~/Views/Shared/_PartialFooter.cshtml")
+    <script type="text/javascript" src="~/Content/asset/js/common.js"></script>
+    <script src="~/Content/asset/js/Novel/detail.js"></script>
+    <script>
+        var data = {
+            UserID:  "@UserCenter.GetUserId()",
+            BookID: "@Model.ID",
+            AddedDate: "@DateTime.Now",
+            ChapterID: 1,
+            ReadTime: "@DateTime.Now"
+        };
+
+        $(function () {
+            var isLogin = getCookie();
+            if (isLogin == "OK") {
+                var url = $("#hidUrl").val() + "IsExistBookRack.htm";
+                $.ajax({
+                    url: url,
+                    type: 'post',
+                    async: true,
+                    data: { "BookID": data.BookID },
+                    success: function (response) {
+                        if (response != null && response != "false") {
+                            $("#bookstore").attr("class", "in-shelf");
+                        }
+                    }
+                })
+            }
+        })
+    </script>
+</body>
+</html>

@@ -1,0 +1,37 @@
+﻿@using Edushi.Www.Model
+@using Edushi.Common
+@model List<InfoTypeModel>
+@{
+    var parentType = Model.FindAll(p => p.IT_ParentID == 0).Take(11);
+    var currentType = ViewBag.CurrentType as InfoTypeModel;
+    var subType = ViewBag.SubType as List<InfoTypeModel>;
+}
+<div class="channel-footer-nav">
+    <div class="wrapper clearfix">
+        <div class="fl f-logo">
+            <a href="@Url.Content("~/")" target="_blank"><img src="@Url.Content("~/asset/images/logo.png")"></a>
+        </div>
+        <div class="fl current-channel">
+            <strong><a href="@Common.GetInfoListUrl(currentType.IT_ParentPath,currentType.IT_ID)" target="_blank">@currentType.IT_Name</a></strong>
+            @if (subType!=null&&subType.Any())
+            {
+                foreach (var item in subType)
+                {
+                     <a href="@Common.GetInfoListUrl(item.IT_ParentPath, item.IT_ID)" target="_blank">@item.IT_Name</a>
+                }
+            }
+        </div>
+        <div class="fl other-channel">
+            <strong>其他频道</strong>
+            @foreach (var item in parentType)
+            {
+                <a href="@Edushi.Common.Common.GetInfoListUrl(item.IT_ParentPath,item.IT_ID)" target="_blank">@item.IT_Name</a>
+            }
+            @*<a href="http://caijing.edushi.com/" target="_blank">财经</a>*@
+            <a href="http://hangzhou.fangtoo.com/" target="_blank">房产</a>
+            <a href="http://lvyou.edushi.com" target="_blank">旅游</a>
+            <a href="http://www.edushi.com/zt/" target="_blank">专题</a>
+            <a href="http://tu.edushi.com/" target="_blank">图闻</a>
+        </div>
+    </div>
+</div>

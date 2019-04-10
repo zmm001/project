@@ -1,0 +1,97 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title>地图打印 -- {$CityName}</title>
+    <script type="text/javascript" language="javascript">
+        Function.prototype.bind = function() {
+            var __method = this, args = $A(arguments), object = args.shift();
+            return function() {
+                return __method.apply(object, args.concat($A(arguments)));
+            }
+        };
+        var $A = Array.from = function(iterable) {
+            if (!iterable) return [];
+            if (iterable.toArray) {
+                return iterable.toArray();
+            } else {
+                var results = [];
+                for (var i = 0, length = iterable.length; i < length; i++)
+                    results.push(iterable[i]);
+                return results;
+            }
+        };
+        var vM = opener.vM;
+        function fnPrint()
+        {
+            document.getElementById('EdushiMap').childNodes[0].focus();
+            document.getElementById('EdushiMap').childNodes[0].contentWindow.print();
+        }
+        function fnLoadInit(){
+            window.onresize = function() {
+                document.getElementById('frmEdushiMap').style.left = '0px';
+            };
+            var iFrame = document.getElementById('frmEdushiMap');
+            iFrame.contentWindow.document.open(); 
+            iFrame.contentWindow.document.write('<html>'+vM.Body.document.documentElement.innerHTML.replace(/<script.*?>.*?<\/script>/gi, '')+'</html>');
+            iFrame.contentWindow.document.close();
+            var parentFrames = vM.Body.document.getElementsByTagName('iframe');
+            if(document.all)
+            {
+                for(var i=0; i<parentFrames.length; i++)
+                {
+                    iFrame.contentWindow.document.getElementById(parentFrames[i].id).attachEvent("onload",function(){ iFrame.contentWindow.document.getElementById(parentFrames[this].id).contentWindow.document.body.innerHTML = parentFrames[this].contentWindow.document.body.innerHTML;}.bind(i));
+                }
+                iFrame.contentWindow.document.getElementsByTagName('img')[0].style.display = 'none';//remove导致泡泡不能被打印出来 why?
+                iFrame.contentWindow.document.getElementsByTagName('img')[0].style.display = 'none';
+                var Nodes= iFrame.contentWindow.document.getElementById('Map3D').childNodes;
+                for(var i=0; i<Nodes.length; i++)
+                {
+                    var oDiv = Nodes[i];
+                    if(oDiv.tagName == 'DIV')
+                    {
+                        var sImageUrl = oDiv.style.backgroundImage.replace('url(','').replace(')','');                
+                        oDiv.innerHTML = '<img src="'+sImageUrl+'"/>';  
+                    }  
+                }
+            }
+            else
+            {
+                setTimeout(function (){
+                    for(var i=0; i<parentFrames.length; i++)
+                    {
+                      iFrame.contentWindow.document.getElementById(parentFrames[i].id).contentWindow.document.body.innerHTML = parentFrames[i].contentWindow.document.body.innerHTML;
+                    }
+                    var Nodes= iFrame.contentWindow.document.getElementById('Map3D').childNodes;
+                    iFrame.contentWindow.document.body.removeChild(iFrame.contentWindow.document.getElementsByTagName('img')[0]);
+                    iFrame.contentWindow.document.body.removeChild(iFrame.contentWindow.document.getElementsByTagName('map')[0]);
+                    for(var i=0; i<Nodes.length; i++)
+                    {
+                        var oDiv = Nodes[i];
+                        if(oDiv.tagName == 'DIV')
+                        {
+                            var sImageUrl = oDiv.style.backgroundImage.replace('url(','').replace(')','');                
+                            oDiv.innerHTML = '<img src="'+sImageUrl+'"/>';  
+                        }  
+                    }
+                },800);
+            }
+        }
+    </script>
+</head>
+<body style="margin:0;overflow: hidden" scroll="no" onload="fnLoadInit()">
+     <div style="width:760px;margin:0 auto;">
+        <div style="float: left;">
+            <a href="http://www.edushi.com/" target="_blank" title="E都市">
+                <img src="{$SkinPath}/Images/PrintLogo.gif" border="0" alt="E都市" /></a></div>
+        <div style="text-align: right; float: right;">
+            <div>
+                <img src="{$SkinPath}/Images/PrintBtn.gif" alt="打印" style="cursor:pointer" onclick="fnPrint()" /></div>
+            <div>
+                <textarea id="TextArea1" cols="60" rows="2" style="border-top: 1px solid #84A5CE;  border-left: 1px solid #84A5CE; border-right: 1px solid #C1D2E7; border-bottom: 1px solid #C1D2E7; background-color: #F7FBFF; padding: 5px; margin: 3px 0;" onfocus="if(this.innerText=='您可以在这里输入备注！'){this.innerText='';}">您可以在这里输入备注！</textarea></div>
+        </div>
+        <div style="clear:both"></div>  
+        <div id="EdushiMap" style="height:520px;"><iframe id="frmEdushiMap" width="760" height="520" frameborder="0" style="position:relative;z-index:1" scrolling="no"></iframe></div>
+    </div>
+</body>
+</html>
+

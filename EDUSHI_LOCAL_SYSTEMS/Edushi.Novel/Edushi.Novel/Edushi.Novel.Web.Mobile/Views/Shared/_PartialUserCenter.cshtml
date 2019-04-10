@@ -1,0 +1,26 @@
+﻿
+<section class="float-bar">
+    <a class="my" onclick="logins()"></a>
+    <div class="back-top"></div>
+</section>
+<script>
+    function logins() {
+        $.ajax({
+            type: "POST",
+            url: "/Home/IsLogin",
+            success: function (data) {
+                if (data == "OK") {
+                    //datas.loginMsg = data;
+                    window.location.href = "http://m.edushi.com/user/Xiaoshuo/Home/Personal";
+                }
+                else {
+                    var backUrl = escape(window.location.href);
+                    window.location.href = "http://m.edushi.com/user/Login.html?BackUrl=" + backUrl;
+                }
+            },
+            error: function (data) {
+                console.log(data);
+            }
+        })
+    }
+</script>

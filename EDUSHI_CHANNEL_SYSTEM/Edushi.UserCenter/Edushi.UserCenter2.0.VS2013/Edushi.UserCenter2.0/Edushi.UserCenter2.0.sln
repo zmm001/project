@@ -1,0 +1,121 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.21005.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Edushi.CacheConfigSection", "Edushi.CacheConfigSection\Edushi.CacheConfigSection.csproj", "{B7A85D1A-2AC1-419C-9BE6-99A6F285E15F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Edushi.Common", "Edushi.Common\Edushi.Common.csproj", "{88A22847-6B99-4241-8B15-536BEEC8B829}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Edushi.Log", "Edushi.Log\Edushi.Log.csproj", "{7356AC76-7475-41E8-BE4C-100A39E42B85}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Edushi.MongoDB", "Edushi.MongoDB\Edushi.MongoDB.csproj", "{59909CFC-D09F-4CCD-B2B1-DF0079F3E698}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Edushi.UserCenter.Model", "Edushi.UserCenter.Model\Edushi.UserCenter.Model.csproj", "{75791969-D14F-4DF1-B3D6-36BADEBD30A6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Edushi.UserCenter.BLL", "Edushi.UserCenter.BLL\Edushi.UserCenter.BLL.csproj", "{1B28DF83-E866-435F-92B4-7A2028A92868}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Edushi.UserCenter.MongoDBDAL", "Edushi.UserCenter.MongoDBDAL\Edushi.UserCenter.MongoDBDAL.csproj", "{4B4CC543-0BE4-4054-96DF-436D081D015F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Edushi.UserCenter.SQLServerDAL", "Edushi.UserCenter.SQLServerDAL\Edushi.UserCenter.SQLServerDAL.csproj", "{8682BAC2-9327-4AE5-96F2-3441AA91F24B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Edushi.UserCenter.Web.Mobile", "Edushi.UserCenter.Web.Mobile\Edushi.UserCenter.Web.Mobile.csproj", "{8AFE6112-4522-4F65-A11B-6243FD160367}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Edushi.UserCenter.Web.PC", "Edushi.UserCenter.Web.PC\Edushi.UserCenter.Web.PC.csproj", "{A6B300B0-EF78-4E9E-988E-9F61C9B4F323}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MvcPager", "MvcPager\MvcPager.csproj", "{4BA9F10C-67B7-4CD6-87B1-0519ADBCA2A1}"
+EndProject
+Global
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 12
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = http://192.168.100.212:8080/tfs/defaultcollection
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = Edushi.CacheConfigSection\\Edushi.CacheConfigSection.csproj
+		SccProjectName1 = Edushi.CacheConfigSection
+		SccLocalPath1 = Edushi.CacheConfigSection
+		SccProjectUniqueName2 = Edushi.Common\\Edushi.Common.csproj
+		SccProjectName2 = Edushi.Common
+		SccLocalPath2 = Edushi.Common
+		SccProjectUniqueName3 = Edushi.Log\\Edushi.Log.csproj
+		SccProjectName3 = Edushi.Log
+		SccLocalPath3 = Edushi.Log
+		SccProjectUniqueName4 = Edushi.MongoDB\\Edushi.MongoDB.csproj
+		SccProjectName4 = Edushi.MongoDB
+		SccLocalPath4 = Edushi.MongoDB
+		SccProjectUniqueName5 = Edushi.UserCenter.BLL\\Edushi.UserCenter.BLL.csproj
+		SccProjectName5 = Edushi.UserCenter.BLL
+		SccLocalPath5 = Edushi.UserCenter.BLL
+		SccProjectUniqueName6 = Edushi.UserCenter.Model\\Edushi.UserCenter.Model.csproj
+		SccProjectName6 = Edushi.UserCenter.Model
+		SccLocalPath6 = Edushi.UserCenter.Model
+		SccProjectUniqueName7 = Edushi.UserCenter.MongoDBDAL\\Edushi.UserCenter.MongoDBDAL.csproj
+		SccProjectName7 = Edushi.UserCenter.MongoDBDAL
+		SccLocalPath7 = Edushi.UserCenter.MongoDBDAL
+		SccProjectUniqueName8 = Edushi.UserCenter.SQLServerDAL\\Edushi.UserCenter.SQLServerDAL.csproj
+		SccProjectName8 = Edushi.UserCenter.SQLServerDAL
+		SccLocalPath8 = Edushi.UserCenter.SQLServerDAL
+		SccProjectUniqueName9 = Edushi.UserCenter.Web.Mobile\\Edushi.UserCenter.Web.Mobile.csproj
+		SccProjectName9 = Edushi.UserCenter.Web.Mobile
+		SccLocalPath9 = Edushi.UserCenter.Web.Mobile
+		SccProjectUniqueName10 = Edushi.UserCenter.Web.PC\\Edushi.UserCenter.Web.PC.csproj
+		SccProjectName10 = Edushi.UserCenter.Web.PC
+		SccLocalPath10 = Edushi.UserCenter.Web.PC
+		SccProjectUniqueName11 = MvcPager\\MvcPager.csproj
+		SccProjectName11 = MvcPager
+		SccLocalPath11 = MvcPager
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B7A85D1A-2AC1-419C-9BE6-99A6F285E15F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B7A85D1A-2AC1-419C-9BE6-99A6F285E15F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B7A85D1A-2AC1-419C-9BE6-99A6F285E15F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B7A85D1A-2AC1-419C-9BE6-99A6F285E15F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{88A22847-6B99-4241-8B15-536BEEC8B829}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{88A22847-6B99-4241-8B15-536BEEC8B829}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{88A22847-6B99-4241-8B15-536BEEC8B829}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{88A22847-6B99-4241-8B15-536BEEC8B829}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7356AC76-7475-41E8-BE4C-100A39E42B85}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7356AC76-7475-41E8-BE4C-100A39E42B85}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7356AC76-7475-41E8-BE4C-100A39E42B85}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7356AC76-7475-41E8-BE4C-100A39E42B85}.Release|Any CPU.Build.0 = Release|Any CPU
+		{59909CFC-D09F-4CCD-B2B1-DF0079F3E698}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{59909CFC-D09F-4CCD-B2B1-DF0079F3E698}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{59909CFC-D09F-4CCD-B2B1-DF0079F3E698}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{59909CFC-D09F-4CCD-B2B1-DF0079F3E698}.Release|Any CPU.Build.0 = Release|Any CPU
+		{75791969-D14F-4DF1-B3D6-36BADEBD30A6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{75791969-D14F-4DF1-B3D6-36BADEBD30A6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{75791969-D14F-4DF1-B3D6-36BADEBD30A6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{75791969-D14F-4DF1-B3D6-36BADEBD30A6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1B28DF83-E866-435F-92B4-7A2028A92868}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1B28DF83-E866-435F-92B4-7A2028A92868}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1B28DF83-E866-435F-92B4-7A2028A92868}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1B28DF83-E866-435F-92B4-7A2028A92868}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4B4CC543-0BE4-4054-96DF-436D081D015F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4B4CC543-0BE4-4054-96DF-436D081D015F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4B4CC543-0BE4-4054-96DF-436D081D015F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4B4CC543-0BE4-4054-96DF-436D081D015F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8682BAC2-9327-4AE5-96F2-3441AA91F24B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8682BAC2-9327-4AE5-96F2-3441AA91F24B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8682BAC2-9327-4AE5-96F2-3441AA91F24B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8682BAC2-9327-4AE5-96F2-3441AA91F24B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8AFE6112-4522-4F65-A11B-6243FD160367}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8AFE6112-4522-4F65-A11B-6243FD160367}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8AFE6112-4522-4F65-A11B-6243FD160367}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8AFE6112-4522-4F65-A11B-6243FD160367}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A6B300B0-EF78-4E9E-988E-9F61C9B4F323}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A6B300B0-EF78-4E9E-988E-9F61C9B4F323}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A6B300B0-EF78-4E9E-988E-9F61C9B4F323}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A6B300B0-EF78-4E9E-988E-9F61C9B4F323}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4BA9F10C-67B7-4CD6-87B1-0519ADBCA2A1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4BA9F10C-67B7-4CD6-87B1-0519ADBCA2A1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4BA9F10C-67B7-4CD6-87B1-0519ADBCA2A1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4BA9F10C-67B7-4CD6-87B1-0519ADBCA2A1}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

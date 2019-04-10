@@ -1,0 +1,41 @@
+﻿<div class="header-wd clearfix">
+    <a href="javascript:history.go(-1);" class="fl back"></a>
+    <div class="fl logo">
+        <a href="http://m.edushi.com/" class="eds"></a>
+        <a href="http://m.edushi.com/wenda/" class="wenda"></a>
+    </div>
+    <div class="fl search-box">
+        <input type="text" name="" placeholder="搜索你感兴趣的…" id="search_text" />
+        <input type="button" name="" value="" id="search-btn" />
+    </div>
+    <div class="fr tips">
+        <a href="http://m.edushi.com/wenda/info/ask.html" class="ask"><i></i><span>提问</span></a>
+        <a href="@Url.Content("~/wenda/")" class="my"><i></i><span>我的</span></a>
+    </div>
+</div>
+
+<script>
+    $(function () {
+        document.onkeydown = function (e) {
+            if (document.activeElement.id == "search_text") {
+                var ev = document.all ? window.event : e;
+                if (ev.keyCode == 13) {
+                    toSearch();
+                }
+            }
+        }
+
+        $("#search-btn").click(function () {
+            toSearch();
+        });
+
+        function toSearch() {
+            var text = $("#search_text").val();
+            if (text != "") {
+                window.location.href = "http://m.edushi.com/wenda/info/search.html?keyword=" + encodeURIComponent(text);
+            } else {
+                alert("请输入关键词");
+            }
+        }
+    });
+</script>

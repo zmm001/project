@@ -1,0 +1,120 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <!--标准网页编码-->
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <!--清空浏览器缓存-->
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate,no-siteapp" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Expires" content="0" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!--手机浏览器适配-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <meta name="format-detection" content="telephone=no; email=no" />
+    <meta name="renderer" content="webkit">
+    <meta name="apple-mobile-web-app-title" content="阿拉丁三维地图">
+    <script type="text/javascript" src="http://webapi.amap.com/maps?v=1.4.6&key=e8c07f64d6c9803cff6f05258b065221"></script>
+    <script src="http://libs.baidu.com/jquery/1.10.2/jquery.min.js"></script>
+    <link rel="stylesheet" href="http://cache.amap.com/lbs/static/main1119.css" />
+    <link href="../Css/style.css" />
+    <title>阿拉丁三维地图</title>
+    <!-- 后新添加 -->
+    <link rel="stylesheet" href="../wap/css/common.css">
+    <link rel="stylesheet" href="../wap/css/map.css">
+    <script>
+        document.documentElement.style.fontSize = 100 * ((document.documentElement.clientWidth) / 750) + "px";
+    </script>
+</head>
+
+<body>
+    <div id="container" class="tooltip">
+    </div>
+
+    <section class="top-box">
+        <div class="top-nav clearfix">
+            <a class="fl eds-logo"></a>
+            <a href="#" class="fl map-logo"></a>
+            <a href="../wap/city.html" class="fl city">杭州</a>
+            <div class="fr">
+                <a href="#" class="fl map current">地图</a>
+                <a href="../wap/线路.html" class="fl route">路线</a>
+            </div>
+        </div>
+        <div class="top-search">
+            <input type="text" name="" class="text-ipt" placeholder="请输入关键字">
+            <input type="button" name="" value="" class="submit-btn">
+        </div>
+        <div class="search-history">
+            <ul>
+                <li>
+                    <p>西田城</p>
+                </li>
+                <li>
+                    <p>浙江省新华医院</p>
+                </li>
+            </ul>
+            <div class="clear-history">
+                <p>清除全部历史记录</p>
+                <span></span>
+            </div>
+        </div>
+    </section>
+    <script type="text/javascript">
+        $(function () {
+            $(".text-ipt").click(function () {
+                $(".search-history").show();
+            });
+            $(".clear-history p").click(function () {
+                $(".search-history").empty().remove();
+            });
+            $(".clear-history span").click(function () {
+                $(".search-history").hide();
+            });
+        })
+    </script>
+
+    <section class="map-style-control">
+        <ul>
+            <li>三维</li>
+            <li>二维</li>
+            <li>卫星</li>
+        </ul>
+    </section>
+
+    <section class="map-lbar">
+        <div class="traffic">路况</div>
+        <div class="ranging">测距</div>
+    </section>
+    <!-- 测距 -->
+    <div class="amap-markers">
+
+        <section class="map-tools">
+            <div class="map-controls"></div>
+            <div class="zoom-in"></div>
+            <div class="zoom-out"></div>
+        </section>
+
+        <!-- 定位 -->
+        <div class="map-location"></div>
+
+        <script>
+            var map = new AMap.Map('container', {
+                resizeEnable: true,
+                zooms: [3, 18],
+                zoom: 18,
+                isHotspot: true,
+                expandZoomRange: true,
+                //features: ['bg'],
+                layers: []
+            });
+
+        </script>
+        <script src="../wap/map.js"></script>
+</body>
+
+</html>

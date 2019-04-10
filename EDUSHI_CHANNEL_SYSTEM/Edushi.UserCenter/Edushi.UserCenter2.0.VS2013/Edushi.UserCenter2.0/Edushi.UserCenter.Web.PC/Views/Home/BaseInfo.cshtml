@@ -1,0 +1,335 @@
+﻿@model Edushi.UserCenter.Web.PC.Models.BaseInfoModel
+@using Edushi.Common
+
+@{
+    if (Model.Type == 1)
+    {
+        Layout = "~/Views/Home/User_Layout.cshtml";
+    }
+    else if (Model.Type == 2)
+    {
+        Layout = "~/Areas/WenDa/Views/Shared/_Layout.cshtml";
+        ViewBag.PageType = 8;
+    }
+    else if (Model.Type == 3)
+    {
+        Layout = "~/Areas/Xiaoshuo/Views/Shared/_Layout.cshtml";
+    }
+
+    var user = Model.UserInfo;
+    var imgDomain = Common.GetConfigString("UserHeadPic");
+    ViewBag.PageFlag = "4";
+    ViewBag.Title = string.Format("\"{0}\"个人中心-E都市", Model.UserInfo.UI_NickName);
+}
+
+
+
+@if (user != null)
+{
+    <div class="main info-center">
+        <div class="tab-box">
+            <div class="urhere">
+                <a  class="go-center set" data-page="center"></a>
+                <a  class="page-name"></a>
+            </div>
+            <div class="info">
+                <span>请完善您的个人信息!</span>
+            </div>
+        </div>
+        <div class="info-box center">
+            <div class="item avatar">
+                <span class="name">我的头像：</span>
+                <span class="val">
+                    <span class="photo">
+                        <img src="@(imgDomain+user.UI_Avatar)">
+                    </span>
+                </span>
+                @*<a href="##" class="set" data-page=""></a>*@
+            </div>
+            <div @Html.Raw(!string.IsNullOrWhiteSpace(user.UI_NickName) ? "class=\"item\"" : "class=\"item notset\"")>
+                <span class="name">我的昵称：</span>
+                <span class="val">
+                    @if (!string.IsNullOrWhiteSpace(user.UI_NickName))
+                    {
+                        <span>@Html.Raw(user.UI_NickName)</span>
+                    }
+
+                </span>
+                @if (user.UI_Type != null && user.UI_Type != 1)
+                {
+                    <a class="set" data-page="nickname"></a>
+                }
+
+            </div>
+
+            <div @Html.Raw(!string.IsNullOrWhiteSpace(user.UI_Tags) ? "class=\"item\"" : "class=\"item notset\"")>
+                <span class="name">我的签名：</span>
+                <span class="val">
+                    @if (!string.IsNullOrWhiteSpace(user.UI_Tags))
+                    {
+                        <span>@Html.Raw(user.UI_Tags)</span>
+                    }
+
+                </span>
+                <a class="set" data-page="signature"></a>
+            </div>
+
+            <div @Html.Raw(!string.IsNullOrWhiteSpace(user.UI_UserName) ? "class=\"item\"" : "class=\"item notset\"")>
+                <span class="name">用户名：</span>
+                <span class="val">
+                    @if (!string.IsNullOrWhiteSpace(user.UI_UserName))
+                    {
+                        <span>@Html.Raw(user.UI_UserName)</span>
+                    }
+
+                </span>
+                <a href="javascript:void(0);" class="set" data-page="userid"></a>
+            </div>
+            <div @Html.Raw(!string.IsNullOrWhiteSpace(user.UI_PassWord) ? "class=\"item\"" : "class=\"item notset\"")>
+                <span class="name">登录密码：</span>
+                <span class="val">
+                    @if (!string.IsNullOrWhiteSpace(user.UI_PassWord))
+                    {
+                        <span>******</span>
+                    }
+
+                </span>
+                <a class="set" data-page="password"></a>
+            </div>
+
+            <div @Html.Raw(!string.IsNullOrWhiteSpace(user.UI_MobileNo) ? "class=\"item\"" : "class=\"item notbound\"")>
+                <span class="name">绑定手机：</span>
+                <span class="val">
+                    @if (!string.IsNullOrWhiteSpace(user.UI_MobileNo))
+                    {
+                        <span>@(user.UI_MobileNo.Substring(0, 2) + "*******" + user.UI_MobileNo.Substring(9, 2))</span>
+                    }
+
+                </span>
+            </div>
+            <div @Html.Raw(!string.IsNullOrWhiteSpace(user.UI_QQ) ? "class=\"item\"" : "class=\"item notbound\"")>
+                <span class="name">绑定QQ：</span>
+                <span class="val">
+                    @if (!string.IsNullOrWhiteSpace(user.UI_QQ))
+                    {
+                        <span>已绑定</span>
+                    }
+
+                </span>
+            </div>
+
+            <div @Html.Raw(!string.IsNullOrWhiteSpace(user.UI_WeiBo) ? "class=\"item\"" : "class=\"item notbound\"")>
+                <span class="name">绑定微博：</span>
+                <span class="val">
+                    @if (!string.IsNullOrWhiteSpace(user.UI_WeiBo))
+                    {
+                        <span>已绑定</span>
+                    }
+
+                </span>
+            </div>
+
+            <div @Html.Raw(!string.IsNullOrWhiteSpace(user.UI_WeiXin) ? "class=\"item\"" : "class=\"item notbound\"")>
+                <span class="name">绑定微信：</span>
+                <span class="val">
+                    @if (!string.IsNullOrWhiteSpace(user.UI_WeiXin))
+                    {
+                        <span>已绑定</span>
+                    }
+
+                </span>
+            </div>
+            <div @Html.Raw(!string.IsNullOrWhiteSpace(user.UI_Email) ? "class=\"item\"" : "class=\"item notbound\"")>
+                <span class="name">我的邮箱：</span>
+                <span class="val">
+                    @if (!string.IsNullOrWhiteSpace(user.UI_Email))
+                    {
+                        <span>@Html.Raw(user.UI_Email)</span>
+                    }
+
+                </span>
+            </div>
+        </div>
+        <div class="info-box password">
+            <div class="item">
+                <span class="name w">设置登录密码：</span>
+                <span class="val">
+                    <input id="old-password" type="password" class="w340" placeholder="请填写登录密码">
+                </span>
+            </div>
+            <div class="item">
+                <span class="name w">确认登录密码：</span>
+                <span class="val">
+                    <input id="new-password" type="password" class="w340" placeholder="请再次填写密码">
+                </span>
+            </div>
+            <div class="item">
+                <span class="name w"></span>
+                <span class="val">
+                    <a id="save-password" class="save-btn">保存</a>
+                </span>
+            </div>
+        </div>
+        @if (user.UI_Type != null && user.UI_Type != 1)
+        {
+            <div class="info-box nickname">
+                <div class="item">
+                    <span class="name">设置昵称：</span>
+                    <span class="val">
+                        <input type="text" id="set-nickname" class="w340" placeholder="请填写昵称">
+                    </span>
+                </div>
+                <div class="item">
+                    <span class="name"></span>
+                    <span class="val">
+                        <a id="save-nickname" class="save-btn">保存</a>
+                    </span>
+                </div>
+            </div>
+        }
+        
+        <div class="info-box userid">
+            <div class="item">
+                <span class="name w">设置用户名：</span>
+                <span class="val">
+                    <input type="text" id="set-username" class="w340" placeholder="请填写用户名">
+                </span>
+            </div>
+            <div class="item">
+                <span class="name w"></span>
+                <span class="val">
+                    <a id="save-username" class="save-btn">保存</a>
+                </span>
+            </div>
+        </div>
+        <div class="info-box signature">
+            <div class="item">
+                <span class="name">设置签名：</span>
+                <span class="val">
+                    <input type="text" id="set-tags" class="w700" placeholder="请填写签名">
+                </span>
+            </div>
+            <div class="item">
+                <span class="name"></span>
+                <span class="val">
+                    <a id="save-tags" class="save-btn">保存</a>
+                </span>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript">
+
+        $(".pop-box .confirm").click(function () {
+            $(".pop-box").hide();
+        });
+
+        $(".set").bind("click", function () {
+
+            var pageClass = $(this).data("page");
+            if (pageClass != "password") {
+                var text = $(this).siblings(".val").find("span").text();
+                var obj = $("." + $(this).data("page"));
+                obj.find("input").val(text).focus();
+            }
+            
+            
+            $(".main").attr("class", "main " + "info-" + $(this).data("page"));
+        });
+
+        //修改昵称
+        $("#save-nickname").click(function () {
+
+            var nickName =  $("#set-nickname").val().trim();
+            if (nickName == "") {
+                popUp("昵称不能为空！");
+                return false;
+            }
+            $.ajax({
+                type: "post",
+                dataType: "json",
+                url: "/UpdateNickName.htm",
+                data: { "nickName": nickName },
+                success: function (data) {
+                    if (data.ResultCode == 1) {
+                        location.reload();
+                    } else {
+                        popUp(data.Msg);
+                    }
+                }
+            });
+
+        });
+
+        //修改用户名
+        $("#save-username").click(function () {
+
+            var userName = $("#set-username").val().trim();
+            if (userName == "") {
+                popUp("用户名不能为空！");
+                return false;
+            }
+            $.ajax({
+                type: "post",
+                dataType: "json",
+                url: "/UpdateUserName.htm",
+                data: { "userName": userName },
+                success: function (data) {
+                    if (data.ResultCode == 1) {
+                        location.reload();
+                    } else {
+                        popUp(data.Msg);
+                    }
+                }
+            });
+
+        });
+
+        //修改签名
+        $("#save-tags").click(function () {
+
+            var tags = $("#set-tags").val();
+            $.ajax({
+                type: "post",
+                dataType: "json",
+                url: "/UpdateTags.htm",
+                data: { "tags": tags },
+                success: function (data) {
+                    if (data.ResultCode == 1) {
+                        location.reload();
+                    } else {
+                        popUp(data.Msg);
+                    }
+                }
+            });
+
+        });
+
+
+        $("#save-password").click(function () {
+            var oldPassword = $("#old-password").val().trim();
+            var newPassword = $("#new-password").val().trim();
+            if (oldPassword == "" || newPassword == "") {
+                popUp("密码不能为空！");
+                return false;
+            } else if (oldPassword != newPassword) {
+                popUp("密码不一致，请重新输入！");
+                return false;
+            }
+            $.ajax({
+                type: "post",
+                dataType: "json",
+                url: "/UpdatePassword.htm",
+                data: { "oldPassword": oldPassword, "newPassword": newPassword },
+                success: function (data) {
+                    if (data.ResultCode == 1) {
+                        location.reload();
+                    } else {
+                        popUp(data.Msg);
+                    }
+                }
+            });
+
+        });
+    </script>
+}
+

@@ -1,0 +1,199 @@
+﻿@using Edushi.Common
+@model Edushi.UserCenter.Web.Mobile.Models.MyFavoriteModel
+@{
+    ViewBag.Title = string.Format("\"{0}\"个人中心-E都市", Model.UserInfo.UI_NickName);
+}
+<div id="app" class="my">
+    <!--头部-->
+    <header-bar :data="header" @@back="back()" @@rightclick="changeEdit"></header-bar>
+    <!--内容-->
+    <div class="container" id="container" :class="{edit : isEdit }">
+        <div class="tab-box">
+            <a href="@Url.Content("~/my/favorite.html")" @Html.Raw(Model.Type == 0 ? "class=\"current tab-btn\"" : "class=\"tab-btn\"")>综合</a>
+            <a href="@Url.Content("~/my/favorite/1.html")" @Html.Raw(Model.Type == 1 ? "class=\"current tab-btn\"" : "class=\"tab-btn\"")>新闻</a>
+            <a href="@Url.Content("~/my/favorite/2.html")" @Html.Raw(Model.Type == 2 ? "class=\"current tab-btn\"" : "class=\"tab-btn\"")>图闻</a>
+            <a href="@Url.Content("~/my/favorite/3.html")" @Html.Raw(Model.Type == 3 ? "class=\"current tab-btn\"" : "class=\"tab-btn\"")>专题</a>
+        </div>
+        @if (Model.List != null && Model.List.Any())
+        {
+            <div class="favorite-list">
+                <div class="list-wrap">
+                    <ul id="datalist">
+                        @foreach (var item in Model.List)
+                        {
+                            var liClass = "";//默认为资讯
+                            var imgBox = string.Empty;
+                            var url = string.Empty;
+                            //var updateTime = Common.TimeInterval(item.UpdateTime, DateTime.Now);
+                            var dataPic = string.Empty;
+
+                            if (item.type == "1") //资讯
+                            {
+                                url = string.Format("http://m.edushi.com/zixun/info/{0}-{1}-n{2}.html", item.ParentTypeID, item.TypeID, item.ID);
+                                if (!string.IsNullOrEmpty(item.Pic) && !string.IsNullOrEmpty(item.Pic1) && !string.IsNullOrEmpty(item.Pic2))
+                                {
+                                    liClass = "class=\"multiple\"";
+                                    imgBox = string.Format("<div class=\"photo\"><img src=\"{0}\"></div><div class=\"photo\"><img src=\"{1}\"></div><div class=\"photo\"><img src=\"{2}\"></div>", item.Pic, item.Pic1, item.Pic2);
+                                }
+                                else if (!string.IsNullOrEmpty(item.Pic))
+                                {
+                                    liClass = "class=\"single\"";
+                                    imgBox = string.Format("<div class=\"photo\"><img src=\"{0}\"></div>", item.Pic);
+                                }
+                            }
+                            else if (item.type == "2")  //图闻
+                            {
+                                url = string.Format("http://tu.edushi.com/info/{0}-{1}-n{2}.html", item.ParentTypeID, item.TypeID, item.ID);
+                                liClass = "class=\"picture\"";
+                                dataPic = string.Format("data-picture=\"{0}\"", item.PicCount);
+                                if (!string.IsNullOrWhiteSpace(item.Pic) && !string.IsNullOrWhiteSpace(item.Pic1) && !string.IsNullOrWhiteSpace(item.Pic2))
+                                {
+                                    imgBox = string.Format("<div class=\"photo\"><img src=\"{0}\"></div><div class=\"photo\"><img src=\"{1}\"></div><div class=\"photo\"><img src=\"{2}\"></div>", item.Pic, item.Pic1, item.Pic2);
+                                }
+                                else if (!string.IsNullOrWhiteSpace(item.Pic))
+                                {
+                                    imgBox = string.Format("<div class=\"photo\"><img src=\"{0}\"></div>", item.Pic);
+                                }
+
+                            }
+                            else if (item.type == "3") //专题
+                            {
+                                url = string.Format("http://m.zt.edushi.com/zt/info/{0}-{1}-n{2}.html", item.ParentTypeID, item.TypeID, item.ID);
+                                liClass = " class=\"topic\"";//topic
+                                imgBox = string.Format("<div class=\"photo\"><img src=\"{0}\"></div>", item.Pic);
+                            }
+
+                            <li @Html.Raw(liClass) data-type="@item.type" data-sourceid="@item.ID">
+                                <label class="checkbox"><input type="checkbox"></label>
+                                <a href="@url" @Html.Raw(dataPic)>
+                                    <div>
+                                        <span class="title">@Html.Raw(item.Title)</span>
+                                        <div class="info">
+                                            <span class="name">@item.Author</span>
+                                            <span class="time">@item.CreateTime.ToString("yyyy-MM-dd HH:mm")</span>
+                                        </div>
+                                    </div>
+                                    @Html.Raw(imgBox)
+                                </a>
+                            </li>
+                        }
+
+                    </ul>
+                </div>
+                <div class="loding" id="loding" style="display: none;">正在加载更多</div>
+            </div>
+        }
+
+        <div class="edit-option">
+            <a class="checkall" ></a>
+            <div class="del" :data-number="checked.length" @@click="delNode"><span>删除</span></div>
+        </div>
+    </div>
+</div>
+
+<script>
+
+
+    var my = new Vue({
+        el: '#app',
+        data: function () {
+            return {
+                header: {
+                    title: '我的收藏',
+                    number: '@Model.TotalCount',
+                    rightBtn: ['编辑', '取消']
+                },
+                isEdit: false,
+                loading: true,
+                checkedIndex: {
+                },
+                checked: [
+                ]
+            }
+        },
+        methods: {
+            back: function () {
+                window.history.back();
+            },
+            rightClick: function() {
+
+            },
+            changeEdit: function() {
+                this.isEdit ? this.isEdit = false : this.isEdit = true;
+            },
+            delNode: function () {
+                var that = this;
+                $.ajax({
+                    type: "post",
+                    dataType: "json",
+                    url: "@Url.Content("~/CancelFavorites.htm")",
+                    data: { "data": JSON.stringify(that.checked) },
+                    success: function (data) {
+                        if (data.ResultCode == 1) {
+                            window.location.reload();
+                        } else {
+                            popUp(data.Msg);
+                        }
+                    }
+                });
+            }
+        },
+        watch: {
+            type: function () {
+                document.body.scrollTop = 0;
+            },
+            checked: {
+                handler: function () {
+                    this.checkedIndex = {};
+                    for (var i = 0; i < this.checked.length; i++) {
+                        this.checkedIndex[this.checked[i].sourceid] = String(i);
+                    }
+                },
+                deep: true
+            }
+        },
+        mounted: function () {
+            var that = this;
+            //点击事件
+            $(document).on('click', 'label', function (e) {
+                e.preventDefault();
+                var _type = $(this).parent().data('type');
+                var _sourceid = $(this).parent().data('sourceid');
+                if ($(this).hasClass('checked')) {
+                    $(this).removeClass('checked');
+                    that.checked.splice(that.checkedIndex[_sourceid], 1);
+                } else {
+                    $(this).addClass('checked');
+                    that.checked.push({ 'Type': _type, 'SourceId': _sourceid });
+                }
+            })
+            $('.checkall, .invert').bind('click', function () {
+                if ($(this).hasClass('checkall')) {
+                    that.checked = [];
+                    $('.favorite-list li label').addClass('checked');
+                    $('.favorite-list li').each(function (i) {
+                        var _type = $('.favorite-list li').eq(i).data('type');
+                        var _sourceid = $('.favorite-list li').eq(i).data('sourceid');
+                        that.checked.push({ 'Type': _type, 'SourceId': _sourceid });
+                    })
+                    $(this).attr('class', 'invert');
+                } else if ($(this).hasClass('invert')) {
+                    that.checked = [];
+                    $('.favorite-list li label').removeClass('checked');
+                    $(this).attr('class', 'checkall');
+                }
+            })
+        }
+    });
+
+    var ConfigData = {
+        Count: "@Model.PageCount",
+        Url: "@Url.Content("~/")",
+        Page: "GetMoreFavorite.htm",
+        NewsType: "@Model.Type",
+        PageIndex: 1,
+        Contaiter: $("#datalist"),
+        Type: 2
+    };
+</script>
+<script src="@Url.Content("~/asset/js/scrollLoad.bak.js")"></script>

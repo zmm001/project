@@ -1,0 +1,314 @@
+﻿@using Edushi.ZT.Special
+@using Edushi.ZT.Web._3G.Helper
+@model Edushi.ZT.Web._3G.Models.DetailModel
+@{
+    ViewBag.Title = Model.topic.T_Title;
+    var authorId = Model.AuthorInfo["ID"] == null ? 0 : Convert.ToInt32(Model.AuthorInfo["ID"]);
+    var currtyLoginId = DataHelper.GetUserId(); // 登录人id
+}
+
+@section meta{
+    <meta name="keywords" content="@(Model.topic.T_Keyword)" />
+    <meta name="description" content="@(Model.topic.T_Lead)" />
+}
+<link rel="stylesheet" href="@Url.Content("~/asset/css/detail7.0.css")">
+@Html.Partial("Header")
+
+<div class="content-main">
+    <h1 class="atl-title">@Html.Raw(Model.topic.T_Title)</h1>
+    @if (Model.AuthorInfo != null && Model.AuthorInfo["NickName"] != null && !string.IsNullOrWhiteSpace(Model.AuthorInfo["NickName"].ToString()))
+    {
+        <div class="look-info">
+            <div class="userid">
+                <a href="@string.Format("http://m.edushi.com/user/index/3-{0}.html", Model.AuthorInfo["ID"])"><img src="@(ViewBag.UserHeaderDomain + Model.AuthorInfo["Avatar"])"></a>
+                <div>
+                    <a href="@string.Format("http://m.edushi.com/user/index/3-{0}.html", Model.AuthorInfo["ID"])" class="name">@Model.AuthorInfo["NickName"]</a>
+                    <p class="time">@(DateTime.Parse(Model.topic.T_CreateDate.ToString()).ToLocalTime().ToString("yyyy-MM-dd"))</p>
+                </div>
+            </div>
+            <span id="articleIsAtted" data-id="@authorId" @Html.Raw(DataHelper.GetIsAttentioned(authorId) == -2 ? "class=\"look-add look-follow\"" : "class=\"look-add\"")></span> <!-- 已关注添加样式 look-follow -->
+            @*<script>
+                    $.post("/GetIsAttentioned.htm?", { "authorId": "@authorId" }, function (data) {
+                        if (data==-2) {
+                            $("#articleIsAtted").addClass("look-add look-follow");
+                        } else {
+                            $("#articleIsAtted").addClass("look-add");
+                        }
+                    })
+                </script>*@
+        </div>
+    }
+    <article>
+        <div class="main-article" id="datalist">
+            @if (Model.topic != null)
+            {
+                <p>@(Model.topic.T_Lead)</p>
+            }
+            <div>
+                <script type="text/javascript" src="//nba.emohe.com/bwoccfeyl.js"></script>
+            </div>
+            @if (Model.ListArticle != null && Model.ListArticle.Any())
+            {
+                foreach (var item in Model.ListArticle)
+                {
+                    var className = string.Empty;
+                    var imgHtml = string.Empty;
+                    if (!string.IsNullOrWhiteSpace(item.Pic) && !string.IsNullOrWhiteSpace(item.Pic1) && !string.IsNullOrWhiteSpace(item.Pic2))
+                    {
+                        className = " san";
+                        imgHtml = string.Format(" <img src=\"{0}\" onerror=\"this.src='{3}'\">\r\n<img src=\"{1}\" onerror=\"this.src='{3}'\">\r\n<img src=\"{2}\" onerror=\"this.src='{3}'\">\r\n", item.Pic.GetPicReplace("", ""), item.Pic1.GetPicReplace("", ""), item.Pic2.GetPicReplace("", ""), Url.Content("~/asset/images/default_photo.png"));
+                    }
+                    else if (!string.IsNullOrWhiteSpace(item.Pic))
+                    {
+                        className = " yi";
+                        imgHtml = string.Format(" <img src=\"{0}\" onerror=\"this.src='{1}'\">\r\n", item.Pic.GetPicReplace("", ""), Url.Content("~/asset/images/default_photo.png"));
+                    }
+
+                    <p class="t @className">
+
+                        <a href="@item.MobileUrl">
+                            <span>@Html.Raw(item.Title)</span>
+                            @Html.Raw(imgHtml)
+                        </a>
+                    </p>
+                    <p class="i">
+                        <a href="@item.MobileUrl">@Html.Raw(item.Lead)</a>
+                        <span>@item.Author<em></em>@item.Time</span>
+                    </p>
+
+                }
+            }
+        </div>
+        @if (Model.PageCount > 0)
+        {
+            <div class="add-more">加载更多</div>
+        }
+    </article>
+    <div>
+        <script type="text/javascript" src="//nba.emohe.com/bwlycsecc.js"></script>
+    </div>
+    <section>
+        <div class="atl-operation">
+            <a href="http://report.edushi.com/report" class="report">举报本文</a>
+            <div id="atl-cai" class="atl-cai"><em>+1</em><span>0</span></div>
+            <div id="alt-zan" class="atl-zan"><em>+1</em><span>0</span></div>
+            <span id="article-fav" class="favorite">收藏本文</span> <!-- 已收藏添加样式 collected -->
+            <script>
+                $.post("/GetIsUpvoteDownvote.htm?r=" + new Date().getTime(),
+                    { "id": "@Model.topic.T_ID" },
+                    function (data) {
+                        if (data) {
+                            $("#atl-cai span").text(data.DownvoteCount);
+                            $("#alt-zan span").text(data.UpvoteCount);
+                            if (data.IsUpvoteDownvote == -2) {
+                                $("#alt-zan").addClass("visited");
+                            } else if (data.IsUpvoteDownvote == -3) {
+                                $("#atl-cai").addClass("visited");
+                            }
+                        }
+                    },
+                    "json");
+
+                $.post("/GetIsFavorites.htm?r=" + new Date().getTime(), { "id": "@Model.topic.T_ID" }, function (data) {
+                    if (data == -2) {
+                        $("#article-fav").addClass("collected").text("已收藏");
+                    }
+                })
+            </script>
+        </div>
+        <div class="share-box">
+            <div class="tit">我要分享</div>
+            <div class="share-li">
+                <a class="qq"></a>
+                <a href="@Model.ShareUrlDic["QQZone"]" class="qzone"></a>
+                <a href="@Model.ShareUrlDic["Sina"]" class="weibo"></a>
+                <a class="weixin"></a>
+            </div>
+        </div>
+    </section>
+    <section class="line"></section>
+    <section class="comment-cnt">
+        <div class="comment-box">
+
+            <div class="tit">全部评论 (@Model.CommentCount)</div>
+            @if (Model.LstComment != null && Model.LstComment.Any())
+            {
+                var articleCommentList = Model.LstComment.FindAll(p => p.UC_FatherID == 0);
+                int acount = int.Parse(Common.GetConfigString("ArticleCommentCount"));
+                acount = articleCommentList.Count < acount ? articleCommentList.Count : acount;
+                for (var i = 0; i < acount; i++)
+                {
+                    var item = articleCommentList[i];
+                    var userRepeaterList = Model.LstComment.FindAll(p => p.UC_FatherID == item.UC_ID);
+                    var user = DataHelper.GetUserSimpleInfoByUIID(item.UC_UserID.Value, false);
+
+
+                    <div class="comment-list">
+                        <a class="photo" href="@string.Format("http://m.edushi.com/user/index/{0}-{1}.html", Convert.ToInt32(user["UserType"].ToString()) == 3 ? 5 : 1, user["ID"])"><img src="@(ViewBag.UserHeaderDomain + user["Avatar"])" onerror="this.src = 'http://res.edushi.com/www/touch/v7/asset/images/userhead.jpg'" /></a>
+                        <div class="comment-info">
+                            <div>
+                                <div class="user">
+                                    <a class="name" href="@string.Format("http://m.edushi.com/user/index/{0}-{1}.html", Convert.ToInt32(user["UserType"].ToString()) == 3 ? 5 : 1, user["ID"])">@user["NickName"]</a>
+                                    <p class="time">@item.UC_CreateDate.Value.ToLocalTime().ToString("yyyy-MM-dd HH:mm") </p>
+                                </div>
+                                @{
+
+                    var currtyUserId = Convert.ToInt32(user["ID"].ToString());
+                    if (currtyLoginId != currtyUserId)
+                    {
+                        if (currtyLoginId != 0)
+                        {
+                            var data = DataHelper.GetIsAttentioned(currtyUserId);
+                            if (data == -2)
+                            {
+                                <div class="@string.Format("followed id{0}", currtyUserId)" onclick="@string.Format("attention(this, {0}", currtyUserId))"></div>
+                            }
+                            else
+                            {
+                                <div class="@string.Format("follow-btn id{0}", currtyUserId)" onclick="@string.Format("attention(this, {0}", currtyUserId))"></div>
+                            }
+                        }
+                        else
+                        {
+                            <div class="@string.Format("follow-btn id{0}", currtyUserId)" onclick="@string.Format("attention(this, {0}", currtyUserId))"></div>
+                        }
+
+                    }
+
+
+                                }
+                                <ul class="tools" data-id="@item.UC_ID">
+                                    <li class="zan @(DataHelper.GetIsUpvoteDownvote(item.UC_ID)==-2?" yizan":"")"><em>+1</em><span>@item.UC_UpvoteTotal</span></li>
+                                    <li class="cai @(DataHelper.GetIsUpvoteDownvote(item.UC_ID) == -3 ? " yicai" : "")"><em>+1</em><span>@item.UC_DownvoteTotal</span></li>
+                                    <li class="replay"><a href="@string.Format("{0}comment/detail/{1}-{2}.html",Url.Content("~/"),Model.topic.T_ID,item.UC_ID)">回复</a></li>
+                                </ul>
+                            </div>
+                            <div class="content">
+                                @Html.Raw(item.UC_Content)
+                            </div>
+                            @if (userRepeaterList.Any())
+                            {
+                                var replyCount = userRepeaterList.Count > 2 ? 2 : userRepeaterList.Count;
+
+                                <div class="replay-box">
+                                    @for (int j = 0; j < replyCount; j++)
+                                    {
+                                        var replyItem = userRepeaterList[j];
+                                        var replyUser = DataHelper.GetUserSimpleInfoByUIID(replyItem.UC_UserID.Value, false);
+                                        <div class="replay-list">
+                                            <div>
+                                                <div class="user">
+                                                    <a class="name" href="@string.Format("http://m.edushi.com/user/index/{0}-{1}.html", Convert.ToInt32(replyUser["UserType"].ToString()) == 3 ? 5 : 1, replyUser["ID"])">@replyUser["NickName"]</a>
+                                                    <span class="time">@replyItem.UC_CreateDate.Value.ToLocalTime().ToString("yyyy-MM-dd HH:mm") </span>
+                                                </div>
+                                                @{
+                                        var replyId = Convert.ToInt32(replyUser["ID"].ToString());
+                                        if (currtyLoginId != replyId)
+                                        {
+                                            if (currtyLoginId != 0)
+                                            {
+                                                var data = DataHelper.GetIsAttentioned(replyId);
+                                                if (data == -2)
+                                                {
+                                                    <div class="@string.Format("followed id{0}", replyId)" onclick="@string.Format("attention(this, {0}", replyId))"></div>
+                                                }
+                                                else
+                                                {
+                                                    <div class="@string.Format("follow-btn id{0}", replyId)" onclick="@string.Format("attention(this, {0}", replyId))"></div>
+                                                }
+                                            }
+                                            else
+                                            {
+                                                <div class="@string.Format("follow-btn id{0}", replyId)" onclick="@string.Format("attention(this, {0}", replyId))"></div>
+                                            }
+
+                                        }
+                                                }
+                                                <ul class="tools" data-id="@replyItem.UC_ID">
+                                                    <li class="zan @(DataHelper.GetIsUpvoteDownvote(replyItem.UC_ID) == -2 ? " yizan" : "")"><em>+1</em><span>@replyItem.UC_UpvoteTotal</span></li>
+                                                    <li class="cai @(DataHelper.GetIsUpvoteDownvote(replyItem.UC_ID) == -3 ? " yicai" : "")"><em>+1</em><span>@replyItem.UC_DownvoteTotal</span></li>
+                                                </ul>
+                                            </div>
+                                            <div class="replay-content">@Html.Raw(replyItem.UC_Content)</div>
+                                        </div>
+
+                                    }
+                                    @if (userRepeaterList.Count > 2)
+                                    {
+                                        <div class="all-replay"><a href="@string.Format("{0}comment/detail/{1}-{2}.html",Url.Content("~/"),Model.topic.T_ID,item.UC_ID)">查看全部@(userRepeaterList.Count)条回复</a></div>
+                                    }
+
+                                </div>
+                            }
+
+                        </div>
+                    </div>
+                }
+                if (articleCommentList.Count > acount)
+                {
+                    <div class="all"><a href="@string.Format("{0}comment/detail/{1}.html", Url.Content("~/"), Model.topic.T_ID)">查看全部评论</a></div>
+                }
+
+            }
+
+
+        </div>
+        <div class="post-comment">
+            <input type="hidden" value="@Model.topic.T_ID" id="article-id" />
+            <input type="hidden" value="0" id="father-id" />
+            <textarea placeholder="@(DataHelper.GetUserId()>0? "" : "登录之后再评论")" class="comment-area"></textarea>
+            <input type="button" class="publish" value="发布" />
+        </div>
+    </section>
+    @if (Model.ChannelOrder != null && Model.ChannelOrder.Any())
+    {
+        <section class="recommend-li">
+            <div class="recommend-tit">专题排行</div>
+            <ul>
+                @foreach (var item in Model.ChannelOrder)
+                {
+                    <li>
+                        <a href="@Common.GetWapInfoUrl(Url.Content("~/") + "info/", item.TT_ID_Parent, item.TT_ID, item.T_ID)">
+                            <div class="img">
+                                <img src="@item.T_BackGroundPic.GetPicReplace("","")" onerror="this.src ='@Url.Content("~/asset/images/default_photo.png")'" />
+                            </div>
+                            <p>@Html.Raw(item.T_Title)</p>
+                        </a>
+                    </li>
+                }
+            </ul>
+            <div class="area-more"><a href="@Common.GetInfoListUrl(Url.Content("~/"),Model.parentType.TT_ParentID,Model.parentType.TT_ID)">更多专题</a></div>
+        </section>
+    }
+
+</div>
+
+@Html.Partial("Footer")
+
+<section class="pop-content">
+    <div class="pop-box">
+        <div class="msg" id="msg">您已收藏，请到个人中心查看</div>
+        <span class="btn cancel">知道了</span>
+        <a class="btn confirm" href="javascript:void(0);">去看看</a>
+    </div>
+</section>
+<!-- 点击qq与微信时的提示层 -->
+<section class="share-tips">
+    <div class="tips-box">
+        <p>点击浏览器下方“<em></em>”分享给<span>QQ</span>好友</p>
+        <p>safari浏览器请点击“<i></i>”按钮 </p>
+    </div>
+</section>
+<!-- 关注与取消关注时的提示层 -->
+<section class="look-layout">
+    <div class="look-msg"></div>
+</section>
+<script>
+    var requestUrl = "@Url.Content("~/")";
+    var configData = {
+        Count: "@Model.PageCount",
+        Page: "GetMoreDetailNews.htm",
+        ID: "@Model.topic.T_ID"
+    }
+</script>
+<script type="text/javascript" src="@Url.Content("~/asset/js/detail.js")"></script>

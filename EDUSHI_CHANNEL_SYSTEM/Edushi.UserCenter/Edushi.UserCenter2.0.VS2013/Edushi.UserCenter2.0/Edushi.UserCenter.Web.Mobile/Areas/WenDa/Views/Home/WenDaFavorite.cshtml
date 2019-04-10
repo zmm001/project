@@ -1,0 +1,208 @@
+﻿@using Edushi.Common
+@model Edushi.UserCenter.Web.Mobile.Areas.WenDa.Models.WenDaFavoriteModel
+@{
+    ViewBag.Title = "我的收藏-E都市问答";
+    var imgDomain = Common.GetConfigString("UserHeadPic");
+}
+
+<div class="my" id="app">
+    <!--头部-->
+    <header-bar v-bind:data="header" @@rightClick="changeEdit"></header-bar>
+
+    <!--内容-->
+    <div class="container" v-bind:class="{edit : isEdit }">
+        <div class="question-cnt js-votebox" id="datalist">
+            @if (Model.List != null && Model.List.Any())
+            {
+                foreach (var item in Model.List)
+                {
+                    if (string.IsNullOrWhiteSpace(item.Title))
+                    {
+                        continue;
+                    }
+                    var qNickName = item.UserInfo != null && !string.IsNullOrWhiteSpace(item.UserInfo["NickName"].ToString()) ? item.UserInfo["NickName"] : "E都市网友";
+                    var qUserHead = item.UserInfo != null && !string.IsNullOrWhiteSpace(item.UserInfo["Avatar"].ToString()) ? imgDomain + item.UserInfo["Avatar"] : Url.Content("~/areas/wenda/asset/images/userhead.jpg");
+                    int qUserId = item.UserInfo != null && item.UserInfo["ID"] != null ? (int)item.UserInfo["ID"] : 0;
+                    var qWendaUrl = qUserId > 0 ? "href=/user/wenda/index/1-" + qUserId + ".html" : "";
+                    
+                    <div class="question-list @Html.Raw(string.IsNullOrWhiteSpace(item.Pic) ? "" : "single")" data-sourceid="@item.QId">
+                        <label class="checkbox"><input type="checkbox"></label>
+                        <div class="wrap">
+                            <h2 class="q-tit"><a href="@item.Url">@Html.Raw(item.Title)</a></h2>
+
+                          
+
+                        </div>
+                        @if (!string.IsNullOrWhiteSpace(item.Pic))
+                        {
+                            <div class="img-box"><span><img src="@item.Pic"></span></div>
+                        }
+
+                        @*问答优化*@
+                        <div class="q-info">
+                            <a @qWendaUrl class="photo">
+                                <img src="@qUserHead" />@qNickName
+                            </a>
+                            <span>@item.CreateDate</span>
+                            <span>@(item.AnswerCount)回答</span><span>@(item.FavoriteCount)人收藏</span>
+                        </div>
+
+                        <div class="oper">
+                            <a href="@item.Url" class="answer">我来回答</a>
+                            <div class="share">分享</div>
+                        </div>
+                    </div>
+                
+                }
+            }
+           
+        </div>
+        <div class="loading" style="display: none;">加载中...</div>
+        <div class="end" @Html.Raw(Model.PageCount>1?"style=\"display:none;\"":"")>没有更多了</div>
+        <div class="edit-option">
+            <a class="checkall"></a>
+            <div class="del" v-bind:data-number="checked.length" @@click="delNode"><span>删除</span></div>
+        </div>
+    </div>
+    <!--分享-->
+    <section class="share-layout" @@click="closeShare"></section>
+    <section class="share-box">
+        <span class="tit">分享到</span>
+        <i class="close" @@click="closeShare"></i>
+        <div class="share-li">
+            <a class="qq js-tips" @@click="showTips">QQ</a>
+            <a href="#" class="qzone">QQ空间</a>
+            <a href="#" class="weibo">微博</a>
+            <a class="weixin js-tips" @@click="showTips">微信</a>
+        </div>
+    </section>
+    <section class="share-layout-tips" @@click="closeTips">
+        <div class="tips-box">
+            <p>点击浏览器下方“<em></em>”分享给<span>微信</span>好友</p>
+            <p>safari浏览器请点击“<i></i>”按钮 </p>
+        </div>
+    </section>
+</div>
+
+<script>
+
+
+    var my = new Vue({
+        el: '#app',
+        data: function() {
+            return {
+                header: {
+                    title: '我的收藏',
+                    number: '@(Model.TotalCount)个',
+                    rightBtn: ['编辑', '取消']
+                },
+                isEdit: false,
+                checkedIndex: {
+                },
+                checked: [
+                ]
+            }
+        },
+        methods: {
+            changeEdit: function() {
+                this.isEdit ? this.isEdit = false : this.isEdit = true;
+            },
+            changeEdit: function() {
+                this.isEdit ? this.isEdit = false : this.isEdit = true;
+            },
+            delNode: function() {
+                //$('.checked').parent().remove();
+                //this.checked = [];
+                var that = this;
+                $.ajax({
+                    type: "post",
+                    dataType: "json",
+                    url: "@Url.Content("~/CancelFavorites.htm")",
+                    data: { "data": JSON.stringify(that.checked) },
+                    success: function (data) {
+                        if (data.ResultCode == 1) {
+                            setTimeout(function () { window.location.reload(); }, 60);
+                        } else {
+                            alert(data.Msg);
+                        }
+                    }
+                });
+            },
+            closeShare: function() {
+                $('.share-layout').hide();
+                $('.share-box').removeClass('show');
+            },
+            showTips: function(event) {
+                console.log(event.currentTarget);
+                $('.share-layout-tips').find('p:eq(0) span').text(event.currentTarget.innerHTML);
+                $('.share-layout-tips').show();
+            },
+            closeTips: function() {
+                $('.share-layout-tips').hide();
+                $('.share-layout').hide();
+                $('.share-box').removeClass('show');
+            }
+        },
+        watch: {
+            type: function() {
+                document.body.scrollTop = 0;
+            },
+            checked: {
+                handler: function() {
+                    this.checkedIndex = {};
+                    for (var i = 0; i < this.checked.length; i++) {
+                        this.checkedIndex[this.checked[i].sourceid] = String(i);
+                    }
+                },
+                deep: true,
+            },
+        },
+        mounted: function() {
+            var that = this;
+            //点击事件
+            $(document).on('click',
+                'label',
+                function(e) {
+                    e.preventDefault();
+                    var _type = "@Model.FavoriteType";
+                    var _sourceid = $(this).parent().data('sourceid');
+                    if ($(this).hasClass('checked')) {
+                        $(this).removeClass('checked');
+                        that.checked.splice(that.checkedIndex[_sourceid], 1);
+                    } else {
+                        $(this).addClass('checked');
+                        that.checked.push({ 'Type': _type, 'SourceId': _sourceid })
+                    }
+                })
+            $('.checkall, .invert').bind('click',
+                function() {
+                    if ($(this).hasClass('checkall')) {
+                        that.checked = [];
+                        $('.question-list label').addClass('checked');
+                        $('.question-list').each(function(i) {
+                            var _type = "@Model.FavoriteType";
+                            var _sourceid = $('.question-list').eq(i).data('sourceid');
+                            that.checked.push({ 'Type': _type, 'SourceId': _sourceid })
+                        })
+                        $(this).attr('class', 'invert');
+                    } else if ($(this).hasClass('invert')) {
+                        that.checked = [];
+                        $('.question-list label').removeClass('checked');
+                        $(this).attr('class', 'checkall');
+                    }
+                })
+        }
+    });
+    var ConfigData = {
+        "PageIndex":1,
+        "Count": "@Model.PageCount",
+        "Page": "@Url.Content("~/")",
+        "Url": "wenda/GetMoreFavorites.htm",
+        "Id": 0,
+        "Type": 1
+    }
+
+
+</script>
+
+<script src="@Url.Content("~/areas/wenda/asset/js/scrollload.bak.js")"></script>

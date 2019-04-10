@@ -1,0 +1,124 @@
+﻿@model Edushi.ZT.Web._3G.Models.ChannelModel
+@using Edushi.ZT.Model;
+@using Edushi.ZT.Special
+@{
+    string sub = string.Empty;
+    List<TopicTypeModel> parentType = Model.AllType.Where(p => p.TT_ParentID == 0).ToList();
+    List<TopicTypeModel> myType = Model.AllType.FindAll(p => p.TT_ParentID == Model.CurrentModel.TT_ID);
+    if (myType.Any())
+    {
+        sub = string.Join(",", myType.Select(p => p.TT_Name));
+    }
+    string typeName = Model.CurrentModel.TT_Name;
+    ViewBag.Title = string.Format("{0}专题-专题汇总-E都市", typeName);
+}
+
+@section meta {
+    <meta name="Keywords" content="@(typeName),@sub" />
+    <meta name="Description" content="E都市@(typeName)专题是全面专业的@(typeName)资讯信息平台，提供@(sub.Replace(",", "、"))等@(typeName)资讯，构建新型互联网媒体平台为互联网用户提供价值资讯。" />
+}
+<link rel="stylesheet" href="@Url.Content("~/asset/css/style7.0.css")">
+@Html.Partial("Header", "Shared")
+<section class="main-nav-box">
+    <div class="main-nav clearfix">
+        <nav>
+            <a href="@Url.Content("~/")">首页</a>
+            @if (parentType.Any())
+            {
+                foreach (var item in parentType)
+                {
+                    <a href="@Common.GetInfoListUrl(Url.Content("~/"),item.TT_ParentID,item.TT_ID)" @Html.Raw(item.TT_ID == Model.CurrentModel.TT_ID ? "class=\"on\"" : "")>@item.TT_Name</a>
+                }
+            }
+        </nav>
+    </div>
+</section>
+<div class="content-main">
+    @if (Model.Data != null && Model.Data.Any())
+    {
+        <!--轮播-->
+        <section class="carousel">
+            <div class="focus-box">
+                <ul class="swiper-wrapper">
+                    @for (int i = 0; i < Model.Data.Count; i++)
+                    {
+                        if (i > 5)
+                        {
+                            break;
+                        }
+                        var item = Model.Data[i];
+                        <li class="swiper-slide">
+                            <a href="@item.Url"><img data-src="@item.Pic" class="swiper-lazy" /></a>
+                            <p class="text">
+                                <a href="@item.Url">@Html.Raw(item.Title)</a>
+                            </p>
+                        </li>
+                    }
+                </ul>
+            </div>
+            <div class="pic-num">
+                <div class="number">
+                    <span class="on-num">1</span>/<span class="total-num">6</span>
+                </div>
+            </div>
+        </section>
+    }
+    @if (Model.Data != null && Model.Data.Count > 6)
+    {
+        <section class="news-list">
+            <ul id="datalist">
+                @for(var i=6;i<Model.Data.Count;i++)
+                {
+                    var item = Model.Data[i];
+                    <li>
+                        <a href="@item.Url">
+                            <div class="title">@Html.Raw(item.Title)</div>
+                            <div class="img-box">
+                                <img src="@item.Pic" onerror="this.src='@Url.Content("~/asset/images/default_photo.png")'" />
+                            </div>
+                            <div class="tips">
+                                <span class="author">@item.Author</span>
+                                <span class="comment"></span>
+                                <span class="time">@item.Time</span>
+                            </div>
+                        </a>
+                    </li>
+                }
+            </ul>
+            <div class="loading">
+                <span>正在加载更多</span>
+            </div>
+        </section>
+    }
+</div>
+@Html.Partial("Footer", "Shared")
+<script type="text/javascript" src="@Url.Content("~/asset/js/swiper.min.js")"></script>
+<script type="text/javascript">
+    if($(".focus-box li").length > 1){
+        var mySwiper = new Swiper('.focus-box',{
+            loop: true,
+            autoplay: {
+                delay: 5000,
+                disableOnInteraction: false,
+            },
+            lazy: {
+                loadPrevNext: true,
+            },
+            on:{
+                slideChangeTransitionStart: function(){
+                    $(".on-num").text(this.realIndex+1);
+                }
+            }
+        });
+        $(".total-num").text(mySwiper.slides.length-2);
+    }
+    var ConfigData = {
+        Count: "@Model.PageCount",
+        pageIndex: 0,
+        Url: "@Url.Content("~/")",
+        Page: "GetMoreData.htm",
+        ID: "@Model.CurrentModel.TT_ID"
+    };
+</script>
+<script src="@Url.Content("~/asset/js/scrollload.js")" type="text/javascript"></script>
+

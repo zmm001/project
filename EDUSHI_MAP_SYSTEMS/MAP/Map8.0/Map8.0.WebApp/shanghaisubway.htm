@@ -1,0 +1,28 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head>
+    <title>上海地铁图层</title>
+     <script language ="javascript" type ="text/javascript">
+        var vMs = null;
+        function fnLoadInit() {
+            if (typeof vEdushiSubwayMap == 'undefined') {
+                setTimeout("fnLoadInit()", 50);
+                return;
+            }
+            vMs = vEdushiSubwayMap;
+        }
+    </script>
+    <style type="text/css">
+body {
+	margin-left: 0px;
+	margin-top: 0px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+}
+</style>
+</head>
+<body onload ="fnLoadInit()">
+<div id="EdushiSubwayMap"></div>
+</body>
+</html>
+<script language ="javascript" type="text/javascript" src ="http://capi4.edushi.com/default.aspx?MapID=EdushiSubwayMap&City=shanghaisubway&L=zh-chs&x=1000&y=2000&w=1024&h=1024&e=utf-8&z=0&v=0&zb=false&s=false&m=false&solution=default"></script>

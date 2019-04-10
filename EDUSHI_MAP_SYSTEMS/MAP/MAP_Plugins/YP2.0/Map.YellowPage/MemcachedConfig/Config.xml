@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CacheConfig>
+  <Setting>
+    <IsCache>true</IsCache>
+    <CityCode>Default</CityCode>
+    <Language>zh-chs</Language>
+    <TimeSpan></TimeSpan>
+    <Hours>12</Hours>
+  </Setting>
+  <Setting>
+    <IsCache>false</IsCache>
+    <CityCode>hz</CityCode>
+    <Language>zh-chs</Language>
+    <TimeSpan></TimeSpan>
+    <Hours>12</Hours>
+  </Setting>
+</CacheConfig>

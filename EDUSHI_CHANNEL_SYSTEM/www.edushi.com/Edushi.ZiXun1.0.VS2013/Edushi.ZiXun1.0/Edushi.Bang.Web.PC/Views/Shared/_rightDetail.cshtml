@@ -1,0 +1,51 @@
+﻿@model Edushi.Bang.Web.PC.Models.SharedModel
+
+<ul class="sidebar-nav nav-red">
+    <li>头条推荐</li>
+</ul>
+<ul class="headline-recommend m-b20">
+    @Html.Raw(Model.HtmlTuiJianZiXun_TouTiao)
+</ul>
+@{Html.RenderPartial("_DetailHouseRent");}
+<div class="bdt-ecity">
+@if (Model.HtmlBaoDt != null && Model.HtmlBaoDt.Rows.Count > 0)
+{
+    <div class="bdt-list">
+        <p class="bdt-ecityTit">
+            包打听</p>
+        <ul>
+            @foreach (System.Data.DataRow dr in Model.HtmlBaoDt.Rows)
+            {
+                //string time = BangControlBase.GetDateString(Convert.ToDateTime(dr["LT_CreateDate"]));
+                int LTT_ParentID = dr["LTT_ParentID"] == null ? 0 : Convert.ToInt32(dr["LTT_ParentID"]);
+                int LTT_ID = dr["LTT_ID"] == null ? 0 : Convert.ToInt32(dr["LTT_ID"]);
+            <li><a href="@(Model.Base.BdtUrl + "class/all-" + LTT_ID + "-1-" + LTT_ParentID + ".shtml")" target="_blank"><span>[@dr["LTT_TypeName"]]</span></a><a href="@(Model.Base.BdtUrl + "detail/" + dr["LT_ID"] + ".shtml")" target="_blank">@dr["LT_Title"]</a></li>
+            }
+        </ul>
+    </div>
+}
+@*@if (Model.HtmlETongc != null && Model.HtmlETongc.Rows.Count > 0)
+{
+    <div class="ecity-list">
+        <p class="bdt-ecityTit">
+            E同城</p>
+        <ul>
+        @foreach (System.Data.DataRow dr in Model.HtmlETongc.Rows)
+        {
+            <li><a href="@(Model.Base.ETongChengUrl+dr["LIT_Key"]+"/")" target="_blank"><span>[@dr["LIT_Name"]]</span></a><a href="@(Model.Base.ETongChengUrl+dr["LIT_Key"]+"/"+dr["BaseID"]+".html")" target="_blank">@dr["BaseTitle"]</a></li>
+        }
+        </ul>
+    </div>
+}*@
+</div>
+
+<p class="report-link">
+    <a target="_blank" href="http://report.edushi.com/report" rel="nofollow">举报本条信息</a></p>
+@*<div class="Release">
+    <input type="button" class="RelBnt" value="新鲜事？报料上头条！" id="btnPost" onclick="openNewWin('@(Model.Base.BangUrl + "post.shtml")')">
+</div>*@
+<script type="text/javascript">
+    function openNewWin(url) {
+        window.open(url, '_blank');
+    }
+</script>

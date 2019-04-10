@@ -1,0 +1,12 @@
+E:\TFS192.168.100.212\EDUSHI_DATA_CENTER\EdushiDataCenter\v3.0\EdushiDataCenterSolution\Edushi.Test\bin\Edushi.Test.dll
+E:\TFS192.168.100.212\EDUSHI_DATA_CENTER\EdushiDataCenter\v3.0\EdushiDataCenterSolution\Edushi.Test\bin\Edushi.Test.pdb
+E:\TFS192.168.100.212\EDUSHI_DATA_CENTER\EdushiDataCenter\v3.0\EdushiDataCenterSolution\Edushi.Test\bin\Edushi.Delete.dll
+E:\TFS192.168.100.212\EDUSHI_DATA_CENTER\EdushiDataCenter\v3.0\EdushiDataCenterSolution\Edushi.Test\bin\Edushi.User.dll
+E:\TFS192.168.100.212\EDUSHI_DATA_CENTER\EdushiDataCenter\v3.0\EdushiDataCenterSolution\Edushi.Test\bin\Newtonsoft.Json.dll
+E:\TFS192.168.100.212\EDUSHI_DATA_CENTER\EdushiDataCenter\v3.0\EdushiDataCenterSolution\Edushi.Test\bin\MongoDB.Driver.dll
+E:\TFS192.168.100.212\EDUSHI_DATA_CENTER\EdushiDataCenter\v3.0\EdushiDataCenterSolution\Edushi.Test\bin\MongoDB.Bson.dll
+E:\TFS192.168.100.212\EDUSHI_DATA_CENTER\EdushiDataCenter\v3.0\EdushiDataCenterSolution\Edushi.Test\bin\Edushi.Delete.pdb
+E:\TFS192.168.100.212\EDUSHI_DATA_CENTER\EdushiDataCenter\v3.0\EdushiDataCenterSolution\Edushi.Test\bin\Edushi.User.pdb
+E:\TFS192.168.100.212\EDUSHI_DATA_CENTER\EdushiDataCenter\v3.0\EdushiDataCenterSolution\Edushi.Test\obj\Debug\Edushi.Test.csprojResolveAssemblyReference.cache
+E:\TFS192.168.100.212\EDUSHI_DATA_CENTER\EdushiDataCenter\v3.0\EdushiDataCenterSolution\Edushi.Test\obj\Debug\Edushi.Test.dll
+E:\TFS192.168.100.212\EDUSHI_DATA_CENTER\EdushiDataCenter\v3.0\EdushiDataCenterSolution\Edushi.Test\obj\Debug\Edushi.Test.pdb

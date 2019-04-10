@@ -1,0 +1,4 @@
+E:\TFS192.168.100.212\EDUSHI_DATA_CENTER\EdushiDataCenter\v3.0\EdushiDataCenterSolution\Edushi.AiShangTouTiao.API\bin\Debug\Edushi.AiShangTouTiao.API.dll
+E:\TFS192.168.100.212\EDUSHI_DATA_CENTER\EdushiDataCenter\v3.0\EdushiDataCenterSolution\Edushi.AiShangTouTiao.API\bin\Debug\Edushi.AiShangTouTiao.API.pdb
+E:\TFS192.168.100.212\EDUSHI_DATA_CENTER\EdushiDataCenter\v3.0\EdushiDataCenterSolution\Edushi.AiShangTouTiao.API\obj\Debug\Edushi.AiShangTouTiao.API.dll
+E:\TFS192.168.100.212\EDUSHI_DATA_CENTER\EdushiDataCenter\v3.0\EdushiDataCenterSolution\Edushi.AiShangTouTiao.API\obj\Debug\Edushi.AiShangTouTiao.API.pdb

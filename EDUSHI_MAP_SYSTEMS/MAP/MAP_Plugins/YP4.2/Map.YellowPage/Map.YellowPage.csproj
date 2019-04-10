@@ -1,0 +1,320 @@
+﻿<Project ToolsVersion="3.5" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{3ED88A55-EE05-41E4-B296-FAA04BEF544C}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Map.YellowPage</RootNamespace>
+    <AssemblyName>Map.YellowPage</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AspNetPager, Version=6.0.0.0, Culture=neutral, PublicKeyToken=fb0a0fe055d40fd4, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Lib\AspNetPager.dll</HintPath>
+    </Reference>
+    <Reference Include="EDC.Framework, Version=3.0.1.708, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Lib\EDC.Framework.dll</HintPath>
+    </Reference>
+    <Reference Include="EDC.Member, Version=2.0.0.1012, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Lib\EDC.Member.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.JScript" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.ServiceModel">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Web.Extensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Web.Mobile" />
+    <Reference Include="URLRewriter, Version=1.0.1495.18710, Culture=neutral">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Lib\URLRewriter.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Channel\Hotel.aspx" />
+    <Content Include="Channel\House.aspx" />
+    <Content Include="Channel\Jobs.aspx" />
+    <Content Include="CompanyDetail.aspx" />
+    <Content Include="Css\List.css" />
+    <Content Include="Css\style.css" />
+    <Content Include="Default.aspx" />
+    <Content Include="Images\blackPhoto.gif" />
+    <Content Include="Images\body_bg.png" />
+    <Content Include="Images\body_bg2.png" />
+    <Content Include="Images\bottom.gif" />
+    <Content Include="Images\bottom_Bg.jpg" />
+    <Content Include="Images\btn.png" />
+    <Content Include="Images\center_bg.jpg" />
+    <Content Include="Images\csjm.gif" />
+    <Content Include="Images\down.gif" />
+    <Content Include="Images\edian.gif" />
+    <Content Include="Images\icon1.gif" />
+    <Content Include="Images\inherit-360_270.png" />
+    <Content Include="Images\ITEXT1.jpg" />
+    <Content Include="Images\i_left.png" />
+    <Content Include="Images\i_right.png" />
+    <Content Include="Images\jdyd.gif" />
+    <Content Include="Images\line.gif" />
+    <Content Include="Images\line1_bg.jpg" />
+    <Content Include="Images\line2.gif" />
+    <Content Include="Images\line2.jpg" />
+    <Content Include="Images\line3.jpg" />
+    <Content Include="Images\loading.gif" />
+    <Content Include="Images\logo.jpg" />
+    <Content Include="Images\mapdw.gif" />
+    <Content Include="Images\NOPHOTO.jpg" />
+    <Content Include="Images\NOPHOTO.png" />
+    <Content Include="Images\number_bg.jpg" />
+    <Content Include="Images\pic_none.jpg" />
+    <Content Include="Images\sq.gif" />
+    <Content Include="Images\ss-b.gif" />
+    <Content Include="Images\ss-c.gif" />
+    <Content Include="Images\ss-t.gif" />
+    <Content Include="Images\ss.gif" />
+    <Content Include="Images\swdh.gif" />
+    <Content Include="Images\up.gif" />
+    <Content Include="Images\xq.gif" />
+    <Content Include="Images\zkxx.gif" />
+    <Content Include="Images\zp.gif" />
+    <Content Include="Js\Ajax.js" />
+    <Content Include="Js\AjaxData.js" />
+    <Content Include="Js\Common.js" />
+    <Content Include="Js\GeneralLib.js" />
+    <Content Include="Js\Hotel.js" />
+    <Content Include="Js\House.js" />
+    <Content Include="Js\Tabs.js" />
+    <Content Include="Js\ypDetail.js" />
+    <Content Include="Js\zhaopin.js" />
+    <Content Include="KeywordSearchList.aspx" />
+    <Content Include="OwnerDetail.aspx" />
+    <Content Include="PageCount.aspx" />
+    <Content Include="TypeSearchList.aspx" />
+    <Content Include="UserControl\BdtControl.ascx" />
+    <Content Include="UserControl\EshopDynamicUserContorl.ascx" />
+    <Content Include="UserControl\YpFooterControl.ascx" />
+    <Content Include="UserControl\YpHeadControl.ascx" />
+    <Content Include="Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BasePage.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Channel\Hotel.aspx.cs">
+      <DependentUpon>Hotel.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Channel\Hotel.aspx.designer.cs">
+      <DependentUpon>Hotel.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Channel\House.aspx.cs">
+      <DependentUpon>House.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Channel\House.aspx.designer.cs">
+      <DependentUpon>House.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Channel\Jobs.aspx.cs">
+      <DependentUpon>Jobs.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Channel\Jobs.aspx.designer.cs">
+      <DependentUpon>Jobs.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CompanyDetail.aspx.cs">
+      <DependentUpon>CompanyDetail.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CompanyDetail.aspx.designer.cs">
+      <DependentUpon>CompanyDetail.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Default.aspx.cs">
+      <SubType>ASPXCodeBehind</SubType>
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Error.aspx.cs">
+      <DependentUpon>Error.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Error.aspx.designer.cs">
+      <DependentUpon>Error.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="KeywordSearchList.aspx.cs">
+      <DependentUpon>KeywordSearchList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="KeywordSearchList.aspx.designer.cs">
+      <DependentUpon>KeywordSearchList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="OwnerDetail.aspx.cs">
+      <DependentUpon>OwnerDetail.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="OwnerDetail.aspx.designer.cs">
+      <DependentUpon>OwnerDetail.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PageCount.aspx.cs">
+      <DependentUpon>PageCount.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PageCount.aspx.designer.cs">
+      <DependentUpon>PageCount.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TempCompanyDetail.aspx.cs">
+      <DependentUpon>TempCompanyDetail.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="TempCompanyDetail.aspx.designer.cs">
+      <DependentUpon>TempCompanyDetail.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="TypeSearchList.aspx.cs">
+      <DependentUpon>TypeSearchList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="TypeSearchList.aspx.designer.cs">
+      <DependentUpon>TypeSearchList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControl\BdtControl.ascx.cs">
+      <DependentUpon>BdtControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControl\BdtControl.ascx.designer.cs">
+      <DependentUpon>BdtControl.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControl\CouponControl.ascx.cs">
+      <DependentUpon>CouponControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControl\CouponControl.ascx.designer.cs">
+      <DependentUpon>CouponControl.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControl\EshopDataControl.ascx.cs">
+      <DependentUpon>EshopDataControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControl\EshopDataControl.ascx.designer.cs">
+      <DependentUpon>EshopDataControl.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControl\EshopDynamicUserContorl.ascx.cs">
+      <DependentUpon>EshopDynamicUserContorl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControl\EshopDynamicUserContorl.ascx.designer.cs">
+      <DependentUpon>EshopDynamicUserContorl.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControl\LivingInfoControl.ascx.cs">
+      <DependentUpon>LivingInfoControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControl\LivingInfoControl.ascx.designer.cs">
+      <DependentUpon>LivingInfoControl.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControl\YpFooterControl.ascx.cs">
+      <DependentUpon>YpFooterControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControl\YpFooterControl.ascx.designer.cs">
+      <DependentUpon>YpFooterControl.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControl\YpHeadControl.ascx.cs">
+      <DependentUpon>YpHeadControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControl\YpHeadControl.ascx.designer.cs">
+      <DependentUpon>YpHeadControl.ascx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Map.YellowPageBLL\Map.YellowPageBLL.csproj">
+      <Project>{4E09C426-E771-4141-BB68-E319E67E102F}</Project>
+      <Name>Map.YellowPageBLL</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="config\MemberCacheTime.config" />
+    <Content Include="Error.aspx" />
+    <Content Include="TempCompanyDetail.aspx" />
+    <Content Include="UserControl\CouponControl.ascx" />
+    <Content Include="UserControl\EshopDataControl.ascx" />
+    <Content Include="UserControl\LivingInfoControl.ascx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v9.0\WebApplications\Microsoft.WebApplication.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>1522</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://hangzhou.edushi.com/hy/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>

@@ -1,0 +1,396 @@
+html {
+  margin: 0;
+  font-family: 'PingFangSC-Regular', 'STHeiti', 'Microsoft YaHei', Helvetica, Arial;
+}
+
+div,
+img,
+ul,
+ol,
+li,
+dl,
+dt,
+dd,
+header {
+  margin: 0;
+  padding: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  /*position: relative;*/
+  margin: 0;
+  padding: 0;
+  font-size: 0.32rem;
+  background: #fff;
+  /*overflow-x: hidden;
+  overflow-y: auto;*/
+      overflow: hidden;
+}
+
+ol,
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: #333;
+}
+
+a:link,
+a:visited,
+a:hover,
+a:active {
+  color: #333;
+}
+
+input {
+  padding: 0;
+  margin: 0;
+  -webkit-appearance: none;
+  outline: none;
+}
+
+/* 地图开始 */
+.my-tool {
+  position: absolute;
+  z-index: 999;
+  width: 93.6%;
+  box-sizing: content-box;
+  height: 0.88rem;
+  background: rgba(255, 255, 255, 1);
+  box-shadow: 0px 0.04rem 0.2rem 0px rgba(157, 157, 157, 0.5);
+  border-radius: 0.08rem;
+  bottom: 0.54rem;
+  margin-left: 0.24rem;
+}
+       .my-tool div{
+                  display: inline-block;
+                    line-height: 0.88rem;
+       }
+         .hangzhou {
+       }
+       .hangzhou img{
+                 width:0.34rem;
+                 height:0.42rem;
+                 vertical-align: middle;
+                 margin-left: 0.26rem;
+                 margin-right:0.2rem;
+       }
+
+
+.tainqi {
+  float: right;
+}
+
+.tainqi img{
+      width: 0.5rem;
+    height: 0.5rem;
+    vertical-align: middle;
+    margin-right: 0.26rem;
+    margin-left: 0.2rem;
+}
+
+.show-fnc {
+  /* border: 1px solid red; */
+  position: absolute;
+  z-index: 999;
+  top: 0.38rem;
+  right: 0.24rem;
+}
+.show-fnc img {
+     width: 0.8rem;
+    height: 0.8rem;
+}
+
+.show-fnc div {
+  /*width: 40px;
+  height: 40px;
+  background: rgba(255, 255, 255, 1);
+  box-shadow: 0px 2px 10px 0px rgba(157, 157, 157, 0.5);*/
+}
+
+.layer-change {
+  /*margin-bottom: 12px;*/
+}
+
+.search-query {}
+
+.layer-list {
+  display: none;
+  position: absolute;
+  z-index: 999;
+  right: 1.4rem;
+  top: 0.4rem;
+  width: 1.5rem;
+  height: 2.04rem;
+  background: rgba(255, 255, 255, 1);
+  box-shadow: 0px 0.04rem 0.2rem 0px rgba(157, 157, 157, 0.5);
+}
+
+.layer-list ul>li {
+  border: 0.02rem solid red;
+  margin: 0.16rem;
+  text-align: center
+}
+
+/* 高德放大缩小图标 */
+.amap-zoomcontrol {
+  display: none;
+}
+
+.amap-geolocation-con .amap-geo{
+        position: absolute;
+    z-index: 999;
+    top: -2.12rem;
+     background: #fff url(../../asset/images/ic_2d@3x.png) 50% 50% no-repeat;
+         width: 0.8rem;
+    height: 0.8rem;
+       background-size: 1rem 1rem;
+        border-radius: 0.54rem;
+}
+
+#currCity{
+        font-size: 0.32rem;
+    font-family: PingFangSC-Medium;
+    font-weight: 500;
+    color: rgba(35,41,55,1);
+    letter-spacing: 0.02rem;
+}
+
+.tainqi span{
+            font-size: 0.34rem;
+    font-family: PingFangSC-Medium;
+    font-weight: 500;
+    color: rgba(176,179,184,1);
+    letter-spacing: 0.02rem;
+}
+
+.del-icon {
+    width: 0.34rem;
+    height: 0.44rem;
+    background: url(../images/icon.png) no-repeat -2.66rem -1.42rem;
+    background-size: 3rem 18rem;
+    z-index: 10005;
+}
+.search-del{
+           width: 22px;
+    height: 22px;
+    background: url(../images/icon.png) no-repeat -2.66rem -1.42rem;
+    background-size: 3rem 17.2rem;
+    display: inline-block;
+    margin-left: 20px;
+    margin-bottom: 10px;
+}
+
+.fenge{
+    display: inline-block;
+    width: 70px;
+    height: 6px;
+    background: rgba(176,179,184,1);
+    border-radius: 3px;
+    /* margin: 0px 114px; */
+    border: 1px solid red;
+    line-height: 23px;
+    margin-left: 129px;
+}
+.go-back{
+        float: right;
+}
+.cityName{
+    color:red;
+}
+.search-list{
+       /*border:1px solid;*/
+           clear: right;
+}
+.lists li{
+    border-bottom: 1px solid red;
+}
+.companyName{
+        font-size:17px;
+        font-weight:500;
+color:rgba(35,41,55,1);
+line-height:24px;
+padding-top: 14px;
+}
+.companyAddr{
+           font-size:14px;
+           font-weight:400;
+           color:rgba(142,142,143,1);
+line-height:20px;
+margin-top: 8px;
+}
+.companyType{
+                     font-size:14px;
+                     font-weight:400;
+                     color:rgba(142,142,143,1);
+line-height:20px   ;
+margin-top: 8px;
+padding-bottom: 14px;
+}
+
+/*首页搜索页*/
+#iframe-Search{
+position: absolute; 
+z-index: 10000; 
+background-color: #999999; 
+height: 100%; 
+width: 100%; 
+box-sizing: border-box; 
+/*border: 1px solid red;*/
+display:none;
+}
+
+#iframe-Search .cotains{
+           box-sizing: border-box;  
+           width: 100%;
+            border-top-left-radius: 20px;
+             border-top-right-radius: 20px; 
+             background-color: #fff;
+              height: inherit;
+}
+
+.cotains-right{
+       display: inline-block;
+    height: 34px;
+    float: right;
+    width: 54px;
+}
+
+.search-div{
+   background: rgba(255,59,40,1) !important;
+    border-radius: 17px !important;
+}
+.search-wenzi{
+         color: rgba(255,255,255,1) !important;
+}
+
+#publish{
+    display: block;
+    text-align: center;
+    line-height: 34px;
+    font-family: PingFangSC-Regular;
+    font-weight: 400;
+    color:rgba(44,44,46,1);
+    font-size:14px;
+}
+.back-img{
+    width: 24px; height: 19px; vertical-align: middle;
+    display:none;
+}
+
+#iframe-wrap{
+    position: absolute; z-index: 10000; height: 100%;width: 100%; display: none; top: 8.6rem;
+}
+
+#tuowo{
+    height: 23px; border: 1px solid red; 
+}
+
+.iframe-wraper{
+    box-sizing: border-box; padding: 30px 30px; width: 100%; border-top-left-radius: 20px; border-top-right-radius: 20px; background-color: #fff; height:100% 
+}
+
+.editFooter {
+    /*border: 1px solid red;*/
+    /*line-height: 1.03rem;*/
+    background-color: #FFF;
+       padding-top: 23px;
+    margin-left: 12px;
+    margin-right: 12px;
+    position: relative;
+}
+.editFooter input {
+    width: 77%;
+    outline: none;
+    border: 0.02rem solid #F5F5F6;
+    font-size: 0.3rem;
+    /*margin-left: 0.24rem;*/
+    padding-left: 0.34rem;
+    height: 34px;
+    background: rgba(245,245,246,1);
+    border-radius: 20px;
+}
+ .input-del{
+         width: 23px;
+    height: 22px;
+    background: url(../images/icon.png) no-repeat -2.66rem -1.42rem;
+    background-size: 3rem 17.7rem;
+    display: inline-block;
+    position: absolute;
+    top: 28px;
+    right: 78px;
+    display:none;
+ }
+
+.wraper{
+    margin-top: 30px;
+}
+.search-history{
+    margin-left: 12px;
+    margin-right: 12px;
+}
+
+.search-history .zuijin{
+    display: inline-block;
+}
+
+.search-history .clear {
+    display: inline-block;
+    float: right;
+}
+
+.search-lib {
+    margin-top: 10px;
+    margin-left: 12px;
+    margin-right: 12px;
+}
+
+.search-lib ul > li {
+    border-bottom: 1px solid #DADBDA;
+    height: 40px;
+    line-height: 40px;
+}
+.search-list-span{
+        width: 300px;
+    display: inline-block;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+[v-cloak] {
+    display: none !important;
+}
+
+.amap-sug-result {
+        visibility: visible;
+    display: none !important;
+     left: 0 !important;
+    top: 122px !important;
+    min-width: 263.188px !important;
+    position: absolute  !important;
+    z-index: 11111 !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+    border: 1px solid red;
+}
+.auto-item {
+    white-space: nowrap;
+    font-size: 12px;
+    cursor: pointer;
+    padding: 4px;
+    padding: 12px !important;
+}

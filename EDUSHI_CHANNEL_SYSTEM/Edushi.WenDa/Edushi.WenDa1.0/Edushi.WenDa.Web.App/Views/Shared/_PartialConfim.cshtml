@@ -1,0 +1,94 @@
+﻿@if (Edushi.WenDa.Web.App.Helper.DataHelper.checkPlatType() == 1) // ios
+{
+    <!-- ios双按钮确认框 -->
+    <section class="confirms-ios" id="iosconfirms">
+        <div class="pop-box">
+            <div class="msg"></div>
+            <div class="tool">
+                <button class="cancel">取消</button><button class="ennsure">确定</button>
+            </div>
+        </div>
+    </section>
+
+                  <!-- ios单按钮确认框 -->
+    <section class="confirms-ios" id="iosconfirm">
+        <div class="pop-box">
+            <div class="msg"></div>
+            <div class="tool">
+                <button class="ennsure dan">确定</button>
+            </div>
+        </div>
+    </section>
+}
+else
+{   // 安卓
+          <!-- andriod双按钮确认框 -->
+    <section class="confirms-android" id="androidconfirms">
+        <div class="pop-box">
+            <div class="msg"></div>
+            <div class="confirmBox">
+                <div class="confirmBox-left"></div>
+                <div class="confirmBox-right">
+                    <button class="cancel">取消</button><button class="ennsure">确定</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- andriod单按钮确认框 -->
+    <section class="confirms-android" id="androidconfirm">
+        <div class="pop-box">
+            <div class="msg"></div>
+            <div class="confirmBox">
+                <div class="confirmBox-left"></div>
+                <div class="confirmBox-right">
+                    <button class="ennsure dan">确定</button>
+                </div>
+            </div>
+        </div>
+    </section>
+}
+
+<!-- tost提示框tost -->
+<section class="pop-contents" id="tost">
+    <div class="pop-box">
+        <div class="msg" id="msgs"></div>
+    </div>
+</section>
+
+
+<script>
+    /**
+              双按钮确认框
+                clickObj：点击对象
+                msg：显示消息
+    */
+    function ConfimUps(clickObj, msg) {
+        $(clickObj).show();
+        $(clickObj + ' .msg').text(msg);
+    }
+
+
+    /**
+             单按钮确认框
+               clickObj：点击对象
+               msg：显示消息
+   */
+    function ConfimUp(clickObj, msg, cbs) {
+        cb = cbs;
+        $(clickObj).show();
+        $(clickObj + ' .msg').text(msg);
+    }
+    /**
+           提示框
+             clickObj：点击对象
+             msg：显示消息
+  */
+    function TostUp(clickObj, msg) {
+        $(clickObj).show();
+        $('#msgs').text(msg);
+        setInterval(function () {
+            $(clickObj).hide()
+        }, 3000)
+    }
+</script>

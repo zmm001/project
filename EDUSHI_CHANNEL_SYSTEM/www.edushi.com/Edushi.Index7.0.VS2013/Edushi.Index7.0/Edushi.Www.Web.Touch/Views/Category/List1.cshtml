@@ -1,0 +1,108 @@
+﻿@model Edushi.Www.Web.Touch.Models.CategorySubModel
+@using Edushi.Common
+@using Edushi.Www.Web.Touch.Models
+@{
+    string ParameterName = System.Configuration.ConfigurationManager.AppSettings["CooperationApp_UrlParameterName"];
+    string ParameterValue = Request.QueryString[ParameterName];
+    var pcUrl = Common.GetPCInfoListUrl("http://www.edushi.com/", Model.currentModel.IT_ParentPath, Model.currentModel.IT_ID);
+
+    ViewBag.Title = string.Format("{0}-{1}频道-E都市", Model.currentModel.IT_Name, Model.currentParentModel.IT_Name);
+
+    System.Diagnostics.Stopwatch getTime_data = new System.Diagnostics.Stopwatch();
+    getTime_data.Start();
+}
+
+
+@section meta {
+    <meta name="keywords" content="@(Model.currentModel.IT_Name)" />
+    <meta name="description" content="@(Model.currentModel.IT_Name)资讯频道提供@(Model.currentModel.IT_Name)相关的信息、新闻、资讯，构建新型互联网媒体平台为互联网用户提供价值资讯。" />
+    <link rel="canonical" href="@pcUrl">
+}
+<link rel="stylesheet" href="http://res.edushi.com/www/touch/v7/asset/css/style_7.0.css">
+@Html.Partial("ChannelHeader")
+<div class="content-main">
+    
+
+    @if (Model.Data != null && Model.Data.Any())
+    {
+        <section class="news-list">
+            <ul id="datalist">
+                @foreach (var item in Model.Data)
+                {
+                    var url = item.CooperationAppURL == 1 ? item.Url.GetCooperationAppURL(ParameterName, ParameterValue) : item.Url;
+                    var liClass = string.Empty; //无样式
+                    var imgBox = string.Empty; //无图
+
+                    if (!string.IsNullOrEmpty(item.Pic) && !string.IsNullOrEmpty(item.Pic1) && !string.IsNullOrEmpty(item.Pic2))
+                    {
+                        liClass = " class=\"multiple\"";//multiple
+                        imgBox = string.Format("<div class=\"img-box\">{0}</div>\r\n", "<img src=\"" + item.Pic + "\"><img src=\"" + item.Pic1 + "\"><img src=\"" + item.Pic2 + "\">");//三张图
+                    }
+                    else if (!string.IsNullOrEmpty(item.Pic))
+                    {
+                        liClass = " class=\"single\"";//single
+                        imgBox = string.Format("<div class=\"img-box\">{0}</div>\r\n", "<img src=\"" + item.Pic + "\">");//一张图
+                    }
+                    <li @Html.Raw(liClass)>
+                        <a href="@url">
+                            <div class="title">@Html.Raw(item.Title)</div>
+                            @Html.Raw(imgBox)
+                            <div class="tips">
+                                <span class="author">@item.Author</span>
+                                <span class="comment"></span>
+                                <span class="time">@item.Time</span>
+                            </div>
+                        </a>
+                    </li>
+                }
+            </ul>
+            <div class="page-box">
+                @{
+                    int pageCounts = 0;
+                    if (Model.totalCount % Model.pageSize == 0)
+                    {
+                        pageCounts = Model.totalCount / Model.pageSize;
+                    }
+                    else
+                    {
+                        pageCounts = Model.totalCount / Model.pageSize + 1;
+                    }
+
+                    if (pageCounts == 1)
+                    {
+                        <a href="javascript:void(0)" class="gray">上一页</a><span class="page-count">@Model.pageCurrentIndex/@pageCounts</span><a href="javascript:void(0)" class="gray">下一页</a>
+                    }
+                    else
+                    {
+                        if (Model.pageCurrentIndex == 1)
+                        {
+                            string url = "/zixun/info/t/" + Model.currentModel.IT_ParentID + "-" + Model.currentModel.IT_ID + "-p" + (Model.pageCurrentIndex + 1) + ".html";
+                            <a href="javascript:void(0)" class="gray">上一页</a><span class="page-count">@Model.pageCurrentIndex/@pageCounts</span><a href="@url.GetCooperationAppURL(ParameterName, ParameterValue)">下一页</a>
+                        }
+                        else if (Model.pageCurrentIndex == pageCounts)
+                        {
+                            string url = "/zixun/info/t/" + Model.currentModel.IT_ParentID + "-" + Model.currentModel.IT_ID + "-p" + (Model.pageCurrentIndex - 1) + ".html";
+                            <a href="@url.GetCooperationAppURL(ParameterName, ParameterValue)">上一页</a><span class="page-count">@Model.pageCurrentIndex/@pageCounts</span><a href="javascript:void(0)" class="gray">下一页</a>
+                        }
+                        else
+                        {
+                            string url1 = "/zixun/info/t/" + Model.currentModel.IT_ParentID + "-" + Model.currentModel.IT_ID + "-p" + (Model.pageCurrentIndex - 1) + ".html";
+                            string url2 = "/zixun/info/t/" + Model.currentModel.IT_ParentID + "-" + Model.currentModel.IT_ID + "-p" + (Model.pageCurrentIndex + 1) + ".html";
+                            <a href="@url1.GetCooperationAppURL(ParameterName, ParameterValue)">上一页</a><span class="page-count">@Model.pageCurrentIndex/@pageCounts</span><a href="@url2.GetCooperationAppURL(ParameterName, ParameterValue)">下一页</a>
+                        }
+                    }
+                }
+            </div>
+        </section>
+        getTime_data.Stop();
+    }
+
+</div>
+<!--read_data：@Model.read_data_time，data_load：@getTime_data.ElapsedMilliseconds-->
+<script type="text/javascript">
+    function navScroll(n) {
+        n = n ? n : 0;
+        $(".main-nav .wrap").scrollLeft(($(".main-nav .wrap .on").index() - n) * $(".main-nav .wrap a").width());
+    }
+    navScroll(1);
+</script>

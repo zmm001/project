@@ -1,0 +1,307 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" style="overflow: hidden" scroll="no">
+<head><!--默认皮肤-->
+    <meta name="Keywords" content="{$Keywords}" />
+    <meta name="Description" content="{$Description}" />
+    <title>{$Title}</title>
+    <link rel="stylesheet" type="text/css" href="{$SkinPath}Css/style.css" />  
+     <link  rel="stylesheet" href="{$SkinPath}Css/Css/BusNoSearch.css"type="text/css" />    
+    <script type="text/javascript" language="javascript">
+        var GlobalConfig = {
+            'SkinPath' : '{$SkinPath}',
+            'WebRootPath' :'{$WebRootPath}',
+            'Language' : '{$Language}',            
+            'Domain' : '{$Node}',
+            'CityCode' : '{$CityCode}',
+            'CityName' : '{$CityName}',         
+            'EDataCenterUrl' : '{$EDataCenterUrl}',
+            'Loading' : '<div style="text-align:center; line-height:200%;"><img src="{$SkinPath}Images/loading.gif"><br />正在加载...</div>',
+            'DianUrl' : '{$DianUrl}',
+            'HuangyeUrl' : '{$HuangyeUrl}',
+            'UserCenterUrl' : '{$UserCenterUrl}',
+            'EdizhiUrl' : '{$EdizhiUrl}',
+            'ImgUrl'   : 'http://img.edushi.com/UserUpImages/pic_{$CityCode}/',
+            'PicUrl'   :  '{$PicUrl}',
+            'GoogleID' : '{$GoogleID}'          
+        };
+    </script>
+     <script type="text/javascript" src="Js/GeneralLib.js"></script>
+    <script type="text/javascript" src="Js/Suggest.js"></script>
+    <script type="text/javascript" src="{$SkinPath}Controls/ControlBase.js"></script>
+    <script type="text/javascript" src="{$SkinPath}Controls/TabControl.js"></script>
+    <script type="text/javascript" src="{$SkinPath}Controls/DebugControl.js"></script>
+    <script type="text/javascript" src="{$SkinPath}Controls/EntityPopControl.js?v=2009052509"></script>
+    <script type="text/javascript" src="{$SkinPath}Controls/CompanyPopControl.js?v=2009051113"></script>
+    <script type="text/javascript" src="{$SkinPath}Controls/ThemePopControl.js?v=2009051113"></script>
+    <script type="text/javascript" src="{$SkinPath}Controls/CommendPopControl.js"></script>
+    <script type="text/javascript" src="{$SkinPath}Controls/BusStationControl.js"></script>
+    <script language="javascript" type="text/javascript" src="Plugin.aspx"></script>
+    <script type="text/javascript" src="{$SkinPath}Js/Mark.js"></script>
+    <script type="text/javascript" src="{$SkinPath}Js/EAddress.js"></script>
+    <script type="text/javascript" src="{$SkinPath}Js/Init.js"></script>
+</head>
+<body onload="fnLoadInit();" onkeyup="fnKeyup(event)" >
+    <div id="Container">
+        <div id="Header">
+            <a href="http://www.edushi.com/" target="_blank" title="E都市">
+                <img src="{$SkinPath}/Images/EdushiLogo.gif" alt="E都市" class="EdushiLogo" /></a><div id="SwitchCity">
+                    <strong>{$CityName}</strong><a href="http://{$Node}/?l=zh-chs" target="_blank">[Simplified]</a>&nbsp;&nbsp;<a href="http://{$Node}/?l=zh-cht" target="_blank">[Traditional]</a>&nbsp;&nbsp;<a href="http://www.edushi.com/?id=citylist" target="_blank">[Citys]</a>
+                    <a href="http://hz2008.edushi.com" target="_blank" style ="display:none" id="lnkVisitOldVersion">[访问旧版]</a>
+                    </div>
+            <div id="CallBoard" style ="display:none">
+                   <!--<a href="http://{$CityCode}.edushi.com/yp" target="_blank" title="逛E店">{$CityName}黄页</a>-->
+                </div>
+            <div id="HeaderRgt">
+                <div id="RgtToBar">
+                    <ul>
+                        <li><a href="http://{$Domain}/yp" target="_blank" title="{$CityName}Yellow Pages">{$CityName}Yellow Pages</a></li>
+                        <li class="Ly"><a href="http://www.edushi.com/about/GuestBook.aspx?c={$CityCode}&l={$Language}" target="_blank" title="Message">Message</a></li>
+                        <!--<li class="Bz"><a href="http://www.edushi.com/help/help.html" target="_blank">帮助</a></li>-->
+                        <li class="Qyrz"><a href="http://{$Domain}/LiveIn/Default.aspx" target="_blank" title="Enterprises located">Enterprises located</a></li>
+                        <!--<li class="Dprz"><a href="http://bendi.edushi.com/EShopJoin/Default.aspx" target="_blank" title="店铺入驻">店铺入驻</a></li>-->
+                        <li class="LoginInfo" id="liLoginInfo">
+                            Welcome！{$UserName}<span{$DisplayUnLogin}>[<a href="http://bendi.edushi.com/hz/Register.shtml" target="_blank" title="register">register</a>]</span><span{$DisplayUnLogin}>[<a href="javascript:;" onclick="fnShowLogin()">Login</a>]</span><span{$DisplayLogin}>[<a href="http://bendi.edushi.com/Member/Index.aspx?City=hz" target="_blank">User Center</a>]</span>&nbsp;<span{$DisplayLogin}>[<a href="javascript:fnLoginOut();">Exit</a>]</span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="HackBox">
+                </div>
+                <div id="ShortcutMenu">
+                    <div id="RollArLf">
+                        <img id="ImgThemeScrollLeft" src="{$SkinPath}/Images/RollArLf.gif" alt="向前一个" /></div>
+                    <div class="RollConten" id="divThemeMask">
+                        <div id="divThemeClip" style="display: block; position: absolute; clip: rect(0 500px 22px 0)">
+                            <div style="position: absolute; width: 3000px">
+                                <ul id="ulThemeList">
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="HackBox">
+                        </div>
+                    </div>
+                    <div id="RollArRgt">
+                        <img id="ImgThemeScrollRight" src="{$SkinPath}/Images/RollArRgt.gif" alt="向后一个" /></div>
+                </div>
+            </div>
+        </div>
+        <div id="Wrapper">
+            <div id="Content" style="position: relative;">
+                <div id="Toolbar">
+                    <ul id="MapToolBar">
+                        <li class="Ico1"><a href="javascript:fnSelectMarkPoint()" title="Tag">Tag</a></li>
+                        <li class="Ico2"><a href="javascript:fnScale()" title="Ranging">Ranging</a></li>
+                        <li class="Ico3"><a href="javascript:fnLabel()" onclick="this.innerHTML=='Show label'?this.innerHTML='Hide label':this.innerHTML='Show label'">Show label</a></li>
+                        <li class="Ico4"><a href="http://www.edushi.com/ErrorCorrection/?c={$CityCode}&l={$Language}" target="_black" title="ErrorCorrection">ErrorCorrection</a></li>
+                        <li class="Ico5"><a href="javascript:;" id="aFullScrenn" onclick="fnFullScreen(this)" title="Maximize">Maximize</a></li>
+                    </ul>
+                    <div id="RgtPart">
+                        <ul>                            
+                            <li class="Ico11"><a href="javascript:;" onmouseover="fnShowCommonGoTo()" onmouseout="fnShowCommonGoTo()" title="Common Position">Common Position</a></li>
+                            <li class="Ico12"><a href="javascript:fnPrint()">Print</a></li>
+                            <li class="Ico13" style ="visibility:hidden"><a id="lnkMyEAddress" {$MyEAddress}>My E address</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <!--常用位置菜单-->
+                <div id="divQuickLink" style="display: none;" class="QuickLink" onmouseover="fnShowCommonGoTo()" onmouseout="fnShowCommonGoTo()">
+                    <div class="InComPlaceNav">
+                        <div class="InComPlaceUp">
+                        </div>
+                        <div class="InComPlaceDn" id="divQuickLinkList">
+                        </div>
+                    </div>
+                </div>
+                <!--我的E地址-->
+                <div class="MyEadNav" id="MyEadNav" style="display: none;" onmouseover="fnShowMyEAddress()" onmouseout="fnShowMyEAddress()">
+                    <div class="MyEadCon" id="MyEadCon">
+                        <div class="P"> At<strong>Mail</strong>or<strong>Instant Messaging</strong>Paste link</div>
+                        <div class="P">
+                            <span class="ToFriInput"><input id="txtMyEAddress" value="{$MyEAddressValue}" onfocus="this.select()" style="border: 1px solid #6A6A6A; width: 195px; height: 16px;" /></span>
+                            <span class="ToFriInput"><img src="{$SkinPath}/Images/ToFriend.gif" alt="Copy to a friend" style="cursor:pointer" onclick="fnCopyToClipboard($('txtMyEAddress').value,'Copy Well, was sent to me by QQ / MSN friends to share it！');" /></span>
+                        </div>
+                    </div>
+                </div>
+                <div id="DetailMap">
+                    <div id="EdushiMap"></div>
+                    <div id="OrientedId">
+                        <div class="EzoomBar" id="EzoomBar">
+                          <!--  <div class="Change2D" id="Change2D" onclick="_ZoomBar.Switch23D(this)" title="2D">
+                            </div>-->
+                            <div class="UpMove" onclick="_ZoomBar.Move('up')" id="UpMove" title="向上平移">
+                            </div>
+                            <div class="LeftMove" onclick="_ZoomBar.Move('left')" id="LeftMove" title="向左平移">
+                            </div>
+                            <div class="RgtMove" onclick="_ZoomBar.Move('right')" id="RgtMove" title="向右平移">
+                            </div>
+                            <div class="DownMove" onclick="_ZoomBar.Move('down')" id="DownMove" title="向下平移">
+                            </div>
+                            <div class="BackTrack" id="BackTrack" onclick="_ZoomBar.Move('center')" title="移动到原始中心点">
+                            </div>
+                            <div class="EzoomMax" onclick="_ZoomBar.ZoomWithStep(-1)" id="EzoomMax" title="放大">
+                            </div>
+                            <div class="EzoomMin" onclick="_ZoomBar.ZoomWithStep(1)" id="EzoomMin" title="缩小">
+                            </div>
+                            <div class="ControlUnit" id="ControlUnit" title="缩放">
+                            </div>
+                        </div>
+                    </div>
+                     <div id="MapSwitch">
+                        <ul class="SwitchBlk">
+                        <li><div class="Wx" onclick="_ZoomBar.SwitchWX(this)" title="Satellite map">Satellite map</div></li>
+                        <li><div class="Ew" onclick="_ZoomBar.Switch2D(this)" title="Two-dimensional map">Two-dimensional map</div></li>
+                        <li><div class="Sw Current" onclick="_ZoomBar.Switch3D(this)" title="Three-dimensional map">Three-dimensional map</div></li>
+                        </ul>
+                    </div>
+                    <div id="EagleMapNav">
+                        <div class="EagleMapCon" id="EagleMapCon">
+                            <div class="BreviaryMap" id="BreviaryMap" style="overflow: hidden">
+                                <div class="SmallArrow" id="EyeArrow" onclick="fnEyeResize(this)">
+                                </div>
+                                <div id="eyeEdushiMap">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="EagleMapDH" id="EagleMapDH">
+                            <img onclick="fnEyeExpanding(this)" id="imgEyeExpanding" style="cursor: pointer" src="{$SkinPath}/Images/DrawBack.gif"
+                                alt="收缩/展开" />
+                        </div>
+                    </div>
+                    <div id="CompassNav">
+                        <img src="{$SkinPath}/Images/CompassIco.gif" alt="指针" />
+                    </div>
+                    <div id="CopyrightNav" >
+                         {$AuditingPicCode}                        
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="Navigation">
+            <div id="NavContent">
+                <div id="SearchNav">
+                    <div class="SeaCoteNav">
+                        <ul>
+                            <li class="Current" id="liMapSearch"><a href="javascript:fnSearchChange($('liMapSearch'))">
+                                Map Search</a></li>
+                            <li id="liBusSearch"><a href="javascript:fnSearchChange($('liBusSearch'))">Bus Search</a></li>
+                            <li id="liEShopSearch"><a href="javascript:fnSearchChange($('liEShopSearch'))">YP Search</a></li>
+                            <li id="liEAddress" style="margin-right:0px"><a href="javascript:fnSearchChange($('liEAddress'))">EAddress</a></li>
+                        </ul>
+                    </div>
+                    <!--地图搜索-->
+                    <div class="MapSearch" id="MapSearch" style="clear: both">
+                        <div class="SearchCond">
+                            <input name="MapSearchType" type="radio" id="radioSearchType0" value="0" checked="checked"
+                                onclick="fnMapSearchChange(this.value)" /><label for="radioSearchType0">Fuzzy search</label>&nbsp;&nbsp;
+                            <input name="MapSearchType" type="radio" id="radioSearchType1" value="1" onclick="fnMapSearchChange(this.value)" /><label
+                                for="radioSearchType1">Name</label>&nbsp;&nbsp;
+                            <input name="MapSearchType" type="radio" id="radioSearchType2" value="2" onclick="fnMapSearchChange(this.value)" /><label
+                                for="radioSearchType2">Address</label>&nbsp;&nbsp;
+                            <input name="MapSearchType" type="radio" id="radioSearchType3" value="3" onclick="fnMapSearchChange(this.value)" /><label
+                                for="radioSearchType3">Peripheral</label>
+                        </div>
+                        <div class="SearchInput" id="divSearchInput">
+                            <div style="float: left" id="divSearch">
+                                <input style="width: 210px" type="text" id="txtSearchKey" class="InFieldSty" onblur="if(!__EdushiSuggest.IsMouseOnSuggestPanel){__EdushiSuggest.Hide();}" onkeyup="fnKeySearchSuggest('fnMapSearch()', this, 101, 125, 212, 'map', 0, event);" /></div>
+                            <div style="float: left; display: none" id="divAroundSearch">
+                                At&nbsp;<input style="width: 88px" type="text" id="txtSearchPlace" class="InFieldSty" onblur="if(!__EdushiSuggest.IsMouseOnSuggestPanel){__EdushiSuggest.Hide()}"
+                                    onkeyup="fnKeySearchSuggest('$(\'txtSearchSomething\').focus()', this, 128, 125, 170, 'map', 4, event);" />&nbsp;Find&nbsp;<input
+                                        style="width: 85px" type="text" id="txtSearchSomething" class="InFieldSty" onkeyup="fnKeySearchSuggest('fnMapSearch()', this, 18, 125, 170, 'map', 5, event);" onblur="if(!__EdushiSuggest.IsMouseOnSuggestPanel){__EdushiSuggest.Hide()}" /></div>
+                            <div style="float: left; padding-left: 10px">
+                                <img style="cursor:pointer" src="{$SkinPath}/Images/SearchBtn.gif" onclick="fnMapSearch()" /></div>
+                        </div>
+                        <div class="HotConNav" id="MapHotKey">
+                            hot：<span id="MapHotKeywords"></span>
+                        </div>
+                    </div>
+                    <!--公交搜索-->
+                    <div class="BusSearch" id="BusSearch">
+                         <div class="SearchCond">
+                            <input type="radio" value="0" id="radio0" name="BusSearchType" checked="checked"
+                                onclick="fnBusSearchChange(this.value)" /><label for="radio0">Two inquiries</label>&nbsp;&nbsp;
+                            <input type="radio" value="1" id="radio1" name="BusSearchType" onclick="fnBusSearchChange(this.value)" /><label
+                                for="radio1">Line Inquiry</label>&nbsp;&nbsp;
+                            <input type="radio" value="2" id="radio2" name="BusSearchType" onclick="fnBusSearchChange(this.value)" /><label
+                                for="radio2">Site Inquiries</label>&nbsp;&nbsp;
+                        </div>
+                        <div class="SearchCond">
+                            <div style="float: left" id="BusTransfer">
+                                <input style="width: 100px; color: #999999" class="InFieldSty" id="txtBusStart" type="text"
+                                    value="Starting" onchange="this.style.color='#000000'" onblur="if(!__EdushiSuggest.IsMouseOnSuggestPanel){__EdushiSuggest.Hide();}if(this.value==''){this.style.color='#999999';this.value='Starting';}"
+                                    onfocus="if (this.value == 'Starting'){this.style.color='#000000';this.value='';}"
+                                    onkeyup="fnKeySearchSuggest('$(\'txtBusEnd\').style.color=\'#000000\';$(\'txtBusEnd\').focus()', this, 141, 125, 172, 'bus', 0, event);"><img
+                                        src="{$SkinPath}/Images/BusChangeIco.gif" />
+                                <input style="width: 100px; color: #999999" class="InFieldSty" value="End" onchange="this.style.color='#000000'"
+                                    onblur="if(!__EdushiSuggest.IsMouseOnSuggestPanel){__EdushiSuggest.Hide();}if(this.value==''){this.style.color='#999999';this.value='End';}" onfocus="if (this.value == 'End'){this.style.color='#000000';this.value='';}"
+                                    id="txtBusEnd" type="text" onkeyup="fnKeySearchSuggest('fnBusSearch()', this, 10, 125, 172, 'bus', 0, event);" />
+                            </div>
+                            <div style="float: left; display: none" id="BusLine">
+                                <input style="width: 210px; color: #999999" class="InFieldSty" id="txtBusLine" value="Please enter the search line" onkeyup="if(window.event){if(13==window.event.keyCode){fnBusSearch();}else{window.event.cancelBubble = true;}}else{if(event.keyCode==13){fnBusSearch();}else{event.stopPropagation();}}"
+                                    type="text" onblur="if(this.value==''){this.style.color='#999999';this.value='Please enter the search line';}"
+                                    onchange="this.style.color='#000000'" onfocus="if (this.value == 'Please enter the search line'){this.style.color='#000';this.value='';}" /></div>
+                            <div style="float: left; display: none" id="BusStation">
+                                <input style="width: 210px; color: #999999" class="InFieldSty" id="txtBusStation"
+                                    value="Please enter the site name" type="text" onblur="if(!__EdushiSuggest.IsMouseOnSuggestPanel){__EdushiSuggest.Hide();}if(this.value==''){this.style.color='#999999';this.value='Please enter the site name';}"
+                                    onchange="this.style.color='#000000'" onfocus="if (this.value == 'Please enter the site name'){this.style.color='#000000';this.value='';}"
+                                    onkeyup="fnKeySearchSuggest('fnBusSearch()', this, 101, 125, 212, 'bus', 0, event);"></div>
+                            <div style="float: left; padding-left: 10px">
+                                <img style="cursor:pointer"  src="{$SkinPath}/Images/SearchBtn.gif" onclick="fnBusSearch()" /></div>
+                        </div>
+                        <div class="HotConNav" style="display:none"></div>
+                    </div>
+                    <!--地图找店-->
+                    <div class="EShopSearch" id="EShopSearch" style ="display:none">
+                        <div class="SearchCond" style="display:none">
+                            Hot：<span id="EShopHotKeyWords"></span>
+                        </div>
+                        <div class="SearchInput" id="divEShopSearchInput">
+                            <div style="float: left">
+                                <input style="width: 210px" type="text" id="txtSearchEShop" class="InFieldSty" /></div>
+                            <div style="float: left; padding-left: 10px">
+                                <img style="cursor:pointer" src="{$SkinPath}/Images/SearchBtn.gif" onclick="fnEShopSearch()" /></div>
+                        </div>
+                        <div class="HotConNav" style="display:none">                            
+                        </div>
+                    </div>
+                      <!--E地址-->
+                    <div class="EAddress" id="EAddress">
+                        <span><strong>http://edizhi.edushi.com/</strong></span><span><input style="width: 98px;" id="txtEAddressName" onkeyup="if(window.event){if(13==window.event.keyCode){fnOpenEAddressWin($('txtEAddressName'));}else{window.event.cancelBubble = true;}}else{if(event.keyCode==13){fnOpenEAddressWin($('txtEAddressName'));}else{event.stopPropagation();}}"
+                            class="InFieldSty" type="text" /></span><span><img src="{$SkinPath}/Images/CallOnBtn.gif"
+                                alt="访问" onclick="fnOpenEAddressWin($('txtEAddressName'))" style="cursor: pointer;" /></span>
+                        <div class="ApManNav">
+                            <a href="http://edizhi.edushi.com/Index.aspx" target="_blank" title="E Address-Customize your E Address,It's very convinient to share with your friend ">E Address index</a>&nbsp;&nbsp<a href="javascript:fnEAddressRegister();" title="Apply for E Address">Apply for E Address</a>&nbsp;&nbsp;<a
+                                    href="javascript:fnEAddressManager();" title="E Address management">E Address management</a>
+                        </div>
+                        <div class="HotConNav">
+                            <a href="javascript:fnNewEAddressList();" title="The latest E Address" class="Arrow1">The latest E Address</a><a href="javascript:fnEAddressHelper()"
+                                title="E Address assistant" class="Arrow1">E Address assistant</a>
+                        </div>
+                    </div>
+                </div>
+                <!--选项卡-->
+                <div id="ContenNav">
+                    <div class="CoteNav" style="width: 280px; overflow: hidden;">
+                        <ul id="HeadContainer" style="position: relative;">
+                        </ul>
+                    </div>
+                    <div class="MoveArrow">
+                        <a href="javascript:;" id="LeftBtn">
+                            <img src="{$SkinPath}/Images/MoveArrowL.gif" alt="向左平移" /></a> <a href="javascript:;" id="RightBtn">
+                                <img src="{$SkinPath}/Images/MoveArrowR.gif" alt="向右平移" /></a></div>
+                    <div class="DeConNav" id="BodyContainer" style="height: 350px"></div>
+                </div>
+            </div>
+            <div id="ShrinkDH">
+                <img onclick="fnExpanding(this)" id="imgExpanding" style="cursor: pointer" src="{$SkinPath}/Images/DrawBack.gif" alt="收缩/展开" />
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+
+<script type="text/javascript" src="http://api2.edushi.com/0901/api.js/Api2.aspx?City={$CityCode}&L={$Language}&MapID=EdushiMap&x={$CenterX}&y={$CenterY}&w=800&h=500&eye=1&ew=190&eh=145&e=utf-8&z=1&v=0"></script>
+
+<script type="text/javascript">
+    var __EdushiSuggest = new Suggest(18, 155, 200, document.body);
+    __EdushiSuggest._loadData();
+</script>
+

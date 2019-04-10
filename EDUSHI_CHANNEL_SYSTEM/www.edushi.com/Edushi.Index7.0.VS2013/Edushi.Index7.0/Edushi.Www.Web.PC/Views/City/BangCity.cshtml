@@ -1,0 +1,110 @@
+﻿@{
+    Layout = null;
+}
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head><title>
+	生活帮—优惠券|吃喝玩乐|美食|婚庆|母婴|丽人|资讯
+</title><meta content="生活帮,优惠券,吃喝玩乐,美食,婚庆,母婴,丽人" name="Keywords" /><meta content="生活帮是最全的本地生活信息分享平台,提供优惠券、美食、婚庆、母婴、休闲娱乐、丽人等生活资讯信息." name="Description" /><meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <script src="http://res.edushi.com/js/jquery-1.7.2.min.js" type="text/javascript"></script>
+    <script type="text/javascript" src="http://int.dpool.sina.com.cn/iplookup/iplookup.php?format=js"></script>
+    <script src="/js/channelcitylist.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            if (typeof remote_ip_info != 'undefined' && "" != remote_ip_info.city) {
+                var ecity = remote_ip_info.city.replace('市', '');
+
+                $.ajax({
+                    type: "post",
+                    async: false,
+                    url: $("#hidCurrentCity").val(),
+                    dataType: "json",
+                    data: { CityName: ecity },
+                    success: function (data) {
+                        var html = "";
+                        html += "您当前所在的城市可能是 <span>" + ecity + "</span>,";
+                        if (data.IsBang == 1) {
+                            html += "<a href='http://" + data.cityCode + ".edushi.com/bang/'><span>点击进入" + ecity + "生活帮</span></a>";
+                        }
+                        $("#currentCity").html(html.toString()).show();
+                        $("#ddlProvince").val(data.EP_ID).change();
+                        $("#ddlCity").val(data.cityCode);
+                    }
+                });
+            }
+
+            $("#btnGo").click(function () {
+                window.location.href = "http://" + $("#ddlCity").val() + ".edushi.com/bang/";
+            })
+        })
+    </script>
+    <link href="/css/channelcitylist.css" rel="stylesheet" type="text/css" /></head>
+<body>
+
+<div id="topmenu">
+  <div><a href="http://my.edushi.com/register.aspx">免费注册</a> | <a href="http://my.edushi.com/">登录</a> | <a href="http://www.edushi.com/about/GuestBook.aspx">留言</a></div>
+</div>
+<div id="logobox" style=" background-image:url(images/dian_bj.png)">
+  <div id="logo"><a href="http://www.edushi.com/">
+      <img src="images/citylist_dian.png" width="191" height="55" border="0" />
+      </a></div>
+  <div id="menu"></div>
+  <div id="breadCrumb">当前位置：<a href="/">E都市首页</a> &gt; 
+      生活帮城市列表</div>
+</div>
+<div id="content">
+  <div id="currentCity" class="current" style="display:none;"></div>
+
+  <div class="city_list hotcity"><strong>热门城市：</strong>  
+  <a href="http://hz.edushi.com/bang/">杭州</a> <a href="http://beijing.edushi.com/bang/">北京</a><a href="http://sh.edushi.com/bang/">上海</a>@*  <a href="http://guangzhou.edushi.com/bang/">广州</a>*@ <a href="http://sz.edushi.com/bang/">深圳</a>@*  <a href="http://nanjing.edushi.com/bang/">南京</a>  <a href="http://wuhan.edushi.com/bang/">武汉</a>*@</div>
+
+  <div class="city_list" style="height:30px;">
+    <ul>
+      <li><strong>按省份选择：</strong></li>
+      <li>
+          <select id="ddlProvince"></select>
+         <select id="ddlCity"></select>
+      </li>
+      <li><input id="btnGo" name="" type="button" value="确 定" class="btn" /></li>      
+    </ul>
+  </div>
+    
+  <div class="city_list hotcity">
+  <script type="text/javascript">
+      /*首页城市列表标签云*/
+      var cpro_id = "u1134064";
+</script>
+<script src="http://cpro.baidustatic.com/cpro/ui/c.js" type="text/javascript"></script>
+  </div>
+
+  <div class="city_list">
+    <strong>按拼音首字母选择：</strong>
+      <dl><dt>B</dt><dd><a href="http://beijing.edushi.com/bang/" >北京</a> </dd></dl><dl><dt>C</dt><dd><a href="http://chengdu.edushi.com/bang/" >成都</a> </dd></dl><dl><dt>H</dt><dd><a href="http://hz.edushi.com/bang/" >杭州</a> </dd></dl><dl><dt>N</dt><dd><a href="http://ningbo.edushi.com/bang/" >宁波</a> </dd></dl><dl><dt>S</dt><dd><a href="http://sh.edushi.com/bang/" >上海</a> |<a href="http://sz.edushi.com/bang/" >深圳</a> </dd></dl><dl><dt>T</dt><dd><a href="http://tianjin.edushi.com/bang/" >天津</a> </dd></dl><dl><dt>X</dt><dd><a href="http://xiamen.edushi.com/bang/" >厦门</a> </dd></dl><dl><dt>Z</dt><dd><a href="http://zhengzhou.edushi.com/bang/" >郑州</a> </dd></dl>
+
+    <div class="clear">     
+      </div>
+  </div>
+</div>
+
+<div id="footer"><p><a href="http://aladdin.edushi.com" target="_blank">关于阿拉丁</a>| <a href="http://www.edushi.com/about/" target="_blank">关于E都市</a>| <a href="http://www.edushi.com/about/MapSign.aspx" target="_blank"> 产品中心</a>| <a href="http://aladdin.edushi.com/GisInfo.aspx" target="_blank">GIS及政府应用</a>| <a href="http://aladdin.edushi.com/DataApplyMap.aspx" target="_blank">数据销售</a>| <a href="http://www.edushi.com/Links/" target="_blank">友情链接 </a>| <a href="http://www.edushi.com/about/News.htm" target="_blank">新闻中心</a>| <a href="http://www.edushi.com/about/GuestBook.aspx" target="_blank">访客留言 </a>| <a href="http://www.edushi.com/about/Declear.htm" target="_blank">法律声明</a>| <a href="http://aladdin.edushi.com/CompanyDynamicInfo.aspx?id=60" target="_blank">测绘资质</a></p>
+  <p>甲测资字33002003   广告经营许可证号   3301082100176<a href="http://www.miibeian.gov.cn/">浙B2-20050306</a> 版权所有@2004-2012   出版号:ISBN:7-900200-28-2</p>
+</div>
+<script type="text/javascript">
+    var gaJsHost = (("https:" == document.location.protocol) ? " https://ssl." : " http://www.");
+    document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+    try {
+        var pageTracker = _gat._getTracker("UA-2977291-1");
+        pageTracker._trackPageview();
+    } catch (err) { }</script>
+<script type="text/javascript">
+    var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+    document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3F99a36e54478482e04c158ab069a3e598' type='text/javascript'%3E%3C/script%3E"));
+</script>
+</body>
+</html>
+<input type="hidden" id="hidPro" value="@Url.Action("getProvince")" />
+<input type="hidden" id="hidCity" value="@Url.Action("getCity")" />
+<input type="hidden" id="hidCurrentCity" value="@Url.Action("getCurrentCity")" />
+<input type="hidden" id="hidType" value="bang" />

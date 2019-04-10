@@ -1,0 +1,172 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<build>
+    <setting open="true">
+        <key>GetALLThemeMapTypeData</key>
+        <timespan>15</timespan>
+        <!--day,hour,minute-->
+        <timeunit>day</timeunit>
+        <path>E:\XmlMapData\{0}\{1}\GetALLThemeMapTypeData.xml</path>
+    </setting>
+    <setting open="true">
+        <key>GetALLThemeMapPointData</key>
+        <timespan>15</timespan>
+        <!--day,hour,minute-->
+        <timeunit>day</timeunit>
+        <path>E:\XmlMapData\{0}\{1}\GetALLThemeMapPointData.xml</path>
+    </setting>
+    <setting open="true">
+        <key>GetThemeListByTypeID</key>
+        <timespan>15</timespan>
+        <!--day,hour,minute-->
+        <timeunit>day</timeunit>
+        <path>E:\XmlMapData\{0}\{1}\GetThemeListByTypeID_{2}.xml</path>
+    </setting>
+    <setting open="true">
+        <key>GetLocalOfferData</key>
+        <timespan>15</timespan>
+        <!--day,hour,minute-->
+        <timeunit>day</timeunit>
+        <path>E:\XmlMapData\{0}\{1}\GetLocalOfferData.xml</path>
+    </setting>
+    <setting open="true">
+        <key>GetMapHotBdtList</key>
+        <timespan>15</timespan>
+        <!--day,hour,minute-->
+        <timeunit>day</timeunit>
+        <path>E:\XmlMapData\{0}\{1}\GetMapHotBdtList.xml</path>
+    </setting>
+    <setting open="true">
+        <key>GetHotKeyWords</key>
+        <timespan>15</timespan>
+        <!--day,hour,minute-->
+        <timeunit>day</timeunit>
+        <path>E:\XmlMapData\{0}\{1}\GetHotKeyWords.xml</path>
+    </setting>
+    <setting open="true">
+        <key>GetVouchAdData</key>
+        <timespan>15</timespan>
+        <!--day,hour,minute-->
+        <timeunit>day</timeunit>
+        <path>E:\XmlMapData\{0}\{1}\GetVouchAdData_{2}.xml</path>
+    </setting>
+    <setting open="true">
+        <key>GetAllVouchKeywordByCity</key>
+        <timespan>15</timespan>
+        <!--day,hour,minute-->
+        <timeunit>day</timeunit>
+        <path>E:\XmlMapData\{0}\{1}\GetAllVouchKeywordByCity.xml</path>
+    </setting>
+    <setting open="true">
+        <key>GetReferencePointData</key>
+        <timespan>15</timespan>
+        <!--day,hour,minute-->
+        <timeunit>day</timeunit>
+        <path>E:\XmlMapData\{0}\{1}\GetReferencePointData.xml</path>
+    </setting>
+    <setting open="true">
+        <key>GetStationInfo</key>
+        <timespan>15</timespan>
+        <!--day,hour,minute-->
+        <timeunit>day</timeunit>
+        <path>E:\XmlMapData\{0}\{1}\GetStationInfo.xml</path>
+    </setting>
+    <setting open="true">
+        <key>GetBusNumberInfo</key>
+        <timespan>15</timespan>
+        <!--day,hour,minute-->
+        <timeunit>day</timeunit>
+        <path>E:\XmlMapData\{0}\{1}\GetStationInfo.xml</path>
+    </setting>
+    <setting open="true">
+        <key>GetSubWayInfo</key>
+        <timespan>15</timespan>
+        <!--day,hour,minute-->
+        <timeunit>day</timeunit>
+        <path>E:\XmlMapData\{0}\{1}\GetSubWayInfo.xml</path>
+    </setting>
+    <setting open="true">
+        <key>GetSubWaySationInfo</key>
+        <timespan>30</timespan>
+        <!--day,hour,minute-->
+        <timeunit>day</timeunit>
+        <path>E:\XmlMapData\{0}\{1}\GetSubWaySationInfo.xml</path>
+    </setting>
+    <setting open="true">
+        <key>GetExitInfo</key>
+        <timespan>15</timespan>
+        <!--day,hour,minute-->
+        <timeunit>day</timeunit>
+        <path>E:\XmlMapData\{0}\{1}\GetExitInfo.xml</path>
+    </setting>
+    <setting open="true">
+        <key>GetCompanyType</key>
+        <timespan>30</timespan>
+        <!--day,hour,minute-->
+        <timeunit>day</timeunit>
+        <path>E:\XmlMapData\{0}\{1}\GetCompanyType.xml</path>
+    </setting>
+    <setting open="true">
+        <key>GetCompanyTrade</key>
+        <timespan>30</timespan>
+        <!--day,hour,minute-->
+        <timeunit>day</timeunit>
+        <path>E:\XmlMapData\{0}\{1}\GetCompanyTrade.xml</path>
+    </setting>
+    <setting open="true">
+        <key>GetCompanyZoneType</key>
+        <timespan>30</timespan>
+        <!--day,hour,minute-->
+        <timeunit>day</timeunit>
+        <path>E:\XmlMapData\{0}\{1}\GetCompanyZoneType.xml</path>
+    </setting>
+    <setting open="true">
+        <key>GetCommPosTypeData</key>
+        <timespan>15</timespan>
+        <!--day,hour,minute-->
+        <timeunit>day</timeunit>
+        <path>E:\XmlMapData\{0}\{1}\GetCommPosTypeData.xml</path>
+    </setting>
+    <setting open="true">
+        <key>GetCommPosInfo</key>
+        <timespan>15</timespan>
+        <!--day,hour,minute-->
+        <timeunit>day</timeunit>
+        <path>E:\XmlMapData\{0}\{1}\GetCommPosInfo.xml</path>
+    </setting>
+      <!--详细页上的推荐模块-->
+  <setting open="true">
+    <key>GetLocalMapIndexData</key>
+    <timespan>1</timespan>
+    <!--day,hour,minute-->
+    <timeunit>hour</timeunit>
+    <path>E:\XmlMapData\{0}\{1}\GetLocalMapIndexData.xml</path>
+  </setting>
+  <setting open="true">
+    <key>GetLocalBdtContentData</key>
+    <timespan>1</timespan>
+    <!--day,hour,minute-->
+    <timeunit>hour</timeunit>
+    <path>E:\XmlMapData\{0}\{1}\GetLocalBdtContentData.xml</path>
+  </setting>
+  <setting open="true">
+    <key>GetBdtRecommendData</key>
+    <timespan>1</timespan>
+    <!--day,hour,minute-->
+    <timeunit>hour</timeunit>
+    <path>E:\XmlMapData\{0}\{1}\GetBdtRecommendData.xml</path>
+  </setting>
+  <setting open="true">
+    <key>GetLastEshopRecommendData</key>
+    <timespan>1</timespan>
+    <!--day,hour,minute-->
+    <timeunit>hour</timeunit>
+    <path>E:\XmlMapData\{0}\{1}\GetLastEshopRecommendData.xml</path>
+  </setting>
+  <setting open="true">
+    <key>GetChengRecommendData</key>
+    <timespan>1</timespan>
+    <!--day,hour,minute-->
+    <timeunit>hour</timeunit>
+    <path>E:\XmlMapData\{0}\{1}\GetChengRecommendData.xml</path>
+  </setting>
+</build>

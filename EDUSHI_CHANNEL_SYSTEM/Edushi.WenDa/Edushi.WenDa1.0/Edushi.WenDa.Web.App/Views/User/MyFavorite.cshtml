@@ -1,0 +1,156 @@
+﻿@using Edushi.WenDa.Web.App.Models;
+@using Edushi.Common;
+@model   MyFavoriteModel
+<script src="@Url.Content("~/asset/js/common.js")"></script>
+<style>
+ 
+       .error-item {
+        margin: 0 auto;
+        box-sizing: border-box;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        margin-top: 4.76rem;
+    }
+
+        .error-item img {
+            box-sizing: border-box;
+            margin: 0 auto;
+            width: 3.8rem;
+            height: 2.8rem;
+        }
+
+    .error-tip {
+        margin-top: 0.36rem;
+        font-size: 0.24rem;
+        color: #999999;
+        text-align: center;
+    }
+</style>
+<div id="myfavorite">
+    @if (Model.list != null && Model.list.Count > 0)
+    {
+        <div class="favorite-list">
+            @foreach (var item in Model.list)
+            {
+                string url = item.url;
+                <div class="question-list" id="@item.qId">
+                    <div class="title"><img src="@Url.Content("~/asset/img/function/2/提问@2x.png")" alt=""><a href="javascript:void(0);" onclick="openPage('@url')"><span>@item.title</span></a></div>
+                    <div class="favorite-tool">
+                        <div style="display: inline-block;"><span>@(item.favoritesCount)收藏</span><span style="width: 0.3rem; text-align: center; display: inline-block; color: rgba(176, 179, 184, 1);">·</span><span>@(item.answerCount)回答</span></div>
+                        <div style="display: inline-block; float: right;"><p class="" data-qid="@item.qId" style="cursor:pointer;">取消收藏</p></div>
+                    </div>
+                </div>
+            }
+            @if (Model.PageCount > 1)
+            {
+                <div class="loading">加载中</div>
+            }
+
+            <section class="pop-content" id="popUp">
+                <div class="pop-box">
+                    <div class="msg" id="msg"></div>
+                    <span class="btn cancel">知道了</span>
+                    <a class="btn confirm" href="javascript:void(0);" style="display: none;">去看看</a>
+                </div>
+            </section>
+        </div>
+    }
+    else
+    {
+        <div class="error-box">
+            <div class="error-item"><img src="@(Edushi.WenDa.Web.App.Helper.DataHelper.checkPlatType() == 1 ? Url.Content("~/asset/images/noMyFavorite-ios.png") : Url.Content("~/asset/images/noMyFavorite-andriod.png"))" /></div><div class="error-tip">暂无收藏</div>
+        </div>
+    }
+    @Html.Partial("~/Views/Shared/_PartialConfim.cshtml")
+</div>
+<script src="@Url.Content("~/asset/js/question.js")"></script>
+
+<script>
+    var gate = true;
+    var pageIndex = 1;
+    var EId = "@Model.EId";
+    var pageCount = "@Model.PageCount";
+    var domain = "@Common.GetConfigString("domain")";
+    var platType = checkPlatType();
+    var code = 0;
+
+    $(function () {
+        scrollLoad();
+    })
+    function scrollLoad() {
+        $(window).bind("scroll", function () {
+            // 判断页面是否拉到底部
+            if ($(document).scrollTop() + $(window).height() >= $(document).height()) {
+                if (gate) {
+                    pageIndex++;
+                    if (pageIndex > pageCount) {
+                        gate = false;
+                        return false;
+                    }
+                    $(".loading").css("display", "block");
+                    $.ajax({
+                        type: 'post',
+                        url: '@Url.Content("~/User/getMoreUserFavoriteData")',
+                        data: { "EId": EId, "pageIndex": pageIndex },
+                        success: function (data) {
+                            //console.log(data)
+                            if (data.length > 0 && data != null) {
+                                for (var i = 0; i < data.length; i++) {
+                                    var result = data[i];
+                                    if (result != null) {
+                                        var url = result.url;
+                                        var element = '<div class="question-list" id=' + result.qId + '>' +
+                                            '<div class="title"><img src="@Url.Content("~/asset/img/function/2/提问@2x.png")" alt=""><a href="javascript:void(0);" onclick="openPage(\'' + url + '\')"><span>' + result.title + '</span></a></div></div>' +
+                                            '<div class="favorite-tool">' +
+                                            '<div style="display: inline-block;"><span>' + result.favoritesCount + '收藏</span><span style="width: 0.3rem; text-align: center; display: inline-block; color: rgba(176, 179, 184, 1);">·</span><span>' + result.answerCount + '回答</span></div>' +
+                                            '<div style="display: inline-block; float: right;"><p class="" data-qid="' + result.qId + '" style="cursor:pointer;">取消收藏</p></div>' +
+                                            '</div>';
+                                        $('.loading').before(element);
+                                    }
+                                }
+                                $(".loading").css("display", "none");
+                            }
+                        },
+                        error: function (msg) { }
+                    })
+                }
+            }
+        })
+    }
+
+    var obj = '#iosconfirms';
+    var objs = '#iosconfirm';
+    if (platType == 2)
+    {
+        obj = '#androidconfirms'
+        objs = '#androidconfirm'
+    }
+   var questionId =0;
+    $(document).on('click', '.question-list .favorite-tool p', function () {
+        ConfimUps(obj, '您确定要取消收藏吗?')
+        questionId = $(this).attr("data-qid")
+    })
+    $((platType == 1) ? obj +' .tool' : obj +' .confirmBox-right').on('click', function () {
+        var $target = $(event.target); //此处就是可以查看是那个点击的jQ对象
+        if ($target.text() != "取消")
+            if (!$target.hasClass("dan")) {
+                delFavorite(questionId);
+            }
+        $(obj).hide()
+    })
+    function delFavorite(questionId) {
+        code = Add_CancelFavorite("@Url.Content("~/Shared/Add_Cancel_Favorite")", EId, questionId, 2);
+        if (code == 1) {    //删除成功 ，执行回调
+            ConfimUp(objs, '取消收藏成功!');
+        } else {
+            ConfimUp(objs, "取消收藏失败，请重试");
+        }
+    }
+    $(document).on('click', (platType == 2) ? '#androidconfirm' : '#iosconfirm' + ' .ennsure', function () {
+        $((platType == 2) ? '#androidconfirm' : '#iosconfirm').hide();
+        if (code == 1)
+            $("#" + questionId).remove()
+    })
+
+</script>

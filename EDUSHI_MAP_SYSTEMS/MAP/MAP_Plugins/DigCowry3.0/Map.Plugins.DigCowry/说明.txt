@@ -1,0 +1,19 @@
+﻿1、页面功能
+
+BasePage.Master =   母板
+Default.aspx    =   首页
+DigHeroList.aspx    = 挖宝英雄
+Transmit.aspx   =   宝贝交易
+TrophyList.aspx =   宝贝列表
+Explain.aspx    =   挖宝秘籍（介绍）
+DigHeroNow.aspx  =   返回当下新挖的情况JSON格式
+
+2、控件说明（用于在页面显示简要列表）
+DigHeroSurvey.ascx  =   挖宝英雄缩略，ViewCount属性设置显示几条
+TransmitSurvey.ascx =   交易列表缩略，ViewCount属性设置显示几条
+TrophyListSurvey.ascx   =   宝贝列表缩略，ViewCount属性设置显示几条
+
+3、StaticData\ZZS.xml   存放着友情链接的数据
+
+
+4、DigCowryControlBase.cs  DigCowryPageBase.cs 两个基类存放了一些返回文件、图片路径方法

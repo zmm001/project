@@ -1,0 +1,263 @@
+﻿
+<script src="@Url.Content("~/asset/js/jquery.form.js")"></script>
+<script src="@Url.Content("~/asset/js/quill.js")"></script>
+<script src="@Url.Content("~/asset/js/common.js")"></script>
+<script src="@Url.Content("~/asset/js/User.js")"></script>
+<script>
+    getAppId(0);
+</script>
+@{
+    ViewBag.Title = "添加回答";
+}
+<style>
+    #qw-answer {
+        position: relative;
+        /*border:1px solid;*/
+        background-color:white;
+
+    }
+    .ql-container.ql-snow {
+        border: none;
+        /*border-top: 0.02rem solid #ccc;*/
+        /*margin-top: 0.86rem;*/
+        border: none;
+        /*height: 550px;*/
+        /*height: 10.96rem;*/
+        background-color: #fff;
+        /*border: 1px solid;*/
+        margin-top: 2.28rem;
+    }
+    .answer-detail {
+        position: absolute;
+        top: 0.04rem;
+        left: 3rem;
+    }
+    .editor-bottom {
+        background-color: #fff;
+        /*height: 0.88rem;*/
+        position: fixed;
+        width: 100%;
+        z-index: 99999;
+        box-sizing: border-box;
+        border-bottom: 0.02rem solid #ccc;
+        /*border: 1px solid;*/
+        padding-top: 0.4rem;
+        height: 1.28rem;
+    }
+
+        .editor-bottom button {
+            display: inline-block;
+            font-size: 0.32rem;
+            outline: none;
+            font-family: PingFangSC-Regular;
+            font-weight: 400;
+            color: rgba(142,142,143,1);
+            padding: 0;
+        }
+
+            .editor-bottom button:nth-child(1) {
+                float: left;
+                margin-left: 0.3rem;
+                border: 0.02rem solid transparent;
+                background: none;
+                height: 0.88rem;
+            }
+
+            .editor-bottom button:nth-child(3) {
+                float: right;
+                margin-right: 0.3rem;
+                background: none;
+                border: 0.02rem solid transparent;
+                height: 0.88rem;
+            }
+
+        .editor-bottom p {
+            display: inline-block;
+            font-size: 0.32rem;
+            line-height: 0.88rem;
+            vertical-align: middle;
+            width: 4.2rem;
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            font-family: PingFangSC-Medium;
+            font-weight: 500;
+            color: rgba(35,41,55,1);
+            margin-left: 0.6rem;
+        }
+
+    .ql-toolbar.ql-snow {
+        position: fixed;
+        top:1.26rem;
+        /* left: 0; */
+        /* z-index: 999999; */
+        background-color: #fff;
+        width: 100%;
+    }
+
+    .ql-editor.ql-blank::before {
+        font-style: normal;
+    }
+    .ql-editor {
+        overflow-y: auto;
+        -webkit-overflow-scrolling: touch;
+        /*height: 300px;*/
+    }
+
+    .pos-rel {
+        position: relative;
+    }
+
+    .fabiao {
+        color: rgba(255,65,51,1) !important;
+    }
+
+</style>
+<div id="qw-answer">
+    <div style="height: 100%; position: relative; ">
+           <div class="editor-bottom">
+               <button onclick="history.go(-1);">取消</button>
+               <p>@ViewBag.title</p>
+               <button class="publish-btn fr" id="submit_answer">发表</button>
+           </div>
+  
+        <div class="editor-box js-box" style="border: 0.02rem solid #fff; background-color: #fff;  ">
+         
+            <div id="editor-container">
+              
+            </div>
+        </div>
+    </div>
+    <section class="pop-content" id="popUp">
+        <div class="pop-box">
+            <div class="msg" id="msg"></div>
+            <span class="btn cancel">知道了</span>
+            <a class="btn confirm" href="javascript:void(0);" style="display: none;">去看看</a>
+        </div>
+    </section>
+</div>
+
+<script>
+    $(function () {
+        // 判断标题在文档中居中显示,根据字数判断是否让文本居中显示
+        if ($('.editor-bottom').find('p').text().length < 12) {
+            $('.editor-bottom').find('p').css("text-align", "center")
+        }
+        //$('#editor-container').after('<form id="upAnswerImgForm" method="post" enctype="multipart/form-data"><input type="file" name="upfile" class="file" accept="image/jpeg, image/png, image/jpg" title="上传图片"></form>')
+        // 上传图片
+         $('.ql-toolbar').append('<span class="ql-formats"><form id="upAnswerImgForm" method="post" enctype="multipart/form-data"><input type="file" name="upfile" class="file" accept="image/jpeg, image/png, image/jpg" title="上传图片"></form></span>')
+
+         $("#upAnswerImgForm .file").change(function (event) {
+             if ($(this).val().length > 0) {
+                $('#upAnswerImgForm').ajaxSubmit({
+                    url: '@Url.Content("~/UploadImg.htm")',
+                    type: 'post',
+                    success: function (data) {
+                        if (data) {
+                            event.target.value = '';
+                            if (data.errno == "0") {
+                                if (quill.getSelection() == null) quill.focus();
+                                quill.insertEmbed(quill.getSelection().index, 'image', data.data[0]);
+                                quill.setSelection(quill.getSelection().index + 1)
+                            } else {
+                                popUp(data.Msg);
+                            }
+                        }
+                    }
+                });
+            }
+        });
+    })
+    var quill = new Quill('#editor-container', {
+        modules: {
+            toolbar: [
+              [{
+                  'size': [false, 'large']
+              }],
+              ['bold'],
+              ['underline'],
+              [{
+                  'color': []
+              }],
+              ['blockquote']
+            ]
+        },
+        placeholder: '请输入回答内容',
+        theme: 'snow' // or 'bubble'
+    });
+    $("#editor-container").bind("click", function () {
+        if (event.target == this) quill.focus();
+    });
+    $(".ql-toolbar").insertAfter($("#editor-container"));
+
+
+    $(".editor-box").on("click", ".ql-link", function () {
+        $(".ql-editing").find("input[type=text]").val("");
+    });
+
+    var flag = true;
+    $('.ql-editor').on('compositionstart', function () {
+        flag = false;
+        quill.placeholder = ''
+    })
+    $('.ql-editor').on('compositionend', function () {
+        flag = true;
+    })
+    quill.on('text-change', function () {
+        if (!flag) {
+            placeholder = ''
+        }
+        var _this = this;
+        if ($(".ql-editor").hasClass("ql-blank")) {
+            $("#submit_answer").removeClass("fabiao")
+        } else {
+            $("#submit_answer").addClass("fabiao")
+        }
+    })
+
+    //提交答案
+    $("#submit_answer").click(function () {
+        if (EId <= 0)//通知APP登录
+        {
+            getAppId(1);
+            return;
+        }
+
+        var qId = "@ViewBag.qid";
+        if ($(".ql-editor").html() != "<p><br></p>") {
+        }
+        else {
+            popUp("请填写回答内容!");
+            return false;
+        }
+
+        var answerHtml = $(".ql-editor").html();
+        $.ajax({
+            type: "post",
+            dataType: "json",
+            url: "@Url.Content("~/Ask/AddAnswer")",
+            data: {
+                "sEId": EId,  // 暂时模拟登录用户
+                "qId": qId,
+                "content": answerHtml
+            },
+            success: function (data) {
+                if (data.errno == "0") {
+                    popUp("回答成功，审核中…", goBack);
+                }
+                else {
+                    popUp("回答失败，请重试。");
+                }
+            }
+        });
+
+    });
+</script>
+
+<script>
+    var EId = 0;
+    setTimeout(function () {
+        EId = getEIdByAppId("@Url.Content("~/Shared/GetEIdByAppId")", appId);
+    }, 100);
+</script>
+

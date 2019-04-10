@@ -1,0 +1,133 @@
+/*CSS Reset*/
+html {
+  font-size: 24px;
+  margin: 0;
+  font-family: 'PingFangSC-Regular','STHeiti', 'Microsoft YaHei', Helvetica, Arial;
+}
+div,
+form,
+acronym,
+img,
+ul,
+ol,
+li,
+dl,
+dt,
+dd,
+header {
+  margin: 0;
+  padding: 0;
+  border: none;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin: 0;
+  padding: 0 ;
+}
+body {
+  position: relative;
+  margin: 0;
+  padding: 0;
+  font-size: 0 ;
+  background: #fff;
+  width: 100%;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+a {
+  text-decoration: none;
+}
+input[type=button],
+input[type=submit],
+input[type=file],
+button,
+textarea {
+  cursor: pointer;
+  -webkit-appearance: none;
+}
+/**/
+.f-l {
+  float: left;
+}
+.f-r {
+  float: right;
+}
+.clearfix:after,
+.clr:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+header {
+  position: relative;
+  height: 0.88rem;
+}
+header .back {
+  position: absolute;
+  left: 0.3rem;
+  top: 0.28rem;
+  display: inline-block;
+  width: 0.18rem;
+  height: 0.32rem;
+  background: url(../images/back_icon.png) no-repeat 0 0;
+  background-size: cover;
+}
+.error-box {
+    /*padding-top: 1.8rem;*/
+}
+.error-img {
+  /*width: 4.5rem;
+  height: 4.69rem;*/
+  /*background: url(../images/notfound.png) no-repeat;*/
+  margin: 0 auto;
+ width: 8rem;
+    height: 5.6rem;
+  background: url(../images/nocontent.png) no-repeat;
+  background-size: cover;
+}
+.error-tip {
+  margin-top: 0.36rem;
+    font-size: 0.24rem;
+    color: #999999;
+    text-align: center;
+    /* line-height: 0.44rem; */
+}
+.error-item{
+        margin: 0 auto;
+    box-sizing: border-box;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 6.16rem;
+}
+.error-item img{
+        box-sizing: border-box;
+    margin: 0 auto;
+    width: 4rem;
+    height: 2.8rem;
+}
+.error-tip p {
+  margin-bottom: 0.22rem;
+  font-size: 0.48rem;
+  color: #2f3133;
+}
+.back-home {
+  display: block;
+  width: 4.8rem;
+  height: 0.8rem;
+  margin: 0.55rem auto 0;
+  font-size: 0.32rem;
+  color: #fff;
+  text-align: center;
+  line-height: 0.8rem;
+  background: #ff3334;
+  border-radius: 0.4rem;
+}
+
+

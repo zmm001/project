@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<RuleSet Name="Migrated rules for EDC.SearchEngine.ruleset" Description="已通过项目“E:\212TFS\EDUSHI_DATA_CENTER\EdushiDataCenter\v1.0\Edushi.DataCenter\EDC.SearchEngine\EDC.SearchEngine.csproj”中的“Debug (Any CPU)”配置的 CodeAnalysisRules 属性创建此规则集。" ToolsVersion="10.0">
+  <IncludeAll Action="Warning" />
+  <Rules AnalyzerId="Microsoft.Analyzers.ManagedCodeAnalysis" RuleNamespace="Microsoft.Rules.Managed">
+    <Rule Id="CA1400" Action="None" />
+    <Rule Id="CA1401" Action="None" />
+    <Rule Id="CA1402" Action="None" />
+    <Rule Id="CA1403" Action="None" />
+    <Rule Id="CA1404" Action="None" />
+    <Rule Id="CA1405" Action="None" />
+    <Rule Id="CA1406" Action="None" />
+    <Rule Id="CA1407" Action="None" />
+    <Rule Id="CA1408" Action="None" />
+    <Rule Id="CA1409" Action="None" />
+    <Rule Id="CA1410" Action="None" />
+    <Rule Id="CA1411" Action="None" />
+    <Rule Id="CA1412" Action="None" />
+    <Rule Id="CA1413" Action="None" />
+    <Rule Id="CA1414" Action="None" />
+    <Rule Id="CA1415" Action="None" />
+  </Rules>
+</RuleSet>

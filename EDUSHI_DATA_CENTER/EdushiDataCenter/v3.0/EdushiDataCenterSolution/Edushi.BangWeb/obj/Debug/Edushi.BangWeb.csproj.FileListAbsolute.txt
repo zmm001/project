@@ -1,0 +1,9 @@
+E:\TFS192.168.100.212\EDUSHI_DATA_CENTER\EdushiDataCenter\v3.0\EdushiDataCenterSolution\Edushi.BangWeb\bin\Edushi.BangWeb.dll
+E:\TFS192.168.100.212\EDUSHI_DATA_CENTER\EdushiDataCenter\v3.0\EdushiDataCenterSolution\Edushi.BangWeb\bin\Edushi.BangWeb.pdb
+E:\TFS192.168.100.212\EDUSHI_DATA_CENTER\EdushiDataCenter\v3.0\EdushiDataCenterSolution\Edushi.BangWeb\bin\Edushi.MongoDB.dll
+E:\TFS192.168.100.212\EDUSHI_DATA_CENTER\EdushiDataCenter\v3.0\EdushiDataCenterSolution\Edushi.BangWeb\bin\MongoDB.Bson.dll
+E:\TFS192.168.100.212\EDUSHI_DATA_CENTER\EdushiDataCenter\v3.0\EdushiDataCenterSolution\Edushi.BangWeb\bin\MongoDB.Driver.dll
+E:\TFS192.168.100.212\EDUSHI_DATA_CENTER\EdushiDataCenter\v3.0\EdushiDataCenterSolution\Edushi.BangWeb\bin\Edushi.MongoDB.pdb
+E:\TFS192.168.100.212\EDUSHI_DATA_CENTER\EdushiDataCenter\v3.0\EdushiDataCenterSolution\Edushi.BangWeb\obj\Debug\Edushi.BangWeb.csprojResolveAssemblyReference.cache
+E:\TFS192.168.100.212\EDUSHI_DATA_CENTER\EdushiDataCenter\v3.0\EdushiDataCenterSolution\Edushi.BangWeb\obj\Debug\Edushi.BangWeb.dll
+E:\TFS192.168.100.212\EDUSHI_DATA_CENTER\EdushiDataCenter\v3.0\EdushiDataCenterSolution\Edushi.BangWeb\obj\Debug\Edushi.BangWeb.pdb

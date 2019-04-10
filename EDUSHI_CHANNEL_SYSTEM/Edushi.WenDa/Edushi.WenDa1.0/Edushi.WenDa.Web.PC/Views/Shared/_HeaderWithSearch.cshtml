@@ -1,0 +1,63 @@
+﻿@model string
+<div class="top-box big-top-box">
+    <div class="wrapper clearfix">
+        <div class="fl">
+            <a href="http://www.edushi.com/" target="_blank" class="logo"><img src="@Url.Content("~/asset/images/logo.png")"></a>
+            <a href="@Url.Content("~/")" target="_blank" class="wenda-logo"></a>
+        </div>
+        <div class="search-box clearfix">
+            <div class="fl search">
+                <input type="text" name="" placeholder="搜索你感兴趣的内容" class="ipt" value="@Model" id="search_text" />
+                <input type="button" name="" value="搜索" class="btn search-btn" />
+            </div>
+            <ul class="fl">
+                <li class="ask">提问</li>
+                <li class="answer"><a href="@Url.Content("~/info/2.html")" target="_blank">回答</a></li>
+            </ul>
+        </div>
+        <div class="fr tips" id="member">
+            @*<a href="#" target="_blank" class="notice">通知</a>*@
+            @*<a href="#" target="_blank" class="invite">邀请</a>*@
+        </div>
+    </div>
+</div>
+
+<script>
+  
+    $(function () {
+        //验证是否登录
+        $.post("/IsLogin.htm", function (data) {
+            var $userHtml = "";
+            var backUrl = escape(window.location.href);
+            if (data.ResultCode == 1 && data.NickName) {
+                $userHtml = " <a href=\"http://user.edushi.com/wenda/\" target='_blank' class='my'>我的</a>\r\n";
+                $("#user_islogin").val(1);
+            } else {
+                $userHtml = "<a onclick=\"window.location.href = 'http://user.edushi.com/Login.html?BackUrl=" + backUrl + "'\" class=\"login\">登录</a>";
+                $("#user_islogin").val(0);
+            }
+            $("#member").append($userHtml);
+        }, "json");
+            document.onkeydown = function (e) {
+                if (document.activeElement.id == "search_text") {
+                    var ev = document.all ? window.event : e;
+                    if (ev.keyCode == 13) {
+                        toSearch();
+                    }
+                }
+            }
+
+            $(".search-btn").click(function () {
+                toSearch();
+            });
+
+            function toSearch() {
+                var text = $("#search_text").val();
+                if (text != "") {
+                    window.open("/info/search.html?keyword=" + encodeURIComponent(text));
+                } else {
+                    showMsg("请输入关键词");
+                }
+            }
+        });
+</script>

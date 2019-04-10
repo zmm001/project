@@ -1,0 +1,28 @@
+﻿@import url(Common.css);
+.ulResultList{overflow-y:auto;overflow-x:hidden;
+     scrollbar-face-color: #DBEBFE; /*滚动条凸出部分的颜色*/
+     scrollbar-shadow-color: #B8D6FA; /*滚动条空白部分的颜色*/
+     scrollbar-highlight-color: #FFFFFF; /*立体滚动条阴影的颜色*/
+     scrollbar-3dlight-color: #DBEBFE; /*滚动条亮边的颜色*/
+     scrollbar-darkshadow-color:#458CE4; /*上下按钮上三角箭头的颜色*/
+     scrollbar-track-color: #FFFFFF; /*滚动条的背景颜色*/
+     scrollbar-arrow-color: #458CE4;/*滚动条强阴影的颜色*/
+}
+.EachRow{margin:5px 0;}
+.DottedLine{background:url(../Images/SearchNavLine.gif) repeat-x left center; height:1px; font-size:0;/*for IE6*/}
+
+.NormalInfo{padding:3px 3px 3px 12px; cursor:pointer; background:url(../Images/DownIco.gif) no-repeat 3px 6px;}
+.ActiveInfo{padding:3px 3px 3px 12px; cursor:pointer; background:#f6f6f6 url(../Images/UpIco.gif) no-repeat 3px 6px;}
+.DetailCir{margin:5px 0; line-height:150%; color:#666;}
+
+table.TabSty1{ width:280px; overflow:hidden;}
+table.TabSty1 tr th,table.TabSty1 tr td{ line-height:25px; height:25px; background:url(../Images/SearchNavLine.gif) repeat-x left bottom;}
+
+span.Bt{ color:#999; font-weight:bold; background:url(../Images/ArrowCircle2.gif) no-repeat left 4px; padding-left:6px;}
+
+.DetailCir .TdRgt{ text-align:right; padding-top:3px;}
+
+.DetailCir ul{ padding:0; margin:0; list-style-type:none; color:#666;}
+.DetailCir ul li{padding-left:14px; margin:5px 0; background:url(../images/ArrowCircle1.gif) no-repeat 5px 8px;}
+.DetailCir ul li img{ padding-left:3px; cursor:pointer;}
+.DetailCir ul li span{ color:#369; margin-left:5px; cursor:pointer;}

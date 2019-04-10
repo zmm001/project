@@ -1,0 +1,42 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head>
+    <title>公交站点搜索</title>
+    <script language="javascript" type="text/javascript" src="/Js/GeneralLib.js"></script>
+    <script language="javascript" type="text/javascript" src="../Js/BusStationSearch.js"></script>
+    <link href="../Css/BusStationSearch.css" rel="stylesheet" type="text/css" />
+     <style type="text/css">
+        #div_ad{ margin-top:3px; margin-bottom:3px; width:100%;}
+        #div_ad img{border:0px;margin:3px 0px}
+    </style>
+</head>
+<body>
+<div id ='union' >
+<style>
+.my_adslot { width: 310px; height: 80px; }
+@media(min-width: 500px) { .my_adslot { width: 468px; height: 60px; } }
+@media(min-width: 800px) { .my_adslot { width: 728px; height: 90px; } }
+</style>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- 搜索列表自适应广告 -->
+<ins class="adsbygoogle my_adslot"
+     style="display:inline-block"
+     data-ad-client="ca-pub-6571762537302535"
+     data-ad-slot="9530850037"></ins>
+<script>
+    (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+<div class="bus-station-box">
+    <div class="bus_pubsearch clearfix">
+        <input type="text" class="f-l bus-search-ipt" id="textKeyWords" value="请输入公交、地铁名称" onclick="if(this.value == '请输入公交、地铁名称')this.value='';" />
+        <input type="button" class="f-l bus-search-btn" id="BusSearch_Btn" value="搜索" />
+    </div>
+    
+    <div class="bus_box">
+        <div class="bus_line" id="TabContent">
+        </div>
+    </div>
+</div>
+</body>
+</html>

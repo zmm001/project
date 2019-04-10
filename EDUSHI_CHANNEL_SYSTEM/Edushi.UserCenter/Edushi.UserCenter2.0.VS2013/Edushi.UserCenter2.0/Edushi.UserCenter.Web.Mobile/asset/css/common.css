@@ -1,0 +1,16 @@
+html { font-size: 0; margin: 0; height: 100%;font-family: Helvetica, Tahoma, Arial, "PingFang SC", "Hiragino Sans GB", "Heiti SC", "Microsoft YaHei", "WenQuanYi Micro Hei"; position: relative; -webkit-tap-highlight-color:rgba(0,0,0,.03);}
+body { position: relative; margin: 0; padding: 0; font-size: 0; background: #fff; overflow-x: hidden; overflow-y: auto; }
+
+div, form, acronym, img, ul, ol, li, dl, dt, dd, header { margin: 0; padding: 0; border: none; }
+h1, h2, h3, h4, h5, h6, p { margin: 0; padding: 0; }
+a { text-decoration: none; }
+input { border-radius: 0; }
+
+/**/
+.fl { float: left; }
+
+.fr { float: right; }
+
+.clearfix:after { content: ""; display: table; clear: both; }
+
+#app{ height: 100%;  }

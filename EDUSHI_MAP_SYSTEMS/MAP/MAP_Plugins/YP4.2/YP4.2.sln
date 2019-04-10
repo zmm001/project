@@ -1,0 +1,49 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Studio 2008
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Map.YellowPage", "Map.YellowPage\Map.YellowPage.csproj", "{3ED88A55-EE05-41E4-B296-FAA04BEF544C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Map.YellowPageBLL", "Map.YellowPageBLL\Map.YellowPageBLL.csproj", "{4E09C426-E771-4141-BB68-E319E67E102F}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Lib", "Lib", "{980E258B-8823-442D-96CE-B43B4F22FC11}"
+	ProjectSection(SolutionItems) = preProject
+		Lib\AspNetPager.dll = Lib\AspNetPager.dll
+		Lib\EDC.Framework.dll = Lib\EDC.Framework.dll
+		Lib\EDC.Member.dll = Lib\EDC.Member.dll
+		Lib\Enyim.Caching.dll = Lib\Enyim.Caching.dll
+		Lib\log4net.dll = Lib\log4net.dll
+		Lib\Newtonsoft.Json.Net35.dll = Lib\Newtonsoft.Json.Net35.dll
+		Lib\URLRewriter.dll = Lib\URLRewriter.dll
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 3
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = http://192.168.101.67:8080/
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = Map.YellowPageBLL\\Map.YellowPageBLL.csproj
+		SccProjectName1 = Map.YellowPageBLL
+		SccLocalPath1 = Map.YellowPageBLL
+		SccProjectUniqueName2 = Map.YellowPage\\Map.YellowPage.csproj
+		SccProjectName2 = Map.YellowPage
+		SccLocalPath2 = Map.YellowPage
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{3ED88A55-EE05-41E4-B296-FAA04BEF544C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3ED88A55-EE05-41E4-B296-FAA04BEF544C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3ED88A55-EE05-41E4-B296-FAA04BEF544C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3ED88A55-EE05-41E4-B296-FAA04BEF544C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4E09C426-E771-4141-BB68-E319E67E102F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4E09C426-E771-4141-BB68-E319E67E102F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4E09C426-E771-4141-BB68-E319E67E102F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4E09C426-E771-4141-BB68-E319E67E102F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

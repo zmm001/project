@@ -1,0 +1,31 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" id="viewport" content="width=device-width,initial-scale=1.0, maximum-scale=1.0,minimum-scale=1.0,user-scalable=no"/>
+    <meta name="applicable-device" content="mobile" />
+    <title>@ViewBag.Title</title>
+    @RenderSection("meta", false)
+    <link rel="stylesheet" href="@Url.Content("~/asset/css/common_7.0.css")">
+    <script>
+        document.documentElement.style.fontSize = 100 * ((document.documentElement.clientWidth) / 750) + "px";
+    </script>
+    <script type="text/javascript" src="@Url.Content("~/asset/js/jquery-1.8.3.min.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/asset/js/attention_common.js")"></script>
+    <script>
+        var _hmt = _hmt || [];
+        (function () {
+            var hm = document.createElement("script");
+            hm.src = "https://hm.baidu.com/hm.js?99a36e54478482e04c158ab069a3e598";
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(hm, s);
+        })();
+</script>
+</head>
+
+<body>
+    @RenderBody()
+
+<script type="text/javascript" src="@Url.Content("~/asset/js/e_common.js")"></script>
+</body>
+</html>

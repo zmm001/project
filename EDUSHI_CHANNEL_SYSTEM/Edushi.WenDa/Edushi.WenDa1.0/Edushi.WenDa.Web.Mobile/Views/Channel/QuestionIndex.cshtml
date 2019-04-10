@@ -1,0 +1,130 @@
+﻿@using Edushi.Common
+@model Edushi.WenDa.Web.Mobile.Models.ChannelModel
+@{
+    ViewBag.Title = "回答频道-E都市问答-E都市";
+    ViewBag.IsNeedBack = true;
+}
+
+@section meta
+{
+    <meta name="Keywords" content="E都市问答，一款有用的问答，专注分享知识、经验、观念。在这里，希望所有人都能找到答案、参与讨论。" />
+    <meta name="Description" content="E都市问答 是以在线互动问答和搜索形式展现、提供价值资讯的信息服务平台,您可以根据自身的需求,有针对性地提出问题,同时这些答案也可以满足有相同或类似问题的其他人需求。" />
+}
+<section class="main-nav-box category-nav-box">
+    <div class="main-nav clearfix">
+        <span class="cty">分类</span>
+        <nav>
+            <a href="@Url.Content("~/info/2.html")"  @Html.Raw(Model.CurrentType == null ? "class=\"on\"" : "")>全部</a>
+
+            @if (Model.AllTypes != null && Model.AllTypes.Any())
+            {
+                var parentTypes = Model.AllTypes.FindAll(p => p.IT_ParentID == 0);
+                if (parentTypes.Any())
+                {
+                    foreach (var item in parentTypes)
+                    {
+                        <a href="@Common.GetWenDaInfoListUrl(Url.Content("~/"),item.IT_ID,2)"  @Html.Raw(Model.CurrentType != null && item.IT_ID == Model.CurrentType.IT_ID ? "class=\"on\"" : "")>@item.IT_Name.Substring(0, 2)</a>
+                    }
+                }
+
+            }
+        </nav>
+        <span class="btn"></span>
+    </div>
+    <div class="more-nav"></div>
+</section>
+<div class="content-main">
+    @if (Model.WaitQuestions != null && Model.WaitQuestions.Any())
+    {
+        <div class="question-cnt" id="datalist">
+            @foreach (var item in Model.WaitQuestions)
+            {
+                var url = Common.GetInfoUrl(Url.Content("~/"), item.IT_ID_Parent, item.IQ_ID);
+                <div class="question-list answer-list">
+                    <div class="anser-item clearfix">
+                        <a href="@url">
+                            @if (!string.IsNullOrWhiteSpace(item.IQ_Pic))
+                            {
+                                <div class="img-box"><img src="@item.IQ_Pic" onerror="this.src='@Url.Content("~/asset/images/default_photo.png")'" /></div>
+                            }
+                           
+                            <div class="title">@Html.Raw(item.IQ_Title)</div>
+                        </a>
+                        <div class="answer-oper" >
+                            <a href="@url" class="answer-btn">我来回答</a>
+                            <span class="share">分享</span>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+        <div class="loading">加载中</div>
+        <div class="end">没有更多了</div>
+    }
+    
+</div>
+@Html.Partial("Footer")
+
+<section class="share-layout"></section>
+<section class="share-box">
+    <span class="tit">分享到</span>
+    <i class="close"></i>
+    <div class="share-li">
+        <a class="qq js-tips">QQ</a>
+        <a href="javascript:;;" class="qzone">QQ空间</a>
+        <a href="javascript:;;" class=" weibo">微博</a>
+        <a class="weixin js-tips">微信</a>
+    </div>
+</section>
+<section class="share-layout-tips">
+    <div class="tips-box">
+        <p>点击浏览器下方“<em></em>”分享给<span>微信</span>好友</p>
+        <p>safari浏览器请点击“<i></i>”按钮 </p>
+    </div>
+</section>
+
+<script type="text/javascript">
+    $(function () {
+        $(".question-cnt").on("click", ".answer-list .share", function () {
+            
+            var parentsObj = $(this).parents(".question-list");
+            var title = parentsObj.find(".title").text();
+            var url = parentsObj.find(".answer-btn").attr("href");
+            $.post("@Url.Content("~/ShareUrl.htm")",
+                { url: url, title: title },
+                function (data) {
+                    if (data) {
+
+                        $(".share-layout").show();
+                        $(".share-box").addClass("show");
+                        $(".qzone").attr("href", data.qzone);
+                        $(".weibo").attr("href", data.weibo);
+                    }
+                },"json");
+        });
+        $(".share-layout, .share-box .close").click(function () {
+            $(".share-layout").hide();
+            $(".share-box").removeClass("show");
+        });
+        $(".share-box").on("click", ".js-tips", function () {
+            $(".share-layout-tips").find("p:eq(0) span").text($(this).text());
+            $(".share-layout-tips").show();
+        });
+        $(".share-layout-tips").on("click", function () {
+            $(this).hide();
+        });
+
+    })
+</script>
+<script>
+    var ConfigData = {
+        "PageIndex":1,
+        "Count": "@Model.PageCount",
+        "Page": "@Url.Content("~/")",
+        "Url": "MoreQuestionData.htm",
+        "Id": "@(Model.CurrentType == null ? 0 : Model.CurrentType.IT_ID)",
+        "Type": 1
+    }
+</script>
+
+<script src="@Url.Content("~/asset/js/scrollload.bak.js")"></script>

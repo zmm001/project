@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/Edushi.BDT.Contract.Model" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Edushi.BDT.Contract.Model" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="Topic">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CityCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LM_ID" type="xs:int" />
+      <xs:element minOccurs="0" name="LM_IsImport" type="xs:int" />
+      <xs:element minOccurs="0" name="LM_LoginName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LM_NickName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LM_NoInterest" type="xs:int" />
+      <xs:element minOccurs="0" name="LTC_ID" type="xs:int" />
+      <xs:element minOccurs="0" name="LTT_ID" type="xs:int" />
+      <xs:element minOccurs="0" name="LTT_IsShow" type="xs:int" />
+      <xs:element minOccurs="0" name="LTT_ParentID" type="xs:int" />
+      <xs:element minOccurs="0" name="LTT_ParentIsShow" type="xs:int" />
+      <xs:element minOccurs="0" name="LTT_ParentName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LTT_TypeName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LT_Checked" type="xs:int" />
+      <xs:element minOccurs="0" name="LT_CommentCount" type="xs:int" />
+      <xs:element minOccurs="0" name="LT_Content" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LT_CreateDate" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="LT_EffectiveDate" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="LT_EffectiveEndDate" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="LT_FavoriteCount" type="xs:int" />
+      <xs:element minOccurs="0" name="LT_ID" type="xs:int" />
+      <xs:element minOccurs="0" name="LT_IsBDT" type="xs:int" />
+      <xs:element minOccurs="0" name="LT_IsEffectiveDate" type="xs:int" />
+      <xs:element minOccurs="0" name="LT_IsRecommend" type="xs:int" />
+      <xs:element minOccurs="0" name="LT_IsSendOverdueTip" type="xs:int" />
+      <xs:element minOccurs="0" name="LT_LastModifyIP" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LT_Pic" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LT_PosterIP" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LT_PosterX" type="xs:int" />
+      <xs:element minOccurs="0" name="LT_PosterY" type="xs:int" />
+      <xs:element minOccurs="0" name="LT_Sort" type="xs:int" />
+      <xs:element minOccurs="0" name="LT_Status" type="xs:int" />
+      <xs:element minOccurs="0" name="LT_SupplyBDT" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LT_ThanksInfo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LT_Title" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LT_UpdateDate" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="LT_ViewCount" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Topic" nillable="true" type="tns:Topic" />
+  <xs:complexType name="TopicComment">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CityCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IsBest" type="xs:boolean" />
+      <xs:element minOccurs="0" name="LM_ID" type="xs:int" />
+      <xs:element minOccurs="0" name="LM_NickName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LTC_Checked" type="xs:int" />
+      <xs:element minOccurs="0" name="LTC_Content" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LTC_CreateDate" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="LTC_ID" type="xs:int" />
+      <xs:element minOccurs="0" name="LTC_PosterIP" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LTC_SupplyComment" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LTC_UpdateDate" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="LT_ID" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="TopicComment" nillable="true" type="tns:TopicComment" />
+</xs:schema>

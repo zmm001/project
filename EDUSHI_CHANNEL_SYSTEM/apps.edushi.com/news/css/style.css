@@ -1,0 +1,373 @@
+body {
+	font-family: "Microsoft YaHei";
+	font-size: 14px;
+	color: #404040;
+	background: #fff;
+}
+body, ul, ol, li, dl, dt, dd, p, h1, h2, h3, h4, h5, h6, button, input, textarea {
+	margin: 0;
+	padding: 0;
+}
+h1, h2, h3, h4, h5, h6 {
+	font-size: 100%;
+}
+ul, ol {
+	list-style-type: none;
+}
+img, a img, :link img, :visited img {
+	border: 0;
+	display: block;
+}
+a {
+	color: #404040;
+	text-decoration: none;
+}
+a:hover {
+	text-decoration: none;
+}
+.clearfix:after {
+	content: "";
+	display: table;
+	clear: both;
+}
+.clearfix {
+	*zoom: 1;
+}
+
+.fl {
+	display: inline;
+	float: left;
+}
+.fr {
+	display: inline;
+	float: right;
+}
+.wrapper {
+	width: 1200px;
+	margin: 0 auto;
+}
+
+body.bg {
+	background: url(../images/app_pcbg.jpg) no-repeat center top #000000;
+}
+.back-home {
+	font-size: 18px;	
+	text-align: right;
+	line-height: 92px;
+}
+.back-home a {
+	color: #999;
+}
+.download-box {
+	width: 100%;
+	height: 412px;
+	margin: 716px 0 70px;
+	background: #fff;
+}
+.download-box li {
+	float: left;
+	width: 399px;
+	height: 412px;
+	font-size: 0;
+	text-align: center;
+	border-right: 1px dashed #e9e9eb;
+}
+.download-box li .ios-icon, .download-box li .android-icon {
+	margin: 99px 0 34px;
+	padding-top: 133px;
+	font-size: 16px;
+	color: #222;
+	background: url(../images/ios_icon.png) no-repeat center top;
+}
+.download-box li a {
+	display: inline-block;
+	width: 128px;
+	height: 40px;
+	background: #db1011;
+	font-size: 16px;
+	color: #fff;
+	line-height: 40px;
+	border-radius: 20px;
+}
+.download-box li .code {
+	margin-top: 99px;
+	padding-top: 194px;
+	font-size: 16px;
+	background: url(../images/code.png) no-repeat center top;
+}
+.download-box li .android-icon {
+	background: url(../images/android_icon.png) no-repeat center top;
+}
+
+.download-box li:last-child {
+	border-right: none;
+}
+.info-box {
+	width: 100%;
+	height: 412px;
+	margin-bottom: 10px;
+	background: #fff;
+}
+.news {
+	background: url(../images/pic_news.png) no-repeat;
+}
+.recommend {
+	background: url(../images/pic_recommend.png) no-repeat;
+}
+.video {
+	background: url(../images/pic_video.png) no-repeat;
+}
+.info-box .text {
+	width: 300px;
+	margin-left: 670px;
+	padding-top: 130px;
+	
+}
+.info-box .text h3 {
+	margin-bottom: 33px;
+	font-size: 42px;
+	font-weight: normal;
+	color: #666;
+}
+.info-box .text div {
+	font-size: 22px;
+	color: #888;
+	line-height: 37px;
+}
+.footer {
+	width: 100%;
+	margin-top: 50px;
+	padding: 52px 0 57px;
+	background: #2d2e30;
+}
+.footer ul {
+	margin-left: 229px;
+}
+.footer li {
+	float: left;
+	text-align: center;
+	font-size: 16px;
+	color: #474748;
+}
+.footer li.ios {
+	width: 218px;
+	margin-top: 20px;
+	padding-top: 92px;
+	background: url(../images/f_ios_icon.png) no-repeat center top;
+}
+.footer li.code {
+	width: 306px;
+	height: 145px;
+	background: url(../images/f_code.png) no-repeat center top;
+}
+.footer li.android {
+	width: 226px;
+	margin-top: 20px;
+	padding-top: 94px;
+	background: url(../images/f_android_icon.png) no-repeat center top;
+}
+.footer .nav {
+	margin-top: 40px;
+	text-align: center;
+}
+.footer .nav a {
+	position: relative;
+	margin: 0 14px;
+	color: #5b5c5d;
+}
+.footer .nav a:after {
+	content: "|";
+    position: absolute;
+    right: -30%;
+    color: #4b4c4d;
+}
+.footer .nav a:last-child:after {
+	display: none;
+}
+
+.download-page .title {
+  padding: 30px 0;
+  border-bottom: 4px solid #db1011;
+  margin-bottom: 20px;
+}
+.download-page .title .logo {
+  float: left;
+  display: inline-block;
+  width: 215px;
+  height: 30px;
+  margin-top: 3px;
+  background: url(../images/logo.png) no-repeat;
+}
+.download-page .title .name {
+  display: inline-block;
+  margin-left: 10px;
+  font-size: 30px;
+  color: #666;
+  vertical-align: top;
+  line-height: 35px;
+}
+.download-page .title a {
+	float: right;
+	margin-top: 12px;
+	font-size: 18px;
+	color: #999;
+}
+.download-page .download-icon {
+  display: inline-block;
+  width: 160px;
+  height: 160px;
+  background-image: url(../images/pro_sprite_b.png);
+}
+.download-page .download-icon.news {
+  background-position: -160px -160px;
+}
+.download-page .download-icon.mpp {
+  background-position: -320px 0;
+}
+.download-page .download-icon.wallet {
+  background-position: 0 -160px;
+}
+.download-page .download-icon.fanbei {
+  background-position: -160px 0;
+}
+.download-page .download-icon.yuebei {
+  background: url(../images/yuebei_logo.png) no-repeat;
+}
+.download-page .download-list {
+  font-size: 0;
+}
+.download-page .download-list dl {
+  padding: 120px 0;
+  border-bottom: 1px solid #ddd;
+}
+.download-page .download-list dl:lastchild {
+  border: none;
+}
+.download-page .download-list dl dd {
+  display: inline-block;
+  margin-right: 140px;
+  width: 160px;
+  text-align: center;
+  vertical-align: top;
+  padding: 15px 0;
+}
+.download-page .download-list dl dd i {
+  margin-bottom: 20px;
+}
+.download-page .download-list dl dd span {
+  line-height: 55px;
+  font-size: 24px;
+  color: #404040;
+  white-space: nowrap;
+}
+.download-page .download-list dl dt {
+  display: inline-block;
+  width: 160px;
+  text-align: center;
+  vertical-align: top;
+  border-right: 1px dashed #e9e9eb;
+  padding: 15px 70px;
+  margin-right: -1px;
+}
+.download-page .download-list dl dt .code-icon {
+  display: inline-block;
+  margin-bottom: 20px;
+}
+.download-page .download-list dl dt .code-icon img {
+  width: 160px;
+  height: 160px;
+}
+.download-page .download-list dl dt .ios-icon {
+  display: inline-block;
+  width: 160px;
+  height: 110px;
+  background: url(../images/ios_icon.png) no-repeat center top;
+}
+.download-page .download-list dl dt .android-icon {
+  display: inline-block;
+  width: 160px;
+  height: 110px;
+  background: url(../images/android_icon.png) no-repeat center top;
+}
+.download-page .download-list dl dt span {
+  display: block;
+  line-height: 55px;
+}
+.download-page .download-list dl dt span.l {
+  font-size: 18px;
+  color: #404040;
+}
+.download-page .download-list dl dt span.s {
+  font-size: 16px;
+  color: #222;
+}
+.download-page .download-list dl dt .btn {
+  display: inline-block;
+  height: 40px;
+  line-height: 40px;
+  color: #fff;
+  font-size: 16px;
+  background-color: #db1011;
+  padding: 0 18px;
+  margin-top: 20px;
+  border-radius: 40px;
+}
+
+/*ÐÂ¸Ä¶¯20190121*/
+body.bgnew {
+	background: url(../images/news/app_pcbg.jpg) no-repeat center top #000000;
+}
+.wrapper .logo
+{
+      margin-top: 73px;
+      margin-bottom: 70px;
+    }
+.newlogo
+{
+    display: inline-block;
+    vertical-align: middle;
+    }
+    
+   .back-home-news 
+   {
+       font-size: 18px;
+        display: inline-block;
+    float: right;
+    line-height: 60px;}
+    
+    .back-home-news a {
+    color: #999;
+}
+.left-show
+{
+    width: 60%;
+    float: left;
+    margin-right: 118px;
+    margin-top: 23px;
+}
+.right-show
+{
+    display: inline-block;
+    margin-bottom: 91px;
+}
+
+.code_2
+{
+        display: inline-block;
+    }
+    .phone_choose
+    {
+        display: inline-block;
+            float: right;
+    margin-top: 29px;
+        }
+        
+        .phone_choose div
+    {
+        margin-bottom: 44px;
+        }
+        .code-border
+        {
+    width: 73%;
+    margin: 54px 0 0 54px;
+            }

@@ -1,0 +1,198 @@
+/* CSS Document */
+*{ margin:0; padding:0;}
+body{ font-size:12px;}
+.clear{ clear:both;}
+ul li{ list-style:none; margin:0; padding:0;}
+a{ text-decoration:none; color:#2750aa;}
+img{ display:block; border:none;}
+.xle18b34{ color:#e18b34;}
+.xl9e1c04{ color:#9e1c04;}
+.xl3e3e3e{ color:#3e3e3e;}
+.kk230,.kk260{display:block;overflow: hidden; white-space: nowrap;text-overflow: ellipsis;}
+.kk230{
+	width:190px;
+}
+.kk210{
+	width:145px; overflow: hidden; white-space: nowrap;text-overflow: ellipsis;display:block; float:left;
+}
+.kk260{ width:260px;}
+.xl777{ color:#777;}
+.T_shu{
+	line-height:25px;
+	color:#3e3e40;
+	padding:0 7px;
+	background:#e3efff;
+	border:solid 1px #e4e6f5;
+	margin-bottom:10px;
+	background: #e3efff url(../images/icon_1.jpg) no-repeat 5px 3px; padding-left:25px;
+	
+}
+.T_shu span{ 
+	font-weight:bold;
+	color:#9e1c04;
+	}
+
+
+.Map_y{ 
+	width:310px; 
+	height:400px;
+	overflow-x:hidden;
+	overflow-y:auto;
+}
+.ul_1{ 
+	overflow:hidden;
+}
+.ul_1 li{ 
+	padding-top:7px;
+	border-bottom:dashed 1px #d4d4d4;
+}
+.li_s{
+	background:#f1f9fd;
+}
+.MC,.DZ,.YHQ,.GG{ 
+	margin-bottom:7px; 
+	overflow:hidden;
+}
+.MC{ 
+	margin-bottom:3px;
+}
+.MC a,.DZ a,.YHQ z ,.GG a{
+	 display:block;
+	 }
+.MC a{ 
+	display:block; float:left;
+}
+.nb{ 
+	float:left; 
+	width:27px; 
+	height:27px; 
+	background:url(../images/p_dian3.png) no-repeat 0 0;
+	margin-right:5px;
+}
+.MC .nb span{ 
+	color:#fff;
+	text-align:center; 
+	width:21px;
+	display:block;
+	padding-top:3px;
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:10px;
+}
+.MC a{
+	margin-top:3px;
+	
+}
+.MC span.icon_e{ 
+	margin:0px 0 0 5px;
+	display:block;
+	
+}
+.MC span.icon_e a{ 
+	margin-top:0px;
+	
+}
+.DZ,.YHQ,.GG{ 
+	margin-left:32px;
+}
+/*-------------  道路搜索  -------------------*/
+.DL_a{ 
+	color:#2750aa;
+	font-weight:bold; 
+	font-size:14px;
+
+}
+.QD{
+	background:#f4f9ff;
+	height:66px;
+	line-height:66px;
+	position:relative;
+	padding-top:10px;
+}
+.qd,.zd,.NandH{ 
+	float:left;
+}
+.qd,.zd{
+	margin-top:23px;
+}
+.qd{
+	margin-left:10px;
+}
+.NandH{
+	margin-top:33px;
+}
+.NandH{
+	width:230px; 
+	height:2px;
+	line-height:2px;
+	background:#2750aa;
+}
+
+
+
+.zh_all{
+	position:absolute; 
+	top: 10px;
+}
+.zh_a{
+	text-align:center;
+	float:left;
+	width:80px;
+}
+.zh_a1{ margin-bottom:10px; background: url(../images/hmline.jpg) repeat-x 0 0; height:20px;  margin-right:10px; margin-bottom:5px;}
+.zh_a1 a{ display:block; background:url(../images/MC.jpg) no-repeat 50% 100%; height:20px; color:#fff; line-height:16px; padding:0 4px;}
+.zh_a2{ margin-left:14px;background:url(../images/MH.jpg) no-repeat 0 0; width:38px; height:18px; text-align:center;}
+.zh_a2 a{ color:#fff; line-height:16px; display: block;}
+.zh_as{left:120px;}
+
+/*------------  无搜索结果道路  --------------*/
+.ck{ background:#f1f9fd; padding:10px; height:10px;}
+.ck_title{ font-weight:bold; margin-bottom:15px;}
+.ck1{ margin-right:16px; float:left; background: url(../images/ck1.jpg) no-repeat 0 0; padding-left:28px; height:23px; padding-top:5px;}
+.ck1 a{}
+/*-------------  搜索结果为地址  ---------------------*/
+.s_dz1,.s_dz1a{ background:#f4f9ff; border-bottom: dashed 1px #d4d4d4;  padding:5PX; padding-bottom:10PX; overflow:hidden;}
+.s_dz1{ height:60px;}
+.PB{ overflow:hidden;}
+.PB,.more a{ margin-left:32PX; color:#9e1c04;}
+.s_dz2{ padding:10px 0 0 35px;}
+.s_dz2 li{ margin-bottom:10px; overflow:hidden;}
+.s_dz2 li a{ display:block; float:left; margin-right:5px;}
+/*------------  途径公交 -----------*/
+.GJ_title,.GJ_C{ float:left;}
+.GJ_title{ margin-top:5px; font-weight:bold; margin-left:32px;}
+.GJ_C{ margin-left:7px; width:200px; line-height:22px;}
+.GJ_C a{ padding-right:3px;}
+
+/*-----------------  热区  -------------------------*/
+.PB  a{ display:inline-block; background:#bbd8fa; padding:3px; margin-right:7px; }
+.PB span a:hover,.PB span a.current{ color:#9e1c04;}
+.span_a{ float:left; display:block; color:#e18b34;}
+.zbgj{  padding:10px; background:#f4f9ff; overflow:hidden;}
+.zbgj1,.zbgj2{ float:left;}
+.zbgj1{ margin-right:10px; margin-top:3px;}
+.zbgj2{ line-height:22px; width:200px;}
+.s_dz2 span{ display:block; float:left;}
+ .dj{ font-weight:bold; color:#a51c01; margin:0 10px;}
+.PB2{ overflow:hidden; }
+.s_dz{ margin-bottom:10px;}
+/*-------------  酒店页面  ------------------*/
+.MC span{ display:block; float:left; margin-top:3px;}
+.DP{ margin:0 0 10px 32px;}
+.nb span{ margin-top:0px;}
+/*------------  无搜索结果  -------------*/
+.JG_w .title{ background:#e3efff url(../images/icon_2.jpg) no-repeat 20px 10px; border:solid 1px #e4e6f5; padding:10px; padding-left:60px; line-height:20px;}
+.JG_w .title span{ font-weight:bold; color:#9e1c04;}
+
+/*-------------------  number  ---------------------*/
+.number{ 
+	text-align:right; 
+	margin-right:10px; 
+	margin-bottom:10px;
+	margin-top:15px;
+}
+.number a{ 
+	border:solid 1px #2157ad; 
+	font-family:Arial, Helvetica, sans-serif; 
+	padding:2px 4px;
+	font-size:10px;
+}

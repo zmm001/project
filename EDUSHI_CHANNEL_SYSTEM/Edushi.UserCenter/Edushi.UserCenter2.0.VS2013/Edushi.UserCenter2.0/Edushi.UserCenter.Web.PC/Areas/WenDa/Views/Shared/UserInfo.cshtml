@@ -1,0 +1,26 @@
+﻿@model Edushi.UserCenter.Web.PC.Areas.WenDa.Models.UserModel
+<div class="fl sidebar-box">
+    @if (Model.UserInfo != null)
+    {
+        <div class="photo-box">
+            <div class="photo">
+                <img src="@(ViewBag.imgDomain + Model.UserInfo.UI_Avatar)">
+            </div>
+            <span class="name">@Html.Raw(Model.UserInfo.UI_NickName)</span>
+            <span class="text">@Html.Raw(Model.UserInfo.UI_Tags)</span>
+        </div>
+        <ul>
+            <li class="tips">
+                <a href="@Url.Content("~/wenda/attention.html")" @Html.Raw(Model.PageType == 2 ? "class=\"current\"" : "")><span>@Model.AttentionCount</span>关注</a>
+                <a href="@Url.Content("~/wenda/fans.html")" @Html.Raw(Model.PageType == 3 ? "class=\"current\"" : "")><span>@Model.FansCount</span>粉丝</a>
+            </li>
+            <li class="activities @Html.Raw(Model.PageType==1?"current":"")"><a href="@Url.Content("~/wenda/")">我的动态</a></li>
+            <li class="favorites @Html.Raw(Model.PageType==4?"current":"")"><a href="@Url.Content("~/wenda/favorite.html")">我的收藏</a></li>
+            <li class="ask @Html.Raw(Model.PageType==5?"current":"")"><a href="@Url.Content("~/wenda/myquestions.html")">我的提问</a></li>
+            <li class="answer @Html.Raw(Model.PageType==6?"current":"")"><a href="@Url.Content("~/wenda/myanswers.html")">我的回答</a></li>
+            <li class="notice @Html.Raw(Model.PageType==7?"current":"")"><a href="@Url.Content("~/wenda/mynotice.html")">我的通知</a></li>
+            <li class="info @Html.Raw(Model.PageType==8?"current":"")"><a href="@Url.Content("~/my/baseinfo.html?type=2")">基本资料</a></li>
+        </ul>
+    }
+  
+</div>

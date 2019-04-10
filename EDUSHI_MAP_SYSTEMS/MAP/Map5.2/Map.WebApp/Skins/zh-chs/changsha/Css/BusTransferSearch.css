@@ -1,0 +1,50 @@
+﻿@import url(Common.css);
+/*搜索*/
+.se{height:auto; width:300px;overflow-y:auto;overflow-x:hidden;}
+.se,.ulResultList{
+     scrollbar-face-color: #DBEBFE; /*滚动条凸出部分的颜色*/
+     scrollbar-shadow-color: #B8D6FA; /*滚动条空白部分的颜色*/
+     scrollbar-highlight-color: #FFFFFF; /*立体滚动条阴影的颜色*/
+     scrollbar-3dlight-color: #DBEBFE; /*滚动条亮边的颜色*/
+     scrollbar-darkshadow-color:#458CE4; /*上下按钮上三角箭头的颜色*/
+     scrollbar-track-color: #FFFFFF; /*滚动条的背景颜色*/
+     scrollbar-arrow-color: #458CE4;/*滚动条强阴影的颜色*/
+     }
+.se .TitleNav,.se .SelectNav{float:left; margin:5px 0;}
+.se .TitleNav{ width:30px;}
+.se .SelectNav{ width:270px; }
+.se .SelectNav select{width:270px; background-color:#F7FBFF;}
+.btn{ margin:5px auto; width:45px; height:21px; cursor:pointer; background-image:url(../images/SearchBtn.gif); clear:both;}
+
+/*结果*/
+.DottedLine{background:url(../Images/SearchNavLine.gif) repeat-x left center; height:1px; font-size:0;/*for IE6*/}
+.EachRow{margin:5px 0;}
+
+.ulResultList{overflow-y:auto;overflow-x:hidden;}
+
+.NormalInfo{padding:3px 3px 3px 12px; cursor:pointer; background:url(../Images/DownIco.gif) no-repeat 3px 7px;}
+.ActiveInfo{padding:3px 3px 3px 12px; cursor:pointer; background:#f6f6f6 url(../Images/UpIco.gif) no-repeat 3px 7px;}
+.DetailCir{margin:5px 0 10px 10px; line-height:150%; color:#666;}
+
+.Building,.Station,.Bus{cursor:pointer; font-weight:bold; text-decoration:underline; margin:0 2px;}
+.Building{color:#C30;}
+.Station{color:#369;}
+.Bus{color:#F60;}
+.Station:hover,.Bus:hover,.Building:hover{color:Red; text-decoration:none;}
+
+.jie{height:auto; width:300px;}
+.shuomimg div{ height:20px; line-height:20px; float:left;border:1px solid #fff; background-color:#e9f6ff;}
+.shuomimg .left{width:48px;}
+.shuomimg .right{width:220px;}
+
+/*其它城市*/
+.fangan{ border:1px solid #d0d0d0; height:26px; background-image:url(images/bg.gif) ; font-weight:bold; line-height:28px; width:270px; overflow:hidden;}
+.fangan span{color:#fe0000; margin-left:3px;}
+
+
+.xianlu{border-bottom:#666 dashed 1px;width:270px; height:auto; overflow:hidden;}
+.xianlu div{float:left;}
+.xianlu .left{color:#fd8703; text-align:center; cursor:pointer;}
+.xianlu .right span{ color:#1872ca;}
+
+.xianlu .right{width:226px; clear:both;}

@@ -1,0 +1,125 @@
+﻿@import url(Common.css);
+body, ul, dl, dd, dt, ol, li, p, h1, h2, h3, h4, h5, h6, form, fieldset, table, img, td, div, input{
+margin:0;padding:0;
+}
+ul, li{ list-style:none;}
+.clearfix:before,.clearfix:after{ display:table; content:" ";}
+.clearfix:after{ clear:both;}
+.clearfix{ *zoom:1;}
+.clear{ clear:both;}
+.f-l{ display:inline; float:left;}
+.f-r{ display:inline; float:right;}	
+.position-re{position:relative;}
+@media screen and (-webkit-min-device-pixel-ratio:0) { 
+	body, button, input, select, textarea{line-height:normal !important;}
+	input, select, textarea{outline-style:none;}
+}	
+	
+.Bus{height:auto; width:310px;overflow-x:hidden;overflow-y:auto;}
+.EachRow{margin:5px 0;}
+.DottedLine{background:url(../Images/SearchNavLine.gif) repeat-x left center; height:1px; font-size:0;/*for IE6*/}
+.BusLineNormal{padding:3px 3px 3px 12px; cursor:pointer; background:url(../Images/DownIco.gif) no-repeat 3px 7px;}
+.BusLineActive{padding:3px 3px 3px 12px; cursor:pointer; background:#f6f6f6 url(../Images/UpIco.gif) no-repeat 3px 7px;}
+
+.BusLineNormal strong,.BusLineActive strong{color:#FF6600;}
+
+ul.Info{margin:0; padding:0; list-style-type:none;}
+ul.Info li{ height:21px; line-height:21px; padding-left:16px; background:url(../Images/ArrowCircle1.gif) no-repeat 6px center;}
+
+.Bus .Info li font{color:#FF6600;}
+
+.NameHead{height:25px; line-height:25px; text-align:center; width:267px;}
+.ActionLeft,.UnActionLeft,.ActionRight,.UnActionRight{float:left;text-align:center;height:25px;cursor:pointer;overflow:hidden;}
+
+.ActionLeft,.ActionRight{border:solid #CCC; border-width:1px 1px 0 1px; width:134px;background:url(../Images/NameHeadBg.gif) repeat-x left top; font-weight:bold;}
+.UnActionLeft{border:1px solid #CCC;border-width:1px 0 1px 1px;width:130px;height:24px;}
+.UnActionRight{border:solid #adadad; border-width:1px 1px 1px 0px;width:130px;height:24px;}
+
+.BusShow{ width:268px;}
+.BusRemark{border-bottom:1px solid #CCC; padding:0px;}
+.BusRemark p{padding:1px 0;margin:0;}
+
+ul.BusName{padding:1px 0; margin:5px 4px; color:#666;}
+ul.BusName li{padding-left:5px; height:25px; margin:1px 0; line-height:25px; background:url(../Images/SearchNavLine.gif) repeat-x left bottom;}
+
+.BusShow .BusName li span{ color:#369; margin-left:5px; cursor:pointer;}
+.Photo{height:60px;width:269px; margin:5px 0;}
+
+
+/*新公交*/
+.bus_box{width:310px; overflow:auto;}
+
+.pub_search{ float:left;margin:11px 0 0 13px;width:208px;height:13px; font-size:12px; border:0;}
+.pub_btn{width:45px; height:20px;cursor: pointer; border:0; background:url(../images/bus_btn.gif) no-repeat; float:left;margin:8px 0 0 14px !important;margin:8px 0 0 10px;}
+.pub_text{ float:left; width:220px;font-size:12px; line-height:20px; color:#827f7f; margin:-2px 0 0 14px; display:inline;}
+.bus_line{ float:left;margin:5px 0 0 4px;width:300px; padding:0 0 3px 0; display:inline;overflow-y:auto;overflow-x:hidden;}
+.bus_line h1{width:265px;font-size:12px; color:#333; font-weight:normal; text-align:left; text-indent:8px;margin:0px;}
+.bus_line_top{ width:271px; height:3px;background:url(../images/line_top.gif) no-repeat; margin-top:2px; overflow:hidden;}
+.bus_line_mid{ width:269px;border:1px solid #bbb9b9; border-width:0 1px; padding:0; margin:0; display:block; float:left;}
+.bus_line_mid h2{width:268px; height:23px; background:url(../images/line_bg.gif) repeat-x;overflow:hidden; margin:0 0 0 1px;}
+.bus_line_down{ width:270px; height:3px;background:url(../images/line_down.gif) no-repeat; margin-bottom:8px;padding:0;overflow:hidden;}
+.mid_sc{ width:10px; height:10px; margin:5px 0 0 7px;}
+.mid_name{font-size:12px;text-align:left; text-indent:28px; color:#333333; font-weight:normal; text-align:left; float:left; margin:-12px 0 0 -2px;overflow:hidden; text-overflow:ellipsis;white-space:nowrap;width:265px}
+.bus_sx{ width:268px; height:26px; background:url(../images/shangxing.gif) no-repeat;}
+.bus_sx_s a{ font-size:13px;display:block;width:130px; height:22px; color:#333; text-indent:50px; line-height:30px; text-decoration:none; letter-spacing:12px; overflow:hidden; float:left;}
+.bus_zhan_con{width:269px; height:42px; margin:5px 0 0 0; padding:0; }
+.bus_zhan_con li{ float:left; text-align:left;background:url(../images/bus_ico10.gif) no-repeat 2px 5px; font-size:12px; font-weight:normal; margin:3px 11px 3px 3px; text-indent:12px; list-style-type:none; padding:0;}
+.bus_zhan_btn img{ margin:0 1px 0 1px}
+
+.bus_zhanming{ float:left;width:261px;margin:3px 0 0 2px; padding:0;}
+.bus_zhanming li{font-size:12px; background:url(../images/bus_ico11.gif) no-repeat 0 5px; text-indent:14px; color:#666; list-style-type:none; line-height:18px; margin:0 0 0 8px;}
+.bus_zhanming li a{ color:#336699;margin:0px 0 0 6px;}
+
+
+
+/*------------------  新增地铁优化方案样式 -----------------*/
+/*--------------------  线路查询  ------------------*/
+.bus-station-box{ width:335px; margin:0 auto; font-size:12px;}
+
+/*----------------------  zhandianGJ  ------------*/
+	.zhandianGJ .title{ /* background: url(../images/line.jpg) repeat-x 0 100%; height:32px;*/ margin-top:5px;}
+	.t_l,.t_c,.t_r{ float:left;}
+	.t_c{ background:#33add6 url(../images/bus_bg.jpg) no-repeat 0 4px; height:20px; color:#fff; line-height:20px;}
+	.t_r{ color:#b2b2b2;}
+	.t_c1{ padding-left:15px; cursor:pointer;}
+	.t_c2{background:#34aed3 url(../images/dq_icon.jpg) no-repeat 0 3px; cursor:pointer;}
+	.zhandianGJ .text{ position:relative;}
+	.list_gj{ background:#f1fafd; border:solid 1px #c1dff0; padding:10px 0 5px 0;}
+	.list_gj .title{ margin:0 5px;}
+	.t_r2{ float:right; margin-right:5px; display: inline;}
+	.t_l2{ float:left; color:#666666;}
+	
+	.ul_1{ margin:10px 0; _margin-bottom:0px;}
+	.zhandianGJ .text .ul_1 li a{ display:block; float:left; margin-right:6px; color:#800000; border:solid 1px #bad7e7; font-family:Verdana, Geneva, sans-serif; font-size:11px; margin-bottom:10px; width:15px; height:15px; text-align:center; vertical-align: middle;}
+	.zhandianGJ .text .ul_1 li a.currnet{ font-weight:bold;}
+	.ul_2{ padding-left:10px; margin-top:10px; }
+	.ul_2 li{ float:left;  padding-right:5px; margin-bottom:15px;width:130px; white-space:nowrap; overflow:hidden;text-overflow:ellipsis;}
+	.ul_2 li a{ color:#839dba;}
+	.ul_3{background:#f1fafd; margin-top:10px; border:solid 1px #c1dff0; padding:7px 0 7px 10px;}
+	.ul_3 li { float:left; margin-right:10px; margin-bottom:12px;}
+	.ul_3 li.li_s{ width:290px;}
+	.ul_3 li a,.ul_3 li span{ display:block; float:left;}
+	.ul_3 li a{ float:left; color:#666668; }
+	.ul_3 li  span{ width:6px; margin-right:7px; overflow:hidden; height:6px; margin-top:5px;}
+	.sp_1{ background:#cc0000;}
+	.sp_2{ background:#009700;}
+	.sp_3{ background:#f8e002;}
+	.sp_4{ background:#660064;}
+	.sp_5{ background:#cf00cc;}
+	.sp_6{ background:#fe3263;}
+	.sp_7{ background:#ff7f00;}
+	.sp_8{ background:#0066cb;}
+	.sp_9{ background:#96d2da;}
+	.sp_s{ background:#b3b3b3;}
+	.sp_10{ background:#cba7d5;}
+	.sp_11{ background:#800004;}
+	
+	.ul_4 li{margin:7px 5px 0 10px;float:left; display:inline;}
+	.ul_4 li a{ color:#5579a1;display:block;  height:20px; text-align:center; line-height:20px;}
+	.ul_4 li a.current{ background:#fdc07f; color:#fff;}
+	.zhandianGJ2{ margin-bottom:20px;}
+	.xianlucx,.dandiancx{ width:335px;overflow-y:auto;overflow-x:hidden;}
+
+.bus_pubsearch{ margin:10px 0 8px;}
+.bus-search-ipt{ width:240px; height:37px; margin-right:5px; background:#fff; border:1px solid #d8d8d8; text-indent:12px; line-height:37px; box-shadow:inset 0 0 1px 1px rgba(104,104,104,.2);}
+.bus-search-btn{ width:82px; height:38px; text-align:center; font-size:14px; color:#000; line-height:38px; cursor:pointer; background:url(../images/search_btnbg_gray.gif) repeat-x; border:none; border-bottom:1px solid #b2b2b2;}

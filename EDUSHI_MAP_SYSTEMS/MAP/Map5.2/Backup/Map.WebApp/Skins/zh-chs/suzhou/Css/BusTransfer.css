@@ -1,0 +1,16 @@
+﻿@import url(Common.css);
+html, body{overflow-y:auto;overflow-x:hidden;
+     scrollbar-face-color: #DBEBFE; /*滚动条凸出部分的颜色*/
+     scrollbar-shadow-color: #B8D6FA; /*滚动条空白部分的颜色*/
+     scrollbar-highlight-color: #FFFFFF; /*立体滚动条阴影的颜色*/
+     scrollbar-3dlight-color: #DBEBFE; /*滚动条亮边的颜色*/
+     scrollbar-darkshadow-color:#458CE4; /*上下按钮上三角箭头的颜色*/
+     scrollbar-track-color: #FFFFFF; /*滚动条的背景颜色*/
+     scrollbar-arrow-color: #458CE4;/*滚动条强阴影的颜色*/
+}
+#BusTransferNav{height:auto; width:300px;}
+input.InFieldSty{border:1px solid #84A5CE;border-right-color:#C1D2E7;border-bottom-color:#C1D2E7;background-color:#F7FBFF;}
+
+#SetOut,#TurnUp{clear:both;margin:10px 0;}
+#SetOut span,#SetOut input,#SetOut img,#TurnUp span,#TurnUp input,#TurnUp img{float:left; line-height:21px;margin:0 3px 0 0;}
+#SetOut img,#TurnUp img{cursor:pointer;}

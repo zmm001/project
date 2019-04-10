@@ -1,0 +1,16 @@
+﻿
+
+/*店鋪/商品 收藏*/
+#favoriteblk{position:absolute;  display:none; z-index:2;top:31px;left:10px;width:334px;height:110px;overflow:hidden;background:url(../images/favconbg.gif) no-repeat left top;padding:1px 5px 5px 1px;}
+#favoriteblk #Title{background:#F0FAFF;height:27px; font-weight:bold;line-height:27px;position:relative;padding-left:6px;margin-bottom:15px; margin-top:0; color:#333; text-align:left;}
+#Title img.ColseBtn{position:absolute;top:6px;right:5px; cursor:pointer;}
+#favoriteblk .P{text-align:center;padding:0;margin:10px 0; width:100%;}
+#favoriteblk .P span{color:#ff6400; font-weight:bold;}
+/*购物车列表*/
+tr.alt td {background:#fff8e8; /*这行将给所有的tr 加上背景色*/}
+tr.over td {background:#fff8e8; /*这个将是鼠标高亮行的背景色*/}
+tr.down td{background-color:#fff8e8;}
+.sptip{ color:Red; font-size:12px}
+
+
+#MyDiv{position:absolute; width:68px;height:8px;font-size:12px;background:#666;border:1px solid #000;z-index:10001;display:none;text-align:center;}

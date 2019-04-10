@@ -1,0 +1,51 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head>
+    <title>酒店预订</title>
+        <script language="javascript" type="text/javascript" src="/Js/GeneralLib.js"></script>
+        <script language="javascript" type="text/javascript" src="HotelSearch.js"></script>
+    <script type="text/javascript">
+     var _PrevElement = null;
+    </script>
+    <style type="text/css">
+        #btsearch
+        {
+            width: 104px;
+        }
+        ul,.li{list-style:none;}
+            *{ margin:0; padding:0;font-size:12px;}
+            ol{ margin-left:22px}
+            a{ color:blue; text-decoration:none;}
+            a:hover{ color:red;}
+            .tred{ color:red}
+            img{ border:none;}
+            .cenne{line-height:20px;}
+            .cenne li{ padding-top:5px;border-bottom:#CCC dotted 1px; line-height:20px}
+            .cenne li span.num{ padding-right:5px;}
+            .cenne li span.dz{ padding-left:15px;}
+            .page{color:#666; text-align:right; padding:10px; text-decoration:none;}
+            .page a{color:#666; text-decoration:none;}
+            
+            .LocalResult{height:auto; width:310px;overflow-y:auto;overflow-x:hidden;}
+            
+            /*三维数据标志*/
+            .SanWei{ background:url(../Images/LinkExIco.gif) no-repeat right -30px; padding-right:10px;}
+            /*二维数据标志*/
+            .ErWei{ background:url(../Images/LinkExIco.gif) no-repeat right -60px; padding-right:10px;}
+    </style>
+</head>
+<body>
+
+<div class="LocalResult" id="TabContent" style="position:relative">
+    <div id="divResult" style="height:20px;position:relative"></div>
+    <div>
+        <input type="text" id="txkeyword" style="border-left: 1px solid #84A5CE; border-right: 1px solid #C1D2E7; border-top: 1px solid #84A5CE; border-bottom: 1px solid #C1D2E7; background-color:#F7FBFF; width: 170px;"  />&nbsp; <a href="javascript:"><img src="../Images/jdydsearch.gif" style="border:0px; vertical-align:bottom "  onclick="searchkeyword()" /></a>
+    </div>  
+    <div style="height:5px"></div>
+    <div id="divContent">
+
+    </div>
+</div>
+
+</body>
+</html>

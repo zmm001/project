@@ -1,0 +1,39 @@
+﻿@using Edushi.Common
+@model Edushi.UserCenter.Web.Mobile.Models.UserIndexResultModel
+@{
+    Layout = "~/Views/AuthorNews/AuthorNews_Layout.cshtml";
+}
+
+@section header{
+    <a href="@string.Format("{0}index/1-{1}.html", Url.Content("~/"), Model.UserInfo.UI_ID)">综合</a>
+    <a href="@string.Format("{0}index/2-{1}.html", Url.Content("~/"), Model.UserInfo.UI_ID)">新闻</a>
+    <a href="@string.Format("{0}index/3-{1}.html", Url.Content("~/"), Model.UserInfo.UI_ID)">图闻</a>
+    <a href="javascript:void(0);" class="on">专题</a>
+}
+@if (Model.NewsInfo != null && Model.NewsInfo.List != null && Model.NewsInfo.List.Any())
+{
+    foreach (var item in Model.NewsInfo.List)
+    {
+        var url = string.Format("http://m.edushi.com/zt/info/{0}-{1}-n{2}.html", item.ParentTypeID, item.TypeID, item.ID);
+        var updateTime = Common.TimeInterval(item.UpdateTime, DateTime.Now);
+    
+        <li class="topic">
+            <a href="@url">
+                <span class="title">@Html.Raw(item.Title)</span>
+                <div class="img-box">
+                    <img src="@item.Pic.GetPicReplace("", "")">
+                </div>
+                <div class="tips">
+                    <span class="author">@item.Author</span>
+                    <span class="comment"></span>
+                    <span class="time">@updateTime</span>
+                </div>
+            </a>
+        </li>
+
+    }
+}else
+{
+    <div class="nodata">暂无数据</div>
+}
+

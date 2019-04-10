@@ -1,0 +1,6 @@
+E:\TFS192.168.100.212\EDUSHI_CHANNEL_SYSTEM\Edushi.WenDa\Edushi.WenDa1.0\Edushi.WenDa.Model\bin\Debug\Edushi.WenDa.Model.dll
+E:\TFS192.168.100.212\EDUSHI_CHANNEL_SYSTEM\Edushi.WenDa\Edushi.WenDa1.0\Edushi.WenDa.Model\bin\Debug\Edushi.WenDa.Model.pdb
+E:\TFS192.168.100.212\EDUSHI_CHANNEL_SYSTEM\Edushi.WenDa\Edushi.WenDa1.0\Edushi.WenDa.Model\bin\Debug\MongoDB.Bson.dll
+E:\TFS192.168.100.212\EDUSHI_CHANNEL_SYSTEM\Edushi.WenDa\Edushi.WenDa1.0\Edushi.WenDa.Model\obj\Debug\Edushi.WenDa.Model.dll
+E:\TFS192.168.100.212\EDUSHI_CHANNEL_SYSTEM\Edushi.WenDa\Edushi.WenDa1.0\Edushi.WenDa.Model\obj\Debug\Edushi.WenDa.Model.pdb
+E:\TFS192.168.100.212\EDUSHI_CHANNEL_SYSTEM\Edushi.WenDa\Edushi.WenDa1.0\Edushi.WenDa.Model\obj\Debug\Edushi.WenDa.Model.csprojResolveAssemblyReference.cache

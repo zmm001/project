@@ -1,0 +1,53 @@
+@charset "utf-8";
+/* CSS Document */
+*{ margin:0; padding:0; list-style:none;}
+body{ margin:10px;}
+br{ clear:both;}
+.t12{ font-size:12px;}
+.a1{ font-size:14px; color:#f60; text-decoration:none}
+a.combtn{ color:#fff; font-size:12px; background:#f90; padding:4px 5px 3px 5px; text-decoration:none}
+
+.rtbox{ width:285px;font-size:14px;color:#666;overflow-x:hidden;overflow-y:auto; padding-right:15px;}
+.cywz_add{font-size:12px;}
+.cywz_add a{ background:#f90; color:#fff; padding:3px 5px; text-decoration:none}
+
+.mnbox{ border:1px solid #b9d6e7; margin:10px 0; padding:10px; font-size:14px;}
+.mnbox li,.mnlist li{ border-bottom:1px dashed #ddd; padding:6px 5px 4px 5px; clear:both}
+.mnbox li a,.mnlist li a{ color:#369; text-decoration:none;}
+.mnbox li div{ float:left; margin-right:10px;}
+.mnbox li div.btn{ font-size:12px; display:none}
+.mnbox li div.btn a{ color:#f60;}
+.mnbox li.on div.btn{ display:block}
+.mnbox li.on p{ font-size:12px; padding:4px 10px 3px 10px; background:#f4f4f4; margin-top:2px;}
+.mnbox li.on p a{ margin-right:5px;}
+.mnbox a:hover{ color:#f60}
+.mnbox .lxxz{ padding-top:10px;text-align:right}
+.mnbox .lxxz a{ color:#f60; text-decoration:none;background:#f4f4f4; font-size:12px; padding:4px 4px 3px 4px; }
+.mnbox .lxxz a:hover{ color:#fff; background:#f90}
+
+.btmbtn{ text-align:right; margin:0 10px;}
+.mnbox li.on .lok{ font-size:12px; line-height:16px;}
+.mnbox li.on .lok a{ color:#f60;}
+
+.mnlist{padding:10px 5px; font-size:14px;}
+div.mnlist p{ font-size:12px; padding:5px 0; clear:both}
+.boxfk{ width:180px; font-size:12px; padding:0 3px;}
+
+.pptj{ width:290px;}
+.pptj .pbd{border:1px solid #4997ff; font-size:12px; padding:10px 0 10px 10px; color:#333; background-color:#fff;height:105px;}
+.pptj .bjt{background:url(../images/bjjt.png) left bottom no-repeat; height:27px; margin-top:-1px;}
+.pptj .pbd li{ margin-bottom:5px; clear: both}
+.pptj .pbd *{word-break:break-all;}
+.pptj .pbd label{ width:48px; display:block; float:left;}
+.pptj .pbd input{ border:1px solid #ddd; height:16px; margin-right:10px; float:left}
+.pptj .pbd textarea{ border:1px solid #ddd;float:left;width:210px;}
+.pptj .pbd a.btn{ background:#f0f0f0; color:#f60; padding:3px 5px; text-decoration:none;}
+.pptj .pbd a.btn:hover{ background:#f90; color:#fff;}
+.pptj .pbd  #cl span{ display:block; float:left; line-height:16px; margin-right:10px; color:#f60;}
+
+.thepp,.thepp2{ float:left;}
+.thepp .pbd{ border:1px solid #fff; background:#f90; padding:3px 5px; font-size:12px; color:#fff;}
+.thepp .pbtm{ width:10px; height:6px; background:url(../images/jt.png) no-repeat; margin-top:-1px;}
+.thepp2 .pbd{ border:1px solid #fff; background:#09f; padding:3px 5px; font-size:12px; color:#fff;}
+.thepp2 .pbtm{ width:10px; height:6px; background:url(../images/jt2.png) no-repeat; margin-top:-1px;}
+

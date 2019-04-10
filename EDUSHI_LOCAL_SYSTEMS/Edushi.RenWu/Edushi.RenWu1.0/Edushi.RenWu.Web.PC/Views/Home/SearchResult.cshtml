@@ -1,0 +1,80 @@
+﻿@model Edushi.RenWu.Web.PC.Models.SearchResultModel
+@using Edushi.RenWu.Special
+@using Edushi.RenWu.Model
+@{
+    ViewBag.Title = string.Format("检索{0}结果-人物频道-E都市", Model.KeyWord);
+
+    ViewBag.PageType = 0;  //导航风格标志
+    string sub = string.Empty;
+    List<RenWuInfoTypeModel> myType = Model.AllRwType.FindAll(p => p.IT_ParentID == 0);
+
+    if (myType != null && myType.Count > 0)
+    {
+        sub = string.Join(",", myType.Select(p => p.IT_Name));
+    }
+
+    var keywords = string.Format("{0},{1}", Model.KeyWord, sub);
+    var description = string.Format("E都市人物频道是全面专业的人物资讯信息平台，提供集{0}等人物资讯，构建新型互联网媒体平台为互联网用户提供价值资讯。", (sub.Replace(",", "、")));
+    var mobileUrl = string.Empty;
+    var URI = Request.Url.AbsoluteUri.ToLower();
+    var ilocation = URI.LastIndexOf("/", StringComparison.Ordinal);
+    if (ilocation > -1)
+    {
+        mobileUrl = "http://m.edushi.com/renwu/info/" + URI.Substring(ilocation + 1);
+    }
+
+}
+
+@section meta
+{
+    <meta name="Keywords" content="@keywords" />
+    <meta name="Description" content="@description" />
+    <meta http-equiv="mobile-agent" content="format=html5; url=@mobileUrl" />
+    <link rel="alternate" media="only screen and(max-width: 640px)" href="@mobileUrl">
+}
+
+<div class="container mt20">
+    <!--频道导航-->
+    @{Html.RenderPartial("ChannelNavigation");}
+
+    <div class="content-main mt30">
+        <div class="web-width">
+
+            @*搜索框*@
+            @{Html.RenderAction("Search", "Home", new { itId = 0, keyWord = Model.KeyWord });}
+
+            @if (Model.RenWuList != null && Model.RenWuList.Any())
+            {
+                <div class="per-box">
+                    <ul>
+                        @foreach (var item in Model.RenWuList)
+                        {
+                            <li>
+                                <a href="@item.Url" target="_blank">
+                                    <div><img src="@item.Pic" alt=""></div>
+                                    <span class="name">@Html.Raw(item.Title)</span>
+                                </a>
+                            </li>
+                        }
+
+                    </ul>
+                    <div class="page-box">
+                        @Html.Raw(Html.Pager(Model.TotalCount, Model.PageSize, Model.currentPage, "", "", new PagerOptions { PageIndexParameterName = "pageno", ShowDisabledPagerItems = false, NumericPagerItemCount = 10, CurrentPageNumberFormatString = "<span>{0}</span>", ShowFirstLast = false }, Model.PageRouteName, new { keyword = Model.KeyWord }, null).ToString().Replace("&lt;", "<").Replace("&gt;", ">").Replace("'", "\""))
+
+                    </div>
+                </div>
+            }
+            else
+            {
+                <div class="per-box empty-result">
+
+                </div>
+
+            }
+
+        </div>
+    </div>
+
+</div>
+
+

@@ -1,0 +1,92 @@
+﻿@import url(Common.css);
+/*搜索*/
+.se{height:auto; width:310px;overflow-y:auto;overflow-x:hidden;}
+.se,.ulResultList{height:auto; width:300px;overflow-y:auto;overflow-x:hidden;}
+.se .TitleNav,.se .SelectNav{float:left; margin:5px 0;}
+.se .TitleNav{ width:30px;}
+.se .SelectNav{ width:270px; }
+.se .SelectNav select{width:270px; background-color:#F7FBFF;}
+.btn{ margin:5px auto; width:45px; height:21px; cursor:pointer; background-image:url(../images/SearchBtn.gif); clear:both;}
+
+/*结果*/
+.DottedLine{background:url(../Images/SearchNavLine.gif) repeat-x left center; height:1px; font-size:0;/*for IE6*/}
+.EachRow{margin:5px 0;}
+
+.ulResultList{margin-top:70px;}
+
+.NormalInfo{padding:3px 3px 3px 12px; cursor:pointer; background:url(../Images/DownIco.gif) no-repeat 3px 7px;}
+.ActiveInfo{padding:3px 3px 3px 12px; cursor:pointer; background:#f6f6f6 url(../Images/UpIco.gif) no-repeat 3px 7px;}
+.DetailCir{margin:5px 0 10px 10px; line-height:150%; color:#666;}
+
+.Building,.Station,.Bus{cursor:pointer; font-weight:bold; text-decoration:underline; margin:0 2px;}
+.Building{color:#C30;}
+.Station{color:#369;}
+.Bus{color:#F60;}
+.Station:hover,.Bus:hover,.Building:hover{color:Red; text-decoration:none;}
+
+.jie{height:auto; width:300px;}
+.shuomimg div{ height:20px; line-height:20px; float:left;border:1px solid #fff; background-color:#e9f6ff;}
+.shuomimg .left{width:48px;}
+.shuomimg .right{width:220px;}
+
+/*其它城市*/
+.fangan{ border:1px solid #d0d0d0; height:26px; background-image:url(images/bg.gif) ; font-weight:bold; line-height:28px; width:270px; overflow:hidden;}
+.fangan span{color:#fe0000; margin-left:3px;}
+
+
+.xianlu{border-bottom:#666 dashed 1px;width:270px; height:auto; overflow:hidden;}
+.xianlu div{float:left;}
+.xianlu .left{color:#fd8703; text-align:center; cursor:pointer;}
+.xianlu .right span{ color:#1872ca;}
+
+.xianlu .right{width:226px; clear:both;}
+.Photo{height:60px;width:300px; margin:5px 0;}
+.Adtop{ position:absolute;top:2px;}
+
+/*新公交*/
+
+.bus_box{width:310px; height:338px; overflow:auto;}
+.bus_box h3{width:280px; font-size:12px; font-weight:normal; margin:4px 0 0 8px;}
+
+.bus_box2{width:300px; height:338px; overflow:auto;height:auto; width:300px;overflow-y:hidden;overflow-x:hidden;}
+.bus_box2 h3{width:280px; font-size:12px; font-weight:normal; margin:4px 0 0 8px;}
+
+.bus_g_r{width:280px; margin-left:10px;}	
+.bus_blue{ width:275px;border:1px solid #bad5ea; padding:2px; margin-bottom:5px;}
+.bus_blue h1{width:275px; height:25px; background:#f0f7ff; margin:0;overflow:hidden;}
+.bus_blue .pub_ico{width:22px; height:22px; float:left; margin:2px 0 0 4px; background: url(../images/blue_t.gif) no-repeat;}
+.bus_blue .pub_t{ font-size:14px; color:#369; text-align:left; text-indent:5px; font-weight:normal; line-height:28px; }
+.bus_blue .pub_t a{ display:block;width:13px; height:13px; float:right; margin:5px 5px 0 0px; background:url(../images/green_btn.gif) no-repeat;}
+.bus_red{ width:275px;border:1px solid #fa0; padding:2px; margin-bottom:5px;}
+.bus_red h1{width:275px; height:25px; background:#fff9ee;overflow:hidden; margin:0;}
+.bus_red .pub_ico{width:22px; height:22px; float:left; margin:2px 0 0 4px; background:url(../images/red_f.gif) no-repeat;}
+.bus_red .pub_t{ font-size:14px; color:#f80; text-align:left; text-indent:5px; font-weight:normal; line-height:28px; }
+.bus_red .pub_t a{ display:block;width:13px; height:13px;float:right; margin:5px 5px 0 0px; background:url(../images/red_btn_1.gif) no-repeat;}
+.pub_con{ width:275px; padding:0; margin:10px 0 5px 0; overflow:auto;}
+.pub_con li{width:247px; margin:2px 0 0 2px; list-style:none; float:left;}
+.pub_con li .pub_nub{ width:21px; height:28px; background:url(../images/green_p.gif) no-repeat; font-size:12px; text-indent:8px; line-height:20px;margin:5px 0 0 9px;}
+.pub_con li .pub_nub_r{float:left; width:21px; height:28px; background:url(../images/green_p.gif) no-repeat; font-size:12px; text-indent:8px; line-height:20px;margin:5px 0 0 9px;}
+.pub_con li .pub_place{ width:200px; font-size:12px; color:#303030; margin:5px 0 0 5px; }
+.pub_con li .pub_place a{ color:#0000c0; text-decoration:underline;}
+.pub_con li .pub_chobtn{ width:64px; height:20px;color:#333; font-size:12px; line-height:15px; margin:3px 3px 0 0; overflow:hidden;}
+.pub_con li:hover{ background:#efefef;}
+.bus_box1 {width:300px; height:338px; overflow:auto;}
+.pub_con1 {width:254px; height:210px; padding:0; margin:1px 0 0 0;overflow:auto;}
+
+
+.bus_radio{width:235px; height:19px; font-size:13px; margin:0 0 3px 30px;}
+.bus_way1{width:275px; display:inline-table;padding:0;border:1px solid #bcbaba; margin:0px 0 5px 4px;}
+.bus_way1 h1{width:270px; float:left; margin:1px 0 2px 1px;padding:0;overflow:hidden;}
+.bus_way1 li{width:270px; float:left; border:1px solid #d9d9d9; border-width:1px 0 0 0; margin:2px 0 0px 1px;padding:0;list-style-type:none;overflow:hidden;}
+.bus_way1_ico{ width:12px; height:14px;margin:2px 0 0 4px;background:url(../images/bus_ico2.gif) 0 1px no-repeat; font-size:12px; text-align:center; font-weight:normal;color:#FFF; line-height:15px;}
+.bus_way1_title{float:left; width:200px; font-size:12px;font-weight:normal;color:#404040; line-height:16px; margin:-14px 0 0 20px; display:inline;}
+.bus_way1_btn{width:13px; height:13px; float:right; margin:-12px 2px 0 0; display:inline; overflow:hidden;}
+.bus_way1_title2{ color:#3e9223; font-size:12px; font-weight:bold;line-height:20px; text-align:left; text-indent:5px;}
+.bus_way1_title2 span{ color:#c44242;}
+.bus_way1_title2 a{ color:#1066b6; display:block; font-weight:normal; margin:-20px 0 0 190px;}
+.bus_way1_pubico{width:18px; margin:2px 0 0 13px;}
+.bus_way1_pubtitle{color:#404040;font-size:12px;line-height:18px; text-align:left; margin:-18px 0 0 40px;}
+.bus_way1_pubtitle a{color:#1066b6; text-decoration:none;}
+.bus_way1_pubtitle span{display:block;color:#202122; text-align:right; margin-top:-17px;}
+.bus_way1_down{color:#202122;font-size:12px;line-height:18px; text-align:right;}
+.bus_down_btn{width:118px; height:22px; margin:0 0 0 5px;}

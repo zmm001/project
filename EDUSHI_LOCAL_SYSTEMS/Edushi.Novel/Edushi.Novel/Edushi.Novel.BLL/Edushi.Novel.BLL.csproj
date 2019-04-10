@@ -1,0 +1,89 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{784E8F55-7910-4C31-B9C4-0481DBCD722B}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Edushi.Novel.BLL</RootNamespace>
+    <AssemblyName>Edushi.Novel.BLL</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Edushi.MongoDB_2115">
+      <HintPath>..\..\..\..\EDUSHI_CM_LIBRARY\Assembly_Library\EDC.Framework\Edushi.MongoDB_2115.dll</HintPath>
+    </Reference>
+    <Reference Include="Edushi.XiaoShuo, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\EDUSHI_CM_LIBRARY\Assembly_Library\EDC.Framework\Edushi.XiaoShuo.dll</HintPath>
+    </Reference>
+    <Reference Include="Framework">
+      <HintPath>..\..\..\..\EDUSHI_CM_LIBRARY\Assembly_Library\EDC.Framework\MongoDB2.1.1.5\Framework.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BookService.cs" />
+    <Compile Include="CategoryService.cs" />
+    <Compile Include="ChapterContentService.cs" />
+    <Compile Include="HomeService.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Edushi.Novel.Common\Edushi.Novel.Common.csproj">
+      <Project>{863377e5-be5e-41ec-81ab-f5f98eacba33}</Project>
+      <Name>Edushi.Novel.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Edushi.Novel.DataAccess\Edushi.Novel.DataAccess.csproj">
+      <Project>{e63f98e0-844e-4bb2-ba77-7e65bc860721}</Project>
+      <Name>Edushi.Novel.DataAccess</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Edushi.Novel.Entity\Edushi.Novel.Entity.csproj">
+      <Project>{bd7d6514-7338-491d-92c3-9aa24cd61a63}</Project>
+      <Name>Edushi.Novel.Entity</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Edushi.Novel.Model\Edushi.Novel.Model.csproj">
+      <Project>{9c913236-c51b-41b8-ad27-457e96d7868b}</Project>
+      <Name>Edushi.Novel.Model</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

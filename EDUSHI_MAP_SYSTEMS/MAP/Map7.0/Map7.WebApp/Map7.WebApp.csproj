@@ -1,0 +1,885 @@
+﻿<Project ToolsVersion="3.5" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{E5F4934A-B316-4BFA-9588-BA02C17FA1EA}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Map7.WebApp</RootNamespace>
+    <AssemblyName>Map7.WebApp</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EDC.Framework, Version=4.0.11.214, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Libs\EDC.Framework.dll</HintPath>
+    </Reference>
+    <Reference Include="EDC.LocalSystem, Version=2.0.0.1012, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Libs\EDC.LocalSystem.dll</HintPath>
+    </Reference>
+    <Reference Include="EDC.Member, Version=2.0.0.1012, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Libs\EDC.Member.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Web.Extensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Web.Mobile" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="AjaxData\MarkLocation.aspx" />
+    <Content Include="CityList.html" />
+    <Content Include="Default.aspx" />
+    <Content Include="FanYuMing_UI.html" />
+    <Content Include="GoogleAd\hz_googleAd.xml" />
+    <Content Include="GoogleAd\shanghai_googleAd.xml" />
+    <Content Include="HotelDataList\hz_zh-chs.js" />
+    <Content Include="Js\GeneralLib.js" />
+    <Content Include="Js\jquery-1.5.1.js" />
+    <Content Include="Login.aspx" />
+    <Content Include="MapHelp.htm" />
+    <Content Include="Piao\css\calendar_alipay.css" />
+    <Content Include="Piao\css\style.css" />
+    <Content Include="Piao\images\confirm_btn.png" />
+    <Content Include="Piao\images\content_bj.png" />
+    <Content Include="Piao\images\EdushiLogo.gif" />
+    <Content Include="Piao\images\flow.png" />
+    <Content Include="Piao\images\ico.gif" />
+    <Content Include="Piao\images\news_bottom_bj.gif" />
+    <Content Include="Piao\images\news_bottom_bj.png" />
+    <Content Include="Piao\images\pic.png" />
+    <Content Include="Piao\index.html" />
+    <Content Include="Piao\js\cityList.js" />
+    <Content Include="Piao\js\jquery-1.3.2.min.js" />
+    <Content Include="Piao\js\slider.js" />
+    <Content Include="Piao\list.html" />
+    <Content Include="Print.aspx" />
+    <Content Include="SendMsg.aspx" />
+    <Content Include="Skins\zh-chs\2DDefault\Css\style.css" />
+    <Content Include="Skins\zh-chs\2DDefault\Fundation\Company2DJoin.aspx" />
+    <Content Include="Skins\zh-chs\2DDefault\Images\2DItemAd.gif" />
+    <Content Include="Skins\zh-chs\2DDefault\Images\2dRgtToBarBg.gif" />
+    <Content Include="Skins\zh-chs\2DDefault\Images\AlterThMapIco.png" />
+    <Content Include="Skins\zh-chs\2DDefault\Images\AlterVesicle.png" />
+    <Content Include="Skins\zh-chs\2DDefault\Images\AmendBtn1.gif" />
+    <Content Include="Skins\zh-chs\2DDefault\Images\ApAdrBtn1.gif" />
+    <Content Include="Skins\zh-chs\2DDefault\Images\ApAdrBtn2.gif" />
+    <Content Include="Skins\zh-chs\2DDefault\Images\ApAdrBtn3.gif" />
+    <Content Include="Skins\zh-chs\2DDefault\Images\ApButton.gif" />
+    <Content Include="Skins\zh-chs\2DDefault\Images\ApButton2.gif" />
+    <Content Include="Skins\zh-chs\2DDefault\Images\ArchitBg.png" />
+    <Content Include="Skins\zh-chs\2DDefault\Images\ArchitBtn.gif" />
+    <Content Include="Skins\zh-chs\2DDefault\Images\Arrow1.gif" />
+    <Content Include="Skins\zh-chs\2DDefault\Images\Arrow2.gif" />
+    <Content Include="Skins\zh-chs\2DDefault\Images\Arrow3.gif" />
+    <Content Include="Skins\zh-chs\2DDefault\Images\ArrowCircle1.gif" />
+    <Content Include="Skins\zh-chs\2DDefault\Images\ArrowCircle2.gif" />
+    <Content Include="Skins\zh-chs\2DDefault\Images\ArrowSx.gif" />
+    <Content Include="Skins\zh-chs\2DDefault\Images\attach_2.png" />
+    <Content Include="Skins\zh-chs\2DDefault\Images\bg.gif" />
+    <Content Include="Skins\zh-chs\2DDefault\Images\BiDashedLine.gif" />
+    <Content Include="Skins\zh-chs\2DDefault\Images\BigSearchNavBg.gif" />
+    <Content Include="Skins\zh-chs\2DDefault\Images\BlkNavBg.gif" />
+    <Content Include="Skins\zh-chs\2DDefault\Images\blue_t.gif" />
+    <Content Include="Skins\zh-chs\2DDefault\Images\btn_1.jpg" />
+    <Content Include="Skins\zh-chs\2DDefault\Images\btn_2.jpg" />
+    <Content Include="Skins\zh-chs\2DDefault\Images\BugCirChange.gif" />
+    <Content Include="Skins\zh-chs\2DDefault\Images\BugCirStar.gif" />
+    <Content Include="Skins\zh-chs\2DDefault\Images\BugStart.gif" />
+    <Content Include="Skins\zh-chs\2DDefault\Images\BulIco.gif" />
+    <Content Include="Skins\zh-chs\2DDefault\Images\BusChangeIco.gif" />
+    <Content Include="Skins\zh-chs\2DDefault\Images\BusCirEnd.gif" />
+    <Content Include="Skins\zh-chs\2DDefault\Images\BusEnd.gif" />
+    <Content Include="Skins\zh-chs\2DDefault\Images\bus_btn.gif" />
+    <Content Include="Skins\zh-chs\2DDefault\Images\bus_btn_1.gif" />
+    <Content Include="Skins\zh-chs\2DDefault\Images\bus_btn_2.gif" />
+    <Content Include="Skins\zh-chs\2DDefault\Images\bus_btn_3.gif" />
+    <Content Include="Skins\zh-chs\2DDefault\Images\bus_btn_4.gif" />
+    <Content Include="Skins\zh-chs\2DDefault\Images\bus_down.gif" />
+    <Content Include="Skins\zh-chs\2DDefault\Images\bus_ico.gif" />
+    <Content Include="Skins\zh-chs\2DDefault\Images\bus_ico10.gif" />
+    <Content Include="Skins\zh-chs\2DDefault\Images\bus_ico11.gif" />
+    <Content Include="Skins\zh-chs\2DDefault\Images\bus_ico12.gif" />
+    <Content Include="Skins\zh-chs\2DDefault\Images\bus_ico13.gif" />
+    <Content Include="Skins\zh-chs\2DDefault\Images\bus_ico2.gif" />
+    <Content Include="Skins\zh-chs\2DDefault\Images\bus_ico3.gif" />
+    <Content Include="Skins\zh-chs\2DDefault\Images\bus_ico3_1.gif" />
+    <Content Include="Skins\zh-chs\2DDefault\Images\bus_ico4.gif" />
+    <Content Include="Skins\zh-chs\2DDefault\Images\bus_ico5.gif" />
+    <Content Include="Skins\zh-chs\2DDefault\Images\bus_ico6.gif" />
+    <Content Include="Skins\zh-chs\2DDefault\Images\bus_ico7.gif" />
+    <Content Include="Skins\zh-chs\2DDefault\Images\bus_ico8.gif" />
+    <Content Include="Skins\zh-chs\2DDefault\Images\bus_ico9.gif" />
+    <Content Include="Skins\zh-chs\2DDefault\Images\bus_ico9_1.gif" />
+    <Content Include="Skins\zh-chs\2DDefault\Images\bus_line.gif" />
+    <Content Include="Skins\zh-chs\2DDefault\Images\bus_mid_bg.gif" />
+    <Content Include="Skins\zh-chs\2DDefault\Images\bus_top.gif" />
+    <Content Include="Skins\zh-chs\2DDefault\Images\button4.gif" />
+    <Content Include="Skins\zh-chs\2DDefault\Images\CallOnBtn.gif" />
+    <Content Include="Skins\zh-chs\2DDefault\Images\Change2D3D.gif" />
+    <Content Include="Skins\zh-chs\2DDefault\Images\ChMenusBg.gif" />
+    <Content Include="Skins\zh-chs\2DDefault\Images\ClaArrow.gif" />
+    <Content Include="Skins\zh-chs\2DDefault\Images\ClBtn.gif" />
+    <Content Include="Skins\zh-chs\2DDefault\Images\ClewBg1.gif" />
+    <Content Include="Skins\zh-chs\2DDefault\Images\ClewIco1.gif" />
+    <Content Include="Skins\zh-chs\2DDefault\Images\ClewIco2.gif" />
+    <Content Include="Skins\zh-chs\2DDefault\Images\ClewIco3.gif" />
+    <Content Include="Skins\zh-chs\2DDefault\Images\close.gif" />
+    <Content Include="Skins\zh-chs\2DDefault\Images\CloseBtn.gif" />
+    <Content Include="Skins\zh-chs\2DDefault\Images\CloseBtn1.gif" />
+    <Content Include="Skins\zh-chs\2DDefault\Images\Clouds.gif" />
+    <Content Include="Skins\zh-chs\2DDefault\Images\comein.gif" />
+    <Content Include="Skins\zh-chs\2DDefault\Images\ComMapIco1.gif" />
+    <Content Include="Skins\zh-chs\2DDefault\Images\ComMapIco2.gif" />
+    <Content Include="Skins\zh-chs\2DDefault\Images\CommonArrow1.gif" />
+    <Content Include="Skins\zh-chs\2DDefault\Images\CompassIco.gif" />
+    <Content Include="Skins\zh-chs\2DDefault\Images\CompassIco1.gif" />
+    <Content Include="Skins\zh-chs\2DDefault\Images\CopyBusLineToFri.gif" />
+    <Content Include="Skins\zh-chs\2DDefault\Images\CopySubLineToFri.gif" />
+    <Content Include="Skins\zh-chs\2DDefault\Images\CorpBg.png" />
+    <Content Include="Skins\zh-chs\2DDefault\Images\CorpBg2.png" />
+    <Content Include="Skins\zh-chs\2DDefault\Images\Cu.gif" />
+    <Content Include="Skins\zh-chs\2DDefault\Images\cxxz.gif" />
+    <Content Include="Skins\zh-chs\2DDefault\Images\Dashed1.gif" />
+    <Content Include="Skins\zh-chs\2DDefault\Images\DebugBg.png" />
+    <Content Include="Skins\zh-chs\2DDefault\Images\DeBugBtn.gif" />
+    <Content Include="Skins\zh-chs\2DDefault\Images\DelButton2.gif" />
+    <Content Include="Skins\zh-chs\2DDefault\Images\DeleteTag.gif" />
+    <Content Include="Skins\zh-chs\2DDefault\Images\DigUpCowry.gif" />
+    <Content Include="Skins\zh-chs\2DDefault\Images\down-j.gif" />
+    <Content Include="Skins\zh-chs\2DDefault\Images\DownIco.gif" />
+    <Content Include="Skins\zh-chs\2DDefault\Images\DrawBack.gif" />
+    <Content Include="Skins\zh-chs\2DDefault\Images\Edian.gif" />
+    <Content Include="Skins\zh-chs\2DDefault\Images\EdushiLogo.gif" />
+    <Content Include="Skins\zh-chs\2DDefault\Images\endicon.png" />
+    <Content Include="Skins\zh-chs\2DDefault\Images\eStoreBg.png" />
+    <Content Include="Skins\zh-chs\2DDefault\Images\EstoreLabelBg.gif" />
+    <Content Include="Skins\zh-chs\2DDefault\Images\Expanding.gif" />
+    <Content Include="Skins\zh-chs\2DDefault\Images\Face.gif" />
+    <Content Include="Skins\zh-chs\2DDefault\Images\FcMapIco1.gif" />
+    <Content Include="Skins\zh-chs\2DDefault\Images\FcMapIco2.gif" />
+    <Content Include="Skins\zh-chs\2DDefault\Images\FcMapIco3.gif" />
+    <Content Include="Skins\zh-chs\2DDefault\Images\FcSearchNavBg.gif" />
+    <Content Include="Skins\zh-chs\2DDefault\Images\FcSearchNavTop.gif" />
+    <Content Include="Skins\zh-chs\2DDefault\Images\FilterIco.gif" />
+    <Content Include="Skins\zh-chs\2DDefault\Images\FindEstoreH3Bg.gif" />
+    <Content Include="Skins\zh-chs\2DDefault\Images\FloorShow.gif" />
+    <Content Include="Skins\zh-chs\2DDefault\Images\FrMapAc.gif" />
+    <Content Include="Skins\zh-chs\2DDefault\Images\fsghy.gif" />
+    <Content Include="Skins\zh-chs\2DDefault\Images\fuyun.gif" />
+    <Content Include="Skins\zh-chs\2DDefault\Images\gbfy.gif" />
+    <Content Include="Skins\zh-chs\2DDefault\Images\gongjiao.gif" />
+    <Content Include="Skins\zh-chs\2DDefault\Images\gongjiao2.gif" />
+    <Content Include="Skins\zh-chs\2DDefault\Images\GoToIco.gif" />
+    <Content Include="Skins\zh-chs\2DDefault\Images\green_btn.gif" />
+    <Content Include="Skins\zh-chs\2DDefault\Images\green_btn_1.gif" />
+    <Content Include="Skins\zh-chs\2DDefault\Images\green_down.gif" />
+    <Content Include="Skins\zh-chs\2DDefault\Images\green_f.gif" />
+    <Content Include="Skins\zh-chs\2DDefault\Images\green_p.gif" />
+    <Content Include="Skins\zh-chs\2DDefault\Images\green_t.gif" />
+    <Content Include="Skins\zh-chs\2DDefault\Images\green_top.gif" />
+    <Content Include="Skins\zh-chs\2DDefault\Images\green_ture.gif" />
+    <Content Include="Skins\zh-chs\2DDefault\Images\HandIco1.gif" />
+    <Content Include="Skins\zh-chs\2DDefault\Images\HandIco2.gif" />
+    <Content Include="Skins\zh-chs\2DDefault\Images\HeaderBg.gif" />
+    <Content Include="Skins\zh-chs\2DDefault\Images\HeaderIcoBg.gif" />
+    <Content Include="Skins\zh-chs\2DDefault\Images\Help1.gif" />
+    <Content Include="Skins\zh-chs\2DDefault\Images\ico_1.gif" />
+    <Content Include="Skins\zh-chs\2DDefault\Images\image1.gif" />
+    <Content Include="Skins\zh-chs\2DDefault\Images\Img1.gif" />
+    <Content Include="Skins\zh-chs\2DDefault\Images\Img2.gif" />
+    <Content Include="Skins\zh-chs\2DDefault\Images\Img3.gif" />
+    <Content Include="Skins\zh-chs\2DDefault\Images\Img4.gif" />
+    <Content Include="Skins\zh-chs\2DDefault\Images\Img5.gif" />
+    <Content Include="Skins\zh-chs\2DDefault\Images\Img6.gif" />
+    <Content Include="Skins\zh-chs\2DDefault\Images\Img7.gif" />
+    <Content Include="Skins\zh-chs\2DDefault\Images\Img8.gif" />
+    <Content Include="Skins\zh-chs\2DDefault\Images\Img9.gif" />
+    <Content Include="Skins\zh-chs\2DDefault\Images\InComPlBg.gif" />
+    <Content Include="Skins\zh-chs\2DDefault\Images\InForm.gif" />
+    <Content Include="Skins\zh-chs\2DDefault\Images\InTagBg.png" />
+    <Content Include="Skins\zh-chs\2DDefault\Images\InTagBg2.png" />
+    <Content Include="Skins\zh-chs\2DDefault\Images\InThemDnBg.gif" />
+    <Content Include="Skins\zh-chs\2DDefault\Images\jdydsearch.gif" />
+    <Content Include="Skins\zh-chs\2DDefault\Images\jianadv.gif" />
+    <Content Include="Skins\zh-chs\2DDefault\Images\jiucuo.gif" />
+    <Content Include="Skins\zh-chs\2DDefault\Images\Juan.gif" />
+    <Content Include="Skins\zh-chs\2DDefault\Images\LabelsClass.gif" />
+    <Content Include="Skins\zh-chs\2DDefault\Images\lian.gif" />
+    <Content Include="Skins\zh-chs\2DDefault\Images\line_bg.gif" />
+    <Content Include="Skins\zh-chs\2DDefault\Images\line_down.gif" />
+    <Content Include="Skins\zh-chs\2DDefault\Images\line_top.gif" />
+    <Content Include="Skins\zh-chs\2DDefault\Images\LinkExIco.gif" />
+    <Content Include="Skins\zh-chs\2DDefault\Images\LinkExIco2.gif" />
+    <Content Include="Skins\zh-chs\2DDefault\Images\loading.gif" />
+    <Content Include="Skins\zh-chs\2DDefault\Images\LockIco1.gif" />
+    <Content Include="Skins\zh-chs\2DDefault\Images\LockIco2.gif" />
+    <Content Include="Skins\zh-chs\2DDefault\Images\LoginBtn1.gif" />
+    <Content Include="Skins\zh-chs\2DDefault\Images\LoginH3Til.gif" />
+    <Content Include="Skins\zh-chs\2DDefault\Images\LoginNavBg.gif" />
+    <Content Include="Skins\zh-chs\2DDefault\Images\LookEshop.gif" />
+    <Content Include="Skins\zh-chs\2DDefault\Images\ManButton.gif" />
+    <Content Include="Skins\zh-chs\2DDefault\Images\mapcontrols.gif" />
+    <Content Include="Skins\zh-chs\2DDefault\Images\MapHelpImg1.gif" />
+    <Content Include="Skins\zh-chs\2DDefault\Images\MapHelpImg10.gif" />
+    <Content Include="Skins\zh-chs\2DDefault\Images\MapHelpImg11.gif" />
+    <Content Include="Skins\zh-chs\2DDefault\Images\MapHelpImg12.gif" />
+    <Content Include="Skins\zh-chs\2DDefault\Images\MapHelpImg13.gif" />
+    <Content Include="Skins\zh-chs\2DDefault\Images\MapHelpImg14.gif" />
+    <Content Include="Skins\zh-chs\2DDefault\Images\MapHelpImg15.gif" />
+    <Content Include="Skins\zh-chs\2DDefault\Images\MapHelpImg16.gif" />
+    <Content Include="Skins\zh-chs\2DDefault\Images\MapHelpImg17.gif" />
+    <Content Include="Skins\zh-chs\2DDefault\Images\MapHelpImg18.gif" />
+    <Content Include="Skins\zh-chs\2DDefault\Images\MapHelpImg19.gif" />
+    <Content Include="Skins\zh-chs\2DDefault\Images\MapHelpImg2.gif" />
+    <Content Include="Skins\zh-chs\2DDefault\Images\MapHelpImg20.gif" />
+    <Content Include="Skins\zh-chs\2DDefault\Images\MapHelpImg21.gif" />
+    <Content Include="Skins\zh-chs\2DDefault\Images\MapHelpImg22.gif" />
+    <Content Include="Skins\zh-chs\2DDefault\Images\MapHelpImg23.gif" />
+    <Content Include="Skins\zh-chs\2DDefault\Images\MapHelpImg24.gif" />
+    <Content Include="Skins\zh-chs\2DDefault\Images\MapHelpImg25.gif" />
+    <Content Include="Skins\zh-chs\2DDefault\Images\MapHelpImg26.gif" />
+    <Content Include="Skins\zh-chs\2DDefault\Images\MapHelpImg27.gif" />
+    <Content Include="Skins\zh-chs\2DDefault\Images\MapHelpImg28.gif" />
+    <Content Include="Skins\zh-chs\2DDefault\Images\MapHelpImg29.gif" />
+    <Content Include="Skins\zh-chs\2DDefault\Images\MapHelpImg3.gif" />
+    <Content Include="Skins\zh-chs\2DDefault\Images\MapHelpImg31.gif" />
+    <Content Include="Skins\zh-chs\2DDefault\Images\MapHelpImg32.gif" />
+    <Content Include="Skins\zh-chs\2DDefault\Images\MapHelpImg33.gif" />
+    <Content Include="Skins\zh-chs\2DDefault\Images\MapHelpImg34.gif" />
+    <Content Include="Skins\zh-chs\2DDefault\Images\MapHelpImg35.gif" />
+    <Content Include="Skins\zh-chs\2DDefault\Images\MapHelpImg36.gif" />
+    <Content Include="Skins\zh-chs\2DDefault\Images\MapHelpImg37.gif" />
+    <Content Include="Skins\zh-chs\2DDefault\Images\MapHelpImg38.gif" />
+    <Content Include="Skins\zh-chs\2DDefault\Images\MapHelpImg39.gif" />
+    <Content Include="Skins\zh-chs\2DDefault\Images\MapHelpImg4.gif" />
+    <Content Include="Skins\zh-chs\2DDefault\Images\MapHelpImg40.gif" />
+    <Content Include="Skins\zh-chs\2DDefault\Images\MapHelpImg41.gif" />
+    <Content Include="Skins\zh-chs\2DDefault\Images\MapHelpImg42.gif" />
+    <Content Include="Skins\zh-chs\2DDefault\Images\MapHelpImg43.gif" />
+    <Content Include="Skins\zh-chs\2DDefault\Images\MapHelpImg44.gif" />
+    <Content Include="Skins\zh-chs\2DDefault\Images\MapHelpImg45.gif" />
+    <Content Include="Skins\zh-chs\2DDefault\Images\MapHelpImg46.gif" />
+    <Content Include="Skins\zh-chs\2DDefault\Images\MapHelpImg47.gif" />
+    <Content Include="Skins\zh-chs\2DDefault\Images\MapHelpImg48.gif" />
+    <Content Include="Skins\zh-chs\2DDefault\Images\MapHelpImg49.gif" />
+    <Content Include="Skins\zh-chs\2DDefault\Images\MapHelpImg5.gif" />
+    <Content Include="Skins\zh-chs\2DDefault\Images\MapHelpImg50.gif" />
+    <Content Include="Skins\zh-chs\2DDefault\Images\MapHelpImg51.gif" />
+    <Content Include="Skins\zh-chs\2DDefault\Images\MapHelpImg52.gif" />
+    <Content Include="Skins\zh-chs\2DDefault\Images\MapHelpImg53.gif" />
+    <Content Include="Skins\zh-chs\2DDefault\Images\MapHelpImg54.gif" />
+    <Content Include="Skins\zh-chs\2DDefault\Images\MapHelpImg55.gif" />
+    <Content Include="Skins\zh-chs\2DDefault\Images\MapHelpImg6.gif" />
+    <Content Include="Skins\zh-chs\2DDefault\Images\MapHelpImg7.gif" />
+    <Content Include="Skins\zh-chs\2DDefault\Images\MapHelpImg8.gif" />
+    <Content Include="Skins\zh-chs\2DDefault\Images\MapHelpImg9.gif" />
+    <Content Include="Skins\zh-chs\2DDefault\Images\MarkPlBtn1.gif" />
+    <Content Include="Skins\zh-chs\2DDefault\Images\MarkPlBtn2.gif" />
+    <Content Include="Skins\zh-chs\2DDefault\Images\MendButton1.gif" />
+    <Content Include="Skins\zh-chs\2DDefault\Images\messbg.gif" />
+    <Content Include="Skins\zh-chs\2DDefault\Images\messbg2.gif" />
+    <Content Include="Skins\zh-chs\2DDefault\Images\MoveArrowL.gif" />
+    <Content Include="Skins\zh-chs\2DDefault\Images\MoveArrowR.gif" />
+    <Content Include="Skins\zh-chs\2DDefault\Images\MyEadBg.gif" />
+    <Content Include="Skins\zh-chs\2DDefault\Images\NameHeadBg.gif" />
+    <Content Include="Skins\zh-chs\2DDefault\Images\new-pop.png" />
+    <Content Include="Skins\zh-chs\2DDefault\Images\NoheadPic.gif" />
+    <Content Include="Skins\zh-chs\2DDefault\Images\NOPHOTO.jpg" />
+    <Content Include="Skins\zh-chs\2DDefault\Images\Numberbg.gif" />
+    <Content Include="Skins\zh-chs\2DDefault\Images\OpButton.gif" />
+    <Content Include="Skins\zh-chs\2DDefault\Images\OrderHotel.gif" />
+    <Content Include="Skins\zh-chs\2DDefault\Images\OutBtnLinkBg.gif" />
+    <Content Include="Skins\zh-chs\2DDefault\Images\pcde_170.png" />
+    <Content Include="Skins\zh-chs\2DDefault\Images\PgDn.gif" />
+    <Content Include="Skins\zh-chs\2DDefault\Images\PgUp.gif" />
+    <Content Include="Skins\zh-chs\2DDefault\Images\PinIco.png" />
+    <Content Include="Skins\zh-chs\2DDefault\Images\PlatformConBg.png" />
+    <Content Include="Skins\zh-chs\2DDefault\Images\POI-coin.gif" />
+    <Content Include="Skins\zh-chs\2DDefault\Images\POI.png" />
+    <Content Include="Skins\zh-chs\2DDefault\Images\PopAd.gif" />
+    <Content Include="Skins\zh-chs\2DDefault\Images\PopBtn0.gif" />
+    <Content Include="Skins\zh-chs\2DDefault\Images\PopBtn1.gif" />
+    <Content Include="Skins\zh-chs\2DDefault\Images\PopBtn2.gif" />
+    <Content Include="Skins\zh-chs\2DDefault\Images\PopBtn3.gif" />
+    <Content Include="Skins\zh-chs\2DDefault\Images\PrintBtn.gif" />
+    <Content Include="Skins\zh-chs\2DDefault\Images\PrintLogo.gif" />
+    <Content Include="Skins\zh-chs\2DDefault\Images\ReDebugBg.png" />
+    <Content Include="Skins\zh-chs\2DDefault\Images\red_btn.gif" />
+    <Content Include="Skins\zh-chs\2DDefault\Images\red_btn_1.gif" />
+    <Content Include="Skins\zh-chs\2DDefault\Images\red_down.gif" />
+    <Content Include="Skins\zh-chs\2DDefault\Images\red_f.gif" />
+    <Content Include="Skins\zh-chs\2DDefault\Images\red_p.gif" />
+    <Content Include="Skins\zh-chs\2DDefault\Images\red_t.gif" />
+    <Content Include="Skins\zh-chs\2DDefault\Images\red_top.gif" />
+    <Content Include="Skins\zh-chs\2DDefault\Images\RegBtn1.gif" />
+    <Content Include="Skins\zh-chs\2DDefault\Images\ReMapAc.gif" />
+    <Content Include="Skins\zh-chs\2DDefault\Images\ReMapAc2.gif" />
+    <Content Include="Skins\zh-chs\2DDefault\Images\RgtToBarBg.gif" />
+    <Content Include="Skins\zh-chs\2DDefault\Images\RollArLf.gif" />
+    <Content Include="Skins\zh-chs\2DDefault\Images\RollArRgt.gif" />
+    <Content Include="Skins\zh-chs\2DDefault\Images\SaileStore.gif" />
+    <Content Include="Skins\zh-chs\2DDefault\Images\ScrollBoxBg.gif" />
+    <Content Include="Skins\zh-chs\2DDefault\Images\SeaButton1.gif" />
+    <Content Include="Skins\zh-chs\2DDefault\Images\search.gif" />
+    <Content Include="Skins\zh-chs\2DDefault\Images\SearchBtn.gif" />
+    <Content Include="Skins\zh-chs\2DDefault\Images\SearchIco1.gif" />
+    <Content Include="Skins\zh-chs\2DDefault\Images\SearchNavBg.gif" />
+    <Content Include="Skins\zh-chs\2DDefault\Images\SearchNavDown.gif" />
+    <Content Include="Skins\zh-chs\2DDefault\Images\SearchNavLine.gif" />
+    <Content Include="Skins\zh-chs\2DDefault\Images\SearchNavTop.gif" />
+    <Content Include="Skins\zh-chs\2DDefault\Images\sendclose.gif" />
+    <Content Include="Skins\zh-chs\2DDefault\Images\shangxing.gif" />
+    <Content Include="Skins\zh-chs\2DDefault\Images\ShopClaim.gif" />
+    <Content Include="Skins\zh-chs\2DDefault\Images\ShowTagBg.png" />
+    <Content Include="Skins\zh-chs\2DDefault\Images\ShrinkDHBg.gif" />
+    <Content Include="Skins\zh-chs\2DDefault\Images\SmallArrow.gif" />
+    <Content Include="Skins\zh-chs\2DDefault\Images\SpeLine.gif" />
+    <Content Include="Skins\zh-chs\2DDefault\Images\SrFilBtn.gif" />
+    <Content Include="Skins\zh-chs\2DDefault\Images\starticon.png" />
+    <Content Include="Skins\zh-chs\2DDefault\Images\SwitchBtn.gif" />
+    <Content Include="Skins\zh-chs\2DDefault\Images\SwTitleBg.gif" />
+    <Content Include="Skins\zh-chs\2DDefault\Images\TagBtn.gif" />
+    <Content Include="Skins\zh-chs\2DDefault\Images\TersIco.gif" />
+    <Content Include="Skins\zh-chs\2DDefault\Images\themDon.gif" />
+    <Content Include="Skins\zh-chs\2DDefault\Images\ThemeMap.png" />
+    <Content Include="Skins\zh-chs\2DDefault\Images\ThemeMap2.png" />
+    <Content Include="Skins\zh-chs\2DDefault\Images\ThMapIco.png" />
+    <Content Include="Skins\zh-chs\2DDefault\Images\tjob.gif" />
+    <Content Include="Skins\zh-chs\2DDefault\Images\ToFriend.gif" />
+    <Content Include="Skins\zh-chs\2DDefault\Images\ToMapRope.gif" />
+    <Content Include="Skins\zh-chs\2DDefault\Images\ToMapRope2.gif" />
+    <Content Include="Skins\zh-chs\2DDefault\Images\ToolbarBg.gif" />
+    <Content Include="Skins\zh-chs\2DDefault\Images\ToolbarIco.gif" />
+    <Content Include="Skins\zh-chs\2DDefault\Images\top-j.gif" />
+    <Content Include="Skins\zh-chs\2DDefault\Images\TriArrow.gif" />
+    <Content Include="Skins\zh-chs\2DDefault\Images\UnError.gif" />
+    <Content Include="Skins\zh-chs\2DDefault\Images\UpIco.gif" />
+    <Content Include="Skins\zh-chs\2DDefault\Images\UsIfBg.gif" />
+    <Content Include="Skins\zh-chs\2DDefault\Images\Vcomein.gif" />
+    <Content Include="Skins\zh-chs\2DDefault\Images\VesicleBg.png" />
+    <Content Include="Skins\zh-chs\2DDefault\Images\ViewComMap.gif" />
+    <Content Include="Skins\zh-chs\2DDefault\Images\ViewTagBg.png" />
+    <Content Include="Skins\zh-chs\2DDefault\Images\VipEdian.gif" />
+    <Content Include="Skins\zh-chs\2DDefault\Images\VipMember.gif" />
+    <Content Include="Skins\zh-chs\2DDefault\Images\wabao.gif" />
+    <Content Include="Skins\zh-chs\2DDefault\Images\WikiPOI.png" />
+    <Content Include="Skins\zh-chs\2DDefault\Images\wybj.gif" />
+    <Content Include="Skins\zh-chs\2DDefault\Images\xCompassIco.gif" />
+    <Content Include="Skins\zh-chs\2DDefault\Images\xiaxing.gif" />
+    <Content Include="Skins\zh-chs\2DDefault\Images\Ying.gif" />
+    <Content Include="Skins\zh-chs\2DDefault\Images\复件 eStoreBg.png" />
+    <Content Include="Skins\zh-chs\2DDefault\js\Company2DJoin.js" />
+    <Content Include="Skins\zh-chs\2DDefault\js\Init.js" />
+    <Content Include="Skins\zh-chs\2DDefault\js\News.js" />
+    <Content Include="Skins\zh-chs\2DDefault\Master_UI.html" />
+    <Content Include="Skins\zh-chs\3DDefault\Js\Init.js" />
+    <Content Include="Skins\zh-chs\3DDefault\Master_UI.html" />
+    <Content Include="Skins\zh-chs\baotou\Master_UI.html" />
+    <Content Include="Skins\zh-chs\chenzhou\Master_UI.html" />
+    <Content Include="Skins\zh-chs\Default\Controls\BusLinePopControl.aspx" />
+    <Content Include="Skins\zh-chs\Default\Controls\BusLinePopControl.js" />
+    <Content Include="Skins\zh-chs\Default\Controls\BusLinePopScroll.js" />
+    <Content Include="Skins\zh-chs\Default\Controls\BusStationControl.aspx" />
+    <Content Include="Skins\zh-chs\Default\Controls\BusStationControl.js" />
+    <Content Include="Skins\zh-chs\Default\Controls\CommendPopControl.aspx" />
+    <Content Include="Skins\zh-chs\Default\Controls\CommendPopControl.js" />
+    <Content Include="Skins\zh-chs\Default\Controls\CompanyPopControl.aspx" />
+    <Content Include="Skins\zh-chs\Default\Controls\CompanyPopControl.js" />
+    <Content Include="Skins\zh-chs\Default\Controls\ControlBase.js" />
+    <Content Include="Skins\zh-chs\Default\Controls\EntityPopControl.aspx" />
+    <Content Include="Skins\zh-chs\Default\Controls\EntityPopControl.js" />
+    <Content Include="Skins\zh-chs\Default\Controls\EShopPopControl.aspx" />
+    <Content Include="Skins\zh-chs\Default\Controls\EShopPopControl.js" />
+    <Content Include="Skins\zh-chs\Default\Controls\MarkLocationPopControl.aspx" />
+    <Content Include="Skins\zh-chs\Default\Controls\MarkLocationPopControl.js" />
+    <Content Include="Skins\zh-chs\Default\Controls\MarkPopControl.aspx" />
+    <Content Include="Skins\zh-chs\Default\Controls\MarkPopControl.js" />
+    <Content Include="Skins\zh-chs\Default\Controls\My97DatePicker\calendar.js" />
+    <Content Include="Skins\zh-chs\Default\Controls\My97DatePicker\config.js" />
+    <Content Include="Skins\zh-chs\Default\Controls\My97DatePicker\lang\en.js" />
+    <Content Include="Skins\zh-chs\Default\Controls\My97DatePicker\lang\zh-cn.js" />
+    <Content Include="Skins\zh-chs\Default\Controls\My97DatePicker\lang\zh-tw.js" />
+    <Content Include="Skins\zh-chs\Default\Controls\My97DatePicker\My97DatePicker.htm" />
+    <Content Include="Skins\zh-chs\Default\Controls\My97DatePicker\skin\datePicker.gif" />
+    <Content Include="Skins\zh-chs\Default\Controls\My97DatePicker\skin\default\datepicker.css" />
+    <Content Include="Skins\zh-chs\Default\Controls\My97DatePicker\skin\default\img.gif" />
+    <Content Include="Skins\zh-chs\Default\Controls\My97DatePicker\skin\WdatePicker.css" />
+    <Content Include="Skins\zh-chs\Default\Controls\My97DatePicker\skin\whyGreen\bg.jpg" />
+    <Content Include="Skins\zh-chs\Default\Controls\My97DatePicker\skin\whyGreen\datepicker.css" />
+    <Content Include="Skins\zh-chs\Default\Controls\My97DatePicker\skin\whyGreen\img.gif" />
+    <Content Include="Skins\zh-chs\Default\Controls\My97DatePicker\WdatePicker.js" />
+    <Content Include="Skins\zh-chs\Default\Controls\PoiPopControl.aspx" />
+    <Content Include="Skins\zh-chs\Default\Controls\PoiPopControl.js" />
+    <Content Include="Skins\zh-chs\Default\Css\BusNoSearch.css" />
+    <Content Include="Skins\zh-chs\Default\Css\BusPlatform.css" />
+    <Content Include="Skins\zh-chs\Default\Css\BusStationSearch.css" />
+    <Content Include="Skins\zh-chs\Default\Css\BusTransfer.css" />
+    <Content Include="Skins\zh-chs\Default\Css\BusTransferSearch.css" />
+    <Content Include="Skins\zh-chs\Default\Css\CommendPopControl.css" />
+    <Content Include="Skins\zh-chs\Default\Css\Common.css" />
+    <Content Include="Skins\zh-chs\Default\Css\CompanyList.css" />
+    <Content Include="Skins\zh-chs\Default\Css\LocalSearch.css" />
+    <Content Include="Skins\zh-chs\Default\Css\Mark.css" />
+    <Content Include="Skins\zh-chs\Default\Css\MergeSearch.css" />
+    <Content Include="Skins\zh-chs\Default\Css\PeripheralBus.css" />
+    <Content Include="Skins\zh-chs\Default\Css\sty.css" />
+    <Content Include="Skins\zh-chs\Default\Css\wiki.css" />
+    <Content Include="Skins\zh-chs\Default\Fundation\BusNoSearch.html" />
+    <Content Include="Skins\zh-chs\Default\Fundation\BusStationSearch.html" />
+    <Content Include="Skins\zh-chs\Default\Fundation\BusTransfer.html" />
+    <Content Include="Skins\zh-chs\Default\Fundation\BusTransferSearch.html" />
+    <Content Include="Skins\zh-chs\Default\Fundation\CompanyList.html" />
+    <Content Include="Skins\zh-chs\Default\Fundation\GooglePoiSearch.aspx" />
+    <Content Include="Skins\zh-chs\Default\Fundation\HotelList.htm" />
+    <Content Include="Skins\zh-chs\Default\Fundation\HotelSearch.js" />
+    <Content Include="Skins\zh-chs\Default\Fundation\ListAd.aspx" />
+    <Content Include="Skins\zh-chs\Default\Fundation\LocalSearch.aspx" />
+    <Content Include="Skins\zh-chs\Default\Fundation\MergeSearch.aspx" />
+    <Content Include="Skins\zh-chs\Default\Fundation\News.html" />
+    <Content Include="Skins\zh-chs\Default\Fundation\PeripheralBus.html" />
+    <Content Include="Skins\zh-chs\Default\Fundation\ThemeMap.html" />
+    <Content Include="Skins\zh-chs\Default\Fundation\MyLocationList.html" />
+    <Content Include="Skins\zh-chs\Default\Fundation\MyMarkList.html" />
+    <Content Include="Skins\zh-chs\Default\Fundation\TwoPointSearch.html" />
+    <Content Include="Skins\zh-chs\Default\Fundation\RangeSearchList.htm" />
+    <Content Include="Skins\zh-chs\Default\Images\20110212162439.jpg" />
+    <Content Include="Skins\zh-chs\Default\Images\AlterThMapIco.png" />
+    <Content Include="Skins\zh-chs\Default\Images\AlterVesicle.png" />
+    <Content Include="Skins\zh-chs\Default\Images\ArchitBg.png" />
+    <Content Include="Skins\zh-chs\Default\Images\ArchitBtn.gif" />
+    <Content Include="Skins\zh-chs\Default\Images\bjjt.png" />
+    <Content Include="Skins\zh-chs\Default\Images\blue_t.gif" />
+    <Content Include="Skins\zh-chs\Default\Images\btn_1.jpg" />
+    <Content Include="Skins\zh-chs\Default\Images\btn_2.jpg" />
+    <Content Include="Skins\zh-chs\Default\Images\BulIco.gif" />
+    <Content Include="Skins\zh-chs\Default\Images\bus_btn.gif" />
+    <Content Include="Skins\zh-chs\Default\Images\bus_btn_2.gif" />
+    <Content Include="Skins\zh-chs\Default\Images\bus_btn_3.gif" />
+    <Content Include="Skins\zh-chs\Default\Images\bus_btn_4.gif" />
+    <Content Include="Skins\zh-chs\Default\Images\bus_down.gif" />
+    <Content Include="Skins\zh-chs\Default\Images\bus_ico11.gif" />
+    <Content Include="Skins\zh-chs\Default\Images\bus_ico2.gif" />
+    <Content Include="Skins\zh-chs\Default\Images\bus_ico3.gif" />
+    <Content Include="Skins\zh-chs\Default\Images\bus_ico3_1.gif" />
+    <Content Include="Skins\zh-chs\Default\Images\bus_ico4.gif" />
+    <Content Include="Skins\zh-chs\Default\Images\bus_ico5.gif" />
+    <Content Include="Skins\zh-chs\Default\Images\bus_ico6.gif" />
+    <Content Include="Skins\zh-chs\Default\Images\bus_ico7.gif" />
+    <Content Include="Skins\zh-chs\Default\Images\bus_ico8.gif" />
+    <Content Include="Skins\zh-chs\Default\Images\bus_ico9.gif" />
+    <Content Include="Skins\zh-chs\Default\Images\bus_line.gif" />
+    <Content Include="Skins\zh-chs\Default\Images\bus_top.gif" />
+    <Content Include="Skins\zh-chs\Default\Images\button4.gif" />
+    <Content Include="Skins\zh-chs\Default\Images\ChMenusBg.gif" />
+    <Content Include="Skins\zh-chs\Default\Images\ClaArrow.gif" />
+    <Content Include="Skins\zh-chs\Default\Images\ClewBg1.gif" />
+    <Content Include="Skins\zh-chs\Default\Images\ClewIco1.gif" />
+    <Content Include="Skins\zh-chs\Default\Images\CloseBtn.gif" />
+    <Content Include="Skins\zh-chs\Default\Images\ComMapIco1.gif" />
+    <Content Include="Skins\zh-chs\Default\Images\CommonArrow1.gif" />
+    <Content Include="Skins\zh-chs\Default\Images\CompassIco1.gif" />
+    <Content Include="Skins\zh-chs\Default\Images\CorpBg.png" />
+    <Content Include="Skins\zh-chs\Default\Images\Cu.gif" />
+    <Content Include="Skins\zh-chs\Default\Images\cxxz.gif" />
+    <Content Include="Skins\zh-chs\Default\Images\Dashed1.gif" />
+    <Content Include="Skins\zh-chs\Default\Images\DownIco.gif" />
+    <Content Include="Skins\zh-chs\Default\Images\Edian.gif" />
+    <Content Include="Skins\zh-chs\Default\Images\EdushiLogo.gif" />
+    <Content Include="Skins\zh-chs\Default\Images\endicon.png" />
+    <Content Include="Skins\zh-chs\Default\Images\eStoreBg.png" />
+    <Content Include="Skins\zh-chs\Default\Images\Face.gif" />
+    <Content Include="Skins\zh-chs\Default\Images\fsghy.gif" />
+    <Content Include="Skins\zh-chs\Default\Images\gongjiao.gif" />
+    <Content Include="Skins\zh-chs\Default\Images\gongjiao2.gif" />
+    <Content Include="Skins\zh-chs\Default\Images\GoToIco.gif" />
+    <Content Include="Skins\zh-chs\Default\Images\green_btn.gif" />
+    <Content Include="Skins\zh-chs\Default\Images\green_p.gif" />
+    <Content Include="Skins\zh-chs\Default\Images\ico.png" />
+    <Content Include="Skins\zh-chs\Default\Images\ico1.png" />
+    <Content Include="Skins\zh-chs\Default\Images\ico2.png" />
+    <Content Include="Skins\zh-chs\Default\Images\InComPlBg.gif" />
+    <Content Include="Skins\zh-chs\Default\Images\jdydsearch.gif" />
+    <Content Include="Skins\zh-chs\Default\Images\jian.png" />
+    <Content Include="Skins\zh-chs\Default\Images\jiucuo.gif" />
+    <Content Include="Skins\zh-chs\Default\Images\jt.png" />
+    <Content Include="Skins\zh-chs\Default\Images\jt1.png" />
+    <Content Include="Skins\zh-chs\Default\Images\jt2.png" />
+    <Content Include="Skins\zh-chs\Default\Images\Juan.gif" />
+    <Content Include="Skins\zh-chs\Default\Images\lian.gif" />
+    <Content Include="Skins\zh-chs\Default\Images\line_bg.gif" />
+    <Content Include="Skins\zh-chs\Default\Images\line_down.gif" />
+    <Content Include="Skins\zh-chs\Default\Images\line_top.gif" />
+    <Content Include="Skins\zh-chs\Default\Images\LinkExIco.gif" />
+    <Content Include="Skins\zh-chs\Default\Images\loading.gif" />
+    <Content Include="Skins\zh-chs\Default\Images\LoginBtn1.gif" />
+    <Content Include="Skins\zh-chs\Default\Images\LoginH3Til.gif" />
+    <Content Include="Skins\zh-chs\Default\Images\LoginNavBg.gif" />
+    <Content Include="Skins\zh-chs\Default\Images\LookEshop.gif" />
+    <Content Include="Skins\zh-chs\Default\Images\MapHelpImg1.gif" />
+    <Content Include="Skins\zh-chs\Default\Images\MapHelpImg10.gif" />
+    <Content Include="Skins\zh-chs\Default\Images\MapHelpImg11.gif" />
+    <Content Include="Skins\zh-chs\Default\Images\MapHelpImg12.gif" />
+    <Content Include="Skins\zh-chs\Default\Images\MapHelpImg13.gif" />
+    <Content Include="Skins\zh-chs\Default\Images\MapHelpImg14.gif" />
+    <Content Include="Skins\zh-chs\Default\Images\MapHelpImg15.gif" />
+    <Content Include="Skins\zh-chs\Default\Images\MapHelpImg16.gif" />
+    <Content Include="Skins\zh-chs\Default\Images\MapHelpImg17.gif" />
+    <Content Include="Skins\zh-chs\Default\Images\MapHelpImg18.gif" />
+    <Content Include="Skins\zh-chs\Default\Images\MapHelpImg19.gif" />
+    <Content Include="Skins\zh-chs\Default\Images\MapHelpImg2.gif" />
+    <Content Include="Skins\zh-chs\Default\Images\MapHelpImg20.gif" />
+    <Content Include="Skins\zh-chs\Default\Images\MapHelpImg21.gif" />
+    <Content Include="Skins\zh-chs\Default\Images\MapHelpImg22.gif" />
+    <Content Include="Skins\zh-chs\Default\Images\MapHelpImg23.gif" />
+    <Content Include="Skins\zh-chs\Default\Images\MapHelpImg24.gif" />
+    <Content Include="Skins\zh-chs\Default\Images\MapHelpImg25.gif" />
+    <Content Include="Skins\zh-chs\Default\Images\MapHelpImg26.gif" />
+    <Content Include="Skins\zh-chs\Default\Images\MapHelpImg27.gif" />
+    <Content Include="Skins\zh-chs\Default\Images\MapHelpImg28.gif" />
+    <Content Include="Skins\zh-chs\Default\Images\MapHelpImg29.gif" />
+    <Content Include="Skins\zh-chs\Default\Images\MapHelpImg3.gif" />
+    <Content Include="Skins\zh-chs\Default\Images\MapHelpImg31.gif" />
+    <Content Include="Skins\zh-chs\Default\Images\MapHelpImg32.gif" />
+    <Content Include="Skins\zh-chs\Default\Images\MapHelpImg33.gif" />
+    <Content Include="Skins\zh-chs\Default\Images\MapHelpImg34.gif" />
+    <Content Include="Skins\zh-chs\Default\Images\MapHelpImg35.gif" />
+    <Content Include="Skins\zh-chs\Default\Images\MapHelpImg36.gif" />
+    <Content Include="Skins\zh-chs\Default\Images\MapHelpImg37.gif" />
+    <Content Include="Skins\zh-chs\Default\Images\MapHelpImg38.gif" />
+    <Content Include="Skins\zh-chs\Default\Images\MapHelpImg39.gif" />
+    <Content Include="Skins\zh-chs\Default\Images\MapHelpImg4.gif" />
+    <Content Include="Skins\zh-chs\Default\Images\MapHelpImg40.gif" />
+    <Content Include="Skins\zh-chs\Default\Images\MapHelpImg41.gif" />
+    <Content Include="Skins\zh-chs\Default\Images\MapHelpImg42.gif" />
+    <Content Include="Skins\zh-chs\Default\Images\MapHelpImg43.gif" />
+    <Content Include="Skins\zh-chs\Default\Images\MapHelpImg44.gif" />
+    <Content Include="Skins\zh-chs\Default\Images\MapHelpImg45.gif" />
+    <Content Include="Skins\zh-chs\Default\Images\MapHelpImg46.gif" />
+    <Content Include="Skins\zh-chs\Default\Images\MapHelpImg47.gif" />
+    <Content Include="Skins\zh-chs\Default\Images\MapHelpImg48.gif" />
+    <Content Include="Skins\zh-chs\Default\Images\MapHelpImg49.gif" />
+    <Content Include="Skins\zh-chs\Default\Images\MapHelpImg5.gif" />
+    <Content Include="Skins\zh-chs\Default\Images\MapHelpImg50.gif" />
+    <Content Include="Skins\zh-chs\Default\Images\MapHelpImg51.gif" />
+    <Content Include="Skins\zh-chs\Default\Images\MapHelpImg52.gif" />
+    <Content Include="Skins\zh-chs\Default\Images\MapHelpImg53.gif" />
+    <Content Include="Skins\zh-chs\Default\Images\MapHelpImg54.gif" />
+    <Content Include="Skins\zh-chs\Default\Images\MapHelpImg55.gif" />
+    <Content Include="Skins\zh-chs\Default\Images\MapHelpImg6.gif" />
+    <Content Include="Skins\zh-chs\Default\Images\MapHelpImg7.gif" />
+    <Content Include="Skins\zh-chs\Default\Images\MapHelpImg8.gif" />
+    <Content Include="Skins\zh-chs\Default\Images\MapHelpImg9.gif" />
+    <Content Include="Skins\zh-chs\Default\Images\MarkPlBtn1.gif" />
+    <Content Include="Skins\zh-chs\Default\Images\MarkPlBtn2.gif" />
+    <Content Include="Skins\zh-chs\Default\Images\new27.gif" />
+    <Content Include="Skins\zh-chs\Default\Images\NOPHOTO.jpg" />
+    <Content Include="Skins\zh-chs\Default\Images\OrderHotel.gif" />
+    <Content Include="Skins\zh-chs\Default\Images\pcde_170.png" />
+    <Content Include="Skins\zh-chs\Default\Images\PlatformConBg.png" />
+    <Content Include="Skins\zh-chs\Default\Images\POI.png" />
+    <Content Include="Skins\zh-chs\Default\Images\PopBtn1.gif" />
+    <Content Include="Skins\zh-chs\Default\Images\PopBtn3.gif" />
+    <Content Include="Skins\zh-chs\Default\Images\ppd.png" />
+    <Content Include="Skins\zh-chs\Default\Images\PrintBtn.gif" />
+    <Content Include="Skins\zh-chs\Default\Images\PrintLogo.gif" />
+    <Content Include="Skins\zh-chs\Default\Images\psn.png" />
+    <Content Include="Skins\zh-chs\Default\Images\red_btn_1.gif" />
+    <Content Include="Skins\zh-chs\Default\Images\red_f.gif" />
+    <Content Include="Skins\zh-chs\Default\Images\RegBtn1.gif" />
+    <Content Include="Skins\zh-chs\Default\Images\search.gif" />
+    <Content Include="Skins\zh-chs\Default\Images\SearchBtn.gif" />
+    <Content Include="Skins\zh-chs\Default\Images\SearchNavLine.gif" />
+    <Content Include="Skins\zh-chs\Default\Images\sendclose.gif" />
+    <Content Include="Skins\zh-chs\Default\Images\starticon.png" />
+    <Content Include="Skins\zh-chs\Default\Images\TagBtn.gif" />
+    <Content Include="Skins\zh-chs\Default\Images\ThemeMap.png" />
+    <Content Include="Skins\zh-chs\Default\Images\ThMapIco.png" />
+    <Content Include="Skins\zh-chs\Default\Images\tjt_03.png" />
+    <Content Include="Skins\zh-chs\Default\Images\ToFriend.gif" />
+    <Content Include="Skins\zh-chs\Default\Images\tuan.swf" />
+    <Content Include="Skins\zh-chs\Default\Images\UpIco.gif" />
+    <Content Include="Skins\zh-chs\Default\Images\VesicleBg.png" />
+    <Content Include="Skins\zh-chs\Default\Images\VipEdian.gif" />
+    <Content Include="Skins\zh-chs\Default\Images\WikiPOI.png" />
+    <Content Include="Skins\zh-chs\Default\Images\wybj.gif" />
+    <Content Include="Skins\zh-chs\Default\Images\Ying.gif" />
+    <Content Include="Skins\zh-chs\Default\Images\ztdt1.jpg" />
+    <Content Include="Skins\zh-chs\Default\Images\ztdt2.jpg" />
+    <Content Include="Skins\zh-chs\Default\Images\ztdt3.jpg" />
+    <Content Include="Skins\zh-chs\Default\Js\BusNoSearch.js" />
+    <Content Include="Skins\zh-chs\Default\Js\BusStationSearch.js" />
+    <Content Include="Skins\zh-chs\Default\Js\BusTransfer.js" />
+    <Content Include="Skins\zh-chs\Default\Js\BusTransferSearch.js" />
+    <Content Include="Skins\zh-chs\Default\Js\CompanyList.js" />
+    <Content Include="Skins\zh-chs\Default\Js\GooglePoiSearch.js" />
+    <Content Include="Skins\zh-chs\Default\Js\RangeSearchList.js" />
+    <Content Include="Skins\zh-chs\Default\Js\json2.js" />
+    <Content Include="Skins\zh-chs\Default\Js\LocalSearch.js" />
+    <Content Include="Skins\zh-chs\Default\Js\Mark.js" />
+    <Content Include="Skins\zh-chs\Default\Js\MergeSearch.js" />
+    <Content Include="Skins\zh-chs\Default\Js\MyLocationList.js" />
+    <Content Include="Skins\zh-chs\Default\Js\News.js" />
+    <Content Include="Skins\zh-chs\Default\Js\PeripheralBus.js" />
+    <Content Include="Skins\zh-chs\Default\Js\ThemeMap.js" />
+    <Content Include="Skins\zh-chs\Default\Js\TwoPointSearch.js" />
+    <Content Include="Skins\zh-chs\Default\Js\wiki.js" />
+    <Content Include="Skins\zh-chs\Default\Js\MyMarkList.js" />
+    <Content Include="Skins\zh-chs\Default\Print.html" />
+    <Content Include="Skins\zh-chs\eerduosi\Master_UI.html" />
+    <Content Include="Skins\zh-chs\fuzhou\Master_UI.html" />
+    <Content Include="Skins\zh-chs\hz\Controls\BusLinePopControl.js" />
+    <Content Include="Skins\zh-chs\hz\Controls\BusStationControl.js" />
+    <Content Include="Skins\zh-chs\hz\Controls\CommendPopControl.js" />
+    <Content Include="Skins\zh-chs\hz\Controls\CompanyPopControl.js" />
+    <Content Include="Skins\zh-chs\hz\Controls\EntityPopControl.js" />
+    <Content Include="Skins\zh-chs\hz\Controls\EShopPopControl.js" />
+    <Content Include="Skins\zh-chs\hz\Controls\PoiPopControl.js" />
+    <Content Include="Skins\zh-chs\hz\Fundation\BusNoSearch.html" />
+    <Content Include="Skins\zh-chs\hz\Fundation\BusStationSearch.html" />
+    <Content Include="Skins\zh-chs\hz\Fundation\BusTransferSearch.html" />
+    <Content Include="Skins\zh-chs\hz\Fundation\LocalSearch.aspx" />
+    <Content Include="Skins\zh-chs\hz\Fundation\ThemeMap.html" />
+    <Content Include="Skins\zh-chs\hz\Fundation\subWayStationList.html" />
+    <Content Include="Skins\zh-chs\hz\Js\BusNoSearch.js" />
+    <Content Include="Skins\zh-chs\hz\Js\BusStationSearch.js" />
+    <Content Include="Skins\zh-chs\hz\Js\BusTransferSearch.js" />
+    <Content Include="Skins\zh-chs\hz\Js\CompanyList.js" />
+    <Content Include="Skins\zh-chs\hz\Js\Init.js" />
+    <Content Include="Skins\zh-chs\hz\Js\LocalSearch.js" />
+    <Content Include="Skins\zh-chs\hz\Js\News.js" />
+    <Content Include="Skins\zh-chs\hz\Js\subWayStationList.js" />
+    <Content Include="Skins\zh-chs\hz\Js\ThemeMap.js" />
+    <Content Include="Skins\zh-chs\hz\Master_UI.html" />
+    <Content Include="Skins\zh-chs\shanghai\Fundation\LocalSearch.aspx" />
+    <Content Include="Skins\zh-chs\yanji\Master_UI.html" />
+    <Content Include="Skins\zh-cht\3DDefault\Js\Init.js" />
+    <Content Include="Skins\zh-cht\hongkong\Master_UI.html" />
+    <Content Include="VerifyImage.aspx" />
+    <Content Include="Vir\Vir.aspx" />
+    <Content Include="Web.config" />
+    <Content Include="wiki\css\ecomplay.css" />
+    <Content Include="wiki\css\style.css" />
+    <Content Include="wiki\EshopAndCompanyJoin.aspx" />
+    <Content Include="wiki\images\AlternantL.gif" />
+    <Content Include="wiki\images\AlternantR.gif" />
+    <Content Include="wiki\images\Arrow.gif" />
+    <Content Include="wiki\images\banner.gif" />
+    <Content Include="wiki\images\bdt320.gif" />
+    <Content Include="wiki\images\CurAlternantL.gif" />
+    <Content Include="wiki\images\CurAlternantR.gif" />
+    <Content Include="wiki\images\ecomplay\AlternantL.gif" />
+    <Content Include="wiki\images\ecomplay\AlternantR.gif" />
+    <Content Include="wiki\images\ecomplay\Arrow.gif" />
+    <Content Include="wiki\images\ecomplay\banner.gif" />
+    <Content Include="wiki\images\ecomplay\bdt320.gif" />
+    <Content Include="wiki\images\ecomplay\CurAlternantL.gif" />
+    <Content Include="wiki\images\ecomplay\CurAlternantR.gif" />
+    <Content Include="wiki\images\ecomplay\enter.gif" />
+    <Content Include="wiki\images\ecomplay\eshop_mark_bg.gif" />
+    <Content Include="wiki\images\ecomplay\eshop_mark_bottom.gif" />
+    <Content Include="wiki\images\ecomplay\eshop_mark_bottom.png" />
+    <Content Include="wiki\images\ecomplay\eshop_mark_other.gif" />
+    <Content Include="wiki\images\ecomplay\eshop_mark_other.png" />
+    <Content Include="wiki\images\ecomplay\EstoreLogo.gif" />
+    <Content Include="wiki\images\ecomplay\l-bg.gif" />
+    <Content Include="wiki\images\ecomplay\map01.gif" />
+    <Content Include="wiki\images\ecomplay\map_orientation.gif" />
+    <Content Include="wiki\images\ecomplay\miorr.gif" />
+    <Content Include="wiki\images\ecomplay\MySentInfo.gif" />
+    <Content Include="wiki\images\ecomplay\tab1.gif" />
+    <Content Include="wiki\images\ecomplay\tab1.png" />
+    <Content Include="wiki\images\em.gif" />
+    <Content Include="wiki\images\enter.gif" />
+    <Content Include="wiki\images\EstoreLogo.gif" />
+    <Content Include="wiki\images\l-bg.gif" />
+    <Content Include="wiki\images\map01.gif" />
+    <Content Include="wiki\images\miorr.gif" />
+    <Content Include="wiki\images\MySentInfo.gif" />
+    <Content Include="wiki\images\ok.gif" />
+    <Content Include="wiki\images\tab1.gif" />
+    <Content Include="wiki\images\tab1.png" />
+    <Content Include="wiki\js\EShopAndCompanyJoin.js" />
+    <Content Include="wiki\js\PageOK.js" />
+    <Content Include="wiki\js\pullingWrong.js" />
+    <Content Include="wiki\PageOK.aspx" />
+    <Content Include="wiki\PullingWrong.aspx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AjaxData\MarkLocation.aspx.cs">
+      <DependentUpon>MarkLocation.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AjaxData\MarkLocation.aspx.designer.cs">
+      <DependentUpon>MarkLocation.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Login.aspx.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Login.aspx.designer.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Print.aspx.cs">
+      <DependentUpon>Print.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Print.aspx.designer.cs">
+      <DependentUpon>Print.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SendMsg.aspx.cs">
+      <DependentUpon>SendMsg.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SendMsg.aspx.designer.cs">
+      <DependentUpon>SendMsg.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Skins\zh-chs\2DDefault\Fundation\Company2DJoin.aspx.cs">
+      <DependentUpon>Company2DJoin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Skins\zh-chs\2DDefault\Fundation\Company2DJoin.aspx.designer.cs">
+      <DependentUpon>Company2DJoin.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Skins\zh-chs\Default\Fundation\ListAd.aspx.cs">
+      <DependentUpon>ListAd.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Skins\zh-chs\Default\Fundation\ListAd.aspx.designer.cs">
+      <DependentUpon>ListAd.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Skins\zh-chs\Default\Fundation\MergeSearch.aspx.cs">
+      <DependentUpon>MergeSearch.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Skins\zh-chs\Default\Fundation\MergeSearch.aspx.designer.cs">
+      <DependentUpon>MergeSearch.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="VerifyImage.aspx.cs">
+      <DependentUpon>VerifyImage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="VerifyImage.aspx.designer.cs">
+      <DependentUpon>VerifyImage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Vir\Vir.aspx.cs">
+      <DependentUpon>Vir.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Vir\Vir.aspx.designer.cs">
+      <DependentUpon>Vir.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="wiki\EshopAndCompanyJoin.aspx.cs">
+      <DependentUpon>EshopAndCompanyJoin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="wiki\EshopAndCompanyJoin.aspx.designer.cs">
+      <DependentUpon>EshopAndCompanyJoin.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="wiki\PageOK.aspx.cs">
+      <DependentUpon>PageOK.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="wiki\PageOK.aspx.designer.cs">
+      <DependentUpon>PageOK.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="wiki\PullingWrong.aspx.cs">
+      <DependentUpon>PullingWrong.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="wiki\PullingWrong.aspx.designer.cs">
+      <DependentUpon>PullingWrong.aspx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Map7.WebBLL\Map7.WebBLL.csproj">
+      <Project>{3C605C8D-E4B9-4C2A-BE12-765D0CA92130}</Project>
+      <Name>Map7.WebBLL</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Piao\images\Thumbs.db" />
+    <None Include="Skins\zh-chs\2DDefault\Images\Thumbs.db" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="Skins\zh-chs\shanghai\js\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v9.0\WebApplications\Microsoft.WebApplication.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>false</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>2363</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://hz.edushi.com/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>

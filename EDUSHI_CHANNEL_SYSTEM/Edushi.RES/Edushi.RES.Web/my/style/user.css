@@ -1,0 +1,90 @@
+*{margin:0; padding:0; list-style:none;text-decoration:none; }
+a{ color:#36f;}
+.t14{ font-size:14px;}
+.t12{ font-size:12px;}
+.tyl{ color:#f60;}
+.tgray{ color:#999;}
+.clear{ clear:both; height:1px; width:100%;}
+body{ background:#f0f0f0;height:100%}
+.usercon{ width:950px; padding:0 10px; background:#fff; margin:auto;_height:100%; _overflow:hidden}
+.utop{ height:63px; background:url(../images/user_top.png) no-repeat;}
+
+.utop .city{ float:left; margin:20px 0 0 125px; font-size:14px; color:#fff; font-weight:bold; font-family:"微软雅黑"; display:inline;}
+.utop .menu{ margin:35px 10px 0 0; float:right; font-size:12px; color:#fff;}
+.utop a{ color:#fff}
+.ubody{ padding:10px 0;}
+.lbody{ width:190px; float:left; background:#edeef0;height:100%}
+.rbody{ width:750px; float:right; padding:0 0 0 10px;}
+.lbody dl{ font-size:12px;}
+.lbody dl dt{ background:url(../images/user_bar.png) right top no-repeat; height:16px; line-height:16px; color:#fff; font-weight:bold; padding:4px 40px;}
+.lbody dl dt span{ float:left; padding-right:5px; white-space:nowrap}
+.lbody dl dd ul{ padding:0 10px;}
+.lbody dl dd ul li{ line-height:32px; border-bottom:1px solid #fff; margin-bottom:4px;}
+.lbody dl dd ul li a{ color:#666; padding:0 30px; font-size:14px; display:block}
+.lbody dl dd ul li a.on{color:#f60; font-weight:bold}
+.headbox{ background:#feffcf; border:1px solid #ccc; padding:10px; height:80px; margin-bottom:10px;}
+.headbox ul{ float:left; padding-right:10px; font-size:12px; line-height:26px;}
+.welcome{ font-family:"微软雅黑"; font-size:18px;}
+.conbox{}
+.conbox dt{ background:#f7f7f7; height:28px; border-top:1px solid #ddd; font-size:14px; color:#666; font-weight:bold; padding:0 15px; line-height:28px;}
+.conbox ul.active{ border-bottom:1px dashed #ddd; margin:10px; padding:10px 0;zoom:1;}
+.conbox ul.active li{ float:left; font-size:12px; line-height:24px;}
+.conbox ul.active .ico{ width:30px; padding-top:5px;}
+.conbox ul.active .bd{ width:580px; color:#333;}
+.conbox ul.active .data{ width:120px; color:#ccc;}
+.conbox ul.active .bd a.username{ font-weight:bold;}
+.conbox dd{ padding-top:10px;}
+.conbox .listbox{ font-size:12px;}
+.conbox .listbox thead td{ height:20px; background:#feffcf; line-height:20px; font-size:14px; text-align:center; padding:5px; border-bottom:1px solid #ddd}
+.conbox .listbox tbody td{ height:20px; line-height:20px; font-size:14px; padding:5px; border-bottom:1px dashed #ddd; font-size:12px;}
+
+.conbox .listbox1{ font-size:12px;}
+.conbox .listbox1 thead td{ height:20px; background:#feffcf; line-height:20px; font-size:14px; text-align:center; padding:5px; border-bottom:1px solid #ddd}
+.conbox .listbox1 tbody td{ height:20px; line-height:20px; font-size:14px; padding:5px; border-bottom:1px dashed #ddd; font-size:12px;}
+.conbox .listbox1 td div{float:left;padding-right:10px;}
+
+.usercon{ width:950px; padding:0 10px; background:#fff; margin:auto;_height:100%; _overflow:hidden }/*height:100%; overflow:hidden*/
+
+.footer{ _position:static; bottom:0px; height:50px; background:#fff; width:950px; margin:auto; padding-top:10px;}
+.footer ul{ border-top:1px solid #ccc; font-size:12px; padding:10px; line-height:30px; color:#666;}
+.footer ul li a{ margin:0 10px;}
+
+#EdushiPager{font-size:12px; text-align:center; padding:10px 0 5px 0;}
+
+
+/*2012-11-2*/
+img{ border:none}
+table.jifen{ font:12px'宋体'; text-align:left; padding:10px 0 0 10px;}
+table.jifen th{ background:url(back.gif) repeat-x; height:28px; line-height:28px; font-weight:normal; padding-left:10px;}
+table.jifen td{ border-bottom:1px dashed #d9d9d9; line-height:30px; padding-left:10px; color:#979797;}
+table.jifen td a{ color:#2f63ff;}
+table.jifen td a:hover{ color:#f60; text-decoration:underline;}
+.ckgd{ text-align:right; padding-top:15px; font-size:13px;}
+.ckgd a{ color:#979797;}
+.ckgd a:hover{ color:#f60;}
+
+.qbjl{width:80px; float:right; margin-top:4px; display:inline; margin-left:9px; position:absolute; z-index:1px; font-size:12px; font-weight:normal; border:1px solid #CCCCCC; background:#fff;}
+.qbjl a{padding-right:20px; width:60px; display:block;height:22px; line-height:22px; text-align:center; color:#666666;}
+.qbjl a:hover{ background:#f3f3f3; color:#f60}
+
+.pager{ white-space:nowrap; text-align:center;}
+.pager a{ display:block; margin-right:5px; padding:0 3px; float:left; line-height:20px; height:20px;  color:#666666;}
+.pager a:hover{color:#f60; text-decoration:none;}
+.pager p{display:block; margin-right:5px; padding:0 5px; float:left; line-height:20px; height:20px; color:#f60;}
+
+/*2015-02-10*/
+table.AddressManager{ margin-top:20px}
+table.AddressManager tr td{font:normal 14px/40px "微软雅黑"}
+table.AddressManager tr td span{color:#f00;padding-left:5px}
+table.AddressManager tr td p{ float:left;padding-right:15px}
+table.AddressManager tr th{ font:normal 14px/40px "微软雅黑"; text-align:right; padding-right:3px}
+table.AddressManager tr td input[type="text"],table.AddressManager tr td textarea,table.AddressManager tr td select{border:1px solid #d8d8d8; font:normal 14px/30px "微软雅黑"; height:30px; padding-left:2px;color:#333}
+table.AddressManager tr td input[type="text"]{width:90%}
+table.AddressManager tr td textarea{height:50px}
+table.AddressManager tr td input[type="button"]{ background:#f60;color:#fff;font:normal 14px/30px "微软雅黑"; padding:2px 25px; border:0}
+table.AddressManager tr td input[type="button"].CancelBtn{background:#999;margin-left:30px}
+
+
+
+.ExchangeDetail{top:20%; position:absolute;left:40%;width:30%; margin:0 auto; height:400px; background:#fff;border:1px solid #d8d8d8;border-top:0; -webkit-box-shadow:1px 1px 10px #999}
+.ExchangeDetail .title{background:#f7f7f7; height:28px; border-top:1px solid #ddd; font-size:14px; color:#666; font-weight:bold; padding:0 15px; line-height:28px;}

@@ -1,0 +1,188 @@
+﻿body{margin:0;padding:0; font-size:12px; color:#333; width:100%;}
+.xuanze {font-size: 12px;color: #FF0000;line-height: 20px;}
+.e {font-size: 14px;font-weight: bolder;color: #000000;font-family: Arial, Helvetica, sans-serif;}
+.chengshibiao {font-size: 14px;font-weight: bolder;color: #000000;}
+.zhitong {font-size:16px; font-family:黑体; font-weight:normal;}
+.dian {font-size: 12px;bolder;color: #000000; margin-left:10px;}
+.biangeng {font-size: 12px;color:#369;line-height: 20px;}
+.shengfen {font-size: 12px;color: #000000;line-height: 20px;}
+.shengfen a{ margin-left:10px}
+.huangyelie {font-size: 12px;font-weight: bolder;color: #FD6007;}
+.jianzhuming {font-size: 14px;font-weight: bolder;color: #1771C7;line-height: 22px}
+.jianzhuneirong {font-size: 12px;color: #000000;line-height: 22px; height:30px}
+.liuyan {font-size: 12px;color: #666666;line-height: 22px;}
+.sstuijian {font-size: 14px;color: #1771C7;line-height: 25px}
+.bitian {font-size: 14px;font-weight: bolder;color: #FA0606;line-height: 25px}
+
+/*背景和iframe样式*/
+.BG{top:0px; left:0px; position:absolute; z-index:10000; background-color:#000000;filter:alpha(opacity=60); opacity:.6; display:none;}
+.BG_con{ top:20px; left:0px; border:0px;width:730px;height:505px; position:absolute; z-index:10001; display:none;}
+[class].BG_con{height:530px;}
+.Correntiframe{top:80px; left:0px; border:0px;width:403px;height:258px; position:absolute; z-index:10001; display:none;}
+[class].Correntiframe{height:253px;}
+.UpImgiframe{top:80px; left:0px; border:0px;width:403px;height:131px; position:absolute; z-index:10001; display:none;}
+[class].UpImgiframe{height:129px;}
+
+a.zhitongming:link  {font-size: 12px; color:#1771C7;line-height: 20px; text-decoration: none;}
+a.zhitongming:visited  {font-size: 12px;color:#1771C7;line-height: 20px; text-decoration: none;}
+a.zhitongming:hover  {font-size: 12px;color: #01ACFB;line-height: 20px;text-decoration: underline;}
+a.zhitongming:active {font-size: 12px;color: #0198A1;line-height: 20px;text-decoration: none;}
+
+a.ssming:link  {font-size: 14px;color:#1771C7;line-height: 28px; text-decoration: none;}
+a.ssming:visited  {font-size: 14px;color:#1771C7;line-height: 28px; text-decoration: none;}
+a.ssming:hover  {font-size: 14px;color: #01ACFB;line-height: 28px;text-decoration: underline;}
+a.ssming:active {font-size: 14px;color: #0198A1;line-height: 28px;text-decoration: none;}
+
+a.lieming:link  {font-size: 12px;color:#000000;line-height: 20px; text-decoration: none;}
+a.lieming:visited  {font-size: 12px;color:#000000;line-height: 20px; text-decoration: none;}
+a.lieming:hover  {font-size: 12px;color: #000000;line-height: 20px;text-decoration: underline;}
+a.lieming:active {font-size: 12px;color: #000000;line-height: 20px;text-decoration: none;}
+
+a{ color:#1A70C7; font-size:12px; text-decoration:none}
+a:hover{color:#1A70C7; font-size:12px; text-decoration:underline}
+
+.ResultMiddle{ height:528px; min-height:528px; width:890px}
+[class].ResultMiddle{ height:auto}
+.ResultLeft{width:450px; margin-top:-540px;}
+[class].ResultLeft{width:450px;}
+.ResultRight{ position:relative; width:440px; height:528px; margin-top:5px; float:none; margin-left:460px; padding:5px 0 5px 5px; background:#605F5F}
+[class].ResultRight{width:432px; margin-bottom:10px; margin-left:460px; right:0px;float:none}
+.ResultRight .Rmap{width:408px; height:528px; float:left; border:1px solid #ccc}
+.ResultRight .Rinput{width:54px; cursor:pointer; height:21px; filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='images/zuida.png',sizingMethod='image'); right:30px; margin-top:3px; POSITION: absolute; z-index:1000}
+
+
+.ResultDetail{ position:relative; width:310px; height:220px; margin-top:5px; padding:5px 0 5px 5px; background:#605F5F}
+[class].ResultDetail{width:305px;}
+.ResultDetail .Rmap{width:280px; height:220px; float:left; border:1px solid #ccc}
+
+.ZoomBar {width:14px; position:relative; right:0px; top:1px;}
+[class].ZoomBar{right:-3px; top:1px; float:left}
+.ZoomBar .Big ,.ZoomBar .Uaction ,.ZoomBar .Action ,.ZoomBar .Small{width:14px;font-size:1px;margin:auto; cursor:pointer}
+.ZoomBar .Big{height:14px; background:url(../images/hy26.gif) no-repeat; margin-bottom:3px}
+.ZoomBar .Uaction{height:11px; background:url(../images/hy27.gif) no-repeat center; margin-bottom:3px}
+.ZoomBar .Action{height:11px;background:url(../images/hy28.gif) no-repeat center; margin-bottom:3px}
+.ZoomBar .Small{height:14px; background:url(../images/hy29.gif) no-repeat}
+
+.Popo{ height:23px;  font-size:12px; }
+.Popo .PLeft{width:22px; height:23px; float:left; background:url(../images/hy24.gif) no-repeat; text-align:center; line-height:17px; color:#fff}
+.Popo .PLeft img{ margin:2px 2px 2px 5px}
+.Popo .PRight{ float:left; height:18px; line-height:18px; border:1px solid #ff6600; padding:0 5px 0 5px; background:#fff;margin-left:1px}
+
+
+
+/*有话要说样式*/
+.CMiddle .Gustbook{list-style:none;margin:0px 30px 0px 10px;}
+[class].CMiddle .Gustbook{list-style:none;margin:0px 20px 0px -30px;}
+.CMiddle .Gustbook li{ width:560px; color: #666666; white-space:normal; word-break:break-all; overflow:hidden; font-size:12px; border-bottom:1px dashed #ccc; padding:10px 0 10px 16px; background:url(../images/button10.gif) no-repeat 0px 15px; line-height:25px; }
+[class].CMiddle .Gustbook li{width:560px}
+.CMiddle .Gustbook li font{color: #000000;font-size:12px; font-weight:bold}
+.CMiddle .Gustbook li span{font-size:12px; color:#BAAE6C;}
+
+/*城市列表样式*/
+.City{width:730px; height:505px;}
+.City .Chead{ width:730px; height:32px; background:url(../images/newmap66.gif) no-repeat;}
+.City .Chead .MyUL{list-style:none;}
+.City .Chead .Title{ float:left; width:665px; margin-left:-10px; line-height:30px; color:#000; font-size:14px; font-weight:bold}
+.City .Chead .Close{ float:left; margin:5px 20px 0 0;}
+[class].City .Chead .Title{ margin-left:-20px;}
+[class].City .Chead .Close{margin:5px 40px 0 0;}
+.City .Chead .Close img{ cursor:pointer;}
+.City .Ccontent{ width:730px; height:461px; background:url(../images/newmap67.gif) repeat-y;}
+.City .CFoot{ height:12px; background:url(../images/newmap68.gif) no-repeat}
+.City .Ccontent .Czhitong{ width:712px; white-space:nowrap; height:25px; background-color:#f4f4f4; border:1px solid #d5d5d5; margin:0 0 0 9px; line-height:25px; color:#333; font-weight:bold; }
+.City .Ccontent .Czhitong img{ margin:6px 6px 0 6px;}
+.cityname{ width:713px; height:45px; padding-top:5px;}
+[class].cityname{ padding-top:0px;}
+.cityul{margin-left:30px; list-style:none;}
+[class].cityul{padding-left:30px;}
+.cityul li{float:left; width:75px;font-size:10px; height:22px;}
+.cityul li img{ margin-right:5px; margin-bottom:3px}
+.allcityT{font-weight:normal; position:absolute; right:15px}
+.allcityS{background-color:#f4f4f4; width:712px;  height:360px;  border:1px solid #d5d5d5;border-top-width:0px; margin:0 0 0 9px;}
+.allcityS .t{width:340px; height:40px; float:left; margin:15px auto 30px 10px;}
+.allcityS span{color:#000; font-size:12px; font-weight:bold}
+.allcityS .cityl{margin:5px auto 0px 15px;}
+.pinyin{ width:712px; height:350px;  border:1px solid #d5d5d5;border-top-width:0px; margin:0 0 0 9px;}
+.pinyin .content{height:335px; margin-top:10px;}
+.pinyin .content .cityl{ width:330px; height:60px; float: left; margin-left:10px; margin-top:3px;}
+.pinyin .content .cityl a{ margin-right:7px;}
+.zimuT{height:26px; background-color:#6b6b6b; overflow:hidden;}
+.zimu{ float:right; margin-right:10px;}
+.zimu div{ float:left; border:1px solid #b0b5bb; background-color:#FFFFFF; height:18px; width:18px; margin:3px 0px 0px 2px; text-align:center; color:#ff8601; font-weight:bolder; cursor: pointer; line-height:18px;}
+.zimu .active{border:1px solid #b0b5bb;border-bottom-width:0px; height:23px;}
+.SList{width:260px;position:absolute; z-index:1001; }
+.City2d{width:260px;}
+.AOver{ margin-left:15px; height:9px; font-size:1px; background:url(../images/j.gif) no-repeat left bottom; position:relative; top:1px}
+.ShowCity{ padding:5px; z-index:10002; font-size:12px; border:1px solid #a5a5a5; background:#fff; }
+.m_h_c{position:absolute;background:url(../images/newmap33.gif) no-repeat;width:15px; height:17px; margin-left:17px;}
+.m_h_c:hover{background:url(../images/newmap33a.gif) no-repeat;width:15px; height:17px;}
+
+/*iframe中表格的样式*/
+.MissTD{white-space:nowrap; padding-left:10px; height:35px; font-size:12px; color:Black;}
+.MissTable{border-collapse:collapse; border: 1px solid ACB9C2;}
+
+/*地图推荐POP*/
+#wrap{width:398px;height:auto;}
+#tjgg{ height:29px;background:url(../images/9.jpg); margin-left:43px;}
+#tjgg-1{float:left;width:150px;height:29px;line-height: 29px;height: 29px;font-size:14px;color:#000000;font-weight: bold;text-indent: 5px;}
+#tjgg-2{float:right;width:24px;height:29px;}
+#tjgg-3{float:left;width:5px;height:222px;background-image: url(../images/11.jpg);}
+#tjgg-4{float:left;height:222px;width: 345px;background-color:#ffffff;margin:auto}
+#tjgg-5{float:right;width:5px;height:222px;background-image: url(../images/12.jpg);}
+.left{margin-top:85px;float:left; width:43px; height:35px; background:none;filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled=true, sizingMethod=scale, src="images/left.png");}
+[class].left{ background:url(../images/left.png)}
+#footer{float:right;width:355px;height:7px;background-image:url(../images/13.jpg);margin-left:43px;}
+.box p, .h {display:table-cell; *display:inline; zoom:1; vertical-align:middle; } 
+.h {height:26px; width:0; overflow:hidden;}
+
+/*地图定位点的POP*/
+.header { float: left; height:28px;}
+.header .content{height:19px;width:10px; padding-top:2px; padding-left:5px; padding-right:5px; white-space:nowrap;border:1px #FC9A1E solid;background-color:#ffffff;color:#1A70C7; font-size:12px;}
+[class].header .content{width:auto;}
+.abc{ float:left; margin-left:10px; font-size:10px; width:13px; height:10px;background-repeat: no-repeat; text-align:center;  position:relative; margin-top:-1px;background:none;filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled=true, sizingMethod=scale, src="images/left3.png");}
+[class].abc{ margin-left:15px;background-image:url(../images/left3.png);}
+
+/*地图显示级别的调整和2D，3D的切换*/
+.Level {Z-INDEX: 3;right: -5px;WIDTH: 26px;POSITION: absolute;HEIGHT: 155px;}
+.MapSamll {BACKGROUND: url(../images/newmap53.gif) no-repeat;WIDTH: 16px;CURSOR: pointer;HEIGHT: 20px}
+#MapSilder {BACKGROUND: url(../images/newmap52.gif) no-repeat;WIDTH: 16px;CURSOR: pointer;POSITION: absolute;TOP: 50px;HEIGHT: 14px}
+.UnAction {BACKGROUND: url(../images/newmap50.gif) no-repeat;WIDTH: 16px;CURSOR: pointer;HEIGHT: 21px}
+.MapBig {MARGIN-TOP: 3px;BACKGROUND: url(../images/newmap49.gif) no-repeat;WIDTH: 16px;CURSOR: pointer;HEIGHT: 18px}
+[class].MapBig {MARGIN-TOP: 5px;}
+.Change2D3D {MARGIN-TOP: 3px;WIDTH: 17px;CURSOR: pointer;HEIGHT: 18px}
+
+.MyTextArea{background-color:transparent; background: url(../images/textareabd.gif); background-position:10px 0px; background-repeat:repeat-x; }
+
+#ShowDDC{ font-size:12px;line-height: 20px;font-weight: bold; }
+#ShowDDC span{ color:red;font-weight: bold;}
+#ShowDDC a{ color:#1a70c7}
+#ShowDDC a:link  {color:red; text-decoration: none; font-weight: bold;}
+#ShowDDC a:visited  {color:red; text-decoration: none; font-weight: bold;}
+#ShowDDC a:hover  {color:red;text-decoration:underline ; font-weight: bold;}
+#ShowDDC a:active {color:red;text-decoration: none; font-weight: bold;}
+
+#ddcdiv{width:100%; background-color:#fbf0df;padding:5px 5px 5px 8px;}
+
+#lbyd div{ margin-right:5px; float:left;}
+/*大泽信息样式*/
+
+#divdis{ font-size:14px; width:580px; }  
+#divdis a{ font-size:14px;}
+#divdis a:hover{font-size:14px;}  
+#divDiscount #divdis #sptitle { height:28px; background-color:#FEE8CC; width:100%;font-size:16px; font-family:黑体; font-weight:normal; border:solid 1px #E7E7E7;padding:5px 0 0 1px;}
+
+#divDiscount #divdis #sptitle  a{ font-size:16px;}
+#divDiscount #divdis #sptitle  a:hover{font-size:16px;}  
+
+#divdis #spcontent{ width:98%; margin:8px;font:normal 12px 宋体;}
+#divdis #spcontent a{color:#fd6303}
+#divdis #spcontent a:hover{color:#fd6303}
+
+#divDiscounth{ width:580px}
+#divDiscounth #divdis #sptitle {height:28px; width:100%;font-size:14px;padding:7px 0 0 10px; font-weight:bold }
+#divDiscounth #divdis #sptitle  a{ font-size:14px;font-weight:bold}
+#divDiscounth #divdis #sptitle  a:hover{font-size:14px;font-weight:bold}  
+#divtitle{height:28px; background-color:#eaeaea; width:100%;border-bottom:solid 1px #ccc;padding:5px 0 0 10px;}
+
+
+

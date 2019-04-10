@@ -1,0 +1,132 @@
+﻿@import url(Common.css);
+body, ul, dl, dd, dt, ol, li, p, h1, h2, h3, h4, h5, h6, form, fieldset, table, img, td, div, input{
+margin:0;padding:0;
+}
+ul, li{ list-style:none;}
+.clearfix:before,.clearfix:after{ display:table; content:" ";}
+.clearfix:after{ clear:both;}
+.clearfix{ *zoom:1;}
+@media screen and (-webkit-min-device-pixel-ratio:0) { 
+	body, button, input, select, textarea{line-height:normal !important;}
+	input, select, textarea{outline-style:none;}
+}
+/*搜索*/
+.se{height:auto; width:310px;overflow-y:auto;overflow-x:hidden;}
+.se,.ulResultList{height:auto; width:300px;overflow-y:auto;overflow-x:hidden;}
+.se .TitleNav,.se .SelectNav{float:left; margin:5px 0;}
+.se .TitleNav{ width:30px;}
+.se .SelectNav{ width:270px; }
+.se .SelectNav select{width:270px; background-color:#F7FBFF;}
+.btn{ margin:5px auto; width:45px; height:21px; cursor:pointer; background-image:url(../images/SearchBtn.gif); clear:both;}
+
+/*结果*/
+.DottedLine{background:url(../Images/SearchNavLine.gif) repeat-x left center; height:1px; font-size:0;/*for IE6*/}
+.EachRow{margin:5px 0;}
+
+.ulResultList{margin-top:70px;}
+
+.NormalInfo{padding:3px 3px 3px 12px; cursor:pointer; background:url(../Images/DownIco.gif) no-repeat 3px 7px;}
+.ActiveInfo{padding:3px 3px 3px 12px; cursor:pointer; background:#f6f6f6 url(../Images/UpIco.gif) no-repeat 3px 7px;}
+.DetailCir{margin:5px 0 10px 10px; line-height:150%; color:#666;}
+
+.Building,.Station,.Bus{cursor:pointer; font-weight:bold; text-decoration:underline; margin:0 2px;}
+.Building{color:#C30;}
+.Station{color:#369;}
+.Bus{color:#F60;}
+.Station:hover,.Bus:hover,.Building:hover{color:Red; text-decoration:none;}
+
+.jie{height:auto; width:300px;}
+.shuomimg div{ height:20px; line-height:20px; float:left;border:1px solid #fff; background-color:#e9f6ff;}
+.shuomimg .left{width:48px;}
+.shuomimg .right{width:220px;}
+
+/*其它城市*/
+.fangan{ border:1px solid #d0d0d0; height:26px; background-image:url(images/bg.gif) ; font-weight:bold; line-height:28px; width:270px; overflow:hidden;}
+.fangan span{color:#fe0000; margin-left:3px;}
+
+
+.xianlu{border-bottom:#666 dashed 1px;width:270px; height:auto; overflow:hidden;}
+.xianlu div{float:left;}
+.xianlu .left{color:#fd8703; text-align:center; cursor:pointer;}
+.xianlu .right span{ color:#1872ca;}
+
+.xianlu .right{width:226px; clear:both;}
+.Photo{height:60px;width:300px; margin:5px 0;}
+.Adtop{ position:absolute;top:2px;}
+
+/*新公交*/
+
+.bus_box{width:335px; height:338px; margin:0 auto; overflow:auto;}
+.bus_box h3{width:280px; font-size:12px; font-weight:normal; margin:4px 0 0 8px;}
+
+.bus_box2{ width:335px; height:338px; margin:0 auto; overflow:auto; overflow-y:hidden; overflow-x:hidden;}
+.bus_box2 h3{width:280px; font-size:12px; font-weight:normal; margin:4px 0 0 8px;}
+#sContent{ line-height:20px; color:#555555;}
+#startul, #endul{ margin-bottom:10px; padding-bottom:5px; border:1px solid #ffdd99; border-top:0;}
+/*.bus_g_r{padding:0 8px;}
+.bus_blue{ width:275px;border:1px solid #bad5ea; padding:2px; margin-bottom:5px;}*/
+.bus_blue h1{ height:30px; margin:0; line-height:30px; color:#5b7bcb; border:1px solid #b8c7e6; background:#f0f4ff; background:-webkit-linear-gradient(top,#fdfdff,#e5ebfa); overflow:hidden;}
+.bus_blue .pub_ico{width:22px; height:22px; float:left; margin:2px 0 0 4px; background: url(../images/blue_t.gif) no-repeat;}
+.bus_blue .pub_t{ position:relative; font-size:14px; color:#369; text-align:left; text-indent:5px; font-weight:normal; line-height:28px; }
+.bus_blue .pub_t a{ position:absolute; right:5px; top:8px; display:block;width:13px; height:13px; background:url(../images/green_btn.gif) no-repeat;}
+/*.bus_blue .pub_t strong{width:150px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
+.bus_red{ width:275px;border:1px solid #fa0; padding:2px; margin-bottom:5px;}*/
+.bus_red h1{ height:30px; margin:0; line-height:30px; color:#fa877a; border:1px solid #e6c3a1; background:#fff9df; background:-webkit-linear-gradient(top,#fffdf8,#fff9df); overflow:hidden;}
+.bus_red .pub_ico{width:22px; height:22px; float:left; margin:2px 0 0 4px; background:url(../images/red_f.gif) no-repeat;}
+.bus_red .pub_t{ position:relative; font-size:14px; color:#f80; text-align:left; text-indent:5px; font-weight:normal; line-height:28px; }
+.bus_red .pub_t a{ position:absolute; right:5px; top:8px; display:block;width:13px; height:13px; background:url(../images/red_btn_1.gif) no-repeat;}
+.bus_blue .pub_t strong{width:200px;height:22px;display:inline-block;position:relative;top:2px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
+.pub_con{ padding:5px 0 0; margin:0 0 5px 0; overflow:auto;}
+.pub_con li{ list-style:none;  position:relative; margin-bottom:8px; padding:5px 10px; line-height:27px; color:#5C8CD1;}
+.pub_con li .pub_nub{ width:21px; height:28px; background:url(../images/green_p.gif) no-repeat; font-size:12px; text-indent:8px; line-height:20px;margin:5px 0 0 9px;}
+.pub_con li .pub_nub_r{float:left; width:18px; height:27px; margin-right:10px; background:url(/images/point_bg.png) no-repeat; font-size:12px; line-height:20px; color:#fff; text-align:center;}
+.pub_con li .pub_place{ width:210px; font-size:12px; color:#438EFA; line-height:18px; }
+.pub_con li .pub_place a{ color:#438EFA; text-decoration:none;}
+
+.setPoint-btn{ position:absolute; right:10px; top:8px;}
+.pub_con li .pub_chobtn{  height:27px; padding:0 12px; border:1px solid #dec0a2; color:#e68a30; cursor:pointer; background:-webkit-linear-gradient(top,#fffdf8,#ffeecc); border-radius:3px;}
+.pub_con li:hover{ background:#efefef;}
+.bus_box1 {width:300px; height:338px; overflow:auto;}
+.pub_con1 {width:254px; height:210px; padding:0; margin:1px 0 0 0;overflow:auto;}
+
+.Paginate{ text-align:center; color:#dc4d3a; font-weight:bold;}
+.Paginate a{ margin:0 1px; color:#336688; font-weight:normal;}
+
+.bus_radio{ width:333px; margin:0 auto 10px; background:#f2f5f7; border:1px solid #dce4e8; line-height:30px;}
+.bus_radio li{ display:inline; float:left; width:24.7%; border-right:1px solid #dce4e8; text-align:center; cursor:pointer;}
+.bus_radio li.current{ background:#e2e9ec; font-weight:bold;}
+.bus_radio li input{ position:relative; top:3px; *top:0;}
+
+.bus_way1{
+	margin-bottom:12px; padding:0; border:1px solid #fff; border-bottom:1px dashed #eaeaea;
+}
+.bus_way1 h1{padding:5px 0 5px 5px; cursor:pointer;}
+.bus_way1 li{ margin-bottom:8px; padding:0 8px; overflow:hidden;}
+.bus_way1_ico{ display:inline; float:left; margin-right:12px; padding:0 5px; background:#76b7ed; color:#fff; line-height:16px; font-size:12px;}
+.bus_way1_title{
+	 display:inline; float:left; width:232px; font-size:13px; font-weight:normal; color:#3d80cc;
+}
+.bus_way1_title p{ margin-top:4px; font-size:12px; color:#a8a8a8;}
+.bus_way1_btn{width:13px; height:13px; float:right; margin:5px 10px 0 0; display:inline; overflow:hidden;}
+.bus_way1_title2{ color:#333; font-size:12px; font-weight:bold;line-height:20px; text-align:left;}
+.bus_way1_title2 span{ color:#333;}
+.bus_way1_title2 a{ color:#4692d9; display:inline-block; float:right; font-weight:normal;*margin-top:-18px;}
+.bus_way1_pubico{width:18px; margin:2px 0 0 0;}
+.bus_way1_pubtitle{color:#404040;font-size:12px;line-height:18px; text-align:left; margin:-18px 0 0 25px;}
+.bus_way1_pubtitle a{ margin:0 2px;color:#1b81e0; text-decoration:none;}
+.bus_way1_pubtitle a:hover{ text-decoration:underline;}
+.bus_way1_pubtitle u{ text-decoration:none;}
+.bus_way1_pubtitle span{display:block;color:#a6a6a6; text-align:right; margin-top:-17px;}
+.bus_way1_down{color:#202122;font-size:12px;line-height:18px; text-align:right;}
+.bus_way1_down a{ color:#999999;text-decoration:none;}
+.bus_way1_down b{font-weight:normal;}
+.bus_down_btn{width:118px; height:22px; margin:0 0 0 5px;}
+
+.bus-lineHover{ border:1px solid #cddeec;}
+.bus-lineHover h1{ background:#fafcfd;}
+.bus-lineHover h1 p{ color:#f7681a;}
+.bus-lineHover .border-div{ padding-top:10px; border-top:1px solid #cddeec;}
+.bus-lineHover .border-div .bus_way1_down{ padding:5px 8px 5px 0; margin-bottom:0; border-top:1px solid #cddeec;}
+
+.no-point{ margin-left:15px; margin-bottom:3px;}
+.no-point p{ margin-top:2px; color:#8f8f8f;}

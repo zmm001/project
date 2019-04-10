@@ -1,0 +1,195 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" id="viewport" content="width=device-width,initial-scale=1.0, maximum-scale=1.0,minimum-scale=1.0,user-scalable=no" />
+    <meta name="format-detection" content="telephone=no" />
+    <title>爱上头条（E都市）小说频道</title>
+    <link href="~/Areas/Xiaoshuo/asset/css/user.css" rel="stylesheet" />
+    <script>
+        document.documentElement.style.fontSize = 100 * ((document.documentElement.clientWidth) / 750) + "px";
+    </script>
+    <script src="~/Areas/Xiaoshuo/asset/js/jquery-1.8.3.min.js"></script>
+    <script src="~/Areas/Xiaoshuo/asset/js/vue.min.js"></script>
+</head>
+<body>
+    <div id="app">
+        <header>
+            <span class="back" onclick="javascript:history.go(-1);"></span>
+            <nav class="btn-group">
+                <div>
+                    <a href="javascript:void(0)" class="on">我的书架({{bookRackCount}})</a>
+                    <a href='@Url.RouteUrl("recentlyread")'>最近阅读({{readCount}})</a>
+                </div>
+            </nav>
+            <a href="http://m.xiaoshuo.edushi.com" class="back-home"></a>
+        </header>
+        <div class="main-container">
+            <div class="bookshelf-box">
+                <div class="bookshelf-header">
+                    <span class="sort">加入时间</span> <!-- 升序时样式为 shengxu -->
+                    <span class="edit">编辑</span>
+                </div>
+                <ul class="book-list" v-if="bookRackCount>0">
+                    <li v-for="item in bookRackList">
+                        <a v-bind:href="item.Href">
+                            <div class="img"><img v-bind:src="item.CoverImage"></div>
+                            <div class="info">
+                                <div class="name">{{item.Name}}<span class="time">{{item.RecordTime}}</span></div>
+                                <div class="tags">
+                                    {{item.Author}}
+                                    @*&nbsp;&nbsp;|&nbsp;&nbsp;读至第{{item.NCS_ID}}章*@
+                                </div>
+                                <div v-if="item.Status=='完结'"></div>
+                                <div class="tips" v-else>更新至第{{item.ChapterNum}}章 </div>
+                            </div>
+                        </a>
+                        <div class="read"><a v-on:click="goReadBook(item.SourceBookId,item.NCC_ID,item.ID)">立即阅读</a></div>
+                        <div class="del" v-bind:data-id="item.BooKID">删除</div>
+                    </li>
+                </ul>
+                <div class="loading" v-if="bookRackCount>0">加载中</div>
+                <div class="no-more">木有更多了~</div>
+            </div>
+
+        </div>
+        <footer>
+            浙B2-20050306  浙江网安备 33010502000262号
+        </footer>
+    </div>
+
+    <script src="~/Areas/Xiaoshuo/asset/js/common.js"></script>
+    <script>
+        var datas = new Vue({
+            el: '#app',
+            data: {
+                bookRackList: [{}],
+                bookRackCount: 0,
+                readCount: 0,
+                gate: true,
+                pageIndex: 1,
+                totalPage: 0,
+            },
+            created: function () {
+                this.getBookRackList(false, this.pageIndex)
+            },
+            mounted: function () {
+                this.readTimeASC()
+                this.delRecord()
+                //wind  ow.addEventListener('scroll', this.loding)
+            },
+            methods: {
+                // 我的书架
+                getBookRackList: function (isLoad, pageIndex) {
+                    $.ajax({
+                        type: "POST",
+                        url: "@Url.Content("~/xiaoshuo/bookRackList.html")",
+                        //dataType: "json",
+                        data: { pageIndex: pageIndex },
+                        success: function (data) {
+                            if (isLoad) {
+                                datas.bookRackList = datas.bookRackList.concat(data.BookList).sort(datas.compare("BooKID"))
+                            } else {
+                                if (data.BookList != null && data.BookList.length > 0) {
+                                    datas.bookRackList = data.BookList.sort(datas.compare("BooKID"))
+                                    datas.totalPage = data.BookList[0].TotalPage
+                                }
+                                datas.bookRackCount = data.BookRackCount;
+                                datas.readCount = data.ReadRecordCount;
+                            }
+                        },
+                        error: function (data) {
+                            console.log(data);
+                        }
+                    })
+                },
+                readTimeASC: function () {
+                    $(".bookshelf-header .sort").click(function () {
+                        if ($(this).hasClass("sort")) {
+                            $(this).attr("class", "shengxu")
+                            if (datas.bookRackList != null) {
+                                datas.bookRackList.reverse()
+                            }
+                        }
+                        else {
+                            if (datas.bookRackList != null) {
+                                datas.bookRackList.sort(datas.compare("BooKID"))
+                            }
+                            $(this).attr("class", "sort")
+                        }
+                    })
+                },
+                delRecord: function () {
+                    $(".bookshelf-box").on("click", ".book-list li .del", function () {
+                        var NB_ID = $(this).attr("data-id")
+                        datas.delCurrtyRecord(parseInt(NB_ID))
+                        $(this).parents("li").remove();
+                    });
+                },
+                compare: function (prop) {
+                    return function (obj1, obj2) {
+                        var val1 = obj1[prop];
+                        var val2 = obj2[prop];
+                        if (val1 > val2) {
+                            return -1;
+                        } else if (val1 < val2) {
+                            return 1;
+                        } else {
+                            return 0;
+                        }
+                    }
+                },
+                delCurrtyRecord: function (NB_ID) {
+                    $.ajax({
+                        type: "POST",
+                        url: "@Url.Content("~/xiaoshuo/deleteRecord.html")",
+                        data: { BooK_ID: NB_ID },
+                        success: function (data) {
+                            datas.bookRackCount--
+                        },
+                        error: function (data) {
+                            //console.log(data);
+                        }
+                    })
+                },
+                goReadBook: function (sourceID, chapterID, NB_ID) {
+                    this.addReadRecord(NB_ID, chapterID)
+                    window.location.href = "http://m.xiaoshuo.edushi.com/info/read.html?BookId=" + sourceID + "&chapter=" + chapterID
+                },
+                loding: function () {
+                    var pHeight = $("footer").outerHeight(true) + $(".books-list li:last").outerHeight(true);
+                    if ($(document).scrollTop() + $(window).height() >= $(document).height()) {
+                        if (this.gate) {
+                            this.pageIndex++;
+                            // 数据大于100条
+                            if (this.pageIndex > this.totalPage) {
+                                this.gate = false;
+                                $('.loading').hide();
+                                return false;
+                            } else {
+                                this.getBookRackList(true, this.pageIndex)
+                            }
+                        } else {
+                            $('.loading').hide();
+                        }
+                    }
+                },
+                addReadRecord: function (NB_ID, ChapterID) {
+                    $.ajax({
+                        url: "@Url.Content("~/xiaoshuo/readRecord.html")",
+                        type: 'post',
+                        async: false,
+                        data: { "BookID": NB_ID, "ChapterID": ChapterID },
+                        success: function (response) {
+                            if (response != "Ok") {
+                                popUp('已成功加入阅读记录！');
+                            }
+                        }
+                    })
+                }
+            }
+        })
+
+    </script>
+</body>
+</html>

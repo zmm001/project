@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<es>
+  <!--0：表示ES开启状态 1:表示ES关闭状态-->
+  <isclose>0</isclose>
+  <!--故障次数-->
+  <troubletimes>4</troubletimes>
+  <!--最后更新时间-->
+  <updatetime>2019-02-12 11:05</updatetime>
+</es>

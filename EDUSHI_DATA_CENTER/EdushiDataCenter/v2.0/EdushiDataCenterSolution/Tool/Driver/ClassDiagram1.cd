@@ -1,0 +1,1228 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="MongoDB.Driver.Builders.BuilderBase" Collapsed="true">
+    <Position X="14" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QAAAAAAAAAAAABAEECAAAgAAACAAAAAAAAAAIAAAAAA=</HashCode>
+      <FileName>Builders\BuilderBase.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="MongoDB.Driver.Builders.CollectionOptions" Collapsed="true">
+    <Position X="33.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAgAAAAAAAAAAAAYAACAAAAIAAAAAAAA=</HashCode>
+      <FileName>Builders\CollectionOptionsBuilder.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MongoDB.Driver.Builders.CollectionOptionsBuilder" Collapsed="true">
+    <Position X="6.25" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAEAAAgAAEAAAAAAAACYAACAAAAAAAAAAAAA=</HashCode>
+      <FileName>Builders\CollectionOptionsBuilder.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="MongoDB.Driver.Builders.Fields" Collapsed="true">
+    <Position X="38.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAIAACAAAAAAAAAAAAAIAAACAAAA=</HashCode>
+      <FileName>Builders\FieldsBuilder.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MongoDB.Driver.Builders.FieldsBuilder" Collapsed="true">
+    <Position X="10.75" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAEAAAAAAEIAACAAAACAAAAAAAAAAAACAAAA=</HashCode>
+      <FileName>Builders\FieldsBuilder.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="MongoDB.Driver.Builders.GeoHaystackSearchOptions" Collapsed="true">
+    <Position X="42.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACEAAAAAAAAAAAAAAAAAAAAAAAAAAAEAIAAAAAAAA=</HashCode>
+      <FileName>Builders\GeoHaystackSearchOptionsBuilder.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MongoDB.Driver.Builders.GeoHaystackSearchOptionsBuilder" Collapsed="true">
+    <Position X="15.25" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACEAAAAEAAAAAAEAAAAAAAACAAAAAAEAAAAAAAAAA=</HashCode>
+      <FileName>Builders\GeoHaystackSearchOptionsBuilder.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="MongoDB.Driver.Builders.GeoNearOptions" Collapsed="true">
+    <Position X="45.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAEBIAAAAAAAA=</HashCode>
+      <FileName>Builders\GeoNearOptionsBuilder.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MongoDB.Driver.Builders.GeoNearOptionsBuilder" Collapsed="true">
+    <Position X="22" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAEAAAAAAEEAAAAAAACAAAAAAEBAAAAAAAAA=</HashCode>
+      <FileName>Builders\GeoNearOptionsBuilder.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="MongoDB.Driver.Builders.GroupBy" Collapsed="true">
+    <Position X="35.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAACAAAAAIAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Builders\GroupByBuilder.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MongoDB.Driver.Builders.GroupByBuilder" Collapsed="true">
+    <Position X="24.25" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAEAAAAAAEAAAAAAAACAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Builders\GroupByBuilder.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="MongoDB.Driver.Builders.IndexKeys" Collapsed="true">
+    <Position X="42.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAACAAAAAAAABABAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Builders\IndexKeysBuilder.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MongoDB.Driver.Builders.IndexKeysBuilder" Collapsed="true">
+    <Position X="26.5" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAAGAAAAAAEABABAAAACAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Builders\IndexKeysBuilder.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="MongoDB.Driver.Builders.IndexOptions" Collapsed="true">
+    <Position X="45.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAgAIAAAAAAAAAAQAAAAAAgAAAAAACAAAIAQEAAAAA=</HashCode>
+      <FileName>Builders\IndexOptionsBuilder.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MongoDB.Driver.Builders.IndexOptionsBuilder" Collapsed="true">
+    <Position X="4" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAgAIAAAEAAAAAAUAAAAAAgACAAAACAAAAAQEAAAAA=</HashCode>
+      <FileName>Builders\IndexOptionsBuilder.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="MongoDB.Driver.Builders.MapReduceOutput" Collapsed="true">
+    <Position X="40.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AIAARAwAAMAAAAAAAgAAAAAAAAAAIRAAAAAAAAABAGA=</HashCode>
+      <FileName>Builders\MapReduceOptionsBuilder.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MongoDB.Driver.Builders.MapReduceOptions" Collapsed="true">
+    <Position X="37" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAICEAAAAAIAAAAEAAgACABAAAAAAAAAACIAAAAAAAA=</HashCode>
+      <FileName>Builders\MapReduceOptionsBuilder.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MongoDB.Driver.Builders.MapReduceOptionsBuilder" Collapsed="true">
+    <Position X="13" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAICEAAAAEIAAAAEEAgACABAACAAAAAAACAAAIAAAAA=</HashCode>
+      <FileName>Builders\MapReduceOptionsBuilder.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="MongoDB.Driver.Builders.Query" Collapsed="true">
+    <Position X="33.5" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>pBIAAECAAAAAiABAAABAAAgAACUQAAAgAYIAEAEAADA=</HashCode>
+      <FileName>Builders\QueryBuilder.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MongoDB.Driver.Builders.QueryBuilder" Collapsed="true">
+    <Position X="18.5" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAEAAAAAAEAAAAAAAACAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Builders\QueryBuilder.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MongoDB.Driver.Builders.QueryComplete" Collapsed="true">
+    <Position X="18.5" Y="7.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Builders\QueryBuilder.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="MongoDB.Driver.Builders.QueryConditionList" Collapsed="true">
+    <Position X="17.5" Y="8.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>xAIAAEAAAAAAiABAAABAAAAAAAQQAAAAAYAAAAEAADA=</HashCode>
+      <FileName>Builders\QueryBuilder.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MongoDB.Driver.Builders.QueryNot" Collapsed="true">
+    <Position X="35.25" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BBIAIAAAAAAAiAAAAABAAAAAAAQQAAAAAYAAAAEAACA=</HashCode>
+      <FileName>Builders\QueryBuilder.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MongoDB.Driver.Builders.QueryNotConditionList" Collapsed="true">
+    <Position X="19.75" Y="8.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>RAIAAAAAAAAAiAAAAABAAAAAAAQQAAAAAYAAAAEAACA=</HashCode>
+      <FileName>Builders\QueryBuilder.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MongoDB.Driver.Builders.SortBy" Collapsed="true">
+    <Position X="42.25" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACAAAAAAAABAAAAAAAAAAAAAAAIAAAAAAAA=</HashCode>
+      <FileName>Builders\SortByBuilder.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MongoDB.Driver.Builders.SortByBuilder" Collapsed="true">
+    <Position X="1.75" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAGAAAAAAEABAAAAAACAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Builders\SortByBuilder.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="MongoDB.Driver.Builders.Update" Collapsed="true">
+    <Position X="33.5" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAJACAAABAEBEAAAAAKAACAAAAAAAACAgIBBBABqCA=</HashCode>
+      <FileName>Builders\UpdateBuilder.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MongoDB.Driver.Builders.UpdateBuilder" Collapsed="true">
+    <Position X="8.5" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AgAJACAAAFAEBEAAEAAKAACAACAAAAACAgIBBBABqCA=</HashCode>
+      <FileName>Builders\UpdateBuilder.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="MongoDB.Driver.CollectionStatsResult" Collapsed="true">
+    <Position X="5.75" Y="11.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AgAABIAAAQAEEAQAAAAAAAEAAQAAIAACCAAAAAgAAgA=</HashCode>
+      <FileName>Core\CommandResults\CollectionStatsResult.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MongoDB.Driver.CommandResult" Collapsed="true">
+    <Position X="10.25" Y="10.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQAAAAAAAABAASAAAAAARAAAAAAAAAAAAAABABAAAAA=</HashCode>
+      <FileName>Core\CommandResults\CommandResult.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MongoDB.Driver.DatabaseStatsResult" Collapsed="true">
+    <Position X="8" Y="11.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAEIAAAQAAEABAAAAIAAAAAQAAAAAACAAAAAgAAAA=</HashCode>
+      <FileName>Core\CommandResults\DatabaseStatsResult.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MongoDB.Driver.FindAndModifyResult" Collapsed="true">
+    <Position X="10.25" Y="11.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAEAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Core\CommandResults\FindAndModifyResult.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MongoDB.Driver.GeoHaystackSearchResult" Collapsed="true">
+    <Position X="12.5" Y="11.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABAAAAAAAAAAAAAAAAAADAAAAAAAAAAAAAAAAQAAAAA=</HashCode>
+      <FileName>Core\CommandResults\GeoHaystackSearchResult.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MongoDB.Driver.GeoHaystackSearchResult&lt;TDocument&gt;" Collapsed="true">
+    <Position X="12.5" Y="13.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAEQAAAAA=</HashCode>
+      <FileName>Core\CommandResults\GeoHaystackSearchResult.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MongoDB.Driver.GeoNearResult" Collapsed="true">
+    <Position X="14.75" Y="11.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABAAAAAAAAAAAAAAAAAADAAAAAAAIAAAAAAAAQAAAAA=</HashCode>
+      <FileName>Core\CommandResults\GeoNearResult.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MongoDB.Driver.GeoNearResult&lt;TDocument&gt;" Collapsed="true">
+    <Position X="14.75" Y="13.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAEQAAAAA=</HashCode>
+      <FileName>Core\CommandResults\GeoNearResult.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MongoDB.Driver.GetLastErrorResult" Collapsed="true">
+    <Position X="17" Y="11.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAABAAAAAAAAAAAAIAAAAAAAAAAAEAAAAAAAIAAA=</HashCode>
+      <FileName>Core\CommandResults\GetLastErrorResult.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MongoDB.Driver.GetProfilingLevelResult" Collapsed="true">
+    <Position X="19.25" Y="11.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAABAA=</HashCode>
+      <FileName>Core\CommandResults\GetProfilingLevelResult.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MongoDB.Driver.MapReduceResult" Collapsed="true">
+    <Position X="1.25" Y="11.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>DAAAQAAAgAACAAgAABAAAAAACAAAAgAAAAAABAABAEA=</HashCode>
+      <FileName>Core\CommandResults\MapReduceResult.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MongoDB.Driver.SafeModeResult" Collapsed="true">
+    <Position X="17" Y="13.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Core\CommandResults\SafeModeResult.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MongoDB.Driver.ValidateCollectionResult" Collapsed="true">
+    <Position X="3.5" Y="11.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QgAAAAAAAQBAEQAAEAgFABAAAQAAIABAAAJCAAACAEI=</HashCode>
+      <FileName>Core\CommandResults\ValidateCollectionResult.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MongoDB.Driver.GetIndexesResult" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="33.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BAAAAAAAAAEAAAAgCAAAAAQAAAAAAAAEAAAAAACAAAA=</HashCode>
+      <FileName>Core\GetIndexesResult.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="MongoDB.Driver.IndexInfo" Collapsed="true">
+    <Position X="40.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>JAAAAAAaAEAAAAQAgAAAAAQAAAAAIAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Core\GetIndexesResult.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MongoDB.Driver.MongoCollection" Collapsed="true">
+    <Position X="6.5" Y="18.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gAQAIMSFVECQCKQEwBCEDgQAAgAQAAQJoAoEhAUBIBA=</HashCode>
+      <FileName>Core\MongoCollection.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MongoDB.Driver.MongoCollection&lt;TDefaultDocument&gt;" Collapsed="true">
+    <Position X="6.5" Y="19.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAMABAAAAAAAAAIAQABAAAAAIAIAAAAAAAAAAAgA=</HashCode>
+      <FileName>Core\MongoCollection.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MongoDB.Driver.MongoCollectionSettings" Collapsed="true">
+    <Position X="3.5" Y="18.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BAABQiIAAAEAAAAEwAgAAAIQAAAAYJAgAAhAAAAAABM=</HashCode>
+      <FileName>Core\MongoCollectionSettings.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MongoDB.Driver.MongoCollectionSettings&lt;TDefaultDocument&gt;" Collapsed="true">
+    <Position X="3.5" Y="19.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABA=</HashCode>
+      <FileName>Core\MongoCollectionSettings.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MongoDB.Driver.MongoConnectionStringBuilder" Collapsed="true">
+    <Position X="45.75" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CASASwIQAiBEBADQSUAIQxIAAAEQIYgCoBoAIgBFCEg=</HashCode>
+      <FileName>Core\MongoConnectionStringBuilder.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MongoDB.Driver.MongoCredentials" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="31.75" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAAAAAAAAEgQAAAQAAAAAAAMACAAIAAIABAiA=</HashCode>
+      <FileName>Core\MongoCredentials.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="MongoDB.Driver.MongoCursor" Collapsed="true">
+    <Position X="0.5" Y="17.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>JAACNgyAAUCgwEAjQAiAAUVCFQIA4E0ECAiAAgBAkBA=</HashCode>
+      <FileName>Core\MongoCursor.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="MongoDB.Driver.MongoCursor&lt;TDocument&gt;" Collapsed="true">
+    <Position X="0.5" Y="18.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>JAAAEAwAAACAABABAAgAAEFCEAAAgAEACAAAAABAAAA=</HashCode>
+      <FileName>Core\MongoCursor.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="MongoDB.Driver.MongoCursorEnumerator&lt;TDocument&gt;" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="33.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAgIAQAICEEBAQAAAGkEAABAAAAAAIgqACAAYAAAAA=</HashCode>
+      <FileName>Core\MongoCursorEnumerator.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="MongoDB.Driver.MongoDatabase" Collapsed="true">
+    <Position X="35.25" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gBEQoSAAMAAQWEAM6AAAAAUAAEtEAEBghCCEAmUJAAA=</HashCode>
+      <FileName>Core\MongoDatabase.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MongoDB.Driver.MongoDatabaseSettings" Collapsed="true">
+    <Position X="37" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAABAgIAAAEAAAAEwAAAAAIQAAAEYIAgAEgAAAABAFM=</HashCode>
+      <FileName>Core\MongoDatabaseSettings.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MongoDB.Driver.MongoDBRef" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="38.75" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACQAAAAAAAABAAACBAAgAAAAAAABAAAAAAIAABAEA=</HashCode>
+      <FileName>Core\MongoDBRef.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="MongoDB.Driver.MongoInsertOptions" Collapsed="true">
+    <Position X="35.25" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAABACAAAAAAAAARIAAAAAAAAAAIAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Core\MongoInsertOptions.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MongoDB.Driver.MongoServer" Collapsed="true">
+    <Position X="42.25" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>RHQgsCABAhCoGwQAyMIEKZSAAgIABECg2CAEBTCIQQA=</HashCode>
+      <FileName>Core\MongoServer.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MongoDB.Driver.MongoServerAddress" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="44" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AIAgAAAAAAAAAAgEgAAAAAAACAAACIAAAAAAhAAAAiA=</HashCode>
+      <FileName>Core\MongoServerAddress.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="MongoDB.Driver.MongoServerBuildInfo" Collapsed="true">
+    <Position X="45.75" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IEAAgAAAAQAQIAAAAAAAAAEAQAAAAkAAQAAAAAAAAAA=</HashCode>
+      <FileName>Core\MongoServerBuildInfo.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MongoDB.Driver.MongoServerInstance" Collapsed="true">
+    <Position X="31.75" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQShBAAABAAA0gUgQEAACIBAAAJKIACiAgEwBkABBSA=</HashCode>
+      <FileName>Core\MongoServerInstance.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MongoDB.Driver.MongoServerSettings" Collapsed="true">
+    <Position X="33.5" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CACBSwIQAAFABADUwEAAAxIQAAAQYYggoBgBAgAECFs=</HashCode>
+      <FileName>Core\MongoServerSettings.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MongoDB.Driver.MongoUpdateOptions" Collapsed="true">
+    <Position X="35.25" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAABACAAAAAAAAARIAAAAAAAAAAIAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Core\MongoUpdateOptions.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MongoDB.Driver.MongoUrl" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="37" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CAAASwIAAABBAADUgAAAQQAAAAQQIMgACBABCgCFCmg=</HashCode>
+      <FileName>Core\MongoUrl.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="MongoDB.Driver.MongoUrlBuilder" Collapsed="true">
+    <Position X="38.75" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CQCgawYQAABABBDUQEAIQ5IAgAAQIYgAoBgBAgAFjEw=</HashCode>
+      <FileName>Core\MongoUrlBuilder.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MongoDB.Driver.MongoUser" Collapsed="true">
+    <Position X="40.5" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AACAAAAAAAAEAAAUAQAAAAAAAAAAgAAAIAIAAAAAAAA=</HashCode>
+      <FileName>Core\MongoUser.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MongoDB.Driver.SafeMode" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="38.75" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAEBQACCAOEUgEAACgAwAAAgIMAwABgQAggJgjM=</HashCode>
+      <FileName>Core\SafeMode.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="MongoDB.Driver.SystemProfileInfo" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="45.75" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>OSQLgA4AAAkKBXIiIDAKBgAAgAQIM4gAACRwMFAQKAY=</HashCode>
+      <FileName>Core\SystemProfileInfo.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="MongoDB.Driver.CollectionOptionsDocument" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="35.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Core\Wrappers\CollectionOptionsDocument.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="MongoDB.Driver.CommandDocument" Collapsed="true">
+    <Position X="13.5" Y="9" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Core\Wrappers\CommandDocument.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="MongoDB.Driver.FieldsDocument" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="40.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Core\Wrappers\FieldsDocument.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="MongoDB.Driver.GeoHaystackSearchOptionsDocument" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="44" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Core\Wrappers\GeoHaystackSearchOptionsDocument.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="MongoDB.Driver.GeoNearOptionsDocument" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="31.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Core\Wrappers\GeoNearOptionsDocument.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="MongoDB.Driver.GroupByDocument" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="37" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Core\Wrappers\GroupByDocument.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="MongoDB.Driver.IndexKeysDocument" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="44" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Core\Wrappers\IndexKeysDocument.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="MongoDB.Driver.IndexOptionsDocument" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="31.75" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Core\Wrappers\IndexOptionsDocument.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="MongoDB.Driver.MapReduceOptionsDocument" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="38.75" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Core\Wrappers\MapReduceOptionsDocument.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="MongoDB.Driver.QueryDocument" Collapsed="true">
+    <Position X="13.5" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Core\Wrappers\QueryDocument.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="MongoDB.Driver.ScopeDocument" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="40.5" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Core\Wrappers\ScopeDocument.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="MongoDB.Driver.SortByDocument" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="44" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Core\Wrappers\SortByDocument.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="MongoDB.Driver.UpdateDocument" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="35.25" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Core\Wrappers\UpdateDocument.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="MongoDB.Driver.MongoAuthenticationException" Collapsed="true">
+    <Position X="29.25" Y="16" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Exceptions\MongoAuthenticationException.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MongoDB.Driver.MongoCommandException" Collapsed="true">
+    <Position X="18" Y="16" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAABAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAg=</HashCode>
+      <FileName>Exceptions\MongoCommandException.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MongoDB.Driver.MongoConnectionException" Collapsed="true">
+    <Position X="20.25" Y="16" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Exceptions\MongoConnectionException.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MongoDB.Driver.MongoException" Collapsed="true">
+    <Position X="23.5" Y="14.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Exceptions\MongoException.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MongoDB.Driver.MongoInternalException" Collapsed="true">
+    <Position X="22.5" Y="16" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Exceptions\MongoInternalException.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MongoDB.Driver.MongoQueryException" Collapsed="true">
+    <Position X="24.75" Y="16" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAgAAAA=</HashCode>
+      <FileName>Exceptions\MongoQueryException.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MongoDB.Driver.MongoSafeModeException" Collapsed="true">
+    <Position X="18" Y="17.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Exceptions\MongoSafeModeException.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MongoDB.Driver.MongoDefaults" Collapsed="true">
+    <Position X="40.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AgCASQIgAABKAEDAAQAEAAAAAAhQJIiIAABQgAAEAAA=</HashCode>
+      <FileName>MongoDefaults.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MongoDB.Driver.MongoUtils" Collapsed="true">
+    <Position X="42.25" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAIAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>MongoUtils.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MongoDB.Driver.Wrappers.BaseWrapper" Collapsed="true">
+    <Position X="14" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>JAAAAAAAAAAAAAAAAAAAAAAAACBAAAAAAAAAAAAAAAo=</HashCode>
+      <FileName>Core\Wrappers\BaseWrapper.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="MongoDB.Driver.Wrappers.CollectionOptionsWrapper" Collapsed="true">
+    <Position X="22" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAA=</HashCode>
+      <FileName>Core\Wrappers\CollectionOptionsWrapper.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="MongoDB.Driver.Wrappers.CommandWrapper" Collapsed="true">
+    <Position X="13" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAA=</HashCode>
+      <FileName>Core\Wrappers\CommandWrapper.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="MongoDB.Driver.Wrappers.FieldsWrapper" Collapsed="true">
+    <Position X="24.25" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAA=</HashCode>
+      <FileName>Core\Wrappers\FieldsWrapper.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="MongoDB.Driver.Wrappers.GeoHaystackSearchOptionsWrapper" Collapsed="true">
+    <Position X="26.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAA=</HashCode>
+      <FileName>Core\Wrappers\GeoHaystackSearchOptionsWrapper.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="MongoDB.Driver.Wrappers.GeoNearOptionsWrapper" Collapsed="true">
+    <Position X="1.75" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAA=</HashCode>
+      <FileName>Core\Wrappers\GeoNearOptionsWrapper.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="MongoDB.Driver.Wrappers.GroupByWrapper" Collapsed="true">
+    <Position X="4" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAA=</HashCode>
+      <FileName>Core\Wrappers\GroupByWrapper.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="MongoDB.Driver.Wrappers.IndexKeysWrapper" Collapsed="true">
+    <Position X="6.25" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAA=</HashCode>
+      <FileName>Core\Wrappers\IndexKeysWrapper.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="MongoDB.Driver.Wrappers.IndexOptionsWrapper" Collapsed="true">
+    <Position X="8.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAA=</HashCode>
+      <FileName>Core\Wrappers\IndexOptionsWrapper.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="MongoDB.Driver.Wrappers.MapReduceOptionsWrapper" Collapsed="true">
+    <Position X="10.75" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAA=</HashCode>
+      <FileName>Core\Wrappers\MapReduceOptionsWrapper.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="MongoDB.Driver.Wrappers.QueryWrapper" Collapsed="true">
+    <Position X="13" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAA=</HashCode>
+      <FileName>Core\Wrappers\QueryWrapper.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="MongoDB.Driver.Wrappers.ScopeWrapper" Collapsed="true">
+    <Position X="15.25" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAA=</HashCode>
+      <FileName>Core\Wrappers\ScopeWrapper.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="MongoDB.Driver.Wrappers.SortByWrapper" Collapsed="true">
+    <Position X="17.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAA=</HashCode>
+      <FileName>Core\Wrappers\SortByWrapper.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="MongoDB.Driver.Wrappers.UpdateWrapper" Collapsed="true">
+    <Position X="19.75" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAA=</HashCode>
+      <FileName>Core\Wrappers\UpdateWrapper.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="MongoDB.Driver.GridFS.MongoGridFS" Collapsed="true">
+    <Position X="42.25" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAEAAoEAgIAQIgIAQABkAACEoAFQAoAEAABEAMIA=</HashCode>
+      <FileName>GridFS\MongoGridFS.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MongoDB.Driver.GridFS.MongoGridFSCreateOptions" Collapsed="true">
+    <Position X="44" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQACAAAACAAAAAAQAAFAQAAAAACAAAAAAAAQEACEAAA=</HashCode>
+      <FileName>GridFS\MongoGridFSCreateOptions.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MongoDB.Driver.GridFS.MongoGridFSException" Collapsed="true">
+    <Position X="27" Y="16" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>GridFS\MongoGridFSException.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MongoDB.Driver.GridFS.MongoGridFSFileInfo" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="45.75" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CQICIAAAiABAIBiYgCFAQgRAAQGoANAAJAAQMAWEIiA=</HashCode>
+      <FileName>GridFS\MongoGridFSFileInfo.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="MongoDB.Driver.GridFS.MongoGridFSSettings" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="31.75" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAEABAAGAAQACAAwCIAQAAQAQAAYIAAAAQAAAAAAjI=</HashCode>
+      <FileName>GridFS\MongoGridFSSettings.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="MongoDB.Driver.GridFS.MongoGridFSStream" Collapsed="true">
+    <Position X="33.5" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CAAEAAAAgCAEQABgGgAABABgACAAIUAiJACggAUIAig=</HashCode>
+      <FileName>GridFS\MongoGridFSStream.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MongoDB.Driver.Internal.BlockingQueue&lt;T&gt;" Collapsed="true">
+    <Position X="31.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AABAAAAAAAAAAAAAEAAAAAAAAAAIBAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Internal\BlockingQueue.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MongoDB.Driver.Internal.DirectConnector" Collapsed="true">
+    <Position X="37" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAQAAAAIAAAgAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Internal\DirectConnector.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MongoDB.Driver.Internal.IndexCache" Collapsed="true">
+    <Position X="38.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAIAAAAAAIAABAAAAAAABAAAAAAIAAAAAAAAAAAQAAA=</HashCode>
+      <FileName>Internal\IndexCache.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MongoDB.Driver.Internal.MongoConnection" Collapsed="true">
+    <Position X="42.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>oBCCAAAAAAAAIAQAACgACAIqACAAAMAgij0ABACAABg=</HashCode>
+      <FileName>Internal\MongoConnection.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MongoDB.Driver.Internal.MongoConnectionPool" Collapsed="true">
+    <Position X="44" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ACiCCAAAAAAgCARAQAAABAAAAAAAAIAoAAAAAABBQEg=</HashCode>
+      <FileName>Internal\MongoConnectionPool.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MongoDB.Driver.Internal.MongoDeleteMessage" Collapsed="true">
+    <Position X="10" Y="17.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAIAAACAIAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Internal\MongoDeleteMessage.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MongoDB.Driver.Internal.MongoGetMoreMessage" Collapsed="true">
+    <Position X="12.25" Y="17.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAIAAAAAIAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAQ=</HashCode>
+      <FileName>Internal\MongoGetMoreMessage.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MongoDB.Driver.Internal.MongoInsertMessage" Collapsed="true">
+    <Position X="14.5" Y="17.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AEIAAASAKAAAAAAAAIAAAAAAAAAAAAAAAAAACAAABAA=</HashCode>
+      <FileName>Internal\MongoInsertMessage.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MongoDB.Driver.Internal.MongoKillCursorsMessage" Collapsed="true">
+    <Position X="3.25" Y="17.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAA=</HashCode>
+      <FileName>Internal\MongoKillCursorsMessage.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MongoDB.Driver.Internal.MongoMessage" Collapsed="true">
+    <Position X="7.75" Y="14.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAgAAQAAAAAAAAQAAAJAAgAACAAAAEAAAAAAAAAAAAQ=</HashCode>
+      <FileName>Internal\MongoMessage.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MongoDB.Driver.Internal.MongoQueryMessage" Collapsed="true">
+    <Position X="5.5" Y="17.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAIAAACAIAAAAAAgABCAAAAAAAAAAAAAAAAQAAAAAAA=</HashCode>
+      <FileName>Internal\MongoQueryMessage.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MongoDB.Driver.Internal.MongoReplyMessage&lt;TDocument&gt;" Collapsed="true">
+    <Position X="1" Y="15.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BAQAAAAABAAIAAAAAAAAAAAggAIAAAACCAACAACAAAQ=</HashCode>
+      <FileName>Internal\MongoReplyMessage.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MongoDB.Driver.Internal.MongoRequestMessage" Collapsed="true">
+    <Position X="9" Y="15.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAIAAAAgACAEAAAAgAAAAAAAQAAAAAAAAgEAAIgAYAA=</HashCode>
+      <FileName>Internal\MongoRequestMessage.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="MongoDB.Driver.Internal.MongoUpdateMessage" Collapsed="true">
+    <Position X="7.75" Y="17.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAIAAACAIAAAAAEgAAAAAAAAAAAAAAAAAAAAAIAAAAA=</HashCode>
+      <FileName>Internal\MongoUpdateMessage.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MongoDB.Driver.Internal.ReplicaSetConnector" Collapsed="true">
+    <Position X="37" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAABAAgAEAAQAAQAAAAIAAAgAAAAQgBABAAkAAAAA=</HashCode>
+      <FileName>Internal\ReplicaSetConnector.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MongoDB.Driver.Linq.ExpressionFormatter" Collapsed="true">
+    <Position X="3" Y="8.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IAQAAAqAAIYwBAAEAAAAISgAAAEEAAAAAlQAAAAEQAA=</HashCode>
+      <FileName>Linq\Expressions\ExpressionFormatter.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MongoDB.Driver.Linq.ExpressionPrettyPrinter" Collapsed="true">
+    <Position X="5.25" Y="8.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IAQAAQqAAIYwBAAMAAAAISgAAAEEAAAAAlQgAAAEQAA=</HashCode>
+      <FileName>Linq\Expressions\ExpressionPrettyPrinter.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MongoDB.Driver.Linq.ExpressionVisitor" Collapsed="true">
+    <Position X="3" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IAAAAAqAAAYwBAQAAAAAISgAAAAEAAAAAlQAAAAEQAA=</HashCode>
+      <FileName>Linq\Expressions\ExpressionVisitor.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MongoDB.Driver.Linq.LinqExtensionMethods" Collapsed="true">
+    <Position X="33.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Linq\LinqExtensionMethods.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MongoDB.Driver.Linq.LinqToMongo" Collapsed="true">
+    <Position X="35.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAABAAAAAACEAQAAAAIAAAAEAACA=</HashCode>
+      <FileName>Linq\LinqToMongo.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MongoDB.Driver.Linq.MongoQueryable&lt;T&gt;" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="37" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAKAAAAAAAAAhAAAAAAAAAAAAAAAAAEAAAAgAAAgAA=</HashCode>
+      <FileName>Linq\MongoQueryable.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="MongoDB.Driver.Linq.MongoQueryProvider" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="38.75" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAQEQAAAAAAACAAAAAIAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Linq\MongoQueryProvider.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="MongoDB.Driver.Linq.MongoQueryTranslator" Collapsed="true">
+    <Position X="40.5" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAA=</HashCode>
+      <FileName>Linq\Translators\MongoQueryTranslator.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MongoDB.Driver.Linq.Nominator" Collapsed="true">
+    <Position X="0.75" Y="8.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAQAAAAAAAAAAAAAAMAAAAAAACAAAAg=</HashCode>
+      <FileName>Linq\Translators\Nominator.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MongoDB.Driver.Linq.OrderByClause" Collapsed="true">
+    <Position X="44" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAQAACCAAAAAAAAAAAAAAAAIAAAAAAA=</HashCode>
+      <FileName>Linq\Translators\OrderByClause.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MongoDB.Driver.Linq.PartialEvaluator" Collapsed="true">
+    <Position X="45.75" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAgAAAAAAIAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Linq\Translators\PartialEvaluator.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MongoDB.Driver.Linq.Projector&lt;TSource, TResult&gt;" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="31.75" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAIAAAAAAAABAAAAAAAAAAAAAAAAQEAAAAAAAAAAA=</HashCode>
+      <FileName>Linq\Translators\Projector.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="MongoDB.Driver.Linq.SelectQuery" Collapsed="true">
+    <Position X="4.5" Y="14.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IIACEBAIwJAACEQgAAAACJAAAKEIKCZAQBHGIAAQMCA=</HashCode>
+      <FileName>Linq\Translators\SelectQuery.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MongoDB.Driver.Linq.TranslatedQuery" Collapsed="true">
+    <Position X="4.5" Y="13.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAABAAAQEQAEAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Linq\Translators\TranslatedQuery.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MongoDB.Driver.Linq.TypeHelper" Collapsed="true">
+    <Position X="31.75" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAQAAA=</HashCode>
+      <FileName>Linq\Utils\TypeHelper.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Struct Name="MongoDB.Driver.Internal.IndexCacheKey" Collapsed="true">
+    <Position X="31.75" Y="8.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CAQAQAQAAAAAAAAEgAAAAAAAAAAAAJAAAAAgAAABAEA=</HashCode>
+      <FileName>Internal\IndexCache.cs</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Interface Name="MongoDB.Driver.IMongoCollectionOptions" Collapsed="true">
+    <Position X="31.75" Y="10" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Core\Interfaces\IMongoCollectionOptions.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="MongoDB.Driver.IMongoCommand" Collapsed="true">
+    <Position X="9.5" Y="19.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Core\Interfaces\IMongoCommand.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="MongoDB.Driver.IMongoFields" Collapsed="true">
+    <Position X="33.5" Y="10" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Core\Interfaces\IMongoFields.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="MongoDB.Driver.IMongoGeoHaystackSearchOptions" Collapsed="true">
+    <Position X="35.25" Y="10" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Core\Interfaces\IMongoGeoHaystackSearchOptions.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="MongoDB.Driver.IMongoGeoNearOptions" Collapsed="true">
+    <Position X="37" Y="10" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Core\Interfaces\IMongoGeoNearOptions.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="MongoDB.Driver.IMongoGroupBy" Collapsed="true">
+    <Position X="38.75" Y="10" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Core\Interfaces\IMongoGroupBy.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="MongoDB.Driver.IMongoIndexKeys" Collapsed="true">
+    <Position X="40.5" Y="10" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Core\Interfaces\IMongoIndexKeys.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="MongoDB.Driver.IMongoIndexOptions" Collapsed="true">
+    <Position X="42.25" Y="10" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Core\Interfaces\IMongoIndexOptions.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="MongoDB.Driver.IMongoMapReduceOptions" Collapsed="true">
+    <Position X="44" Y="10" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Core\Interfaces\IMongoMapReduceOptions.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="MongoDB.Driver.IMongoQuery" Collapsed="true">
+    <Position X="9.5" Y="18.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Core\Interfaces\IMongoQuery.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="MongoDB.Driver.IMongoScope" Collapsed="true">
+    <Position X="45.75" Y="10" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Core\Interfaces\IMongoScope.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="MongoDB.Driver.IMongoSortBy" Collapsed="true">
+    <Position X="31.75" Y="10.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Core\Interfaces\IMongoSortBy.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="MongoDB.Driver.IMongoUpdate" Collapsed="true">
+    <Position X="33.5" Y="10.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Core\Interfaces\IMongoUpdate.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Enum Name="MongoDB.Driver.Builders.MapReduceOutputMode" Collapsed="true">
+    <Position X="38.75" Y="11.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AIAAAAAAAEAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAACA=</HashCode>
+      <FileName>Builders\MapReduceOptionsBuilder.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="MongoDB.Driver.ConnectWaitFor" Collapsed="true">
+    <Position X="33.5" Y="11.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAACAAAA=</HashCode>
+      <FileName>Core\ConnectWaitFor.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="MongoDB.Driver.EvalFlags" Collapsed="true">
+    <Position X="35.25" Y="11.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAEAAAA=</HashCode>
+      <FileName>Core\EvalFlags.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="MongoDB.Driver.InsertFlags" Collapsed="true">
+    <Position X="37" Y="11.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAEAAAA=</HashCode>
+      <FileName>Core\InsertFlags.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="MongoDB.Driver.MongoServerState" Collapsed="true">
+    <Position X="44" Y="11.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AACAAAAAAAAAQAACAAAAAAAAAAAAAAAAAAAAAgAAQBA=</HashCode>
+      <FileName>Core\MongoServerState.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="MongoDB.Driver.ConnectionMode" Collapsed="true">
+    <Position X="31.75" Y="11.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Core\MongoUrl.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="MongoDB.Driver.ProfilingLevel" Collapsed="true">
+    <Position X="31.75" Y="12.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAEABAA=</HashCode>
+      <FileName>Core\ProfilingLevel.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="MongoDB.Driver.QueryFlags" Collapsed="true">
+    <Position X="33.5" Y="12.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CAAgAkAAAAAAAAAAAAAAAAAAAAAAAAIAAAAEAAEAAAA=</HashCode>
+      <FileName>Core\QueryFlags.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="MongoDB.Driver.RemoveFlags" Collapsed="true">
+    <Position X="35.25" Y="12.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAACAAAAAAAAAAAAAAAEAAAA=</HashCode>
+      <FileName>Core\RemoveFlags.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="MongoDB.Driver.UpdateFlags" Collapsed="true">
+    <Position X="38.75" Y="12.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAIAAQAAAAAAAAEAAAA=</HashCode>
+      <FileName>Core\UpdateFlags.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="MongoDB.Driver.Internal.MessageOpcode" Collapsed="true">
+    <Position X="40.5" Y="11.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAEAAKAAAAQAAAAAAAAAAAAEAAAgAAAAAIAAAAAA=</HashCode>
+      <FileName>Internal\MessageOpcode.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="MongoDB.Driver.Internal.MongoConnectionState" Collapsed="true">
+    <Position X="42.25" Y="11.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAIAAAAAAAAAQAAAAAAAAAAAAAAACAAAA=</HashCode>
+      <FileName>Internal\MongoConnection.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="MongoDB.Driver.Internal.ResponseFlags" Collapsed="true">
+    <Position X="37" Y="12.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEEABAAAAAAAAA=</HashCode>
+      <FileName>Internal\ResponseFlags.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="MongoDB.Driver.Linq.OrderByDirection" Collapsed="true">
+    <Position X="45.75" Y="11.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Linq\Translators\OrderByDirection.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="微软雅黑" Size="9" />
+</ClassDiagram>

@@ -1,0 +1,74 @@
+
+/* CSS Document */
+body{ font:12px "宋体"; color:#666666;}
+*{ margin:0; padding:0px;}
+a{ color:#336699;text-decoration:none;}
+
+.clear{ clear:both;}
+input,textarea{font-size:12px;}
+
+/*--------------- 各类颜色 ----------------------*/
+.xlff6600{ color:#ff6600;}
+.xl009f16{ color:#009f16;}
+.xla7a7a7{ color:#a7a7a7;}
+.xlfb9800{ color:#fb9800;}
+
+/*-------------  超出宽度出现省略  -------------------*/
+.k245,.k205,.k195,.k350{ overflow: hidden; white-space: nowrap;text-overflow: ellipsis;}
+.k177 a{color:#333 }
+.k1771 a{line-height:16px; }
+/*--------------------  wrap  --------------------------*/
+.wrap{ width:100%; }
+
+/*----------------------  头部  -------------------------*/
+.header{ width:950px; height:82px; margin:0 auto; z-index:200}
+
+/*-----------  LOGO  -------------*/
+.logo,.search,.login{ float:left; }
+.logo{ width:150px;}
+.logolink{ background: url(../images/logo.jpg) no-repeat 0 0; width:119px; height:63px;}
+.city2{ background:url(../images/city_t.jpg) no-repeat 0 0; padding-left:87px; height:14px; font-family:"微软雅黑"; color:#969696;}
+/*--------  搜索  ------------------*/
+.search{ height:85px;}
+.search .topul{ margin:25px 0 3px 0; width:550px;}
+.search .topul li{ float:left; margin-right:15px; display:inline;}
+.search .topul li a{ text-decoration:underline; font-size:14px;}
+.search .topul li a:hover{ color:#000; font-weight:bold;}
+.search .topul li.more{ position:relative;}
+.search .topul li.more ul{position: absolute; z-index:2000; display:none;width:70px;  padding:5px 0px 5px 10px; 
+                           top:14px; left:0px; border: 1px solid #bfdbe9;  background: #ffffff;} 
+                           
+.search .topul li.more li{ float:left; line-height:23px;   height:23px;width:80px; _padding-bottom:6px;display:inline;}
+
+.search .sinput{ border:solid 1px #bfdbe9; background:#f1f8fe; width:550px; margin-top:5px;}
+.sinput{ width:80px; height:31px;}
+.search input{ background:#fff; border:solid 1px #cccccc; width:370px; height:23px; float:left; color:#aaa; line-height:23px; padding-left:5px; margin:3px 0 0 5px;}
+.search button{ margin:3px 0 0 5px; float:left; border:none; background:url(../images/btn.jpg) no-repeat 0 -179px; width:76px; height:25px; text-align:center; vertical-align:middle; font-size:14px; cursor:pointer; color:#000;}
+
+/*-----------  登录后的信息  --------------*/
+.login{ margin:5px 0px 0 0; color:#ff6400; float:right;}
+.login a{ margin-left:5px;}
+
+/*------------------  footer  ---------------------------*/
+.footer{  background:#f0f0f0; padding-top:22px; height:40px; width:950px; margin:0 auto; margin-top:10px;}
+.footer p{ text-align:center; }
+
+
+
+
+
+.CityName,.SeCity{ float:left;}
+.CityName{ padding:0 3px 0 0; font-family:黑体; color:#8C8C8C; font-size:13px; font-weight:bold;}
+
+/*------------------- 地图导航 -------------------*/
+.SeCity a:hover{ text-decoration:none;}
+/*.DetailCity{  border:1px solid #CCC; background-color:White; width:240px;  padding:3px 5px;}*/
+.DetailCity{position:absolute; background:#fff; z-index:999; top:80px; left:114px;font-size:12px; border:1px solid #ddd; width:290px; height:200px; padding:5px; overflow-y:scroll;}
+.DetailCity .txtb{ font-weight:bold}
+.DetailCity a{ margin-right:5px;}
+/*111111111111111111111*/
+.Detail3DCity{ position:absolute; top:24px; right:1px; border:1px solid #CCC; background-color:White; width:240px; padding:3px 5px; z-index:999;}
+.DetailEstoreCity{ position:absolute; top:24px; right:155px; border:1px solid #CCC; background-color:White; width:240px; padding:3px 5px; z-index:999;}
+
+
+

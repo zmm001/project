@@ -1,0 +1,39 @@
+/*分享更多*/
+.bsBox {
+  font-size: 0;
+  width: 7.2rem !important;
+  height: auto !important;
+  padding: 0 !important;
+  margin-left: 0 !important;
+  left: 0 !important;
+}
+.bsBox .bsClose {
+  right: 0.2rem !important;
+  top: 0.09rem !important;
+  font-size: 0.28rem !important;
+}
+.bsBox .bsTop {
+  width: 7.2rem !important;
+  height: 0.5rem !important;
+  line-height: 0.5rem !important;
+}
+.bsBox .bsFrameDiv,
+.bsBox #bsMorePanel {
+  width: 7.2rem !important;
+  height: auto !important;
+}
+.bsBox .bsFrameDiv .bsPlatDiv,
+.bsBox #bsMorePanel .bsPlatDiv {
+  padding: 0 0.1rem !important;
+}
+.bsBox .bsFrameDiv .bsPlatDiv #bsLogoList li,
+.bsBox #bsMorePanel .bsPlatDiv #bsLogoList li {
+  width: 1.75rem !important;
+}
+.bsBox .bsFrameDiv .bsSearchDiv,
+.bsBox #bsMorePanel .bsSearchDiv {
+  display: none;
+}
+#bsPanelHolder {
+  display: none;
+}

@@ -1,0 +1,142 @@
+﻿@charset "utf-8";
+*{ list-style:none; margin:0;padding:0; font-family:Arial, Helvetica, sans-serif, "宋体"; text-decoration:none;}
+body{font-size:12px;background:#fff;}
+img{ border:none 0;}
+a{ color:#36d;}
+a:hover{text-decoration:underline; color:#f60;}
+br,.clear{ clear:both; height:1px; overflow:hidden;}
+.tyl{color:#f60;}
+.t14{ font-size:14px;}
+.container{width:960px; margin:0 auto; margin-bottom:10px; clear:both}
+.clear{ clear:both;}
+h1{ font-size:14px; font-family:""; font-weight:normal; padding:0 10px;}
+#topbar{ height:24px; background:#efefef; line-height:24px;}
+#topbar ul{ width:960px; margin:0 auto;}
+#topbar ul a{ color:#666;}
+#topbar ul .city{ float:left; position:relative;}
+#CityList{position:absolute; background:#fff;border:solid 1px #ccc; height:150px; width:200px; overflow:auto; text-align:left; color:#f50; left:0;top:24px;z-index:1000;}
+#CityList a{ color:#555; margin-right:5px; text-decoration:underline;}
+#topbar ul .topmenu{  float: left; position: relative;}
+#topbar ul .topmenu a{ margin:0 5px;}
+#topbar ul .topmenu .moremenu{ width:60px; position: absolute; z-index:11;padding:5px 0 0; background:#efefef; right:10px; top:18px; border:1px solid #ddd; border-top:none;display:none;}
+#topbar ul .topmenu .moremenu a{ display:block;/*line-height:30px;*/margin:0; padding:0 5px; }
+#topbar ul .topmenu .moremenu a:hover{ color:#f60; background:#fff}
+#topbar ul .userinfo{ float: right; width:300px; text-align:right; color:#f60; }
+#topbar ul .userinfo a{ margin-left:10px;}
+
+#headbox{ width:960px; margin:10px auto;}
+#headbox #logo{ float:left;}
+#searchbar{background-image:url(../Images/Nav.png); background-repeat:repeat-x; height:30px; border-radius: 2px 2px; width:960px;}
+#logo{ width:230px; height:70px; float:left;}
+#search{ width:720px; float:left; padding:19px 0 0 10px; height:51px;}
+#menu{ clear:both;height:40px; background:url(../images/nav.png) repeat-x; padding:0 10px;}
+#searchbar{ background:url(../images/index_06.png) no-repeat; width:430px; height:41px; float:left; padding:none;}
+#searchbar #barint{ width:330px; border:none 0; height:24px; margin:9px 0 0 9px;}
+.searchbtn{ border:none; background:none; margin-left:5px; width:70px; height:30px; font-size:14px; color:#fff; font-weight:bold;}
+#hotwords{ float:left; width:270px; padding:14px 10px 0 10px;}
+
+#menu .menulist{ float:left; width:900px; padding-top:7px; line-height:30px; text-align:center}
+#menu .menulist li{ float:left; font-size:14px; color: #e30; font-weight:bold; height:33px;}
+#menu .menulist li a{ color:#fff; display:block}
+#menu .menulist li.m{ width:72px;}
+#menu .menulist li.line{ padding:0 8px;}
+#menu .menulist li a.on{ background:url(../images/menu.png) no-repeat; color:#333; height:33px; line-height:33px;}
+#logo a{ display:block; float:left;}
+
+#nav{ border:1px solid #dddddd; border-style:none solid solid; width:958px; padding:10px 0;}
+#nav ul{ overflow:auto; margin:0; padding:0}
+#nav ul li{ float:left; margin:0 10px 0 15px; overflow:hidden; width:132px; border-right:1px dashed #dddddd; display:inline; padding-right:17px;line-height:20px;}
+#nav a{ color:#666666; float:left; margin:0 4px; display:inline;}
+#nav strong{ display:inline-block; color:#3366DD;}
+#nav .hang{width:153px;clear:both;}
+
+.cnt-main,.eshopmain1{float:left;width:240px; overflow:hidden}
+.cnt-main2,.eshopmain2,.Cbox2{float:left; width:460px; padding:0 10px; overflow:hidden}
+.cnt-main3,.eshopmain3{float:right; width:240px; overflow:hidden}
+.Lbox{float:left;width:240px; overflow:hidden}
+.Cbox{float:left;width:225px; overflow:hidden; margin-left:10px;}
+.Rbox{ float:right;width:240px;overflow:hidden;}
+
+.hotnews{ line-height:20px;}
+.hotnews dt{ font-size:16px; white-space:nowrap; overflow:hidden; width:240px; text-overflow:ellipsis; line-height:24px;}
+.hotnews dt a{ font-family:"Microsoft Yahei",Tahoma !important; }
+.hotnews dd{ margin-bottom:10px;}
+.hotlist,.hotlist2,.norArt{ line-height:24px;}
+.hotlist li,.norArt li{ overflow:hidden; width:240px; text-overflow:ellipsis; }
+.norArt li {height:24px;}
+.hotlist a,.hotlist2 a,.norArt a,.tickmain3 a,.shopNewsList a,.eshopmain1 a,.mn a{ color:#333;}
+a.classname{ color:#36d; font-weight:bold;}
+.hc1{font-family:"Microsoft Yahei",Tahoma !important; font-size:15px; font-weight:bold; border-bottom:2px solid #49e; padding:0 0 5px 12px; margin-bottom:8px; background: url(../images/jt.png) no-repeat left 6px; }
+.hotlist2 li{ width:220px;height:24px; padding-right:10px; overflow:hidden; white-space:nowrap; text-overflow:ellipsis; float:left;}
+
+.imgnewslist li.lt{ border-bottom:1px dashed #ddd; clear:both; height:60px; padding-bottom:5px; margin-bottom:10px; line-height:20px;}
+.imgnewslist li.lt .desc-img{ float:left; width:60px;}
+    .imgnewslist li.lt .desc-img img
+    {
+        width:60px;height:60px;
+    }
+.eshopmain3 .imgnewslist li.lt .desc-img img
+{
+    width:88px;height:66px;
+}
+.imgnewslist li.lt .desc{ float:right; width:170px}
+.imgnewslist li.lt .desc-title{ font-size:14px;overflow:hidden;height:20px;}
+.imgnewslist li.lt .desc-detail{ color:#666;}
+.imgnewslist li.pl{padding-left:10px; background: url(../images/dot.png) no-repeat left center; line-height:26px; border-bottom:1px dashed #ddd;}
+
+.hottags{ background:url(../Images/fenlei.jpg) left top no-repeat; height:90px;}
+.hottags .mn{ margin-left:45px; border:1px solid #8ec1dc; border-left:none; height:78px; padding:5px 9px 5px 0; line-height:24px;}
+.hottags .mn ul{ float:left; width:442px; margin-left:10px; border-bottom:1px dashed #ddd;}
+.hottags .mn ul li{ float:left; padding-right:8px;}
+
+.tickmain{ float:left; width:710px; margin-right:10px;}
+.tickmain2{ float:left; width:240px; overflow:hidden; line-height:18px; color:#666;}
+.tickmain3{ float:left; margin-left:10px; overflow:hidden; width:460px}
+.tickside{ float:right; width:240px; overflow:hidden;font-size:12px;}
+.tickmain2 li{ padding-bottom:10px}
+.tickmain3 ul{ padding-left:10px;}
+.tickmain3 ul.timg{padding-left:0;}
+.tickmain3 li{ width:220px; float:left; margin-bottom:10px;overflow:hidden; white-space:nowrap; text-overflow:ellipsis; }
+.tickmain3 ul.timg li{ text-align:center}
+    .tickmain3 ul.timg li img
+    {width:200px;
+     height:100px;
+    }
+
+.eshop .imgnewslist li.lt{ height:66px;}
+.eshop .imgnewslist li.lt .desc-img{ float:left; width:88px;}
+.eshop .imgnewslist li.lt .desc{ float:right; width:142px}
+.eshopmain1 ul{ background:url(../images/num.png) no-repeat left 4px; padding-left:20px;}
+.eshopmain1 li{ line-height:24px;}
+.shopnews{ line-height:18px; text-align:center; color:#666; border-bottom:1px dashed #ddd; padding-bottom:6px;}
+.shopnews p{ text-align:left; text-indent:2em;}
+.shopnews .tt{ font-size:18px; font-family:"Microsoft Yahei"!important; line-height:30px;}
+.shopNewsList{ padding-top:6px;}
+.shopNewsList li{ width:210px; float:left;padding:0 10px;_height:20px;line-height:24px; background: url(../images/dot.png) no-repeat left center;overflow:hidden; white-space:nowrap; text-overflow:ellipsis;}
+*+html .shopNewsList li{height:19px;}
+.lifelist .shopNewsList li{line-height:22px;padding:0;background:none;width:230px;}
+
+.Cbox .imgnewslist li.lt .desc{ width:155px;}
+.Cbox .norArt li{ width:225px;}
+
+.hotArt{ border-bottom:1px dashed #ddd; color:#666; line-height:18px; padding-bottom:6px}
+.hotArt .tt{font-size:14px; font-family:"Microsoft Yahei"  !important; font-weight:bold; line-height:24px;}
+a.more{ float:right; font-size:12px; font-weight:normal; margin:5px 10px 0 0; color:#999}
+a:hover{text-decoration:underline; color:#f60;}
+
+/*资讯发布*/
+.fbtable{ font-size:14px;}
+.fbtable .tip{ color:#f60;}
+.fbtable th{width:12%;text-align:right;}
+.fbtable th span{color:red;margin-right:5px;}
+.fbtable input,.fbtable select{ border:1px #ccc solid; height:24px;}
+.fbtable textarea{border:1px #ccc solid; width:80%; height:300px;}
+.fbtable td img{vertical-align:top;margin-top:1px;cursor:pointer;}
+.fbtable input.fbbtn{background:#f60; color:#fff; width:100px; height:30px; line-height:30px;text-align:center; font-weight:bold}
+.fbtable input.fbbtn:hover{border:1px solid #f60; background:#fff; color:#f60;width:98px;}
+.fbtable .error{ border:solid 1px #f00;background:#ffc;}
+
+/*首页底部友情链接*/
+.fk a{
+    margin-right:5px;
+}

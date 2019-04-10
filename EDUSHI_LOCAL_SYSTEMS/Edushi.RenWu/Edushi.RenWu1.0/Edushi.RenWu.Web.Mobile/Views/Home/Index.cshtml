@@ -1,0 +1,107 @@
+﻿@model Edushi.RenWu.Web.Mobile.Models.HomeModel
+@using Edushi.RenWu.Model
+@using Edushi.RenWu.Special
+@{
+    ViewBag.Title = "人物频道-E都市";
+
+    ViewBag.PageType = 0;  //导航风格标志
+
+    var sub = string.Empty;
+    var myType = Model.AllRwType.FindAll(p => p.IT_ParentID == 0);
+    if (myType.Any())
+    {
+        sub = string.Join(",", myType.Select(p => p.IT_Name));
+    }
+
+    var keywords = string.Format("人物,{0}", sub);
+    var description = string.Format("E都市人物频道是全面专业的人物资讯信息平台，提供集{0}等人物资讯，构建新型互联网媒体平台为互联网用户提供价值资讯。", sub.Replace(",", "、"));
+    const string pcUrl = "http://www.edushi.com/renwu/";
+}
+@section meta{
+    <meta name="Keywords" content="@keywords" />
+    <meta name="Description" content="@description" />
+    <link rel="canonical" href="@pcUrl">
+}
+
+<div class="content-main">
+    @if (Model.TopRenWu!=null&&Model.TopRenWu.Any())
+    {
+        <section class="carousel">
+        <div class="focus-box">
+            <ul class="swiper-wrapper">
+                @foreach (var item in Model.TopRenWu)
+                {
+                    <li class="swiper-slide">
+                        <a href="@item.Url"><img src="@item.Pic" /></a>
+                     <p class="text">
+                        <a href="@item.Url">@Html.Raw(item.Title)</a><span class="shadow"></span>
+                    </p>
+                </li>
+                }
+            </ul>
+        </div>
+        <div class="pic-num channel-pic-num">
+            <div class="number">
+                <p class="on-num">1</p>
+                /
+                <p class="total-num">@(Model.TopRenWu.Count)</p>
+            </div>
+        </div>
+    </section>
+    }
+    <!--搜索框-->
+    @Html.Partial("SearchBox")
+
+
+    @if (Model.channelRwList != null && Model.channelRwList.Any())
+    {
+        foreach (var item in Model.channelRwList)
+        {
+            <section class="per-list">
+                <div class="d-title">
+                    <span><em>@(item.CurrentModel.IT_Name)</em>人物</span>
+                    <a href="@Common.GetInfoListUrl(Url.Content("~/"),item.CurrentModel.IT_ParentID,item.CurrentModel.IT_ID)">更多>></a>
+                </div>
+                <ul>
+                    @if (item.RwList != null && item.RwList.Any())
+                    {
+                        foreach (var subItem in item.RwList)
+                        {
+                            <li>
+                                <a href="@subItem.Url">
+                                    <div>
+                                        <img src="@subItem.Pic" alt="">
+                                    </div>
+                                    <span class="name">@Html.Raw(subItem.Title)</span>
+                                </a>
+                            </li>
+                        }
+                    }
+
+                </ul>
+            </section>
+        }
+    }
+
+</div>
+<script type="text/javascript" src="@Url.Content("~/asset/js/swiper.min.js")"></script>
+<script>
+
+    /*轮播*/
+    var mySwiper = new Swiper('.focus-box', {
+        autoplay: 5000,
+        autoplayDisableOnInteraction: false,
+        loop: true,
+        paginationClickable: true,
+        preventClicks: false,
+        onInit: function (swiper) {
+            $(".total-num").text(swiper.slides.length - 2);
+        },
+        onSlideChangeStart: function (swiper) {
+            var newText = parseInt($(".swiper-slide-active").attr("data-swiper-slide-index"));
+            $(".on-num").text(newText + 1);
+        }
+    });
+
+
+</script>

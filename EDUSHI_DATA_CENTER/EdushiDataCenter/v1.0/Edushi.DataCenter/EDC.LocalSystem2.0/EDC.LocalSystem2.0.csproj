@@ -1,0 +1,290 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{8166E070-8AD2-4CFE-AF24-F60B79A55775}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>EDC.LocalSystem</RootNamespace>
+    <AssemblyName>EDC.LocalSystem</AssemblyName>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EDC.Framework">
+      <HintPath>..\..\..\..\..\EDUSHI_CM_LIBRARY\Assembly_Library\EDC.Framework\EDC.Framework.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework, Version=9.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BLL\AdministratorsBLL.cs" />
+    <Compile Include="BLL\AdvertisementBLL.cs" />
+    <Compile Include="BLL\AliPayBLL.cs" />
+    <Compile Include="BLL\BBL_Yellow_CommentBll.cs" />
+    <Compile Include="BLL\BusinessMapBLL.cs" />
+    <Compile Include="BLL\CheckImageBLL.cs" />
+    <Compile Include="BLL\CityBLL.cs" />
+    <Compile Include="BLL\CityUsersMapBLL.cs" />
+    <Compile Include="BLL\CompanyBLL.cs" />
+    <Compile Include="BLL\CompanyLabelBLL.cs" />
+    <Compile Include="BLL\CompanyPageBase.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="BLL\CompanyTempletBLL.cs" />
+    <Compile Include="BLL\DataCenterBLL.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BLL\DigUserBLL.cs" />
+    <Compile Include="BLL\DiscountDealingOrderBLL.cs" />
+    <Compile Include="BLL\DiscountProductBLL.cs" />
+    <Compile Include="BLL\EAddressBLL.cs" />
+    <Compile Include="BLL\ESalesmanLogBLL.cs" />
+    <Compile Include="BLL\EShopBLL.cs" />
+    <Compile Include="BLL\EShopClaimBLL.cs" />
+    <Compile Include="BLL\EShopCorrectInfoBLL.cs" />
+    <Compile Include="BLL\EShopManagePageBase.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="BLL\EShopMapADBLL.cs" />
+    <Compile Include="BLL\EShopModuleBLL.cs" />
+    <Compile Include="BLL\EStoreBll.cs" />
+    <Compile Include="BLL\FormRewriterControlAdapter.cs" />
+    <Compile Include="BLL\EShopFriendLinkBLL.cs" />
+    <Compile Include="BLL\HotelInfoBLL.cs" />
+    <Compile Include="BLL\HtmlModuleBLL.cs" />
+    <Compile Include="BLL\IncomeCompanyBLL.cs" />
+    <Compile Include="BLL\IncomeEShopBLL.cs" />
+    <Compile Include="BLL\LevelAntithesesBLL.cs" />
+    <Compile Include="BLL\LocalOffersBLL.cs" />
+    <Compile Include="BLL\MapSearchStateBLL.cs" />
+    <Compile Include="BLL\MemberBLL.cs" />
+    <Compile Include="BLL\MemberPageBase.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="BLL\MemberSettingBLL.cs" />
+    <Compile Include="BLL\MultipleShopBLL.cs" />
+    <Compile Include="BLL\NewsFeedBLL.cs" />
+    <Compile Include="BLL\PageBase.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="BLL\Reverser.cs" />
+    <Compile Include="BLL\SearchBll.cs" />
+    <Compile Include="BLL\ShoppingBLL.cs" />
+    <Compile Include="BLL\ShowWindowsBLL.cs" />
+    <Compile Include="BLL\EShopAdBLL.cs" />
+    <Compile Include="BLL\SinglePageBLL.cs" />
+    <Compile Include="BLL\TopicBLL.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BLL\TradeTypeBLL.cs" />
+    <Compile Include="BLL\UserControlBase.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="BLL\UtilityBLL.cs" />
+    <Compile Include="BLL\VoucherBLL.cs" />
+    <Compile Include="BLL\ZoneTypeBLL.cs" />
+    <Compile Include="DAL\AdministratorsDAL.cs" />
+    <Compile Include="DAL\AdvertisementDAL.cs" />
+    <Compile Include="DAL\BBL_Yellow_CommentDAL.cs" />
+    <Compile Include="DAL\BusinessMapDAL.cs" />
+    <Compile Include="DAL\CheckImageDAL.cs" />
+    <Compile Include="DAL\CityDAL.cs" />
+    <Compile Include="DAL\CompanyDAL.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DAL\DataPage.cs" />
+    <Compile Include="DAL\DigUser.cs" />
+    <Compile Include="DAL\DiscountDealingOrderDAL.cs" />
+    <Compile Include="DAL\DiscountProductDAL.cs" />
+    <Compile Include="DAL\EAddressDAL.cs" />
+    <Compile Include="DAL\ESalesmanLogDAL.cs" />
+    <Compile Include="DAL\EShopDAL.cs">
+    </Compile>
+    <Compile Include="DAL\EShopModuleDAL.cs" />
+    <Compile Include="DAL\CompanyLabelDAL.cs" />
+    <Compile Include="DAL\EStoreDal.cs" />
+    <Compile Include="DAL\HotelInfoDAL.cs" />
+    <Compile Include="DAL\HtmlModuleDAL.cs" />
+    <Compile Include="DAL\IncomeCompanyDAL.cs" />
+    <Compile Include="DAL\IncomeEShopDAL.cs" />
+    <Compile Include="DAL\LevelAntithesesDAL.cs" />
+    <Compile Include="DAL\LocalEshopDAL.cs" />
+    <Compile Include="DAL\LocalOffersDAL.cs" />
+    <Compile Include="DAL\MapSearchStateDAL.cs" />
+    <Compile Include="DAL\MemberDAL.cs" />
+    <Compile Include="DAL\EShopFriendLinkDAL.cs" />
+    <Compile Include="DAL\MultipleShopDAL.cs" />
+    <Compile Include="DAL\NewsFeedDAL.cs" />
+    <Compile Include="DAL\ShoppingDAL.cs" />
+    <Compile Include="DAL\ShowWindowsDAL.cs" />
+    <Compile Include="DAL\SinglePageDAL.cs" />
+    <Compile Include="DAL\EShopAdDAL.cs" />
+    <Compile Include="DAL\TopicDAL.cs" />
+    <Compile Include="DAL\TradeTypeDAL.cs" />
+    <Compile Include="DAL\TuanMemberDAL.cs" />
+    <Compile Include="DAL\UtilityDAL.cs" />
+    <Compile Include="DAL\VoucherDAL.cs" />
+    <Compile Include="DAL\ZoneTypeDAL.cs" />
+    <Compile Include="DAL\EShopMapADDAL.cs" />
+    <Compile Include="DAL\EShopClaimDAL.cs" />
+    <Compile Include="DAL\EShopCorrectInfoDAL.cs" />
+    <Compile Include="BLL\LocalEshopBLL.cs" />
+    <Compile Include="Model\BDTConfigManage.cs" />
+    <Compile Include="Model\DCUsersMDL.cs" />
+    <Compile Include="Model\DiscountDealingOrderMDL.cs" />
+    <Compile Include="Model\BusinessMapMDL.cs" />
+    <Compile Include="Model\DiscountProductMDL.cs" />
+    <Compile Include="Model\EShopMapADMDL.cs" />
+    <Compile Include="Model\EShopClaimMDL.cs" />
+    <Compile Include="Model\EShopCorrectInfoMDL.cs" />
+    <Compile Include="Model\AdministratorsMDL.cs" />
+    <Compile Include="Model\AdvertisementMDL.cs" />
+    <Compile Include="Model\AliPayConfigMDL.cs" />
+    <Compile Include="Model\CheckImageMDL.cs" />
+    <Compile Include="Model\CityAnnounceMDL.cs" />
+    <Compile Include="Model\CompanyCommentMDL.cs" />
+    <Compile Include="Model\CompanyCommentReplyMDL.cs" />
+    <Compile Include="Model\CompanyGuestBookMDL.cs" />
+    <Compile Include="Model\CompanyInfoExtMDL.cs" />
+    <Compile Include="Model\CompanyLabelMDL.cs" />
+    <Compile Include="Model\CompanyMDL.cs" />
+    <Compile Include="Model\CompanyPicMDL.cs" />
+    <Compile Include="Model\CompanyProductMDL.cs" />
+    <Compile Include="Model\CowryInfoMDL.cs" />
+    <Compile Include="Model\EAddressMDL.cs" />
+    <Compile Include="Model\EMoneyHistoryMDL.cs" />
+    <Compile Include="Model\ErrorCorrectionMDL.cs" />
+    <Compile Include="Model\ESalesmanLogMDL.cs" />
+    <Compile Include="Model\EShopFriendLinkMDL.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Model\EShopMDL.cs" />
+    <Compile Include="Model\EShopModuleMDL.cs" />
+    <Compile Include="Model\EvaluateHistoryMDL.cs" />
+    <Compile Include="Model\FavoritesMDL.cs" />
+    <Compile Include="Model\GlobalConfigMDL.cs" />
+    <Compile Include="Model\HotelInfoMDL.cs" />
+    <Compile Include="Model\IncomeCompanyMDL.cs" />
+    <Compile Include="Model\IncomeEShopMDL.cs" />
+    <Compile Include="Model\LevelAntithesesMDL.cs" />
+    <Compile Include="Model\LocalOffersMDL.cs" />
+    <Compile Include="Model\MapSearchStateMDL.cs" />
+    <Compile Include="Model\MemberConfigMDL.cs" />
+    <Compile Include="Model\MemberCavilMDL.cs" />
+    <Compile Include="Model\MemberMapMDL.cs" />
+    <Compile Include="Model\MemberRelationsMDL.cs" />
+    <Compile Include="Model\MultipleShopMDL.cs" />
+    <Compile Include="Model\NewsFeedMDL.cs" />
+    <Compile Include="Model\ProductShowWindowsDetailMDL.cs" />
+    <Compile Include="Model\EShopAdMDL.cs" />
+    <Compile Include="DAL\SearchDal.cs" />
+    <Compile Include="Model\ShortMessageMDL.cs" />
+    <Compile Include="Model\ShowWindowsMDL.cs" />
+    <Compile Include="Model\ShowWindowsTypeMDL.cs" />
+    <Compile Include="Model\SinglePageTypeOptions.cs" />
+    <Compile Include="Model\SystemTemplatesMDL.cs" />
+    <Compile Include="Model\TopicCommentMDL.cs" />
+    <Compile Include="Model\ToPicListMDL.cs" />
+    <Compile Include="Model\TopicMDL.cs" />
+    <Compile Include="Model\TopicTypeMDL.cs" />
+    <Compile Include="Model\TopicTypeOptions.cs" />
+    <Compile Include="Model\TrafficConsultMDL.cs" />
+    <Compile Include="Model\TrafficLineMDL.cs" />
+    <Compile Include="Model\TrafficSuggestionMDL.cs" />
+    <Compile Include="Model\UserReportsMDL.cs" />
+    <Compile Include="Model\VisualizeShowWindowsDetailMDL.cs" />
+    <Compile Include="Model\VoucherMDL.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="BLL\Utility.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\EDC.Member\EDC.Member.csproj">
+      <Project>{E9778714-5E53-4114-884E-FACCFCEB0474}</Project>
+      <Name>EDC.Member</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

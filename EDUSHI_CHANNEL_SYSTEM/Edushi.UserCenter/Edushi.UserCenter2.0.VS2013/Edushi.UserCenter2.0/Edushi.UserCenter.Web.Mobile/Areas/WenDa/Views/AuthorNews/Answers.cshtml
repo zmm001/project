@@ -1,0 +1,84 @@
+﻿@using Edushi.Common
+@model Edushi.UserCenter.Web.Mobile.Areas.WenDa.Models.WenDaCustomModel
+@{
+    var imgDomain = Common.GetConfigString("UserHeadPic");
+}
+@if (Model.answerModel != null && Model.answerModel.List.Any())
+{
+    <div class="question-cnt js-votebox" id="datalist">
+    @foreach (var item in Model.answerModel.List)
+    {
+        var qNickName = item.QUserInfo != null && !string.IsNullOrWhiteSpace(item.QUserInfo["NickName"].ToString()) ? item.QUserInfo["NickName"] : "E都市网友";
+        var qUserHead = item.QUserInfo != null && !string.IsNullOrWhiteSpace(item.QUserInfo["Avatar"].ToString()) ? imgDomain + item.QUserInfo["Avatar"] : Url.Content("~/areas/wenda/asset/images/userhead.jpg");
+        int qUserId = item.QUserInfo != null && item.QUserInfo["ID"] != null ? (int)item.QUserInfo["ID"] : 0;
+        var qWendaUrl = qUserId > 0 ? "href=/user/wenda/index/1-" + qUserId + ".html" : "";
+        
+        <div class="question-list js-votelist">
+            <h2 class="q-tit"><a href="@item.Url">@Html.Raw(item.QTitle)</a></h2>
+            
+            <div class="q-info">
+                <a @qWendaUrl class="photo">
+                    <img src="@qUserHead" />@qNickName
+                </a>
+                <span>@item.CreateDate</span>
+                <span>@(item.ReplyCount)回答</span><span>@(item.CollectionCount)人收藏</span>
+            </div>
+
+            @if (item.AnswerList != null && item.AnswerList.Any())
+            {
+                foreach (var answer in item.AnswerList)
+                {
+                    if (string.IsNullOrWhiteSpace(answer.Answer))
+                    {
+                        continue;
+                    }
+                    var nickName = answer.UserInfo != null && !string.IsNullOrWhiteSpace(answer.UserInfo["NickName"].ToString()) ? answer.UserInfo["NickName"] : "E都市网友";
+                    var userHead = answer.UserInfo != null && !string.IsNullOrWhiteSpace(answer.UserInfo["Avatar"].ToString()) ? imgDomain + answer.UserInfo["Avatar"] : Url.Content("~/areas/wenda/asset/images/userhead.jpg");
+                    int userId = answer.UserInfo != null && answer.UserInfo["ID"] != null ? (int)answer.UserInfo["ID"] : 0;
+                    var wendaUrl = userId > 0 ? "href=/user/wenda/index/1-" + userId + ".html" : "";
+                    <div>
+                      @*<div class="answer-user">
+                       
+                      </div>*@
+                        <div class="anser-item @(!string.IsNullOrWhiteSpace(answer.Pic) ? "single" : "")">
+                            <a href="@item.Url">
+                                <div class="title">@Html.Raw(answer.Answer)<span>全文</span></div>
+                                @if (!string.IsNullOrWhiteSpace(answer.Pic))
+                                {
+                                    <div class="img-box"><span><img src="@answer.Pic"></span></div>
+                                }
+                            </a>
+                        </div>
+                     
+                     <div class="oper js-oper flex" data-id="@answer.AnswerId">
+                         <a class="photo" @wendaUrl>
+                             <img src="@userHead" />@nickName
+                         </a>
+                        <a href="javascript:void(0);" @Html.Raw(answer.IsPraise == -2 ? "class=\"zan yizan\"" : "class=\"zan\"")><span class="u-num">@answer.PraiseCount</span> 赞<em>+1</em></a>
+                        <a href="javascript:void(0);" @Html.Raw(answer.IsPraise == -3 ? "class=\"cai yicai\"" : "class=\"cai\"")><span class="u-num">0</span> 踩<em>+1</em></a>
+                        <a href="@item.Url" class="comment js-comment">@(answer.CommentCount)评论</a>
+						<div class="share">分享</div>
+					 </div>
+                    </div>
+                }
+            }
+        </div>
+    }
+    </div>
+    <div class="loading" style="display: none;">加载中...</div>
+    <div class="end" @Html.Raw(Model.answerModel.PageCount > 1 ? "style=\"display:none\"" : "")>没有更多了</div>
+}
+
+<script type="text/javascript">
+    var ConfigData = {
+        "PageIndex": 1,
+        "UserId": "@Model.userId",
+        "Count": "@Model.answerModel.PageCount",
+        "Page": "@Url.Content("~/")",
+        "Url": "wenda/GetAuthorMoreAnswers.htm",
+        "Id": 0,
+        "Type": 4
+    }
+</script>
+
+<script src="@Url.Content("~/areas/wenda/asset/js/scrollload.bak.js")"></script>

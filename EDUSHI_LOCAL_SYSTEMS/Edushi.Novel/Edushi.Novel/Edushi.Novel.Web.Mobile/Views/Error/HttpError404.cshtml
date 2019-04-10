@@ -1,0 +1,47 @@
+﻿@{
+    ViewBag.Title = "您要的页面找不到啦";
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" id="viewport" content="width=device-width,initial-scale=1.0, maximum-scale=1.0,minimum-scale=1.0,user-scalable=no" />
+    <meta name="format-detection" content="telephone=no" />
+    @*<meta http-equiv="Refresh" content="5; url=." />*@
+    <title>Document</title>
+    <link href="~/Content/asset/css/style.css" rel="stylesheet" />
+    <script>
+        document.documentElement.style.fontSize = 100 * ((document.documentElement.clientWidth) / 750) + "px";
+    </script>
+    <script src="~/Content/asset/js/jquery-1.8.3.min.js"></script>
+</head>
+<body>
+    <header>
+        <span class="back" onclick="javascript:history.go(-1);"></span>
+        <div class="search-box">
+            <input type="text" name="" placeholder="搜索书名或作者" />
+            <p class="del"></p>
+        </div>
+        <a href="#" class="search-btn">搜索</a>
+    </header>
+    <div class="main-container">
+        <div class="error-box">
+            <a href="@Url.Content("~")"><label id="meg">5</label>秒后自动返回首页</a>
+        </div>
+    </div>
+    <script src="~/Content/asset/js/common.js"></script>
+    <script>
+        var i = 4;
+        var intervalid;
+        intervalid = setInterval("fun()", 1200);
+        function fun() {
+            if (i == 0) {
+                window.location.href = "@Url.Content("~")";
+                clearInterval(intervalid);
+            }
+            document.getElementById("meg").innerHTML = i;
+            i--;
+        }
+    </script>
+</body>
+</html>

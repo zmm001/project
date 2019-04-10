@@ -1,0 +1,60 @@
+﻿@{
+    ViewBag.Title = "E都市地图";
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" id="viewport" content="width=device-width,initial-scale=1.0, maximum-scale=1.0,minimum-scale=1.0,user-scalable=no" />
+    <link href="~/Content/common.css" rel="stylesheet" />
+    <link href="~/Content/navigation.css" rel="stylesheet" />
+    <script>
+        document.documentElement.style.fontSize = 100 * ((document.documentElement.clientWidth) / 750) + "px";
+    </script>
+    <script src="~/Scripts/jquery-1.8.3.min.js"></script>
+</head>
+<body class="overflow">
+    <section class="maps">
+        <img src="images/map_img.jpg" />
+    </section>
+    <script type="text/javascript">
+        $(function () {
+            $("body").height($(window).height());
+            $(window).resize(function () {
+                $("body").height($(window).height());
+            });
+        });
+    </script>
+    <section class="top-travel-mode travel-mode">
+        <a href="javascript:history.go(-1);" class="back"></a>
+        <ul class="travel-tab">
+            <li class="car"><span></span></li>
+            <li class="bus"><span></span></li>
+            <li class="walk on"><span></span></li>
+        </ul>
+    </section>
+    <section class="line-info-bottom">
+        <div class="walk-dview">
+            <div class="tips">
+                <div>潮王路 <span>></span> 朝晖路</div>
+                <p>38分钟前（4.17公里）</p>
+            </div>
+            <a href="线路-步行详情.html" class="details">路线详情 ></a>
+        </div>
+    </section>
+    <script type="text/javascript">
+        $(function () {
+            /* 以下是为了演示效果，实际开发中删除 */
+            $(".travel-tab .bus").click(function () {
+                window.location.href = "/wap/Line_bus";
+            });
+
+            $(".travel-tab .car").click(function () {
+                window.location.href = "/wap/Line_drive";
+            });
+        })
+    </script>
+
+    <script src="~/Scripts/common.js"></script>
+</body>
+</html>

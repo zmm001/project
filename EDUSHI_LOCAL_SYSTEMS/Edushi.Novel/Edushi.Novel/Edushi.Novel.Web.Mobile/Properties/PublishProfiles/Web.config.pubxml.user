@@ -1,0 +1,324 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+您 Web 项目的发布/打包进程将使用此文件。您可以通过编辑此 MSBuild 文件
+来自定义该进程的行为。若要了解与此相关的详细信息，请访问 http://go.microsoft.com/fwlink/?LinkID=208121。
+-->
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <_PublishTargetUrl>D:\打包发布\Edushi.Xiaoshuo</_PublishTargetUrl>
+  </PropertyGroup>
+  <ItemGroup>
+    <File Include="bin/Edushi.MongoDB_2115.dll">
+      <publishTime>08/14/2018 09:41:19</publishTime>
+    </File>
+    <File Include="bin/Edushi.Novel.BLL.dll">
+      <publishTime>08/15/2018 17:55:44</publishTime>
+    </File>
+    <File Include="bin/Edushi.Novel.Cache.dll">
+      <publishTime>08/14/2018 11:21:12</publishTime>
+    </File>
+    <File Include="bin/Edushi.Novel.Common.dll">
+      <publishTime>08/14/2018 11:21:12</publishTime>
+    </File>
+    <File Include="bin/Edushi.Novel.DataAccess.dll">
+      <publishTime>08/14/2018 11:21:12</publishTime>
+    </File>
+    <File Include="bin/Edushi.Novel.Entity.dll">
+      <publishTime>08/14/2018 11:21:12</publishTime>
+    </File>
+    <File Include="bin/Edushi.Novel.Model.dll">
+      <publishTime>08/14/2018 11:21:12</publishTime>
+    </File>
+    <File Include="bin/Edushi.Novel.Web.Mobile.dll">
+      <publishTime>08/15/2018 17:55:44</publishTime>
+    </File>
+    <File Include="bin/Edushi.User.dll">
+      <publishTime>08/10/2018 17:08:35</publishTime>
+    </File>
+    <File Include="bin/Edushi.XiaoShuo.dll">
+      <publishTime>08/14/2018 09:41:19</publishTime>
+    </File>
+    <File Include="bin/Framework.dll">
+      <publishTime>08/02/2018 11:31:11</publishTime>
+    </File>
+    <File Include="bin/log4net.dll">
+      <publishTime>05/07/2018 16:25:08</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Web.Infrastructure.dll">
+      <publishTime>07/11/2018 09:48:27</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Web.Mvc.FixedDisplayModes.dll">
+      <publishTime>07/11/2018 09:48:27</publishTime>
+    </File>
+    <File Include="bin/MongoDB.Bson.dll">
+      <publishTime>08/02/2018 11:31:11</publishTime>
+    </File>
+    <File Include="bin/MongoDB.Driver.Core.dll">
+      <publishTime>08/02/2018 11:31:11</publishTime>
+    </File>
+    <File Include="bin/MongoDB.Driver.dll">
+      <publishTime>08/02/2018 11:31:11</publishTime>
+    </File>
+    <File Include="bin/Newtonsoft.Json.dll">
+      <publishTime>07/11/2018 09:48:27</publishTime>
+    </File>
+    <File Include="bin/System.Net.Http.Formatting.dll">
+      <publishTime>07/11/2018 09:48:27</publishTime>
+    </File>
+    <File Include="bin/System.Web.Helpers.dll">
+      <publishTime>07/11/2018 09:48:27</publishTime>
+    </File>
+    <File Include="bin/System.Web.Http.dll">
+      <publishTime>07/11/2018 09:48:27</publishTime>
+    </File>
+    <File Include="bin/System.Web.Http.WebHost.dll">
+      <publishTime>07/11/2018 09:48:27</publishTime>
+    </File>
+    <File Include="bin/System.Web.Mvc.dll">
+      <publishTime>07/11/2018 09:48:26</publishTime>
+    </File>
+    <File Include="bin/System.Web.Razor.dll">
+      <publishTime>07/11/2018 09:48:27</publishTime>
+    </File>
+    <File Include="bin/System.Web.WebPages.Deployment.dll">
+      <publishTime>07/11/2018 09:48:27</publishTime>
+    </File>
+    <File Include="bin/System.Web.WebPages.dll">
+      <publishTime>07/11/2018 09:48:27</publishTime>
+    </File>
+    <File Include="bin/System.Web.WebPages.Razor.dll">
+      <publishTime>07/11/2018 09:48:27</publishTime>
+    </File>
+    <File Include="bin/zh-Hans/System.Net.Http.Formatting.resources.dll">
+      <publishTime>07/11/2018 09:48:27</publishTime>
+    </File>
+    <File Include="bin/zh-Hans/System.Web.Helpers.resources.dll">
+      <publishTime>07/11/2018 09:48:27</publishTime>
+    </File>
+    <File Include="bin/zh-Hans/System.Web.Http.resources.dll">
+      <publishTime>07/11/2018 09:48:27</publishTime>
+    </File>
+    <File Include="bin/zh-Hans/System.Web.Http.WebHost.resources.dll">
+      <publishTime>07/11/2018 09:48:27</publishTime>
+    </File>
+    <File Include="bin/zh-Hans/System.Web.Mvc.resources.dll">
+      <publishTime>07/11/2018 09:48:26</publishTime>
+    </File>
+    <File Include="bin/zh-Hans/System.Web.Razor.resources.dll">
+      <publishTime>07/11/2018 09:48:27</publishTime>
+    </File>
+    <File Include="bin/zh-Hans/System.Web.WebPages.Deployment.resources.dll">
+      <publishTime>07/11/2018 09:48:27</publishTime>
+    </File>
+    <File Include="bin/zh-Hans/System.Web.WebPages.Razor.resources.dll">
+      <publishTime>07/11/2018 09:48:27</publishTime>
+    </File>
+    <File Include="bin/zh-Hans/System.Web.WebPages.resources.dll">
+      <publishTime>07/11/2018 09:48:27</publishTime>
+    </File>
+    <File Include="Content/asset/css/style.css">
+      <publishTime>08/14/2018 15:52:24</publishTime>
+    </File>
+    <File Include="Content/asset/css/user.css">
+      <publishTime>08/01/2018 17:27:12</publishTime>
+    </File>
+    <File Include="Content/asset/images/01/20180702.jpg">
+      <publishTime>07/11/2018 10:31:52</publishTime>
+    </File>
+    <File Include="Content/asset/images/01/img01.jpg">
+      <publishTime>07/11/2018 09:48:26</publishTime>
+    </File>
+    <File Include="Content/asset/images/01/img02.jpg">
+      <publishTime>07/11/2018 09:48:26</publishTime>
+    </File>
+    <File Include="Content/asset/images/01/img03.jpg">
+      <publishTime>07/11/2018 09:48:26</publishTime>
+    </File>
+    <File Include="Content/asset/images/01/img04.jpg">
+      <publishTime>07/11/2018 09:48:26</publishTime>
+    </File>
+    <File Include="Content/asset/images/01/img05.jpg">
+      <publishTime>07/11/2018 09:48:26</publishTime>
+    </File>
+    <File Include="Content/asset/images/category/10.png">
+      <publishTime>07/03/2018 15:42:27</publishTime>
+    </File>
+    <File Include="Content/asset/images/category/11.png">
+      <publishTime>07/03/2018 15:49:53</publishTime>
+    </File>
+    <File Include="Content/asset/images/category/12.png">
+      <publishTime>07/03/2018 15:43:31</publishTime>
+    </File>
+    <File Include="Content/asset/images/category/13.png">
+      <publishTime>07/03/2018 15:46:07</publishTime>
+    </File>
+    <File Include="Content/asset/images/category/3.png">
+      <publishTime>07/03/2018 15:42:27</publishTime>
+    </File>
+    <File Include="Content/asset/images/category/4.png">
+      <publishTime>07/03/2018 15:44:53</publishTime>
+    </File>
+    <File Include="Content/asset/images/category/5.png">
+      <publishTime>07/03/2018 15:49:53</publishTime>
+    </File>
+    <File Include="Content/asset/images/category/6.png">
+      <publishTime>07/03/2018 15:47:39</publishTime>
+    </File>
+    <File Include="Content/asset/images/category/7.png">
+      <publishTime>07/03/2018 15:49:11</publishTime>
+    </File>
+    <File Include="Content/asset/images/category/8.png">
+      <publishTime>07/03/2018 15:48:31</publishTime>
+    </File>
+    <File Include="Content/asset/images/category/9.png">
+      <publishTime>07/03/2018 15:46:49</publishTime>
+    </File>
+    <File Include="Content/asset/images/cimg01.png">
+      <publishTime>07/11/2018 09:48:26</publishTime>
+    </File>
+    <File Include="Content/asset/images/cimg02.png">
+      <publishTime>07/11/2018 09:48:26</publishTime>
+    </File>
+    <File Include="Content/asset/images/cimg03.png">
+      <publishTime>07/11/2018 09:48:26</publishTime>
+    </File>
+    <File Include="Content/asset/images/cimg04.png">
+      <publishTime>07/11/2018 09:48:26</publishTime>
+    </File>
+    <File Include="Content/asset/images/cimg05.png">
+      <publishTime>07/11/2018 09:48:26</publishTime>
+    </File>
+    <File Include="Content/asset/images/cimg06.png">
+      <publishTime>07/11/2018 09:48:26</publishTime>
+    </File>
+    <File Include="Content/asset/images/cimg07.png">
+      <publishTime>07/11/2018 09:48:26</publishTime>
+    </File>
+    <File Include="Content/asset/images/cimg08.png">
+      <publishTime>07/11/2018 09:48:26</publishTime>
+    </File>
+    <File Include="Content/asset/images/cimg09.png">
+      <publishTime>07/11/2018 09:48:26</publishTime>
+    </File>
+    <File Include="Content/asset/images/cimg10.png">
+      <publishTime>07/11/2018 09:48:26</publishTime>
+    </File>
+    <File Include="Content/asset/images/icon.png">
+      <publishTime>08/14/2018 15:53:10</publishTime>
+    </File>
+    <File Include="Content/asset/images/loading.gif">
+      <publishTime>07/11/2018 09:48:26</publishTime>
+    </File>
+    <File Include="Content/asset/images/logo.png">
+      <publishTime>08/08/2018 16:08:35</publishTime>
+    </File>
+    <File Include="Content/asset/images/notfound.png">
+      <publishTime>07/11/2018 09:48:26</publishTime>
+    </File>
+    <File Include="Content/asset/js/common.js">
+      <publishTime>07/18/2018 10:47:38</publishTime>
+    </File>
+    <File Include="Content/asset/js/jquery-1.8.3.min.js">
+      <publishTime>07/11/2018 09:48:26</publishTime>
+    </File>
+    <File Include="Content/asset/js/Novel/booklist.js">
+      <publishTime>08/13/2018 13:34:07</publishTime>
+    </File>
+    <File Include="Content/asset/js/Novel/bookstore.js">
+      <publishTime>07/30/2018 11:33:05</publishTime>
+    </File>
+    <File Include="Content/asset/js/Novel/channel.js">
+      <publishTime>08/13/2018 09:31:49</publishTime>
+    </File>
+    <File Include="Content/asset/js/Novel/detail.js">
+      <publishTime>08/14/2018 10:50:44</publishTime>
+    </File>
+    <File Include="Content/asset/js/Novel/index.js">
+      <publishTime>08/13/2018 12:30:20</publishTime>
+    </File>
+    <File Include="Content/asset/js/Novel/rank.js">
+      <publishTime>08/08/2018 13:47:47</publishTime>
+    </File>
+    <File Include="Content/asset/js/Novel/searchPage.js">
+      <publishTime>08/09/2018 18:32:22</publishTime>
+    </File>
+    <File Include="Content/asset/js/Novel/searchResult.js">
+      <publishTime>07/31/2018 11:54:37</publishTime>
+    </File>
+    <File Include="Content/asset/js/swiper.min.js">
+      <publishTime>07/11/2018 09:48:26</publishTime>
+    </File>
+    <File Include="Content/asset/js/vue.min.js">
+      <publishTime>07/11/2018 10:21:46</publishTime>
+    </File>
+    <File Include="Global.asax">
+      <publishTime>07/11/2018 09:48:26</publishTime>
+    </File>
+    <File Include="packages.config">
+      <publishTime>07/27/2018 17:04:45</publishTime>
+    </File>
+    <File Include="Views/Book/BookList.cshtml">
+      <publishTime>08/13/2018 13:57:59</publishTime>
+    </File>
+    <File Include="Views/Book/BookStore.cshtml">
+      <publishTime>08/09/2018 14:42:34</publishTime>
+    </File>
+    <File Include="Views/Book/Detail.cshtml">
+      <publishTime>08/14/2018 15:22:26</publishTime>
+    </File>
+    <File Include="Views/Book/Read.cshtml">
+      <publishTime>08/15/2018 17:16:35</publishTime>
+    </File>
+    <File Include="Views/Category/List.cshtml">
+      <publishTime>07/24/2018 13:51:13</publishTime>
+    </File>
+    <File Include="Views/Channel/Female.cshtml">
+      <publishTime>08/13/2018 09:31:49</publishTime>
+    </File>
+    <File Include="Views/Channel/Male.cshtml">
+      <publishTime>08/09/2018 16:14:20</publishTime>
+    </File>
+    <File Include="Views/Error/HttpError404.cshtml">
+      <publishTime>08/01/2018 11:37:58</publishTime>
+    </File>
+    <File Include="Views/Home/Index.cshtml">
+      <publishTime>08/15/2018 17:54:49</publishTime>
+    </File>
+    <File Include="Views/Rank/BookList.cshtml">
+      <publishTime>08/09/2018 14:44:20</publishTime>
+    </File>
+    <File Include="Views/Search/SearchPage.cshtml">
+      <publishTime>08/09/2018 18:32:22</publishTime>
+    </File>
+    <File Include="Views/Search/SearchResult.cshtml">
+      <publishTime>08/08/2018 14:11:30</publishTime>
+    </File>
+    <File Include="Views/Shared/Error.cshtml">
+      <publishTime>07/11/2018 11:05:25</publishTime>
+    </File>
+    <File Include="Views/Shared/_Layout.cshtml">
+      <publishTime>07/20/2018 16:59:04</publishTime>
+    </File>
+    <File Include="Views/Shared/_PartialFooter.cshtml">
+      <publishTime>08/08/2018 10:55:37</publishTime>
+    </File>
+    <File Include="Views/Shared/_PartialHead.cshtml">
+      <publishTime>07/12/2018 11:38:41</publishTime>
+    </File>
+    <File Include="Views/Shared/_PartialMenu.cshtml">
+      <publishTime>08/13/2018 09:31:49</publishTime>
+    </File>
+    <File Include="Views/Shared/_PartialUserCenter.cshtml">
+      <publishTime>08/08/2018 11:56:33</publishTime>
+    </File>
+    <File Include="Views/Web.config">
+      <publishTime>07/11/2018 09:48:26</publishTime>
+    </File>
+    <File Include="Views/_ViewStart.cshtml">
+      <publishTime>07/23/2018 15:31:10</publishTime>
+    </File>
+    <File Include="Web.config">
+      <publishTime>08/14/2018 11:21:13</publishTime>
+    </File>
+  </ItemGroup>
+</Project>

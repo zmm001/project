@@ -1,0 +1,161 @@
+html,body{
+	height:100%;
+	background: #f5f5f5;
+}
+body {
+	font-family: "Microsoft YaHei";
+	font-size: 14px;
+	color: #333;
+	background: #f5f5f5;
+}
+body, ul, ol, li, dl, dt, dd, p, h1, h2, h3, h4, h5, h6, button, input, textarea {
+	margin: 0;
+	padding: 0;
+}
+h1, h2, h3, h4, h5, h6 {
+	font-size: 100%;
+}
+ul, ol {
+	list-style-type: none;
+}
+img, a img, :link img, :visited img {
+	border: 0;
+	display: block;
+}
+a {
+	color: #333333;
+	text-decoration: none;
+}
+a:hover {
+	color: #ff3300;
+	text-decoration: none;
+}
+.clearfix:after {
+	content: "";
+	display: table;
+	clear: both;
+}
+.clearfix {
+	*zoom: 1;
+}
+.fl {
+	display: inline;
+	float: left;
+}
+.fr {
+	display: inline;
+	float: right;
+}
+.wrapper {
+	width: 1200px;
+	margin: 0 auto;
+}
+.top-box {
+  width: 100%;
+  height: 56px;
+  margin-bottom: 30px;
+  background: #f9f9f9;
+  border-bottom: 1px solid #eeeeee;
+  font-size: 0;
+}
+.top-box .fl a {
+  display: inline-block;
+}
+.top-box .fl .wenda-logo {
+  width: 48px;
+  height: 21px;
+  margin-left: 5px;
+  background: url(../images/logo_wenda.png) no-repeat;
+}
+.top-box .tips a {
+	display: inline-block;
+    margin-top: 10px;
+	margin-left: 30px;
+	font-size: 14px;
+	color: #666;
+	line-height: 39px;
+}
+.top-box .tips a:before {
+	content: "";
+	display: inline-block;
+	margin-right: 5px;
+	background: url(../images/sprite_icon.png) no-repeat;
+	vertical-align: -2px;
+}
+.top-box .tips a.notice:before {
+	width: 14px;
+	height: 15px;
+	background-position: 0 0;
+}
+.top-box .tips a.invite:before {
+	width: 14px;
+	height: 13px;
+	background-position: -16px 0;
+}
+.top-box .tips a.my:before, .top-box .tips a.login:before {
+	width: 13px;
+	height: 15px;
+	background-position: -34px 0;
+}
+.error{
+	position: absolute;
+	top: 50%;
+	margin-top: -271px;
+	text-align: center;
+	width:100%;
+	background: #f5f5f5;
+}
+.error .bg{
+	display: block;
+	width:296px;
+	height:325px;
+	background-image: url(../images/error_bg.png);
+	margin: 0 auto 30px auto;
+}
+.error div{
+	font-size: 36px;
+	color: #222;
+	margin-bottom: 15px;
+}
+.error span{
+	display: block;
+	font-size: 20px;
+	line-height: 30px;
+	color: #222;
+}
+.error .backhome{
+	display: inline-block;
+	height:40px;
+	line-height: 40px;
+	padding: 0 33px;
+	color: #fff;
+	background-color: #fe4242;
+	border-radius:3px;
+	margin-top: 15px;
+}
+.error .not-found {
+	line-height: 32px;
+}
+.error .not-found div {
+	margin-bottom: 20px;
+}
+.error .not-found .tit{
+	font-size: 22px;
+	color: #222;
+}
+.error .not-found a {
+	font-size: 18px;
+	color: #007ef3;
+}
+.error .not-found a span {
+	font-size: 18px;
+	color: #666666;
+}
+.error .not-found a.link {
+	display: block;
+	line-height: normal;
+}
+.error .not-found a.backhome {
+	color: #fff;
+	font-size: 14px;
+}

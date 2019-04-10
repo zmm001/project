@@ -1,0 +1,10 @@
+﻿/*错误页*/
+.result{background:#fffbf3; margin:40px auto; list-style:40px; padding:30px 40px; border:1px solid #f90; width:600px;}
+.result .err,.result .suc{height:40px; line-height:40px; font-size:18px; font-family:"微软雅黑"; color:#333; font-weight:bold; padding-left:50px;}
+.result .err{background:url(../images/err.png) no-repeat;}
+.result .suc{background:url(../images/suc.png) no-repeat;}
+
+.result .error li{margin-bottom:10px;}
+.result .success li{margin-bottom:20px;}
+.result .error li.erl{font-size:12px;}
+.result .success li.erl{margin-left:100px; list-style: disc; display:list-item;}

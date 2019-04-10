@@ -1,0 +1,37 @@
+
+*{list-style:none; margin:0; padding:0; font-family:Arial, Helvetica, sans-serif, "宋体"; text-decoration:none;}
+br,.clear{ clear:both}
+#topmenu{ background:url(../images/citylist.png) repeat-x; height:29px; font-size:12px; text-align:right; line-height:29px; color:#666;}
+#topmenu div{ width:960px; height:29px; margin:auto;}
+#topmenu div a{ color:#666; margin:0 5px;}
+#logobox{ width:960px; margin:0 auto 10px auto; background: url(../images/citylist_06.png) right no-repeat; height:100px;}
+#logobox #logo{ float:left; padding-top:10px;}
+#logobox #menu{ float:right; width:720px;text-align:center}
+#logobox #menu a{ font-family:"微软雅黑"; font-size:14px; margin:0 20px; color:#333;}
+#logobox #menu a.on{ color:#f60;}
+#logobox #breadCrumb{ clear:both; font-size:12px; padding-top:20px; color:#666;}
+#logobox #breadCrumb a{ color:#36f;}
+
+#content{width:960px; margin:0 auto; border:1px solid #ccc;font-size:14px; }
+.current{ background:#fff8df; padding:15px 20px; font-weight:bold; color:#333; line-height:30px;}
+.current span{ color:#f60;}
+.current a{ color:#36f; margin:0 5px}
+.current a:hover{ text-decoration:underline}
+
+.city_list{ padding:10px; margin:10px; border-bottom:1px dashed #ccc;}
+.city_list ul li{ float:left; line-height:24px; padding-right:5px;}
+.city_list ul li select{ border:1px #ccc solid; height:24px;}
+.city_list .btn{ border:none; background:#f60; color:#fff; text-align:center; padding:3px 15px; height:24px;}
+.hotcity a{ margin:0 10px;}
+.city_list dl{ clear:both; padding:10px;}
+.city_list dl dt{ float:left; font-family:"Arial Black"; font-size:18px; color:#36f; width:20px;}
+.city_list dl dd{ float:left; padding-left:20px; line-height:24px; color:#999; width:860px;}
+.city_list dl dd a{ margin:0 5px; color:#666; white-space:nowrap;}
+.city_list dl dd a.map3d{ background:url(../images/3d.png) no-repeat right center; padding-right:15px; color:#f60;}
+
+#footer{  width:100%; margin-top:20px; padding:18px 0; border-top:1px solid #dadada; border-bottom:1px solid #dadada; background:url(http://www.edushi.com/asset/images/footer_bg.gif) repeat-x left top #fdfdfd;}
+.footer-nav{ width:1000px; margin:0 auto 12px; padding-bottom:18px; font-size:14px; font-family:Microsoft Yahei, SimHei; color:#999; background:url(http://www.edushi.com/asset/images/footer_linebg.png) no-repeat left bottom; text-align:center;}
+.footer-nav a{ display:inline-block; margin:0 17px; font-weight:bold; color:#333; font-family:Microsoft Yahei, SimHei;}
+.footer-nav a:hover{ color:#cc2900;}
+.footer-copyright{ text-align:center; font-size:12px; color:#808080; line-height:22px;}
+.footer-copyright p{ margin-bottom:8px;font-family:Microsoft Yahei, SimHei;}

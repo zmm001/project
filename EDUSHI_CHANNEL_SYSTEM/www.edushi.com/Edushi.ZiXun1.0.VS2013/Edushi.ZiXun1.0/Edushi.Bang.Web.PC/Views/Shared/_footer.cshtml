@@ -1,0 +1,77 @@
+﻿@model Edushi.Bang.Web.PC.Models.SharedModel
+@*<div class="container" id="footer" style="margin-top: 20px;">
+    <ul>
+        <p>
+            <a title="关于阿拉丁" href="http://aladdin.edushi.com/" target="_blank">关于阿拉丁</a>| 
+            <a title="E都市" href="http://www.edushi.com/about/" target="_blank">E都市</a>| 
+            <a title="产品中心" href="http://www.edushi.com/about/MapSign.aspx" target="_blank">产品中心</a>| 
+            <a title="商务合作" href="http://www.edushi.com/about/GoToMap.htm" target="_blank">商务合作</a>| 
+            <a title="友情链接" href="http://www.edushi.com/Links/" target="_blank">友情链接</a>| 
+            <a title="城市地图" href="http://@(Model.Base.CityCode.Replace("shanghai","sh").Replace("hangzhou","hz")).edushi.com/" target="_blank">城市地图</a>| 
+            <a title="新闻中心" href="http://www.edushi.com/about/News.htm" target="_blank">新闻中心</a>| 
+            <a title="访客留言" href="http://www.edushi.com/about/GuestBook.aspx" target="_blank">访客留言</a>| 
+            <a title="法律声明" href="http://www.edushi.com/about/Declear.htm" target="_blank">法律声明</a>
+        </p>
+    </ul>
+    <p>广告经营许可证号 3301082100176 | 浙B2-20050306 版权所有@2004-2012 出版号:ISBN:7-900200-28-2</p>
+</div>*@
+<style>
+    .wrapper{width:1000px; margin:0 auto;}
+    
+    .page-footer{ width:100%; margin-top:20px; padding:18px 0; border-top:1px solid #dadada; border-bottom:1px solid #dadada; background:url(http://www.edushi.com/asset/images/footer_bg.gif) repeat-x left top #fdfdfd;}
+    .footer-nav{  margin:0 auto 12px; padding:0 0 18px 0px; background:url(http://www.edushi.com/asset/images/footer_linebg.png) no-repeat left bottom; text-align:center; *zoom:1;}
+    .footer-nav li{ display:inline-block; color:#999;font-size: 14px;}
+    .footer-nav li a{ margin:0 17px; font-weight:bold;color: #333;}
+    .footer-nav li a:hover {color:#cc2900;}
+    .footer-copyright{ text-align:center; font-size:12px; color:#808080; line-height:18px;}
+    .footer-copyright p{ margin-bottom:8px;}
+</style>
+@*<footer>
+	<nav>
+    	<a href="http://aladdin.edushi.com/" target="_blank">关于阿拉丁</a>
+        <a href="http://www.edushi.com/about/" target="_blank">E都市</a>
+        <a href="http://www.edushi.com/about/MapSign.aspx" target="_blank">产品中心</a>
+        <a href="http://www.edushi.com/about/GoToMap.htm" target="_blank">商务合作</a>
+        <a href="http://www.edushi.com/Links/" target="_blank">友情链接</a>
+        <a href="http://@(Model.Base.CityCode.Replace("shanghai","sh").Replace("hangzhou","hz")).edushi.com/" target="_blank">城市地图</a>
+        <a href="http://www.edushi.com/about/News.htm" target="_blank">新闻中心</a>
+        <a href="http://www.edushi.com/about/GuestBook.aspx" target="_blank">访客留言</a>
+        <a href="http://www.edushi.com/about/Declear.htm" target="_blank" class="LastA">法律声明</a>
+    </nav>
+    <div class="copyright">广告经营许可证号 <a href="javascript:void(0)">3301082100176</a> | <a href="javascript:void(0)">浙B2-20050306</a> 版权所有@2004-2012 出版号:ISBN:7-900200-28-2</div>
+</footer>*@
+<div class="page-footer">
+	<div class="wrapper">
+    	<ul class="footer-nav clr">  
+        	@*<li><a href="http://aladdin.edushi.com/" target="_blank">阿拉丁</a>|</li>*@
+            <li><a href="http://www.edushi.com/about/" target="_blank">关于E都市</a>|</li>
+            @*<li><a href="http://@(Model.Base.CityCode.Replace("shanghai", "sh").Replace("hangzhou", "hz")).edushi.com/" target="_blank">城市地图</a>|</li>
+            <li><a href="http://@(Model.Base.CityCode).edushi.com/adserver/index.html" target="_blank">广告服务</a>|</li>
+            <li><a href="http://www.edushi.com/about/GoToMap.htm" target="_blank">商务合作</a>|</li>*@
+                
+            <li><a href="http://www.edushi.com/about/Declear.htm" target="_blank">法律声明</a>|</li>
+            <li><a href="http://www.edushi.com/about/ContactUs.htm" target="_blank">联系我们</a></li>
+        </ul>
+        <div class="footer-copyright">
+        	<p>
+            	广告经营许可证号:3301082100176&nbsp;&nbsp;&nbsp;@*出版号:ISBN:7-900200-28-2&nbsp;&nbsp;&nbsp;*@甲测资字:3300168&nbsp;&nbsp;&nbsp;浙B2-20050306&nbsp;&nbsp;&nbsp;@*<a target="_blank" href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=33010502000262" style="color:#808080">*@浙公网安备 33010502000262号@*</a>*@<br />
+				Copyright &copy; 2004 - 2017 EDUSHI. All Rights Reserved
+            </p>
+            @*阿拉丁股份&nbsp;&nbsp;&nbsp;版权所有*@
+        </div>
+    </div>
+</div>
+<script type="text/javascript">
+    var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+    document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+    var pageTracker = _gat._getTracker("@Model.Base.GoogleID");
+    pageTracker._initData();
+    pageTracker._trackPageview();
+</script>
+<script type="text/javascript">
+    var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+    document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3F99a36e54478482e04c158ab069a3e598' type='text/javascript'%3E%3C/script%3E"));
+</script>
+@Html.Raw(Model.Base.ECS_StatisticsCode)

@@ -1,0 +1,153 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+<meta name="Keywords" content="{$Keywords}" />
+<meta name="Description" content="{$Description}" />
+<link href="{$SkinPath}css/style.css" rel="stylesheet" type="text/css" />
+<title>{$PageTitle}</title>
+<script type="text/javascript" src="JS/lib.js"></script>
+<script type="text/javascript" src="JS/GeneralJSLibrary.js"></script>
+<script language="javascript" type="text/javascript" src="Definition.aspx?l={$Language}"></script>
+<script language="javascript" type="text/javascript" src="Javascript.aspx?l={$Language}&t=controls"></script>
+<script language="javascript" type="text/javascript" src="Plugin.aspx?l={$Language}"></script>
+<script type="text/javascript" src="Javascript.aspx?l={$Language}&f=Language.js"></script>
+<script type="text/javascript" src="Javascript.aspx?l={$Language}&f=eds_eye.js"></script>
+<script type="text/javascript" src="Javascript.aspx?l={$Language}&f=Mark.js"></script>
+<script type="text/javascript" src="Javascript.aspx?l={$Language}&f=Init.js"></script>
+</head>
+<body style="overflow:hidden;">
+<div id="BG" style="display:none"></div>
+<div id="EdushiMenu">
+<div class="top">
+    <div class="top_l"><a href ="http://www.edushi.com" target ="_blank"><div style ="filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='images/logo.png',sizingMethod='image');width:130px;height:56px; background-image:url(images/logo.png); background-image:none;"><!--[if !IE]><!--><img src ="images/logo.png" alt ="" /><!--<![endif]--></div></a></div>
+    <div class="top_m"><img src="images/wqbg.gif" /></div>
+    <div class="top_r">
+	    <div class="top_r_t">
+		    <div class="qlink">
+		       <a href="/yp/" target="_blank">{$CityName}黄页</a>/
+		        <a href="http://www.edushi.com/about/MapSign.aspx" target="_blank">三维标注</a> / 
+		        <a href="LiveIn/Default.aspx" target="_blank">企业入驻</a> / 
+		        <a href="AdServer/index.html?L={$Language}" target="_blank">广告服务</a>
+		    </div>
+		    <div class="city">当前城市：<span class="currentcity">{$CityName}</span> <a href="http://www.edushi.com/?id=citylist" target="_blank" style="margin-right:26px;">[切换城市]</a> <a href="http://www.edushi.com/help/help.html" target="_blank">帮助</a> <a href="http://www.edushi.com/about/GuestBook.aspx?c={$CityCode}&l={$Language}" target="_blank">留言</a></div>
+	    </div>
+	    <div class="top_r_b">
+	        <div id="btnThemeScrollLeft" style="float:left; width:10px; margin-top:4px; cursor:pointer; display:none;">
+	            <img src="images/icon_left.gif" alt="" />
+	        </div>
+	        <div id="divThemeMask" style="float:left; width:500px; height:22px; margin:0 5px 0 2px;">
+	            <div id="divThemeClip" style="display:block; position:absolute;clip:rect(0 500px 22px 0)">
+	                <div style="position:absolute; width:3000px;">
+		            <ul id="ulThemeList">
+		            </ul>
+		            </div>
+		        </div>
+		    </div>
+		    <div id="btnThemeScrollRight" style="float:left; width:10px; margin-top:5px; cursor:pointer; display:none;">
+		        <img src="images/icon_right.gif" alt="" />
+		    </div>
+	    </div>
+    </div>
+</div>
+<div class="bottom">
+    <div class="news">
+        <div id="divNews" style="margin:3px 0 5px 0; height:20px;"></div>
+    </div>
+    <div class="maptoolbar">
+	    <ul>
+		    <li class="toolbar_1"><a onfocus="this.blur()" href="javascript:fnSelectMarkPoint();">标记</a></li>
+		    <li class="toolbar_2"><a onfocus="this.blur()" href="javascript:fnScale();">测距</a></li>
+		    <li class="toolbar_3"><a onfocus="this.blur()" href="javascript:fnPanel();">框选</a></li>
+		    <li class="toolbar_4"><a onfocus="this.blur()" href="javascript:fnShowNav();">导航</a></li>
+		    <li class="toolbar_6"><a onfocus="this.blur()" href="javascript:fnFullSrc();">全屏</a></li>
+		    <li class="toolbar_5"><a onfocus="this.blur()" href="javascript:fnLabel();" onclick="this.innerHTML=='显示标签'?this.innerHTML='隐藏标签':this.innerHTML='显示标签'">显示标签</a></li>
+		    <li class="mapset" onmouseover="fnShowLayer('divQuickLink', 'block')" onmouseout="fnShowLayer('divQuickLink', 'none')" ><a onfocus="this.blur()">常用位置</a></li>
+		    <li class="mapset" onmouseover="fnShowLayer('divMark', 'block')" onmouseout="fnShowLayer('divMark', 'none')"><a id="txtMyMark" onfocus="this.blur()" href="javascript:;">我的标记</a></li>
+		    <li class="mapset" onmouseover="fnShowLayer('divMapSetting', 'block')" onmouseout="fnShowLayer('divMapSetting', 'none')"><a onfocus="this.blur()" href="javascript:;">地图设置</a></li>
+		    <li class="mapset" onmouseover="fnShowLayer('divHistory', 'block')" onmouseout="fnShowLayer('divHistory', 'none')"><a id="txtHistoryFont" onfocus="this.blur()" href="javascript:;">历史位置</a></li>
+	    </ul>
+    </div>
+    <div style="clear:both; display:block;"></div>
+</div>
+<div class="BlackBg"></div>
+<div style="position:absolute; z-index:200; width:100%; height:28px; top:91px;">
+    <div style="position: absolute; top: -5px; right: 194px; display:none;" id="divQuickLink" onmouseover="fnShowLayer('divQuickLink', 'block')" onmouseout="fnShowLayer('divQuickLink', 'none')">
+        <div class="menulist" id="ulQickLinkList">
+        </div>
+    </div>
+    <div style="position: absolute; top: -5px; right: 135px; display:none;" id="divMark" onmouseover="fnShowLayer('divMark', 'block')" onmouseout="fnShowLayer('divMark', 'none')">
+        <div class="menulist">
+            <a class="line" href="javascript:fnSelectMarkPoint();">创建新标记</a> 
+            <a class="gou" href="javascript:;" onclick="_Mark.ShowAll();$('divHideAllMark').className='line';this.className='gou';" id="divShowAllMark">显示全部</a> 
+            <a class="line" href="javascript:;" onclick="_Mark.Hidden();$('divShowAllMark').className='';this.className='gou line';" id="divHideAllMark">隐藏全部</a> 
+            <a href="javascript:;" onmouseover="fnShowLayer('divMarkHistory', 'block')" onmouseout="fnShowLayer('divMarkHistory', 'none')">已建标记 ></a>
+        </div>
+    </div>
+    <div style="position: absolute; top: 60px; right: 45px; display:none;" id="divMarkHistory" onmouseover="fnShowLayer('divMarkHistory', 'block');fnShowLayer('divMark', 'block')" onmouseout="fnShowLayer('divMarkHistory', 'none');fnShowLayer('divMark', 'none')">
+        <div class="menulist" id="divMyMark">
+            <a class="line" href="javascript:;" onclick="if(confirm('确认清除所有标记')){_Mark.Clear()}">清除所有标记</a> 
+        </div>
+    </div>
+    <div style="position: absolute; top: -5px; right: 75px; display:none;" id="divMapSetting" onmouseover="fnShowLayer('divMapSetting', 'block')" onmouseout="fnShowLayer('divMapSetting', 'none')">
+        <div class="menulist">
+            <a class="gou" href="javascript:fnRoad();" onclick="this.className=='gou'?this.className='':this.className='gou'">路牌</a> 
+            <a class="gou" href="javascript:fnStation();" onclick="this.className=='gou'?this.className='':this.className='gou'">公交站</a> 
+            <a class="gou" href="javascript:fnSubWay();" onclick="this.className=='gou'?this.className='':this.className='gou'">地铁站</a> 
+            <a class="gou line" href="javascript:fnPack();" onclick="this.className=='gou line'?this.className='line':this.className='gou line'">停车站</a> 
+            <a class="gou" href="javascript:fnDisplayTool('Tool');" onclick="this.className=='gou'?this.className='':this.className='gou'">搜索面板</a> 
+            <a class="gou" href="javascript:fnDisplayTool('Eye');" onclick="this.className=='gou'?this.className='':this.className='gou'">鹰眼地图</a>
+        </div>
+    </div>
+    <div style="position: absolute; top: -5px; right: 15px; display:none;" id="divHistory" onmouseover="fnShowLayer('divHistory', 'block')" onmouseout="fnShowLayer('divHistory', 'none')">
+        <div class="menulist" id="divHistoryList">
+        </div>
+    </div>
+</div>
+</div>
+
+<!--加载地图-->
+<div id="EdushiMap" style="position: absolute; z-index:1; width:1020px; height:500px; top:63px;"></div>
+	
+<!--搜索工具条-->
+<div id="Tool" class="Tool">
+    <div style="position:absolute; height:30px; width:20px; z-index:9999; cursor:move;"></div>
+</div>
+
+
+<!--鹰眼-->
+<div id="Eye" class="Eye" >
+    <div id="eyeEdushiMap" class="Map">
+    </div>  
+    <div id="EyeMapDiv" class="Emin"></div>
+    <div id="EzoomBar" class="Level" onselectstart="return false" >
+    	<div id="Change2D3D" class="Change2D3D"><img src="images/newmap482d.gif"></div>
+        <div id="EzoomMax" class="MapBig" title="最大"></div>
+        <div id="Ezoom0"  class="UnAction"></div>
+        <div id="Ezoom1"  class="UnAction"></div>
+        <div id="Ezoom2"  class="UnAction"></div>
+        <div id="Ezoom3"  class="UnAction"></div>
+        <div id="MapSilder"  title="缩放"></div>
+        <div id="EzoomMin" class="MapSamll" title="最小" ></div>
+    </div>
+    <a id="EbottomMM" class="Edu" ></a>
+    <a id="Eout" class="Eout" ></a>    
+</div>
+<div id="Ein" style="display:none;"><a id="Eina" class="Eina" ></a></div>
+<!--搜索结果面板-->
+<div id="DragWindow" class="Result" style="top:209px; left:0px; position:absolute; z-index:10">
+    <div style="position:absolute; height:30px; width:20px; z-index:9999; cursor:move;"></div>
+</div>
+
+<div id="srcExit" onclick="fnFullSrc();" style="display:none;"><img alt="退出" src="images/srcexit.jpg" /></div>
+<div id="CopyRight"><div class="bg"></div><div class="con" onselectstart="return false;">{$CityName}运营商：<a href="{$ProprietorUrl}" style="color:#fff;" target="_blank">{$Proprietor}</a> </div></div>
+<div id="EdushiAnnounce"><div class="bg"></div><div id="EdushiAnnounceText" class="con" onselectstart="return false;" style="height:20px;">
+
+</div></div>
+
+</body>
+</html>
+<script type="text/javascript" src="http://api2.edushi.com/0710/api.js/Api2.aspx?City={$CityCode}&L={$Language}&MapID=EdushiMap&x={$X}&y={$Y}&w=1020&h=500&eye=1&ew=190&eh=145&e=utf-8&v=0"></script>
+<script type="text/javascript">
+    fnLoadInit(); 
+</script>
+

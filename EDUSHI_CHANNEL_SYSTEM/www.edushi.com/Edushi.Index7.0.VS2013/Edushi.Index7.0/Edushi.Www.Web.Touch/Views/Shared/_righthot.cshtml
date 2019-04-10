@@ -1,0 +1,19 @@
+﻿@{
+    Layout = null;
+}
+
+@model Edushi.Www.Web.Touch.Models.SharedModel
+@using Edushi.Common
+@{
+    string ParameterName = System.Configuration.ConfigurationManager.AppSettings["CooperationApp_UrlParameterName"];
+    string ParameterValue = Request.QueryString[ParameterName];
+}
+
+@if (!string.IsNullOrWhiteSpace(Model.RightHot))
+{
+    <section class="area-col recommend-li">
+        <ul>
+            @Html.Raw(Model.RightHot.GetHtmlHrefReplace(ParameterName, ParameterValue))
+        </ul>
+    </section>
+}

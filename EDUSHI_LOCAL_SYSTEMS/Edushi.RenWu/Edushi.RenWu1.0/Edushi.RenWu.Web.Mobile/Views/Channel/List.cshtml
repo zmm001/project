@@ -1,0 +1,11 @@
+﻿@model Edushi.RenWu.Web.Mobile.Models.ChannelIndexModel
+@using Edushi.RenWu.Special
+@{
+    Layout = "~/Views/Channel/ChannelLayout.cshtml";
+}
+
+<div class="page-box">
+    <a href="@Common.GetPageUrl(Url.Content("~/"), Model.CurrentModel.IT_ParentID, Model.CurrentModel.IT_ID,null, Model.currentPage, Model.PageCount, "up")">上一页</a>
+    <span class="page-count">@(Model.currentPage)/@(Model.PageCount)</span>
+    <a href="@Common.GetPageUrl(Url.Content("~/"), Model.CurrentModel.IT_ParentID, Model.CurrentModel.IT_ID,null, Model.currentPage, Model.PageCount, "down")">下一页</a>
+</div>

@@ -1,0 +1,122 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>FindEstore</title>
+    <script language="javascript" type="text/javascript" src="/Js/GeneralLib.js"></script>
+    <script language="javascript" type="text/javascript" src="../Js/FindeEstore.js"></script>
+    <link rel="stylesheet" href="../Css/FindEstore.css" type="text/css" />
+</head>
+<body>
+    <!--找店助手 参见：BusTransferSearch-->
+    <div class="ulResultList" id="TabContent" style="width: 300px; margin: 0 auto;">
+        <div class="EachRow">
+            <div class="ActiveInfo" id="TradeTitle" onclick="Expanding('TradeTitle','TradeSearch')">E店类目</div>
+            <div class="DottedLine"></div>
+            <div class="DetailCir" id="TradeSearch">
+             <table cellpadding="0" cellspacing="0" border="0" class="TabSty1">
+             <tr>
+             <th style="width:76px;"><span class="Bt">餐&nbsp;&nbsp;饮&nbsp;&nbsp;店：</span></th>
+             <td><input name="TradeType" type="checkbox" value="3" />西餐厅</td>
+             <td><input name="TradeType" type="checkbox" value="4" />咖啡馆</td>
+             <td><input name="TradeType" type="checkbox" value="14" />家常菜</td>
+             </tr>
+             <tr>
+             <th><span class="Bt">食&nbsp;&nbsp;品&nbsp;&nbsp;店：</span></th>
+             <td><input name="TradeType" type="checkbox" value="25"/>零食店</td>
+             <td><input name="TradeType" type="checkbox" value="26"/>奶茶店</td>
+             <td><input name="TradeType" type="checkbox" value="30"/>特产店</td>
+             </tr>             
+             <tr>
+             <th><span class="Bt">服&nbsp;&nbsp;饰&nbsp;&nbsp;店：</span></th>
+             <td><input name="TradeType" type="checkbox" value="100"/>女装服饰店</td>
+             <td><input name="TradeType" type="checkbox" value="108"/>饰品店</td>
+             <td><input name="TradeType" type="checkbox" value="110"/>鞋店</td>
+             </tr>
+             <tr>
+             <th><span class="Bt">便&nbsp;&nbsp;民&nbsp;&nbsp;店：</span></th>
+             <td><input name="TradeType" type="checkbox" value="133"/>便利店</td>
+             <td><input name="TradeType" type="checkbox" value="134"/>杂货店</td>
+             <td><input name="TradeType" type="checkbox" value="152"/>花店</td>
+             </tr>
+             </table>
+                <div class="TdRgt">
+                    <table cellpadding="1" cellspacing="0" border="0">
+                        <tr>
+                            <td>
+                                更多类目
+                            </td>
+                            <td>
+                                <select id="BigTradeType" style="width:80px" onchange="LoadSmallType($('SmallTradeType'), 1, this.value)">
+                                    <option id="optBigTrade" value="-1">E店大类</option>
+                                </select>
+                            </td>
+                            <td>
+                                <select id="SmallTradeType" style="width:80px">
+                                    <option value="-1">E店小类</option>
+                                </select>
+                            </td>
+                            <td>
+                                <img src="../Images/SeaButton1.gif" id="btnShowTrade" alt="显示" style="cursor: pointer;" />
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div class="EachRow">
+            <div class="ActiveInfo" id="ZoneTitle" onclick="Expanding('ZoneTitle','ZoneSearch')">热门小商圈</div>
+            <div class="DottedLine"></div>
+            <div class="DetailCir" id="ZoneSearch">
+            <table cellpadding="0" cellspacing="0" border="0" class="TabSty1">
+            <tr>
+            <th style="width:60px;"><span class="Bt">上城区：</span></th>
+            <td><input name="ZoneType" type="checkbox" value="3"/>湖滨精品街</td>
+            <td><input name="ZoneType" type="checkbox" value="25"/>解放路</td>
+            <td><input name="ZoneType" type="checkbox" value="23"/>建国中路</td>
+            </tr>
+            <tr>
+            <th><span class="Bt">下城区：</span></th>
+            <td><input name="ZoneType" type="checkbox" value="52"/>武林路商街</td>
+            <td><input name="ZoneType" type="checkbox" value="82"/>凤起路</td>
+            <td><input name="ZoneType" type="checkbox" value="69"/>朝晖路</td>
+            </tr>
+            <tr>
+            <th><span class="Bt">西湖区：</span></th>
+            <td><input name="ZoneType" type="checkbox" value="107"/>文一路</td>
+            <td><input name="ZoneType" type="checkbox" value="137"/>文二西路</td>
+            <td><input name="ZoneType" type="checkbox" value="119"/>保俶路</td>
+            </tr>
+            </table>
+                <div class="TdRgt">
+                    <table cellpadding="1" cellspacing="0" border="0">
+                        <tr>
+                            <td>
+                                更多商圈
+                            </td>
+                            <td>
+                                <select id="BigZoneType" style="width:80px" onchange="LoadSmallType($('SmallZoneType'), 3, this.value)">
+                                    <option id="optBigZone" value="-1">地域大类</option>
+                                </select>
+                            </td>
+                            <td>
+                                <select id="SmallZoneType" style="width:80px">
+                                    <option value="-1">地域小类</option>
+                                </select>
+                            </td>
+                            <td>
+                                <img src="../Images/SeaButton1.gif" id="btnShowZone" alt="显示" style="cursor: pointer;" />
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div class="EachRow">
+            <div class="ActiveInfo" id="SalesVoucheTitle" onclick="Expanding('SalesVoucheTitle','SalesVoucherNews')">优惠促销</div>
+            <div class="DottedLine"></div>
+            <div class="DetailCir" id="SalesVoucherNews">
+            </div>
+        </div>
+    </div>
+</body>
+</html>

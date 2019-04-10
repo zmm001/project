@@ -1,0 +1,78 @@
+﻿@using Edushi.Common
+@model Edushi.UserCenter.Web.Mobile.Models.UserIndexResultModel
+@{
+    Layout = "~/Views/AuthorNews/AuthorNews_Layout.cshtml";
+}
+
+@section header{
+    @if (ViewBag.status == "1")
+    {
+        <a href="@string.Format("{0}index/5-{1}.html", Url.Content("~/"), Model.UserInfo.UI_ID)">动态</a>
+    }
+    <a href="javascript:void(0);" class="on">综合</a>
+    <a href="@string.Format("{0}index/2-{1}.html", Url.Content("~/"), Model.UserInfo.UI_ID)">新闻</a>
+    <a href="@string.Format("{0}index/3-{1}.html", Url.Content("~/"), Model.UserInfo.UI_ID)">图闻</a>
+    <a href="@string.Format("{0}index/4-{1}.html", Url.Content("~/"), Model.UserInfo.UI_ID)">专题</a>
+}
+@if (Model.NewsInfo != null && Model.NewsInfo.List != null && Model.NewsInfo.List.Any())
+{
+    foreach (var item in Model.NewsInfo.List)
+    {
+        var li_class = ""; //默认为资讯
+        var img_box = string.Empty;
+        var url = string.Empty;
+        var updateTime = Common.TimeInterval(item.UpdateTime, DateTime.Now);
+        if (item.type == "1") //资讯
+        {
+            url = string.Format("http://m.edushi.com/zixun/info/{0}-{1}-n{2}.html", item.ParentTypeID, item.TypeID, item.ID);
+            if (!string.IsNullOrEmpty(item.Pic) && !string.IsNullOrEmpty(item.Pic1) && !string.IsNullOrEmpty(item.Pic2))
+            {
+                li_class = " class=\"multiple\""; //multiple
+                img_box = string.Format("<div class=\"img-box\">{0}</div>\r\n", "<img src=\"" + item.Pic.GetPicReplace("", "") + "\"><img src=\"" + item.Pic1.GetPicReplace("", "") + "\"><img src=\"" + item.Pic2.GetPicReplace("", "") + "\">"); //三张图
+            }
+            else if (!string.IsNullOrEmpty(item.Pic))
+            {
+                li_class = " class=\"single\""; //single
+                img_box = string.Format("<div class=\"img-box\">{0}</div>\r\n", "<img src=\"" + item.Pic.GetPicReplace("", "") + "\">"); //一张图
+            }
+        }
+        else if (item.type == "2") //图闻
+        {
+            url = string.Format("http://m.tu.edushi.com/info/{0}-{1}-n{2}.html", item.ParentTypeID, item.TypeID, item.ID);
+            li_class = " class=\"tu\""; //tuwen
+            if (!string.IsNullOrWhiteSpace(item.Pic) && !string.IsNullOrWhiteSpace(item.Pic1) && !string.IsNullOrWhiteSpace(item.Pic2))
+            {
+                img_box = string.Format("<div class=\"img-box\"><p>{0}</p><p>{1}</p><p>{2}</p><div class=\"number\"><span>{3}</span></div></div>\r\n", "<img src=\"" + item.Pic.GetPicReplace("", "") + "\">", "<img src=\"" + item.Pic1.GetPicReplace("", "") + "\">", "<img src=\"" + item.Pic2.GetPicReplace("", "") + "\">", item.PicCount);
+            }
+            else if (!string.IsNullOrWhiteSpace(item.Pic))
+            {
+                img_box = string.Format("<div class=\"img-box\"><p>{0}</p><div class=\"number\"><span>{1}</span></div></div>\r\n", "<img src=\"" + item.Pic.GetPicReplace("", "") + "\">", item.PicCount);
+                li_class = " class=\"tu singletu\"";
+            }
+
+        }
+        else if (item.type == "3") //专题
+        {
+            url = string.Format("http://m.edushi.com/zt/info/{0}-{1}-n{2}.html", item.ParentTypeID, item.TypeID, item.ID);
+            li_class = " class=\"topic\""; //topic
+            img_box = string.Format("<div class=\"img-box\">{0}</div>\r\n", "<img src=\"" + item.Pic.GetPicReplace("", "") + "\">"); //一张图
+        }
+
+        <li @Html.Raw(li_class)>
+            <a href="@url">
+                <span class="title">@Html.Raw(item.Title)</span>
+                @Html.Raw(img_box)
+                <div class="tips">
+                    <span class="author">@item.Author</span>
+                    <span class="comment"></span>
+                    <span class="time">@updateTime</span>
+                </div>
+            </a>
+        </li>
+
+    }
+}
+else
+{
+    <div class="nodata">暂无数据</div>
+}

@@ -1,0 +1,6 @@
+E:\TFS192.168.100.212\EDUSHI_CHANNEL_SYSTEM\Edushi.RES\Edushi.RES.Web\bin\Edushi.RES.Web.dll.config
+E:\TFS192.168.100.212\EDUSHI_CHANNEL_SYSTEM\Edushi.RES\Edushi.RES.Web\bin\Edushi.RES.Web.dll
+E:\TFS192.168.100.212\EDUSHI_CHANNEL_SYSTEM\Edushi.RES\Edushi.RES.Web\bin\Edushi.RES.Web.pdb
+E:\TFS192.168.100.212\EDUSHI_CHANNEL_SYSTEM\Edushi.RES\Edushi.RES.Web\obj\Debug\Edushi.RES.Web.dll
+E:\TFS192.168.100.212\EDUSHI_CHANNEL_SYSTEM\Edushi.RES\Edushi.RES.Web\obj\Debug\Edushi.RES.Web.pdb
+E:\TFS192.168.100.212\EDUSHI_CHANNEL_SYSTEM\Edushi.RES\Edushi.RES.Web\obj\Debug\Edushi.RES.Web.csprojResolveAssemblyReference.cache

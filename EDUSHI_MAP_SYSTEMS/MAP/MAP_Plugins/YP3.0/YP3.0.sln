@@ -1,0 +1,67 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Studio 2008
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Map.YellowPage", "Map.YellowPage\Map.YellowPage.csproj", "{3E86B780-5089-4581-8BC2-C8BC4943D821}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Aladdin.WebAg", "..\..\..\Aladdin.WebAg\Aladdin.WebAg\Aladdin.WebAg.csproj", "{59EF62E3-2C2C-47A8-9BEB-5B362E5D3CDC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "YellowPage.Bll", "YellowPage.Bll\YellowPage.Bll.csproj", "{E6838001-F84E-444E-ABBC-20FDF6D094B9}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Libs", "Libs", "{C6B93055-40FC-47AC-A3DA-F68DB1905A02}"
+	ProjectSection(SolutionItems) = preProject
+		Libs\Aladdin.SqlHelper.dll = Libs\Aladdin.SqlHelper.dll
+		Libs\Aladdin.Tools.dll = Libs\Aladdin.Tools.dll
+		Libs\AspNetPager.dll = Libs\AspNetPager.dll
+		Libs\DataCenter.DataAccess.dll = Libs\DataCenter.DataAccess.dll
+		Libs\DIndex.dll = Libs\DIndex.dll
+		Libs\DSearch.dll = Libs\DSearch.dll
+		Libs\EDC.Framework.dll = Libs\EDC.Framework.dll
+		Libs\EDC.LocalSystem.dll = Libs\EDC.LocalSystem.dll
+		Libs\EDC.Member.dll = Libs\EDC.Member.dll
+		Libs\EDC.ShortMessage.dll = Libs\EDC.ShortMessage.dll
+		Libs\Enyim.Caching.dll = Libs\Enyim.Caching.dll
+		Libs\log4net.dll = Libs\log4net.dll
+		Libs\Lucene.Net.dll = Libs\Lucene.Net.dll
+		Libs\Map.WebBLL.dll = Libs\Map.WebBLL.dll
+		Libs\Segment.dll = Libs\Segment.dll
+		Libs\URLRewriter.dll = Libs\URLRewriter.dll
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 4
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = http://192.168.101.67:8080/
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = Map.YellowPage\\Map.YellowPage.csproj
+		SccProjectName1 = Map.YellowPage
+		SccLocalPath1 = Map.YellowPage
+		SccProjectUniqueName2 = ..\\..\\..\\Aladdin.WebAg\\Aladdin.WebAg\\Aladdin.WebAg.csproj
+		SccProjectName2 = ../../../Aladdin.WebAg/Aladdin.WebAg
+		SccLocalPath2 = ..\\..\\..\\Aladdin.WebAg\\Aladdin.WebAg
+		SccProjectUniqueName3 = YellowPage.Bll\\YellowPage.Bll.csproj
+		SccProjectName3 = YellowPage.Bll
+		SccLocalPath3 = YellowPage.Bll
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{3E86B780-5089-4581-8BC2-C8BC4943D821}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3E86B780-5089-4581-8BC2-C8BC4943D821}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3E86B780-5089-4581-8BC2-C8BC4943D821}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3E86B780-5089-4581-8BC2-C8BC4943D821}.Release|Any CPU.Build.0 = Release|Any CPU
+		{59EF62E3-2C2C-47A8-9BEB-5B362E5D3CDC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{59EF62E3-2C2C-47A8-9BEB-5B362E5D3CDC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{59EF62E3-2C2C-47A8-9BEB-5B362E5D3CDC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{59EF62E3-2C2C-47A8-9BEB-5B362E5D3CDC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E6838001-F84E-444E-ABBC-20FDF6D094B9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E6838001-F84E-444E-ABBC-20FDF6D094B9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E6838001-F84E-444E-ABBC-20FDF6D094B9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E6838001-F84E-444E-ABBC-20FDF6D094B9}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

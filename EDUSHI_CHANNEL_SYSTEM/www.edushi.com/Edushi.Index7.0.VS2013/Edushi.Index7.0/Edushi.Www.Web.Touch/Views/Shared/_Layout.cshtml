@@ -1,0 +1,36 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" id="viewport" content="width=device-width,initial-scale=1.0, maximum-scale=1.0,minimum-scale=1.0,user-scalable=no" />
+    <meta name="applicable-device" content="mobile" />
+    <title>@ViewBag.Title</title>
+    @RenderSection("meta", false)
+    <script>
+        document.documentElement.style.fontSize = 100 * ((document.documentElement.clientWidth) / 750) + "px";
+        window.onresize = window.onorientationchange = function () {
+            document.documentElement.style.fontSize = 100 * ((document.documentElement.clientWidth) / 750) + "px";
+        }
+    </script>
+    <link rel="stylesheet" href="http://res.edushi.com/www/touch/v7/asset/css/common_7.0.css">
+    <script type="text/javascript" src="http://res.edushi.com/www/touch/v7/asset/js/jquery-1.8.3.min.js"></script>
+    <script>
+        var _hmt = _hmt || [];
+        (function () {
+            var hm = document.createElement("script");
+            hm.src = "https://hm.baidu.com/hm.js?99a36e54478482e04c158ab069a3e598";
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
+</head>
+<body>
+    @RenderBody()
+    @*底部*@
+    @Html.Partial("Footer")
+<script type="text/javascript" src="http://res.edushi.com/www/touch/v7/asset/js/common.min.js"></script>
+</body>
+</html>

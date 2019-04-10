@@ -1,0 +1,758 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head>
+    <title></title>
+    <script type="text/javascript" language="javascript">
+        function fnCloseCityPanel() {
+            parent.fnSwichCity();
+        }
+    </script>
+    <style type="text/css">
+        /*切换城市*/
+.ChoiceMenus{}
+#ChMenusNavT,#ChMenusNavD{background:url(../Images/ChMenusBg.gif) no-repeat left top;}
+#ChMenusNavT{ width:640px; height:20px; overflow:hidden;}
+#ChMenusNavD{width:630px; padding:0 0px 8px 10px; background-position:left bottom;}
+        #ScrollCon{ width:629px;overflow-y:auto;overflow-x:hidden;
+             scrollbar-face-color: #DBEBFE; /*滚动条凸出部分的颜色*/
+             scrollbar-shadow-color: #B8D6FA; /*滚动条空白部分的颜色*/
+             scrollbar-highlight-color: #FFFFFF; /*立体滚动条阴影的颜色*/
+             scrollbar-3dlight-color: #DBEBFE; /*滚动条亮边的颜色*/
+             scrollbar-darkshadow-color:#458CE4; /*上下按钮上三角箭头的颜色*/
+             scrollbar-track-color: #FFFFFF; /*滚动条的背景颜色*/
+             scrollbar-arrow-color: #458CE4;/*滚动条强阴影的颜色*/
+        }
+        .Td a{ color:#36C; text-decoration:underline;}
+        .Td a:hover{ color:Red; text-decoration:none;}
+        table.AllCityName tr td.Td,table.AllCityName tr th{ text-align:left; vertical-align:top; padding:3px; line-height:150%;}
+        table.AllCityName tr th{ text-align:left; color:#333; word-break:keep-all;/* 不换行 */white-space:nowrap;/* 不换行 */}
+        table.AllCityName tr td.Td a{ margin:0 8px 3px 0;}
+        table.AllCityName tr td.Line{ background:url(/Images/Dashed1.gif) repeat-x left 2px; height:5px; overflow:hidden;}
+    </style>
+</head>
+<body style="font-size:12px; margin:0px">
+<div class="ChoiceMenus" id="divCityList">
+        <div id="ChMenusNavT">
+        </div>
+        <div id="ChMenusNavD">   
+<div style="position:absolute; top:7px; right:3px; cursor:hand; width:13px; height:13px; overflow:hidden;background:url(/Images/CloseBtn.gif) no-repeat left top;" onclick="javascript:fnCloseCityPanel()" onmouseover="this.style.backgroundPosition='left -13px'"onmouseout="this.style.backgroundPosition='left top'" title="关闭窗口"></div>
+<div id="ScrollCon" style="height: 330px;">
+<table class="AllCityName" id="tableCityList" cellpadding="0" cellspacing="0">
+    <tbody>
+        <tr>
+            <th>
+                直辖市
+            </th>
+            <td class="Td">
+                <a target="_blank"
+                        href="http://beijing.edushi.com/">北京</a><a target="_blank"
+                            href="http://shanghai.edushi.com/">上海</a><a target="_blank"
+                    href="http://chongqing.edushi.com/">重庆</a><a target="_blank"
+                                href="http://tianjin.edushi.com/">天津</a>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2" class="Line">
+            </td>
+        </tr>
+        <tr>
+            <th>
+                安徽
+            </th>
+            <td class="Td">
+                <a target="_blank"
+                    href="http://hefei.edushi.com/">合肥</a><a target="_blank"
+                        href="http://anqing.edushi.com/">安庆</a><a target="_blank"
+                            href="http://bengbu.edushi.com/">蚌埠</a><a target="_blank"
+                                href="http://bozhou.edushi.com/">亳州</a><a target="_blank"
+                                    href="http://chaohu.edushi.com/">巢湖</a><a target="_blank"
+                                        href="http://chizhou.edushi.com/">池州</a><a target="_blank"
+                                            href="http://chuzhou.edushi.com/">滁州</a><a target="_blank"
+                                                href="http://fyang.edushi.com/">阜阳</a><a target="_blank"
+                                                    href="http://huaibei.edushi.com/">淮北</a><a target="_blank"
+                                                        href="http://huainan.edushi.com/">淮南</a><a target="_blank"
+                                                            href="http://huangshan.edushi.com/">黄山</a><a target="_blank"
+                                                                href="http://liuan.edushi.com/">六安</a><a target="_blank"
+                                                                    href="http://maanshan.edushi.com/">马鞍山</a><a target="_blank"
+                                                                        href="http://suzhou2.edushi.com/">宿州</a><a target="_blank"
+                                                                            href="http://tongling.edushi.com/">铜陵</a><a target="_blank"
+                                                                                href="http://wuhu.edushi.com/">芜湖</a><a target="_blank"
+                                                                                    href="http://xuancheng.edushi.com/">宣城</a>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2" class="Line">
+            </td>
+        </tr>
+        <tr>
+            <th>
+                福建
+            </th>
+            <td class="Td">
+                <a target="_blank"
+                    href="http://fuzhou.edushi.com/">福州</a><a target="_blank"
+                        href="http://xiamen.edushi.com/">厦门</a><a target="_blank"
+                            href="http://longyan.edushi.com/">龙岩</a><a target="_blank"
+                                href="http://nanping.edushi.com/">南平</a><a target="_blank"
+                                    href="http://ningde.edushi.com/">宁德</a><a target="_blank"
+                                        href="http://putian.edushi.com/">莆田</a><a target="_blank"
+                                            href="http://quanzhou.edushi.com/">泉州</a><a target="_blank"
+                                                href="http://sanming.edushi.com/">三明</a><a target="_blank"
+                                                    href="http://zhangzhou.edushi.com/">漳州</a>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2" class="Line">
+            </td>
+        </tr>
+        <tr>
+            <th>
+                甘肃
+            </th>
+            <td class="Td">
+                <a target="_blank"
+                    href="http://baiyin.edushi.com/">白银</a><a target="_blank"
+                        href="http://dingxi.edushi.com/">定西</a><a target="_blank"
+                            href="http://gannan.edushi.com/">甘南</a><a target="_blank"
+                                href="http://jiayuguan.edushi.com/">嘉峪关</a><a target="_blank"
+                                    href="http://jinchang.edushi.com/">金昌</a><a target="_blank"
+                                        href="http://jiuquan.edushi.com/">酒泉</a><a target="_blank"
+                                            href="http://lanzhou.edushi.com/">兰州</a><a target="_blank"
+                                                href="http://linxia.edushi.com/">临夏</a><a target="_blank"
+                                                    href="http://longnan.edushi.com/">陇南</a><a target="_blank"
+                                                        href="http://pingliang.edushi.com/">平凉</a><a target="_blank"
+                                                            href="http://qingyang.edushi.com/">庆阳</a><a target="_blank"
+                                                                href="http://tianshui.edushi.com/">天水</a><a target="_blank"
+                                                                    href="http://wuwei.edushi.com/">武威</a><a target="_blank"
+                                                                        href="http://zhangye.edushi.com/">张掖</a>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2" class="Line">
+            </td>
+        </tr>
+        <tr>
+            <th>
+                广东
+            </th>
+            <td class="Td">
+                <a target="_blank"
+                    href="http://guangzhou.edushi.com/">广州</a><a target="_blank"
+                        href="http://sz.edushi.com/">深圳</a><a target="_blank"
+                            href="http://chaozhou.edushi.com/">潮州</a><a target="_blank"
+                                href="http://dongguan.edushi.com/">东莞</a><a target="_blank"
+                                    href="http://foshan.edushi.com/">佛山</a><a target="_blank"
+                                        href="http://heyuan.edushi.com/">河源</a><a target="_blank"
+                                            href="http://huizhou.edushi.com/">惠州</a><a target="_blank"
+                                                href="http://jiangmen.edushi.com/">江门</a><a target="_blank"
+                                                    href="http://jieyang.edushi.com/">揭阳</a><a target="_blank"
+                                                        href="http://maoming.edushi.com/">茂名</a><a target="_blank"
+                                                            href="http://meizhou.edushi.com/">梅州</a><a target="_blank"
+                                                                href="http://qingyuan.edushi.com/">清远</a><a target="_blank"
+                                                                    href="http://shantou.edushi.com/">汕头</a><a target="_blank"
+                                                                        href="http://shanwei.edushi.com/">汕尾</a><a target="_blank"
+                                                                            href="http://shaoguan.edushi.com/">韶关</a><a target="_blank"
+                                                                                href="http://yangjiang.edushi.com/">阳江</a><a target="_blank"
+                                                                                    href="http://yunfu.edushi.com/">云浮</a><a target="_blank"
+                                                                                        href="http://zhanjiang.edushi.com/">湛江</a><a target="_blank"
+                                                                                            href="http://zhaoqing.edushi.com/">肇庆</a><a target="_blank"
+                                                                                                href="http://zhongshan.edushi.com/">中山</a><a target="_blank"
+                                                                                                    href="http://zhuhai.edushi.com/">珠海</a>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2" class="Line">
+            </td>
+        </tr>
+        <tr>
+            <th>
+                广西
+            </th>
+            <td class="Td">
+                <a target="_blank"
+                    href="http://liuzhou.edushi.com/">柳州</a><a target="_blank"
+                        href="http://yulin.edushi.com/">玉林</a><a target="_blank"
+                            href="http://laibin.edushi.com/">来宾</a><a target="_blank"
+                                href="http://baise.edushi.com/">百色</a><a target="_blank"
+                                    href="http://beihai.edushi.com/">北海</a><a target="_blank"
+                                        href="http://chongzuo.edushi.com/">崇左</a><a target="_blank"
+                                            href="http://fangchenggang.edushi.com/">防城港</a><a target="_blank"
+                                                href="http://guigang.edushi.com/">贵港</a><a target="_blank"
+                                                    href="http://guilin.edushi.com/">桂林</a><a target="_blank"
+                                                        href="http://hechi.edushi.com/">河池</a><a target="_blank"
+                                                            href="http://hezhou.edushi.com/">贺州</a><a target="_blank"
+                                                                href="http://nanning.edushi.com/">南宁</a><a target="_blank"
+                                                                    href="http://qinzhou.edushi.com/">钦州</a><a target="_blank"
+                                                                        href="http://wuzhou.edushi.com/">梧州</a>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2" class="Line">
+            </td>
+        </tr>
+        <tr>
+            <th>
+                贵州
+            </th>
+            <td class="Td">
+                <a target="_blank"
+                    href="http://anshun.edushi.com/">安顺</a><a target="_blank"
+                        href="http://bijie.edushi.com/">毕节</a><a target="_blank"
+                            href="http://guiyang.edushi.com/">贵阳</a><a target="_blank"
+                                href="http://liupanshui.edushi.com/">六盘水</a><a target="_blank"
+                                    href="http://qiandongnan.edushi.com/">黔东南</a><a target="_blank"
+                                        href="http://qiannan.edushi.com/">黔南</a><a target="_blank"
+                                            href="http://qianxinan.edushi.com/">黔西南</a><a target="_blank"
+                                                href="http://tongren.edushi.com/">铜仁</a><a target="_blank"
+                                                    href="http://zunyi.edushi.com/">遵义</a>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2" class="Line">
+            </td>
+        </tr>
+        <tr>
+            <th>
+                海南
+            </th>
+            <td class="Td">
+                <a target="_blank"
+                    href="http://baisha.edushi.com/">白沙</a><a target="_blank"
+                        href="http://changjiang.edushi.com/">昌江</a><a target="_blank"
+                            href="http://danzhou.edushi.com/">儋州</a><a target="_blank"
+                                href="http://dongfang.edushi.com/">东方</a><a target="_blank"
+                                    href="http://haikou.edushi.com/">海口</a><a target="_blank"
+                                        href="http://ledong.edushi.com/">乐东</a><a target="_blank"
+                                            href="http://lingshui.edushi.com/">陵水</a><a target="_blank"
+                                                href="http://qionghai.edushi.com/">琼海</a><a target="_blank"
+                                                    href="http://qiongzhong.edushi.com/">琼中</a><a target="_blank"
+                                                        href="http://sanya.edushi.com/">三亚</a><a target="_blank"
+                                                            href="http://wanning.edushi.com/">万宁</a><a target="_blank"
+                                                                href="http://wenchang.edushi.com/">文昌</a><a target="_blank"
+                                                                    href="http://wuzhishan.edushi.com/">五指山</a>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2" class="Line">
+            </td>
+        </tr>
+        <tr>
+            <th>
+                河北
+            </th>
+            <td class="Td">
+                <a target="_blank"
+                    href="http://shijiazhuang.edushi.com/">石家庄</a><a target="_blank"
+                        href="http://baoding.edushi.com/">保定</a><a target="_blank"
+                            href="http://cangzhou.edushi.com/">沧州</a><a target="_blank"
+                                href="http://chengde.edushi.com/">承德</a><a target="_blank"
+                                    href="http://handan.edushi.com/">邯郸</a><a target="_blank"
+                                        href="http://hengshui.edushi.com/">衡水</a><a target="_blank"
+                                            href="http://langfang.edushi.com/">廊坊</a><a target="_blank"
+                                                href="http://qinhuangdao.edushi.com/">秦皇岛</a><a target="_blank"
+                                                    href="http://tangshan.edushi.com/">唐山</a><a target="_blank"
+                                                        href="http://xingtai.edushi.com/">邢台</a><a target="_blank"
+                                                            href="http://zhangjiakou.edushi.com/">张家口</a>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2" class="Line">
+            </td>
+        </tr>
+        <tr>
+            <th>
+                黑龙江
+            </th>
+            <td class="Td">
+                <a target="_blank"
+                    href="http://harbin.edushi.com/">哈尔滨</a><a target="_blank"
+                        href="http://daqing.edushi.com/">大庆</a><a target="_blank"
+                            href="http://daxinganling.edushi.com/">大兴安岭</a><a target="_blank"
+                                href="http://hegang.edushi.com/">鹤岗</a><a target="_blank"
+                                    href="http://heihe.edushi.com/">黑河</a><a target="_blank"
+                                        href="http://jixi.edushi.com/">鸡西</a><a target="_blank"
+                                            href="http://jiamusi.edushi.com/">佳木斯</a><a target="_blank"
+                                                href="http://mudanjiang.edushi.com/">牡丹江</a><a target="_blank"
+                                                    href="http://qitaihe.edushi.com/">七台河</a><a target="_blank"
+                                                        href="http://qiqihaer.edushi.com/">齐齐哈尔</a><a target="_blank"
+                                                            href="http://shuangyashan.edushi.com/">双鸭山</a><a target="_blank"
+                                                                href="http://suihua.edushi.com/">绥化</a><a target="_blank"
+                                                                    href="http://yichun1.edushi.com/">伊春</a>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2" class="Line">
+            </td>
+        </tr>
+        <tr>
+            <th>
+                河南
+            </th>
+            <td class="Td">
+                <a target="_blank"
+                    href="http://zhengzhou.edushi.com/">郑州</a><a target="_blank"
+                        href="http://anyang.edushi.com/">安阳</a><a target="_blank"
+                            href="http://hebi.edushi.com/">鹤壁</a><a target="_blank"
+                                href="http://jiaozuo.edushi.com/">焦作</a><a target="_blank"
+                                    href="http://kaifeng.edushi.com/">开封</a><a target="_blank"
+                                        href="http://luoyang.edushi.com/">洛阳</a><a target="_blank"
+                                            href="http://luohe.edushi.com/">漯河</a><a target="_blank"
+                                                href="http://nanyang.edushi.com/">南阳</a><a target="_blank"
+                                                    href="http://pingdingshan.edushi.com/">平顶山</a><a target="_blank"
+                                                        href="http://puyang.edushi.com/">濮阳</a><a target="_blank"
+                                                            href="http://sanmenxia.edushi.com/">三门峡</a><a target="_blank"
+                                                                href="http://shangqiu.edushi.com/">商丘</a><a target="_blank"
+                                                                    href="http://xinxiang.edushi.com/">新乡</a><a target="_blank"
+                                                                        href="http://xinyang.edushi.com/">信阳</a><a target="_blank"
+                                                                            href="http://xuchang.edushi.com/">许昌</a><a target="_blank"
+                                                                                href="http://zhoukou.edushi.com/">周口</a><a target="_blank"
+                                                                                    href="http://zhumadian.edushi.com/">驻马店</a>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2" class="Line">
+            </td>
+        </tr>
+        <tr>
+            <th>
+                湖北
+            </th>
+            <td class="Td">
+                <a target="_blank"
+                    href="http://wuhan.edushi.com/">武汉</a><a target="_blank"
+                        href="http://ezhou.edushi.com/">鄂州</a><a target="_blank"
+                            href="http://enshi.edushi.com/">恩施</a><a target="_blank"
+                                href="http://huanggang.edushi.com/">黄冈</a><a target="_blank"
+                                    href="http://huangshi.edushi.com/">黄石</a><a target="_blank"
+                                        href="http://jingmen.edushi.com/">荆门</a><a target="_blank"
+                                            href="http://jingzhou.edushi.com/">荆州</a><a target="_blank"
+                                                href="http://qianjiang.edushi.com/">潜江</a><a target="_blank"
+                                                    href="http://shennongjia.edushi.com/">神农架</a><a target="_blank"
+                                                        href="http://shiyan.edushi.com/">十堰</a><a target="_blank"
+                                                            href="http://suizhou.edushi.com/">随州</a><a target="_blank"
+                                                                href="http://tianmen.edushi.com/">天门</a><a target="_blank"
+                                                                    href="http://xiantao.edushi.com/">仙桃</a><a target="_blank"
+                                                                        href="http://xianning.edushi.com/">咸宁</a><a target="_blank"
+                                                                            href="http://xiangfan.edushi.com/">襄樊</a><a target="_blank"
+                                                                                href="http://xiaogan.edushi.com/">孝感</a><a target="_blank"
+                                                                                    href="http://yichang.edushi.com/">宜昌</a>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2" class="Line">
+            </td>
+        </tr>
+        <tr>
+            <th>
+                湖南
+            </th>
+            <td class="Td">
+                <a target="_blank"
+                    href="http://changsha.edushi.com/">长沙</a><a target="_blank"
+                        href="http://changde.edushi.com/">常德</a><a target="_blank"
+                            href="http://chenzhou.edushi.com/">郴州</a><a target="_blank"
+                                href="http://hengyang.edushi.com/">衡阳</a><a target="_blank"
+                                    href="http://huaihua.edushi.com/">怀化</a><a target="_blank"
+                                        href="http://loudi.edushi.com/">娄底</a><a target="_blank"
+                                            href="http://shaoyang.edushi.com/">邵阳</a><a target="_blank"
+                                                href="http://xiangtan.edushi.com/">湘潭</a><a target="_blank"
+                                                    href="http://xiangxi.edushi.com/">湘西</a><a target="_blank"
+                                                        href="http://yiyang.edushi.com/">益阳</a><a target="_blank"
+                                                            href="http://yongzhou.edushi.com/">永州</a><a target="_blank"
+                                                                href="http://yueyang.edushi.com/">岳阳</a><a target="_blank"
+                                                                    href="http://zhangjiajie.edushi.com/">张家界</a><a target="_blank"
+                                                                        href="http://zhuzhou.edushi.com/">株洲</a>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2" class="Line">
+            </td>
+        </tr>
+        <tr>
+            <th>
+                江苏
+            </th>
+            <td class="Td">
+                <a target="_blank"
+                    href="http://changzhou.edushi.com/">常州</a><a target="_blank"
+                        href="http://suzhou.edushi.com/">苏州</a><a target="_blank"
+                            href="http://nanjing.edushi.com/">南京</a><a target="_blank"
+                            href="http://danyang.edushi.com/">丹阳</a><a target="_blank"
+                                href="http://huaian.edushi.com/">淮安</a><a target="_blank"
+                                    href="http://lianyungang.edushi.com/">连云港</a><a target="_blank"
+                                        href="http://nantong.edushi.com/">南通</a><a target="_blank"
+                                            href="http://suqian.edushi.com/">宿迁</a><a target="_blank"
+                                                href="http://taizhou1.edushi.com/">泰州</a><a target="_blank"
+                                                    href="http://wuxi.edushi.com/">无锡</a><a target="_blank"
+                                                        href="http://xuzhou.edushi.com/">徐州</a><a target="_blank"
+                                                            href="http://yancheng.edushi.com/">盐城</a><a target="_blank"
+                                                                href="http://yangzhou.edushi.com/">扬州</a><a target="_blank"
+                                                                    href="http://zhenjiang.edushi.com/">镇江</a>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2" class="Line">
+            </td>
+        </tr>
+        <tr>
+            <th>
+                江西
+            </th>
+            <td class="Td">
+                <a target="_blank"
+                    href="http://nanchang.edushi.com/">南昌</a><a target="_blank"
+                        href="http://jiujiang.edushi.com/">九江</a><a target="_blank"
+                            href="http://fuzhou2.edushi.com/">抚州</a><a target="_blank"
+                                href="http://ganzhou.edushi.com/">赣州</a><a target="_blank"
+                                    href="http://jian.edushi.com/">吉安</a><a target="_blank"
+                                        href="http://jingdezhen.edushi.com/">景德镇</a><a target="_blank"
+                                            href="http://pingxiang.edushi.com/">萍乡</a><a target="_blank"
+                                                href="http://shangrao.edushi.com/">上饶</a><a target="_blank"
+                                                    href="http://xinyu.edushi.com/">新余</a><a target="_blank"
+                                                        href="http://yichun2.edushi.com/">宜春</a><a target="_blank"
+                                                            href="http://yingtan.edushi.com/">鹰潭</a>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2" class="Line">
+            </td>
+        </tr>
+        <tr>
+            <th>
+                吉林
+            </th>
+            <td class="Td">
+                <a target="_blank"
+                    href="http://baicheng.edushi.com/">白城</a><a target="_blank"
+                        href="http://baishan.edushi.com/">白山</a><a target="_blank"
+                            href="http://changchun.edushi.com/">长春</a><a target="_blank"
+                                href="http://jilin.edushi.com/">吉林</a><a target="_blank"
+                                    href="http://liaoyuan.edushi.com/">辽源</a><a target="_blank"
+                                        href="http://siping.edushi.com/">四平</a><a target="_blank"
+                                            href="http://songyuan.edushi.com/">松原</a><a target="_blank"
+                                                href="http://tonghua.edushi.com/">通化</a><a target="_blank"
+                                                    href="http://yanbian.edushi.com/">延边</a>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2" class="Line">
+            </td>
+        </tr>
+        <tr>
+            <th>
+                辽宁
+            </th>
+            <td class="Td">
+                <a target="_blank"
+                    href="http://dalian.edushi.com/">大连</a><a target="_blank"
+                        href="http://jinzhou.edushi.com/">锦州</a><a target="_blank"
+                            href="http://anshan.edushi.com/">鞍山</a><a target="_blank"
+                                href="http://benxi.edushi.com/">本溪</a><a target="_blank"
+                                    href="http://zhaoyang.edushi.com/">朝阳</a><a target="_blank"
+                                        href="http://dandong.edushi.com/">丹东</a><a target="_blank"
+                                            href="http://fushun.edushi.com/">抚顺</a><a target="_blank"
+                                                href="http://fuxin.edushi.com/">阜新</a><a target="_blank"
+                                                    href="http://huludao.edushi.com/">葫芦岛</a><a target="_blank"
+                                                        href="http://liaoyang.edushi.com/">辽阳</a><a target="_blank"
+                                                            href="http://panjin.edushi.com/">盘锦</a><a target="_blank"
+                                                                href="http://shenyang.edushi.com/">沈阳</a><a target="_blank"
+                                                                    href="http://tieling.edushi.com/">铁岭</a><a target="_blank"
+                                                                        href="http://yingkou.edushi.com/">营口</a>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2" class="Line">
+            </td>
+        </tr>
+        <tr>
+            <th>
+                内蒙
+            </th>
+            <td class="Td">
+                <a target="_blank"
+                    href="http://alashanmeng.edushi.com/">阿拉善盟</a><a target="_blank"
+                        href="http://bayannaoer.edushi.com/">巴彦淖尔</a><a target="_blank"
+                            href="http://baotou.edushi.com/">包头</a><a target="_blank"
+                                href="http://chifeng.edushi.com/">赤峰</a><a target="_blank"
+                                    href="http://eerduosi.edushi.com/">鄂尔多斯</a><a target="_blank"
+                                        href="http://huhehaote.edushi.com/">呼和浩特</a><a target="_blank"
+                                            href="http://hulunbeier.edushi.com/">呼伦贝尔</a><a target="_blank"
+                                                href="http://tongliao.edushi.com/">通辽</a><a target="_blank"
+                                                    href="http://wuhai.edushi.com/">乌海</a><a target="_blank"
+                                                        href="http://wulanchabu.edushi.com/">乌兰察布</a><a target="_blank"
+                                                            href="http://xilinguolemeng.edushi.com/">锡林郭勒盟</a><a target="_blank"
+                                                                href="http://xinganmeng.edushi.com/">兴安盟</a>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2" class="Line">
+            </td>
+        </tr>
+        <tr>
+            <th>
+                宁夏
+            </th>
+            <td class="Td">
+                <a target="_blank"
+                    href="http://guyuan.edushi.com/">固原</a><a target="_blank"
+                        href="http://shizuishan.edushi.com/">石嘴山</a><a target="_blank"
+                            href="http://wuzhong.edushi.com/">吴忠</a><a target="_blank"
+                                href="http://yinchuan.edushi.com/">银川</a><a target="_blank"
+                                    href="http://zhongwei.edushi.com/">中卫</a>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2" class="Line">
+            </td>
+        </tr>
+        <tr>
+            <th>
+                青海
+            </th>
+            <td class="Td">
+                <a target="_blank"
+                    href="http://guoluo.edushi.com/">果洛</a><a target="_blank"
+                        href="http://haibei.edushi.com/">海北</a><a target="_blank"
+                            href="http://haidong.edushi.com/">海东</a><a target="_blank"
+                                href="http://hainan.edushi.com/">海南</a><a target="_blank"
+                                    href="http://haixi.edushi.com/">海西</a><a target="_blank"
+                                        href="http://huangnan.edushi.com/">黄南</a><a target="_blank"
+                                            href="http://xining.edushi.com/">西宁</a><a target="_blank"
+                                                href="http://yushu.edushi.com/">玉树</a>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2" class="Line">
+            </td>
+        </tr>
+        <tr>
+            <th>
+                山东
+            </th>
+            <td class="Td">
+                <a target="_blank"
+                    href="http://jinan.edushi.com/">济南</a><a target="_blank"
+                        href="http://linyi.edushi.com/">临沂</a><a target="_blank"
+                            href="http://qd.edushi.com/">青岛</a><a target="_blank"
+                                href="http://weihai.edushi.com/">威海</a><a target="_blank"
+                                    href="http://jining.edushi.com/">济宁</a><a target="_blank"
+                                        href="http://dongying.edushi.com/">东营</a><a target="_blank"
+                                            href="http://zibo.edushi.com/">淄博</a><a target="_blank"
+                                                href="http://binzhou.edushi.com/">滨州</a><a target="_blank"
+                                                    href="http://dezhou.edushi.com/">德州</a><a target="_blank"
+                                                        href="http://heze.edushi.com/">菏泽</a><a target="_blank"
+                                                            href="http://laiwu.edushi.com/">莱芜</a><a target="_blank"
+                                                                href="http://liaocheng.edushi.com/">聊城</a><a target="_blank"
+                                                                    href="http://rizhao.edushi.com/">日照</a><a target="_blank"
+                                                                        href="http://taian.edushi.com/">泰安</a><a target="_blank"
+                                                                            href="http://weifang.edushi.com/">潍坊</a><a target="_blank"
+                                                                                href="http://yantai.edushi.com/">烟台</a><a target="_blank"
+                                                                                    href="http://zaozhuang.edushi.com/">枣庄</a>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2" class="Line">
+            </td>
+        </tr>
+        <tr>
+            <th>
+                山西
+            </th>
+            <td class="Td">
+                <a target="_blank"
+                    href="http://changzhi.edushi.com/">长治</a><a target="_blank"
+                        href="http://datong.edushi.com/">大同</a><a target="_blank"
+                            href="http://jincheng.edushi.com/">晋城</a><a target="_blank"
+                                href="http://jinzhong.edushi.com/">晋中</a><a target="_blank"
+                                    href="http://linfen.edushi.com/">临汾</a><a target="_blank"
+                                        href="http://xn--lliang-3ya.edushi.com/">吕梁</a><a target="_blank"
+                                            href="http://shuozhou.edushi.com/">朔州</a><a target="_blank"
+                                                href="http://taiyuan.edushi.com/">太原</a><a target="_blank"
+                                                    href="http://xinzhou.edushi.com/">忻州</a><a target="_blank"
+                                                        href="http://yangquan.edushi.com/">阳泉</a><a target="_blank"
+                                                            href="http://yuncheng.edushi.com/">运城</a>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2" class="Line">
+            </td>
+        </tr>
+        <tr>
+            <th>
+                陕西
+            </th>
+            <td class="Td">
+                <a target="_blank"
+                    href="http://xian.edushi.com/">西安</a><a target="_blank"
+                        href="http://ankang.edushi.com/">安康</a><a target="_blank"
+                            href="http://baoji.edushi.com/">宝鸡</a><a target="_blank"
+                                href="http://hanzhong.edushi.com/">汉中</a><a target="_blank"
+                                    href="http://shangluo.edushi.com/">商洛</a><a target="_blank"
+                                        href="http://tongchuan.edushi.com/">铜川</a><a target="_blank"
+                                            href="http://weinan.edushi.com/">渭南</a><a target="_blank"
+                                                href="http://xianyang.edushi.com/">咸阳</a><a target="_blank"
+                                                    href="http://yanan.edushi.com/">延安</a><a target="_blank"
+                                                        href="http://yulin1.edushi.com/">榆林</a>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2" class="Line">
+            </td>
+        </tr>
+        <tr>
+            <th>
+                四川
+            </th>
+            <td class="Td">
+                <a target="_blank"
+                    href="http://chengdu.edushi.com/">成都</a><a target="_blank"
+                        href="http://dujiangyan.edushi.com/">都江堰</a><a target="_blank"
+                            href="http://wenjiang.edushi.com/">温江</a><a target="_blank"
+                                href="http://aba.edushi.com/">阿坝</a><a target="_blank"
+                                    href="http://bazhong.edushi.com/">巴中</a><a target="_blank"
+                                        href="http://dazhou.edushi.com/">达州</a><a target="_blank"
+                                            href="http://deyang.edushi.com/">德阳</a><a target="_blank"
+                                                href="http://ganzi.edushi.com/">甘孜</a><a target="_blank"
+                                                    href="http://guangan.edushi.com/">广安</a><a target="_blank"
+                                                        href="http://guangyuan.edushi.com/">广元</a><a target="_blank"
+                                                            href="http://leshan.edushi.com/">乐山</a><a target="_blank"
+                                                                href="http://liangshan.edushi.com/">凉山</a><a target="_blank"
+                                                                    href="http://luzhou.edushi.com/">泸州</a><a target="_blank"
+                                                                        href="http://meishan.edushi.com/">眉山</a><a target="_blank"
+                                                                                href="http://neijiang.edushi.com/">内江</a><a target="_blank"
+                                                                                    href="http://nanchong.edushi.com/">南充</a><a target="_blank"
+                                                                                        href="http://panzhihua.edushi.com/">攀枝花</a><a target="_blank"
+                                                                                            href="http://suining.edushi.com/">遂宁</a><a target="_blank"
+                                                                                                href="http://yaan.edushi.com/">雅安</a><a target="_blank"
+                                                                                                        href="http://ziyang.edushi.com/">资阳</a><a target="_blank"
+                                                                                                            href="http://zigong.edushi.com/">自贡</a>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2" class="Line">
+            </td>
+        </tr>
+        <tr>
+            <th>
+                特别行政区
+            </th>
+            <td class="Td">
+                <a target="_blank"
+                    href="http://hongkong.edushi.com/">香港</a><a target="_blank"
+                        href="http://hongkong.edushi.com/">香港(English)</a><a target="_blank"
+                            href="http://hongkong.edushi.com/">香港(繁体)</a>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2" class="Line">
+            </td>
+        </tr>
+        <tr>
+            <th>
+                新疆
+            </th>
+            <td class="Td">
+                <a target="_blank"
+                    href="http://wulumuqi.edushi.com/">乌鲁木齐</a><a target="_blank"
+                        href="http://yining.edushi.com/">伊宁</a><a target="_blank"
+                            href="http://akesu.edushi.com/">阿克苏</a><a target="_blank"
+                                href="http://alaer.edushi.com/">阿拉尔</a><a target="_blank"
+                                    href="http://aletai.edushi.com/">阿勒泰</a><a target="_blank"
+                                        href="http://bayinguoleng.edushi.com/">巴音郭楞</a><a target="_blank"
+                                            href="http://boertala.edushi.com/">博尔塔拉</a><a target="_blank"
+                                                href="http://hami.edushi.com/">哈密</a><a target="_blank"
+                                                    href="http://hetian.edushi.com/">和田</a><a target="_blank"
+                                                        href="http://kashi.edushi.com/">喀什</a><a target="_blank"
+                                                            href="http://kelamayi.edushi.com/">克拉玛依</a><a target="_blank"
+                                                                href="http://kezilesukeerkezi.edushi.com/">克孜勒苏柯尔克孜</a><a target="_blank"
+                                                                    href="http://shihezi.edushi.com/">石河子</a><a target="_blank"
+                                                                        href="http://tumushuke.edushi.com/">图木舒克</a><a target="_blank"
+                                                                            href="http://tulufan.edushi.com/">吐鲁番</a><a target="_blank"
+                                                                                href="http://wujiaqu.edushi.com/">五家渠</a><a target="_blank"
+                                                                                    href="http://yilihasake.edushi.com/">伊犁哈萨克</a>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2" class="Line">
+            </td>
+        </tr>
+        <tr>
+            <th>
+                西藏
+            </th>
+            <td class="Td">
+                <a target="_blank"
+                    href="http://lasa.edushi.com/">拉萨</a><a target="_blank"
+                        href="http://rikaze.edushi.com/">日喀则</a>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2" class="Line">
+            </td>
+        </tr>
+        <tr>
+            <th>
+                云南
+            </th>
+            <td class="Td">
+                <a target="_blank"
+                    href="http://baoshan.edushi.com/">保山</a><a target="_blank"
+                        href="http://dali.edushi.com/">大理</a><a target="_blank"
+                            href="http://dehong.edushi.com/">德宏</a><a target="_blank"
+                                href="http://diqing.edushi.com/">迪庆</a><a target="_blank"
+                                    href="http://honghe.edushi.com/">红河</a><a target="_blank"
+                                        href="http://kunming.edushi.com/">昆明</a><a target="_blank"
+                                            href="http://lijiang.edushi.com/">丽江</a><a target="_blank"
+                                                href="http://lincang.edushi.com/">临沧</a><a target="_blank"
+                                                    href="http://nujiang.edushi.com/">怒江</a><a target="_blank"
+                                                        href="http://puer.edushi.com/">普洱</a><a target="_blank"
+                                                            href="http://qujing.edushi.com/">曲靖</a><a target="_blank"
+                                                                href="http://wenshan.edushi.com/">文山</a><a target="_blank"
+                                                                    href="http://xishuangbanna.edushi.com/">西双版纳</a><a target="_blank"
+                                                                        href="http://yuxi.edushi.com/">玉溪</a><a target="_blank"
+                                                                            href="http://zhaotong.edushi.com/">昭通</a>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2" class="Line">
+            </td>
+        </tr>
+        <tr>
+            <th>
+                浙江
+            </th>
+            <td class="Td">
+                <a target="_blank"
+                    href="http://hangzhou.edushi.com/">杭州</a><a target="_blank"
+                        href="http://ningbo.edushi.com/">宁波</a><a target="_blank"
+                            href="http://huzhou.edushi.com/">湖州</a><a target="_blank"
+                                href="http://jinhua.edushi.com/">金华</a><a target="_blank"
+                                    href="http://tonglu.edushi.com/">桐庐</a><a target="_blank"
+                                        href="http://shaoxing.edushi.com">绍兴</a> <a target="_blank"
+                                            href="http://zhuji.edushi.com">诸暨</a> <a target="_blank"
+                                                href="http://keqiao.edushi.com">柯桥</a> <a target="_blank"
+                                                    href="http://shengzhou.edushi.com">嵊州</a> <a target="_blank"
+                                                        href="http://xinchang.edushi.com">新昌</a><a target="_blank"
+                                                        href="http://fuyang.edushi.com">富阳</a><a target="_blank"
+                        href="http://jiaxing.edushi.com/">嘉兴</a><a target="_blank"
+                            href="http://lishui.edushi.com/">丽水</a><a target="_blank"
+                                href="http://quzhou.edushi.com/">衢州</a><a target="_blank"
+                                    href="http://chunan.edushi.com/">淳安</a><a target="_blank"
+                                    href="http://shaoxing.edushi.com/">绍兴</a><a target="_blank"
+                                        href="http://taizhou2.edushi.com/">台州</a><a target="_blank"
+                                            href="http://wenzhou.edushi.com/">温州</a><a target="_blank"
+                                                href="http://zhoushan.edushi.com/">舟山</a>
+                
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2" class="Line">
+            </td>
+        </tr>
+    </tbody>
+</table>
+</div>
+</div>
+</div>
+</body>
+</html>

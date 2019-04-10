@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="e723edbd-9ddc-45e4-9d47-c9ac318e8d50" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://dbs.edushi.com/bdtservices/BdtNoSqlService.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="BdtNoSqlService.wsdl" MetadataType="Wsdl" ID="69b1c3b8-050f-463d-a9e0-006c718c3908" SourceId="1" SourceUrl="http://dbs.edushi.com/BdtServices/BdtNoSqlService.svc?wsdl" />
+    <MetadataFile FileName="BdtNoSqlService.disco" MetadataType="Disco" ID="2aedc9df-95cd-43f7-827e-1f44d7d2710d" SourceId="1" SourceUrl="http://dbs.edushi.com/BdtServices/BdtNoSqlService.svc?disco" />
+    <MetadataFile FileName="BdtNoSqlService.xsd" MetadataType="Schema" ID="e8bae633-d58f-418b-a29b-73e064a34b2f" SourceId="1" SourceUrl="http://dbs.edushi.com/BdtServices/BdtNoSqlService.svc?xsd=xsd1" />
+    <MetadataFile FileName="BdtNoSqlService1.xsd" MetadataType="Schema" ID="0e47d61d-2b05-4c39-aa21-9c4c5f06b26f" SourceId="1" SourceUrl="http://dbs.edushi.com/BdtServices/BdtNoSqlService.svc?xsd=xsd0" />
+    <MetadataFile FileName="BdtNoSqlService2.xsd" MetadataType="Schema" ID="6dafad1b-1210-4352-aaeb-9e09b263f221" SourceId="1" SourceUrl="http://dbs.edushi.com/BdtServices/BdtNoSqlService.svc?xsd=xsd3" />
+    <MetadataFile FileName="BdtNoSqlService3.xsd" MetadataType="Schema" ID="debdb1ca-598b-4721-9ebd-a6e099b07dff" SourceId="1" SourceUrl="http://dbs.edushi.com/BdtServices/BdtNoSqlService.svc?xsd=xsd2" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

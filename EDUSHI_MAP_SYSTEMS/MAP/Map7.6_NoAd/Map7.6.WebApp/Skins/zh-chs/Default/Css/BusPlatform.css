@@ -1,0 +1,27 @@
+﻿@import url(Common.css);
+html,body{overflow-y:auto;overflow-x:hidden;}
+.BusPlatformNav{position:relative;top: 0px;left: 0px;}
+.PinIco{
+    width:35px; height:34px;
+    /*---- IE6 png bug ----*/
+    background:url('../Images/PinIco.png') !important;
+	background:none;
+	filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../Images/PinIco.png',sizingMethod='image') !important;
+}
+.PlatformCon{position:relative;width:305px; height:165px;}
+.PlatformConBg{
+    width:306px; height:160px;
+    /*---- IE6 png bug ----*/
+    background:url('../Images/PlatformConBg.png') !important;
+	background:none;
+	filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../Images/PlatformConBg.png',sizingMethod='image') !important;}
+.PlatformDetCon{position:absolute; top:0; left:0;width:280px; height:23px; padding:5px 16px 10px 10px;}
+.PlatformDetCon h3{float:left;font-size:14px; padding:0; margin:0; height:23px; display:block; width:180px;-o-text-overflow:ellipsis; text-overflow:ellipsis; white-space:nowrap; overflow:hidden; line-height:23px;}
+.PlatformDetCon span{height:23px;width:80px;float:left;}
+.AutoText{width:280px; height:58px;overflow-x:hidden; overflow-y:auto;}
+.AutoText ul{padding:0; margin:0; list-style-type:none;}
+.AutoText ul li{float:left; display:block; height:19px; line-height:19px; margin:0 10px 0 0; word-break:keep-all;/* 不换行 */ white-space:nowrap;/* 不换行 */}/*站牌公交列表*/
+.ComBlk{ width:280px; height:60px; overflow:hidden; margin-top:6px;}
+.CloseWin,.CloseBtnOver,.CloseBtnOut{position:absolute; top:10px; right:15px; cursor:hand; width:13px; height:13px; overflow:hidden;background:url(../Images/CloseBtn.gif) no-repeat left top;}
+.CloseBtnOver{background-position:left -13px;}
+

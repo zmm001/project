@@ -1,0 +1,264 @@
+﻿<Project ToolsVersion="3.5" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{972F6CB3-6BAB-42FB-B74C-CEA9397B1931}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Map.DigCowry</RootNamespace>
+    <AssemblyName>Map.DigCowry</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AspNetPager, Version=6.0.0.0, Culture=neutral, PublicKeyToken=fb0a0fe055d40fd4, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Lib\AspNetPager.dll</HintPath>
+    </Reference>
+    <Reference Include="EDC.Framework, Version=3.0.1.708, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Lib\EDC.Framework.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Web.Extensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Web.Mobile" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Award.aspx" />
+    <Content Include="Cowry.aspx" />
+    <Content Include="CowryInfo.aspx" />
+    <Content Include="GetTodayTrophy.aspx" />
+    <Content Include="images\1.jpg" />
+    <Content Include="images\bbInfo.png" />
+    <Content Include="images\bInfo.png" />
+    <Content Include="images\edushidigcowry.gif" />
+    <Content Include="images\gg.jpg" />
+    <Content Include="images\gg_03.jpg" />
+    <Content Include="images\gg_07.jpg" />
+    <Content Include="images\gg_10.jpg" />
+    <Content Include="images\gg_12.jpg" />
+    <Content Include="images\gg_17.jpg" />
+    <Content Include="images\gg_39.jpg" />
+    <Content Include="images\gg_42.jpg" />
+    <Content Include="images\gg_44.jpg" />
+    <Content Include="images\gg_46.jpg" />
+    <Content Include="images\gg_48.jpg" />
+    <Content Include="images\gg_50.jpg" />
+    <Content Include="images\gg_57.jpg" />
+    <Content Include="images\gg_58.jpg" />
+    <Content Include="images\gg_59.jpg" />
+    <Content Include="images\gg_60.jpg" />
+    <Content Include="images\gg_61.jpg" />
+    <Content Include="images\gg_71.jpg" />
+    <Content Include="images\gg_73.jpg" />
+    <Content Include="images\gg_75.jpg" />
+    <Content Include="images\gg_77.jpg" />
+    <Content Include="images\gg_79.jpg" />
+    <Content Include="images\gg_81.jpg" />
+    <Content Include="images\gg_83.jpg" />
+    <Content Include="images\gg_85.jpg" />
+    <Content Include="images\jp.jpg" />
+    <Content Include="images\jt.gif" />
+    <Content Include="images\jt2.gif" />
+    <Content Include="images\lookInfo.jpg" />
+    <Content Include="images\lookInfo2.jpg" />
+    <Content Include="images\lookInfo3.jpg" />
+    <Content Include="images\res.jpg" />
+    <Content Include="images\t_01.jpg" />
+    <Content Include="images\t_03.jpg" />
+    <Content Include="images\t_05.jpg" />
+    <Content Include="images\wb-_03.jpg" />
+    <Content Include="images\wb_02.jpg" />
+    <Content Include="images\wb_04.gif" />
+    <Content Include="images\wb_04.jpg" />
+    <Content Include="images\wb_05.jpg" />
+    <Content Include="images\wb_05_2.jpg" />
+    <Content Include="images\wb_08.jpg" />
+    <Content Include="images\wb_10.jpg" />
+    <Content Include="images\wb_12.jpg" />
+    <Content Include="images\wb_16.jpg" />
+    <Content Include="images\wb_17.jpg" />
+    <Content Include="images\wb_18.jpg" />
+    <Content Include="images\wb_21.jpg" />
+    <Content Include="images\wb_22.jpg" />
+    <Content Include="images\wb_25.jpg" />
+    <Content Include="images\wb_28.jpg" />
+    <Content Include="images\xbx_03.jpg" />
+    <Content Include="images\xbx_06.jpg" />
+    <Content Include="images\xbx_08.jpg" />
+    <Content Include="images\xbx_12.jpg" />
+    <Content Include="images\xbx_14.jpg" />
+    <Content Include="images\xb_03.jpg" />
+    <Content Include="images\xb_05.jpg" />
+    <Content Include="images\xb_07.jpg" />
+    <Content Include="images\xb_n_01.jpg" />
+    <Content Include="images\xb_n_02.jpg" />
+    <Content Include="images\xb_n_03.jpg" />
+    <Content Include="images\xb_n_04.jpg" />
+    <Content Include="images\xb_n_05.jpg" />
+    <Content Include="images\xb_n_07.jpg" />
+    <Content Include="images\xb_n_10.jpg" />
+    <Content Include="images\xb_n_12.jpg" />
+    <Content Include="images\xb_n_15.jpg" />
+    <Content Include="images\xb_n_18.jpg" />
+    <Content Include="images\xb_n_20.jpg" />
+    <Content Include="Index.aspx" />
+    <Content Include="js\marquee.js" />
+    <Content Include="js\MSClass.js" />
+    <Content Include="Raiders.aspx" />
+    <Content Include="UserControls\FooterControl.ascx" />
+    <Content Include="UserControls\SponsorControl.ascx" />
+    <Content Include="Web.config" />
+    <Content Include="WillList.aspx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Award.aspx.cs">
+      <DependentUpon>Award.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Award.aspx.designer.cs">
+      <DependentUpon>Award.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Cowry.aspx.cs">
+      <DependentUpon>Cowry.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Cowry.aspx.designer.cs">
+      <DependentUpon>Cowry.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CowryInfo.aspx.cs">
+      <DependentUpon>CowryInfo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CowryInfo.aspx.designer.cs">
+      <DependentUpon>CowryInfo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GetTodayTrophy.aspx.cs">
+      <DependentUpon>GetTodayTrophy.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GetTodayTrophy.aspx.designer.cs">
+      <DependentUpon>GetTodayTrophy.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Index.aspx.cs">
+      <DependentUpon>Index.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Index.aspx.designer.cs">
+      <DependentUpon>Index.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PageBase.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Raiders.aspx.cs">
+      <DependentUpon>Raiders.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Raiders.aspx.designer.cs">
+      <DependentUpon>Raiders.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControlBase.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\FooterControl.ascx.cs">
+      <DependentUpon>FooterControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\FooterControl.ascx.designer.cs">
+      <DependentUpon>FooterControl.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\SponsorControl.ascx.cs">
+      <DependentUpon>SponsorControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\SponsorControl.ascx.designer.cs">
+      <DependentUpon>SponsorControl.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="WillList.aspx.cs">
+      <DependentUpon>WillList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WillList.aspx.designer.cs">
+      <DependentUpon>WillList.aspx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Map.Plugins.BLL\Map.Plugins.BLL.csproj">
+      <Project>{72D0FEC4-2577-4713-A2B1-456A069F05EC}</Project>
+      <Name>Map.Plugins.BLL</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v9.0\WebApplications\Microsoft.WebApplication.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>False</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>1657</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>
+          </IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>

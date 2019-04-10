@@ -1,0 +1,77 @@
+*html{min-width:387px;}
+html,body,h1,h2,h3,ul,ol,p{margin:0;padding:0;}
+body{font-size:12px; font-family:Verdana,Lucida,Arial,Helvetica; color:#333;text-align:left;}
+img{border-width:0px}
+form{padding:0;margin:0}
+a{color:#06C;text-decoration:none;}
+a:hover,.mian_p01 a:hover,.again h3 a:hover,.mian_p03 a:hover,.mian_pfd a:hover,.again_ulw li a:hover{color:red; text-decoration:underline;}
+.l{float:left;}
+.r{float:right;}
+ul{list-style:none;}
+.clear{clear:both;border-top:transparent 0px solid;height:0;overflow:hidden;}
+
+#page{width:387px;margin:0 auto;}
+#upstyle{width:387px;height:22px;margin:0 auto;background:url(bg-up.gif) left top no-repeat;}
+#all{background:url(bg-round.gif) left top repeat-y;width:387px;margin:0 auto;}
+#di{margin:0 auto;width:387px;height:22px;}
+
+.close{float:right;width:15px;height:15px;overflow:hidden;display:inline;margin:5px 5px 0 0;}
+
+.banner{width:340px;height:55px;overflow:hidden;margin:0 0 0 24px;float:left;display:inline;}
+.banner img{width:340px;height:55px;}
+
+.mian{width:430px;margin:0 auto;background:url(c1.gif) 30px top no-repeat;}
+.mian1{width:430px;margin:0 auto;background:url(c2.gif) 40px top no-repeat;}
+.mian2{width:430px;margin:0 auto;background:url(c3.gif) 30px 10px no-repeat;}
+.mian3{width:430px;margin:0 auto;background:url(c4.gif) 30px 5px no-repeat;}
+
+.mian_p01{float:left;width:60%;font:normal 12px 宋体;line-height:150%;color:#0299e7;margin:40px 0 0 110px;display:inline;height:40px;}
+.mian_p01 a,.mian_p03 a,.bian{color:#ff4613;}
+
+.mian_p02{float:left;width:53%;font:normal 14px 宋体;line-height:160%;color:#0299e7;margin:45px 0 0 135px;display:inline;height:45px;}
+
+.mian_p03{text-align:center;margin-top:10px;width:95%;font:normal 12px 宋体;line-height:160%;color:#666;}
+
+.induct{float:left;width:75%;margin:0 0 0 30px !important;margin:0 0 0 15px;border-bottom:1px dashed #ccc;padding-bottom:5px;}
+.induct img{float:left;width:80px;height:80px;padding:1px;border:1px solid #f8b38d;margin-top:3px;}
+
+.induct_ul01{float:left;margin:0 0 0 12px;font:normal 12px 宋体;color:#666;width:70%;}
+.induct_ul01 li{line-height:150%;overflow:hidden;}
+.se{color:#e4630d;margin:0 5px 0 0;}
+
+.main_h01{font:bold 12px 宋体;float:left;color:#ff4613;margin:7px 0 0 30px !important;margin:7px 0 0 15px;}
+.main_p02{font:normal 12px 宋体;color:#0299e7;line-height:150%;float:left;margin:5px 0 0 30px !important;margin:5px 0 0 15px;width:77%;}
+
+.mian_ul{font:normal 12px 宋体;color:#e4630d;margin:5px 0 0 30px !important;margin:5px 0 0 15px;float:left;}
+.mian_ul li{margin:0 10px 7px 0;*margin:0 10px 5px 0;float:left;}
+
+.inpu{border:1px solid #fb9a55;background:#fce6db;margin:0 0 0 3px;color:#666;width:100px;padding:1px;}
+
+.button{width:60px;margin:5px 0 0 160px !important;margin:5px 0 0 80px;height:25px;float:left;}
+
+.main_ul01{float:left;margin:5px 0 0 30px !important;margin:5px 0 0 15px;}
+.main_ul01 li{float:left;margin:0 6px 0 0 !important;margin:0 7px 0 0;}
+.main_ul01 li img{width:75px;height:40px;border:1px solid #ccc;}
+
+.again{width:387px;background:url(card.gif) 60px top no-repeat;margin:0 auto;margin-top:5px;}
+.again1{width:387px;background:url(card1.gif) 80px top no-repeat;margin:0 auto;margin-top:40px;}
+.again2{width:387px;background:url(card2.gif) 80px top no-repeat;margin:0 auto;margin-top:40px;}
+.again3{width:387px;background:url(card3.gif) 80px top no-repeat;margin:0 auto;margin-top:40px;}
+.again_h{float:left;margin:40px 0 0 160px !important;margin:40px 0 0 80px;font:bold 14px 宋体;color:#f83002;text-indent:-99999em;}
+.again_img1{float:left;margin:35px 0 25px 100px !important;margin:35px 0 25px 50px;width:75px;height:26px;}
+.again_img3{float:left;margin:35px 0 25px 170px !important;margin:35px 0 25px 85px;width:75px;height:26px;}
+.again h3{font:bold 14px 宋体;color:#00b1ec;margin:3px 0 0;}
+.again h3 a,.again_ul li a,.mian_pfd a,.again_ulw li a{color:#00b1ec;}
+.again h3 .l{margin:5px 0 0 20px;}
+.again h3 .r{margin:5px 70px 0 0;}
+
+.again_ul{font:bold 14px 宋体;float:left;margin:10px 0 0 40px !important;margin:10px 0 0 20px;}
+.again_ul li,.again_ulw li{float:left;margin:0 10px 0 0;}
+
+.again_ulw{font:bold 14px 宋体;float:left;margin:10px 0 0 70px !important;margin:10px 0 0 35px;}
+
+.again_img2{float:left;margin:10px 0 0 160px !important;margin:10px 0 0 80px;width:75px;height:26px;}
+
+.mian_pds{font:bold 14px 宋体;float:left;color:#fd9c02;height:30px;margin:40px 0 0 110px;display:inline;background:url(dan.gif) right top no-repeat;padding:10px 30px 0;}
+.mian_pfd{font:bold 14px 宋体;float:left;color:#fd9c02;margin:0 0 10px 110px;display:inline;}
+.mian_pfd a{color:#b600f9;text-decoration:underline;}

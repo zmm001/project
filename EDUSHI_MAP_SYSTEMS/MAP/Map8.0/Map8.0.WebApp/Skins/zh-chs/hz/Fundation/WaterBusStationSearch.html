@@ -1,0 +1,219 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>公交站点搜索</title>
+
+    <script language="javascript" type="text/javascript" src="/Js/GeneralLib.js"></script>
+
+    <script language="javascript" type="text/javascript" src="../Js/WaterBusStationSearch.js"></script>
+
+    <style>
+    body, ul, dl, dd, dt, ol, li, p, h1, h2, h3, h4, h5, h6, form, fieldset, table, img, td, div, input{
+	margin:0;padding:0;
+	}
+	body{ background:#fff; font-family:Microsoft Yahei; font-size:12px;}
+	ul, li{ list-style:none;}
+	a{ outline-style:none; color:#545454 ;text-decoration:none;}
+	a:hover{ color:#ff8500; text-decoration:underline; outline:0;}
+	.clear{ clear:both;}
+	.clearfix:before,.clearfix:after{ display:table; content:" ";}
+	.clearfix:after{ clear:both;}
+	.clearfix{ *zoom:1;}
+	.f-l{ display:inline; float:left;}
+	.f-r{ display:inline; float:right;}	
+	.m-r8{ margin-right:8px;}
+	.position-re{position:relative;}
+	@media screen and (-webkit-min-device-pixel-ratio:0) { 
+		body, button, input, select, textarea{line-height:normal !important;}
+		input, select, textarea{outline-style:none;}
+	}   
+	
+	.water-bus-result{ width:333px; margin:0 auto;}
+	.sidebar-bus-search{ width:333px; margin:10px 0 8px;}
+	.bus-search-ipt{ width:243px; height:32px; margin-right:5px; background:#fff; border:1px solid #d8d8d8; text-indent:12px; line-height:32px; box-shadow:inset 0 0 1px 1px rgba(104,104,104,.2);}
+	.bus-search-btn{ width:82px; height:32px; text-align:center; line-height:32px; cursor:pointer; background:url(/images/search_btnbg_gray.gif) repeat-x; border:none; border-bottom:1px solid #b2b2b2;}
+	.bus-search-btn a{ font-size:14px; color:#000;}
+	.bus-line-result{ width:334px;}
+	.first-end-time{ margin-right:4px; padding:1px 3px; background:#0099ff; color:#fff;}
+	.lineInfo-tips{ margin-bottom:10px; font-size:13px; font-weight:bold; color:#999;}
+	.gj_title .diva{
+		width: 297px; height: 36px; margin: 1px; padding-left: 5px; padding-top: 5px; background: #f1f9fc; border: solid 1px #f1f9fc;
+	}
+	.gj_title .diva span{
+		float: left; display: inline-block; width: 16px; height: 15px; margin-right: 10px; background: url(../images/icon.jpg) no-repeat -80px -20px;	
+	}
+	.gj_title{
+		width: 333px; height: 28px; margin-bottom: 7px; border-top: dotted 1px #cfcfcf; border-bottom: dotted 1px #cfcfcf;
+	}
+	.gj_title div{
+		height: 19px; margin: 1px 0; padding-left: 5px; padding-top: 5px; background: #f1f9fc; border: solid 1px #f1f9fc;	
+	}
+	.gj_title div span{
+		float: left; display:inline-block; width: 16px;height: 15px; margin-right: 10px; background: url(../images/icon.jpg) no-repeat -80px -20px;
+	}
+	.gj_title i, .gj_title a{
+		margin:0 2px;font-style: normal; color: #1c81b9;
+	}
+        
+	.qd, .zd, .zt
+	{
+		float: left; margin-right: 5px;
+	}
+	.qd a, .zd a
+	{
+		display: block; float: left; margin-top: 6px; width: 58px; text-overflow: ellipsis; overflow: hidden; white-space: nowrap;
+	}
+	.icon_q, .icon_q2
+	{
+		background: url(../images/icon.jpg) no-repeat 0 -20px; width: 27px; height: 32px; display: inline-block; margin-right: 10px; float: left;
+	}
+	.icon_q2
+	{
+		background-position: -27px -20px;
+	}
+	.icon_q3
+	{
+		background: url(../images/icon.jpg) -54px -33px; width: 21px; height: 18px; float: left;
+	}
+	.zt
+	{
+		margin-top: 3px;
+	}
+	.zt a
+	{
+		display: block; float: left; margin: 2px 0 0 5px;
+	}
+	.z3
+	{
+		margin: 10px 0 10px 10px;
+	}
+	.gj_03
+	{
+		width: 308px; background: #fff; border: solid 1px #bad7e7; height: 635px; overflow: auto; background: #f1f9fc; position: relative;
+	}
+	.gj_a
+	{
+		margin: 5px; background: #fff;
+	}
+	
+	.gj_a2 .title
+	{
+		margin-bottom:8px; cursor:pointer;
+	}
+	.gj_a2 .title_c
+	{
+		border: none;
+	}
+	.gj_a2 .T_left
+	{
+		float: left; display: inline ;margin-left:8px; color: #3a83ed;
+	}
+	.gj_a1 .T_right
+	{
+		float: right; margin-right:5px;
+	}
+	.gj_a1 .T_right span
+	{
+		display: inline-block; float: left; padding-right: 5px;
+	}
+	.gj_a1 .T_right .icon_t, .gj_a1 .T_right .icon_t2
+	{
+		display: inline-block; background: url(../images/icon.jpg) no-repeat -54px -20px; width: 13px; height: 13px; padding-right: 0px;
+	}
+	.number2
+	{
+		float: left; width:8px; height:8px; margin-top:3px; background:#fff; border:1px solid #5c8cd1; font: 10px Arial, Helvetica, sans-serif; line-height:8px; color:#5c8cd1;
+	}
+	.T_right .icon_t2
+	{
+		background-position: -67px -20px;
+	}
+	
+	.xlxx
+	{
+		display: block; border:1px solid #cdcdcd; border-bottom:0;
+	}
+	.time_bus
+	{
+		border-bottom: solid 1px #cdcdcd; background: #f4f4f4;
+	}
+	.time_busa
+	{
+		border-bottom: none;
+	}
+	.title_S
+	{
+		float: left; width: 80px; padding: 8px;text-align: center;line-height: 18px;
+	}
+	.text_S
+	{
+		float: left;width:209px;padding:8px;line-height: 18px;color:#858585; border-left:1px solid #cdcdcd; background:#fff;
+	}
+	.text_S a{
+		color:#2ca2e4;
+	}
+	.time_bus2
+	{
+		padding: 10px 0px; background:#fff; 
+	}
+	.time_bus2 a
+	{
+		display: block; float: left; margin-right: 5px; background: url(../images/icon.jpg) 0 0; height: 19px;
+	}
+	.time_bus2 a.a1
+	{
+		background-position: 0 -93px; width: 78px;
+	}
+	.time_bus2 a.a2
+	{
+		background-position: 0 -112px; width: 78px;
+	}
+	.time_bus2 a.a3
+	{
+		background-position: 0 -131px; width: 94px; margin-right: 0;
+	}
+	.xl
+	{
+		border: solid 1px #cdcdcd; margin: 12px 0 8px;
+	}
+	.xl .title_xl
+	{
+		height: 26px; border-bottom: solid 1px #cdcdcd;
+	}
+	.xl .title_xl2
+	{
+		background: #f4f4f4; text-align: center; line-height: 26px;
+	}
+	.xl ul.ul_xl2
+	{
+		margin: 7px;
+	}
+	.xl ul.ul_xl2 li
+	{
+		display:inline; float: left; margin:0 10px 12px; line-height: 20px;
+	}
+	.xl ul.ul_xl2 a{
+		color:#6197e5;
+	}
+	.title_c
+	{
+		border-bottom: none;
+	}
+    </style>
+</head>
+<body>
+<div class="water-bus-result">
+	<div class="search sidebar-bus-search clearfix">
+    	<input type="text" id="textKeyWords"  class="f-l bus-search-ipt">
+    	<p class="f-l bus-search-btn"><a id="BusSearch_Btn" style="cursor:pointer;">搜索</a></p>
+    </div>
+
+    <div class="gj_title">
+        <div id="resultDiv"></div>
+    </div>
+    <div class="bus-line-result" id="TabContent" style="overflow-x: hidden;">
+        
+    </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,123 @@
+﻿@{
+    ViewBag.Title = "爱上头条（E都市）小说频道";
+}
+<body>
+
+    <div class="header-box wrapper clearfix">
+        @Html.Partial("/Views/Shared/_PartialSearch.cshtml")
+        <div class="fr tips">
+            @Html.Partial("/Views/Shared/_PartialUserCenter.cshtml")
+        </div>
+    </div>
+    <div class="main-nav">
+        <div class="wrapper">
+            @Html.Partial("/Views/Shared/_PartialMenu.cshtml")
+            <div class="show-classify">
+                <div class="hover-pos"></div>
+                <div class="classify-list category-list">
+                    @Html.Partial("/Views/Shared/_PartialCagoryList.cshtml")
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="wrapper content">
+        <div class="options female">
+            <div class="tab">
+                <a class="female" onclick="tabGender('female')">女生</a>
+                <a class="male" onclick="tabGender('male')">男生</a>
+            </div>
+            <div class="box all">
+                <div class="item selected">
+                </div>
+                <div class="item female" data-option="category">
+                    <h3>女频</h3>
+                    <a data-id="0" class="current">全部频道</a>
+                    <a data-id="10">现代言情</a>
+                    <a data-id="11">古代言情</a>
+                    <a data-id="12">穿越重生</a>
+                    <a data-id="13">幻想言情</a>
+                </div>
+                <div class="item male" data-option="category">
+                    <h3>男频</h3>
+                    <a data-id="0" class="current">全部频道</a>
+                    <a data-id="4">灵异悬疑</a>
+                    <a data-id="5">玄幻奇幻</a>
+                    <a data-id="6">武侠仙侠</a>
+                    <a data-id="7">科幻灵异</a>
+                    <a data-id="8">历史军事</a>
+                    <a data-id="9">游戏竞技</a>
+                    <a data-id="3">都市校园</a>
+                </div>
+                <div class="item" data-option="status">
+                    <h3>状态</h3>
+                    <a data-id="0">全部</a>
+                    <a data-id="1">连载</a>
+                    <a data-id="2" class="current">完本</a>
+                </div>
+                <div class="item" data-option="size">
+                    <h3>字数</h3>
+                    <a data-id="0" class="current">全部</a>
+                    <a data-id="1">30万字</a>
+                    <a data-id="2">30-50万字</a>
+                    <a data-id="3">50-100万字</a>
+                    <a data-id="4">100万字以上</a>
+                </div>
+                <div class="item" data-option="time">
+                    <h3>更新时间</h3>
+                    <a data-id="0" class="current">全部</a>
+                    <a data-id="1">三日内</a>
+                    <a data-id="2">七日内</a>
+                    <a data-id="3">半月内</a>
+                    <a data-id="4">一月内</a>
+                </div>
+            </div>
+        </div>
+        <div class="list-box">
+            <div class="list-option">
+                <div class="sort" data-sort="1">
+                    <span>作品排序：</span>
+                    <a data-id="hot" data-sort="1" onclick="states.options.sort='1'">最热</a>
+                    <a data-id="new" onclick="states.options.sort='2'">最新</a>
+                    <a data-id="favorite" onclick="states.options.sort='3'">收藏</a>
+                    <a data-id="recommend" onclick="states.options.sort='4'">推荐</a>
+                </div>
+                <div class="mode">
+                    <span class="count" data-bind="attr:{'data-number':TotalNum}"></span>
+                    <a class="block" onclick="states.mode='block'"></a>
+                    <a class="line" onclick="states.mode='line'"></a>
+                </div>
+            </div>
+            <!-- <p class="search-tag">暂时没有数据哦！请更换关键字</p> -->
+            <div class="list-title">
+                <span class="category">类型</span>
+                <span class="name">小说书名</span>
+                <span class="lastest">最新章节</span>
+                <span class="size">字数</span>
+                <span class="author">小说作者</span>
+                <span class="time">更新时间</span>
+            </div>
+            <ul class="list" data-bind="foreach: BookList">
+                <li>
+                    <a data-bind="attr:{href:Href}" target="_blank">
+                        <div class="pic">
+                            <img data-bind="attr:{src:CoverImage}" alt="">
+                        </div>
+                        <div class="text">
+                            <span class="category" data-bind="text:CategoryName"></span>
+                            <span class="name" data-bind="text:Name"></span>
+                            <span class="lastest" data-bind="text:chapterNum"></span>
+                            <span class="size" data-bind="text:(Math.round(wordNum/10000))"></span>
+                            <span class="author" data-bind="text:Author"></span>
+                            <span class="time" data-bind="text:time"></span>
+                            <span class="state" data-bind="text:StatusDesc"></span>
+                            <div class="intro" data-bind="text:Description"></div>
+                        </div>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <script src="~/asset/js/common.js"></script>
+    <script src="~/asset/js/finish.js"></script>
+</body>

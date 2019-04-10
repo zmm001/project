@@ -1,0 +1,416 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{A2E154FC-DDE6-45B9-82C0-0C2F1307567C}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>EDC.Framework</RootNamespace>
+    <AssemblyName>EDC.Framework</AssemblyName>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>bin\Debug\EDC.Framework.XML</DocumentationFile>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>bin\Release\EDC.Framework.XML</DocumentationFile>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Enyim.Caching">
+      <HintPath>..\..\..\..\..\EDUSHI_CM_LIBRARY\Assembly_Library\Assembly_Library\Enyim.Caching.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Application\ApplicationInfo.cs" />
+    <Compile Include="Application\DeploymentInfo.cs" />
+    <Compile Include="Application\SpecialProperty.cs" />
+    <Compile Include="Cache\CacheConfigInfo.cs" />
+    <Compile Include="Cache\CacheDurationUnitsOptions.cs" />
+    <Compile Include="Cache\CacheException.cs" />
+    <Compile Include="Cache\CDNCacheHelper.cs" />
+    <Compile Include="Cache\MemcachedCacheConfigHelper.cs" />
+    <Compile Include="Cache\MemcachedHelper.cs" />
+    <Compile Include="Cache\WebCachesHelper.cs" />
+    <Compile Include="Cache\FileCachesHelper.cs" />
+    <Compile Include="Cache\GetCallback.cs" />
+    <Compile Include="CityConfig\CityConfig.cs" />
+    <Compile Include="CityConfig\CitySettingInfo.cs" />
+    <Compile Include="Database\DBOperatorBase.cs" />
+    <Compile Include="DataCenterDirectory.cs" />
+    <Compile Include="DataCenterException.cs" />
+    <Compile Include="Database\DBOperator.cs" />
+    <Compile Include="EdushiDataCenter.cs" />
+    <Compile Include="Application\ApplicationConfig.cs" />
+    <Compile Include="EdushiPageBase.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="EdushiUserControlBase.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Interface\ITask.cs" />
+    <Compile Include="Passport\PassportHelper.cs" />
+    <Compile Include="Passport\PassportException.cs" />
+    <Compile Include="LogState.cs" />
+    <Compile Include="Passport\PassportInfo.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="Task\TaskException.cs" />
+    <Compile Include="Task\TaskHelper.cs" />
+    <Compile Include="Task\TaskInfo.cs" />
+    <Compile Include="Task\TaskMethodParamsInfo.cs" />
+    <Compile Include="Tools\EncryptHelper.cs" />
+    <Compile Include="Tools\SerializeHelper.cs" />
+    <Compile Include="Tools\StringHelper.cs" />
+    <Compile Include="Tools\WebHelper.cs" />
+    <Compile Include="TransferJson\FormatException.cs" />
+    <Compile Include="TransferJson\JsonFormatter.cs" />
+    <Compile Include="TransferJson\NonJsonableAttribute.cs" />
+    <Compile Include="TransferJson\XsltFileManage.cs" />
+    <Compile Include="TransferJson\XsltFormatter.cs" />
+    <Compile Include="Web References\cn.b2m.eucp.sdkhttp\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\com.edushi.wse\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\com.edushi.xswse\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\com.edushi.zxwse\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\com.edushicj.zxwse\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\com.edushily.zxwse\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\com.emohe.zxwse\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\com.fangtoo.zxwse\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\com.kuwankeji.zxwse\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="WebService\FileUploadHelper.cs" />
+    <Compile Include="WebService\SMSHelper.cs" />
+    <Compile Include="WebService\FileUploadHelperZX.cs" />
+    <Compile Include="WebService\FileUploadHelperZX_FangToo.cs" />
+    <Compile Include="WebService\FileUploadHelperZX_EdushiLy.cs" />
+    <Compile Include="WebService\FileUploadHelperZX_Emohe.cs" />
+    <Compile Include="WebService\FileUploadHelperZX_EdushiCj.cs" />
+    <Compile Include="WebService\FileUploadHelperZX_KuWanKeJi.cs" />
+    <Compile Include="WebService\FileUploadHelperZX_Novel.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\com.edushi.xswse\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\com.edushi.xswse\UploadService.wsdl" />
+    <None Include="Web References\com.edushi.xswse\UploadStatus.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\com.edushi.zxwse\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\com.edushi.zxwse\uploadservice.wsdl" />
+    <None Include="Web References\com.edushi.zxwse\UploadStatus.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\com.edushicj.zxwse\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\com.edushicj.zxwse\uploadservice.wsdl" />
+    <None Include="Web References\com.edushicj.zxwse\UploadStatus.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\com.edushily.zxwse\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\com.edushily.zxwse\uploadservice.wsdl" />
+    <None Include="Web References\com.edushily.zxwse\UploadStatus.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\com.emohe.zxwse\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\com.emohe.zxwse\uploadservice.wsdl" />
+    <None Include="Web References\com.emohe.zxwse\UploadStatus.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\com.fangtoo.zxwse\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\com.fangtoo.zxwse\uploadservice.wsdl" />
+    <None Include="Web References\com.fangtoo.zxwse\UploadStatus.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\com.kuwankeji.zxwse\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\com.kuwankeji.zxwse\UploadService.wsdl" />
+    <None Include="Web References\com.kuwankeji.zxwse\UploadStatus.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferences Include="Web References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferenceUrl Include="http://sdkhttp.eucp.b2m.cn/sdk/SDKService%3fwsdl">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\cn.b2m.eucp.sdkhttp\</RelPath>
+      <UpdateFromURL>http://sdkhttp.eucp.b2m.cn/sdk/SDKService%3fwsdl</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>EDC_Framework_cn_b2m_eucp_sdkhttp_SDKService</CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="http://wse.edushi.com/UploadService.asmx">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\com.edushi.wse\</RelPath>
+      <UpdateFromURL>http://wse.edushi.com/UploadService.asmx</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>EDC_Framework_com_edushi_wse_UploadService</CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="http://xswse.edushi.com/UploadService.asmx">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\com.edushi.xswse\</RelPath>
+      <UpdateFromURL>http://xswse.edushi.com/UploadService.asmx</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>EDC_Framework_com_edushi_xswse_UploadService</CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="http://zxwse.edushi.com/uploadservice.asmx">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\com.edushi.zxwse\</RelPath>
+      <UpdateFromURL>http://zxwse.edushi.com/uploadservice.asmx</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>EDC_Framework_com_edushi_zxwse_UploadService</CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="http://zxwse.edushicj.com/uploadservice.asmx">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\com.edushicj.zxwse\</RelPath>
+      <UpdateFromURL>http://zxwse.edushicj.com/uploadservice.asmx</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>EDC_Framework_com_edushicj_zxwse_UploadService</CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="http://zxwse.edushily.com/uploadservice.asmx">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\com.edushily.zxwse\</RelPath>
+      <UpdateFromURL>http://zxwse.edushily.com/uploadservice.asmx</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>EDC_Framework_com_edushily_zxwse_UploadService</CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="http://zxwse.emohe.com/uploadservice.asmx">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\com.emohe.zxwse\</RelPath>
+      <UpdateFromURL>http://zxwse.emohe.com/uploadservice.asmx</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>EDC_Framework_com_emohe_zxwse_UploadService</CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="http://zxwse.fangtoo.com/uploadservice.asmx">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\com.fangtoo.zxwse\</RelPath>
+      <UpdateFromURL>http://zxwse.fangtoo.com/uploadservice.asmx</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>EDC_Framework_com_fangtoo_zxwse_UploadService</CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="http://zxwse.kuwankeji.com/UploadService.asmx">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\com.kuwankeji.zxwse\</RelPath>
+      <UpdateFromURL>http://zxwse.kuwankeji.com/UploadService.asmx</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>EDC_Framework_com_kuwankeji_zxwse_UploadService</CachedSettingsPropName>
+    </WebReferenceUrl>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="Web References\cn.b2m.eucp.sdkhttp\mo.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\cn.b2m.eucp.sdkhttp\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\cn.b2m.eucp.sdkhttp\SDKService.wsdl" />
+    <None Include="Web References\cn.b2m.eucp.sdkhttp\SDKService.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\cn.b2m.eucp.sdkhttp\statusReport.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\com.edushi.wse\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\com.edushi.wse\UploadService.disco" />
+    <None Include="Web References\com.edushi.wse\UploadService.wsdl" />
+    <None Include="Web References\com.edushi.wse\UploadStatus.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Web References\com.edushi.zxwse\uploadservice.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Web References\com.fangtoo.zxwse\uploadservice.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Web References\com.edushily.zxwse\uploadservice.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Web References\com.emohe.zxwse\uploadservice.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Web References\com.edushicj.zxwse\uploadservice.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Web References\com.kuwankeji.zxwse\UploadService.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Web References\com.edushi.xswse\UploadService.disco" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,7 @@
+E:\TFS192.168.100.212\EDUSHI_DATA_CENTER\EdushiDataCenter\v3.0\EdushiDataCenterSolution\Edushi.ThriftHbaseCommon\bin\Debug\Edushi.ThriftHbaseCommon.dll
+E:\TFS192.168.100.212\EDUSHI_DATA_CENTER\EdushiDataCenter\v3.0\EdushiDataCenterSolution\Edushi.ThriftHbaseCommon\bin\Debug\Edushi.ThriftHbaseCommon.pdb
+E:\TFS192.168.100.212\EDUSHI_DATA_CENTER\EdushiDataCenter\v3.0\EdushiDataCenterSolution\Edushi.ThriftHbaseCommon\bin\Debug\Edushi.Thrift.dll
+E:\TFS192.168.100.212\EDUSHI_DATA_CENTER\EdushiDataCenter\v3.0\EdushiDataCenterSolution\Edushi.ThriftHbaseCommon\bin\Debug\Edushi.Thrift.pdb
+E:\TFS192.168.100.212\EDUSHI_DATA_CENTER\EdushiDataCenter\v3.0\EdushiDataCenterSolution\Edushi.ThriftHbaseCommon\obj\Debug\Edushi.ThriftHbaseCommon.csprojResolveAssemblyReference.cache
+E:\TFS192.168.100.212\EDUSHI_DATA_CENTER\EdushiDataCenter\v3.0\EdushiDataCenterSolution\Edushi.ThriftHbaseCommon\obj\Debug\Edushi.ThriftHbaseCommon.dll
+E:\TFS192.168.100.212\EDUSHI_DATA_CENTER\EdushiDataCenter\v3.0\EdushiDataCenterSolution\Edushi.ThriftHbaseCommon\obj\Debug\Edushi.ThriftHbaseCommon.pdb

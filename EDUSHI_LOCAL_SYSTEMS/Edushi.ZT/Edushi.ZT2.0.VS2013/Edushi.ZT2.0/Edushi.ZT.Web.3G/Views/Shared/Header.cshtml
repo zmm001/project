@@ -1,0 +1,19 @@
+﻿@using Edushi.ZT.Special
+@{
+    string parameterName = Common.GetConfigString("CooperationApp_UrlParameterName");
+    string parameterValue = Request.QueryString[parameterName];
+    string indexURL = ("http://m.edushi.com/").GetCooperationAppURL(parameterName, parameterValue);
+}
+<header>
+    <a href="javascript:history.go(-1);" class="back"></a>
+    <a href="@indexURL" class="logo"></a>
+    <a href="@Url.Content("~/")" class="channel-name">专题</a>
+    @if (Model is Edushi.ZT.Web._3G.Models.DetailModel)
+    {
+        <a href="@Common.GetInfoListUrl(Url.Content("~/"),Model.parentType.TT_ParentID,Model.parentType.TT_ID)" class="current">@Model.parentType.TT_Name</a>
+    }
+    <span class="fr">
+        <a href="http://m.edushi.com/user/" class="user"></a>
+        <a href="http://m.edushi.com/Navigation.html" class="category"></a>
+    </span>
+</header>

@@ -1,0 +1,50 @@
+﻿@import url(Common.css);
+
+/*店标签*/
+.LabelNav{ position:relative; height:24px; width:auto;}
+span.LfBor,span.Con,span.RgtBor{ float:left;}
+span.LfBor,span.RgtBor{ height:19px; width:6px; overflow:hidden; background-image:url(../images/EstoreLabelBg.gif); background-repeat:no-repeat;}
+span.LfBor{ background-position:left top;}
+span.RgtBor{ background-position:right top;}
+span.Con{ height:17px; line-height:17px; font-size:12px; font-weight:bold; color:#FFC; background-color:#C30; border-top:1px solid #e3e3e3; border-bottom:1px solid #e3e3e3;}
+.LabelNav .Arrow{ position:absolute; top:18px; left:15px; width:9px; height:6px; overflow:hidden; background:url(../images/EstoreLabelBg.gif) no-repeat -6px -18px;}
+
+/*同步LocalSearch.css*/
+ul{ list-style-type:none; margin:0; padding:0;}
+.LocalResult{ position:relative;}
+.LocalResult ul.LocalList{height:auto; color:#666;}
+.LocalResult ul.LocalList li{display:block; margin:3px 0;}
+
+.Number,.Number span{float:left;overflow:hidden;}
+.Number,.Currently{margin:4px 3px 0 0; background:url(../Images/Numberbg.gif) no-repeat right top; color:White; padding:0 3px 0 0;}
+.Number span,.Currently span{height:13px; line-height:13px; display:block; background:url(../Images/Numberbg.gif) no-repeat left top; padding:0 0 0 3px;}
+.Currently{background-position:right -17px;}
+.Currently span{background-position:left -17px;}
+
+.DetailCon{float:left; width:284px;}
+.TitleNav{line-height:21px;}
+.Phone,.Address,.Eaddress{ clear:both; line-height:19px;}
+.Eaddress a{ color:#03C;}
+span.HeadLine{float:left; line-height:21px; color:#369;}
+span.IsVipIco{margin:0 3px; float:left; line-height:21px;}
+span.IsVipIco img{padding:0 1px;}
+.DottedLine{clear:both;background:url(../Images/SearchNavLine.gif) repeat-x left center; height:1px; font-size:0;/*for IE6*/}
+.Paginate{text-align:center}
+/*高级筛选*/
+.FilterNav{padding:3px 5px 3px 16px; border:1px solid #E7E7C6; line-height:17px; background:#FEFFF0 url(../images/FilterIco.gif) no-repeat 5px 12px; margin:5px 0 0;}
+
+/*显示/隐藏*/
+.DisOp,.HidOp{ cursor:pointer; position:absolute; top:0; right:0; width:55px; height:17px; text-indent:-9000px; background-image:url(../images/OpButton.gif); background-repeat:no-repeat;}
+.HidOp{ background-position:left top;}
+.DisOp{ background-position:left -21px;}
+
+/*滚动区域*/
+.ScrollBoxNav,#TopSide{ background-image:url(../images/ScrollBoxBg.gif); background-repeat:no-repeat;}
+.ScrollBoxNav{ background-position:left bottom; width:300px; margin:5px 0;}
+#TopSide{ height:3px; width:300px; background-position:left top; font-size:0;/*for IE6*/}
+
+.ScroolBoxCon{ padding:5px 8px;}
+.P{padding-left:8px; margin:2px 0 1px;}
+.P img{ margin-left:3px;}
+.P ul{padding:0; margin:0; list-style-type:none;}
+.P ul li{float:left;padding-left:5px; background:url(../images/TriArrow.gif) no-repeat left 6px; margin:0px; height:19px; line-height:19px; overflow:hidden;}

@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<!--
+Path        memcached中缓存键值 如：{dian}_{CityCode}_{Language}_{key}
+Key         缓存模块key
+CacheTime   缓存时间（单位：分钟）
+Ending      后缀（默认为空）
+IDEnd       是否是ID结尾的（true/false）
+ListKey     包含key列表
+KeyInfo     key说明
+<Item Key=""  CacheTime="" Ending="">缓存描述</Item>
+    ===>>>最终memcache中的key为  Path+Ending / Path+Ending_ListKey
+-->
+<ItemList Path="map_{0}_{1}_{2}">
+    <Item Key="mapdatathemetype_new"  CacheTime="120">提供主题地图缓存管理</Item>	
+    <Item Key="mapdatathemepoint"  CacheTime="120" IDEnd="true" KeyInfo="主题点ID">地图首页上主题点的缓存key</Item>	
+    <Item Key="mapdataallthemepoint"  CacheTime="120">所有主题点的信息数据</Item>	
+    <Item Key="mapdatalocaloffer"  CacheTime="14400">地图上短信功能的数据</Item>	
+    <Item Key="mapdatahotbdtlist"  CacheTime="120" ListKey="6">地图包打听滚动数据</Item> 	
+    <Item Key="mapdatahotkeywords"  CacheTime="120" ListKey="8">获得热门关键字数据</Item>	
+    <Item Key="allvouchkey"  CacheTime="120">获得地图搜索的所有关键字</Item>
+    <Item Key="mapdatavouchaddatakey"  CacheTime="120" IDEnd="true" KeyInfo="关键字的拼音">地图关键字的搜索的数据</Item> 	
+    <Item Key="mapreferencepoint"  CacheTime="120">获得动态参考点的数据</Item>		
+    <Item Key="subway"  CacheTime="120">获得地铁信息</Item>	
+    <Item Key="subwaysation"  CacheTime="120">获得地铁相关的数据</Item>	
+    <Item Key="exitinfo"  CacheTime="120">获得地铁的出口数据</Item>
+    <Item Key="companytype"  CacheTime="1440">企业入住的类别数据</Item>	
+    <Item Key="companytrade"  CacheTime="1440">企业入住中E店的行业类别数据</Item>  
+	<Item Key="companyzonetype"  CacheTime="1440">企业入住中E店的行业地域数据</Item>	
+	<Item Key="compositioninfo"  CacheTime="1440">地图的常用位置信息</Item>
+	<Item Key="compositiontypeinfo"  CacheTime="1440">地图的常用位置类别</Item>	
+	<Item Key="busstationinfo"  CacheTime="1440" IDEnd="true" KeyInfo="公交的首字母">公交的站点信息</Item>
+	<Item Key="busnumberinfo"  CacheTime="1440" IDEnd="true" KeyInfo="站点的数字">获得该数字所有对应的所有线路集合</Item>
+  <!--<item key="righttabbdt" CacheTime="1440">右边页卡的包打听数据[单位分钟]</item>-->
+  <!--<item key="righttabbang" CacheTime="1440">右边页卡的生活帮数据[单位分钟]</item>-->
+</ItemList>

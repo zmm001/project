@@ -1,0 +1,76 @@
+﻿@{
+    ViewBag.Title = "爱上头条（E都市）小说频道";
+}
+<body class="bg">
+    <div id="app">
+        @*<div class="read-header-box">
+            <div class="header-box wrapper clearfix">
+                <a href="@Url.Content("~")" target="_blank" class="fl logo"></a>
+                <div class="fl read-nav">
+                    <a href="@Url.Content("~")" target="_blank">首页</a>
+                    <a href="@Url.Content("~/info/bookstore.html")" target="_blank">书库</a>
+                    <a href="@Url.Content("~/info/rank.html")" target="_blank">排行</a>
+                    <a href="@Url.Content("~/info/male.html")" target="_blank">男频</a>
+                    <a href="@Url.Content("~/info/female.html")" target="_blank">女频</a>
+                    <a href="@Url.Content("~/info/finish.html")" target="_blank">完结</a>
+                </div>
+                <div class="fr tips">
+                    @Html.Partial("/Views/Shared/_PartialUserCenter.cshtml")
+                </div>
+            </div>
+        </div>*@
+        <div class="read-wrap">
+            <div class="wrapper">
+                <div class="urhere">
+                    <a href="@Url.Content("~")" target="_blank">首页</a>
+                    <a v-bind:href="href" target="_blank">{{categoryName}}</a>
+                    <span><a href="javascript:history.go(-1)">{{bookName}}</a></span>
+                </div>
+                <div class="iframe-box">
+                    <iframe id="iframe" frameborder="0" scrolling="no" v-bind:src="sourceHref"></iframe>
+                    <div class="gray-block"></div>
+                    <a href="javascript:history.go(-1)" class="back-a"></a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript" src="/asset/js/common.js"></script>
+    <script type="text/javascript">
+        $(function () {
+            var delHeight = $(".top-nav-box").height();
+            $(".read-wrap").css({ "height": $(window).height() - delHeight });
+            $(".read-wrap .iframe-box iframe").css({ "height": $(".read-wrap").height() - 60 });
+        })
+    </script>
+    <script>
+        var datas = new Vue({
+            el: '#app',
+            data: {
+                sourceHref: '',//原文链接
+                bookName: '',
+                categoryName: '',
+                href: ''
+            },
+            mounted: function () {
+                var bookid = getQueryString("BookId")
+                var chapterid = getQueryString("chapter")
+                var descipt = getQueryString("descript")
+                if (descipt != null) {
+                    var obj = JSON.parse(descipt);
+                    this.bookName = obj.bookName
+                    this.categoryName = obj.categoryName
+                    this.href ="http://xiaoshuo.edushi.com/info/bookstore.html?category1=" + obj.category1 + "&category2=" + obj.category2
+                    this.sourceHref = "https://aikan.i5read.com/app/reader/" + bookid + "/" + chapterid + "?bookStore=3&channel=13666657819&loginPos=6&publishChannelType=1&originUrlId=9060&isInSubscriptionsEnv=0&weixinAppId=wx48a164b9f44f6ed2"
+                } else {
+                    var str = sessionStorage.obj;
+                    var obj = JSON.parse(str);
+                    this.bookName = obj.bookName
+                    this.categoryName = obj.categoryName
+                    this.href = "http://xiaoshuo.edushi.com/info/bookstore.html?category1=" + obj.category1 + "&category2=" + obj.category2
+                    this.sourceHref = "https://aikan.i5read.com/app/reader/" + bookid + "/" + chapterid + "?bookStore=3&channel=13666657819&loginPos=6&publishChannelType=1&originUrlId=9060&isInSubscriptionsEnv=0&weixinAppId=wx48a164b9f44f6ed2"
+                }
+                
+            }
+        });
+    </script>
+</body>

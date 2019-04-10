@@ -1,0 +1,65 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Studio 2008
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Map.WebApp", "Map.WebApp\Map.WebApp.csproj", "{1A0FF913-6826-4D66-9BC4-A009541DE085}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EDC.Framework", "..\..\..\EDUSHI_DATA_CENTER\EdushiDataCenter\v1.0\Edushi.DataCenter\EDC.Framework\EDC.Framework.csproj", "{A2E154FC-DDE6-45B9-82C0-0C2F1307567C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EDC.Map5.0", "..\..\..\EDUSHI_DATA_CENTER\EdushiDataCenter\v1.0\Edushi.DataCenter\EDC.Map5.0\EDC.Map5.0.csproj", "{05AB4D20-B944-4E07-A24F-289872DC2E5F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EDC.Member", "..\..\..\EDUSHI_DATA_CENTER\EdushiDataCenter\v1.0\Edushi.DataCenter\EDC.Member\EDC.Member.csproj", "{E9778714-5E53-4114-884E-FACCFCEB0474}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Aladdin.WebAg", "..\..\Aladdin.WebAg\Aladdin.WebAg\Aladdin.WebAg.csproj", "{59EF62E3-2C2C-47A8-9BEB-5B362E5D3CDC}"
+EndProject
+Global
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 6
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = http://192.168.101.67:8080/
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = Map.WebApp\\Map.WebApp.csproj
+		SccProjectName1 = Map.WebApp
+		SccLocalPath1 = Map.WebApp
+		SccProjectUniqueName2 = ..\\..\\..\\EDUSHI_DATA_CENTER\\EdushiDataCenter\\v1.0\\Edushi.DataCenter\\EDC.Framework\\EDC.Framework.csproj
+		SccProjectName2 = ../../../EDUSHI_DATA_CENTER/EdushiDataCenter/v1.0/Edushi.DataCenter/EDC.Framework
+		SccLocalPath2 = ..\\..\\..\\EDUSHI_DATA_CENTER\\EdushiDataCenter\\v1.0\\Edushi.DataCenter\\EDC.Framework
+		SccProjectUniqueName3 = ..\\..\\..\\EDUSHI_DATA_CENTER\\EdushiDataCenter\\v1.0\\Edushi.DataCenter\\EDC.Map5.0\\EDC.Map5.0.csproj
+		SccProjectName3 = ../../../EDUSHI_DATA_CENTER/EdushiDataCenter/v1.0/Edushi.DataCenter/EDC.Map5.0
+		SccLocalPath3 = ..\\..\\..\\EDUSHI_DATA_CENTER\\EdushiDataCenter\\v1.0\\Edushi.DataCenter\\EDC.Map5.0
+		SccProjectUniqueName4 = ..\\..\\..\\EDUSHI_DATA_CENTER\\EdushiDataCenter\\v1.0\\Edushi.DataCenter\\EDC.Member\\EDC.Member.csproj
+		SccProjectName4 = ../../../EDUSHI_DATA_CENTER/EdushiDataCenter/v1.0/Edushi.DataCenter/EDC.Member
+		SccLocalPath4 = ..\\..\\..\\EDUSHI_DATA_CENTER\\EdushiDataCenter\\v1.0\\Edushi.DataCenter\\EDC.Member
+		SccProjectUniqueName5 = ..\\..\\Aladdin.WebAg\\Aladdin.WebAg\\Aladdin.WebAg.csproj
+		SccProjectName5 = ../../Aladdin.WebAg/Aladdin.WebAg
+		SccLocalPath5 = ..\\..\\Aladdin.WebAg\\Aladdin.WebAg
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{1A0FF913-6826-4D66-9BC4-A009541DE085}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1A0FF913-6826-4D66-9BC4-A009541DE085}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1A0FF913-6826-4D66-9BC4-A009541DE085}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1A0FF913-6826-4D66-9BC4-A009541DE085}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A2E154FC-DDE6-45B9-82C0-0C2F1307567C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A2E154FC-DDE6-45B9-82C0-0C2F1307567C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A2E154FC-DDE6-45B9-82C0-0C2F1307567C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A2E154FC-DDE6-45B9-82C0-0C2F1307567C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{05AB4D20-B944-4E07-A24F-289872DC2E5F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{05AB4D20-B944-4E07-A24F-289872DC2E5F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{05AB4D20-B944-4E07-A24F-289872DC2E5F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{05AB4D20-B944-4E07-A24F-289872DC2E5F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E9778714-5E53-4114-884E-FACCFCEB0474}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E9778714-5E53-4114-884E-FACCFCEB0474}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E9778714-5E53-4114-884E-FACCFCEB0474}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E9778714-5E53-4114-884E-FACCFCEB0474}.Release|Any CPU.Build.0 = Release|Any CPU
+		{59EF62E3-2C2C-47A8-9BEB-5B362E5D3CDC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{59EF62E3-2C2C-47A8-9BEB-5B362E5D3CDC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{59EF62E3-2C2C-47A8-9BEB-5B362E5D3CDC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{59EF62E3-2C2C-47A8-9BEB-5B362E5D3CDC}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,602 @@
+﻿@using System.Diagnostics
+@using Edushi.Common
+@model Edushi.UserCenter.Web.PC.Models.UserIndexResultModel
+@using Edushi.UserCenter.Web.PC.Models
+@{
+    //普通号用户信息（粉丝，关注）
+    var userSocialInfo = Model.UserSocialInfo as MyAttentionModel;
+    ViewBag.Title = string.Format("{0}-E都市", Model.UserInfo == null || string.IsNullOrWhiteSpace(Model.UserInfo["NickName"].ToString()) ? "用户头条号" : Model.UserInfo["NickName"].ToString());
+    var userId = 0;
+    List<int> attendionList = new List<int>();// 粉丝关注列表
+    ViewBag.newsType = string.Empty;
+}
+<link href="@Url.Content("~/asset/css/user.css")" rel="stylesheet" />
+@section meta
+{
+    <meta name="Keywords" content="" />
+    <meta name="Description" content="" />
+}
+
+<div class="container user @(Convert.ToInt32(Model.UserInfo["UserType"]) == 3 ? "ordinary" : "")">
+    <div class="wrapper">
+        <div class="side">
+            @if (Model.UserInfo != null)
+            {
+                var user = Model.UserInfo;
+                userId = Model.UserInfo["ID"] == null ? 0 : Convert.ToInt32(Model.UserInfo["ID"]);
+                <div class="photo-box">
+                    <div class="photo">
+                        <img src="@(ViewBag.UserImgDomain + user["Avatar"])">
+                    </div>
+                    <span class="name">@user["NickName"]</span>
+                    <span class="text">@Html.Raw(user["Tags"])</span>
+                </div>
+            }
+
+            <div class="info-box">
+                <div class="info">
+                    <span>@(Convert.ToInt32(Model.UserInfo["UserType"]) == 1 ? Model.UserInfo["ArticleCount"].ToString() : "0")</span>
+                    <span>篇文章</span>
+                </div>
+                <div class="line"></div>
+                <div class="info">
+                    <span>@*@(Convert.ToInt32(Model.UserInfo["UserType"]) == 1 ? (Model.Type > 4 ? (userSocialInfo != null ? userSocialInfo.TotalCount : 0) : Model.AttentionCount) : 0)*@</span>
+                    <span id="attentionNum">@(Convert.ToInt32(Model.UserInfo["UserType"]) == 1 ? Model.AttentionCount : 0)</span>
+                    <span>人关注</span>
+                </div>
+                @{
+                    //  1.判断我有没有关注当前用户
+                    //  1.1 有 已关注
+                    //  2.判断当前用户有没有关注我
+                    //  2.1 有 互相关注
+                    //  2.2 无 +
+                    //  1.2 无 +
+                    //  2.判断当前用户有没有关注我
+                    //  2.1 有 Ta关注我
+                    //  2.2 无 +
+                    //  + Ta关注我 == 互相关注 后  不能再变动了当前状态了
+
+                    var isAttentioned = userId <= 0 ? null : Edushi.UserCenter.Web.PC.Controllers.AuthorNewsController.GetIsAttention(userId);
+                    if (isAttentioned != null && isAttentioned["Success"].ToString() == "-2") // 判断我有关注当前用户
+                    {
+                        var isAttentioneds = userId <= 0 ? null : Edushi.UserCenter.Web.PC.Controllers.AuthorNewsController.GetISFansUserList(userId); // 判断当前用户是否为我的粉丝
+                        if (isAttentioneds != null && isAttentioneds["Success"].ToString() == "-2") // 判断当前用户是我粉丝
+                        {
+                            <div class="follow-btn eachother"></div>
+                        }
+                        else
+                        {
+                            <a class="follow-btn follow" id="@userId"></a> // 已关注
+                        }
+                    }
+                    else
+                    {
+                        if (ViewBag.loginId != userId) // 登录用户不等于当前用户
+                        {
+                            @*<a class="follow-btn js-follow-btn" id="@userId"></a>*@
+                            var isAttentioneds = userId <= 0 ? null : Edushi.UserCenter.Web.PC.Controllers.AuthorNewsController.GetISFansUserList(userId); // 判断当前用户是否为我的粉丝
+                            if (isAttentioneds != null && isAttentioneds["Success"].ToString() == "-2") // 判断当前用户是我粉丝
+                            {
+                                <a class="js-follow follow-btn" id="@userId" name="1"></a>
+                                <div class="follow-tips">TA关注了我</div>
+                            }
+                            else
+                            {
+                                <a class="js-follow follow-btn" id="@userId"></a>
+                            }
+
+                        }
+
+                    }
+
+                }
+
+            </div>
+            <ul>
+                @if (Convert.ToInt32(Model.UserInfo["UserType"]) == 1)
+                {
+                    <li @Html.Raw(Model.Type == (int)DataEnum.NewsType.Comprehensive ? "class=\"current\"" : "")>
+                        <a href="@Html.Raw(string.Format("{0}index/{1}-{2}.html", Url.Content("~/"), (int)DataEnum.NewsType.Comprehensive, Model.UserInfo["ID"]))">综合</a>
+                    </li>
+                    <li @Html.Raw(Model.Type == (int)DataEnum.NewsType.News ? "class=\"current\"" : "")>
+                        <a href="@Html.Raw(string.Format("{0}index/{1}-{2}.html", Url.Content("~/"), (int)DataEnum.NewsType.News, Model.UserInfo["ID"]))">新闻</a>
+                    </li>
+                    <li @Html.Raw(Model.Type == (int)DataEnum.NewsType.PicArticle ? "class=\"current\"" : "")>
+                        <a href="@Html.Raw(string.Format("{0}index/{1}-{2}.html", Url.Content("~/"), (int)DataEnum.NewsType.PicArticle, Model.UserInfo["ID"]))">图闻</a>
+                    </li>
+                    <li @Html.Raw(Model.Type == (int)DataEnum.NewsType.Topic ? "class=\"current\"" : "")>
+                        <a href="@Html.Raw(string.Format("{0}index/{1}-{2}.html", Url.Content("~/"), (int)DataEnum.NewsType.Topic, Model.UserInfo["ID"]))">专题</a>
+                    </li>
+
+                    if (ViewBag.status == "1")
+                    {
+                        <li @Html.Raw(Model.Type == (int)DataEnum.UserInfoType.Activities ? "class=\"current\"" : "")>
+                            <a href="@Html.Raw(string.Format("{0}index/{1}-{2}.html", Url.Content("~/"), 5, Model.UserInfo["ID"]))">TA的动态</a>
+                        </li>
+                        <li @Html.Raw(Model.Type == (int)DataEnum.UserInfoType.Attention ? "class=\"current\"" : "")>
+                            <a href="@Html.Raw(string.Format("{0}index/{1}-{2}.html", Url.Content("~/"), 6, Model.UserInfo["ID"]))">TA的关注</a>
+                        </li>
+                        <li @Html.Raw(Model.Type == (int)DataEnum.UserInfoType.Favorite ? "class=\"current\"" : "")>
+                            <a href="@Html.Raw(string.Format("{0}index/{1}-{2}.html", Url.Content("~/"), 7, Model.UserInfo["ID"]))">TA的粉丝</a>
+                        </li>
+                    }
+                }
+                else
+                {
+                    <li @Html.Raw(Model.Type == (int)DataEnum.UserInfoType.Activities ? "class=\"current\"" : "")>
+                        <a href="@Html.Raw(string.Format("{0}index/{1}-{2}.html", Url.Content("~/"), 5, Model.UserInfo["ID"]))">TA的动态</a>
+                    </li>
+                    <li @Html.Raw(Model.Type == (int)DataEnum.UserInfoType.Attention ? "class=\"current\"" : "")>
+                        <a href="@Html.Raw(string.Format("{0}index/{1}-{2}.html", Url.Content("~/"), 6, Model.UserInfo["ID"]))">TA的关注</a>
+                    </li>
+                    <li @Html.Raw(Model.Type == (int)DataEnum.UserInfoType.Favorite ? "class=\"current\"" : "")>
+                        <a href="@Html.Raw(string.Format("{0}index/{1}-{2}.html", Url.Content("~/"), 7, Model.UserInfo["ID"]))">TA的粉丝</a>
+                    </li>
+                }
+
+            </ul>
+        </div>
+
+        <div class="main">
+            @if (Model.NewsInfo != null && Model.NewsInfo.List != null && Model.NewsInfo.List.Any())
+            {
+                <ul class="news-list slide-box" id="datalist">
+                    @foreach (var item in Model.NewsInfo.List)
+                    {
+                        var liClass = ""; //默认为资讯
+                        var imgBox = string.Empty;
+                        var url = string.Empty;
+                        var updateTime = Common.TimeInterval(item.UpdateTime, DateTime.Now);
+
+                        if (item.type == "1") //资讯
+                        {
+                            url = string.Format("http://www.edushi.com/zixun/info/{1}-{2}-n{3}.html", item.CityCode, item.ParentTypeID, item.TypeID, item.ID);
+                            if (!string.IsNullOrEmpty(item.Pic))
+                            {
+                                imgBox = string.Format("<a href=\"{0}\" target=\"_blank\">{1}</a>\r\n", url, "<img src=\"" + item.Pic.GetPicReplace("", "") + "\" onerror=\"this.src='" + Url.Content("~/asset/images/default_photo.png") + "'\">"); //一张图
+                            }
+                        }
+                        else if (item.type == "2") //图闻
+                        {
+                            url = string.Format("http://tu.edushi.com/info/{0}-{1}-n{2}.html", item.ParentTypeID, item.TypeID, item.ID);
+                            liClass = string.Format(" class=\"picture\" data-picture=\"{0}\"", item.PicCount);
+                            if (!string.IsNullOrWhiteSpace(item.Pic) && !string.IsNullOrWhiteSpace(item.Pic1) && !string.IsNullOrWhiteSpace(item.Pic2))
+                            {
+                                imgBox = string.Format("<a href=\"{0}\" target=\"_blank\">{1}</a>\r\n<a href=\"{0}\" target=\"_blank\">{2}</a>\r\n<a href=\"{0}\" target=\"_blank\">{3}</a>\r\n", url, "<img src=\"" + item.Pic.GetPicReplace("", "") + "\" onerror=\"this.src='" + Url.Content("~/asset/images/default_photo.png") + "'\">", "<img src=\"" + item.Pic1.GetPicReplace("", "") + "\" onerror=\"this.src='" + Url.Content("~/asset/images/default_photo.png") + "'\">", "<img src=\"" + item.Pic2.GetPicReplace("", "") + "\" onerror=\"this.src='" + Url.Content("~/asset/images/default_photo.png") + "'\">");
+                            }
+                            else if (!string.IsNullOrWhiteSpace(item.Pic))
+                            {
+                                imgBox = string.Format("<a href=\"{0}\" target=\"_blank\">{1}</a>\r\n", url, "<img src=\"" + item.Pic.GetPicReplace("", "") + "\" onerror=\"this.src='" + Url.Content("~/asset/images/default_photo.png") + "'\">");
+                                liClass = string.Format(" class=\"tu singletu\" data-picture=\"{0}\"", item.PicCount);
+                            }
+
+                        }
+                        else if (item.type == "3") //专题
+                        {
+                            url = string.Format("http://www.edushi.com/zt/info/{0}-{1}-n{2}.html", item.ParentTypeID, item.TypeID, item.ID);
+                            liClass = " class=\"topic\""; //topic
+                            imgBox = string.Format("<a href=\"{0}\">{1}</a>\r\n", url, "<img src=\"" + item.Pic.GetPicReplace("", "") + "\" onerror=\"this.src='" + Url.Content("~/asset/images/default_photo.png") + "'\">"); //一张图
+                        }
+
+                        <li @Html.Raw(liClass)>
+                            @Html.Raw(imgBox)
+                            <div>
+                                <a href="@url" class="title" target="_blank">@Html.Raw(item.Title)</a>
+                                <div class="info">
+                                    <a href="@item.TypeUrl" class="sub" target="_blank">@item.TypeName</a>
+                                    <span class="comment"><a href="javascript:void(0);">评论</a></span>
+                                    <span class="time">@updateTime</span>
+                                </div>
+                            </div>
+                        </li>
+                    }
+                </ul>
+            }
+            @*编辑号开启:粉丝 关注 动态功能*@
+            @if ((ViewBag.status == "1" && Convert.ToInt32(Model.UserInfo["UserType"]) == 1) || Convert.ToInt32(Model.UserInfo["UserType"]) == 3)
+            {
+                //普通号有无数据
+                if (Model.UserSocialInfo != null)
+                {
+                    var url = string.Empty; // 链接地址
+                    if (Model.Type == (int)DataEnum.UserInfoType.Favorite) // 粉丝
+                    {
+                        var listCount = userSocialInfo.TotalCount; // 粉丝个数
+                        <div class="info-tips">
+                            全部粉丝(<span>@listCount</span>)
+                        </div>
+                        <div class="follow-box" id="datalists">
+                            @foreach (var item in userSocialInfo.List)
+                            {
+                                var nickName = item.UserInfo["NickName"]; // 显示名
+                                var avatar = item.UserInfo["Avatar"]; // 头像
+                                var title = item.Title ?? "";
+                                <div class="follow-list clearfix">
+                                    <div class="fl follow-user">
+                                        @{
+                                            <a href="@Html.Raw(string.Format("{0}index/{1}-{2}.html", Url.Content("~/"), item.UserInfo["Type"].ToString() == "3"?5:1, @item.UserInfo["FansId"].ToString()))" target="_blank">
+                                                <div class="photo">
+                                                    <img src="@(ViewBag.UserImgDomain + @avatar)" />
+                                                </div>
+                                                <div class="info">
+                                                    <div class="user">@nickName</div>
+                                                    <p>@title</p>
+                                                </div>
+                                            </a>
+                                        }
+                                    </div>
+
+                                    @{
+                                var attentionId = int.Parse(item.UserInfo["FansId"].ToString());
+                                var isAttentioneds = attentionId <= 0 ? null : Edushi.UserCenter.Web.PC.Controllers.AuthorNewsController.GetISAttentionUserList(attentionId);
+                                // 列表中存在关注的对象
+                                if (isAttentioneds != null && isAttentioneds["Success"].ToString() == "-2")
+                                {
+                                    var isAttentionedss = attentionId <= 0 ? null : Edushi.UserCenter.Web.PC.Controllers.AuthorNewsController.GetISFansUserList(attentionId);
+                                    if (isAttentionedss != null && isAttentionedss["Success"].ToString() == "-2")
+                                    {
+                                        <div class="fr follow-btn following" id="@item.UserInfo["FansId"]" title="1">互相关注</div>
+                                    }
+                                    else
+                                    {
+                                        <div class="fr follow-btn followed" id="@item.UserInfo["FansId"]">已关注</div>
+                                    }
+                                }
+                                else
+                                {
+                                    if (ViewBag.loginId != attentionId)
+                                    {
+                                        var isAttentionedss = attentionId <= 0 ? null : Edushi.UserCenter.Web.PC.Controllers.AuthorNewsController.GetISFansUserList(attentionId);
+                                        if (isAttentionedss != null && isAttentionedss["Success"].ToString() == "-2")
+                                        {
+                                            <div class="fr add-follow" id="@item.UserInfo["FansId"]" title="1">关注</div>
+                                            <div class="follow-tips">TA关注了我</div>
+                                        }
+                                        else
+                                        {
+                                            <div class="fr add-follow" id="@item.UserInfo["FansId"]">关注</div>
+                                        }
+
+                                    }
+                                }
+                                    }
+                                </div>
+                            }
+                        </div>
+                    }
+                    else if (Model.Type == (int)DataEnum.UserInfoType.Attention) // 关注
+                    {
+                        var listCount = userSocialInfo.TotalCount; // 关注人数
+                        <div class="info-tips">
+                            全部关注(<span>@listCount</span>)
+                        </div>
+                        <div class="follow-box" id="datalists">
+                            @foreach (var item in userSocialInfo.List)
+                            {
+                                var nickName = item.UserInfo["NickName"]; // 显示名
+                                var avatar = item.UserInfo["Avatar"]; // 头像
+                                var title = item.Title ?? "";
+                                <div class="follow-list clearfix">
+                                    <div class="fl follow-user">
+                                        @{
+                                            <a href="@Html.Raw(string.Format("{0}index/{1}-{2}.html", Url.Content("~/"), item.UserInfo["Type"].ToString() == "3"?5:1, @item.UserInfo["ID"].ToString()))" target="_blank">
+                                                <div class="photo">
+                                                    <img src="@(ViewBag.UserImgDomain + @avatar)" />
+                                                </div>
+                                                <div class="info">
+                                                    <div class="user">@nickName</div>
+                                                    <p>@title</p>
+                                                </div>
+                                            </a>
+                                        }
+                                    </div>
+                                    @{
+                                var attentionId = int.Parse(item.UserInfo["ID"].ToString());
+                                attendionList.Add(attentionId);
+                                var isAttentioneds = attentionId <= 0 ? null : Edushi.UserCenter.Web.PC.Controllers.AuthorNewsController.GetISAttentionUserList(attentionId);
+                                // 列表中存在关注的对象
+                                if (isAttentioneds != null && isAttentioneds["Success"].ToString() == "-2")
+                                {
+                                    var isAttentionedss = attentionId <= 0 ? null : Edushi.UserCenter.Web.PC.Controllers.AuthorNewsController.GetISFansUserList(attentionId);
+                                    if (isAttentionedss != null && isAttentionedss["Success"].ToString() == "-2")
+                                    {
+                                        <div class="fr follow-btn following" id="@item.UserInfo["ID"]" title="1">互相关注</div>
+                                    }
+                                    else
+                                    {
+                                        <div class="fr follow-btn followed" id="@item.UserInfo["ID"]">已关注</div>
+                                    }
+                                }
+                                else
+                                {
+                                    if (ViewBag.loginId != attentionId) //  关注列表中与登录人相同不显示
+                                    {
+                                        var isAttentionedss = attentionId <= 0 ? null : Edushi.UserCenter.Web.PC.Controllers.AuthorNewsController.GetISFansUserList(attentionId);
+                                        if (isAttentionedss != null && isAttentionedss["Success"].ToString() == "-2")
+                                        {
+                                            <div class="fr add-follow" id="@item.UserInfo["ID"]" title="1">关注</div>
+                                            <div class="follow-tips">TA关注了我</div>
+                                        }
+                                        else
+                                        {
+                                            <div class="fr add-follow" id="@item.UserInfo["ID"]">关注</div>
+                                        }
+                                    }
+                                }
+                                    }
+                                </div>
+                            }
+                        </div>
+                    }
+                    else if (Model.Type == (int)DataEnum.UserInfoType.Activities) // 动态
+                    {
+                        int parentCommentId = -1;
+                        MyActivitiesModel activitiesModel = Model.UserSocialInfo as MyActivitiesModel;
+                        if (activitiesModel != null && activitiesModel.CommentList != null && activitiesModel.CommentList.Count > 0)
+                        {
+                            var newsComments = activitiesModel.CommentList;
+
+                            <ul class="act-list" id="datalists">
+                                @foreach (UserCommentInfo news in newsComments)
+                                {
+                                    <li class="act">
+                                        <div class="type"></div>
+                                        @if (news.article_model != null)
+                                        {
+                                            
+                                            switch (news.article_model.Type)
+                                            {
+                                                case 1:
+                                                    ViewBag.newsType = "新闻";
+                                                    url = string.Format("http://www.edushi.com/zixun/info/{1}-{2}-n{3}.html", news.article_model.CityCode, news.article_model.ParentTypeId, news.article_model.TypeId, news.article_model.Id);
+                                                    break;
+                                                case 2:
+                                                    ViewBag.newsType = "图闻";
+                                                    url = string.Format("http://tu.edushi.com/info/{0}-{1}-n{2}.html", news.article_model.ParentTypeId, news.article_model.TypeId, news.article_model.Id);
+                                                    break;
+                                                case 3:
+                                                    ViewBag.newsType = "专题";
+                                                    url = string.Format("http://www.edushi.com/zt/info/{0}-{1}-n{2}.html", news.article_model.ParentTypeId, news.article_model.TypeId, news.article_model.Id);
+                                                    break;
+                                                default:
+                                                    ViewBag.newsType = "新闻";
+                                                    break;
+                                            }
+                                            <a href=@url target="_blank" class="source">
+                                                <img src=@news.article_model.Pic>
+                                                <div>
+                                                    <h1>@news.article_model.Title</h1>
+                                                    <div class="info">
+                                                        @{
+                                                            news.article_model.Type = news.article_model.Type + 1;
+                                                        }
+                                                        @if (news.article_model.Type == (int) DataEnum.NewsType.News || (news.article_model.Type - 1) == (int) DataEnum.NewsType.Comprehensive)
+                                                        {
+                                                            <span class="sub">  @ViewBag.newsType </span>
+                                                        }
+                                                        else if (news.article_model.Type == (int) DataEnum.NewsType.PicArticle)
+                                                        {
+                                                            <span class="sub tu">  @ViewBag.newsType </span>
+                                                        }
+                                                        else if (news.article_model.Type == (int) DataEnum.NewsType.Topic)
+                                                        {
+                                                            <span class="sub zt">  @ViewBag.newsType </span>
+                                                        }
+                                                        <span class="time">@news.article_model.UpdateTime</span>
+                                                    </div>
+                                                </div>
+                                            </a>
+
+                                            foreach (var comment in news.comment_list)
+                                            {
+                                                if (comment.comment_detail != null)
+                                                {
+                                                    if (comment.Flag == 1 && comment.comment_detail_parent != null)
+                                                    {
+                                                        if (parentCommentId != comment.comment_detail_parent.CommentId)
+                                                        {
+                                                            parentCommentId = comment.comment_detail_parent.CommentId;
+                                                            <div class="comment-box">
+                                                                <a href="@Html.Raw(string.Format("{0}index/{1}-{2}.html", Url.Content("~/"), comment.userInfo_parent.UserType == 3 ? 5 : 1, comment.userInfo_parent.UserId.ToString()))" target="_blank" class="photo"><img src=@comment.userInfo_parent.Avatar></a>
+                                                                <div class="box">
+                                                                    <span class="name">
+                                                                        <a href="@Html.Raw(string.Format("{0}index/{1}-{2}.html", Url.Content("~/"), comment.userInfo.UserType == 3 ? 5 : 1, comment.userInfo_parent.UserId.ToString()))" target="_blank">@comment.userInfo_parent.NickName</a>
+                                                                        <span class="time">@comment.comment_detail_parent.Time</span>
+                                                                    </span>
+                                                                    <p>@comment.comment_detail_parent.Content</p>
+                                                                    @if (comment.commnetUpvoteInfo_parent != null)
+                                                                    {
+                                                                        <div class="like" data-like=@comment.commnetUpvoteInfo_parent.TotalUpvoteCount>
+                                                                            @if (comment.commnetUpvoteInfo_parent != null && comment.commnetUpvoteInfo_parent.UserUpvoteList.Count > 0)
+                                                                            {
+                                                                                foreach (var subItem in comment.commnetUpvoteInfo_parent.UserUpvoteList)
+                                                                                {
+                                                                                    <a href="@Html.Raw(string.Format("{0}index/{1}-{2}.html", Url.Content("~/"), subItem["UserType"].ToString() == "1" ? 1 : 5, comment.userInfo_parent.UserId))" target="_blank" class="red">@subItem["NickName"]</a>
+                                                                                }
+                                                                            }
+                                                                        </div>
+                                                                    }
+                                                                </div>
+                                                            </div>
+                                                        }
+                                                        <div class="reply-box">
+                                                            <ul>
+                                                                <li>
+                                                                    <a href="@Html.Raw(string.Format("{0}index/{1}-{2}.html", Url.Content("~/"), @comment.userInfo.UserType == 3 ? 5 : 1, @comment.userInfo.UserId.ToString()))" target="_blank" class="photo"><img src=@comment.userInfo.Avatar></a>
+                                                                    <div class="box">
+                                                                        <span class="name">
+                                                                            <a href="@Html.Raw(string.Format("{0}index/{1}-{2}.html", Url.Content("~/"), @comment.userInfo.UserType == 3 ? 5 : 1, @comment.userInfo.UserId.ToString()))" target="_blank">@comment.userInfo.NickName</a>
+                                                                            <span class="time">@comment.comment_detail.Time</span>
+                                                                        </span>
+                                                                        <p>@comment.comment_detail.Content</p>
+                                                                        @if (comment.commnetUpvoteInfo != null && comment.commnetUpvoteInfo.TotalUpvoteCount > 0)
+                                                                        {
+                                                                            <div class="like" data-like=@comment.commnetUpvoteInfo.TotalUpvoteCount>
+                                                                                @if (comment.commnetUpvoteInfo.UserUpvoteList != null && comment.commnetUpvoteInfo.UserUpvoteList.Count > 0)
+                                                                                {
+                                                                                    foreach (var subItem in comment.commnetUpvoteInfo.UserUpvoteList)
+                                                                                    {
+                                                                                        <a href="@Html.Raw(string.Format("{0}index/{1}-{2}.html", Url.Content("~/"), Convert.ToInt32(@subItem["UserType"]) == 3 ? 5 : 1, comment.userInfo.UserId))" target="_blank" class="red">@subItem["NickName"]</a>
+                                                                                    }
+                                                                                }
+                                                                            </div>
+                                                                        }
+                                                                    </div>
+                                                                </li>
+                                                            </ul>
+                                                        </div>
+                                                    }
+                                                    else
+                                                    {
+                                                        <div class="comment-box">
+                                                            <a href="@Html.Raw(string.Format("{0}index/{1}-{2}.html", Url.Content("~/"), comment.userInfo.UserType == 3 ? 5 : 1, comment.userInfo.UserId.ToString()))" target="_blank" class="photo"><img src=@comment.userInfo.Avatar></a>
+                                                            <div class="box">
+                                                                <span class="name">
+                                                                    <a href="@Html.Raw(string.Format("{0}index/{1}-{2}.html", Url.Content("~/"), comment.userInfo.UserType == 3 ? 5 : 1, comment.userInfo.UserId.ToString()))" target="_blank">@comment.userInfo.NickName</a>
+                                                                    <span class="time">@comment.comment_detail.Time</span>
+                                                                </span>
+                                                                <p>@comment.comment_detail.Content</p>
+                                                                @if (comment.commnetUpvoteInfo != null && comment.commnetUpvoteInfo.TotalUpvoteCount > 0)
+                                                                {
+                                                                    <div class="like" data-like=@comment.commnetUpvoteInfo.TotalUpvoteCount>
+                                                                        @if (comment.commnetUpvoteInfo.UserUpvoteList != null && comment.commnetUpvoteInfo.UserUpvoteList.Count > 0)
+                                                                        {
+                                                                            foreach (var subItem in comment.commnetUpvoteInfo.UserUpvoteList)
+                                                                            {
+                                                                                <a href="@Html.Raw(string.Format("{0}index/{1}-{2}.html", Url.Content("~/"), subItem["UserType"].ToString() == "1" ? 1 : 5, subItem["ID"]))" target="_blank" class="red">@subItem["NickName"]</a>
+                                                                            }
+                                                                        }
+                                                                    </div>
+                                                                }
+                                                            </div>
+                                                        </div>
+                                                    }
+                                                    if (comment.ListReplyOthers != null && comment.ListReplyOthers.Count > 0)
+                                                    {
+                                                        foreach (var reply in comment.ListReplyOthers)
+                                                        {
+                                                            <div class="reply-box">
+                                                                <ul>
+                                                                    <li>
+                                                                        <a href="@Html.Raw(string.Format("{0}index/{1}-{2}.html", Url.Content("~/"), @reply.userInfo.UserType == 3 ? 5 : 1, @reply.userInfo.UserId.ToString()))" target="_blank" class="photo"><img src=@reply.userInfo.Avatar></a>
+                                                                        <div class="box">
+                                                                            <span class="name">
+                                                                                <a href="@Html.Raw(string.Format("{0}index/{1}-{2}.html", Url.Content("~/"), @reply.userInfo.UserType == 3 ? 5 : 1, @reply.userInfo.UserId.ToString()))" target="_blank">@reply.userInfo.NickName</a>
+                                                                                <span class="time">@reply.comment_detail.Time</span>
+                                                                            </span>
+                                                                            <p>@reply.comment_detail.Content</p>
+                                                                            @if (reply.commnetUpvoteInfo != null && reply.commnetUpvoteInfo.TotalUpvoteCount > 0)
+                                                                            {
+                                                                                <div class="like" data-like=@reply.commnetUpvoteInfo.TotalUpvoteCount>
+                                                                                    @if (reply.commnetUpvoteInfo.UserUpvoteList != null && reply.commnetUpvoteInfo.UserUpvoteList.Count > 0)
+                                                                                    {
+                                                                                        foreach (var subItem in reply.commnetUpvoteInfo.UserUpvoteList)
+                                                                                        {
+                                                                                            <a href="@Html.Raw(string.Format("{0}index/{1}-{2}.html", Url.Content("~/"), Convert.ToInt32(@subItem["UserType"]) == 3 ? 5 : 1, Convert.ToInt32(@subItem["ID"])))" target="_blank" class="red">@subItem["NickName"]</a>
+                                                                                        }
+                                                                                    }
+                                                                                </div>
+                                                                            }
+                                                                        </div>
+                                                                    </li>
+                                                                </ul>
+                                                            </div>
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    </li>
+                                }
+                            </ul>
+                        }
+                    }
+                }
+
+            }
+            @if (Model.Type < 5 && Model.PageCount > 1)
+            {
+                <a class="load-btn">加载更多</a>
+            }
+            else
+            {
+                 <div class="loading" style="display: none;">正在加载中</div>
+            }
+           
+            <div class="load-prompt" @Html.Raw(Model.PageCount > 1 ? "style=\"display:none;\"" : "style=\"display:block;\"")>
+                您已经看完了，<a href="http://www.edushi.com/">返回首页</a>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    var configData = {
+        Count: "@Model.PageCount",
+        Url: "@Url.Content("~/")",
+        Page: "GetMoreUserData.htm",
+        UserId: "@Model.UserInfo["ID"].ToString()",
+        NewsType: "@Model.Type",
+        PageIndex: 1,
+        Contaiter: $("#datalist")
+    };
+
+    var ConfigDataForScroll = {
+        "PageIndex": 1,
+        "UserId": "@Model.UserInfo["ID"].ToString()",
+        "Count": "@Model.PageCount",
+        "Page": "GetUserData.htm",
+        "Url": "@Url.Content("~/")",
+        "Id": 0,
+        "Type": @Model.Type
+    };
+
+</script>
+
+<script src="@Url.Content("~/asset/js/load.js")"></script>
+@if (Model.Type > 4)
+{ 
+    <script src="@Url.Content("~/asset/js/scrollload.js")"></script>
+}
+<script>
+    $(function () {
+        //更新最后浏览时间
+        $.post("/UpdateAttentionOfUpdateDate.htm", { "userId": "@Model.UserInfo["ID"]" });
+
+        $(".js-follow-btns").click(function () {
+            var userId = "@Model.UserInfo["ID"].ToString()";
+            if (!$(this).hasClass("follow")) {
+                $.ajax({
+                    type: "post",
+                    dataType: "json",
+                    url: "/AddAttention.htm",
+                    data: { "userId": userId },
+                    success: function (data) {
+                        if (data.ResultCode == 1) {
+                            $(".follow-btn").addClass("follow");
+                        } else if (data.ResultCode == 2) {
+                            window.location.href = '/Login.html?BackUrl=' + window.location.href;
+                        } else {
+                            popUp(data.Msg);
+                        }
+                    }
+                });
+            } else {
+                $.ajax({
+                    type: "post",
+                    dataType: "json",
+                    url: "/CancelAttention.htm",
+                    data: { "userId": userId },
+                    success: function (data) {
+                        if (data.ResultCode == 1) {
+                            $(".follow-btn").removeClass("follow");
+                        } else if (data.ResultCode == 2) {
+                            window.location.href = '/Login.html?BackUrl=' + window.location.href;
+                        } else {
+                            popUp(data.Msg);
+                        }
+                    }
+                });
+            }
+        });
+    })
+</script>

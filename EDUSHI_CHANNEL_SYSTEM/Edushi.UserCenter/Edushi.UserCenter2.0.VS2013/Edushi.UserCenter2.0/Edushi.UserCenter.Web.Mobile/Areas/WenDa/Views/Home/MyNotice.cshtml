@@ -1,0 +1,70 @@
+﻿@using Edushi.Common
+@model Edushi.UserCenter.Web.Mobile.Areas.WenDa.Models.MyNoticeModel
+@{
+    ViewBag.Title = "我的通知-E都市问答";
+    var imgDomain = Common.GetConfigString("UserHeadPic");
+}
+
+<div id="app">
+    <div class="my">
+        <!--头部-->
+        <header-bar :data="header"></header-bar>
+        <!--内容-->
+        <div class="container">
+            <div class="notice-list">
+                <ul id="datalist">
+                    @if (Model.List != null && Model.List.Any())
+                    {
+                        foreach (var item in Model.List)
+                        {
+                            var nickName = item.UserInfo != null && !string.IsNullOrWhiteSpace(item.UserInfo["NickName"].ToString()) ? item.UserInfo["NickName"] : "E都市网友";
+                            var userHead = item.UserInfo != null && !string.IsNullOrWhiteSpace(item.UserInfo["Avatar"].ToString()) ? imgDomain + item.UserInfo["Avatar"] : Url.Content("~/areas/wenda/asset/images/userhead.jpg");
+                            <li>
+                                <a  class="photo">
+                                    <img src="@userHead">
+                                </a>
+                                <div class="content">
+                                    <div>
+                                        <a class="name">@nickName</a>
+                                        <span>回答了你的问题</span>
+                                        <a href="@item.QUrl" class="question">@Html.Raw(item.Title)</a>
+                                    </div>
+                                    <span class="time">@Common.TimeInterval(item.AnswerTime, DateTime.Now)</span>
+                                </div>
+                            </li>
+                        }
+                    }
+                    
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+
+
+    var my = new Vue({
+        el: '#app',
+        data: function() {
+            return {
+                header: {
+                    title: '我的通知',
+                    number: '@(Model.TotalCount)个',
+                },
+            }
+        },
+        methods: {
+        },
+    });
+    var ConfigData = {
+        "PageIndex":1,
+        "Count": "@Model.PageCount",
+        "Page": "@Url.Content("~/")",
+        "Url": "wenda/GetMoreNotice.htm",
+        "Id": 0,
+        "Type": 1
+    }
+
+</script>
+<script src="@Url.Content("~/areas/wenda/asset/js/scrollload.bak.js")"></script>

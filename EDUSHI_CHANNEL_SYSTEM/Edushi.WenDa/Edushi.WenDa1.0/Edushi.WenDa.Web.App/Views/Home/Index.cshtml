@@ -1,0 +1,90 @@
+﻿@using Edushi.WenDa.Web.App.Models;
+@model HomeModel
+<script src="@Url.Content("~/asset/js/common.js")"></script>
+@{
+    ViewBag.Title = "趣问列表";
+}
+<div id="qw-index">
+    <div class="wraper">
+        @if (Model.list != null && Model.list.Any())
+        {
+            foreach (var item in Model.list)
+            {
+                if (item.answer != null) //有回答
+                {
+                    <div class="question-list">
+                        <div class="title"><a href="javascript:void(0);" onclick="openPage('@item.url')"><div><span>@item.title</span></div></a></div>  
+                        @if (!string.IsNullOrEmpty(item.answer.Pic))
+                        {
+                            <div class="img-box"><a href="javascript:void(0);" onclick="openPage('@item.answer.url')"><img src="@item.answer.Pic" alt=""></a></div>
+                        }
+                        <div class="userinfo">
+                            <div class="infotitle">
+                                <a href="javascript:void(0);" class="photo" onclick="openUserIndexPage(@item.answer.appId)"><img src="@item.answer.avatar"><span>@item.answer.nickname</span></a><span class="datetime">@item.answer.gmt_create</span>
+                            </div>
+                            <div class="detail"><a href="javascript:void(0);" onclick="openPage('@item.answer.url')"><span>@Html.Raw(item.answer.content)</span></a></div>
+                            <div class="event">
+                                <a>@(item.answer.likes)赞同</a><span style="width: 0.3rem; text-align: center; display: inline-block; color: rgba(176, 179, 184, 1);">·</span><a href="javascript:void(0);" onclick="openPage('@(item.answer.url)#comment')">@(item.answer.comment)评论</a>
+                            </div>
+                        </div>
+                    </div>
+                }
+            }
+        }
+        <div class="loading">加载中</div>
+    </div>
+</div>
+
+<script>
+    var gate = true;
+    var pageIndex = 1;
+    var pageCount = "@Model.PageCount";
+    $(function () {
+        scrollLoad();
+    })
+    function scrollLoad() {
+        $(window).bind("scroll", function () {
+            // 判断页面是否拉到底部
+            if ($(document).scrollTop() + $(window).height() >= $(document).height()) {
+                if (gate) {
+                    //gate = false;
+                    pageIndex++;
+                    if (pageIndex > pageCount) {
+                        gate = false;
+                        return false;
+                    }
+                    $(".loading").css("display", "block");
+                    $.ajax({
+                        type: 'post',
+                        url: '@Url.Content("~/Home/getMoreIndexData")',
+                        data: { "pageIndex": pageIndex },
+                        success: function (data) {
+                            if (data.length > 0 && data != null) {
+                                for (var i = 0; i < data.length; i++) {
+                                    var answer = data[i].answer;  // 回答信息
+                                    if (answer != null) {
+                                        var imgbox = "";
+                                        if (answer.Pic != null&&answer.Pic!='') {
+                                            imgbox = '<div class="img-box"><a href="javascript:void(0);" onclick="openPage(\'' + answer.url + '\')"><img src="' + answer.Pic + '" alt=""></a></div>'
+                                        }
+                                        var element = '<div class="question-list"><div class="title"><a href="javascript:void(0);" onclick="openPage(\'' + data[i].url + '\')"><div><span>' + data[i].title + '</span></div></a></div>' + imgbox + '' +
+                                        '<div class="userinfo">' +
+                                        '<div class="infotitle"><a href="javascript:void(0);" class="photo" onclick="openUserIndexPage(' + answer.appId + ')">' +
+                                        '<img src=' + answer.avatar + '><span>' + answer.nickname + '</span>' +
+                                        '</a><span class="datetime">' + answer.gmt_create + '</span></div><div class="detail"><a href="javascript:void(0);" onclick="openPage(\'' + answer.url + '\')"><span>' + answer.content + '</span></a></div>' +
+                                        '<div class="event"><a>' + answer.likes + '赞同</a> <span style="width: 0.3rem; text-align: center; display: inline-block; color: rgba(176, 179, 184, 1);">·</span><a href="javascript:void(0);" onclick="openPage(\'' + answer.url + '#comment\')">' + answer.comment + '评论</a></div>' +
+                                        '</div>' +
+                                        '</div>';
+                                        $('.loading').before(element);
+                                    }
+                                }
+                                $(".loading").css("display", "none");
+                            }
+                        },
+                        error: function (msg) { }
+                    })
+                }
+            }
+        })
+    }
+</script>

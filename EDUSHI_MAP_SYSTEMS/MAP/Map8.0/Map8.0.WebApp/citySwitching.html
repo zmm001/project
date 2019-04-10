@@ -1,0 +1,203 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+    <title>城市切换</title>
+    <style>
+        *{ margin:0; padding:0;}
+		body{ background:#fff; font-family:Microsoft Yahei; font-size:12px;}
+		ul li{list-style: none;}
+		.clearfix:before,.clearfix:after{ display:table; content:" ";}
+		.clearfix:after{ clear:both;}
+		.clearfix{ *zoom:1;}
+		.f-l{ display:inline; float:left;}
+		.f-r{ display:inline; float:right;}
+		.change-city-box{ width:440px; height:309px; padding-bottom:6px; background:#fff; font-family:Microsoft Yahei;}
+		.change-city-tit{ padding:0 10px; font-size:14px; color:#1E1E1E; line-height:35px; background:#f8f8f8; border-bottom:1px solid #eeeeee;}
+		.close-city{ display:inline-block; float:right; width:9px; height:9px; margin-top:15px; background:url(images/map_icon.png) no-repeat -78px -38px; cursor:pointer;}
+		.hot-city{ margin-bottom:5px; text-indent:8px; line-height:35px; border-bottom:1px dashed #dedede;}
+		.hot-city a{ margin-right:5px; color:#3d3d3d;}
+		.change-city-type{ padding:0 5px;}
+		.city-tab-tit{ border:1px solid #c7d3da; color:#1E1E1E;}
+		.city-tab-tit span{ display:inline-block; float:left; padding:0 18px; line-height:22px; background:#f9fafb; cursor:pointer;}
+		.city-tab-tit span.current{ background:#e6edf1; font-weight:bold;}
+		.search-city{ width:170px;}
+		.search-city-ipt{ float:left; width:105px; height:22px; line-height:22px; background:#fff; border:1px solid #a9a9a9;}
+		.search-city-btn{ float:right; width:54px; height:24px; line-height:24px; color:#1E1E1E; background:#f9fafb; border:1px solid #c7d3da; cursor:pointer;}
+		
+		.alphabet-search{ margin-top:8px; padding-bottom:5px; border-bottom:1px dashed #dedede; line-height:18px;}
+		.alphabet-search a{ margin:0 4px 0 3px; color:#3a3a3a; font-size:14px;}
+		.city-li{ height:170px; overflow-y:scroll;}
+		.province-li{ height:202px;}
+		.city-li ul{ margin-left:8px;}
+		.city-li ul .aDetail{ display:inline; float:left; margin-top:8px; font-weight:bold; color:#000;}
+		.city-li ul .aCity{ display:inline; float:right; width:390px; margin-top:5px; line-height:20px;}
+		.city-li ul .aCity a{ margin-right:8px; color:#535353;}
+		.province-li ul .aDetail{ color:#1f1f1f;}
+		.province-name{ float:left; margin-right:8px; margin-top:1px; font-weight:bold; color:#000;}
+		.province-li ul .aCity p{ float:right; width:330px;}
+		.letter ul.ul_a li.li_s{ background: #f8f8f8;}
+		
+		a{ outline-style:none; color:#545454 ;text-decoration:none;}
+a:hover{ color:#ff8500; text-decoration:underline; outline:0;}
+.province-li ul .aDetail{ width:40px;}
+.province-li ul .aCity{ width:370px;}
+
+img{border:0}
+    </style>
+    <script type="text/javascript" language="javascript">
+        function fnCloseCityPanel() {
+            parent.fnSwichCity();
+        }
+
+        function fnSwitchTab(tab) {
+            if (tab == 1) {
+                $('PinyinDiv').style.display = '';
+                $('ProvinceDiv').style.display = 'none';
+                $('pinyin').className = 'current';
+                $('province').className = '';
+            }
+
+            if (tab == 2) {
+                $('PinyinDiv').style.display = 'none';
+                $('ProvinceDiv').style.display = '';
+                $('pinyin').className = '';
+                $('province').className = 'current';
+            }
+        }
+    </script>
+    <script type="text/javascript" src="/Js/jquery-1.5.1.js"></script>
+    <script type="text/javascript" language="javascript" src="/Js/GeneralLib.js"></script>
+    <script type="text/javascript">
+        function fnLoad() {
+            var url = "http://cdata.edushi.com/MapData/Map7.0/ExChangeCityInfo.aspx?citycode=hz";
+            ENetwork.DownloadScript(url, function () {
+                if (typeof _pInfo != 'undefined') {
+                    LoadData();
+                }
+            });
+        }
+
+        function LoadData() {
+            var all = '';
+            var arr = [];
+            for (var i = 0; i < _pInfo.length; i++) {
+                var h = '';
+                arr = _pInfo[i].C;
+                if (arr.length > 0) {
+                    for (var l = 0; l < arr.length; l++) {
+                        var url = 'http://' + arr[l].domain + '/';
+                        if (parseInt(arr[l].Is3D) == 1) {
+                            h += string.Format('<a href="{0}" target="_blank">{1}<span class="3dIcon"><img src="images/3dIcon.png" /></span></a>', url, arr[l].Cname);
+                        }
+                        else {
+                            h += string.Format('<a href="{0}" target="_blank">{1}<span class="3dIcon"></span></a>', url, arr[l].Cname);
+                        }
+                    }
+                }
+                all += string.Format('<li class="clearfix"><div class="aDetail">{0}</div><div class="aCity">{1}</div></li>', _pInfo[i].Pname, h);
+            }
+            $('citylistProvince').innerHTML = all;
+
+            all = '';
+            arr = [];
+            var pymd = '';
+
+            for (var i = 0; i < _CPY.length; i++) {
+                var h = '';
+                arr = _CPY[i].C;
+                if (arr.length > 0) {
+                    for (var l = 0; l < arr.length; l++) {
+                        var url = 'http://' + arr[l].domain + '/';
+                        if (parseInt(arr[l].Is3D) == 1) {
+                            h += string.Format('<a href="{0}" target="_blank">{1}<span class="3dIcon"><img src="images/3dIcon.png" /></span></a>', url, arr[l].Cname);
+                        }
+                        else {
+                            h += string.Format('<a href="{0}" target="_blank">{1}<span class="3dIcon"></span></a>', url, arr[l].Cname);
+                        }
+                    }
+                }
+                all += string.Format('<li name="{2}" id="{3}" class="clearfix"><div class="aDetail">{0}</div><div class="aCity">{1}</div></li>', _CPY[i].PY, h, _CPY[i].PY, _CPY[i].PY);
+                pymd += string.Format('<a href="{0}">{1}</a>', '#' + _CPY[i].PY, _CPY[i].PY, i);
+            }
+            $('citylistPinyin').innerHTML = all;
+            $('PinyinMD').innerHTML = pymd;
+
+            jQuery("li").hover(
+        function () {
+            jQuery(this).addClass("li_s");
+        },
+        function () {
+            jQuery(this).removeClass("li_s");
+        });
+
+            jQuery("#PinyinMD>a").bind("click", function () { jQuery("#PinyinMD>a").removeClass("current"); jQuery(this).addClass("current"); });
+        }
+    </script>
+</head>
+<body onload="fnLoad();">
+<div class="change-city-box">
+	<p class="change-city-tit"><span class="closed close-icon close-city" onclick="javascript:fnCloseCityPanel();"></span>城市选择</p>
+    <p class="hot-city">
+        热门城市：
+        <a href="http://beijing.edushi.com/" target="_blank">北京</a>
+        <a href="http://sh.edushi.com/" target="_blank">上海</a>
+        <a href="http://guangzhou.edushi.com/" target="_blank">广州</a>
+        <a href="http://sz.edushi.com/" target="_blank">深圳</a>
+        <a href="http://nanjing.edushi.com/" target="_blank">南京</a>
+        <a href="http://hz.edushi.com/" target="_blank">杭州</a>
+        <a href="http://wuhan.edushi.com/" target="_blank">武汉</a>
+        <a href="http://chengdu.edushi.com/" target="_blank">成都</a>
+    </p>
+    <div class="change-city-type clearfix">
+        <p class="city-tab-tit f-l">
+            <span style="border-right:1px solid #c7d3da;" id="pinyin" onclick="fnSwitchTab(1);">按城市</span>
+            <span class="current" onclick="fnSwitchTab(2);" id="province">按省份</span>
+        </p>
+        <div class="f-r search-city">
+            <!--<form>
+                <input type="text" id="" name="" class="search-city-ipt">
+                <input type="submit" id="" name="" value="搜索" class="search-city-btn">
+            </form>-->
+        </div>
+    </div>
+    
+    
+    <div class="py" id="PinyinDiv" style="display: none;">
+        <div class="letterList alphabet-search" id="PinyinMD">
+        	
+        </div>
+        <div class="letter city-li">
+            <ul class="ul_a" id="citylistPinyin">
+            	
+            </ul>
+        </div>
+    </div>
+    <div class="py py2" id="ProvinceDiv">
+    	<!--<p class="alphabet-search">
+            <a href="#A">A</a><a href="#F">F</a><a href="#G">G</a><a href="#D">D</a><a href="#J">J</a><a href="#L">L</a>
+            <a href="#N">N</a><a href="#Q">Q</a><a href="#S">S</a><a href="#T">T</a><a href="#X">X</a><a href="#Y">Y</a>
+            <a href="#Z">Z</a><a href="#">其它</a>
+        </p>-->
+        <div class="letter city-li province-li">
+            <ul class="ul_a" id="citylistProvince">
+            	<!--<li class="clearfix">
+                    <div class="aDetail">A</div>
+                    <div class="aCity">
+                    	<span class="province-name">直辖市</span>
+                        <p><a href="http://sh.edushi.com/" target="_blank">上海<span class="3dIcon"><img src="http://hz.edushi.com/images/3dIcon.png"></span></a><a href="http://chongqing.edushi.com/" target="_blank">重庆<span class="3dIcon"><img src="http://hz.edushi.com/images/3dIcon.png"></span></a></p>
+                    </div>
+                </li>-->
+                
+            </ul>
+            
+        </div>
+    </div>
+    
+    
+
+</div>
+
+
+</body>
+</html>

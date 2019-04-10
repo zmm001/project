@@ -1,0 +1,185 @@
+.container .channel-header {
+    margin: 18px 0;
+}
+.container .channel-header .logo {
+    margin-bottom: 10px;
+}
+.container .channel-header .logo img {
+    display: inline-block;
+    vertical-align: top;
+}
+.container .channel-header .logo .channel-name {
+    display: inline-block;
+    width: 60px;
+    height: 28px;
+    margin-left: 8px;
+    font-size: 0;
+    background: url(../images/tu_logo.png) no-repeat;
+    vertical-align: 5px;
+}
+.container .channel-header .sub-nav {
+    height: 47px;
+    border-top: 2px solid #f34540;
+    border-bottom: 1px solid #efefef;
+}
+.container .channel-header .sub-nav .wrapper {
+    height: 18px;
+    margin-top: 15px;
+    line-height: 18px;
+    display: flex;
+    display: -webkit-flex;
+    justify-content: space-between;
+}
+.container .channel-header .sub-nav a {
+    position: relative;
+    float: left\9;
+    padding: 0 12px\9;
+    background: url(../images/line.png) no-repeat -2px bottom;
+}
+.container .channel-header .sub-nav a.current {
+    color: #f34540;
+}
+.container .channel-header .sub-nav a:before {
+    content: " ";
+    position: absolute;
+    left: 150%;
+    top: 2px;
+    display: block;
+    width: 7px;
+    height: 14px;
+    background: url(../images/line.png) no-repeat;
+    display: none\9;
+}
+.container .channel-header .sub-nav a:last-child:before {
+    display: none;
+}
+.container .channel-header .sub-nav a:first-child {
+    background: none;
+}
+
+.middle {
+    position: relative;
+    height: 804px;
+}
+.middle-l .center-tip {
+    position: absolute;
+    left: 50%;
+    top: 40%;
+    z-index: 99;
+    display: none;
+    width: 200px;
+    height: 80px;
+    margin-left: -100px;
+    margin-top: -40px;
+    color: #fff;
+    text-align: center;
+    line-height: 80px;
+    font-size: 30px;
+    background: rgba(0,0,0,0.7);
+    border-radius: 10px;
+}
+.middle-l .btn-page-left, .middle-l .btn-page-right {
+    position: absolute;
+    top: 370px;
+    display: block;
+    width: 34px;
+    height: 70px;
+    background: url(../images/sprite_icon.png) no-repeat;
+}
+.middle-l .btn-page-left {
+    left: -48px;
+    background-position: 0 -184px;
+}
+.middle-l .btn-page-right {
+    right: -48px;
+    background-position: -36px -184px;
+}
+.middle-l .btn-page-left:hover {
+    background-position: 0 -255px;
+}
+.middle-l .btn-page-right:hover {
+    background-position: -36px -255px;
+}
+.middle-l .cont-wrap {
+    position: relative;
+    width: 1200px;
+    height: 804px;
+    overflow: hidden;
+}
+.middle-l .water-wrapper {
+    position: absolute;
+    height: 804px;
+    overflow: hidden;
+}
+.middle-l .cont-wrap .loading {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 10;
+    width: 1200px;
+    height: 804px;
+    background: rgba(255,255,255,.6);
+}
+.middle-l .cont-wrap .water-item {
+    float: left;
+    width: 1200px;
+    height: 804px;
+}
+.middle-l .cont-wrap ul {
+    height: 804px;
+}
+.middle-l .cont-wrap li {
+    position: absolute;
+    float: left;
+    width: 392px;
+    height: 260px;
+}
+.middle-l .cont-wrap li .img {
+    position: relative;
+    display: block;
+}
+.middle-l .cont-wrap li img {
+    width: 392px;
+    height: 216px;
+}
+.middle-l .cont-wrap li .zt {
+    position: absolute;
+    right: 0;
+    bottom: 8px;
+    width: 40px;
+    height: 22px;
+    font-size: 12px;
+    color: #fff;
+    line-height: 20px;
+    text-align: center;
+    background: url(../images/sprite_icon.png) no-repeat 0 -392px;
+}
+.middle-l .cont-wrap li .tit {
+    height: 44px;
+    background: #f8f8f8;
+}
+.middle-l .cont-wrap li .category {
+    float: left;
+    height: 20px;
+    margin: 12px 5px 0 10px;
+    padding: 0 7px;
+    font-size: 12px;
+    color: #fff;
+    line-height: 18px;
+    background: #ff9999;
+    border-radius: 3px;
+}
+.middle-l .cont-wrap li .info {
+    width: 83%;
+    height: 44px;
+    font-size: 18px;
+    line-height: 44px;
+    overflow: hidden;
+     display: inline-block;
+
+}
+.middle-c .cont-wrap li .info {
+    width: 372px;
+    padding: 0 10px;
+}

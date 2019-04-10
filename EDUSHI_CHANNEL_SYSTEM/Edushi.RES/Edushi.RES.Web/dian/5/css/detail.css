@@ -1,0 +1,34 @@
+﻿.box dd ul li{border-bottom:0;height:auto;margin:0;}
+.box dd ul.view{ text-align:center; line-height:26px;width:100%;}
+.box dd ul li.dtzs{ width:660px; margin:10px auto 0 auto;height:auto;border:0;}
+#TITLE {margin: 0;padding: 0;font-family: 宋体, Arial, Helvetica, sans-serif;}
+#CONTENT{color:#999;line-height:24px;}
+#TMP {color:#999;float:none;}
+.box dd ul li.fanye{ width:220px; margin:5px auto 15px auto;}
+.box dd ul li.fanye a,.fanye span{ float:left; display:block;}
+.box dd ul li.fanye span{ width:50px; text-align:center; font-weight:bold; font-size:14px;float:left;color:black;}
+.box dd ul li.fanye a.bt3{display:block;width:80px; height:23px; background:url(../image/ico2.png) 0 -200px no-repeat; line-height:23px;text-align:center; font-size:14px; color:#fff; font-weight:bold}
+
+.jiantou{ float:left; width:23px; height:42px; margin:40px 0 58px 0;}
+.jiantou a{ display:block;width:23px; height:42px;}
+.jiantou a.jt1{ background:url(../image/ico2.png) 0 -115px;}
+.jiantou a.jt2{ background:url(../image/ico2.png) -23px -115px;}
+.gundongbd{ float:left; padding:5px 10px 0 0; width:700px; height:130px; overflow:hidden;}
+.box .boxdd .gundongbd ul{ float:left; width:140px; height:130px; padding-left:10px;overflow:hidden; }
+.gundongbd ul li{ clear:both; width:132px;padding:3px; text-align: center; background:#fff;}
+.gundongbd ul li.imglist{ border:1px solid #ddd; height:100px;  width:130px; background:#f8f8f8; overflow:hidden; }
+.gundongbd ul li.imglist a{height:100px; width:130px; display:table-cell;*display:block;*font-size:100px; overflow:hidden; vertical-align:middle;}
+.gundongbd ul li.imglist img{ cursor:pointer; vertical-align:middle;  height: expression(this.height> 100 ? "100px" : true); max-height:100px;}
+
+.boxdd .tt{ color:#333;background:#f8f8f8; padding:10px; overflow:auto;}
+.boxdd .tt li{ float:left; margin-right:10px;}
+.boxdd .tt .tinfo{ width:578px;}
+.boxdd .tt p{ line-height:20px; font-size:14px; padding-top:5px}
+.boxdd .tt p.btn a{ float:left; margin:5px 10px 0 0; font-size:12px;}
+.boxdd .useredit{ padding:10px;}
+
+.boxdd ul li.imglist{ padding:3px; border:1px solid #ddd;  width:130px; height:100px;  background:#f8f8f8;}
+.boxdd ul li.imglist a{height:100px; width:130px; display:table-cell;*display:block;*font-size:100px; overflow:hidden; vertical-align:middle;}
+.boxdd ul li.imglist img{  vertical-align:middle;text-align: center; height: expression(this.height> 100 ? "100px" : true); max-height:100px;}
+
+.bt1{display:block;width:60px; height:21px; background:url(../image/ico2.png) 0 -40px; text-align:center; font-size:12px; color:#fff; margin-right:4px; line-height:21px}

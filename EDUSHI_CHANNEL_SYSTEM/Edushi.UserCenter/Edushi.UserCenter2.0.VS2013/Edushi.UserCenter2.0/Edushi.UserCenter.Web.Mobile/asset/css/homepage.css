@@ -1,0 +1,519 @@
+/* LESS Document */
+/* LESS Document */
+/*CSS Reset*/
+html {
+  font-size: 24px;
+  margin: 0;
+  font-family: 'STHeiti', 'Microsoft YaHei', Helvetica, Arial;;
+}
+div,
+form,
+acronym,
+img,
+ul,
+ol,
+li,
+dl,
+dt,
+dd,
+header {
+  margin: 0;
+  padding: 0;
+  border: none;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin: 0;
+  padding: 0 ;
+}
+body {
+  position: relative;
+  margin: 0;
+  padding: 0;
+  font-size: 0 ;
+  background: #fff;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+a {
+  text-decoration: none;
+}
+/**/
+.fl {
+  float: left;
+}
+.fr {
+  float: right;
+}
+.clearfix:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+.ovhidden {
+  overflow: hidden;
+}
+/* */
+header {
+  height: 0.88rem;
+  padding: 0 0.3rem 0 0;
+  line-height: 0.88rem;
+  background: #f54528;
+}
+header .logo {
+  display: inline-block;
+  width: 2.68rem;
+  height: 0.32rem;
+  background: url(../images/logo.png) no-repeat;
+  background-size: 100% 100%;
+  vertical-align: middle;
+}
+header .user {
+  display: inline-block;
+  width: 0.4rem;
+    height: 0.44rem;
+  background: url(../images/icon.png) no-repeat 0 0;
+  background-size: 0.9rem 4.7rem;
+  vertical-align: middle;
+}
+header .back {
+  display: inline-block;
+  width: 0.69rem;
+  height: 0.88rem;
+  background: url(../images/icons.png) no-repeat -0.69rem 0;
+  background-size: 1.5rem 15rem;
+  vertical-align: middle;
+}
+header .current {
+  display: inline-block;
+  height: 0.88rem;
+  max-width: 2.2rem;
+  margin-left: 0.16rem;
+  font-size: 0.36rem;
+  color: #ffe200;
+  overflow: hidden;
+  vertical-align: middle;
+}
+header .category {
+  display: inline-block;
+  width: 0.36rem;
+  height: 0.32rem;
+  margin-left: 0.25rem;
+  background: url(../images/icon.png) no-repeat 0 -1.25rem;
+  background-size: 0.9rem 4.7rem;
+  vertical-align: middle;
+}
+
+
+.top-box {
+  /* height: 2.5rem; */
+  background: #333333;
+}
+.look-info {
+  padding-top: 0.3rem;
+  margin-bottom: 0.25rem;
+}
+.look-info .userid {
+  float: left;
+  margin-left: 0.28rem;
+}
+.look-info .userid .user-img {
+  display: inline-block;
+  width: 1.1rem;
+  height: 1.1rem;
+  border: 0.03rem solid #fff;
+  background: #fff;
+  border-radius: 100%;
+  overflow: hidden;
+  vertical-align: middle;
+}
+.look-info .userid .user-img img {
+  width: 1.1rem;
+  height: 1.1rem;
+}
+.look-info .userid .user-name {
+  display: inline-block;
+  max-width: 3.6rem; 
+  margin-left: 0.2rem;
+  font-size: 0.36rem;
+  color: #fff;
+  white-space: nowrap;
+  vertical-align: middle;
+  overflow: hidden;
+}
+.look-info .userid .user-name p {
+  height: 0.36rem;
+  margin-top: 0.1rem;
+  font-size: 0.24rem;
+  line-height: 0.36rem;
+  overflow: hidden;
+  white-space: normal;
+}
+.look-info .look-add {
+  float: right;
+  margin: 0.42rem 0.28rem 0 0;
+  width: 0.72rem;
+  height: 0.36rem;
+  background: url(../images/sprite_icon.png) 0 -1.23rem;
+  background-size: 0.8rem 8rem;
+}
+.look-info .look-follow {
+  background: url(../images/sprite_icon.png) 0 -1.66rem;
+  background-size: 0.8rem 8rem;
+}
+
+.tabnav {
+  /* margin: 0 0.3rem; */
+  display: flex;
+  display: -webkit-flex;
+  width: 7.2rem;
+  height: 0.75rem;
+}
+.tabnav a {
+  position: relative;
+  display: inline-block;
+  flex: 1;
+  -webkit-flex: 1;
+  line-height: 0.75rem;
+  text-align: center;
+  font-size: 0.3rem;
+  color: #fff;
+}
+.tabnav a.on {
+  color: #ff423f;
+}
+.tabnav a.on:after {
+  position: absolute;
+  left: 50%;
+  margin-left: -0.15rem;
+  bottom: 1px;
+  content: "";
+  width: 0.3rem;
+  height: 0.04rem;
+  background: #ff413e;
+}
+.tabnav.fixed {
+  position: fixed;
+  top: 0;
+  z-index: 999;
+  background: #333;
+}
+
+.newslist {
+  width: 7.2rem;
+  overflow: hidden;
+}
+.newslist li {
+  position: relative;
+  margin: 0 0.2rem;
+  padding: 0.28rem 0;
+  border-bottom: 1px solid #eee;
+}
+.newslist li .title {
+  max-height: 0.92rem;
+  margin-bottom: 0.1rem;
+  font-size: 0.34rem;
+  color: #2f3133;
+  line-height: 0.48rem;
+  word-break: break-all;
+  overflow: hidden;
+  vertical-align: top;
+}
+.newslist li .img-box {
+  position: relative;
+}
+.newslist li .img-box img {
+  width: 2.24rem;
+  height: 1.23rem;
+}
+.newslist li .tips {
+  margin-top: 0.15rem;
+  font-size: 0.24rem;
+  color: #888;
+}
+.newslist li .tips span {
+  display: inline-block;
+  margin-right: 0.08rem;
+}
+.newslist li .tips .comment {
+  width: 0.24rem;
+  height: 0.24rem;
+  background: url(../images/hp_icon.png) 0 -1.05rem;
+  background-size: 0.77rem 3.17rem;
+  vertical-align: -2px;
+}
+.newslist li.single .title {
+  display: inline-block;
+  width: 4.4rem;
+}
+.newslist li.single .img-box {
+  display: inline-block;
+  float: right;
+}
+.newslist li.single .tips {
+  margin-top: 0;
+}
+.newslist li.multiple .img-box {
+  margin-right: -0.2rem;
+}
+.newslist li.multiple .img-box img {
+  margin-right: 0.04rem;
+}
+.newslist li.tu .img-box:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+.newslist li.tu .img-box p {
+  float: right;
+  width: 2.24rem;
+  height: 1.23rem;
+  overflow: hidden;
+}
+.newslist li.tu .img-box p img {
+  width: 2.24rem;
+  height: auto;
+}
+.newslist li.tu .img-box p:first-child {
+  float: left;
+  width: 4.52rem;
+  height: 2.49rem;
+}
+.newslist li.tu .img-box p:nth-child(3) {
+  margin-top: 0.03rem;
+}
+.newslist li.tu .img-box p:first-child img {
+  width: 4.52rem;
+  height: 2.49rem;
+}
+.newslist li.tu .number{
+  position: absolute;
+  right: -0.01rem;
+  bottom: 0.2rem;
+  width: 0.72rem;
+  height: 0.4rem;
+  font-size: 0.24rem;
+  color: #fff;
+  line-height: 0.4rem;
+  background: url(../images/hp_icon.png) 0 -2.36rem;
+  background-size: 0.77rem 3.17rem;
+}
+.newslist li.tu .number span {
+  display: inline-block;
+  width: 0.34rem;
+  margin-left: 0.08rem;
+  text-align: center;
+}
+.newslist li.singletu .img-box p, .newslist li.singletu .img-box p:first-child {
+  float: none;
+  width: 6.8rem;
+  height: 3.74rem;
+}
+.newslist li.singletu .img-box p img, .newslist li.singletu .img-box p:first-child img {
+  width: 6.8rem;
+  height: 3.74rem;
+}
+.newslist li.topic .img-box img {
+  width: 6.8rem;
+  height: 3.74rem;
+}
+.newslist li.topic .img-box:after {
+  position: absolute;
+  right: 0;
+  bottom: 0.2rem;
+  content: "专题";
+  display: inline-block;
+  width: 0.72rem;
+  height: 0.4rem;
+  font-family: 'Microsoft YaHei';
+  font-size: 0.22rem;
+  color: #fff;
+  text-align: center;
+  line-height: 0.4rem;
+  background: linear-gradient(to right, #ff706c,#ff413e);
+  border-radius: 0.3rem 0 0 0.3rem;
+}
+.newslist .loading {
+  height: 0.9rem;
+  line-height: 0.9rem;
+  font-size: 0.28rem;
+  color: #b9c1d1;
+  text-align: center;
+}
+.newslist .loading span:before {
+  content: "";
+  display: inline-block;
+  width: 0.36rem;
+  height: 0.37rem;
+  margin-right: 0.18rem;
+  background:  url(../images/sprite_icon.png) 0 -2.1rem;
+  background-size: 0.8rem 8rem;
+  vertical-align: -0.04rem;
+}
+
+.nodata {
+  height: 7.18rem;
+  background: #edeff3;
+  font-size: 0.2rem;
+  color: #7e8184;
+  text-align: center;
+  line-height: 7.18rem;
+}
+/* 底部 footer */
+footer {
+  width: 7.2rem;
+  border-top: 0.02rem solid #eceff6;
+}
+footer .ft-link {
+  padding: 0.24rem 0;
+}
+footer .ft-link a {
+  display: inline-block;
+  width: 2.37rem;
+  height: 0.76rem;
+  font-size: 0.24rem;
+  color: #888896;
+  text-align: center;
+  border-right: 1px solid #eceff6;
+}
+footer .ft-link a:before {
+  content: " ";
+  display: block;
+  margin: 0 auto 0.12rem;
+}
+footer .ft-link .back-home:before {
+  width: 0.41rem;
+  height: 0.39rem;
+  background: url(../images/sprite_icon.png) no-repeat 0 -2.53rem;
+  background-size: 0.8rem 8rem;
+}
+footer .ft-link .app-download:before {
+  width: 0.36rem;
+  height: 0.42rem;
+  background: url(../images/sprite_icon.png) no-repeat 0 -2.99rem;
+  background-size: 0.8rem 8rem;
+}
+footer .ft-link .report:before {
+  width: 0.39rem;
+  height: 0.43rem;
+  background: url(../images/sprite_icon.png) no-repeat 0 -3.48rem;
+  background-size: 0.8rem 8rem;
+}
+footer .ft-link a:last-child {
+  border-right: none;
+}
+footer .ft-info {
+  width: 7.2rem;
+  height: 0.67rem;
+  font-size: 0.22rem;
+  color: #b9c1d1;
+  text-align: center;
+  line-height: 0.67rem;
+  background: #30363d;
+}
+.floatbar {
+  display: none;
+  position: fixed;
+  right: 0.3rem;
+  bottom: 2.4rem;
+  z-index: 1000;
+}
+.floatbar .back-top, .floatbar .user, .floatbar .back-home {
+  position: relative;
+  width: 0.8rem;
+  height: 0.8rem;
+  margin-bottom: 0.1rem;
+  text-align: center;
+  line-height: 0.8rem;
+  background: rgba(0, 0, 0, .5);
+  border-radius: 100%;
+    display: block;
+}
+.floatbar .back-top:after {
+  content: " ";
+  display: inline-block;
+  width: 0.31rem;
+  height: 0.39rem;
+  background: url(../images/sprite_icon.png) no-repeat 0 -4.51rem;
+  background-size: 0.8rem 8rem;
+  vertical-align: middle;
+}
+.floatbar .user:after {
+  content: " ";
+  display: inline-block;
+  width: 0.37rem;
+  height: 0.42rem;
+  background: url(../images/sprite_icon.png) no-repeat 0 -4.96rem;
+  background-size: 0.8rem 8rem;
+  vertical-align: middle;
+}
+.floatbar .back-home {
+  display: block;
+}
+.floatbar .back-home:after {
+  content: " ";
+  display: inline-block;
+  width: 0.42rem;
+  height: 0.42rem;
+  background: url(../images/sprite_icon.png) no-repeat 0 -4rem;
+  background-size: 0.8rem 8rem;
+  vertical-align: middle;
+}
+.follow-box {
+  display: none;
+}
+.top-box.open .tabnav {
+  background: #fff;
+  border-bottom: 1px solid #dbdbdb;
+}
+.top-box.open .tabnav a {
+  color: #333333;
+}
+.top-box.open .follow-box {
+  display: block;
+  padding: 0.18rem 0 0.15rem 0;
+  border-bottom: 0.2rem solid #f5f5f5;
+}
+.top-box.open .follow-box a {
+  position: relative;
+  display: inline-block;
+  width: 50%;
+  text-align: center;
+}
+.top-box.open .follow-box a:first-child:after {
+  content: "";
+  position: absolute;
+  top: 0.17rem;
+  right: 0;
+  width: 1px;
+  height: 0.4rem;
+  background: #dbdbdb;
+}
+.top-box.open .follow-box a h3, .ordinary .follow-box a h3 {
+  color: #ff413e;
+  font-size: 0.35rem;
+  font-weight: normal;
+}
+.top-box.open .follow-box a h3:before, .ordinary .follow-box a h3:before {
+  content: "";
+  display: inline-block;
+  width: 0.3rem;
+  height: 0.3rem;
+  margin-right: 0.08rem;
+  background: url(../images/icons.png) no-repeat 0 -4.73rem;
+  background-size: 1.5rem 15rem;
+  vertical-align: -0.02rem;
+}
+.top-box.open .follow-box a:last-child h3:before, .ordinary .follow-box a:last-child h3:before {
+  background-position-x: -0.3rem;
+}
+.top-box.open .follow-box a span {
+  color: #fff;
+  font-size: 0.24rem;
+}
+

@@ -1,0 +1,290 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" style="overflow: hidden" scroll="no">
+<head>
+    <meta name="Keywords" content="{$Keywords}" />
+    <meta name="Description" content="{$Description}" />
+    <title>{$Title}</title>
+    <link rel="stylesheet" type="text/css" href="{$SkinPath}Css/style.css" />    
+    <script type="text/javascript" src="Js/GeneralLib.js"></script>
+    <script type="text/javascript" language="javascript">
+        var GlobalConfig = {
+            'SkinPath' : '{$SkinPath}',
+            'WebRootPath' :'{$WebRootPath}',
+            'Language' : '{$Language}',            
+            'Domain' : '{$Node}',
+            'CityCode' : '{$CityCode}',
+            'CityName' : '{$CityName}',         
+            'EDataCenterUrl' : '{$EDataCenterUrl}',
+            'Loading' : '<div style="text-align:center; line-height:200%;"><img src="{$SkinPath}Images/loading.gif"><br />正在加载...</div>',
+            'BendiUrl' : 'http://bendi.edushi.com/',
+            'ImgUrl'   : 'http://img.edushi.com/UserUpImages/pic_{$CityCode}/',
+            'PicUrl'   :  '{$PicUrl}',
+            'GoogleID' : '{$GoogleID}'          
+        };
+    </script>
+    <!--<script type="text/javascript" src="Js/PackLibAndSuggest.js"></script>
+    <script type="text/javascript" src="{$SkinPath}Controls/PackControls.js"></script>
+    <script language="javascript" type="text/javascript" src="Plugin.aspx"></script>
+    <script type="text/javascript" src="{$SkinPath}Js/PackMarkInit.js"></script>
+    <!--<script type="text/javascript" src="http://maps.google.com/maps?file=api&amp;v=2&amp;key=ABQIAAAAbOi4csv3QXppUfaQy8yNyRRtal7L5TohoM5BUbtS3QfMkm7SnxRqeAzecCXF7wgDMGUrEieiwtKDUw"></script>-->
+    <script type="text/javascript" src="Js/Suggest.js"></script>
+    <script type="text/javascript" src="{$SkinPath}Controls/ControlBase.js"></script>
+    <script type="text/javascript" src="{$SkinPath}Controls/TabControl.js"></script>
+    <script type="text/javascript" src="{$SkinPath}Controls/DebugControl.js"></script>
+    <script type="text/javascript" src="{$SkinPath}Controls/EntityPopControl.js"></script>
+    <script type="text/javascript" src="{$SkinPath}Controls/CompanyPopControl.js"></script>
+    <script type="text/javascript" src="{$SkinPath}Controls/EShopPopControl.js"></script>
+    <script type="text/javascript" src="{$SkinPath}Controls/ThemePopControl.js"></script>
+    <script type="text/javascript" src="{$SkinPath}Controls/CommendPopControl.js"></script>
+    <script type="text/javascript" src="{$SkinPath}Controls/BusStationControl.js"></script>
+    <script language="javascript" type="text/javascript" src="Plugin.aspx"></script>
+    <script type="text/javascript" src="{$SkinPath}Js/Mark.js"></script>
+    <script type="text/javascript" src="{$SkinPath}Js/Init.js"></script>
+</head>
+<body onload="fnLoadInit();" >
+    <div id="Container">
+        <div id="Header">
+            <a href="http://www.edushi.com/" target="_blank" title="E都市">
+                <img src="{$SkinPath}/Images/EdushiLogo.gif" alt="E都市" class="EdushiLogo" /></a><div id="SwitchCity">
+                    <strong>{$CityName}</strong><a href="http://www.edushi.com/?id=citylist" target="_blank">[切换城市]</a>&nbsp;&nbsp;<a href="http://hz2008.edushi.com" target="_blank">[访问旧版]</a>&nbsp;&nbsp;审图号：{$AuditingPicCode}</div>
+            <!--<div id="CallBoard" style="display:none">
+                    <div id="divNews" style="overflow: hidden; height: 16px;">
+                    </div>
+                </div>-->
+            <div id="HeaderRgt">
+                <div id="RgtToBar">
+                    <ul>
+                        <li class="Ly"><a href="http://www.edushi.com/about/GuestBook.aspx?c={$CityCode}&l={$Language}" target="_blank" title="留言">留言</a></li>
+                        <!--<li class="Bz"><a href="http://www.edushi.com/help/help.html" target="_blank">帮助</a></li>-->
+                        <li class="Qyrz"><a href="http://{$Domain}/LiveIn/Default.aspx" target="_blank" title="企业入驻">企业入驻</a></li>
+                        <li class="Dprz"><a href="http://bendi.edushi.com/EShopJoin/Default.aspx" target="_blank" title="店铺入驻">店铺入驻</a></li>
+                        <li class="LoginInfo" id="liLoginInfo">
+                            欢迎您！{$UserName}<span{$DisplayUnLogin}>[<a href="http://bendi.edushi.com/hz/Register.shtml" target="_blank" title="注册">注册</a>]</span><span{$DisplayUnLogin}>[<a href="javascript:;" onclick="fnShowLogin()">登录</a>]</span><span{$DisplayLogin}>[<a href="http://bendi.edushi.com/Member/Index.aspx?City=hz" target="_blank">用户中心</a>]</span>&nbsp;<span{$DisplayLogin}>[<a href="javascript:fnLoginOut();">退出</a>]</span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="HackBox">
+                </div>
+                <div id="ShortcutMenu">
+                    <div id="RollArLf">
+                        <img id="ImgThemeScrollLeft" src="{$SkinPath}/Images/RollArLf.gif" alt="向前一个" /></div>
+                    <div class="RollConten" id="divThemeMask">
+                        <div id="divThemeClip" style="display: block; position: absolute; clip: rect(0 500px 22px 0)">
+                            <div style="position: absolute; width: 3000px">
+                                <ul id="ulThemeList">
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="HackBox">
+                        </div>
+                    </div>
+                    <div id="RollArRgt">
+                        <img id="ImgThemeScrollRight" src="{$SkinPath}/Images/RollArRgt.gif" alt="向后一个" /></div>
+                </div>
+            </div>
+        </div>
+        <div id="Wrapper">
+            <div id="Content" style="position: relative;">
+                <div id="Toolbar">
+                    <ul id="MapToolBar">
+                        <li class="Ico1"><a href="javascript:fnSelectMarkPoint()" title="标记">标记</a></li>
+                        <li class="Ico2"><a href="javascript:fnScale()" title="测距">测距</a></li>
+                        <li class="Ico3"><a href="javascript:fnLabel()" onclick="this.innerHTML=='显示标签'?this.innerHTML='隐藏标签':this.innerHTML='显示标签'">显示标签</a></li>
+                        <li class="Ico4"><a href="http://www.edushi.com/ErrorCorrection/" target="_black" title="我要纠错">我要纠错</a></li>
+                        <li class="Ico21"><a href="http://bendi.edushi.com" target="_blank" title="逛E店">逛E店</a></li>
+                        <li class="Ico5"><a href="javascript:;" id="aFullScrenn" onclick="fnFullScreen(this)" title="最大化">最大化</a></li>
+                    </ul>
+                    <div id="RgtPart">
+                        <ul>                            
+                            <li class="Ico11"><a href="javascript:;" onmouseover="fnShowCommonGoTo()" onmouseout="fnShowCommonGoTo()" title="常用位置">常用位置</a></li>
+                            <li class="Ico12"><a href="javascript:fnPrint()">打印</a></li>
+                            <li class="Ico13"><a id="lnkMyEAddress" {$MyEAddress}>我的E地址</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <!--常用位置菜单-->
+                <div id="divQuickLink" style="display: none;" class="QuickLink" onmouseover="fnShowCommonGoTo()" onmouseout="fnShowCommonGoTo()">
+                    <div class="InComPlaceNav">
+                        <div class="InComPlaceUp">
+                        </div>
+                        <div class="InComPlaceDn" id="divQuickLinkList">
+                        </div>
+                    </div>
+                </div>
+                <!--我的E地址-->
+                <div class="MyEadNav" id="MyEadNav" style="display: none;" onmouseover="fnShowMyEAddress()" onmouseout="fnShowMyEAddress()">
+                    <div class="MyEadCon" id="MyEadCon">
+                        <div class="P"> 在<strong>电子邮件</strong>或者<strong>即时消息</strong>中粘贴链接</div>
+                        <div class="P">
+                            <span class="ToFriInput"><input id="txtMyEAddress" value="{$MyEAddressValue}" onfocus="this.select()" style="border: 1px solid #6A6A6A; width: 195px; height: 16px;" /></span>
+                            <span class="ToFriInput"><img src="{$SkinPath}/Images/ToFriend.gif" alt="复制给好友" style="cursor:pointer" onclick="fnCopyToClipboard($('txtMyEAddress').value,'复制好了，发给我的QQ/MSN好友分享吧！');" /></span>
+                        </div>
+                    </div>
+                </div>
+                <div id="DetailMap">
+                    <div id="EdushiMap"></div>
+                    <div id="OrientedId">
+                        <div class="EzoomBar" id="EzoomBar">
+                            <div class="Change2D" id="Change2D" onclick="_ZoomBar.Switch23D(this)" title="2D">
+                            </div>
+                            <div class="UpMove" onclick="_ZoomBar.Move('up')" id="UpMove" title="向上平移">
+                            </div>
+                            <div class="LeftMove" onclick="_ZoomBar.Move('left')" id="LeftMove" title="向左平移">
+                            </div>
+                            <div class="RgtMove" onclick="_ZoomBar.Move('right')" id="RgtMove" title="向右平移">
+                            </div>
+                            <div class="DownMove" onclick="_ZoomBar.Move('down')" id="DownMove" title="向下平移">
+                            </div>
+                            <div class="BackTrack" id="BackTrack" onclick="_ZoomBar.Move('center')" title="移动到原始中心点">
+                            </div>
+                            <div class="EzoomMax" onclick="_ZoomBar.ZoomWithStep(-1)" id="EzoomMax" title="放大">
+                            </div>
+                            <div class="EzoomMin" onclick="_ZoomBar.ZoomWithStep(1)" id="EzoomMin" title="缩小">
+                            </div>
+                            <div class="ControlUnit" id="ControlUnit" title="缩放">
+                            </div>
+                        </div>
+                    </div>
+                    <div id="EagleMapNav">
+                        <div class="EagleMapCon" id="EagleMapCon">
+                            <div class="BreviaryMap" id="BreviaryMap" style="overflow: hidden">
+                                <div class="SmallArrow" id="EyeArrow" onclick="fnEyeResize(this)">
+                                </div>
+                                <div id="eyeEdushiMap">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="EagleMapDH" id="EagleMapDH">
+                            <img onclick="fnEyeExpanding(this)" style="cursor: pointer" src="{$SkinPath}/Images/DrawBack.gif"
+                                alt="收缩/展开" />
+                        </div>
+                    </div>
+                    <div id="CompassNav">
+                        <img src="{$SkinPath}/Images/CompassIco.gif" alt="指针" />
+                    </div>
+                    <!--<div id="CopyrightNav" >
+                        <div class="Bg"></div>
+                        <div class="Con" >
+                            {$CityName}地图运营商 <a href="{$OperatorUrl}" target="_blank">{$Operator}</a></div>
+                    </div>-->
+                </div>
+            </div>
+        </div>
+        <div id="Navigation">
+            <div id="NavContent">
+                <div id="SearchNav">
+                    <div class="CoteNav">
+                        <ul>
+                            <li class="Current" id="liMapSearch"><a href="javascript:fnSearchChange($('liMapSearch'))">
+                                地图搜索</a></li>
+                            <li id="liBusSearch"><a href="javascript:fnSearchChange($('liBusSearch'))">公交搜索</a></li>
+                            <li id="liEShopSearch"><a href="javascript:fnSearchChange($('liEShopSearch'))">E店搜索</a></li>
+                        </ul>
+                    </div>
+                    <!--地图搜索-->
+                    <div class="MapSearch" id="MapSearch" style="clear: both">
+                        <div class="SearchCond">
+                            <input name="MapSearchType" type="radio" id="radioSearchType0" value="0" checked="checked"
+                                onclick="fnMapSearchChange(this.value)" /><label for="radioSearchType0">模糊搜索</label>&nbsp;&nbsp;
+                            <input name="MapSearchType" type="radio" id="radioSearchType1" value="1" onclick="fnMapSearchChange(this.value)" /><label
+                                for="radioSearchType1">名称</label>&nbsp;&nbsp;
+                            <input name="MapSearchType" type="radio" id="radioSearchType2" value="2" onclick="fnMapSearchChange(this.value)" /><label
+                                for="radioSearchType2">地址</label>&nbsp;&nbsp;
+                            <input name="MapSearchType" type="radio" id="radioSearchType3" value="3" onclick="fnMapSearchChange(this.value)" /><label
+                                for="radioSearchType3">周边</label>
+                        </div>
+                        <div class="SearchInput" id="divSearchInput">
+                            <div style="float: left" id="divSearch">
+                                <input style="width: 210px" type="text" id="txtSearchKey" class="InFieldSty" onkeyup="fnKeySearchSuggest('fnMapSearch()', this, 101, 125, 212, 'map', 0, event);" /></div>
+                            <div style="float: left; display: none" id="divAroundSearch">
+                                在&nbsp;<input style="width: 88px" type="text" id="txtSearchPlace" class="InFieldSty"
+                                    onkeyup="fnKeySearchSuggest('$(\'txtSearchSomething\').focus()', this, 128, 125, 170, 'map', 4, event);" />&nbsp;找&nbsp;<input
+                                        style="width: 85px" type="text" id="txtSearchSomething" class="InFieldSty" onkeyup="fnKeySearchSuggest('fnMapSearch()', this, 18, 125, 170, 'map', 5, event);" /></div>
+                            <div style="float: left; padding-left: 10px">
+                                <img style="cursor:pointer" src="{$SkinPath}/Images/SearchBtn.gif" onclick="fnMapSearch()" /></div>
+                        </div>
+                        <div class="HotConNav" id="MapHotKey">
+                            热门：<span id="MapHotKeywords"></span>
+                        </div>
+                    </div>
+                    <!--公交搜索-->
+                    <div class="BusSearch" id="BusSearch">
+                        <div class="SearchCond">
+                            <input type="radio" value="0" id="radio0" name="BusSearchType" checked="checked"
+                                onclick="fnBusSearchChange(this.value)" /><label for="radio0">两点查询</label>&nbsp;&nbsp;
+                            <input type="radio" value="1" id="radio1" name="BusSearchType" onclick="fnBusSearchChange(this.value)" /><label
+                                for="radio1">线路查询</label>&nbsp;&nbsp;
+                            <input type="radio" value="2" id="radio2" name="BusSearchType" onclick="fnBusSearchChange(this.value)" /><label
+                                for="radio2">站点查询</label>&nbsp;&nbsp;
+                        </div>
+                        <div class="SearchCond">
+                            <div style="float: left" id="BusTransfer">
+                                <input style="width: 100px; color: #999999" class="InFieldSty" id="txtBusStart" type="text"
+                                    value="起点" onchange="this.style.color='#000000'" onblur="if(this.value==''){this.style.color='#999999';this.value='起点';}"
+                                    onfocus="if (this.value == '起点'){this.style.color='#000000';this.value='';}"
+                                    onkeyup="fnKeySearchSuggest('$(\'txtBusEnd\').style.color=\'#000000\';$(\'txtBusEnd\').focus()', this, 141, 125, 172, 'bus', 0, event);"><img
+                                        src="{$SkinPath}/Images/BusChangeIco.gif" />
+                                <input style="width: 100px; color: #999999" class="InFieldSty" value="终点" onchange="this.style.color='#000000'"
+                                    onblur="if(this.value==''){this.style.color='#999999';this.value='终点';}" onfocus="if (this.value == '终点'){this.style.color='#000000';this.value='';}"
+                                    id="txtBusEnd" type="text" onkeyup="fnKeySearchSuggest('fnBusSearch()', this, 10, 125, 172, 'bus', 0, event);" />
+                            </div>
+                            <div style="float: left; display: none" id="BusLine">
+                                <input style="width: 210px; color: #999999" class="InFieldSty" id="txtBusLine" value="请输入要搜索的线路" onkeyup="if(window.event&&13==window.event.keyCode){fnBusSearch();}else if(event.keyCode==13){fnBusSearch();}"
+                                    type="text" onblur="if(this.value==''){this.style.color='#999999';this.value='请输入要搜索的线路';}"
+                                    onchange="this.style.color='#000000'" onfocus="if (this.value == '请输入要搜索的线路'){this.style.color='#000';this.value='';}" /></div>
+                            <div style="float: left; display: none" id="BusStation">
+                                <input style="width: 210px; color: #999999" class="InFieldSty" id="txtBusStation"
+                                    value="请输入站点名" type="text" onblur="if(this.value==''){this.style.color='#999999';this.value='请输入站点名';}"
+                                    onchange="this.style.color='#000000'" onfocus="if (this.value == '请输入站点名'){this.style.color='#000000';this.value='';}"
+                                    onkeyup="fnKeySearchSuggest('fnBusSearch()', this, 101, 125, 212, 'bus', 0, event);"></div>
+                            <div style="float: left; padding-left: 10px">
+                                <img style="cursor:pointer"  src="{$SkinPath}/Images/SearchBtn.gif" onclick="fnBusSearch()" /></div>
+                        </div>
+                        <div class="HotConNav">
+                            查看更多公交信息：<a href="http://bendi.edushi.com/hz/CityTopic/Type_94.shtml" target="_blank">[公交快讯]</a>&nbsp;&nbsp;&nbsp;&nbsp;<a
+                                href="http://bendi.edushi.com/hz/CityTopic/Type_95.shtml" target="_blank">[行路指南]</a>
+                        </div>
+                    </div>
+                    <div class="EShopSearch" id="EShopSearch">
+                        <div class="SearchCond">
+                            查看更多E店信息：<a href="http://bendi.edushi.com/hz/CityTopic/Type_105.shtml" target="_blank" title="E店促销">[E店促销]</a>
+                        </div>
+                        <div class="SearchInput" id="divEShopSearchInput">
+                            <div style="float: left">
+                                <input style="width: 210px" type="text" id="txtSearchEShop" class="InFieldSty" onkeyup="fnKeySearchSuggest('fnEShopSearch()', this, 101, 125, 212, 'eshop', 1, event);" /></div>
+                            <div style="float: left; padding-left: 10px">
+                                <img style="cursor:pointer" src="{$SkinPath}/Images/SearchBtn.gif" onclick="fnEShopSearch()" /></div>
+                        </div>
+                        <div class="HotConNav">
+                            E店热门：<span id="EShopHotKeyWords"></span>
+                        </div>
+                    </div>
+                </div>
+                <!--选项卡-->
+                <div id="ContenNav">
+                    <div class="CoteNav" style="width: 280px; overflow: hidden;">
+                        <ul id="HeadContainer" style="position: relative;">
+                        </ul>
+                    </div>
+                    <div class="MoveArrow">
+                        <a href="javascript:;" id="LeftBtn">
+                            <img src="{$SkinPath}/Images/MoveArrowL.gif" alt="向左平移" /></a> <a href="javascript:;" id="RightBtn">
+                                <img src="{$SkinPath}/Images/MoveArrowR.gif" alt="向右平移" /></a></div>
+                    <div class="DeConNav" id="BodyContainer" style="height: 350px"></div>
+                </div>
+            </div>
+            <div id="ShrinkDH">
+                <img onclick="fnExpanding(this)" id="imgExpanding" style="cursor: pointer" src="{$SkinPath}/Images/DrawBack.gif" alt="收缩/展开" />
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+
+<script type="text/javascript" src="http://api2.edushi.com/0710/api.js/Api2.aspx?City={$CityCode}&L={$Language}&MapID=EdushiMap&x={$CenterX}&y={$CenterY}&w=800&h=500&eye=1&ew=190&eh=145&e=utf-8&z=1&v=0"></script>
+
+<script type="text/javascript">
+    var __EdushiSuggest = new Suggest(18, 155, 200, document.body);
+    __EdushiSuggest._loadData();
+</script>
+

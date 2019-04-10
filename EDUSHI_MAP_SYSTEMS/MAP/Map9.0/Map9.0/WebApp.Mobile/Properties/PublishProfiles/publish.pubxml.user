@@ -1,0 +1,193 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+您 Web 项目的发布/打包进程将使用此文件。您可以通过编辑此 MSBuild 文件
+来自定义该进程的行为。若要了解与此相关的详细信息，请访问 http://go.microsoft.com/fwlink/?LinkID=208121。
+-->
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <TimeStampOfAssociatedLegacyPublishXmlFile />
+    <_PublishTargetUrl>D:\打包发布</_PublishTargetUrl>
+  </PropertyGroup>
+  <ItemGroup>
+    <File Include="bin/Business.dll">
+      <publishTime>08/14/2018 15:35:25</publishTime>
+    </File>
+    <File Include="bin/Common.dll">
+      <publishTime>08/14/2018 15:35:24</publishTime>
+    </File>
+    <File Include="bin/DataAccess.dll">
+      <publishTime>08/14/2018 15:35:25</publishTime>
+    </File>
+    <File Include="bin/Entity.dll">
+      <publishTime>08/14/2018 15:35:24</publishTime>
+    </File>
+    <File Include="bin/log4net.dll">
+      <publishTime>05/07/2018 16:25:08</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Web.Infrastructure.dll">
+      <publishTime>05/07/2018 16:25:09</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Web.Mvc.FixedDisplayModes.dll">
+      <publishTime>05/07/2018 16:25:08</publishTime>
+    </File>
+    <File Include="bin/Model.dll">
+      <publishTime>08/14/2018 15:35:25</publishTime>
+    </File>
+    <File Include="bin/Newtonsoft.Json.dll">
+      <publishTime>05/07/2018 16:25:09</publishTime>
+    </File>
+    <File Include="bin/System.Net.Http.Formatting.dll">
+      <publishTime>05/07/2018 16:25:09</publishTime>
+    </File>
+    <File Include="bin/System.Web.Helpers.dll">
+      <publishTime>05/07/2018 16:25:09</publishTime>
+    </File>
+    <File Include="bin/System.Web.Http.dll">
+      <publishTime>05/07/2018 16:25:09</publishTime>
+    </File>
+    <File Include="bin/System.Web.Http.WebHost.dll">
+      <publishTime>05/07/2018 16:25:09</publishTime>
+    </File>
+    <File Include="bin/System.Web.Mvc.dll">
+      <publishTime>05/07/2018 16:25:08</publishTime>
+    </File>
+    <File Include="bin/System.Web.Razor.dll">
+      <publishTime>05/07/2018 16:25:09</publishTime>
+    </File>
+    <File Include="bin/System.Web.WebPages.Deployment.dll">
+      <publishTime>05/07/2018 16:25:09</publishTime>
+    </File>
+    <File Include="bin/System.Web.WebPages.dll">
+      <publishTime>05/07/2018 16:25:09</publishTime>
+    </File>
+    <File Include="bin/System.Web.WebPages.Razor.dll">
+      <publishTime>05/07/2018 16:25:09</publishTime>
+    </File>
+    <File Include="bin/WebApp.Mobile.dll">
+      <publishTime>08/14/2018 15:35:26</publishTime>
+    </File>
+    <File Include="bin/zh-Hans/System.Net.Http.Formatting.resources.dll">
+      <publishTime>05/07/2018 16:25:09</publishTime>
+    </File>
+    <File Include="bin/zh-Hans/System.Web.Helpers.resources.dll">
+      <publishTime>05/07/2018 16:25:09</publishTime>
+    </File>
+    <File Include="bin/zh-Hans/System.Web.Http.resources.dll">
+      <publishTime>05/07/2018 16:25:09</publishTime>
+    </File>
+    <File Include="bin/zh-Hans/System.Web.Http.WebHost.resources.dll">
+      <publishTime>05/07/2018 16:25:09</publishTime>
+    </File>
+    <File Include="bin/zh-Hans/System.Web.Mvc.resources.dll">
+      <publishTime>05/07/2018 16:25:08</publishTime>
+    </File>
+    <File Include="bin/zh-Hans/System.Web.Razor.resources.dll">
+      <publishTime>05/07/2018 16:25:08</publishTime>
+    </File>
+    <File Include="bin/zh-Hans/System.Web.WebPages.Deployment.resources.dll">
+      <publishTime>05/07/2018 16:25:09</publishTime>
+    </File>
+    <File Include="bin/zh-Hans/System.Web.WebPages.Razor.resources.dll">
+      <publishTime>05/07/2018 16:25:09</publishTime>
+    </File>
+    <File Include="bin/zh-Hans/System.Web.WebPages.resources.dll">
+      <publishTime>05/07/2018 16:25:09</publishTime>
+    </File>
+    <File Include="Content/city.css">
+      <publishTime>05/23/2018 14:25:37</publishTime>
+    </File>
+    <File Include="Content/common.css">
+      <publishTime>05/23/2018 13:46:09</publishTime>
+    </File>
+    <File Include="Content/map.css">
+      <publishTime>05/23/2018 14:25:37</publishTime>
+    </File>
+    <File Include="Content/navigation.css">
+      <publishTime>05/23/2018 14:25:37</publishTime>
+    </File>
+    <File Include="Global.asax">
+      <publishTime>05/23/2018 14:25:37</publishTime>
+    </File>
+    <File Include="images/diricon.png">
+      <publishTime>05/23/2018 14:25:37</publishTime>
+    </File>
+    <File Include="images/line.png">
+      <publishTime>05/23/2018 14:25:37</publishTime>
+    </File>
+    <File Include="images/loaction.png">
+      <publishTime>05/23/2018 14:25:37</publishTime>
+    </File>
+    <File Include="images/logo.png">
+      <publishTime>05/23/2018 14:25:37</publishTime>
+    </File>
+    <File Include="images/map_img-.jpg">
+      <publishTime>05/23/2018 14:25:37</publishTime>
+    </File>
+    <File Include="images/map_img.jpg">
+      <publishTime>05/23/2018 14:25:37</publishTime>
+    </File>
+    <File Include="images/mark.png">
+      <publishTime>05/23/2018 14:25:37</publishTime>
+    </File>
+    <File Include="images/place_default.jpg">
+      <publishTime>05/23/2018 14:25:37</publishTime>
+    </File>
+    <File Include="images/sprite_icon.png">
+      <publishTime>05/23/2018 14:25:37</publishTime>
+    </File>
+    <File Include="Log4net.config">
+      <publishTime>05/23/2018 14:57:45</publishTime>
+    </File>
+    <File Include="packages.config">
+      <publishTime>05/23/2018 14:25:37</publishTime>
+    </File>
+    <File Include="Scripts/common.js">
+      <publishTime>05/23/2018 14:25:37</publishTime>
+    </File>
+    <File Include="Scripts/Constants.js">
+      <publishTime>05/23/2018 14:25:37</publishTime>
+    </File>
+    <File Include="Scripts/jquery-1.8.3.min.js">
+      <publishTime>05/23/2018 14:25:37</publishTime>
+    </File>
+    <File Include="Scripts/map.js">
+      <publishTime>05/23/2018 16:53:47</publishTime>
+    </File>
+    <File Include="Views/Wap/Bus_list.cshtml">
+      <publishTime>05/23/2018 16:53:47</publishTime>
+    </File>
+    <File Include="Views/Wap/City.cshtml">
+      <publishTime>05/23/2018 15:43:21</publishTime>
+    </File>
+    <File Include="Views/Wap/Index.cshtml">
+      <publishTime>05/23/2018 15:41:16</publishTime>
+    </File>
+    <File Include="Views/Wap/Line.cshtml">
+      <publishTime>05/23/2018 15:11:46</publishTime>
+    </File>
+    <File Include="Views/Wap/Line_bus.cshtml">
+      <publishTime>05/23/2018 15:43:21</publishTime>
+    </File>
+    <File Include="Views/Wap/Line_bus_detail.cshtml">
+      <publishTime>05/23/2018 15:43:22</publishTime>
+    </File>
+    <File Include="Views/Wap/Line_drive.cshtml">
+      <publishTime>05/23/2018 15:43:22</publishTime>
+    </File>
+    <File Include="Views/Wap/Line_drive_detail.cshtml">
+      <publishTime>05/23/2018 15:43:22</publishTime>
+    </File>
+    <File Include="Views/Wap/Line_walk.cshtml">
+      <publishTime>05/23/2018 15:43:22</publishTime>
+    </File>
+    <File Include="Views/Wap/Line_walk_detail.cshtml">
+      <publishTime>05/23/2018 15:43:22</publishTime>
+    </File>
+    <File Include="Views/Web.config">
+      <publishTime>05/23/2018 14:25:37</publishTime>
+    </File>
+    <File Include="Web.config">
+      <publishTime>08/14/2018 15:35:26</publishTime>
+    </File>
+  </ItemGroup>
+</Project>

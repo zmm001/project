@@ -1,0 +1,6 @@
+E:\TFS192.168.100.212\EDUSHI_LOCAL_SYSTEMS\Edushi.Novel\Edushi.Novel\Edushi.Novel.Entity\bin\Release\Edushi.Novel.Entity.dll
+E:\TFS192.168.100.212\EDUSHI_LOCAL_SYSTEMS\Edushi.Novel\Edushi.Novel\Edushi.Novel.Entity\bin\Release\Edushi.Novel.Entity.pdb
+E:\TFS192.168.100.212\EDUSHI_LOCAL_SYSTEMS\Edushi.Novel\Edushi.Novel\Edushi.Novel.Entity\bin\Release\Edushi.MongoDB_2115.dll
+E:\TFS192.168.100.212\EDUSHI_LOCAL_SYSTEMS\Edushi.Novel\Edushi.Novel\Edushi.Novel.Entity\bin\Release\MongoDB.Bson.dll
+E:\TFS192.168.100.212\EDUSHI_LOCAL_SYSTEMS\Edushi.Novel\Edushi.Novel\Edushi.Novel.Entity\obj\Release\Edushi.Novel.Entity.dll
+E:\TFS192.168.100.212\EDUSHI_LOCAL_SYSTEMS\Edushi.Novel\Edushi.Novel\Edushi.Novel.Entity\obj\Release\Edushi.Novel.Entity.pdb

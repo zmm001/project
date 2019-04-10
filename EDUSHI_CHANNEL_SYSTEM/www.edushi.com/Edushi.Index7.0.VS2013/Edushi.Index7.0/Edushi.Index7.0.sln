@@ -1,0 +1,130 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.21005.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Edushi.CacheConfigSection", "Edushi.CacheConfigSection\Edushi.CacheConfigSection.csproj", "{A39EDAF4-8E8C-42C0-908F-3EFD0B8BF968}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Edushi.Common", "Edushi.Common\Edushi.Common.csproj", "{FFCEF480-3A5A-4542-8447-6E832953B558}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Edushi.Log", "Edushi.Log\Edushi.Log.csproj", "{00EA4A8A-2BAF-475C-90CB-13133CB057E3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Edushi.MongoDB", "Edushi.MongoDB\Edushi.MongoDB.csproj", "{8D15F835-F6A1-456C-BAA8-E52E5AFD34BA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Edushi.Www.BLL", "Edushi.Www.BLL\Edushi.Www.BLL.csproj", "{3321DB59-95E2-4436-A884-46D305C137AA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Edushi.Www.DAL", "Edushi.Www.DAL\Edushi.Www.DAL.csproj", "{9BE93D90-F16D-4EE9-8E21-73FE9A75EA7D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Edushi.Www.Model", "Edushi.Www.Model\Edushi.Www.Model.csproj", "{8C22B660-1276-4B45-860E-FDA9D33F6E0A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Edushi.Www.Special", "Edushi.Www.Special\Edushi.Www.Special.csproj", "{4F06FC14-F09E-4698-B0FB-11D79EA56289}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MvcPager", "MvcPager\MvcPager.csproj", "{4BA9F10C-67B7-4CD6-87B1-0519ADBCA2A1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Edushi.Www.Web.PC", "Edushi.Www.Web.PC\Edushi.Www.Web.PC.csproj", "{467A3CFC-3CB7-4096-96E1-6765F24D51EF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Edushi.Www.Web.Report", "Edushi.Www.Web.Report\Edushi.Www.Web.Report.csproj", "{B45ED540-F1C7-4C23-AFDC-BCE035DB123D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Edushi.Www.Web.Touch", "Edushi.Www.Web.Touch\Edushi.Www.Web.Touch.csproj", "{13C29ACC-3CE9-4F91-B9FC-8F95D56883C6}"
+EndProject
+Global
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 13
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = http://192.168.100.212:8080/tfs/defaultcollection
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = Edushi.Www.Special\\Edushi.Www.Special.csproj
+		SccProjectName1 = Edushi.Www.Special
+		SccLocalPath1 = Edushi.Www.Special
+		SccProjectUniqueName2 = Edushi.Www.Web.Report\\Edushi.Www.Web.Report.csproj
+		SccProjectName2 = Edushi.Www.Web.Report
+		SccLocalPath2 = Edushi.Www.Web.Report
+		SccProjectUniqueName3 = Edushi.CacheConfigSection\\Edushi.CacheConfigSection.csproj
+		SccProjectName3 = Edushi.CacheConfigSection
+		SccLocalPath3 = Edushi.CacheConfigSection
+		SccProjectUniqueName4 = Edushi.Common\\Edushi.Common.csproj
+		SccProjectName4 = Edushi.Common
+		SccLocalPath4 = Edushi.Common
+		SccProjectUniqueName5 = Edushi.Log\\Edushi.Log.csproj
+		SccProjectName5 = Edushi.Log
+		SccLocalPath5 = Edushi.Log
+		SccProjectUniqueName6 = Edushi.MongoDB\\Edushi.MongoDB.csproj
+		SccProjectName6 = Edushi.MongoDB
+		SccLocalPath6 = Edushi.MongoDB
+		SccProjectUniqueName7 = Edushi.Www.BLL\\Edushi.Www.BLL.csproj
+		SccProjectName7 = Edushi.Www.BLL
+		SccLocalPath7 = Edushi.Www.BLL
+		SccProjectUniqueName8 = Edushi.Www.DAL\\Edushi.Www.DAL.csproj
+		SccProjectName8 = Edushi.Www.DAL
+		SccLocalPath8 = Edushi.Www.DAL
+		SccProjectUniqueName9 = Edushi.Www.Model\\Edushi.Www.Model.csproj
+		SccProjectName9 = Edushi.Www.Model
+		SccLocalPath9 = Edushi.Www.Model
+		SccProjectUniqueName10 = Edushi.Www.Web.PC\\Edushi.Www.Web.PC.csproj
+		SccProjectName10 = Edushi.Www.Web.PC
+		SccLocalPath10 = Edushi.Www.Web.PC
+		SccProjectUniqueName11 = MvcPager\\MvcPager.csproj
+		SccProjectName11 = MvcPager
+		SccLocalPath11 = MvcPager
+		SccProjectUniqueName12 = Edushi.Www.Web.Touch\\Edushi.Www.Web.Touch.csproj
+		SccProjectName12 = Edushi.Www.Web.Touch
+		SccLocalPath12 = Edushi.Www.Web.Touch
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A39EDAF4-8E8C-42C0-908F-3EFD0B8BF968}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A39EDAF4-8E8C-42C0-908F-3EFD0B8BF968}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A39EDAF4-8E8C-42C0-908F-3EFD0B8BF968}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A39EDAF4-8E8C-42C0-908F-3EFD0B8BF968}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FFCEF480-3A5A-4542-8447-6E832953B558}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FFCEF480-3A5A-4542-8447-6E832953B558}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FFCEF480-3A5A-4542-8447-6E832953B558}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FFCEF480-3A5A-4542-8447-6E832953B558}.Release|Any CPU.Build.0 = Release|Any CPU
+		{00EA4A8A-2BAF-475C-90CB-13133CB057E3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{00EA4A8A-2BAF-475C-90CB-13133CB057E3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{00EA4A8A-2BAF-475C-90CB-13133CB057E3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{00EA4A8A-2BAF-475C-90CB-13133CB057E3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8D15F835-F6A1-456C-BAA8-E52E5AFD34BA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8D15F835-F6A1-456C-BAA8-E52E5AFD34BA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8D15F835-F6A1-456C-BAA8-E52E5AFD34BA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8D15F835-F6A1-456C-BAA8-E52E5AFD34BA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3321DB59-95E2-4436-A884-46D305C137AA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3321DB59-95E2-4436-A884-46D305C137AA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3321DB59-95E2-4436-A884-46D305C137AA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3321DB59-95E2-4436-A884-46D305C137AA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9BE93D90-F16D-4EE9-8E21-73FE9A75EA7D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9BE93D90-F16D-4EE9-8E21-73FE9A75EA7D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9BE93D90-F16D-4EE9-8E21-73FE9A75EA7D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9BE93D90-F16D-4EE9-8E21-73FE9A75EA7D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8C22B660-1276-4B45-860E-FDA9D33F6E0A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8C22B660-1276-4B45-860E-FDA9D33F6E0A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8C22B660-1276-4B45-860E-FDA9D33F6E0A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8C22B660-1276-4B45-860E-FDA9D33F6E0A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4F06FC14-F09E-4698-B0FB-11D79EA56289}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4F06FC14-F09E-4698-B0FB-11D79EA56289}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4F06FC14-F09E-4698-B0FB-11D79EA56289}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4F06FC14-F09E-4698-B0FB-11D79EA56289}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4BA9F10C-67B7-4CD6-87B1-0519ADBCA2A1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4BA9F10C-67B7-4CD6-87B1-0519ADBCA2A1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4BA9F10C-67B7-4CD6-87B1-0519ADBCA2A1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4BA9F10C-67B7-4CD6-87B1-0519ADBCA2A1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{467A3CFC-3CB7-4096-96E1-6765F24D51EF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{467A3CFC-3CB7-4096-96E1-6765F24D51EF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{467A3CFC-3CB7-4096-96E1-6765F24D51EF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{467A3CFC-3CB7-4096-96E1-6765F24D51EF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B45ED540-F1C7-4C23-AFDC-BCE035DB123D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B45ED540-F1C7-4C23-AFDC-BCE035DB123D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B45ED540-F1C7-4C23-AFDC-BCE035DB123D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B45ED540-F1C7-4C23-AFDC-BCE035DB123D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{13C29ACC-3CE9-4F91-B9FC-8F95D56883C6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{13C29ACC-3CE9-4F91-B9FC-8F95D56883C6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{13C29ACC-3CE9-4F91-B9FC-8F95D56883C6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{13C29ACC-3CE9-4F91-B9FC-8F95D56883C6}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,50 @@
+﻿@import url(Common.css);
+
+/*E地址助手*/
+.EAdNav .P{ color:#666; line-height:120%; margin:5px 0;}
+.P h4{ font-size:12px; padding:0; margin:0 5px 0 0; background:url(../images/Help1.gif) no-repeat left 3px; padding-left:18px; height:19px; line-height:19px;}
+
+.UsIfNav{ padding:8px 10px 5px; background:url(../images/UsIfBg.gif) no-repeat left top;}
+.UsIfNav .Bt{margin-bottom:5px;}
+.UsIfNav .Bt img,.UsIfNav .Bt span{ float:left;}
+.UsIfNav .Bt img.PicSty{ width:21px; height:21px; overflow:hidden;}
+.UsIfNav .Bt img.LockSty{ padding:3px 0 0;}
+.UsIfNav .Bt span{ display:block; height:21px; line-height:21px; margin:0 3px;}
+
+.UsIfNav .Lr{ clear:both; line-height:120%;}
+.UsIfNav .Lr a{ color:#03C; font-family:Arial;}
+
+/*最新E地址*/
+ul.eAdList{ padding:0; margin:0; list-style-type:none;}
+ul.eAdList li{ display:block; background:url(../images/SearchNavLine.gif) repeat-x left bottom; padding-bottom:3px; margin-bottom:3px;}
+li .Mz,li .Edz{ float:left;}
+li .Mz{ line-height:23px; height:23px; font-weight:bold;}
+li .Edz{ font-family:Arial; margin-left:8px;}
+li .Edz a{ color:#03C;}
+li .Edz span{ display:block; line-height:19px;}
+li .Edz img.LockSty{ padding-top:3px; margin:0 3px;}
+
+/*申请E地址*/
+.StepCon{ margin-bottom:5px;}
+.StepCon h3{ font-size:12px; padding:0; margin:0 0 3px;}
+.StepCon h3 span{ color:#666; margin-right:5px;}
+.StepCon h3 span font{ color:#C30; font-family:Arial; font-size:14px;}
+
+.ApAdr{ clear:both;}
+
+.ApAdrBtn{ text-align:center; margin:3px 0 10px; height:21px; overflow:hidden;}
+.ApAdrBtn a{ margin:0 5px;}
+
+.BtConten span,.BtConten img{ float:left; line-height:19px;}
+.BtConten img{ margin-left:5px;}
+
+.RadNav{ float:left; margin:0 8px 0 0;}
+.RadNav input,.RadNav span{ float:left; line-height:20px;}
+
+/*提示框*/
+.ClewInfo1{ border:1px solid #ADCD3C; background:#F2FDDB url(../images/ClewIco2.gif) no-repeat 90px 2px; font-weight:bold; color:#060; text-align:center; padding:3px 10px 2px 24px;}
+.ClewInfo2{ border:1px solid #FFDD99; background:#FFF9ED url(../images/ClewIco1.gif) no-repeat 16px 2px; font-weight:bold; color:#930; text-align:center; padding:3px 10px 2px 24px;}
+.ClewInfo3{ border:1px solid #E3E197; background:#FFFFDD; padding:5px 12px; margin:10px 0;}
+
+.ClewInfo4{ border:1px solid #E3E197; padding:5px 12px; margin:5px 0; background:#FFFFDD url(../images/ClewIco3.gif) no-repeat 12px 9px; line-height:150%;}
+.ClewInfo4 span{ font-weight:bold; color:#666; margin-left:18px;}

@@ -1,0 +1,112 @@
+﻿@using Edushi.Common
+@model Edushi.WenDa.Web.PC.Models.SearchResultModel
+@{
+    ViewBag.Title = string.Format("搜索'{0}'结果-E都市问答-E都市", Model.KeyWord);
+    var userUrl = Common.GetConfigString("domain_UserCenter");
+}
+
+@section meta
+{
+    <meta name="Keywords" content="@(Model.KeyWord),E都市问答，一款有用的问答，专注分享知识、经验、观念。在这里，希望所有人都能找到答案、参与讨论。" />
+    <meta name="Description" content="E都市问答 是以在线互动问答和搜索形式展现、提供价值资讯的信息服务平台,您可以根据自身的需求,有针对性地提出问题,同时这些答案也可以满足有相同或类似问题的其他人需求" />
+}
+
+@{ Html.RenderPartial("_HeaderWithSearch",Model.KeyWord); }
+
+
+<div class="wrapper search-container">
+<div class="main-box">
+    <div class="search-by-nav">
+        <div class="wrapper">
+            <a class="current">全部</a>
+            @*<a href="#">答题</a>
+                <a href="#">用户</a>*@
+        </div>
+    </div>
+<div class="search-tips">为您找到相关结果约@(Model.TotalCount)个</div>
+@if (Model.ResultList != null && Model.ResultList.Any())
+{
+    <div class="question-list js-votebox" id="datalist">
+        @foreach (var item in Model.ResultList)
+        {
+            var qTitle = item.QTitle.Replace(Model.KeyWord, "<span class=\"red\">" + Model.KeyWord + "</span>");
+            var qNickName = item.QUserInfo != null ? item.QUserInfo["NickName"] : "E都市网友";
+            var qUserHead = item.QUserInfo != null ? ViewBag.UserHeaderDomain + item.QUserInfo["Avatar"] : Url.Content("~/asset/images/userhead.jpg");
+            int qUserId = item.QUserInfo != null ? (int)item.QUserInfo["ID"] : 0;
+            var qWendaUserUrl = qUserId > 0 ? "href=" + userUrl + "wenda/index/1-" + qUserId + ".html target=_blank" : "";
+            <div class="question-cnt js-votelist">
+                <h2 class="q-tit">
+                    <a href="@item.Url" target="_blank">@Html.Raw(qTitle)</a>
+                </h2>
+                <div class="q-info">
+                    <a @qWendaUserUrl class="photo">
+                        <img src="@qUserHead" onerror="this.src='@Url.Content("~/asset/images/userhead.jpg")'" />@qNickName
+                    </a>
+                    <span>@item.CreateDate</span><span>@(item.ReplyCount)回答</span><span class="last">@(item.CollectionCount)人收藏</span>
+                </div>
+                @if (!string.IsNullOrWhiteSpace(item.Answer))
+                {
+                    var nickName = item.UserInfo != null ? item.UserInfo["NickName"] : "E都市网友";
+                    var userHead = item.UserInfo != null ? ViewBag.UserHeaderDomain + item.UserInfo["Avatar"] : Url.Content("~/asset/images/userhead.jpg");
+                    int userId = item.UserInfo != null && item.UserInfo["ID"] != null ? (int)item.UserInfo["ID"] : 0;
+                    var wendaUserUrl = userId > 0 ? "href=" + userUrl + "wenda/index/1-" + userId + ".html target=_blank" : "";
+                    <div class="answer-info clearfix">
+                        @if (!string.IsNullOrWhiteSpace(item.Pic))
+                        {
+                            <div class="pic"><img src="@item.Pic" onerror="this.src='@Url.Content("~/asset/images/default_photo.png")'"></div>
+                        }
+                        <div class="anser-item">
+                            <div class="anser-item-i">
+                                <a href="@item.Url" target="_blank">@Html.Raw(item.Answer)<span>全文</span></a>
+                            </div>
+                            <div class="answer-user">
+                                <a class="photo" @wendaUserUrl>
+                                    <img src="@userHead" onerror="this.src='@Url.Content("~/asset/images/userhead.jpg")'" />@nickName
+                                </a>
+                                @*<span class="tip">历史问答达人</span>*@
+                            </div>
+                            <ul class="anser-oper js-oper clearfix" data-id="@item.AnswerId">
+                                <li @Html.Raw(item.IsPraise == -2 ? "class=\"yizan zan\"" : "class=\"zan\"")><span class="u-num">@(item.PraiseCount)</span> 赞<em>+1</em></li>
+                                <li @Html.Raw(item.IsPraise == -3 ? "class=\"yicai cai\"" : "class=\"cai\"")><span class="u-num">@(item.StepCount)</span> 踩<em>+1</em></li>
+                                <li class="comment">@(item.CommentCount) 评论</li>
+                                <li class="share">
+                                    分享
+                                    <div class="hid-share">
+                                        <a href="javascript:void(0);" class="weixin">
+                                            <div class="wx-qr">
+                                                <img src="@Url.Content("~/asset/images/0302.jpg")"/>
+                                            </div>
+                                        </a>
+                                        <a href="javascript:void(0);" target="_blank" class="qq"></a>
+                                        <a href="javascript:void(0);" target="_blank" class="qzone"></a>
+                                        <a href="javascript:void(0);" target="_blank" class="weibo"></a>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                }
+            </div>
+        }
+    </div>
+    <div class="loading">正在加载中</div>
+    <div class="end">没有更多了</div>
+}
+</div>
+</div>
+
+@* 底部悬浮 *@
+@Html.Partial("_FooterFloat")
+
+<script>
+    var ConfigData = {
+        "PageIndex":1,
+        "Count": "@Model.PageCount",
+        "Page": "@Url.Content("~/")",
+        "Url": "MoreSearchResultData.htm",
+        "keyword": "@(HttpUtility.UrlEncode(Model.KeyWord))",
+        "Type":2
+    }
+</script>
+
+<script src="@Url.Content("~/asset/js/scrollload.bak.js")"></script>

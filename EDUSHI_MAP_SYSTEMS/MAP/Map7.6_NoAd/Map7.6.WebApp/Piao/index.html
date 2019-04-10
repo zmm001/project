@@ -1,0 +1,87 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<link type="text/css" rel="stylesheet" href="css/style.css" />
+<link type="text/css" rel="stylesheet" href="css/calendar_alipay.css" />
+<title>地方合作模板</title>
+
+<script language="javascript" src="js/jquery-1.3.2.min.js"></script>
+<script language="javascript" src="js/cityList.js"></script>
+<script language="javascript" src="js/slider.js"></script>
+</head>
+
+<body>
+<div class="content">
+  <div class="lines m_b">
+    	<div class="sel_forms">
+        	<form name="ticket" action="list.html" target=_blank>
+			<li>火车票查询：</li>
+			<li><label>出发地点：</label><input type="text" name="from" id="begin" autocomplete="off" data-explain="可输入城市或拼音首字母" onfocus="showCity('begin');if(value==defaultValue) {value='';}this.style.color='#000';" onblur="hideCity();if(value==defaultValue){value=defaultValue;this.style.color='#B8B8B8';}else{this.style.color='#000';}" value="请输入出发城市" style="color: #B8B8B8;"/><b>(必填)</b></li>
+            <li><label>到达地点：</label><input type="text" name="to" id="end" autocomplete="off" data-explain="可输入城市或拼音首字母" onfocus="showCity('end');if(value==defaultValue) {value='';}this.style.color='#000';" onblur="hideCity();if(value==defaultValue){value=defaultValue;this.style.color='#B8B8B8';}else{this.style.color='#000';}" value="请输入到达城市" style="color: #B8B8B8;"/><b>(必填)</b></li>
+            <li><label>出发日期：</label><input  type="text" name="date" id="date" class="p-rili" autocomplete="off" value="请选择出行日期" onfocus="if(value==defaultValue) {value='';}this.style.color='#000';" onblur="if(value==defaultValue){value=defaultValue;this.style.color='#B8B8B8';}else{this.style.color='#000';}" style="color: #B8B8B8;"/><b>(必填)</b></li>
+            <li><label>输入车次：</label><input type="text" id="checi" name="checi" value="请输入车次" onfocus="if(value==defaultValue) {value='';}this.style.color='#000';" onblur="if(value==defaultValue){value=defaultValue;this.style.color='#B8B8B8';}else{this.style.color='#000';}" style="color: #B8B8B8;"/><b>(此项可不填写)</b></li>
+            <li><a class = "select_submit_a" href="#" onclick="document.ticket.submit()">查询车票</a></li>
+			
+			</form>
+        </div>
+		
+        <br class="clear" />
+    </div>
+    
+    <h2>代购火车票流程内容如下：</h2>
+    <div class="liucheng">1.查询火车班次<br />                   
+    2.选择车次和座位                 
+      <br />
+      3.填写购票信息                   
+      <br />
+      4.付款                           
+      <br />
+    5.送票上门</div>        
+       
+
+</div>
+<!--日历JS start-->
+<script type="text/javascript" charset="utf-8" src="http://cimg.alipay.com/static/pub/chanAndzone-ftmW.js"></script>
+<script type="text/javascript">   
+E.onDOMReady(function() {
+	var calendar = AP.pk.life.calendar;
+	//console.log(calendar);
+	/**
+	 * calendar.addOpt
+	 * canlendar对象支持在显示之前添加相应的操作,回调函数默认会传入当前的canlendar对象，应该将对应的操作放入try中，以免产生不良影响。
+	 * @param {Object} calendar 当前的calendar对象。
+	 * @param {Object} cc 调用的上下文对象。
+	 */
+	calendar.addOpt(function(calendar){
+		try{
+			calendar.cfg.setProperty("mindate",new Date(),false);
+		}catch(e){
+			alert("该操作发生异常！");
+		}
+		//当回调函数中明确返回false值，在这个任务队列中的其他任务都被取消
+		return false;
+	});
+	/**
+	 * calendar.clearOpt
+	 * 清除所有通过calendar.addOpt添加的操作。
+	 */
+	//calendar.clearOpt();
+	calendar.init({
+		calInputs:[D.get('date')],
+		calendarCfg:{
+			isLongDf:true,//月份日期是否补0
+			joinSeq:'-',//日期之间的连接符
+			dataFormat:'YMD'//配置日期显示格式Y为年,M为月,D为日					
+		}
+	});
+});
+</script>  
+<!--日历JS end-->
+
+
+<script language="javascript">
+slider();
+</script>
+</body>
+</html>

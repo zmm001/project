@@ -1,0 +1,17 @@
+/* CSS Document */
+body{ margin:0; font-size:12px;}
+#wrap{ width:1004px; margin:auto; clear:both;}
+#header{ float:left;width:860px; height:153px;}
+#header-right{ float:right; width:144px; height:auto; background:url(../images/qyrz_r1_a3.jpg) no-repeat;}
+#content{ float:left; width:860px; height:650px;}
+#content-top{ float:left; width:860px; height:32px; background:url(../images/qyrz_r1_a9.jpg) repeat-x; text-align:right;}
+#content-taber{ float:left; width:860px; height:auto;text-align:center; clear:both;}
+.content-a1{ float:left; width:750px; height:auto;border-bottom:1px solid #C8CCCF; clear:none; margin-left:45px; text-align:left; line-height:20px;}
+.content-a1 img{ float:left;}
+#content-right{ float:right; width:144px; height:862px;background:url(../images/1_r2_c11.jpg) repeat-y;}
+#footer{ float:left; width:1004px; height:127px; background:url(../images/qyrz_r1_a12.jpg) no-repeat;}
+.Master_bottom{float:left;width:750px;text-align:center;line-height:25px;font-size:12px;padding-top:15px;font-weight: normal; color:#666; margin-top:10px; margin-left:15px;}
+.Master_bottom a{color:#666; text-decoration:none;}
+.Master_bottom a:hover{color:#666; text-decoration:underline;}
+.text1{ color:#FF0540;}
+.text2{ color:#1a70c7;}

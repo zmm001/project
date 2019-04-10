@@ -1,0 +1,178 @@
+﻿@model Edushi.ZT.Web.PC.Models.DetailModel
+@using Edushi.ZT.Special;
+@{
+    ViewBag.Title = Model.topic.T_Title;
+    string mobileUrl;
+    string URI = Request.Url.AbsoluteUri.ToLower();
+    if (URI.IndexOf("www.", StringComparison.Ordinal) > -1)
+    {
+        mobileUrl = URI.Replace("www.", "m.");
+    }
+    else
+    {
+        mobileUrl = URI.Replace("edushi.com", "m.edushi.com");
+    }
+    ViewBag.IsDetail = 1;
+}
+
+@section meta {
+    <meta name="keywords" content="@(Model.topic.T_Keyword)" />
+    <meta name="description" content="@(Model.topic.T_Lead)" />
+    <meta http-equiv="mobile-agent" content="format=html5; url=@mobileUrl" />
+}
+<link href="@Url.Content("~/asset/css/detail7.0.css")" rel="stylesheet" />
+
+<div class="wrapper clearfix">
+    <div class="fl col-l">
+        <h1 class="art-title">@Html.Raw(Model.topic.T_Title)</h1>
+
+        <div class="headline clearfix">
+            @if (Model.AuthorInfo != null && Model.AuthorInfo["NickName"] != null && !string.IsNullOrWhiteSpace(Model.AuthorInfo["NickName"].ToString()))
+            {
+                <div class="fl eds-name">
+                    <a href="@string.Format("http://user.edushi.com/index/4-{0}.html",Model.AuthorInfo["ID"])" target="_blank"><img src="@(ViewBag.UserHeaderDomain + Model.AuthorInfo["Avatar"])" /></a>
+                    <div class="fl">
+                        <span class="name"><a href="@string.Format("http://user.edushi.com/index/4-{0}.html",Model.AuthorInfo["ID"])" target="_blank">@Model.AuthorInfo["NickName"]</a></span>
+                        <div id="fansfollow" data-id="@Model.AuthorInfo["ID"]"><span></span></div> <!-- 已关注时样式改为 followed 同时文字改为已关注 -->
+                    </div>
+                </div>
+            }
+
+            <div class="fr tips">
+                <span class="art-tip">@(DateTime.Parse(Model.topic.T_CreateDate.ToString()).ToLocalTime().ToString("yyyy-MM-dd"))&nbsp;&nbsp;&nbsp;来源：@(Model.topic.T_FromTitle)</span>
+                <a href="#comments-area" class="comment">评论（<span>@Model.CountCommentNoRepeat</span>）</a>
+                <div class="share-box clearfix">
+                    <span class="fl">分享：</span>
+                    <a href="@Model.ShareUrlDic["Sina"]" target="_blank" class="weibo"><i></i>微博</a>
+                    <div class="share-more">
+                        <span class="icon"><i></i></span>
+                        <ul>
+                            <li><a href="@Model.ShareUrlDic["QQ"]" target="_blank" class="qq"><i></i>QQ</a></li>
+                            <li><a href="@Model.ShareUrlDic["QQZone"]" target="_blank" class="qzone"><i></i>QQ空间</a></li>
+                            <li>
+                                <a class="weixin"><i></i>微信</a>
+                                <div class="qrcode-wrap">
+                                  
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="art-box clearfix" id="datalist">
+            @if (Model.topic != null)
+            {
+                <p class="pic"><img src="@Model.topic.T_BackGroundPic.GetPicReplace("", "")" /></p>
+                <p>@(Model.topic.T_Lead)</p>
+            }
+
+            @if (Model.List != null && Model.List.Any())
+            {
+                foreach (var item in Model.List)
+                {
+                    <p class="t">
+                        <a href="@item.PcUrl" target="_blank">
+                            @if (!string.IsNullOrWhiteSpace(item.Pic))
+                            {
+                                <img src="@item.Pic" onerror="this.src='@Url.Content("~/asset/images/default_photo.png")'">
+                            }
+                            <span>@Html.Raw(item.Title)</span>
+                        </a>
+                    </p>
+                    <p class="i">
+                        <a href="@item.PcUrl" target="_blank" class="info">@Html.Raw(item.Lead)</a>
+                        <span>
+                            <em>@item.Author</em>
+                            <em>评论</em>
+                            @item.Time
+                        </span>
+                    </p>
+                }
+            }
+        </div>
+        @if (Model.PageCount > 0)
+        {
+            <div class="more-news">加载更多</div>
+        }
+        <div class="article-operation clearfix" data-id="@Model.topic.T_ID">
+            <a href="http://report.edushi.com/report" class="report" target="_blank">举报本文</a>
+            <div class="cai" id="atl-cai"><i></i><em>+1</em><span class="u-num">0</span></div> <!-- 已踩添加样式 visited -->
+            <div class="zan" id="alt-zan"><i></i><em>+1</em><span class="u-num">0</span></div> <!-- 已赞添加样式 visited -->
+            <a href="javascript:void(0)" class="collect ">收藏本文</a> <!-- 收藏成功后样式添加 success 同时文字改为 收藏成功 -->
+        </div>
+
+        <div class="comment-box" id="comments-area">
+            <div class="comment-line"></div>
+            <div class="comment-toolbar">
+                <div class="comment-logo"></div>
+                <div class="count">评论 <span>@Model.CountComment</span></div>
+                <div class="join-count">参与 <span>@Model.TotalCountComment</span></div>
+                <a href="#comments-area" class="fatie" style="display: none;">发布</a>
+            </div>
+            <div class="tie-cnt">
+                <div class="js-tieba">
+                    <div class="tie-area clearfix">
+                        <textarea name="" id="comment0" class="comments-area"></textarea>
+                        <div class="publist-btn" onclick="SubmitGuestBook(0);"><input type="button" name="" id="submitBtn" value="登录并发布"></div>
+                    </div>
+                    @*隐藏域*@
+                    <input type="hidden" id="hidUrl" value="@Url.Content("~/")" />
+                    <input type="hidden" id="hidID" value="@(Model.topic.T_ID)" />
+                    <div class="tips">网友评论仅供其表达个人看法，并不表明E都市立场。</div>
+                    <div id="msg0" class="msg"></div>
+                </div>
+                <div class="tie-hot" id="allcomment">
+                    @Html.Raw(Model.CommentHtml)
+                </div>
+                @if (Model.CountCommentNoRepeat > 10)
+{
+    <p class="more" style=" display:block;" id="divMoreComment" onclick="MoreComment()"><span>加载更多评论</span></p>
+}
+            </div>
+        </div>
+    </div>
+
+    @if (Model.ChannelOrder != null && Model.ChannelOrder.Any())
+    {
+        <div class="fr col-r">
+            <div>
+                <script type="text/javascript" src="//nba.emohe.com/ytcclpzss.js"></script>
+            </div>
+        <div class="recommend-news">
+            <div class="rec-tit">专题推荐</div>
+            <ul>
+                @foreach (var item in Model.ChannelOrder)
+                {
+                    string url = Common.GetInfoUrl(Url.Content("~/"), item.TT_ID_Parent, item.TT_ID, item.T_ID);
+                    <li>
+                        <a href="@url" target="_blank">
+                            <div class="img"><img src="@item.T_BackGroundPic.GetPicReplace("", "")" onerror="this.src='@Url.Content("~/asset/images/default_photo.png")'" /></div>
+                            <div class="tit">@Html.Raw(item.T_Title)</div>
+                        </a>
+                    </li>
+                }
+            </ul>
+        </div>
+    </div>
+    }
+    
+
+</div>
+
+<!-- 统一提示框 -->
+<div class="flag-mask">
+    <div class="flag-msg"></div>
+</div>
+<script>
+    var requestUrl = "@Url.Content("~/")";
+    var configData = {
+        Count: "@Model.PageCount",
+        Page: "GetMoreDetailNews.htm",
+        ID: "@Model.topic.T_ID"
+    }
+</script>
+<script type="text/javascript" src="@Url.Content("~/asset/js/detail.js")"></script>
+<script src="@Url.Content("~/asset/js/Comment.js")"></script>

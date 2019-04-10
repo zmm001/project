@@ -1,0 +1,10 @@
+E:\TFS192.168.100.212\EDUSHI_LOCAL_SYSTEMS\Edushi.Tu\Edushi.Tu2.0\Edushi.Tu.IDAL\bin\Debug\Edushi.Tu.IDAL.dll
+E:\TFS192.168.100.212\EDUSHI_LOCAL_SYSTEMS\Edushi.Tu\Edushi.Tu2.0\Edushi.Tu.IDAL\bin\Debug\Edushi.Tu.IDAL.pdb
+E:\TFS192.168.100.212\EDUSHI_LOCAL_SYSTEMS\Edushi.Tu\Edushi.Tu2.0\Edushi.Tu.IDAL\bin\Debug\Edushi.Tu.Model.dll
+E:\TFS192.168.100.212\EDUSHI_LOCAL_SYSTEMS\Edushi.Tu\Edushi.Tu2.0\Edushi.Tu.IDAL\bin\Debug\MongoDB.Bson.dll
+E:\TFS192.168.100.212\EDUSHI_LOCAL_SYSTEMS\Edushi.Tu\Edushi.Tu2.0\Edushi.Tu.IDAL\bin\Debug\Edushi.Tu.Model.pdb
+E:\TFS192.168.100.212\EDUSHI_LOCAL_SYSTEMS\Edushi.Tu\Edushi.Tu2.0\Edushi.Tu.IDAL\obj\Debug\Edushi.Tu.IDAL.dll
+E:\TFS192.168.100.212\EDUSHI_LOCAL_SYSTEMS\Edushi.Tu\Edushi.Tu2.0\Edushi.Tu.IDAL\obj\Debug\Edushi.Tu.IDAL.pdb
+E:\TFS192.168.100.212\EDUSHI_LOCAL_SYSTEMS\Edushi.Tu\Edushi.Tu2.0\Edushi.Tu.IDAL\obj\Debug\Edushi.Tu.IDAL.csprojAssemblyReference.cache
+E:\TFS192.168.100.212\EDUSHI_LOCAL_SYSTEMS\Edushi.Tu\Edushi.Tu2.0\Edushi.Tu.IDAL\obj\Debug\Edushi.Tu.IDAL.csproj.CoreCompileInputs.cache
+E:\TFS192.168.100.212\EDUSHI_LOCAL_SYSTEMS\Edushi.Tu\Edushi.Tu2.0\Edushi.Tu.IDAL\obj\Debug\Edushi.Tu.IDAL.csproj.CopyComplete

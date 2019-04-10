@@ -1,0 +1,38 @@
+﻿@import url(Common.css);
+body{ font-family:Arial,Sans-Serif;}
+
+/*同步LocalSearch.css*/
+ul{ list-style-type:none; margin:0; padding:0;}
+.LocalResult{position:relative;width:300px;height:auto; overflow-y:auto;overflow-x:hidden;
+scrollbar-face-color: #DBEBFE; /*滚动条凸出部分的颜色*/
+scrollbar-shadow-color: #B8D6FA; /*滚动条空白部分的颜色*/
+scrollbar-highlight-color: #FFFFFF; /*立体滚动条阴影的颜色*/
+scrollbar-3dlight-color: #DBEBFE; /*滚动条亮边的颜色*/
+scrollbar-darkshadow-color:#458CE4; /*上下按钮上三角箭头的颜色*/
+scrollbar-track-color: #FFFFFF; /*滚动条的背景颜色*/
+scrollbar-arrow-color: #458CE4;/*滚动条强阴影的颜色*/ }
+.LocalResult ul.LocalList{height:auto; color:#666;}
+.LocalResult ul.LocalList li{display:block; margin:3px 0;}
+
+.Number,.Number span{float:left;overflow:hidden;}
+.Number,.Currently{margin:4px 3px 0 0; background:url(../Images/Numberbg.gif) no-repeat right top; color:White; padding:0 3px 0 0;}
+.Number span,.Currently span{height:13px; line-height:13px; display:block; background:url(../Images/Numberbg.gif) no-repeat left top; padding:0 0 0 3px;}
+/*.Currently{background-position:right -17px;}
+.Currently span{background-position:left -17px;}*/
+
+.DetailCon{float:left; width:264px; overflow:hidden;}
+.TitleNav{ line-height:23px; font-size:13px;}
+.TitleNav a{ color:#0000cc; font-weight:bolder; font-family:Arial, sans-serif;}
+.TitleNav b{ color:#FF6400;}
+.TitleNav a.LinkExIco{ background:url(../Images/LinkExIco.gif) no-repeat right top; padding-right:10px;}
+span.HeadLine{float:left; line-height:21px; color:#369;}
+span.IsVipIco{margin:0 3px; float:left; line-height:21px;}
+span.IsVipIco img{padding:0 1px;}
+.Explain,.Eaddress{ clear:both;}
+.Explain a{ color:Black; line-height:110%;}
+.Explain a:hover{ text-decoration:none;}
+.Explain b,.Eaddress b{color:#FF6400;}
+.Eaddress{ color:#009900; font-weight:400; font-size:10px; line-height:110%;}
+
+.DottedLine{clear:both;background:url(../Images/SearchNavLine.gif) repeat-x left center; height:1px; padding:3px 0; font-size:0;/*for IE6*/}
+.AltLine{ height:8px; overflow:hidden;}

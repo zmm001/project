@@ -1,0 +1,104 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{3321DB59-95E2-4436-A884-46D305C137AA}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Edushi.Www.BLL</RootNamespace>
+    <AssemblyName>Edushi.Www.BLL</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Caching" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="CityBLL.cs" />
+    <Compile Include="FinanceBLL.cs" />
+    <Compile Include="HouseBLL.cs" />
+    <Compile Include="HtmlContentBLL.cs" />
+    <Compile Include="InfoArticleBLL.cs" />
+    <Compile Include="InfoArticleCommentBLL.cs" />
+    <Compile Include="InfoQuestionBLL.cs" />
+    <Compile Include="InfoSubjectBLL.cs" />
+    <Compile Include="InfoTopDayBLL.cs" />
+    <Compile Include="InfoTypeBLL.cs" />
+    <Compile Include="JuMiInfoArticleBLL.cs" />
+    <Compile Include="Local_TopicBLL.cs" />
+    <Compile Include="PicArticleBLL.cs" />
+    <Compile Include="PicArticleImageBLL.cs" />
+    <Compile Include="PicTypeBLL.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RelationRecommendBLL.cs" />
+    <Compile Include="RenWuInfoArticleBLL.cs" />
+    <Compile Include="ReportBLL.cs" />
+    <Compile Include="shenghuoBLL.cs" />
+    <Compile Include="tiaozaoBLL.cs" />
+    <Compile Include="TopicArticleBLL.cs" />
+    <Compile Include="TopicBLL.cs" />
+    <Compile Include="TopicTypeBLL.cs" />
+    <Compile Include="UserBlogBLL.cs" />
+    <Compile Include="FinanceTypeBLL.cs" />
+    <Compile Include="UserCommentBLL.cs" />
+    <Compile Include="WenDaInfoTypeBLL.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Edushi.CacheConfigSection\Edushi.CacheConfigSection.csproj">
+      <Project>{A39EDAF4-8E8C-42C0-908F-3EFD0B8BF968}</Project>
+      <Name>Edushi.CacheConfigSection</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Edushi.Common\Edushi.Common.csproj">
+      <Project>{ffcef480-3a5a-4542-8447-6e832953b558}</Project>
+      <Name>Edushi.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Edushi.Www.DAL\Edushi.Www.DAL.csproj">
+      <Project>{9BE93D90-F16D-4EE9-8E21-73FE9A75EA7D}</Project>
+      <Name>Edushi.Www.DAL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Edushi.Www.Model\Edushi.Www.Model.csproj">
+      <Project>{8C22B660-1276-4B45-860E-FDA9D33F6E0A}</Project>
+      <Name>Edushi.Www.Model</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

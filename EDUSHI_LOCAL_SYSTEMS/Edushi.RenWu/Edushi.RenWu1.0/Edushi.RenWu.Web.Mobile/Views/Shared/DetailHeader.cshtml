@@ -1,0 +1,14 @@
+﻿@model Edushi.RenWu.Web.Mobile.Models.DetailHeaderModel
+@using Edushi.RenWu.Special
+
+<link href="@Url.Content("~/asset/css/detail.css")" rel="stylesheet" type="text/css" />
+<header>
+    <a href="javascript:history.go(-1);" class="back"></a>
+    <a href="@ViewBag.ZxDomain" class="logo"></a>
+    <a href="@Url.Content("~/")" class="channel-name s">人物</a>
+    <a href="@Common.GetInfoListUrl(Url.Content("~/"),0,Model.CurrentType.IT_ID)" class="current">@Model.CurrentType.IT_Name</a>
+    <span class="fr">
+        <a href="http://m.edushi.com/user/" class="user"></a>
+        <a href="http://m.edushi.com/Navigation.html" class="category"></a>
+    </span>
+</header>

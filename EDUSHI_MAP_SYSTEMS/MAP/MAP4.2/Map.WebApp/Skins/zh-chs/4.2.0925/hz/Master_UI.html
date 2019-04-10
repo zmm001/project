@@ -1,0 +1,157 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+<meta name="Keywords" content="{$Keywords}" />
+<meta name="Description" content="{$Description}" />
+<link href="{$SkinPath}css/style.css" rel="stylesheet" type="text/css" />
+<title>{$PageTitle}</title>
+<script type="text/javascript" src="JS/lib.js"></script>
+<script type="text/javascript" src="JS/GeneralJSLibrary.js"></script>
+<script language="javascript" type="text/javascript" src="Definition.aspx?l={$Language}"></script>
+<script language="javascript" type="text/javascript" src="Javascript.aspx?l={$Language}&t=controls"></script>
+<script language="javascript" type="text/javascript" src="Plugin.aspx?l={$Language}"></script>
+<script type="text/javascript" src="Javascript.aspx?l={$Language}&f=Language.js"></script>
+<script type="text/javascript" src="Javascript.aspx?l={$Language}&f=eds_eye.js"></script>
+<script type="text/javascript" src="Javascript.aspx?l={$Language}&f=Mark.js"></script>
+<script type="text/javascript" src="Javascript.aspx?l={$Language}&f=Init.js"></script>
+</head>
+<body style="overflow:hidden;">
+<div id="BG" style="display:none"></div>
+<!--<div id="BGLoading">
+    <img src="images/bgloading.gif" alt="loading" /><br />
+    地图加载中,请稍候....
+</div>
+<script type="text/javascript">
+    $('BG').style.height = fnGetWindowHeight() + 'px';
+    $('BGLoading').style.top = fnGetWindowHeight()/2-50 + 'px';
+    $('BGLoading').style.left = fnGetWindowWidth()/2-100 + 'px';
+</script>-->
+<div id="Top" class="Top"> 
+    <!--菜单栏-->
+	<div style="position: absolute; z-index: 307; width: 100%; height: 70px; overflow: hidden;">
+		<div class="Sign" style="filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='images/newmap03.png',sizingMethod='image');"><!--[if !IE]><!--><img src="images/newmap03.png" alt="" /><!--<![endif]--></div>
+		<div class="Left" style="filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='images/newmap02.png',sizingMethod='image');"><!--[if !IE]><!--><img src="images/newmap02.png" alt="" /><!--<![endif]--></div>
+		<div class="Over">
+		    <a href="http://edushi.69fc.com/?city=hangzhou" style="color:Red; text-decoration:underline;" target="_blank"><strong>房产搜索</strong></a>
+		    <a href="LiveIn/Default.aspx" style="color:Red; text-decoration:underline;" target="_blank"><strong>企业入驻</strong></a>
+		    <a href="AdServer/index.html?L={$Language}" style="color:Red; text-decoration:underline;" target="_blank"><strong>广告服务</strong></a>
+		    <span style=" padding-top:4px;"><img  src="images/c.gif" alt="E都市" /></span>
+		    <span  style="color:#000;">当前城市：<span id="T_City" style=" font-weight:bold">{$CityName}</span></span>
+			<img src="images/newmap04.gif" alt="" /><a href="http://www.edushi.com/?id=citylist" target="_blank">城市切换</a> |
+			<img src="images/newmap05.gif" alt="" /><a href="http://bendi.edushi.com/{$CityCode}/" target="_blank"><!--<span style="color:Red">{$CityName}生活</span>--><span style="color:Red">逛E店</span></a> |			
+			<img src="images/newmap08.gif" alt="" /><a href="http://www.edushi.com/help/help.html" target="_blank">帮助</a> |			
+			<a href="http://www.edushi.com/about/GuestBook.aspx?c={$CityCode}&l={$Language}" target="_blank">留言</a>
+	    </div>
+		<div class="MLeft" id="news">
+		    <div id="newsC"></div>	
+		</div>
+		<div class="MCenter">
+			<ul id="MapToolBar">
+				<li id="tnote" onclick="fnSelectMarkPoint();"><a title="创建新标记" ></a></li>				
+				<li id="tscale" onclick="fnScale();"><a title="测距"></a></li>
+				<li id="tsel" onclick="fnPanel();"><a title="框选搜索"></a></li>
+				<li id="tnav"><a  title="打开导航图" href="javascript:fnShowNav();"></a></li>
+				<li id="tfull" onclick="fnFullSrc();"><a title="全屏"></a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="BlackB"></div>
+</div>
+<!--加载地图-->
+<div id="EdushiMap" style="position: absolute; z-index:1; top: 32px; left: 0px; width:1020px; height:500px;"></div>
+	
+<!--搜索工具条-->
+<div id="Tool" class="Tool" style="FILTER: Alpha(opacity=100);" >
+    <div style="position:absolute; height:30px; width:20px; z-index:9999; cursor:move;"></div>
+</div>
+
+
+<!--鹰眼-->
+<div id="Eye" class="Eye" >
+    <div id="eyeEdushiMap" class="Map">
+    </div>  
+    <div id="EyeMapDiv" class="Emin"></div>
+    <div id="EzoomBar" class="Level" onselectstart="return false" >
+    	<div id="Change2D3D" class="Change2D3D"><img src="images/newmap482d.gif"></div>
+        <div id="EzoomMax" class="MapBig" title="最大"></div>
+        <div id="Ezoom0"  class="UnAction"></div>
+        <div id="Ezoom1"  class="UnAction"></div>
+        <div id="Ezoom2"  class="UnAction"></div>
+        <div id="Ezoom3"  class="UnAction"></div>
+        <div id="MapSilder"  title="缩放"></div>
+        <div id="EzoomMin" class="MapSamll" title="最小" ></div>
+    </div>
+    <a id="EbottomMM" class="Edu" ></a>
+    <a id="Eout" class="Eout" ></a>    
+</div>
+<div id="Ein" style="display:none;"><a id="Eina" class="Eina" ></a></div>
+<!--搜索结果面板-->
+<div id="DragWindow" class="Result" style="top:175px; left:0px;">
+    <div style="position:absolute; height:30px; width:20px; z-index:9999; cursor:move;"></div>
+</div>
+
+<div id="srcExit" onclick="fnFullSrc();" style="display:none;"><img alt="退出" src="images/srcexit.jpg" /></div>
+<div id="CopyRight"><div class="bg"></div><div class="con" onselectstart="return false;">{$CityName}运营商：<a href="{$ProprietorUrl}" style="color:#fff;" target="_blank">{$Proprietor}</a> </div></div>
+<div id="EdushiAnnounce"><div class="bg"></div><div id="EdushiAnnounceText" class="con" onselectstart="return false;" style="height:20px;">
+
+</div></div>
+
+<div id="proMapTool">
+    <div id="proMap_out" class="pout" onclick="fnProMapOut();" style="display:none;"></div>
+    <div id="proMap" class="proMap" style=" display:none;">
+        <div class="left" style="filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='images/left.png',sizingMethod='image');"><!--[if !IE]><!--><img height="217px" src="images/left.png"/><!--<![endif]--></div>
+        <div id="proMapC" class="center"></div>
+        <div class="right" style="filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='images/right.png',sizingMethod='image');"><!--[if !IE]><!--><img height="217px" src="images/right.png"/><!--<![endif]--></div>
+    </div>
+</div>
+<!--下拉工具条-->
+<div class="menu" id="EdushiMenu">
+        <ul>
+        <li onmouseover="ShowUL('aMark','JDMark')" onmouseout="HideUL('aMark','JDMark')" style="width:65px; margin-right:2px;">
+            <a id="aMark" class="unactive" href="#" style="width: 65px;">我的标记</a><ul id="JDMark">
+            <li onmouseover="OverBackground(this)" onmouseout="OutBackground(this)" onclick="fnSelectMarkPoint();HideUL('aMark','JDMark');">创建新标记</li>
+            <li style="border:2px solid #8f8f8f;border-width:1px 0px 0px 0px;" id="MarkShowall" onmouseover="OverBackground(this)" onmouseout="OutBackground(this)" onclick="_Mark.ShowAll();fnMarkLi(this);" class="unaction" ><div><img src="images/gou.gif"/></div><a>显示全部</a></li>
+            <li id="MarkHiddinall" onmouseover="OverBackground(this)" onmouseout="OutBackground(this)" onclick="_Mark.Hidden();fnMarkLi(this);" class="action"><div><img src="images/gou.gif"/></div><a>隐藏全部</a></li>
+            <li style="border:2px solid #8f8f8f;border-width:1px 0px 0px 0px;" onmouseover="ShowLIUL(this);OverBackground(this);" onmouseout="OutBackground(this);HideLIUL(this.childNodes[1])">已建标记 &gt;
+                <ul id="MarkLi" onmouseout="HideLIUL(this)" style=" width:150px; ">
+                <li onclick="alert(3);">清除所有标记</li>
+                </ul>
+            </li>
+            </ul>
+        </li>                         
+        <li onmouseover="ShowUL('aShow','JDShow')" onmouseout="HideUL('aShow','JDShow')">
+            <a id="aShow" href="#" class="unactive">显示</a>
+            <ul onmouseout="HideUL('aShow','JDShow')" id="JDShow">
+                <li onmouseover="OverBackground(this)" onmouseout="OutBackground(this)" onclick="fnLabel();fnShowli(this);" class="unaction"><div><img src="images/gou.gif"/></div><a>标签</a></li>	                       
+                <li onmouseover="OverBackground(this)" onmouseout="OutBackground(this)" onclick="fnRoad();fnShowli(this);" class="action"><div><img src="images/gou.gif"/></div><a>路牌</a></li>
+                <li onmouseover="OverBackground(this)" onmouseout="OutBackground(this)" onclick="fnStation();fnShowli(this);" class="action"><div><img src="images/gou.gif"/></div><a>公交站</a></li>
+                <li onmouseover="OverBackground(this)" onmouseout="OutBackground(this)" onclick="fnSubWay();fnShowli(this);" class="action"><div><img src="images/gou.gif"/></div><a>地铁站</a></li>
+                <li style="padding-bottom:3px;" onmouseover="OverBackground(this)" onmouseout="OutBackground(this)" onclick="fnPack();fnShowli(this);" class="action"><div><img src="images/gou.gif"/></div><a>停车站</a></li>
+                <li style="border:2px solid #8f8f8f;border-width:1px 0px 0px 0px; padding-top:2px;" id="Li1" onmouseover="OverBackground(this)" onmouseout="OutBackground(this)" onclick="fnDisplayTool('Tool');fnShowli(this);" class="action" >
+                    <div><img src="images/gou.gif"/></div><a>搜索面板</a>
+                </li>
+                <li class="action" onclick="fnDisplayTool('Eye');fnShowli(this);" onmouseout="OutBackground(this)" onmouseover="OverBackground(this)">
+                    <div><img src="images/gou.gif" /></div>
+                    <a>鹰眼地图</a> 
+                </li>
+                <li class="action" onclick="fnDisplayTool('proMapTool');fnShowli(this);" onmouseout="OutBackground(this)" onmouseover="OverBackground(this)">
+                    <div><img src="images/gou.gif" /></div>
+                    <a>主题面板</a> 
+                </li>
+            </ul>
+        </li>
+        <li onmouseover="ShowUL('aHistroy','JDhistroy')" onmouseout="HideUL('aHistroy','JDhistroy')">
+        <a id="aHistroy" href="#" class="unactive" style="width:65px;">历史位置</a>
+            <ul onmouseout="HideUL('aHistroy','JDhistroy')" id="JDhistroy">
+                <li id="NoHistoryLi">无记录</li>
+            </ul>
+        </li>
+        </ul>
+</div>
+</body>
+</html>
+<script type="text/javascript" src="http://api2.edushi.com/0710/api.js/Api2.aspx?City={$CityCode}&L={$Language}&MapID=EdushiMap&x={$X}&y={$Y}&w=1020&h=500&eye=1&ew=190&eh=145&e=utf-8&v=0"></script>
+<script type="text/javascript">
+    fnLoadInit();
+</script>
+

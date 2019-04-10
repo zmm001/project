@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:tns="http://tempuri.org/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" name="AlaHotelService" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://webag.edushi.com/AlaHotelService.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://webag.edushi.com/AlaHotelService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IAalService_GetAllSite_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllSite" />
+  </wsdl:message>
+  <wsdl:message name="IAalService_GetAllSite_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllSiteResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAalService_GetAllProvince_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllProvince" />
+  </wsdl:message>
+  <wsdl:message name="IAalService_GetAllProvince_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllProvinceResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAalService_GetAllCity_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllCity" />
+  </wsdl:message>
+  <wsdl:message name="IAalService_GetAllCity_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllCityResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAalService_GetHotelState_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetHotelState" />
+  </wsdl:message>
+  <wsdl:message name="IAalService_GetHotelState_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetHotelStateResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAalService_GetHotelInfo_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetHotelInfo" />
+  </wsdl:message>
+  <wsdl:message name="IAalService_GetHotelInfo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetHotelInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAalService_GetListHotelInfo_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetListHotelInfo" />
+  </wsdl:message>
+  <wsdl:message name="IAalService_GetListHotelInfo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetListHotelInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAalService_GetHotelStateByAddress_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetHotelStateByAddress" />
+  </wsdl:message>
+  <wsdl:message name="IAalService_GetHotelStateByAddress_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetHotelStateByAddressResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IAalService">
+    <wsdl:operation name="GetAllSite">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAalService/GetAllSite" message="tns:IAalService_GetAllSite_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAalService/GetAllSiteResponse" message="tns:IAalService_GetAllSite_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllProvince">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAalService/GetAllProvince" message="tns:IAalService_GetAllProvince_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAalService/GetAllProvinceResponse" message="tns:IAalService_GetAllProvince_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllCity">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAalService/GetAllCity" message="tns:IAalService_GetAllCity_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAalService/GetAllCityResponse" message="tns:IAalService_GetAllCity_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetHotelState">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAalService/GetHotelState" message="tns:IAalService_GetHotelState_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAalService/GetHotelStateResponse" message="tns:IAalService_GetHotelState_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetHotelInfo">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAalService/GetHotelInfo" message="tns:IAalService_GetHotelInfo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAalService/GetHotelInfoResponse" message="tns:IAalService_GetHotelInfo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetListHotelInfo">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAalService/GetListHotelInfo" message="tns:IAalService_GetListHotelInfo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAalService/GetListHotelInfoResponse" message="tns:IAalService_GetListHotelInfo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetHotelStateByAddress">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAalService/GetHotelStateByAddress" message="tns:IAalService_GetHotelStateByAddress_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAalService/GetHotelStateByAddressResponse" message="tns:IAalService_GetHotelStateByAddress_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_IAalService" type="tns:IAalService">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetAllSite">
+      <soap:operation soapAction="http://tempuri.org/IAalService/GetAllSite" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllProvince">
+      <soap:operation soapAction="http://tempuri.org/IAalService/GetAllProvince" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllCity">
+      <soap:operation soapAction="http://tempuri.org/IAalService/GetAllCity" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetHotelState">
+      <soap:operation soapAction="http://tempuri.org/IAalService/GetHotelState" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetHotelInfo">
+      <soap:operation soapAction="http://tempuri.org/IAalService/GetHotelInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetListHotelInfo">
+      <soap:operation soapAction="http://tempuri.org/IAalService/GetListHotelInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetHotelStateByAddress">
+      <soap:operation soapAction="http://tempuri.org/IAalService/GetHotelStateByAddress" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="AlaHotelService">
+    <wsdl:port name="BasicHttpBinding_IAalService" binding="tns:BasicHttpBinding_IAalService">
+      <soap:address location="http://webag.edushi.com/AlaHotelService.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

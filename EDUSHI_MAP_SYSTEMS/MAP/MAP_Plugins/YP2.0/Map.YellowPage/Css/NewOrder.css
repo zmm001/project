@@ -1,0 +1,60 @@
+﻿.new-ctab{width:580px;float:left;margin:10px 0 0;}
+.coin-tab{width:580px;margin:0;float:left;height:13px;}
+.tb-cont{width:580px;margin:0;background:url(../Images/center1.gif) top left repeat-y;float:left;}
+.tb-ul{width:560px;float:left;margin:0 0 0 10px;display:inline;list-style-type:none;padding:0;}
+.tb-ul li{float:left;font:normal 14px 宋体;margin:0 0 5px 0;border-bottom:1px solid #ccc;}
+.tb-h01{font:bold 14px 宋体;color:#333;margin:0 0 0 10px;border-right:1px solid #ccc;height:25px;padding:10px 0 0;}
+.tb-p01{font:bold 14px 宋体;color:#0066cc;margin:5px 0 0 15px;}
+.tb-p01 a{color:#0066cc;text-decoration:none;}
+.tb-p01 a:hover,.tb-p06 a:hover{text-decoration:underline;color:#c00;cursor:pointer;}
+
+.tb-p02{font:normal 12px 宋体;color:#0066cc;margin:5px 0 0 15px;background:url(../Images/coin2.gif) left 3px no-repeat;padding:0 0 0 20px;line-height:160%;}
+
+.tb-p03{font:bold 14px 宋体;margin:0 0 0 15px;color:#ff6600;padding:0;padding:10px 0 0\9;*padding:0;_padding:0;}
+
+.tb-p360{font:normal 13px 宋体;color:#2a8909;line-height:160%;font-weight:bold; text-decoration:underline; margin-left:3px}
+
+.tb-p360 a{color:#2a8909; font-weight:bold}
+.tb-p360 a:hover{color:#2a8909; text-decoration:underline; font-weight:bold}
+
+.tb-p04{font:bold 12px 宋体;margin:0 0 0 15px;color:#ff6600;background:url(../Images/coin1.gif) right top no-repeat;padding:0 15px 0 0;}
+.coin-tab-bottom{width:580px;margin:0;margin:-3px 0 0\9;*margin:-13px 0 0;_margin:0;float:left;height:13px;}
+.clear{clear:both;overflow:hidden;}
+.img01{padding:0;padding:10px 0 0\9;*padding:0;_padding:0; border:0px}
+
+.tb-h2{font:bold 14px 宋体;width:580px;height:30px;background:#eaeaea;border-bottom:1px solid #ccc;overflow:hidden;}
+.tb-h2 .l,.tb-h3 .l{font:bold 14px 宋体;margin:9px 0 0 10px;color:#333;}
+
+.fen-k{width:560px;margin:10px 0 0 10px;height:36px;}
+.fen-k img{float:right;width:97px;height:36px;margin:0 5px 0 0;}
+.tb-p05{font:normal 12px 宋体;color:#666;margin:0;float:left;width:440px;margin:12px 0 0 10px;display:inline;}
+.tb-col{font:bold 12px 宋体;color:#669933;background:url(../Images/coin3.gif) right top no-repeat;padding:0 65px 0 0;margin:0 10px;}
+
+.tb-ul01{float:left;margin:10px 0 0 20px;margin:10px 0 0 20px\9;*margin:-10px 0 0 20px;_margin:10px 0 0 10px;}
+.tb-ul01 li{float:left;font:normal 12px 宋体;color:#ccc;margin:0 12px 0 0;}
+.tb-ul01 .tb-li01{color:#0066cc;}
+
+.ul-k{width:560px;height:40px;background:url(../Images/tbbg.gif) left top no-repeat;margin:0 0 0 10px;*margin:-20px 0 0 10px;_margin:0 0 0 10px;}
+.tb-ul02{float:left;margin:15px 0 0 15px;display:inline;}
+.tb-ul02 li{float:left;font:normal 12px 宋体;color:#0066cc;margin:0 12px 0 0;}
+.tb-ul01 li strong,.tb-ul02 li strong{color:#333;}
+
+.repeat{width:560px;margin:10px 0 0 10px;*margin:-10px 0 0 10px;_margin:10px 0 0 10px;}
+.tb-p06{width:95%;font:normal 14px 宋体;margin:0 0 0 10px;color:#666;}
+.tb-p06 a{color:#e48702;text-decoration:none;margin:0 0 0 5px;}
+.col{color:#0066cc;margin:0 5px 0 0;}
+
+.tb-p07{font:normal 12px 宋体;color:#777;text-indent:2em;line-height:160%;width:95%;margin:10px 0 0 15px;}
+.tb-p08{font:normal 12px 宋体;color:#999;line-height:160%;width:100%;margin:10px 0;height:18px;border-bottom:1px solid #ccc;padding:0 0 5px;}
+.tb-p08 .l{margin:0 0 0 5px;}
+.tb-p08 .r{margin:0 5px 0 0;}
+
+.tb-h3{font:bold 14px 宋体;width:580px;height:30px;background:#fcf3e5;border-bottom:1px solid #ccc;overflow:hidden;margin:0;*margin:-20px 0 0;_margin:0;}
+.yu-tb{width:555px;height:100px;margin:10px 0 0 10px;padding:2px;color:#333;}
+.yu-tb1{float:right;margin:10px 250px 0 0;}
+
+
+.ulclass{margin:5px 0 0 15px;overflow:hidden;height:21px; clear:both; display:block}
+.ulclass li{font:normal 12px 宋体;color:#0066cc;background:url(../Images/coin2.gif) left 3px no-repeat; padding-left:20px ;line-height:160%;border-bottom:0px solid #fff; list-style-type:none; width:100%; clear:both}
+.ulclass li a{color:#0066cc;}
+.ulclass li a:hover,.tb-p06 a:hover{color:#c00;cursor:pointer;}

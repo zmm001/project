@@ -1,0 +1,53 @@
+﻿<!DOCTYPE html>
+<html lang="zh-cmn-Hans">
+
+<head>
+    <title>@ViewBag.Title</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" id="viewport" content="width=device-width,initial-scale=1.0, maximum-scale=1.0,minimum-scale=1.0,user-scalable=no" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta content="yes" name="apple-mobile-web-app-capable" />
+    <meta content="black" name="apple-mobile-web-app-status-bar-style" />
+    <link rel="stylesheet" type="text/css" href="@Url.Content(string.Format("~/asset/css/style.css?v={0}", new Random().Next(1, 100000)))" />
+    <link rel="stylesheet" type="text/css" href="@Url.Content(string.Format("~/asset/css/confim_tost.css?v={0}", new Random().Next(1, 100000)))" />
+    <script type="text/javascript" src="@Url.Content("~/asset/js/jquery-1.8.3.min.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/asset/js/vue.min.js")"></script>
+    <link rel="stylesheet" type="text/css" href="@Url.Content("~/asset/css/quill.snow.css")" />
+    <script>
+        document.documentElement.style.fontSize = 100 * ((document.documentElement.clientWidth) / 750) + "px";
+        window.onresize = window.onorientationchange = function () {
+            document.documentElement.style.fontSize = 100 * ((document.documentElement.clientWidth) / 750) + "px";
+        }
+    </script>
+
+    <script>
+        //var _hmt = _hmt || [];
+        //(function () {
+        //    var hm = document.createElement("script");
+        //    hm.src = "https://hm.baidu.com/hm.js?99a36e54478482e04c158ab069a3e598";
+        //    var s = document.getElementsByTagName("script")[0];
+        //    s.parentNode.insertBefore(hm, s);
+        //})();
+        $(function () {
+            $('#qw-index .img-box img').on('load', function () {
+                if (this.height > 162.5 && this.height < 200) {
+                    $(this).css('margin', "-20px 0 0 0");
+                } else if (this.height > 400 && this.height < 600) {
+                    $(this).css('margin', "-150px 0 0 0");
+                } else if (this.height > 600) {
+                    $(this).css('margin', "-400px 0 0 0");
+                }
+            });
+
+            //$('#qw-comment .decript span img').on('load', function () {
+            //    if (this.width > 345) {
+            //        $(this).css('width', "6.9rem");
+            //    }
+            //});
+        })
+    </script>
+</head>
+<body>
+    @RenderBody()
+</body>
+</html>

@@ -1,0 +1,61 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2010
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Document", "Document", "{FD634E18-65C3-4209-890C-63DA98AB7CC6}"
+	ProjectSection(SolutionItems) = preProject
+		解决方案记录.txt = 解决方案记录.txt
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Map8.0.WebApp", "Map8.0.WebApp\Map8.0.WebApp.csproj", "{853FA4E7-DA47-4882-9F73-4B5493A719F1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Map7.WebBLL", "Map8.0.WebBLL\Map7.WebBLL.csproj", "{0D65FBEF-B2E7-4389-967A-A52FE8CE50D9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EDC.Framework", "..\..\..\EDUSHI_DATA_CENTER\EdushiDataCenter\v2.0\EdushiDataCenterSolution\EDC.Framework\EDC.Framework.csproj", "{A2E154FC-DDE6-45B9-82C0-0C2F1307567C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Edushi.MongoDB", "Edushi.MongoDB\Edushi.MongoDB.csproj", "{8D15F835-F6A1-456C-BAA8-E52E5AFD34BA}"
+EndProject
+Global
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 5
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = http://192.168.100.212:8080/tfs/defaultcollection
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = ..\\..\\..\\EDUSHI_DATA_CENTER\\EdushiDataCenter\\v2.0\\EdushiDataCenterSolution\\EDC.Framework\\EDC.Framework.csproj
+		SccProjectName1 = ../../../EDUSHI_DATA_CENTER/EdushiDataCenter/v2.0/EdushiDataCenterSolution/EDC.Framework
+		SccLocalPath1 = ..\\..\\..\\EDUSHI_DATA_CENTER\\EdushiDataCenter\\v2.0\\EdushiDataCenterSolution\\EDC.Framework
+		SccProjectUniqueName2 = Map8.0.WebApp\\Map8.0.WebApp.csproj
+		SccProjectName2 = Map8.0.WebApp
+		SccLocalPath2 = Map8.0.WebApp
+		SccProjectUniqueName3 = Map8.0.WebBLL\\Map7.WebBLL.csproj
+		SccProjectName3 = Map8.0.WebBLL
+		SccLocalPath3 = Map8.0.WebBLL
+		SccProjectUniqueName4 = Edushi.MongoDB\\Edushi.MongoDB.csproj
+		SccProjectName4 = Edushi.MongoDB
+		SccLocalPath4 = Edushi.MongoDB
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{853FA4E7-DA47-4882-9F73-4B5493A719F1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{853FA4E7-DA47-4882-9F73-4B5493A719F1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{853FA4E7-DA47-4882-9F73-4B5493A719F1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{853FA4E7-DA47-4882-9F73-4B5493A719F1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0D65FBEF-B2E7-4389-967A-A52FE8CE50D9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0D65FBEF-B2E7-4389-967A-A52FE8CE50D9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0D65FBEF-B2E7-4389-967A-A52FE8CE50D9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0D65FBEF-B2E7-4389-967A-A52FE8CE50D9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A2E154FC-DDE6-45B9-82C0-0C2F1307567C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A2E154FC-DDE6-45B9-82C0-0C2F1307567C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A2E154FC-DDE6-45B9-82C0-0C2F1307567C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A2E154FC-DDE6-45B9-82C0-0C2F1307567C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8D15F835-F6A1-456C-BAA8-E52E5AFD34BA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8D15F835-F6A1-456C-BAA8-E52E5AFD34BA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8D15F835-F6A1-456C-BAA8-E52E5AFD34BA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8D15F835-F6A1-456C-BAA8-E52E5AFD34BA}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

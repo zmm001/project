@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="f694d229-8187-457a-8f95-c20ae319a1d6" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://webag.edushi.com/AlaHotelService.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="AlaHotelService.xsd" MetadataType="Schema" ID="e4eb0527-ed2c-48c6-8a72-c1af4d9eeeba" SourceId="1" SourceUrl="http://webag.edushi.com/AlaHotelService.svc?xsd=xsd0" />
+    <MetadataFile FileName="AlaHotelService.wsdl" MetadataType="Wsdl" ID="06f344bb-bf79-4614-a2e9-98b9edfda912" SourceId="1" SourceUrl="http://webag.edushi.com/AlaHotelService.svc?wsdl" />
+    <MetadataFile FileName="AlaHotelService.disco" MetadataType="Disco" ID="6a928ab8-1ae0-4938-93fd-78bedc4dcd39" SourceId="1" SourceUrl="http://webag.edushi.com/AlaHotelService.svc?disco" />
+    <MetadataFile FileName="AlaHotelService1.xsd" MetadataType="Schema" ID="fdd863e1-c8ff-4902-bd2b-ce2fa5a0caab" SourceId="1" SourceUrl="http://webag.edushi.com/AlaHotelService.svc?xsd=xsd1" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

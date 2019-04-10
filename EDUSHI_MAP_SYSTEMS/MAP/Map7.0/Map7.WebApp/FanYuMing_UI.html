@@ -1,0 +1,60 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" style="overflow: hidden" scroll="no">
+<head>
+    <title>{$CompanyName}</title>
+    {$KeyWords}
+    {$Description}
+     <script language="javascript">
+     
+     function fnGetWindowWidth(){
+    var vh = 0;
+    var _dEt = document.documentElement;
+    var _dBx = document.body;
+    if(typeof window.innerWidth=='number')vh = window.innerWidth;
+    else{
+      if(_dEt&&_dEt.clientWidth)vh = _dEt.clientWidth;
+      else{
+           if(_dBx&&_dBx.clientWidth)vh = _dBx.clientWidth;
+		    }
+       }
+    if(!vh||vh<100)vh =100;
+     return vh;
+}
+
+function fnGetWindowHeight(){
+    var vh = 0;
+    var _dEt = document.documentElement;
+    var _dBy = document.body;
+    if(typeof window.innerHeight=='number')vh = window.innerHeight;
+    else{
+      if(_dEt&&_dEt.clientHeight)vh = _dEt.clientHeight;
+      else{
+           if(_dBy&&_dBy.clientHeight)vh = _dBy.clientHeight;
+		    }
+       }
+    if(!vh||vh<100)vh =100;
+     return vh;
+}
+window.onresize = function() {
+    var dianiframe = document.getElementById('DianIframe');
+    dianiframe.style.width = fnGetWindowWidth() + 'px';
+    dianiframe.style.height = fnGetWindowHeight() + 'px';
+};
+function Onload() {
+    clearInterval(IntervalTimers);
+    window.onresize();
+}
+     </script>
+</head>
+<body onload="Onload()" style="margin:0px; padding:0px; overflow:hidden" scoll="no">
+    <iframe id="DianIframe" width="100%" height="0px"frameborder="0"  src="{$IframeSrc}"></iframe>
+<script>
+    var IntervalTimers = setInterval(function() {
+        window.onresize();
+    }, 100);
+    </script>
+</body>
+
+</html>    
+

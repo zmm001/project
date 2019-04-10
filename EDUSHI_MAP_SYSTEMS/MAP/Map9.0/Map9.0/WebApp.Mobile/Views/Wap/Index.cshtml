@@ -1,0 +1,108 @@
+﻿@{
+    ViewBag.Title = "Index";
+}
+
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <!--标准网页编码-->
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <!--手机浏览器适配-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <meta name="format-detection" content="telephone=no; email=no" />
+    <meta name="renderer" content="webkit">
+    <meta name="apple-mobile-web-app-title" content="E都市三维地图">
+    <script type="text/javascript" src="https://webapi.amap.com/maps?v=1.4.4&key=e8c07f64d6c9803cff6f05258b065221&plugin=AMap.Driving,AMap.Transfer,AMap.Walking,AMap.RangingTool,AMap.Autocomplete,AMap.PlaceSearch,AMap.AdvancedInfoWindow,AMap.Geolocation"></script>
+    <link rel="stylesheet" href="https://cache.amap.com/lbs/static/main1119.css" />
+    <script src="http://webapi.amap.com/ui/1.0/main.js?v=1.0.11"></script>
+    <title>E都市三维地图</title>
+    <!-- 后新添加 -->
+    <link href="~/Content/common.css" rel="stylesheet" />
+    <link href="~/Content/map.css" rel="stylesheet" />
+    <script src="~/Scripts/jquery-1.8.3.min.js"></script>
+    <script>
+        document.documentElement.style.fontSize = 100 * ((document.documentElement.clientWidth) / 750) + "px";
+    </script>
+</head>
+
+<body>
+    <div id="container" class="tooltip">
+    </div>
+
+    <section class="top-box">
+        <div class="top-nav clearfix">
+            <a class="fl eds-logo" href="http://m.edushi.com/"></a>
+            <a href="/wap/" class="fl map-logo"></a>
+            <a class="fl city" id="currCity"><span>杭州</span></a>
+            <div class="fr">
+                <a href="/wap/" class="fl map current">地图</a>
+                <a href="/wap/Line" class="fl route">路线</a>
+            </div>
+        </div>
+        <div class="top-search">
+            <input id="keyword" type="text" name="" class="text-ipt" placeholder="请输入关键字">
+            <input type="button" id="search" name="" value="" class="submit-btn">
+        </div>
+        @*<div class="search-history">
+            <ul id="content"></ul>
+            <div class="clear-history">
+                <p>清除全部历史记录</p>
+                <span></span>
+            </div>
+        </div>*@
+    </section>
+    <section class="top-travel-mode travel-mode" style="display:none">
+        <a href="javascript:history.go(-1);" class="back"></a>
+        <ul class="travel-tab">
+            <li class="car on"><span></span></li>
+            <li class="bus"><span></span></li>
+            <li class="walk"><span></span></li>
+        </ul>
+    </section>
+
+    <section class="map-style-control">
+        <ul>
+            <li class="map-3d on"><span>三维</span></li>
+            <li class="map-2d"><span>二维</span></li>
+            <li class="map-sat map-satellite"><span>卫星</span></li>
+        </ul>
+    </section>
+
+    <section class="map-lbar">
+        <!-- 定位 -->
+        <div class="geolocation-con"></div>
+        <div class="traffic" id="trafficId">路况</div>
+    </section>
+
+
+    <section class="line-info-bottom" style="display:none">
+        <div class="car-dview" id="panel">
+
+        </div>
+    </section>
+
+    <script type="text/javascript">
+        $(function () {
+            $(".map-controls").click(function () {
+                $(".map-location").show();
+            });
+
+            $("#currCity").on("click", function () {
+                var url = "/wap/city?name=" + escape($("#currCity").text());
+                window.location.href = url;
+            });
+        });
+    </script>
+    <script>
+        $(function () {
+            $(".amap-sug-result").eq(1).addClass("amap-index-result");
+        })
+    </script>
+    <script src="~/Scripts/common.js"></script>
+    <script src="~/Scripts/map.js"></script>
+    <script src="~/Scripts/Constants.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,37 @@
+﻿@import url(Common.css);
+.Bus{height:auto; width:300px;overflow-x:hidden;overflow-y:auto;
+     scrollbar-face-color: #DBEBFE; /*滚动条凸出部分的颜色*/
+     scrollbar-shadow-color: #B8D6FA; /*滚动条空白部分的颜色*/
+     scrollbar-highlight-color: #FFFFFF; /*立体滚动条阴影的颜色*/
+     scrollbar-3dlight-color: #DBEBFE; /*滚动条亮边的颜色*/
+     scrollbar-darkshadow-color:#458CE4; /*上下按钮上三角箭头的颜色*/
+     scrollbar-track-color: #FFFFFF; /*滚动条的背景颜色*/
+     scrollbar-arrow-color: #458CE4;/*滚动条强阴影的颜色*/
+     }
+.EachRow{margin:5px 0;}
+.DottedLine{background:url(../Images/SearchNavLine.gif) repeat-x left center; height:1px; font-size:0;/*for IE6*/}
+.BusLineNormal{padding:3px 3px 3px 12px; cursor:pointer; background:url(../Images/DownIco.gif) no-repeat 3px 7px;}
+.BusLineActive{padding:3px 3px 3px 12px; cursor:pointer; background:#f6f6f6 url(../Images/UpIco.gif) no-repeat 3px 7px;}
+
+.BusLineNormal strong,.BusLineActive strong{color:#FF6600;}
+
+ul.Info{margin:0; padding:0; list-style-type:none;}
+ul.Info li{ height:21px; line-height:21px; padding-left:16px; background:url(../Images/ArrowCircle1.gif) no-repeat 6px center;}
+
+.Bus .Info li font{color:#FF6600;}
+
+.NameHead{height:25px; line-height:25px; text-align:center; width:300px;}
+.ActionLeft,.UnActionLeft,.ActionRight,.UnActionRight{float:left;text-align:center;height:25px;cursor:pointer;overflow:hidden;}
+
+.ActionLeft,.ActionRight{border:solid #CCC; border-width:1px 1px 0 1px; width:150px;background:url(../Images/NameHeadBg.gif) repeat-x left top; font-weight:bold;}
+.UnActionLeft{border:1px solid #CCC;border-width:1px 0 1px 1px;width:147px;height:24px;}
+.UnActionRight{border:solid #adadad; border-width:1px 1px 1px 0px;width:147px;height:24px;}
+
+.BusShow{ width:298px; border:1px solid #CCC; border-top-width:0;}
+.BusRemark{border-bottom:1px solid #CCC; padding:5px 10px;}
+.BusRemark p{padding:1px 0;margin:0;}
+
+ul.BusName{padding:1px 0; margin:5px 4px; color:#666;}
+ul.BusName li{padding-left:5px; height:25px; margin:1px 0; line-height:25px; background:url(../Images/SearchNavLine.gif) repeat-x left bottom;}
+
+.BusShow .BusName li span{ color:#369; margin-left:5px; cursor:pointer;}

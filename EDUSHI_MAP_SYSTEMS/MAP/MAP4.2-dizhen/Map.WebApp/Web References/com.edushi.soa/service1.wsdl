@@ -1,0 +1,247 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="UpLoadImg">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="binData" type="s:base64Binary" />
+            <s:element minOccurs="0" maxOccurs="1" name="sPath" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sFileName" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpLoadImgResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UpLoadImgResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DelAllImg">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sPath" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="fileName" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DelAllImgResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="DelAllImgResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DelBigImg">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sPath" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DelBigImgResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="DelBigImgResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UploadImgBySize">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="binData" type="s:base64Binary" />
+            <s:element minOccurs="0" maxOccurs="1" name="sPath" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="fileName" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="nWidth" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="nHeight" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UploadImgBySizeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UploadImgBySizeResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UploadFile">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="binData" type="s:base64Binary" />
+            <s:element minOccurs="0" maxOccurs="1" name="sPath" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="fileName" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UploadFileResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UploadFileResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="UpLoadImgSoapIn">
+    <wsdl:part name="parameters" element="tns:UpLoadImg" />
+  </wsdl:message>
+  <wsdl:message name="UpLoadImgSoapOut">
+    <wsdl:part name="parameters" element="tns:UpLoadImgResponse" />
+  </wsdl:message>
+  <wsdl:message name="DelAllImgSoapIn">
+    <wsdl:part name="parameters" element="tns:DelAllImg" />
+  </wsdl:message>
+  <wsdl:message name="DelAllImgSoapOut">
+    <wsdl:part name="parameters" element="tns:DelAllImgResponse" />
+  </wsdl:message>
+  <wsdl:message name="DelBigImgSoapIn">
+    <wsdl:part name="parameters" element="tns:DelBigImg" />
+  </wsdl:message>
+  <wsdl:message name="DelBigImgSoapOut">
+    <wsdl:part name="parameters" element="tns:DelBigImgResponse" />
+  </wsdl:message>
+  <wsdl:message name="UploadImgBySizeSoapIn">
+    <wsdl:part name="parameters" element="tns:UploadImgBySize" />
+  </wsdl:message>
+  <wsdl:message name="UploadImgBySizeSoapOut">
+    <wsdl:part name="parameters" element="tns:UploadImgBySizeResponse" />
+  </wsdl:message>
+  <wsdl:message name="UploadFileSoapIn">
+    <wsdl:part name="parameters" element="tns:UploadFile" />
+  </wsdl:message>
+  <wsdl:message name="UploadFileSoapOut">
+    <wsdl:part name="parameters" element="tns:UploadFileResponse" />
+  </wsdl:message>
+  <wsdl:portType name="Service1Soap">
+    <wsdl:operation name="UpLoadImg">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">上传并保存图片文件</wsdl:documentation>
+      <wsdl:input message="tns:UpLoadImgSoapIn" />
+      <wsdl:output message="tns:UpLoadImgSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DelAllImg">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">删除图片和缩略图</wsdl:documentation>
+      <wsdl:input message="tns:DelAllImgSoapIn" />
+      <wsdl:output message="tns:DelAllImgSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DelBigImg">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">删除图片不包括缩略图</wsdl:documentation>
+      <wsdl:input message="tns:DelBigImgSoapIn" />
+      <wsdl:output message="tns:DelBigImgSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UploadImgBySize">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">上传并保存图片文件生成缩略图并指定缩略图的尺寸</wsdl:documentation>
+      <wsdl:input message="tns:UploadImgBySizeSoapIn" />
+      <wsdl:output message="tns:UploadImgBySizeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UploadFile">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">上传并保存图片文件生成缩略图</wsdl:documentation>
+      <wsdl:input message="tns:UploadFileSoapIn" />
+      <wsdl:output message="tns:UploadFileSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="Service1Soap" type="tns:Service1Soap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="UpLoadImg">
+      <soap:operation soapAction="http://tempuri.org/UpLoadImg" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DelAllImg">
+      <soap:operation soapAction="http://tempuri.org/DelAllImg" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DelBigImg">
+      <soap:operation soapAction="http://tempuri.org/DelBigImg" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UploadImgBySize">
+      <soap:operation soapAction="http://tempuri.org/UploadImgBySize" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UploadFile">
+      <soap:operation soapAction="http://tempuri.org/UploadFile" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="Service1Soap12" type="tns:Service1Soap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="UpLoadImg">
+      <soap12:operation soapAction="http://tempuri.org/UpLoadImg" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DelAllImg">
+      <soap12:operation soapAction="http://tempuri.org/DelAllImg" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DelBigImg">
+      <soap12:operation soapAction="http://tempuri.org/DelBigImg" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UploadImgBySize">
+      <soap12:operation soapAction="http://tempuri.org/UploadImgBySize" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UploadFile">
+      <soap12:operation soapAction="http://tempuri.org/UploadFile" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="Service1">
+    <wsdl:port name="Service1Soap" binding="tns:Service1Soap">
+      <soap:address location="http://soa.edushi.com/uploadimg/service1.asmx" />
+    </wsdl:port>
+    <wsdl:port name="Service1Soap12" binding="tns:Service1Soap12">
+      <soap12:address location="http://soa.edushi.com/uploadimg/service1.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

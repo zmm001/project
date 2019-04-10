@@ -1,0 +1,207 @@
+﻿<link href="Css/css.css" rel="stylesheet" type="text/css" />
+<!--_CityModel-->
+<div id="CityModel" class="City">
+    <div class="Chead">
+        <ul class="MyUL">
+            <li class="Title">E都市城市列表</li>
+            <li class="Close"><a href="javascript://" class="m_h_c" onclick="fnCityListHiddn();">
+            </a></li>
+        </ul>
+    </div>
+    <div class="Ccontent">
+        <div class="Czhitong">
+            <span>
+                <img src="images/newmap69.gif"></span><span>城市直通</span>
+        </div>
+        <div class="cityname">
+            <ul class="cityul">
+                <li>
+                    <img src="images/bd.gif"><a href="#">北京</a></li>
+                <li>
+                    <img src="images/bd.gif"><a href="http://shanghai.edushi.com/yp">上海</a></li>
+                <li>
+                    <img src="images/bd.gif"><a href="http://hz.edushi.com/yp">杭州</a></li>
+                <li>
+                    <img src="images/bd.gif"><a href="#">长沙</a></li>
+                <li>
+                    <img src="images/bd.gif"><a href="#">苏州</a></li>
+                <li>
+                    <img src="images/bd.gif"><a href="#">大连</a></li>
+                <li>
+                    <img src="images/bd.gif"><a href="#">哈尔滨</a></li>
+                <li>
+                    <img src="images/bd.gif"><a href="#">厦门</a></li>
+                <li>
+                    <img src="images/bd.gif"><a href="#">青岛</a></li>
+                <li>
+                    <img src="images/bd.gif"><a href="#">西安</a></li>
+                <li>
+                    <img src="images/bd.gif"><a href="#">香港</a></li>
+                <li>
+                    <img src="images/bd.gif"><a href="#">广州</a></li>
+                <li>
+                    <img src="images/bd.gif"><a href="#">深圳</a></li>
+                <li>
+                    <img src="images/bd.gif"><a href="#">重庆</a></li>
+                <li>
+                    <img src="images/bd.gif"><a href="#">成都</a></li>
+                <li>
+                    <img src="images/bd.gif"><a href="#">石家庄</a></li>
+            </ul>
+        </div>
+        <div class="Czhitong">
+            <span><img src="images/newmap69.gif"></span><span>所有城市列表</span> 
+            <span class="allcityT"><input type="radio" value="1" name="CSearch" onclick="fnShowCityListpro(1);" checked />按省份查找<input name="CSearch" type="radio" value="2" onclick="fnShowCityListpro(2);" />按字母查找</span>
+        </div>
+        <div id="ShengFen" class="allcityS">
+            <div class="t">
+                <span>
+                    <img src="images/cc.gif" />华北地区</span>
+                <div class="cityl">
+                    <a href="#">北京市</a> <a href="#">天津市</a>
+                    <a href="#" onmouseover="fnShowCityList(event)" onmouseout="fnBoxMouseOut();">河北省</a> 
+                    <a href="#" onmouseover="fnShowCityList(event)" onmouseout="fnBoxMouseOut();">山西省</a> 
+                    <a href="#" onmouseover="fnShowCityList(event)" onmouseout="fnBoxMouseOut();">内蒙古自治区</a>
+                </div>
+            </div>
+            <div class="t">
+                <span>
+                    <img src="images/cc.gif" />华南地区</span>
+                <div class="cityl">
+                    <a href="#" onmouseover="fnShowCityList(event)" onmouseout="fnBoxMouseOut();">广东省</a>
+                    <a href="#" onmouseover="fnShowCityList(event)" onmouseout="fnBoxMouseOut();">海南省</a>
+                </div>
+            </div>
+            <div class="t">
+                <span>
+                    <img src="images/cc.gif" />华东地区</span>
+                <div class="cityl">
+                    <a href="#">上海市</a>
+                    <a href="#" onmouseover="fnShowCityList(event)" onmouseout="fnBoxMouseOut();">江苏省</a>
+                    <a href="#" onmouseover="fnShowCityList(event)" onmouseout="fnBoxMouseOut();">浙江省</a>
+                    <a href="#" onmouseover="fnShowCityList(event)" onmouseout="fnBoxMouseOut();">安徽省</a>
+                    <a href="#" onmouseover="fnShowCityList(event)" onmouseout="fnBoxMouseOut();">福建省</a>
+                    <a href="#" onmouseover="fnShowCityList(event)" onmouseout="fnBoxMouseOut();"></a>
+                    <a href="#" onmouseover="fnShowCityList(event)" onmouseout="fnBoxMouseOut();">山东省</a>
+                </div>
+            </div>
+            <div class="t">
+                <span>
+                    <img src="images/cc.gif" />华中地区</span>
+                <div class="cityl">
+                    <a href="#" onmouseover="fnShowCityList(event)" onmouseout="fnBoxMouseOut();">河南省</a>
+                    <a href="#" onmouseover="fnShowCityList(event)" onmouseout="fnBoxMouseOut();">湖北省</a>
+                    <a href="#" onmouseover="fnShowCityList(event)" onmouseout="fnBoxMouseOut();">湖南省</a>
+                </div>
+            </div>
+            <div class="t">
+                <span>
+                    <img src="images/cc.gif" />东北地区</span>
+                <div class="cityl">
+                    <a href="#" onmouseover="fnShowCityList(event)" onmouseout="fnBoxMouseOut();">辽宁省</a>
+                    <a href="#" onmouseover="fnShowCityList(event)" onmouseout="fnBoxMouseOut();">吉林省</a>
+                    <a href="#" onmouseover="fnShowCityList(event)" onmouseout="fnBoxMouseOut();">黑龙江省</a>
+                </div>
+            </div>
+            <div class="t">
+                <span>
+                    <img src="images/cc.gif" />西北地区</span>
+                <div class="cityl">
+                    <a href="#" onmouseover="fnShowCityList(event)" onmouseout="fnBoxMouseOut();">宁夏回族自治区</a>
+                    <a href="#" onmouseover="fnShowCityList(event)" onmouseout="fnBoxMouseOut();">陕西省</a>
+                    <a href="#" onmouseover="fnShowCityList(event)" onmouseout="fnBoxMouseOut();">甘肃省</a>
+                    <a href="#" onmouseover="fnShowCityList(event)" onmouseout="fnBoxMouseOut();">新疆维吾尔自治区</a>
+                    <a href="#" onmouseover="fnShowCityList(event)" onmouseout="fnBoxMouseOut();">青海省</a>
+                </div>
+            </div>
+            <div class="t">
+                <span>
+                    <img src="images/cc.gif" />西南地区</span>
+                <div class="cityl">
+                    <a href="#" onmouseover="fnShowCityList(event)" onmouseout="fnBoxMouseOut();">重庆省</a>
+                    <a href="#" onmouseover="fnShowCityList(event)" onmouseout="fnBoxMouseOut();">四川省</a>
+                    <a href="#" onmouseover="fnShowCityList(event)" onmouseout="fnBoxMouseOut();">贵州省</a>
+                    <a href="#" onmouseover="fnShowCityList(event)" onmouseout="fnBoxMouseOut();">云南省</a>
+                    <a href="#" onmouseover="fnShowCityList(event)" onmouseout="fnBoxMouseOut();">西藏自治区</a>
+                    <a href="#" onmouseover="fnShowCityList(event)" onmouseout="fnBoxMouseOut();">广西壮族自治区</a>
+                </div>
+            </div>
+        </div>
+        <div id="PinYin" class="pinyin" style="display: none;">
+            <div class="zimuT">
+                <div style="color: #FFFFFF; line-height: 26px; margin-left: 5px; float: left;">
+                    按地名首字字母排序</div>
+                <div id="zimu" class="zimu">
+                    <div id="Z1" onclick="fnShowZiMu(this);" class="active">
+                        A</div>
+                    <div id="Z2" onclick="fnShowZiMu(this);">
+                        B</div>
+                    <div id="Z3" onclick="fnShowZiMu(this);">
+                        C</div>
+                    <div id="Z4" onclick="fnShowZiMu(this);">
+                        D</div>
+                    <div id="Z5" onclick="fnShowZiMu(this);">
+                        E</div>
+                    <div id="Z6" onclick="fnShowZiMu(this);">
+                        F</div>
+                    <div id="Z7" onclick="fnShowZiMu(this);">
+                        G</div>
+                    <div id="Z8" onclick="fnShowZiMu(this);">
+                        H</div>
+                    <div id="Z9" onclick="fnShowZiMu(this);">
+                        I</div>
+                    <div id="Z10" onclick="fnShowZiMu(this);">
+                        J</div>
+                    <div id="Z11" onclick="fnShowZiMu(this);">
+                        K</div>
+                    <div id="Z12" onclick="fnShowZiMu(this);">
+                        L</div>
+                    <div id="Z13" onclick="fnShowZiMu(this);">
+                        M</div>
+                    <div id="Z14" onclick="fnShowZiMu(this);">
+                        N</div>
+                    <div id="Z15" onclick="fnShowZiMu(this);">
+                        O</div>
+                    <div id="Z16" onclick="fnShowZiMu(this);">
+                        P</div>
+                    <div id="Z17" onclick="fnShowZiMu(this);">
+                        Q</div>
+                    <div id="Z18" onclick="fnShowZiMu(this);">
+                        R</div>
+                    <div id="Z19" onclick="fnShowZiMu(this);">
+                        S</div>
+                    <div id="Z20" onclick="fnShowZiMu(this);">
+                        T</div>
+                    <div id="Z21" onclick="fnShowZiMu(this);">
+                        U</div>
+                    <div id="Z22" onclick="fnShowZiMu(this);">
+                        V</div>
+                    <div id="Z23" onclick="fnShowZiMu(this);">
+                        W</div>
+                    <div id="Z24" onclick="fnShowZiMu(this);">
+                        X</div>
+                    <div id="Z25" onclick="fnShowZiMu(this);">
+                        Y</div>
+                    <div id="Z26" onclick="fnShowZiMu(this);">
+                        Z</div>
+                </div>
+            </div>
+            <div id="pinyin_Con" class="content">
+                <ul id="zimuList" class="cityul">
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="CFoot">
+    </div>
+</div>
+<div class="SList" id="CityS" style="display: none;" onmouseover="fnBoxMouseOver();"
+    onmouseout="fnBoxMouseOut();">
+    <div class="City2d">
+        <div class="AOver">
+        </div>
+        <div id="ShowCity" class="ShowCity">
+        </div>
+    </div>
+</div>
+<!--/_CityModel-->

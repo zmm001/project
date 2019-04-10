@@ -1,0 +1,38 @@
+﻿<div class="wrapper search-content">
+    <div class="search-box clearfix">
+        <div class="fl search">
+            <input type="text" name="" placeholder="搜索你感兴趣的内容" class="ipt" id="search_text" />
+            <input type="button" name="" value="搜索" class="btn search-btn" />
+        </div>
+        <ul class="fl">
+            <li class="ask">提问</li>
+            <li class="answer"><a href="@Url.Content("~/info/2.html")" target="_blank">回答</a></li>
+        </ul>
+    </div>
+</div>
+
+<script>
+    $(function () {
+        document.onkeydown = function (e) {
+            if (document.activeElement.id == "search_text") {
+                var ev = document.all ? window.event : e;
+                if (ev.keyCode == 13) {
+                    toSearch();
+                }
+            }
+        }
+
+        $(".search-btn").click(function () {
+            toSearch();
+        });
+
+        function toSearch() {
+            var text = $("#search_text").val();
+            if (text != "") {
+                window.open("/info/search.html?keyword=" + encodeURIComponent(text));
+            } else {
+                showMsg("请输入关键词");
+            }
+        }
+    });
+</script>

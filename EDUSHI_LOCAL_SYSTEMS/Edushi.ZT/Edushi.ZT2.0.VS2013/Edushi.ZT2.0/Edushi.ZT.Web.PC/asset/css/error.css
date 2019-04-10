@@ -1,0 +1,93 @@
+﻿body {
+	font-family: "Microsoft YaHei";
+	font-size: 14px;
+	color: #404040;
+	background: #f8f8f8;
+}
+body, ul, ol, li, dl, dt, dd, p, h1, h2, h3, h4, h5, h6, button, input, textarea {
+	margin: 0;
+	padding: 0;
+}
+h1, h2, h3, h4, h5, h6 {
+	font-size: 100%;
+}
+ul, ol {
+	list-style-type: none;
+}
+img, a img, :link img, :visited img {
+	border: 0;
+	display: block;
+}
+a {
+	color: #404040;
+	text-decoration: none;
+}
+a:hover {
+	color: #ff3333;
+	text-decoration: none;
+}
+.clearfix:after {
+	content: "";
+	display: table;
+	clear: both;
+}
+.clearfix {
+	*zoom: 1;
+}
+.fl {
+	display: inline;
+	float: left;
+}
+.fr {
+	display: inline;
+	float: right;
+}
+.wrapper {
+	width: 1200px;
+	margin: 0 auto;
+}
+
+.page-footer {
+    position: fixed; 
+    bottom: 0;
+}
+
+html,body{
+	height:100%;
+}
+.error{
+	text-align: center;
+	width:100%;
+	background: #f8f8f8;
+    position: absolute;
+    top: 50%;
+    margin-top: -271px; 
+}
+.error .bg{
+	display: block;
+	width:296px;
+	height:325px;
+	background-image: url(../images/error_bg.png);
+	margin: 0 auto 30px auto;
+}
+.error div{
+	font-size: 36px;
+	color: #222;
+	margin-bottom: 15px;
+}
+.error span{
+	display: block;
+	font-size: 20px;
+	line-height: 30px;
+	color: #222;
+}
+.error a{
+	display: inline-block;
+	height:40px;
+	line-height: 40px;
+	padding: 0 33px;
+	color: #fff;
+	background-color: #fe4242;
+	border-radius:3px;
+	margin-top: 15px;
+}

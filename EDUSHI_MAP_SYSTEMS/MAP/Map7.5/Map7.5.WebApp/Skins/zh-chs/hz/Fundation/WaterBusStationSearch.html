@@ -1,0 +1,361 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>公交站点搜索</title>
+
+    <script language="javascript" type="text/javascript" src="/Js/GeneralLib.js"></script>
+
+    <script language="javascript" type="text/javascript" src="../Js/WaterBusStationSearch.js"></script>
+
+    <style>
+        body
+        {
+            color: #666668;
+        }
+        *
+        {
+            margin: 0;
+            padding: 0;
+            font-size: 12px;
+        }
+        .clear
+        {
+            clear: both;
+        }
+        a
+        {
+            text-decoration: none;
+            color: #1c81b9;
+        }
+        li, ul
+        {
+            list-style: none;
+        }
+        .gj_title
+        {
+            width: 305px;
+            border-top: dotted 1px #cfcfcf;
+            height: 46px;
+            border-bottom: dotted 1px #cfcfcf;
+            margin-bottom: 7px;
+        }
+        .gj_title .diva
+        {
+            padding-left: 5px;
+            padding-top: 5px;
+            background: #f1f9fc;
+            border: solid 1px #f1f9fc;
+            margin: 1px;
+            height: 36px;
+            width: 297px;
+        }
+        .gj_title .diva span
+        {
+            display: block;
+            background: url(../images/icon.jpg) no-repeat -80px -20px;
+            width: 16px;
+            height: 15px;
+            display: inline-block;
+            margin-right: 10px;
+            float: left;
+        }
+        .qd, .zd, .zt
+        {
+            float: left;
+            margin-right: 5px;
+        }
+        .qd a, .zd a
+        {
+            display: block;
+            float: left;
+            margin-top: 6px;
+            width: 58px;
+            text-overflow: ellipsis;
+            overflow: hidden;
+            white-space: nowrap;
+        }
+        .icon_q, .icon_q2
+        {
+            background: url(../images/icon.jpg) no-repeat 0 -20px;
+            width: 27px;
+            height: 32px;
+            display: inline-block;
+            margin-right: 10px;
+            float: left;
+        }
+        .icon_q2
+        {
+            background-position: -27px -20px;
+        }
+        .icon_q3
+        {
+            background: url(../images/icon.jpg) -54px -33px;
+            width: 21px;
+            height: 18px;
+            float: left;
+        }
+        .zt
+        {
+            margin-top: 3px;
+        }
+        .zt a
+        {
+            display: block;
+            float: left;
+            margin: 2px 0 0 5px;
+        }
+        .z3
+        {
+            margin: 10px 0 10px 10px;
+        }
+        .gj_03
+        {
+            width: 308px;
+            background: #fff;
+            border: solid 1px #bad7e7;
+            height: 635px;
+            overflow: auto;
+            background: #f1f9fc;
+            position: relative;
+        }
+        .gj_a
+        {
+            margin: 5px;
+            background: #fff;
+        }
+        .gj_a1
+        {
+            border: solid 1px #bad7e7;
+            margin-bottom: 5px;
+            position: relative;
+        }
+        .gj_a2 .title
+        {
+            background: url(../images/line1.jpg) repeat-x 0 0;
+            height: 27px;
+            border-bottom: solid 1px #bad7e7;
+            cursor:pointer;
+        }
+        .gj_a2 .title_c
+        {
+            border: none;
+        }
+        .gj_a2 .T_left
+        {
+            float: left;
+            margin: 5px 0 0 10px;
+            font-weight: bold;
+            color: #1c81b9;
+            display: inline;
+        }
+        .gj_a1 .T_right
+        {
+            float: right;
+            margin: 5px 5px 0 0;
+        }
+        .gj_a1 .T_right span
+        {
+            display: inline-block;
+            float: left;
+            padding-right: 5px;
+        }
+        .gj_a1 .T_right .icon_t, .gj_a1 .T_right .icon_t2
+        {
+            display: inline-block;
+            background: url(../images/icon.jpg) no-repeat -54px -20px;
+            width: 13px;
+            height: 13px;
+            padding-right: 0px;
+        }
+        .number2
+        {
+            background: url(../images/number1.jpg) no-repeat 0 0;
+            width: 10px;
+            height: 14px;
+            color: #fff;
+            font: 10px Arial, Helvetica, sans-serif;
+            line-height: 13px;
+            top: 7px;
+            left: 8px;
+            float: left;
+            padding-left: 3px;
+        }
+        .T_right .icon_t2
+        {
+            background-position: -67px -20px;
+        }
+        .search
+        {
+            width: 305px;
+            height: 42px;
+            background: url(../images/search_Bg.jpg) no-repeat 0 0;
+            margin-bottom: 10px;
+        }
+        .input_bg
+        {
+            float: left;
+        }
+        .input_bg input
+        {
+            border: none;
+            width: 227px;
+            height: 20px;
+            margin: 12px 0 0 13px;
+            background: none;
+            color: #b7b7b7;
+        }
+        .btn_bg
+        {
+            float: right;
+            margin: 10px 5px 0 0;
+        }
+        .btn_bg a
+        {
+            width: 45px;
+            height: 20px;
+            display: block;
+        }
+        .gj_title
+        {
+            width: 305px;
+            border-top: dotted 1px #cfcfcf;
+            height: 28px;
+            border-bottom: dotted 1px #cfcfcf;
+            margin-bottom: 7px;
+        }
+        .gj_title div
+        {
+            padding-left: 5px;
+            padding-top: 5px;
+            background: #f1f9fc;
+            border: solid 1px #f1f9fc;
+            margin: 1px;
+            height: 19px;
+            width: 297px;
+        }
+        .gj_title div span
+        {
+            display: block;
+            background: url(../images/icon.jpg) no-repeat -80px -20px;
+            width: 16px;
+            height: 15px;
+            display: inline-block;
+            margin-right: 10px;
+            float: left;
+        }
+        .gj_title i
+        {
+            font-style: normal;
+            color: #1c81b9;
+        }
+        .xlxx
+        {
+            margin: 5px;
+            border: solid 1px #cdcdcd;
+            margin-bottom: 10px;
+            margin-top: 10px;
+            background:url("../images/bg.jpg") repeat-y scroll 0 0 transparent;
+        }
+        .time_bus
+        {
+            border-bottom: solid 1px #cdcdcd;
+        }
+        .time_busa
+        {
+            border-bottom: none;
+        }
+        .title_S
+        {
+            background: #f4f4f4;
+            width: 80px;
+            padding: 3px 5px;
+            text-align: center;
+            border-right: solid 1px #cdcdcd;
+            float: left;
+            line-height: 18px;
+        }
+        .text_S
+        {
+            padding: 3px 10px;
+            float: left;
+            line-height: 18px;
+            width:58%;
+        }
+        .time_bus2
+        {
+            padding: 10px 8px;
+        }
+        .time_bus2 a
+        {
+            display: block;
+            float: left;
+            margin-right: 5px;
+            background: url(../images/icon.jpg) 0 0;
+            height: 19px;
+        }
+        .time_bus2 a.a1
+        {
+            background-position: 0 -93px;
+            width: 78px;
+        }
+        .time_bus2 a.a2
+        {
+            background-position: 0 -112px;
+            width: 78px;
+        }
+        .time_bus2 a.a3
+        {
+            background-position: 0 -131px;
+            width: 94px;
+            margin-right: 0;
+        }
+        .xl
+        {
+            border: solid 1px #cdcdcd;
+            margin: 5px;
+        }
+        .xl .title_xl
+        {
+            height: 22px;
+            border-bottom: solid 1px #cdcdcd;
+        }
+        .xl .title_xl2
+        {
+            background: #f4f4f4;
+            text-align: center;
+            font-weight: bold;
+            line-height: 22px;
+        }
+        .xl ul.ul_xl2
+        {
+            margin: 7px;
+        }
+        .xl ul.ul_xl2 li
+        {
+            line-height: 20px;
+            float: left;
+            margin-bottom: 12px;
+            margin-right: 10px;
+        }
+        .title_c
+        {
+            border-bottom: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="search">
+        <div class="input_bg">
+            <input type="text" id="textKeyWords" /></div>
+        <div class="btn_bg">
+            <a id="BusSearch_Btn" style="cursor:pointer;"></a>
+        </div>
+    </div>
+    <div class="gj_title">
+        <div id="resultDiv"></div>
+    </div>
+    <div class="gj_03" id="TabContent" style="overflow-x: hidden;">
+        
+    </div>
+</body>
+</html>

@@ -1,0 +1,482 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{DE475603-A19D-4B75-B6D4-31363AF24069}</ProjectGuid>
+    <ProjectTypeGuids>{E3E379DF-F4C6-4180-9B81-6769533ABE47};{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Edushi.WenDa.Web.App</RootNamespace>
+    <AssemblyName>Edushi.WenDa.Web.App</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Edushi.AiShangTouTiao.API">
+      <HintPath>..\..\..\..\EDUSHI_CM_LIBRARY\Assembly_Library\EDC.Framework\Edushi.AiShangTouTiao.API.dll</HintPath>
+    </Reference>
+    <Reference Include="Edushi.User">
+      <HintPath>..\..\..\..\EDUSHI_CM_LIBRARY\Assembly_Library\EDC.Framework\Edushi.User.dll</HintPath>
+    </Reference>
+    <Reference Include="Elasticsearch.Net">
+      <HintPath>..\..\..\..\EDUSHI_CM_LIBRARY\Assembly_Library\EDC.Framework\Elasticsearch.Net\Elasticsearch.Net.dll</HintPath>
+    </Reference>
+    <Reference Include="log4net, Version=1.2.10.0, Culture=neutral, PublicKeyToken=1b44e1d426115821, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\EDUSHI_CM_LIBRARY\Assembly_Library\EDC.Framework\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Nest">
+      <HintPath>..\..\..\..\EDUSHI_CM_LIBRARY\Assembly_Library\EDC.Framework\Elasticsearch.Net\Nest.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\EDUSHI_CM_LIBRARY\Assembly_Library\EDC.Framework\Elasticsearch.Net\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Web.Mvc.FixedDisplayModes, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.FixedDisplayModes.1.0.0\lib\net40\Microsoft.Web.Mvc.FixedDisplayModes.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http">
+    </Reference>
+    <Reference Include="System.Net.Http.Formatting, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.4.0.30506.0\lib\net40\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+    </Reference>
+    <Reference Include="System.Web.Helpers, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.30506.0\lib\net40\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.4.0.30506.0\lib\net40\System.Web.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.WebHost, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.WebHost.4.0.30506.0\lib\net40\System.Web.Http.WebHost.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.4.0.30506.0\lib\net40\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Razor.2.0.30506.0\lib\net40\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.30506.0\lib\net40\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.30506.0\lib\net40\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.30506.0\lib\net40\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\WebApiConfig.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Attributes\CustomExceptionFilterAttribute.cs" />
+    <Compile Include="Attributes\CustomFilterAttribute.cs" />
+    <Compile Include="Controllers\AnswerController.cs" />
+    <Compile Include="Controllers\ApiController.cs" />
+    <Compile Include="Controllers\AskController.cs" />
+    <Compile Include="Controllers\CommentController.cs" />
+    <Compile Include="Controllers\DetailController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\SearchController.cs" />
+    <Compile Include="Controllers\SharedController.cs" />
+    <Compile Include="Controllers\UserController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Helper\Cloud_163.cs" />
+    <Compile Include="Helper\DataHelper.cs" />
+    <Compile Include="Helper\ElasticsearchHelper.cs" />
+    <Compile Include="Helper\MyFormUrlEncodedContent_bak.cs" />
+    <Compile Include="Helper\Utils.cs" />
+    <Compile Include="Models\AddCommentModel.cs" />
+    <Compile Include="Models\AddQuestionModel.cs" />
+    <Compile Include="Models\AnswerDetailModel.cs" />
+    <Compile Include="Models\AnswerModel.cs" />
+    <Compile Include="Models\BaseResult.cs" />
+    <Compile Include="Models\CommentCustomModel.cs" />
+    <Compile Include="Models\CommentDetailModel.cs" />
+    <Compile Include="Models\CommentModel.cs" />
+    <Compile Include="Models\CustomModel.cs" />
+    <Compile Include="Models\DataOut2.cs" />
+    <Compile Include="Models\DetailModel.cs" />
+    <Compile Include="Models\editorImgModel.cs" />
+    <Compile Include="Models\EsModel.cs" />
+    <Compile Include="Models\FavoritesModel.cs" />
+    <Compile Include="Models\HomeModel.cs" />
+    <Compile Include="Models\img.cs" />
+    <Compile Include="Models\MoreAnswerModel.cs" />
+    <Compile Include="Models\MyFavoriteModel.cs" />
+    <Compile Include="Models\SearchResultModel.cs" />
+    <Compile Include="Models\SearchResultOut.cs" />
+    <Compile Include="Models\toShareModel.cs" />
+    <Compile Include="Models\UserFavoritesOut.cs" />
+    <Compile Include="Models\UserIndexModel.cs" />
+    <Compile Include="Models\UserModel.cs" />
+    <Compile Include="Models\WenDaListModel.cs" />
+    <Compile Include="Models\DataOut.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\com.edushi.wdwse\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Content Include="asset\css\base.css" />
+    <Content Include="asset\css\confim_tost.css" />
+    <Content Include="asset\css\error.css" />
+    <Content Include="asset\css\quill.snow.css" />
+    <Content Include="asset\css\style.css" />
+    <Content Include="asset\images\add_btn.png" />
+    <Content Include="asset\images\back_icon.png" />
+    <Content Include="asset\images\detail-answer.png" />
+    <Content Include="asset\images\no-answer-android.png" />
+    <Content Include="asset\images\noanswer.png" />
+    <Content Include="asset\images\nocomment-andriod.png" />
+    <Content Include="asset\images\nocomment-ios.png" />
+    <Content Include="asset\images\nocontent-andriod.png" />
+    <Content Include="asset\images\nocontent.png" />
+    <Content Include="asset\images\noMyFavorite-andriod.png" />
+    <Content Include="asset\images\noMyFavorite-ios.png" />
+    <Content Include="asset\images\noResult-andriod.png" />
+    <Content Include="asset\images\noResult-ios.png" />
+    <Content Include="asset\images\notfound.png" />
+    <Content Include="asset\img\file_icon.png" />
+    <Content Include="asset\img\function\1\分享.png" />
+    <Content Include="asset\img\function\1\反动-未%401x.png" />
+    <Content Include="asset\images\function\1\评论页-加评论图片.png" />
+    <Content Include="asset\images\function\1\评论页-点赞.png" />
+    <Content Include="asset\images\function\1\评论页-点赞之后.png" />
+    <Content Include="asset\images\function\1\赞同-未%401x.png" />
+    <Content Include="asset\images\function\1\赞同.png" />
+    <Content Include="asset\images\function\1\趣问-反对点击.png" />
+    <Content Include="asset\images\function\1\趣问-底部收藏问题.png" />
+    <Content Include="asset\images\function\1\趣问-底部收藏问题已点击.png" />
+    <Content Include="asset\images\function\1\趣问-底部添加回答.png" />
+    <Content Include="asset\images\function\1\趣问-详情底部反对.png" />
+    <Content Include="asset\images\function\1\趣问-详情底部反对点击后.png" />
+    <Content Include="asset\images\function\1\趣问-详情底部评论.png" />
+    <Content Include="asset\images\function\1\趣问-详情底部赞同点击后.png" />
+    <Content Include="asset\images\function\1\趣问-赞同点击.png" />
+    <Content Include="asset\images\function\1\趣问-问题页添加回答.png" />
+    <Content Include="asset\images\function\1\趣问首页-反对.png" />
+    <Content Include="asset\images\function\2\评论页-加评论图片%402x.png" />
+    <Content Include="asset\images\function\2\评论页-点赞%402x.png" />
+    <Content Include="asset\images\function\2\评论页-点赞之后%402x.png" />
+    <Content Include="asset\images\function\2\赞同%402x.png" />
+    <Content Include="asset\images\function\2\趣问-反对点击%402x.png" />
+    <Content Include="asset\images\function\2\趣问-底部收藏问题%402x.png" />
+    <Content Include="asset\images\function\2\趣问-底部收藏问题已点击%402x.png" />
+    <Content Include="asset\images\function\2\趣问-底部添加回答%402x.png" />
+    <Content Include="asset\images\function\2\趣问-详情底部反对%402x.png" />
+    <Content Include="asset\images\function\2\趣问-详情底部反对点击后%402x.png" />
+    <Content Include="asset\images\function\2\趣问-详情底部评论%402x.png" />
+    <Content Include="asset\images\function\2\趣问-详情底部赞同点击后%402x.png" />
+    <Content Include="asset\images\function\2\趣问-赞同点击%402x.png" />
+    <Content Include="asset\images\function\2\趣问-问题页添加回答%402x.png" />
+    <Content Include="asset\images\function\2\趣问首页-反对%402x.png" />
+    <Content Include="asset\images\function\3\评论页-加评论图片%403x.png" />
+    <Content Include="asset\images\function\3\评论页-点赞%403x.png" />
+    <Content Include="asset\images\function\3\评论页-点赞之后%403x.png" />
+    <Content Include="asset\images\function\3\赞同%403x.png" />
+    <Content Include="asset\images\function\3\趣问-反对点击%403x.png" />
+    <Content Include="asset\images\function\3\趣问-底部收藏问题%403x.png" />
+    <Content Include="asset\images\function\3\趣问-底部收藏问题已点击%403x.png" />
+    <Content Include="asset\images\function\3\趣问-底部添加回答%403x.png" />
+    <Content Include="asset\images\function\3\趣问-详情底部反对%403x.png" />
+    <Content Include="asset\images\function\3\趣问-详情底部反对点击后%403x.png" />
+    <Content Include="asset\images\function\3\趣问-详情底部评论%403x.png" />
+    <Content Include="asset\images\function\3\趣问-详情底部赞同点击后%403x.png" />
+    <Content Include="asset\images\function\3\趣问-赞同点击%4035x.png" />
+    <Content Include="asset\images\function\3\趣问-问题页添加回答%403x.png" />
+    <Content Include="asset\images\function\3\趣问首页-反对%403x.png" />
+    <Content Include="asset\images\icon.png" />
+    <Content Include="asset\images\loading.gif" />
+    <Content Include="asset\images\question.png" />
+    <Content Include="asset\images\sprite_icon.png" />
+    <Content Include="asset\images\user-photo.png" />
+    <Content Include="asset\images\回答.jpg" />
+    <Content Include="asset\img\add_btn.png" />
+    <Content Include="asset\img\detail-answer.png" />
+    <Content Include="asset\img\function\1\收藏.png" />
+    <Content Include="asset\img\function\1\收藏点击.png" />
+    <Content Include="asset\img\function\1\查看回答.png" />
+    <Content Include="asset\img\function\1\评论页-加评论图片.png" />
+    <Content Include="asset\img\function\1\评论页-点赞.png" />
+    <Content Include="asset\img\function\1\评论页-点赞之后.png" />
+    <Content Include="asset\img\function\1\赞同-未%401x.png" />
+    <Content Include="asset\img\function\1\赞同.png" />
+    <Content Include="asset\img\function\1\趣问-反对点击.png" />
+    <Content Include="asset\img\function\1\趣问-底部收藏问题.png" />
+    <Content Include="asset\img\function\1\趣问-底部收藏问题已点击.png" />
+    <Content Include="asset\img\function\1\趣问-底部添加回答.png" />
+    <Content Include="asset\img\function\1\趣问-详情底部反对.png" />
+    <Content Include="asset\img\function\1\趣问-详情底部反对点击后.png" />
+    <Content Include="asset\img\function\1\趣问-详情底部评论.png" />
+    <Content Include="asset\img\function\1\趣问-详情底部赞同点击后.png" />
+    <Content Include="asset\img\function\1\趣问-赞同点击.png" />
+    <Content Include="asset\img\function\1\趣问-问题页添加回答.png" />
+    <Content Include="asset\img\function\1\趣问首页-反对.png" />
+    <Content Include="asset\img\function\1\返回.png" />
+    <Content Include="asset\img\function\2\分享%402x.png" />
+    <Content Include="asset\img\function\2\反动-未%402x.png" />
+    <Content Include="asset\img\function\2\反对%402x.png" />
+    <Content Include="asset\img\function\2\反对3.png" />
+    <Content Include="asset\img\function\2\反对点击3.png" />
+    <Content Include="asset\img\function\2\回答%402x.png" />
+    <Content Include="asset\img\function\2\提问%402x.png" />
+    <Content Include="asset\img\function\2\收藏%402x.png" />
+    <Content Include="asset\img\function\2\收藏点击%402x.png" />
+    <Content Include="asset\img\function\2\查看回答%402x.png" />
+    <Content Include="asset\img\function\2\评论页-加评论图片%402x.png" />
+    <Content Include="asset\img\function\2\评论页-点赞%402x.png" />
+    <Content Include="asset\img\function\2\评论页-点赞之后%402x.png" />
+    <Content Include="asset\img\function\2\赞同%402x.png" />
+    <Content Include="asset\img\function\2\赞同-未%402x.png" />
+    <Content Include="asset\img\function\2\赞同3.png" />
+    <Content Include="asset\img\function\2\赞同未%402x.png" />
+    <Content Include="asset\img\function\2\赞同点击3.png" />
+    <Content Include="asset\img\function\2\趣问-反对点击%402x.png" />
+    <Content Include="asset\img\function\2\趣问-底部收藏问题%402x.png" />
+    <Content Include="asset\img\function\2\趣问-底部收藏问题已点击%402x.png" />
+    <Content Include="asset\img\function\2\趣问-底部添加回答%402x.png" />
+    <Content Include="asset\img\function\2\趣问-详情底部反对%402x.png" />
+    <Content Include="asset\img\function\2\趣问-详情底部反对点击后%402x.png" />
+    <Content Include="asset\img\function\2\趣问-详情底部评论%402x.png" />
+    <Content Include="asset\img\function\2\趣问-详情底部赞同点击后%402x.png" />
+    <Content Include="asset\img\function\2\趣问-赞同点击%402x.png" />
+    <Content Include="asset\img\function\2\趣问-问题页添加回答%402x.png" />
+    <Content Include="asset\img\function\2\趣问首页-反对%402x.png" />
+    <Content Include="asset\img\function\2\返回%402x.png" />
+    <Content Include="asset\img\function\3\评论页-加评论图片%403x.png" />
+    <Content Include="asset\img\function\3\评论页-点赞%403x.png" />
+    <Content Include="asset\img\function\3\评论页-点赞之后%403x.png" />
+    <Content Include="asset\img\function\3\赞同%403x.png" />
+    <Content Include="asset\img\function\3\趣问-反对点击%403x.png" />
+    <Content Include="asset\img\function\3\趣问-底部收藏问题%403x.png" />
+    <Content Include="asset\img\function\3\趣问-底部收藏问题已点击%403x.png" />
+    <Content Include="asset\img\function\3\趣问-底部添加回答%403x.png" />
+    <Content Include="asset\img\function\3\趣问-详情底部反对%403x.png" />
+    <Content Include="asset\img\function\3\趣问-详情底部反对点击后%403x.png" />
+    <Content Include="asset\img\function\3\趣问-详情底部评论%403x.png" />
+    <Content Include="asset\img\function\3\趣问-详情底部赞同点击后%403x.png" />
+    <Content Include="asset\img\function\3\趣问-赞同点击%4035x.png" />
+    <Content Include="asset\img\function\3\趣问-问题页添加回答%403x.png" />
+    <Content Include="asset\img\function\3\趣问首页-反对%403x.png" />
+    <Content Include="asset\img\icon.png" />
+    <Content Include="asset\img\loading.gif" />
+    <Content Include="asset\img\question.png" />
+    <Content Include="asset\img\share_icon.png" />
+    <Content Include="asset\img\sprite_icon.png" />
+    <Content Include="asset\img\user-photo.png" />
+    <Content Include="asset\img\回答.jpg" />
+    <Content Include="asset\img\回答.png" />
+    <Content Include="asset\js\answer.js" />
+    <Content Include="asset\js\ask.js" />
+    <Content Include="asset\js\commnet.js" />
+    <Content Include="asset\js\common.js" />
+    <Content Include="asset\js\jquery-1.8.3.min.js" />
+    <Content Include="asset\js\jquery.form.js" />
+    <Content Include="asset\js\PageRedirct.js" />
+    <Content Include="asset\js\question.js" />
+    <Content Include="asset\js\quill.js" />
+    <Content Include="asset\js\shence.js" />
+    <Content Include="asset\js\User.js" />
+    <Content Include="asset\js\vue.min.js" />
+    <Content Include="asset\sa-sdk-javascript\.gitignore" />
+    <Content Include="asset\sa-sdk-javascript\heatmap.min.js" />
+    <Content Include="asset\sa-sdk-javascript\sensorsdata.amd.min.js" />
+    <Content Include="asset\sa-sdk-javascript\sensorsdata.min.js" />
+    <Content Include="asset\sa-sdk-javascript\version.js" />
+    <Content Include="Global.asax" />
+    <Content Include="asset\sa-sdk-javascript\package.json" />
+    <Content Include="asset\sa-sdk-javascript\README.md" />
+    <None Include="Properties\PublishProfiles\wenda.app.pubxml" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Content Include="Web References\com.edushi.wdwse\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </Content>
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Search\Index.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\User\MyFavorite.cshtml" />
+    <Content Include="Views\User\Index.cshtml" />
+    <Content Include="Views\Detail\Index.cshtml" />
+    <Content Include="Views\User\My.cshtml" />
+    <Content Include="Views\Answer\Index.cshtml" />
+    <Content Include="Views\Comment\Detail.cshtml" />
+    <Content Include="Views\Answer\AddAnswer.cshtml" />
+    <Content Include="Views\Shared\_PartialConfim.cshtml" />
+    <None Include="Web References\com.edushi.wdwse\UploadService.disco" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Views\Web.config" />
+    <None Include="Web References\com.edushi.wdwse\UploadService.wsdl" />
+    <Content Include="Web References\com.edushi.wdwse\UploadStatus.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Edushi.CacheConfigSection\Edushi.CacheConfigSection.csproj">
+      <Project>{a39edaf4-8e8c-42c0-908f-3efd0b8bf968}</Project>
+      <Name>Edushi.CacheConfigSection</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Edushi.Common\Edushi.Common.csproj">
+      <Project>{ffcef480-3a5a-4542-8447-6e832953b558}</Project>
+      <Name>Edushi.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Edushi.Log\Edushi.Log.csproj">
+      <Project>{00ea4a8a-2baf-475c-90cb-13133cb057e3}</Project>
+      <Name>Edushi.Log</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Edushi.WenDa.BLL\Edushi.WenDa.BLL.csproj">
+      <Project>{aedea543-3a94-45ce-9ae3-d37076fca2e4}</Project>
+      <Name>Edushi.WenDa.BLL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Edushi.WenDa.Model\Edushi.WenDa.Model.csproj">
+      <Project>{d8f96c5f-76d9-4b7f-882f-69508358b8a6}</Project>
+      <Name>Edushi.WenDa.Model</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferences Include="Web References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferenceUrl Include="http://wdwse.edushi.com/UploadService.asmx">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\com.edushi.wdwse\</RelPath>
+      <UpdateFromURL>http://wdwse.edushi.com/UploadService.asmx</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>Edushi_WenDa_Web_App_com_edushi_wdwse_UploadService</CachedSettingsPropName>
+    </WebReferenceUrl>
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>42484</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:42484/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>

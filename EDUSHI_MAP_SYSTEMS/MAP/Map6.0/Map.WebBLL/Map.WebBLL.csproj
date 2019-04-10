@@ -1,0 +1,84 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="3.5" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{D15F2EFD-1304-464B-9163-902842924AC5}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Map.WebBLL</RootNamespace>
+    <AssemblyName>Map.WebBLL</AssemblyName>
+    <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BLL\CorrectionBLL.cs" />
+    <Compile Include="BLL\EAddressBLL.cs" />
+    <Compile Include="BLL\EShopJoinBLL.cs" />
+    <Compile Include="BLL\Income_CompanyInfoBLL.cs" />
+    <Compile Include="BLL\NewsFeedBLL.cs" />
+    <Compile Include="DAL\CorrectionDAL.cs" />
+    <Compile Include="DAL\DigCowry.cs" />
+    <Compile Include="DAL\EAddressDAL.cs" />
+    <Compile Include="DAL\EShopJoinDAL.cs" />
+    <Compile Include="DAL\Income_CompanyInfoDAL.cs" />
+    <Compile Include="DAL\NewsFeedDAL.cs" />
+    <Compile Include="MapHttpHandler.cs" />
+    <Compile Include="MDL\CorrectionMDL.cs" />
+    <Compile Include="MDL\EAddressMDL.cs" />
+    <Compile Include="MDL\EShopJoinMDL.cs" />
+    <Compile Include="MDL\Income_CompanyInfoMDL.cs" />
+    <Compile Include="MDL\NewsFeedMDL.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UserControlBase.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebGlobalConfig.cs" />
+    <Compile Include="WebPagebase.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\..\EDUSHI_DATA_CENTER\EdushiDataCenter\v1.0\Edushi.DataCenter\EDC.Framework\EDC.Framework.csproj">
+      <Project>{A2E154FC-DDE6-45B9-82C0-0C2F1307567C}</Project>
+      <Name>EDC.Framework</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

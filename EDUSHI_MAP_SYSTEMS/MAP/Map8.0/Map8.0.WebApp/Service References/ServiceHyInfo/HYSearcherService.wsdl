@@ -1,0 +1,344 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="HYSearcherService" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://data.edushi.com/SearchData/Services/HYSearcherService.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://data.edushi.com/SearchData/Services/HYSearcherService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://data.edushi.com/SearchData/Services/HYSearcherService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/System.Data" />
+      <xsd:import schemaLocation="http://data.edushi.com/SearchData/Services/HYSearcherService.svc?xsd=xsd3" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IHYSearcherService_HYKeywordSearch_InputMessage">
+    <wsdl:part name="parameters" element="tns:HYKeywordSearch" />
+  </wsdl:message>
+  <wsdl:message name="IHYSearcherService_HYKeywordSearch_OutputMessage">
+    <wsdl:part name="parameters" element="tns:HYKeywordSearchResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHYSearcherService_HYParentSearch_InputMessage">
+    <wsdl:part name="parameters" element="tns:HYParentSearch" />
+  </wsdl:message>
+  <wsdl:message name="IHYSearcherService_HYParentSearch_OutputMessage">
+    <wsdl:part name="parameters" element="tns:HYParentSearchResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHYSearcherService_HYSubSearch_InputMessage">
+    <wsdl:part name="parameters" element="tns:HYSubSearch" />
+  </wsdl:message>
+  <wsdl:message name="IHYSearcherService_HYSubSearch_OutputMessage">
+    <wsdl:part name="parameters" element="tns:HYSubSearchResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHYSearcherService_RangeTypeSearch_InputMessage">
+    <wsdl:part name="parameters" element="tns:RangeTypeSearch" />
+  </wsdl:message>
+  <wsdl:message name="IHYSearcherService_RangeTypeSearch_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RangeTypeSearchResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHYSearcherService_RangeTypeSearchByKeys_InputMessage">
+    <wsdl:part name="parameters" element="tns:RangeTypeSearchByKeys" />
+  </wsdl:message>
+  <wsdl:message name="IHYSearcherService_RangeTypeSearchByKeys_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RangeTypeSearchByKeysResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHYSearcherService_RangeCategorySearch_InputMessage">
+    <wsdl:part name="parameters" element="tns:RangeCategorySearch" />
+  </wsdl:message>
+  <wsdl:message name="IHYSearcherService_RangeCategorySearch_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RangeCategorySearchResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHYSearcherService_OwnerSearch_InputMessage">
+    <wsdl:part name="parameters" element="tns:OwnerSearch" />
+  </wsdl:message>
+  <wsdl:message name="IHYSearcherService_OwnerSearch_OutputMessage">
+    <wsdl:part name="parameters" element="tns:OwnerSearchResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHYSearcherService_OwnerImageSearch_InputMessage">
+    <wsdl:part name="parameters" element="tns:OwnerImageSearch" />
+  </wsdl:message>
+  <wsdl:message name="IHYSearcherService_OwnerImageSearch_OutputMessage">
+    <wsdl:part name="parameters" element="tns:OwnerImageSearchResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHYSearcherService_CompanySearch_InputMessage">
+    <wsdl:part name="parameters" element="tns:CompanySearch" />
+  </wsdl:message>
+  <wsdl:message name="IHYSearcherService_CompanySearch_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CompanySearchResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHYSearcherService_CompanyTempSearch_InputMessage">
+    <wsdl:part name="parameters" element="tns:CompanyTempSearch" />
+  </wsdl:message>
+  <wsdl:message name="IHYSearcherService_CompanyTempSearch_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CompanyTempSearchResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHYSearcherService_CompanyImageSearch_InputMessage">
+    <wsdl:part name="parameters" element="tns:CompanyImageSearch" />
+  </wsdl:message>
+  <wsdl:message name="IHYSearcherService_CompanyImageSearch_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CompanyImageSearchResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHYSearcherService_CompanySearchByOwner_InputMessage">
+    <wsdl:part name="parameters" element="tns:CompanySearchByOwner" />
+  </wsdl:message>
+  <wsdl:message name="IHYSearcherService_CompanySearchByOwner_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CompanySearchByOwnerResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHYSearcherService_BusinessCirclesSearch_InputMessage">
+    <wsdl:part name="parameters" element="tns:BusinessCirclesSearch" />
+  </wsdl:message>
+  <wsdl:message name="IHYSearcherService_BusinessCirclesSearch_OutputMessage">
+    <wsdl:part name="parameters" element="tns:BusinessCirclesSearchResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHYSearcherService_EShopCoordinatesSearch_InputMessage">
+    <wsdl:part name="parameters" element="tns:EShopCoordinatesSearch" />
+  </wsdl:message>
+  <wsdl:message name="IHYSearcherService_EShopCoordinatesSearch_OutputMessage">
+    <wsdl:part name="parameters" element="tns:EShopCoordinatesSearchResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHYSearcherService_EShopRandomSearch_InputMessage">
+    <wsdl:part name="parameters" element="tns:EShopRandomSearch" />
+  </wsdl:message>
+  <wsdl:message name="IHYSearcherService_EShopRandomSearch_OutputMessage">
+    <wsdl:part name="parameters" element="tns:EShopRandomSearchResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHYSearcherService_UpdateIndexItems_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateIndexItems" />
+  </wsdl:message>
+  <wsdl:message name="IHYSearcherService_UpdateIndexItems_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateIndexItemsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHYSearcherService_DeleteIndexItems_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteIndexItems" />
+  </wsdl:message>
+  <wsdl:message name="IHYSearcherService_DeleteIndexItems_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteIndexItemsResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IHYSearcherService">
+    <wsdl:operation name="HYKeywordSearch">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHYSearcherService/HYKeywordSearch" message="tns:IHYSearcherService_HYKeywordSearch_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHYSearcherService/HYKeywordSearchResponse" message="tns:IHYSearcherService_HYKeywordSearch_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="HYParentSearch">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHYSearcherService/HYParentSearch" message="tns:IHYSearcherService_HYParentSearch_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHYSearcherService/HYParentSearchResponse" message="tns:IHYSearcherService_HYParentSearch_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="HYSubSearch">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHYSearcherService/HYSubSearch" message="tns:IHYSearcherService_HYSubSearch_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHYSearcherService/HYSubSearchResponse" message="tns:IHYSearcherService_HYSubSearch_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RangeTypeSearch">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHYSearcherService/RangeTypeSearch" message="tns:IHYSearcherService_RangeTypeSearch_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHYSearcherService/RangeTypeSearchResponse" message="tns:IHYSearcherService_RangeTypeSearch_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RangeTypeSearchByKeys">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHYSearcherService/RangeTypeSearchByKeys" message="tns:IHYSearcherService_RangeTypeSearchByKeys_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHYSearcherService/RangeTypeSearchByKeysResponse" message="tns:IHYSearcherService_RangeTypeSearchByKeys_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RangeCategorySearch">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHYSearcherService/RangeCategorySearch" message="tns:IHYSearcherService_RangeCategorySearch_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHYSearcherService/RangeCategorySearchResponse" message="tns:IHYSearcherService_RangeCategorySearch_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="OwnerSearch">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHYSearcherService/OwnerSearch" message="tns:IHYSearcherService_OwnerSearch_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHYSearcherService/OwnerSearchResponse" message="tns:IHYSearcherService_OwnerSearch_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="OwnerImageSearch">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHYSearcherService/OwnerImageSearch" message="tns:IHYSearcherService_OwnerImageSearch_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHYSearcherService/OwnerImageSearchResponse" message="tns:IHYSearcherService_OwnerImageSearch_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CompanySearch">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHYSearcherService/CompanySearch" message="tns:IHYSearcherService_CompanySearch_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHYSearcherService/CompanySearchResponse" message="tns:IHYSearcherService_CompanySearch_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CompanyTempSearch">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHYSearcherService/CompanyTempSearch" message="tns:IHYSearcherService_CompanyTempSearch_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHYSearcherService/CompanyTempSearchResponse" message="tns:IHYSearcherService_CompanyTempSearch_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CompanyImageSearch">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHYSearcherService/CompanyImageSearch" message="tns:IHYSearcherService_CompanyImageSearch_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHYSearcherService/CompanyImageSearchResponse" message="tns:IHYSearcherService_CompanyImageSearch_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CompanySearchByOwner">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHYSearcherService/CompanySearchByOwner" message="tns:IHYSearcherService_CompanySearchByOwner_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHYSearcherService/CompanySearchByOwnerResponse" message="tns:IHYSearcherService_CompanySearchByOwner_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="BusinessCirclesSearch">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHYSearcherService/BusinessCirclesSearch" message="tns:IHYSearcherService_BusinessCirclesSearch_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHYSearcherService/BusinessCirclesSearchResponse" message="tns:IHYSearcherService_BusinessCirclesSearch_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="EShopCoordinatesSearch">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHYSearcherService/EShopCoordinatesSearch" message="tns:IHYSearcherService_EShopCoordinatesSearch_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHYSearcherService/EShopCoordinatesSearchResponse" message="tns:IHYSearcherService_EShopCoordinatesSearch_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="EShopRandomSearch">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHYSearcherService/EShopRandomSearch" message="tns:IHYSearcherService_EShopRandomSearch_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHYSearcherService/EShopRandomSearchResponse" message="tns:IHYSearcherService_EShopRandomSearch_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateIndexItems">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHYSearcherService/UpdateIndexItems" message="tns:IHYSearcherService_UpdateIndexItems_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHYSearcherService/UpdateIndexItemsResponse" message="tns:IHYSearcherService_UpdateIndexItems_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteIndexItems">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHYSearcherService/DeleteIndexItems" message="tns:IHYSearcherService_DeleteIndexItems_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHYSearcherService/DeleteIndexItemsResponse" message="tns:IHYSearcherService_DeleteIndexItems_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_IHYSearcherService" type="tns:IHYSearcherService">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="HYKeywordSearch">
+      <soap:operation soapAction="http://tempuri.org/IHYSearcherService/HYKeywordSearch" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="HYParentSearch">
+      <soap:operation soapAction="http://tempuri.org/IHYSearcherService/HYParentSearch" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="HYSubSearch">
+      <soap:operation soapAction="http://tempuri.org/IHYSearcherService/HYSubSearch" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RangeTypeSearch">
+      <soap:operation soapAction="http://tempuri.org/IHYSearcherService/RangeTypeSearch" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RangeTypeSearchByKeys">
+      <soap:operation soapAction="http://tempuri.org/IHYSearcherService/RangeTypeSearchByKeys" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RangeCategorySearch">
+      <soap:operation soapAction="http://tempuri.org/IHYSearcherService/RangeCategorySearch" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="OwnerSearch">
+      <soap:operation soapAction="http://tempuri.org/IHYSearcherService/OwnerSearch" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="OwnerImageSearch">
+      <soap:operation soapAction="http://tempuri.org/IHYSearcherService/OwnerImageSearch" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CompanySearch">
+      <soap:operation soapAction="http://tempuri.org/IHYSearcherService/CompanySearch" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CompanyTempSearch">
+      <soap:operation soapAction="http://tempuri.org/IHYSearcherService/CompanyTempSearch" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CompanyImageSearch">
+      <soap:operation soapAction="http://tempuri.org/IHYSearcherService/CompanyImageSearch" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CompanySearchByOwner">
+      <soap:operation soapAction="http://tempuri.org/IHYSearcherService/CompanySearchByOwner" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BusinessCirclesSearch">
+      <soap:operation soapAction="http://tempuri.org/IHYSearcherService/BusinessCirclesSearch" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EShopCoordinatesSearch">
+      <soap:operation soapAction="http://tempuri.org/IHYSearcherService/EShopCoordinatesSearch" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EShopRandomSearch">
+      <soap:operation soapAction="http://tempuri.org/IHYSearcherService/EShopRandomSearch" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateIndexItems">
+      <soap:operation soapAction="http://tempuri.org/IHYSearcherService/UpdateIndexItems" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteIndexItems">
+      <soap:operation soapAction="http://tempuri.org/IHYSearcherService/DeleteIndexItems" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="HYSearcherService">
+    <wsdl:port name="BasicHttpBinding_IHYSearcherService" binding="tns:BasicHttpBinding_IHYSearcherService">
+      <soap:address location="http://data.edushi.com/SearchData/Services/HYSearcherService.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

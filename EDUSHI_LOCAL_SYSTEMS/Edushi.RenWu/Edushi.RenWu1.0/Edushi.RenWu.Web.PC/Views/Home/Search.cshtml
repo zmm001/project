@@ -1,0 +1,43 @@
+﻿@model Edushi.RenWu.Web.PC.Models.SearchModel
+@{
+    Layout = null;
+}
+<div @Html.Raw(Model.IsIndex ? "class=\"search-bar mb15\"" : "class=\"search-bar mb30\"")>
+    <input type="text" id="search_text" placeholder="请输入人物名称" value="@Model.KeyWord">
+    <a href="javascript:void(0);" class="search-btn"><i class="search-icon"></i><span>搜索</span></a>
+    @if (Model.HotRanking != null && Model.HotRanking.Any())
+    {
+        <div class="hot">
+            <span>热门排行：</span>
+            @foreach (var item in Model.HotRanking)
+            {
+                <a href="@item.Url" target="_blank">@Html.Raw(item.Title)</a>
+            }
+        </div>
+    }
+
+</div>
+
+<script>
+    $(function () {
+        document.onkeydown = function (e) {
+            if (document.activeElement.id == "search_text") {
+                var ev = document.all ? window.event : e;
+                if (ev.keyCode == 13) {
+                    toSearch();
+                }
+            }
+        }
+
+        $(".search-btn").click(function () {
+            toSearch();
+        });
+
+        function toSearch() {
+            var text = $("#search_text").val();
+            if (text != "") {
+                location.href = "/renwu/info/ck" + encodeURIComponent(text) + ".html";
+            }
+        }
+    });
+</script>

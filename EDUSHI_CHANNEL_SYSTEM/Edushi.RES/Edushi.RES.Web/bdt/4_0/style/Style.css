@@ -1,0 +1,94 @@
+/*-------------------  弹出窗口  --------------------------*/
+.windows{ width:740px; height:520px; border:solid 1px #becca8; padding:10px;  padding:15px;}
+.windows a{ text-decoration:underline; color:#351fd1}
+.windows .title{ border-bottom:solid 2px #65add5; height:35px;}
+.windows .title .left{ float:left; font:bold 16px "微软雅黑";}
+.windows .close{ float:right; background:url(../images/btn.jpg) no-repeat -115px -30px; width:19px; height:19px; margin-right:20px;}
+.windows .text{ margin:15px 0 0 10px; overflow:hidden;}
+.win_s{ margin-bottom:10px;}
+.win_s input,.win_s a,.win_s span{ display:block; float:left; margin-right:10px;}
+.win_s input{ height:22px; width:280px;}
+.win_s  .a14{ background:url(../images/btn.jpg) no-repeat -77px -179px; width:70px; height:21px;}
+.win_select{ padding-top:10px;}
+.win_c{ width:700px; margin-top:10px;}
+.win_c .left,.win_c .right{ float:left;}
+.win_c .left{ width:455px; height:310px; margin-right:15px; display:inline;}
+.win_c .left img{ width:455px; height:310px;}
+.win_c .right{ width:230px; overflow:hidden;}
+.qh_city{ height:22px; border-bottom: solid 1px #999;}
+.dq_city{ float:left; font-weight:bold; color:#000;}
+.xz_city { float:right; background:url(../images/btn.jpg) no-repeat 55PX -442px; padding-right:20px;}
+.sl{ margin-top:10px; line-height:22px; color:#000;}
+.sl p{ line-height:22px;}
+
+.win_btn{ background:#f3fbf0; padding-left:200px; height:42px; margin-top:10px;  padding-top:20px;}
+.win_btn a,.win_btn input,.win_btn label{ display:block; float:left; margin-right:5px;}
+.a15{ background:url(../images/btn.jpg) no-repeat 0 -58px; width:116px; height:28px; margin-left:15px;}
+.win_btn input ,.win_btn label{ margin-top:5px;}
+
+.mores{ font-size:12px; font-weight:normal;}
+
+
+/*-------------------  弹出窗口  --------------------------*/
+.windows{ width:740px; height:520px; border:solid 1px #becca8; padding:10px;  padding:15px;}
+.windows a{ text-decoration:underline; color:#351fd1}
+.windows .title{ border-bottom:solid 2px #65add5; height:35px;}
+.windows .title .left{ float:left; font:bold 16px "微软雅黑";}
+.windows .close{ float:right; background:url(../images/btn.jpg) no-repeat -115px -30px; width:19px; height:19px; margin-right:20px;}
+.windows .text{ margin:15px 0 0 10px; overflow:hidden;}
+.win_s{ margin-bottom:10px;}
+.win_s input,.win_s a,.win_s span{ display:block; float:left; margin-right:10px;}
+.win_s input{ height:22px; width:290px; line-height:22px; font-size:13px;}
+.win_s  .a14{ background:url(../images/btn.jpg) no-repeat -77px -179px; width:70px; height:21px;}
+.win_select{ padding-top:10px;}
+.win_select input{ display:inline-block; vertical-align:middle;}
+.win_c{ width:700px; margin-top:10px;}
+.win_c .left,.win_c .right{ float:left;}
+.win_c .left{ width:455px; height:310px; margin-right:15px; display:inline;}
+.win_c .left img{ width:455px; height:310px;}
+.win_c .right{ width:230px; overflow:hidden;}
+.qh_city{ height:22px; border-bottom: solid 1px #999;}
+.dq_city{ float:left; font-weight:bold; color:#000;}
+.xz_city { float:right; background:url(../images/btn.jpg) no-repeat 55PX -442px; padding-right:20px;}
+.sl{ margin-top:10px; line-height:22px; color:#000;}
+.sl p{ line-height:22px;}
+
+.win_btn{ background:#f3fbf0; padding-left:200px; height:42px; margin-top:10px;  padding-top:20px;}
+.win_btn a,.win_btn input,.win_btn label{ display:block; float:left; margin-right:5px;}
+.a15{ background:url(../images/btn.jpg) no-repeat 0 -58px; width:116px; height:28px; margin-left:15px;}
+.win_btn input ,.win_btn label{ margin-top:5px;}
+
+/*插入地图右侧 */
+#divContent{ line-height:20px;}
+#divResult{ padding:10px 0px 0px 0px;}
+#loading{ line-height:16px; padding:10px; text-align:center;display:none;}
+#loading img{ display:inline-block; vertical-align:middle;}
+
+
+.btnsty{ background:url(../images/btn.jpg) 0px -179px; width:76px; height:25px; line-height:25px; overflow:hidden; text-align:center;}
+
+.news { background:#fffcf0; margin-bottom:10px; padding:8px; clear:both;}
+.news ul{ clear:both; zoom:1}
+.imagenews{ float:left; padding-right:8px; width:235px;}
+.txtnews{ float:right; width:230px;}
+.txtnews h1{width:230px;overflow: hidden;text-overflow: ellipsis;white-space: nowrap; }
+h1{ text-align:center; font-size:14px; padding:0;}
+.jtxt{ margin:5px 0 10px 0; line-height:16px;}
+.jtxt a{ color:#666; text-decoration:underline;}
+.newslist{clear:both; zoom:1; line-height:20px; margin-top:5px}
+.newslist li{ width:230px; padding-right:10px; float:left; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;}
+ul.help li{height:30px}
+
+.ph{ margin:0 0 10px 3px; clear:both;}
+.ph .title{ background:url(../images/zx_bar.png) no-repeat; height:36px; font-family:微软雅黑; padding-left:15px; font-size:16px; line-height:32px; color:#333}
+.phbd{ padding:10px 10px 0 30px; border:1px solid #ddd; background:url(../images/num.png) no-repeat 10px 12px;}
+.phbd p{ padding-bottom:16px; line-height:20px}
+.answer .tt{font-family:微软雅黑; font-size:16px; line-height:20px; color:#369}
+.fbbtn{padding:2px 4px; height:30px;}
+.fbbtn a{ background:url(../images/btn.jpg) no-repeat 0 0; width:100px; height:30px; display:block; float:left; line-height:28px; font-family:微软雅黑; font-size:14px; text-align:center; color:#fff; font-weight:bold;}
+
+.zxbd{ background:#fff; padding:10px; float:left}
+
+.interest{ font-size:14px;}
+.interest h2{ color:#000; font-size:16px; margin-bottom:5px;}
+.interest p{ padding-left:15px; background: url(../images/dian.png) no-repeat 5px center}

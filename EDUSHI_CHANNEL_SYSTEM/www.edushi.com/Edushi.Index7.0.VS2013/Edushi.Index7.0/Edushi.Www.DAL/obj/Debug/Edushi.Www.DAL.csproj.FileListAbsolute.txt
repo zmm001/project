@@ -1,0 +1,14 @@
+E:\TFS192.168.100.212\EDUSHI_CHANNEL_SYSTEM\www.edushi.com\Edushi.Index7.0.VS2013\Edushi.Index7.0\Edushi.Www.DAL\bin\Debug\Edushi.Www.DAL.dll
+E:\TFS192.168.100.212\EDUSHI_CHANNEL_SYSTEM\www.edushi.com\Edushi.Index7.0.VS2013\Edushi.Index7.0\Edushi.Www.DAL\bin\Debug\Edushi.Www.DAL.pdb
+E:\TFS192.168.100.212\EDUSHI_CHANNEL_SYSTEM\www.edushi.com\Edushi.Index7.0.VS2013\Edushi.Index7.0\Edushi.Www.DAL\bin\Debug\EDC.Framework.dll
+E:\TFS192.168.100.212\EDUSHI_CHANNEL_SYSTEM\www.edushi.com\Edushi.Index7.0.VS2013\Edushi.Index7.0\Edushi.Www.DAL\bin\Debug\Edushi.MongoDB.dll
+E:\TFS192.168.100.212\EDUSHI_CHANNEL_SYSTEM\www.edushi.com\Edushi.Index7.0.VS2013\Edushi.Index7.0\Edushi.Www.DAL\bin\Debug\Edushi.Www.Model.dll
+E:\TFS192.168.100.212\EDUSHI_CHANNEL_SYSTEM\www.edushi.com\Edushi.Index7.0.VS2013\Edushi.Index7.0\Edushi.Www.DAL\bin\Debug\MongoDB.Bson.dll
+E:\TFS192.168.100.212\EDUSHI_CHANNEL_SYSTEM\www.edushi.com\Edushi.Index7.0.VS2013\Edushi.Index7.0\Edushi.Www.DAL\bin\Debug\MongoDB.Driver.dll
+E:\TFS192.168.100.212\EDUSHI_CHANNEL_SYSTEM\www.edushi.com\Edushi.Index7.0.VS2013\Edushi.Index7.0\Edushi.Www.DAL\bin\Debug\Enyim.Caching.dll
+E:\TFS192.168.100.212\EDUSHI_CHANNEL_SYSTEM\www.edushi.com\Edushi.Index7.0.VS2013\Edushi.Index7.0\Edushi.Www.DAL\bin\Debug\log4net.dll
+E:\TFS192.168.100.212\EDUSHI_CHANNEL_SYSTEM\www.edushi.com\Edushi.Index7.0.VS2013\Edushi.Index7.0\Edushi.Www.DAL\bin\Debug\Edushi.MongoDB.pdb
+E:\TFS192.168.100.212\EDUSHI_CHANNEL_SYSTEM\www.edushi.com\Edushi.Index7.0.VS2013\Edushi.Index7.0\Edushi.Www.DAL\bin\Debug\Edushi.Www.Model.pdb
+E:\TFS192.168.100.212\EDUSHI_CHANNEL_SYSTEM\www.edushi.com\Edushi.Index7.0.VS2013\Edushi.Index7.0\Edushi.Www.DAL\obj\Debug\Edushi.Www.DAL.csprojResolveAssemblyReference.cache
+E:\TFS192.168.100.212\EDUSHI_CHANNEL_SYSTEM\www.edushi.com\Edushi.Index7.0.VS2013\Edushi.Index7.0\Edushi.Www.DAL\obj\Debug\Edushi.Www.DAL.dll
+E:\TFS192.168.100.212\EDUSHI_CHANNEL_SYSTEM\www.edushi.com\Edushi.Index7.0.VS2013\Edushi.Index7.0\Edushi.Www.DAL\obj\Debug\Edushi.Www.DAL.pdb

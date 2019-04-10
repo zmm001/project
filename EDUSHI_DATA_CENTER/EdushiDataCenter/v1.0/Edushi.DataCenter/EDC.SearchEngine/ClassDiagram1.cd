@@ -1,0 +1,751 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="EDC.SearchEngine.Action.EncodeAction" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="20.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAQAAgAAAAAAAAAAAAAAAAAAAAAAEAA=</HashCode>
+      <FileName>Action\DECodeHandler.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="EDC.SearchEngine.Action.DecodeAction" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="17.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAQAAgAAAAAAAAAAAAAAAAAAAAAAEAA=</HashCode>
+      <FileName>Action\DECodeHandler.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="EDC.SearchEngine.Handler.DoubleHandler" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="19" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACEAQAAAAAEAQAAgAAAAAAAAAAAAAAAAAAAAAAAEA=</HashCode>
+      <FileName>Action\DoubleHandler.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="EDC.SearchEngine.IntHandler" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="15.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAABCAAAAQAAgAAAAAAAAAABAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Action\IntHandler.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="EDC.SearchEngine.QueryTypeVal" Collapsed="true">
+    <Position X="19" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AgAAAAAAAAQAAEAAAAAAAABgEAAAAABAAABAAAAgBAA=</HashCode>
+      <FileName>ConstVal.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="EDC.SearchEngine.FilterItem" Collapsed="true">
+    <Position X="27.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAAgAAAAAAA=</HashCode>
+      <FileName>IFilter.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="EDC.SearchEngine.AbstractIndexAdapter" Collapsed="true">
+    <Position X="3.75" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AgBAAAQABEECAABACAAAAAQAAAAAAAAAggIDCAIAAAA=</HashCode>
+      <FileName>Index\AbstractIndexAdapter.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="EDC.SearchEngine.IndexUpdate" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="26" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAgAAAQAIACAlAAAAAUAEAAiAAABACgAAAACAAAAAgA=</HashCode>
+      <FileName>Index\IndexUpdate.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="EDC.SearchEngine.MultiThreadIndexAdapter" Collapsed="true">
+    <Position X="0.5" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CBAAIAQACAAkexIGAAAgAAgCAiQAhVoAACgGgkEAChI=</HashCode>
+      <FileName>Index\MultiThreadIndexAdapter.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="EDC.SearchEngine.SingleThreadIndexAdapter" Collapsed="true">
+    <Position X="2.75" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>DBAAIAQACAAgOxIGAAAgAAACAiQAhUoAACgGgEUAChI=</HashCode>
+      <FileName>Index\SingleThreadIndexAdapter.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="EDC.SearchEngine.IndexDataProviderFactory" Collapsed="true">
+    <Position X="24.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAIAAAAAAAAAAAAAAAAAAAQAAAAAAAAAA=</HashCode>
+      <FileName>IndexDataProviderFactory.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="EDC.SearchEngine.AbstractSearchAdapter" Collapsed="true">
+    <Position X="10.75" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AUAABQAEBAEAKQAAAABABASgQIAAAicAgggRABQAAgk=</HashCode>
+      <FileName>Search\AbstractSearchAdapter.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="EDC.SearchEngine.ConfigManagement" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="27.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAgAAAAAICAAAAAAAAAAgAAAEAAAAAAAAABAAAAIAAA=</HashCode>
+      <FileName>SearchEngineCore.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="EDC.SearchEngine.ConfigContext" Collapsed="true">
+    <Position X="26" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAIAABAAAAAAEAAAQAAAAABAAAAABAAAAAAAA=</HashCode>
+      <FileName>SearchEngineCore.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="EDC.SearchEngine.ActionContext" Collapsed="true">
+    <Position X="17.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAIAAAAAAACAAAAAAAAAAAAAAAAAACAAAAAAA=</HashCode>
+      <FileName>SearchEngineCore.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="EDC.SearchEngine.FormulaContext" Collapsed="true">
+    <Position X="15.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAA=</HashCode>
+      <FileName>SearchEngineCore.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="EDC.SearchEngine.SearchContext" Collapsed="true">
+    <Position X="26" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQAAAAAAAAAAIAAACAAAABAAQAAQAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>SearchEngineCore.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="EDC.SearchEngine.Segment" Collapsed="true">
+    <Position X="19" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AgAAAAAAAACAAAAAAAAAAAaAAAAAAAQAAAAAAAQAAAA=</HashCode>
+      <FileName>SearchEngineCore.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="EDC.SearchEngine.QueryContext" Collapsed="true">
+    <Position X="15.5" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAABQAAAAIAAAAASAAAAAAiAA=</HashCode>
+      <FileName>SearchEngineCore.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="EDC.SearchEngine.QueryField" Collapsed="true">
+    <Position X="17.25" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAQAAAAIAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>SearchEngineCore.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="EDC.SearchEngine.SortContext" Collapsed="true">
+    <Position X="22.5" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAQAAABAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>SearchEngineCore.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="EDC.SearchEngine.KeyWordHandleItem" Collapsed="true">
+    <Position X="19" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAACAAAAAA=</HashCode>
+      <FileName>SearchEngineCore.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="EDC.SearchEngine.MappingContext" Collapsed="true">
+    <Position X="15.5" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BAAAAAAAAAAAAAKAAAAAAAAAAAAAAAAAACACAgAAAAA=</HashCode>
+      <FileName>SearchEngineCore.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="EDC.SearchEngine.MappIngItem" Collapsed="true">
+    <Position X="17.25" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAABAAAAAIAAAAQAAAAAAAAAAEAQEAAAA=</HashCode>
+      <FileName>SearchEngineCore.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="EDC.SearchEngine.ResultContext" Collapsed="true">
+    <Position X="22.5" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAQAAAAAAAABAACAAAgAAAAAAAACAAAAAAAAAAAAA=</HashCode>
+      <FileName>SearchEngineCore.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="EDC.SearchEngine.ResultTable" Collapsed="true">
+    <Position X="24.25" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAgAAAAAACCAAAAAQAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>SearchEngineCore.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="EDC.SearchEngine.ResultColumnItem" Collapsed="true">
+    <Position X="20.75" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAFAAAAAAAAAAAAAAAAACAAAAAA=</HashCode>
+      <FileName>SearchEngineCore.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="EDC.SearchEngine.SearchEngineEventArgs&lt;T&gt;" Collapsed="true">
+    <Position X="27.75" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgIAAAAAA=</HashCode>
+      <FileName>SearchEngineEventArgs.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="EDC.SearchEngine.SearchParam" Collapsed="true">
+    <Position X="17.25" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAEAAAAgABAIACAAAAAAAAAAAAAAAEAAAAAABAAA=</HashCode>
+      <FileName>SearchParam.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="EDC.SearchEngine.Analysis.ICTCLASAnalyzer" Collapsed="true">
+    <Position X="19" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAABAAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Analysis\ICTCLASAnalyzer.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="EDC.SearchEngine.Analysis.ICTCLASContext" Collapsed="true">
+    <Position X="20.75" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAACAAACAAAAAAEAgAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Analysis\ICTCLASContext.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="EDC.SearchEngine.Analysis.ICTCLASTokenizer" Collapsed="true">
+    <Position X="22.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AgIAAAAAAAAABAAABAAAAAggAAAAAAAgIADAAAIAAAA=</HashCode>
+      <FileName>Analysis\ICTCLASTokenizer .cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="EDC.SearchEngine.ANN.AbstractNearson&lt;T&gt;" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="15.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAgAAIAEACAACAAAAEABAAAAAAAAAAAAA=</HashCode>
+      <FileName>ANN\AbstractNearson.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="EDC.SearchEngine.ANN.NearsonNetwork" Collapsed="true">
+    <Position X="20.75" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ANN\NearsonNetwork.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="EDC.SearchEngine.Convertor.ConvertorBase" Collapsed="true">
+    <Position X="2.75" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAABAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Convertor\ConvertorBase.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="EDC.SearchEngine.Convertor.SortConvertor" Collapsed="true">
+    <Position X="0.5" Y="7.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAgAAAAAAAAAAAAAAAAAAACAAAAAAAQAAACA=</HashCode>
+      <FileName>Convertor\SortConvertor.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="EDC.SearchEngine.Convertor.StandConvertor" Collapsed="true">
+    <Position X="2.75" Y="7.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAgAAAAAAAAAAAAAAAAAAACAAAAAAAQAAAAA=</HashCode>
+      <FileName>Convertor\StandConvertor.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="EDC.SearchEngine.Convertor.TypeStatConvertor" Collapsed="true">
+    <Position X="5" Y="7.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAgAAAAAAAAAAAAAAAAAAACAAAAAAAQAAAAA=</HashCode>
+      <FileName>Convertor\TypeStatConvertor.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="EDC.SearchEngine.DataProvider.BizDataProvider" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="20.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AEAAABAAECAAAAIAAAIAAAAAAAAAAAAAACACAAAAAAA=</HashCode>
+      <FileName>DataProvider\BizDataProvider.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="EDC.SearchEngine.DataProvider.BusDataProvider" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="24.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AEAAAFAAEAQEBQIAABIAAAAABAAgQAgAACASAABAAAA=</HashCode>
+      <FileName>DataProvider\BusDataProvider.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="EDC.SearchEngine.DataProvider.EShopDataProvider" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="22.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gEAAABAAECAAIAIAAQIAAAAAAAAAAIAAACACAAAAAAA=</HashCode>
+      <FileName>DataProvider\EShopDataProvider.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="EDC.SearchEngine.DataProvider.IndexUpdateFlagHelper" Collapsed="true">
+    <Position X="27.75" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAA=</HashCode>
+      <FileName>DataProvider\IndexUpdateFlagHelper.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="EDC.SearchEngine.DataProvider.KeywordDataProvider" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="17.25" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AEAAABAAECAAAAIAAAIAAAAAAAAAAAAAACACAAAAAAA=</HashCode>
+      <FileName>DataProvider\KeywordDataProvider.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="EDC.SearchEngine.DataProvider.LocalDataProvider" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="20.75" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BEAAABAAMCAAAhIAARMAAAAAAAACAIAAACACCEAIAgA=</HashCode>
+      <FileName>DataProvider\LocalDataProvider.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="EDC.SearchEngine.DataProvider.Map2DDataProvider" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="22.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AEAAABAAECAAAAIAAAIAAAAAAAAAAAAAACACAAAAAAA=</HashCode>
+      <FileName>DataProvider\Map2DDataProvider.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="EDC.SearchEngine.DataProvider.Map6DataProvider" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="24.25" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AGAEABAAECEAAAIAAAoBAAAABAACAJDAQCACAAAACAA=</HashCode>
+      <FileName>DataProvider\Map6DataProvider.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="EDC.SearchEngine.DataProvider.MapDataProvider" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="26" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AGAEABAAECEAAAIAAAoBAAAABAACAJDAQCACAAAACAA=</HashCode>
+      <FileName>DataProvider\MapDataProvider.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="EDC.SearchEngine.DataProvider.MapMergeDataProvider" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="27.75" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AEAAABAAECAAAAIAAAIAAAAAAAAAAAAAACACAAAAAAA=</HashCode>
+      <FileName>DataProvider\MapMergeDataProvider.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="EDC.SearchEngine.DataProvider.ProductDataProvider" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="27.75" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AEAAABAAECAAIAIAAQIAAAAAAAAAAIAAACACAAAAAAA=</HashCode>
+      <FileName>DataProvider\ProductDataProvider.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="EDC.SearchEngine.DataProvider.ShopMapDataProvider" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="20.75" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gEAAABAAMCAAAgIAAQIAAAAAAAAAAIAAACACCAAAAAA=</HashCode>
+      <FileName>DataProvider\ShopMapDataProvider.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="EDC.SearchEngine.DataProvider.TopicDataProvider" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="15.5" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AEAAABAAEAAAAAIAAAIAAAIAAAAAAAAAACACAAAAAAA=</HashCode>
+      <FileName>DataProvider\TopicDataProvider.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="EDC.SearchEngine.DataProvider.TypeDataProvider" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="17.25" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AEAAABAAECAAIAIAAAIAAAAAAAAAAAAAACACAAAAAAA=</HashCode>
+      <FileName>DataProvider\TypeDataProvider.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="EDC.SearchEngine.DataProvider.YellowPageDataProvider" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="20.75" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AEAAABAAECAAAAIAAAIAAAAAAAAAAAAAACACAAAAAAA=</HashCode>
+      <FileName>DataProvider\YellowPageDataProvider.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="EDC.SearchEngine.Filter.StandFilter" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="26" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAABAAAABAAAAAAAAAAAA=</HashCode>
+      <FileName>Filter\StandFilter.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="EDC.SearchEngine.Formula.ArithmeticOperation" Collapsed="true">
+    <Position X="19" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AEAAAAAAAABAgAAAYAUCAAQAAAAAAAAAAABAAABASAA=</HashCode>
+      <FileName>Formula\Expression.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="EDC.SearchEngine.Formula.OptData" Collapsed="true">
+    <Position X="26" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAQAAAAAABAAAAAAAAAAAAQ=</HashCode>
+      <FileName>Formula\Expression.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="EDC.SearchEngine.Formula.ExpressionParser" Collapsed="true">
+    <Position X="24.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAgAAAAAAAAAAAAAAAAAgAAAAQAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Formula\Expression.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="EDC.SearchEngine.Formula.StandExpression" Collapsed="true">
+    <Position X="24.25" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAAAACAAAAAAAQAAAAAAEAAAAAQAAAIAIA=</HashCode>
+      <FileName>Formula\Expression.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="EDC.SearchEngine.Formula.FactorOperation" Collapsed="true">
+    <Position X="5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAEAAAAAAAAAAQAAAAAAAAAAAAAAAAACAQ=</HashCode>
+      <FileName>Formula\FactorOperation.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="EDC.SearchEngine.Formula.NumberOperation" Collapsed="true">
+    <Position X="9.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABCAAAA=</HashCode>
+      <FileName>Formula\FactorOperation.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="EDC.SearchEngine.Formula.DateOpeartion" Collapsed="true">
+    <Position X="0.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABACAAAA=</HashCode>
+      <FileName>Formula\FactorOperation.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="EDC.SearchEngine.Formula.RegularOpeartion" Collapsed="true">
+    <Position X="2.75" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAQA=</HashCode>
+      <FileName>Formula\FactorOperation.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="EDC.SearchEngine.Formula.ActionOpeartion" Collapsed="true">
+    <Position X="5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIACAAAA=</HashCode>
+      <FileName>Formula\FactorOperation.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="EDC.SearchEngine.Formula.AppointOpeartion" Collapsed="true">
+    <Position X="7.25" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAA=</HashCode>
+      <FileName>Formula\FactorOperation.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="EDC.SearchEngine.Formula.StandFormula" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="27.75" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAgAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAgAAAAI=</HashCode>
+      <FileName>Formula\StandFormula.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="EDC.SearchEngine.Index.BuildItem" Collapsed="true">
+    <Position X="22.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAQACAABAAAAAAAAAABAAAABAAgEAAAAAAAAAAA=</HashCode>
+      <FileName>Index\BuildItem.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="EDC.SearchEngine.Index.IncrementIndexAdapter" Collapsed="true">
+    <Position X="5" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CBAAIAQACAQgOxIGAAAgAAACAiQAhUoAACgGAEUACgI=</HashCode>
+      <FileName>Index\IncrementIndexAdapter.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="EDC.SearchEngine.Index.ThreadPoolIndexAdapter" Collapsed="true">
+    <Position X="7.25" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>DBAAMAQACAAgOxIGAAAgAAACAiQAhUoAASgGgEUADhI=</HashCode>
+      <FileName>Index\ThreadPoolIndexAdapter.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="EDC.SearchEngine.Index.UpdateConfig" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="19" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABAAIAAAACAABBAAAACIQAAAABAAAAAAogACEYAAAQA=</HashCode>
+      <FileName>Index\UpdateConfig.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="EDC.SearchEngine.Reflect.FastActivator" Collapsed="true">
+    <Position X="26" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAACAA=</HashCode>
+      <FileName>Reflect\FastActivator.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="EDC.SearchEngine.Reflect.HashCodeCombiner" Collapsed="true">
+    <Position X="17.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAIAAAAAAAAAAAAQQAAAEAAAAAAAAAAAAAABAAAAAAA=</HashCode>
+      <FileName>Reflect\HashCodeCombiner.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="EDC.SearchEngine.Reflect.MultiArgObjectFactory" Collapsed="true">
+    <Position X="19" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAABAAAAAAAAAgAAAAIAACAAAAAAAAAAAAAAgAAAAA=</HashCode>
+      <FileName>Reflect\MultiArgObjectFactory.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="EDC.SearchEngine.Reflect.NoArgsObjectFactory" Collapsed="true">
+    <Position X="22.5" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAABAAAAAAAABAAAAAIAACAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Reflect\NoArgsObjectFactory.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="EDC.SearchEngine.Reflect.ObjectFactoryHelper" Collapsed="true">
+    <Position X="24.25" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAQACAAAIAAAAAgAAAgAAAAAAAAAAEACAAQCAAAAAA=</HashCode>
+      <FileName>Reflect\ObjectFactoryHelper.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="EDC.SearchEngine.Search.DistributedSearchAdapter" Collapsed="true">
+    <Position X="8.5" Y="7.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQAAAIAACgAAAEAAAAAgAAAAAhABAAgAAAgCAQAgAAA=</HashCode>
+      <FileName>Search\DistributedSearchAdapter.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="EDC.SearchEngine.Search.StandSearchAdapter" Collapsed="true">
+    <Position X="10.75" Y="7.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQAAAIAAKgEAAEAABAAgAAAAAhABAAgAAAgCAQAgAAA=</HashCode>
+      <FileName>Search\StandSearchAdapter.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="EDC.SearchEngine.Search.StatSearchAdapter">
+    <Position X="13" Y="7.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQAAAIAAKgAAAEAAJAAgAAAAAhABAAgAAAgCAQAgAAA=</HashCode>
+      <FileName>Search\StatSearchAdapter.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="EDC.SearchEngine.Task.CreateIndex" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="15.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAgQAAAAAAAAAAgAAAAAAAEAAAAACAAAAAAA=</HashCode>
+      <FileName>Task\CreateIndex.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="EDC.SearchEngine.Utility.SearchHelper" Collapsed="true">
+    <Position X="15.5" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CAAAAAAAAAAAAAACAAAAAEAAQAAAAABAAACAAAAAAAA=</HashCode>
+      <FileName>Utility\SearchHekper.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Struct Name="EDC.SearchEngine.Analysis.ICTCLASStopWords" Collapsed="true">
+    <Position X="15.5" Y="8.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Analysis\ICTCLASStopWords.cs</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Interface Name="EDC.SearchEngine.IAction" Collapsed="true">
+    <Position X="15.5" Y="10" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAQAAgAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>IAction.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="EDC.SearchEngine.IConvertor&lt;T&gt;" Collapsed="true">
+    <Position X="17.25" Y="10" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAgAAAAAAAAAAAAAAAAAAACAAAAAAAQAAAAA=</HashCode>
+      <FileName>IConvertor.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="EDC.SearchEngine.IDataProvider" Collapsed="true">
+    <Position X="19" Y="10" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AEAAABAAEAAAAAIAAAIAAAAAAAAAAAAAACACAAAAAAA=</HashCode>
+      <FileName>IDataProvider.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="EDC.SearchEngine.IFilter" Collapsed="true">
+    <Position X="22.5" Y="10" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAABAAAABAAAAAAAAAAAA=</HashCode>
+      <FileName>IFilter.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="EDC.SearchEngine.IFormula" Collapsed="true">
+    <Position X="24.25" Y="10" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAI=</HashCode>
+      <FileName>IFormula.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="EDC.SearchEngine.IIndexable" Collapsed="true">
+    <Position X="26" Y="10" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CBAAIAQACAAAORIEAAAAAAACAiQABUgAACgGAAMACAI=</HashCode>
+      <FileName>IIndexable.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="EDC.SearchEngine.ISearchable" Collapsed="true">
+    <Position X="20.75" Y="10.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQAAAIAACgAAAEAAAAAAAAAAAhABAAgAAAgAAQAgAAA=</HashCode>
+      <FileName>ISearchable.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="EDC.SearchEngine.ANN.INearson&lt;T&gt;" Collapsed="true">
+    <Position X="15.5" Y="10.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAgAAIAEACAACAAAAEABAAAAAAAAAAAAA=</HashCode>
+      <FileName>ANN\INearson.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="EDC.SearchEngine.ANN.INeuralJunction" Collapsed="true">
+    <Position X="17.25" Y="10.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAQCAAAAAAAAAAAAAAABAAAA=</HashCode>
+      <FileName>ANN\INeuralJunction.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="EDC.SearchEngine.Formula.IFactorOperation" Collapsed="true">
+    <Position X="20.75" Y="10" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAA=</HashCode>
+      <FileName>Formula\FactorOperation.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="EDC.SearchEngine.Reflect.IObjectFacory" Collapsed="true">
+    <Position X="19" Y="10.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Reflect\ObjectInterface.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="EDC.SearchEngine.Reflect.IMultiArgObjectFacory" Collapsed="true">
+    <Position X="27.75" Y="10" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Reflect\ObjectInterface.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Enum Name="EDC.SearchEngine.ANN.NeuronType" Collapsed="true">
+    <Position X="19" Y="11.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAQAAAAAAAAAIAAAAEAAAAAAAAAAAAAAEAAA=</HashCode>
+      <FileName>ANN\NeuronType.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="EDC.SearchEngine.Formula.ExpressionOption" Collapsed="true">
+    <Position X="17.25" Y="11.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAIAEAAAAAAAACAAAQAAAAAAAAAAAQ=</HashCode>
+      <FileName>Formula\FactorOperation.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="EDC.SearchEngine.Options.BuildTypeOption" Collapsed="true">
+    <Position X="15.5" Y="11.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAEAA=</HashCode>
+      <FileName>Options\BuildTypeOption.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="EDC.SearchEngine.Options.RecordStateOPtion" Collapsed="true">
+    <Position X="20.75" Y="11.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAAAAAAAAAAAAAAAAEAAEAAEAAAAAAAAAAAAA=</HashCode>
+      <FileName>Options\RecordStateOPtion.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Delegate Name="EDC.SearchEngine.ActionHandler&lt;T, V&gt;" Collapsed="true">
+    <Position X="15.5" Y="12.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>IAction.cs</FileName>
+    </TypeIdentifier>
+  </Delegate>
+  <Delegate Name="EDC.SearchEngine.BuildStartHandler" Collapsed="true">
+    <Position X="20.75" Y="12.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>SearchEngineEventArgs.cs</FileName>
+    </TypeIdentifier>
+  </Delegate>
+  <Delegate Name="EDC.SearchEngine.BuildSuccessHandler" Collapsed="true">
+    <Position X="22.5" Y="12.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>SearchEngineEventArgs.cs</FileName>
+    </TypeIdentifier>
+  </Delegate>
+  <Delegate Name="EDC.SearchEngine.BuildHandler&lt;T&gt;" Collapsed="true">
+    <Position X="17.25" Y="12.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAQAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>SearchEngineEventArgs.cs</FileName>
+    </TypeIdentifier>
+  </Delegate>
+  <Delegate Name="EDC.SearchEngine.BuildHandler" Collapsed="true">
+    <Position X="19" Y="12.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>SearchEngineEventArgs.cs</FileName>
+    </TypeIdentifier>
+  </Delegate>
+  <Font Name="微软雅黑" Size="9" />
+</ClassDiagram>

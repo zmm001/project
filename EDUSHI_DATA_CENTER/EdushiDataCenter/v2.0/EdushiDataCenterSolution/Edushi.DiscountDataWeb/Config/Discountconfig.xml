@@ -1,0 +1,138 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<configs>
+    <config open="true">
+        <!--商圈数据缓存-->
+        <!--唯一标识-->
+        <key>tagrecommend</key>
+        <!--citycode_zh-chs_{key}-->
+        <memcachedkey>{0}_{1}_tagrecommend</memcachedkey>
+        <!--day,hour,minute-->
+        <mecachedtimeunit>hour</mecachedtimeunit>
+        <memcachedspan>1</memcachedspan>
+    </config>
+    <config open="true">
+        <!--唯一标识-->
+        <key>category</key>
+        <!--citycode_zh-chs_{key}-->
+        <memcachedkey>{0}_{1}_category</memcachedkey>
+        <!--day,hour,minute-->
+        <mecachedtimeunit>hour</mecachedtimeunit>
+        <memcachedspan>1</memcachedspan>
+    </config>
+    <config open="true">
+        <!--唯一标识-->
+        <key>remmonddymic</key>
+        <!--citycode_zh-chs_{key}-->
+        <memcachedkey>{0}_{1}_remmonddymic</memcachedkey>
+        <!--day,hour,minute-->
+        <mecachedtimeunit>hour</mecachedtimeunit>
+        <memcachedspan>1</memcachedspan>
+    </config>
+    <config open="true">
+        <!--唯一标识-->
+        <key>landmarkdymic</key>
+        <!--citycode_zh-chs_{key}-->
+        <memcachedkey>{0}_{1}_landmarkdymic</memcachedkey>
+        <!--day,hour,minute-->
+        <mecachedtimeunit>hour</mecachedtimeunit>
+        <memcachedspan>1</memcachedspan>
+    </config>
+
+    <!--折扣频道的数据缓存-->
+    <config open="true">
+        <!--唯一标识-->
+        <key>discountcachezonetype</key>
+        <!--citycode_zh-chs_{key}-->
+        <memcachedkey>{0}_{1}_discountcachezonetype</memcachedkey>
+        <!--day,hour,minute-->
+        <mecachedtimeunit>hour</mecachedtimeunit>
+        <memcachedspan>1</memcachedspan>
+    </config>
+
+    <config open="true">
+        <!--唯一标识-->
+        <key>discountcachetradetype</key>
+        <!--citycode_zh-chs_{key}-->
+        <memcachedkey>{0}_{1}_discountcachetradetype</memcachedkey>
+        <!--day,hour,minute-->
+        <mecachedtimeunit>hour</mecachedtimeunit>
+        <memcachedspan>1</memcachedspan>
+    </config>
+
+    <config open="true">
+        <!--唯一标识-->
+        <key>discounthotkeyword</key>
+        <!--citycode_zh-chs_{key}-->
+        <memcachedkey>{0}_{1}_discounthotkeyword</memcachedkey>
+        <!--day,hour,minute-->
+        <mecachedtimeunit>hour</mecachedtimeunit>
+        <memcachedspan>1</memcachedspan>
+    </config>
+
+    <config open="true">
+        <!--唯一标识-->
+        <key>discountcachemarqueelist</key>
+        <!--citycode_zh-chs_{key}-->
+        <memcachedkey>{0}_{1}_discountcachemarqueelist</memcachedkey>
+        <!--day,hour,minute-->
+        <mecachedtimeunit>hour</mecachedtimeunit>
+        <memcachedspan>1</memcachedspan>
+    </config>
+
+    <config open="true">
+        <!--唯一标识-->
+        <key>alldiscountdata</key>
+        <!--citycode_zh-chs_{key}-->
+        <memcachedkey>{0}_{1}_alldiscountdata</memcachedkey>
+        <!--day,hour,minute-->
+        <mecachedtimeunit>hour</mecachedtimeunit>
+        <memcachedspan>1</memcachedspan>
+    </config>
+
+    <config open="true">
+        <!--唯一标识-->
+        <key>discountalleshopdata</key>
+        <!--citycode_zh-chs_{key}-->
+        <memcachedkey>{0}_{1}_discountalleshopdata</memcachedkey>
+        <!--day,hour,minute-->
+        <mecachedtimeunit>hour</mecachedtimeunit>
+        <memcachedspan>1</memcachedspan>
+    </config>
+
+    <config open="true">
+        <!--唯一标识-->
+        <key>channeltype</key>
+        <!--citycode_zh-chs_{key}-->
+        <memcachedkey>{0}_{1}_channeltype</memcachedkey>
+        <!--day,hour,minute-->
+        <mecachedtimeunit>hour</mecachedtimeunit>
+        <memcachedspan>1</memcachedspan>
+    </config>
+    <config open="true">
+        <!--唯一标识-->
+        <key>eshopdynamic</key>
+        <!--citycode_zh-chs_{key}-->
+        <memcachedkey>{0}_{1}_eshopdynamic_{2}</memcachedkey>
+        <!--day,hour,minute-->
+        <mecachedtimeunit>hour</mecachedtimeunit>
+        <memcachedspan>1</memcachedspan>
+    </config>
+    <config open="true">
+        <!--商圈的城区划分数据-->
+        <key>areadata</key>
+        <!--citycode_zh-chs_{key}-->
+        <memcachedkey>{0}_{1}_areadata</memcachedkey>
+        <!--day,hour,minute-->
+        <mecachedtimeunit>hour</mecachedtimeunit>
+        <memcachedspan>1</memcachedspan>
+    </config>
+    <config open="true">
+        <!--商圈的城区里面商圈数据-->
+        <key>businessaaradata</key>
+        <!--citycode_zh-chs_{key}-->
+        <memcachedkey>{0}_{1}_businessaaradata</memcachedkey>
+        <!--day,hour,minute-->
+        <mecachedtimeunit>hour</mecachedtimeunit>
+        <memcachedspan>1</memcachedspan>
+    </config>
+</configs>

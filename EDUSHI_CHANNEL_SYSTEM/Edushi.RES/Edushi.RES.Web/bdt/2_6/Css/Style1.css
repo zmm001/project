@@ -1,0 +1,29 @@
+﻿#ClNav .Content{ margin-top:10px;}
+#ClNav .Content{ margin-top:10px;}
+#SiteMap{margin:0 0 3px; color:#666;}
+
+#AskNav{ padding:10px 0 20px;}
+ul.Title{ padding:0; margin:0; display:block; height:25px; padding-left:10px; background:url(../Images/ClTitleBg.gif) repeat-x left top;}
+ul.Title li,ul.Title li.Current{ float:left; font-weight:bold; margin:0 5px; text-align:center; display:block; width:68px; height:17px; padding-top:7px; background:url(../Images/ClTitleBg.gif) left -56px;}
+ul.Title li a {color:#333; text-decoration:none;}
+ul.Title li a:hover{ color:Red;}
+ul.Title li.Current{ background-position:left -28px; height:18px;}
+.FriendClew4{ background:url(../Images/EsIco4.gif) no-repeat 280px center; padding:10px 0 10px 340px;}
+table.TabSty1,table.TabSty7{ width:720px;}
+table.TabSty1 tbdoy tr td,table.TabSty1 tbody tr th,table.TabSty7 tbody tr td{ padding:5px 0;}
+table.TabSty1 tbody tr th,table.TabSty1 tbody tr td,table.TabSty7 tbody tr td{ border-bottom:1px dashed #ccc}
+table.TabSty7 thead tr td{ color:#666; text-align:right;}
+table.TabSty7 .Til,table.TabSty7 .Con,table.TabSty7 .Oth{ margin:5px 0;}
+table.TabSty7 .Con{ line-height:120%;}
+table.TabSty7 .Til{ font-size:14px; color:#666;}
+table.TabSty7 .Oth{ color:#666;}
+table.TabSty7 .Oth span{ margin-right:20px;}
+
+a{color:#2754BB;text-decoration:none;}
+a:hover{color:red; text-decoration:underline;}
+
+
+/*布局*/
+#Container{width:950px;margin:0 auto; text-align:left;}
+
+

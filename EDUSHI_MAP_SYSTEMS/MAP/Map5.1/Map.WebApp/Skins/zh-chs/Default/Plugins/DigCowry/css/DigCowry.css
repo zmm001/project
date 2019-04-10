@@ -1,0 +1,32 @@
+﻿html,body{margin:0;padding:0}
+body{font-size:12px; color:#333;text-align:left;}
+img{border-width:0px}
+form{padding:0;margin:0}
+a{color:#369;text-decoration:none;}
+a:hover{color:red; text-decoration:underline;}
+.HackBox{clear:both;border-top:transparent 0px solid;height:0;overflow:hidden;}
+
+/*DigFailture*/
+.DigCowryNav{ width:280px; height:300px; padding:10px 11px; overflow:hidden; position:relative; background:url(../images/DigBg.gif) no-repeat left top;}
+.DigCowryNav h3{ background:url(../images/DigUpCowry.gif) no-repeat left top; font-size:14px; padding:0 0 0 26px; margin:0 0 3px;}
+.P{ text-align:center; line-height:150%;}
+.ButtonSty{ margin-top:8px; text-align:center; cursor:pointer;}
+.ProviderAD{margin-top:8px;width:280px; height:48px; overflow:hidden;}
+
+/*DigSuccess*/
+.CowryList{width:280px; height:188px; overflow-x:hidden; overflow-y:auto;
+          scrollbar-face-color: #DBEBFE; /*滚动条凸出部分的颜色*/
+          scrollbar-shadow-color: #B8D6FA; /*滚动条空白部分的颜色*/
+          scrollbar-highlight-color: #FFFFFF; /*立体滚动条阴影的颜色*/
+          scrollbar-3dlight-color: #DBEBFE; /*滚动条亮边的颜色*/
+          scrollbar-darkshadow-color:#458CE4; /*上下按钮上三角箭头的颜色*/
+          scrollbar-track-color: #FFFFFF; /*滚动条的背景颜色*/
+          scrollbar-arrow-color: #458CE4;/*滚动条强阴影的颜色*/
+          }
+.Cowry{ background-position:left 5px; background-repeat:no-repeat; line-height:21px; margin:5px 0; padding:0 0 5px 15px; border-bottom:1px dashed #CCC;}
+.Cowry strong{ color:#FF6400;}
+.Cowry img{ margin:0 0 0 5px; cursor: pointer;}
+
+
+.CloseWin,.CloseBtnOver,.CloseBtnOut{position:absolute; top:6px; right:8px; cursor:hand; width:13px; height:13px; overflow:hidden;background:url(../images/CloseBtn.gif) no-repeat left top;}
+.CloseBtnOver{background-position:left -13px;}

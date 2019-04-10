@@ -1,0 +1,133 @@
+﻿html,body{margin:0;padding:0;}
+body{font-size:12px; color:#333;text-align:center;}
+img{border-width:0px}
+form{padding:0;margin:0}
+a{color:#2754BB;text-decoration:none;}
+a:hover{color:red; text-decoration:underline;}
+.HackBox{clear:both;border-top:transparent 0px solid;height:0;overflow:hidden;}
+
+#TopNav{width:760px; margin:20px auto 10px;}
+#TopNav #TopNavLf{ float:left; width:216px;}
+#TopNav #TopNavRgt{ float:right; width:520px; padding-top:32px;}
+
+ul.Alternant{display:block; height:17px;padding:0; margin:0; list-style-type:none;}
+ul.Alternant li{float:right; margin:0 0 0 10px; background:url(../images/AlternantR.gif) no-repeat right top; font-family:宋体; padding:0 6px 0 0;}
+ul.Alternant li a{background:url(../images/AlternantL.gif) no-repeat left top; padding:3px 0 3px 6px; color:#666; display:block;}
+ul.Alternant li a:hover{color:#C30; text-decoration:none;}
+/*ul.Alternant li.Current{background-image:url(../img/CurAlternantR.gif);}
+ul.Alternant li.Current a{background-image:url(../img/CurAlternantL.gif);}*/
+
+#Main{ clear:both; margin:20px auto 0; width:760px; background:url(../images/MainBg.gif) no-repeat left top; padding-top:10px; text-align:left;}
+#Main #Con1{ float:left; margin:30px 0 40px 20px; width:380px;}
+#Con1 ul{ padding:0; margin:0; list-style-type:none;}
+#Con1 ul li{ margin:16px 0;}
+#Con1 .AdSty{ width:380px; height:75px; overflow:hidden; margin-top:18px;}
+#Main #Con2{ float:right; margin:30px 30px 40px 0; width:300px;}
+
+/*用户登录*/
+.LoginNavT{background:url(../img/logreg/LoginNavBg.gif) no-repeat left top;width:300px; height:6px; overflow:hidden;}
+.LoginNavD{background:url(../img/logreg/LoginNavBg.gif) no-repeat left bottom; width:280px; padding:5px 10px 12px; position:relative; text-align:left;}
+.LoginNavD h3{padding:0;margin:0 0 10px;background:url(../img/logreg/LoginH3Til.gif) no-repeat left 5px; text-indent:-9000px;height:21px;}
+.ForPass{ position:absolute; top:12px; right:26px;}
+
+.LoginNavD table{width:280px;}
+.LoginNavD table tr th,.LoginNavD table tr td{line-height:25px; padding:3px;}
+.LoginNavD table tr th{ width:60px; text-align:right; font-weight:normal;}
+.LoginNavD table tr td span{float:left; margin-right:2px;}
+
+.ThisStyle{border:1px solid #0075B0;border-right-color:#84A5CE;border-bottom-color:#84A5CE;background-color:#DFEBF7;}
+.LoginClew{border:1px solid #E3E197;padding:5px 24px 5px 42px; margin:10px 10px 0; background:#FFFFDD url(../img/ClewIco1.gif) no-repeat 24px 4px; color:#C30;}
+
+.InFieldSty{border:1px solid #84A5CE;border-right-color:#C1D2E7;border-bottom-color:#C1D2E7;background-color:#F7FBFF; font-size:14px; padding:5px 3px 3px 3px;}
+.ThisStyle{border:1px solid #0075B0;border-right-color:#84A5CE;border-bottom-color:#84A5CE;background-color:#DFEBF7; font-size:14px; padding:5px 3px 3px 3px;}
+
+#CanLogin{ padding:5px 10px; text-align:right; font-weight:bold; color:#666;}
+#CanLogin a{ text-decoration:underline; color:Blue;}
+#CanLogin a:hover{ color:Red; text-decoration:none;}
+
+#RegNav{ margin:10px 80px 20px; position:relative; width:600px;}
+#RegNav h3{ padding:0; margin:0 0 10px; background:url(../img/logreg/RegH3Bg.gif) no-repeat left top; text-indent:-9000px;}
+#RegNav #ReMark{ position:absolute; top:0; right:0; font-weight:bold;}
+#RegNav span.MustIco{ color:#FF0000; padding:0 1px;}
+
+#RegNav table tr th,#RegNav table tr td{ padding:3px 0;}
+#RegNav table tr th{ vertical-align:top; text-align:right; font-size:14px; padding-top:5px; width:120px;}
+#RegNav table tr td.AgtDoc{ font-size:14px;}
+#RegNav table tr td.AgtDoc a{ text-decoration:underline; color:#2754bb;}
+#RegNav table tr td.AgtDoc a:hover{ text-decoration:none; color:red;}
+#RegNav table tr td span{ padding-left:3px; line-height:17px; color:#666;}
+
+.RegTip{ display:inline; width:300px; line-height:25px; padding-top:5px; color:#C30;}
+.RegTip .No{line-height:19px; background:url(../img/ClewIco1.gif) no-repeat left 5px; padding-left:18px; padding-top:5px; color:#C33; font-weight:bold;}
+.RegTip .Yes{line-height:19px; background:url(../img/ClewIco2.gif) no-repeat left 5px; padding-left:18px; padding-top:5px; color:#363; font-weight:bold;}
+
+.JumpTerm{ margin:30px auto 20px; width:560px; font-size:14px;}
+.JumpTerm .OkClewSty{ border:1px solid #AECD3E; margin:10px 0; padding:6px 5px 4px 138px; color:#009900; font-weight:bold; background:#EFFDD3 url(../img/ClewIco3.gif) no-repeat 120px 6px;}
+.JumpTerm .P{ text-indent:96px; margin:5px 0;}
+.JumpTerm .P a{ text-decoration:underline; margin:0 24px 0 0;}
+.JumpTerm .P a:hover{ text-decoration:none;}
+
+/*找回密码*/
+#ForPdNav{ margin:20px 130px; width:500px;}
+#ForPdNav a{ color:Blue; text-decoration:underline;}
+#ForPdNav a:hover{ color:Red; text-decoration:none;}
+
+#ForPdNav fieldset legend{ font-size:14px; font-weight:bold; color:#666;}
+#ForPdNav table tr th{ text-align:right; color:#666; width:35%;}
+#ForPdNav table tr td span{ float:left; line-height:22px; margin:0 5px 0 0;}
+
+.EachBlk{ margin:20px 30px;}
+.EachBlk .P{ font-size:14px; margin-bottom:10px;}
+.ForClew1{ margin:5px 50px; background:#FFFFDD url(../img/ClewIco1.gif) no-repeat 18px 3px; border:1px solid #E3E197; padding:5px 0 3px 12px; text-align:center; color:#C30;}
+#ForReMk{ margin-top:10px; line-height:150%; color:#666;border:1px solid #FFDD99; background:#FFF9ED url(../img/EAdClewIco.gif) no-repeat 18px 10px; padding:5px 12px 3px 36px;}
+.ForOkClew{ background:#FFFFDD url(../img/logreg/MailIco.gif) no-repeat 60px 15px; height:40px; padding:12px 60px 5px 100px; border:1px solid #E3E197; line-height:150%;}
+
+/*注册完成*/
+.l{float:left;}
+.r{float:right;color:#06C;}
+ul{list-style:none;}
+.clear{clear:both;border-top:transparent 0px solid;height:0;overflow:hidden;}
+
+#page2{width:450px;height:460px;margin:0 auto;}
+.mian2{width:450px;height:245px;margin:0 auto;background:url(../img/logreg/bg.gif) left top no-repeat;margin-top:15px;}
+
+.name{font:bold 14px 宋体;float:left;margin:50px 0 0 10px !important;margin:50px 0 0 5px;color:#333;}
+.ul_first{font:normal 14px 宋体;float:left;color:#444;margin:30px 0 0 120px !important;margin:30px 0 0 60px;}
+.ul_first li{line-height:160%;margin:0 0 3px;}
+.ul_first li a,.ul_sec li a{color:#ff9900;}
+.col{color:#ff9900;font-weight:bold;padding:0 0 0 5px;}
+
+.if{font:bold 12px 宋体;float:left;margin:25px 0 5px 40px !important;margin:25px 0 5px 20px;color:#666;background:url(../img/logreg/coin.jpg) left top no-repeat;height:18px;padding:5px 0 0 25px;}
+
+.ul_sec{font:normal 12px 宋体;float:left;margin:0 0 0 50px !important;margin:0 0 0 25px;color:#666;}
+.ul_sec li{line-height:160%;background:url(dian.gif) left 8px no-repeat;padding:0 0 0 15px;margin:0 0 2px;}
+
+.r a{margin:0 5px;}
+
+.STYLE1 {
+	font-family: "宋体";
+	font-size: 12px;
+	font-weight: bold;
+	color: #333333;width:540px;margin:10px 0 0 20px;
+}
+.STYLE2 {
+	font-family: "宋体";
+	font-size: 12px;
+	color: #333333;width:540px;margin:5px 0 0 20px;line-height:160%;text-indent:2em;
+}
+.STYLE3 {
+	font-family: "宋体";
+	font-size: 14px;
+	color: #F7780E;width:540px;margin:10px 0 0 40px;
+}
+.STYLE3 a{color: #F7780E;}
+.STYLE4 {
+	font-family: "宋体";
+	font-size: 12px;
+	color: #999999;width:540px;text-align:center;margin-top:15px;
+}
+
+.input01{border:1px solid #ccc;width:540px;margin:0 0 10px 20px;padding:0;height:60px;}
+
+.ul_th{font:normal 12px 宋体;float:left;margin:10px 10px 10px 20px !important;margin:10px;color:#666;}
+.ul_th li{line-height:160%;}

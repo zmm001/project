@@ -1,0 +1,201 @@
+﻿@using Edushi.Common
+@model Edushi.UserCenter.Web.PC.Areas.WenDa.Models.WenDaFavoriteModel
+@{
+    ViewBag.PageType = 4;
+    var imgDomain = Common.GetConfigString("UserHeadPic");
+    ViewBag.Title = "我的收藏-E都市问答";
+}
+
+<div class="fl main-box">
+    <div class="info-tips">共收藏<span>@Model.TotalCount</span>个!
+        <div class="fav-edit">
+            <div class="edit-option">
+                <label class="checkall"><i></i><input type="checkbox"><span>全选</span></label>
+                <label class="del"><span>删除</span></label>
+            </div>
+            <a href="javascript:void(0);" class="edit-btn">
+                <span class="cancel">取消</span>
+                <span class="edit">收藏管理</span>
+            </a>
+        </div>
+        </div>
+    <div class="ask-box" id="datalist">
+        @if (Model.List != null && Model.List.Any())
+{
+    foreach (var item in Model.List)
+    {
+        if (string.IsNullOrWhiteSpace(item.Title))
+        {
+            continue;
+        }
+        var qNickName = item.UserInfo != null && !string.IsNullOrWhiteSpace(item.UserInfo["NickName"].ToString()) ? item.UserInfo["NickName"] : "E都市网友";
+        var qUserHead = item.UserInfo != null && !string.IsNullOrWhiteSpace(item.UserInfo["Avatar"].ToString()) ? imgDomain + item.UserInfo["Avatar"] : Url.Content("~/areas/wenda/asset/images/userhead.jpg");
+        int qUserId = item.UserInfo != null && item.UserInfo["ID"] != null ? (int)item.UserInfo["ID"] : 0;
+        var qWendaUrl = qUserId > 0 ? "href=/wenda/index/1-" + qUserId + ".html target=_blank" : "";
+        <div class="question-cnt" data-sourceid="@item.QId">
+            <div class="answer-info clearfix">
+                @if (!string.IsNullOrWhiteSpace(item.Pic))
+                {
+                    <div class="pic"><img src="@item.Pic"></div>
+                }
+                <div class="anser-item">
+                    <h2 class="q-tit"><a href="@item.Url" target="_blank">@Html.Raw(item.Title)</a></h2>
+                    <div class="q-info">
+                        <a @qWendaUrl class="photo">
+                            <img src="@qUserHead" />@qNickName
+                        </a>
+                        <span>@item.CreateDate</span><span>@(item.AnswerCount)回答</span><span class="last">@(item.FavoriteCount)人收藏</span>
+                    </div>
+                    <ul class="anser-oper js-oper clearfix">
+                        <li class="answer-btn"><a href="@item.Url" target="_blank">我来回答</a></li>
+                        <li class="share">
+                            分享
+                            <div class="hid-share">
+                                <a href="javascript:void(0);" class="weixin">
+                                    <div class="wx-qr"><img src="@Url.Content("~/Areas/WenDa/asset/images/0302.jpg")" /></div>
+                                </a>
+                                <a href="javascript:void(0);" class="qq"></a>
+                                <a href="javascript:void(0);" class="qzone"></a>
+                                <a href="javascript:void(0);" class="weibo"></a>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="edit">
+                    <label class="checkbox"><i></i><input type="checkbox"></label>
+                    <a class="cancel">取消收藏</a>
+                </div>
+            </div>
+        </div>
+    }
+
+}
+    </div>
+    <div class="loading" style="display: none;">正在加载中</div>
+    <div class="more-cnt" @Html.Raw(Model.PageCount > 1 ? "style=\"display:none\"" : "")>没有更多了</div>
+</div>
+
+<script>
+    var ConfigData = {
+        "PageIndex":1,
+        "Count": "@Model.PageCount",
+        "Page": "@Url.Content("~/")",
+        "Url": "wenda/GetMoreFavorites.htm",
+        "Id": 0,
+        "Type": 1
+    }
+
+    $(".edit-btn").bind("click", function () {
+        if ($(this).parents(".main-box").hasClass("edit")) {
+            $(this).parents(".main-box").removeClass("edit");
+        } else {
+            $(this).parents(".main-box").addClass("edit");
+        }
+    })
+
+    $(".checkbox").bind("click", function () {
+        if ($(this).find("input").prop("checked")) {
+            $(this).removeClass("checked");
+            $(this).find("input").attr("checked", false);
+        } else {
+            $(this).addClass("checked");
+            $(this).find("input").attr("checked", true);
+        }
+    });
+
+    $(".checkall").bind("click", function () {
+        if ($(this).find("input").prop("checked")) {
+            $(this).removeClass("checked");
+            $(this).find("input").attr("checked", false);
+            $(".checkbox").removeClass("checked");
+            $(".checkbox").find("input").attr("checked", false);
+        } else {
+            $(this).addClass("checked");
+            $(this).find("input").attr("checked", true);
+            $(".checkbox").addClass("checked");
+            $(".checkbox").find("input").attr("checked", true);
+        }
+    });
+
+    $(function () {
+
+        $("#datalist").on("click", ".question-cnt .cancel", function () {
+            var $del = $(this);
+            popUp("确定要删除吗？",
+                function () {
+                    var parentli = $del.parents(".question-cnt");
+                    var list = [];
+                    var obj = { "Type": "@Model.FavoriteType", "SourceId": parentli.data("sourceid") };
+                    list.push(obj);
+                    cancel(list);
+                }, 1);
+        });
+
+        $("#datalist").on("click", ".question-cnt .cancel", function () {
+            var $del = $(this);
+            popUp("确定要删除吗？",
+                function () {
+                    var parentli = $del.parents(".question-cnt");
+                    var list = [];
+                    var obj = { "Type": "@Model.FavoriteType", "SourceId": parentli.data("sourceid") };
+                    list.push(obj);
+                    cancel(list, $del);
+                }, 1);
+        });
+
+      
+
+        $(".del").click(function () {
+
+            var checkedObj = $("#datalist .question-cnt input:checkbox:checked");
+            if (checkedObj.length > 0) {
+                popUp("确定要删除吗？",
+                    function () {
+                        var list = [];
+                        $.each(checkedObj,
+                            function (i, v) {
+                                var obj = {
+                                    "Type": "@Model.FavoriteType",
+                                    "SourceId": $(v).parents(".question-cnt").data("sourceid")
+                                };
+                                list.push(obj);
+
+                            });
+                        cancel(list);
+                    }, 1);
+            } else {
+                popUp("请选择要删除的内容！");
+            }
+        });
+
+        function cancel(list,obj) {
+            $.ajax({
+                type: "post",
+                dataType: "json",
+                url: "/CancelFavorites.htm",
+                data: { "data": JSON.stringify(list) },
+                success: function (data) {
+                    if (data.ResultCode == 1) {
+                        if (obj) {
+                            var currrntObj = obj.parents(".question-cnt");
+                            currrntObj.remove();
+                            var num = parseInt($(".info-tips span:first").text());
+                            $(".info-tips span:first").text( num - 1);
+                        } else {
+                            var objs = $(".checked").parents(".question-cnt");
+                            var num = parseInt($(".info-tips span:first").text());
+                            $(".info-tips span:first").text(objs.length >= num ? 0 : num - objs.length);
+                            $(".checked").parents(".question-cnt").remove();
+                        }
+                       
+
+                    } else {
+                        popUp(data.Msg);
+                    }
+                }
+            });
+        }
+    });
+</script>
+
+<script src="@Url.Content("~/areas/wenda/asset/js/scrollload.bak.js")"></script>

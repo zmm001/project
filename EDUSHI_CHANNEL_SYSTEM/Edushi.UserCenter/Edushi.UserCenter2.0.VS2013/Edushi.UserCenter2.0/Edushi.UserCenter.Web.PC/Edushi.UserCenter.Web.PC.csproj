@@ -1,0 +1,471 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{A6B300B0-EF78-4E9E-988E-9F61C9B4F323}</ProjectGuid>
+    <ProjectTypeGuids>{E3E379DF-F4C6-4180-9B81-6769533ABE47};{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Edushi.UserCenter.Web.PC</RootNamespace>
+    <AssemblyName>Edushi.UserCenter.Web.PC</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>false</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EDC.Framework">
+      <HintPath>..\..\..\..\..\EDUSHI_CM_LIBRARY\Assembly_Library\EDC.Framework\EDC.Framework.dll</HintPath>
+    </Reference>
+    <Reference Include="Edushi.AiShangTouTiao.API">
+      <HintPath>..\..\..\..\..\EDUSHI_CM_LIBRARY\Assembly_Library\EDC.Framework\Edushi.AiShangTouTiao.API.dll</HintPath>
+    </Reference>
+    <Reference Include="Edushi.User">
+      <HintPath>..\..\..\..\..\EDUSHI_CM_LIBRARY\Assembly_Library\EDC.Framework\Edushi.User.dll</HintPath>
+    </Reference>
+    <Reference Include="log4net">
+      <HintPath>..\..\..\..\..\EDUSHI_CM_LIBRARY\Assembly_Library\EDC.Framework\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Web.Mvc.FixedDisplayModes, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.FixedDisplayModes.1.0.0\lib\net40\Microsoft.Web.Mvc.FixedDisplayModes.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.4.5.11\lib\net40\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http">
+    </Reference>
+    <Reference Include="System.Net.Http.Formatting, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.4.0.30506.0\lib\net40\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+    </Reference>
+    <Reference Include="System.Web.Helpers, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.30506.0\lib\net40\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.4.0.30506.0\lib\net40\System.Web.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.WebHost, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.WebHost.4.0.30506.0\lib\net40\System.Web.Http.WebHost.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.4.0.30506.0\lib\net40\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Razor.2.0.30506.0\lib\net40\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.30506.0\lib\net40\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.30506.0\lib\net40\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.30506.0\lib\net40\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Areas\WenDa\Controllers\AuthorNewsController.cs" />
+    <Compile Include="Areas\WenDa\Controllers\HomeController.cs" />
+    <Compile Include="Areas\WenDa\Controllers\SharedController.cs" />
+    <Compile Include="Areas\WenDa\Models\ActivitieModel.cs" />
+    <Compile Include="Areas\WenDa\Models\AddQuestionModel.cs" />
+    <Compile Include="Areas\WenDa\Models\BaseResultModel.cs" />
+    <Compile Include="Areas\WenDa\Models\editorImgModel.cs" />
+    <Compile Include="Areas\WenDa\Models\EditorWendaModel.cs" />
+    <Compile Include="Areas\WenDa\Models\FansOrAttentionsModel.cs" />
+    <Compile Include="Areas\WenDa\Models\MyActivitieModel.cs" />
+    <Compile Include="Areas\WenDa\Models\MyAnswerModel.cs" />
+    <Compile Include="Areas\WenDa\Models\MyNoticeModel.cs" />
+    <Compile Include="Areas\WenDa\Models\MyQuestionModel.cs" />
+    <Compile Include="Areas\WenDa\Models\NoticeModel.cs" />
+    <Compile Include="Areas\WenDa\Models\QuestionSimpleModel.cs" />
+    <Compile Include="Areas\WenDa\Models\UserModel.cs" />
+    <Compile Include="Areas\WenDa\Models\WenDaCommentModel.cs" />
+    <Compile Include="Areas\WenDa\Models\WenDaFavoriteModel.cs" />
+    <Compile Include="Areas\WenDa\Models\WendaActivitiesModel.cs" />
+    <Compile Include="Areas\WenDa\Models\WenDaListModel.cs" />
+    <Compile Include="Areas\WenDa\WenDaAreaRegistration.cs" />
+    <Compile Include="Areas\Xiaoshuo\Controllers\HomeController.cs" />
+    <Compile Include="Areas\Xiaoshuo\Controllers\SharedController.cs" />
+    <Compile Include="Areas\Xiaoshuo\XiaoshuoAreaRegistration.cs" />
+    <Compile Include="Configuration\SectionGroup.cs" />
+    <Compile Include="Configuration\UserInfoSection.cs" />
+    <Compile Include="Controllers\ApiController.cs" />
+    <Compile Include="Controllers\AuthorNewsController.cs" />
+    <Compile Include="Controllers\HelpController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\LoginController.cs" />
+    <Compile Include="Controllers\SharedController.cs" />
+    <Compile Include="Filter\LoginAttribute.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Helper\DataHelper.cs" />
+    <Compile Include="Models\ArticleModel.cs" />
+    <Compile Include="Models\BaseInfoModel.cs" />
+    <Compile Include="Models\BaseResult.cs" />
+    <Compile Include="Models\CancelFavoritesModel.cs" />
+    <Compile Include="Models\CodeSendResult.cs" />
+    <Compile Include="Models\CommentDetail.cs" />
+    <Compile Include="Models\CommentInfoModel.cs" />
+    <Compile Include="Models\CustomModel.cs" />
+    <Compile Include="Models\DataOut.cs" />
+    <Compile Include="Models\HelpModel.cs" />
+    <Compile Include="Models\IsLoginModel.cs" />
+    <Compile Include="Models\MyActivitiesModel.cs" />
+    <Compile Include="Models\MyAttentionModel.cs" />
+    <Compile Include="Models\MyFavoriteModel.cs" />
+    <Compile Include="Models\MyModel.cs" />
+    <Compile Include="Models\CommentUpvoteInfo.cs" />
+    <Compile Include="Models\UserAttentionInfo.cs" />
+    <Compile Include="Models\UserCenterBookList.cs" />
+    <Compile Include="Models\UserCommentInfo.cs" />
+    <Compile Include="Models\UserDataOut.cs" />
+    <Compile Include="Models\UserHeaderModel.cs" />
+    <Compile Include="Models\UserIndexResultModel.cs" />
+    <Compile Include="Models\UserInfoDetail.cs" />
+    <Compile Include="Models\UserLoginPost.cs" />
+    <Compile Include="Models\WenDaCustomModel.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\com.edushi.wdwse\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Content Include="Areas\WenDa\asset\images\icon_0919.png" />
+    <Content Include="Areas\WenDa\asset\css\quill.snow.css" />
+    <Content Include="Areas\WenDa\asset\css\user.css" />
+    <Content Include="Areas\WenDa\asset\css\wangEditor.css" />
+    <Content Include="Areas\WenDa\asset\fonts\icomoon.svg" />
+    <Content Include="Areas\WenDa\asset\images\0302.jpg" />
+    <Content Include="Areas\WenDa\asset\images\add_btn.png" />
+    <Content Include="Areas\WenDa\asset\images\logo.png" />
+    <Content Include="Areas\WenDa\asset\images\logo_wenda.png" />
+    <Content Include="Areas\WenDa\asset\images\radio_img.png" />
+    <Content Include="Areas\WenDa\asset\images\search_btn.png" />
+    <Content Include="Areas\WenDa\asset\images\sprite_icon.png" />
+    <Content Include="Areas\WenDa\asset\images\sprite_icon_two.png" />
+    <Content Include="Areas\WenDa\asset\images\userhead.jpg" />
+    <Content Include="Areas\WenDa\asset\images\user_icon.png" />
+    <Content Include="Areas\WenDa\asset\images\warn_bg.png" />
+    <Content Include="Areas\WenDa\asset\js\common.js" />
+    <Content Include="Areas\WenDa\asset\js\jquery-1.8.3.min.js" />
+    <Content Include="Areas\WenDa\asset\js\jquery.form.js" />
+    <Content Include="Areas\WenDa\asset\js\quill.js" />
+    <Content Include="Areas\WenDa\asset\js\scrollload.bak.js" />
+    <Content Include="Areas\WenDa\asset\js\wangEditor.js" />
+    <Content Include="Areas\WenDa\asset\js\wangEditor.min.js" />
+    <Content Include="Areas\Xiaoshuo\asset\css\common.css" />
+    <Content Include="Areas\Xiaoshuo\asset\css\user.css" />
+    <Content Include="Areas\Xiaoshuo\asset\images\icon.png" />
+    <Content Include="Areas\Xiaoshuo\asset\images\logo.png" />
+    <Content Include="Areas\Xiaoshuo\asset\js\jquery-1.8.3.min.js" />
+    <Content Include="Areas\Xiaoshuo\asset\js\knockout-3.1.0.js" />
+    <Content Include="Areas\Xiaoshuo\asset\js\mock.js" />
+    <Content Include="Areas\Xiaoshuo\asset\js\top.js" />
+    <Content Include="Areas\Xiaoshuo\asset\js\vue.min.js" />
+    <Content Include="asset\css\common.css" />
+    <Content Include="asset\css\error.css" />
+    <Content Include="asset\css\login.css" />
+    <Content Include="asset\css\user.css" />
+    <Content Include="asset\images\appimg.png" />
+    <Content Include="asset\images\app_download.png" />
+    <Content Include="asset\images\close_btn.png" />
+    <Content Include="asset\images\default_photo.png" />
+    <Content Include="asset\images\eds_app_code.png" />
+    <Content Include="asset\images\eds_sprite.png" />
+    <Content Include="asset\images\envelopes_bg.png" />
+    <Content Include="asset\images\error_bg.png" />
+    <Content Include="asset\images\gold_icon.png" />
+    <Content Include="asset\images\login_bg.png" />
+    <Content Include="asset\images\logo.png" />
+    <Content Include="asset\images\logo_b.png" />
+    <Content Include="asset\images\ok.png" />
+    <Content Include="asset\images\photomask.png" />
+    <Content Include="asset\images\user_bg.png" />
+    <Content Include="asset\images\user_icons.png" />
+    <Content Include="asset\images\wenda_icon.png" />
+    <Content Include="asset\js\common.js" />
+    <Content Include="asset\js\jquery-1.8.3.min.js" />
+    <Content Include="asset\js\load.js" />
+    <Content Include="asset\js\login.js" />
+    <Content Include="asset\js\scrollload.js" />
+    <Content Include="asset\js\user.js" />
+    <Content Include="asset\js\usercenter.js" />
+    <Content Include="Global.asax" />
+    <Content Include="Areas\WenDa\Views\Shared\_PutQuestion.cshtml" />
+    <Content Include="Areas\WenDa\Views\AuthorNews\Index.cshtml" />
+    <Content Include="Areas\WenDa\Views\AuthorNews\Activities.cshtml" />
+    <Content Include="Areas\WenDa\Views\AuthorNews\Answers.cshtml" />
+    <Content Include="Areas\WenDa\Views\AuthorNews\Questions.cshtml" />
+    <Content Include="Areas\WenDa\Views\AuthorNews\Attention.cshtml" />
+    <Content Include="Areas\WenDa\Views\AuthorNews\Fans.cshtml" />
+    <Content Include="Areas\Xiaoshuo\Views\Web.config" />
+    <Content Include="Areas\Xiaoshuo\Views\Home\BaseInfo.cshtml" />
+    <Content Include="Areas\Xiaoshuo\Views\Home\MyBookrack.cshtml" />
+    <Content Include="Areas\Xiaoshuo\Views\Home\RecentlyRead.cshtml" />
+    <Content Include="Areas\Xiaoshuo\Views\Shared\_Layout.cshtml" />
+    <Content Include="Areas\Xiaoshuo\Views\_ViewStart.cshtml" />
+    <Content Include="Areas\Xiaoshuo\Views\Shared\_PartialUserInfo.cshtml" />
+    <Content Include="Areas\Xiaoshuo\Views\Shared\Header.cshtml" />
+    <None Include="Properties\PublishProfiles\pc.pubxml" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Content Include="Web References\com.edushi.wdwse\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </Content>
+    <Content Include="Views\Home\MyFans.cshtml" />
+    <Content Include="Views\Home\MyAttentionNonEditor.cshtml" />
+    <Content Include="Views\Help\Index.cshtml" />
+    <None Include="Web References\com.edushi.wdwse\UploadService.disco" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Views\Web.config" />
+    <None Include="Web References\com.edushi.wdwse\UploadService.wsdl" />
+    <Content Include="Web References\com.edushi.wdwse\UploadStatus.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="Areas\Xiaoshuo\Models\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Edushi.CacheConfigSection\Edushi.CacheConfigSection.csproj">
+      <Project>{b7a85d1a-2ac1-419c-9be6-99a6f285e15f}</Project>
+      <Name>Edushi.CacheConfigSection</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Edushi.Common\Edushi.Common.csproj">
+      <Project>{88a22847-6b99-4241-8b15-536beec8b829}</Project>
+      <Name>Edushi.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Edushi.Log\Edushi.Log.csproj">
+      <Project>{7356ac76-7475-41e8-be4c-100a39e42b85}</Project>
+      <Name>Edushi.Log</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Edushi.UserCenter.BLL\Edushi.UserCenter.BLL.csproj">
+      <Project>{1b28df83-e866-435f-92b4-7a2028a92868}</Project>
+      <Name>Edushi.UserCenter.BLL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Edushi.UserCenter.Model\Edushi.UserCenter.Model.csproj">
+      <Project>{75791969-d14f-4df1-b3d6-36badebd30a6}</Project>
+      <Name>Edushi.UserCenter.Model</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MvcPager\MvcPager.csproj">
+      <Project>{4ba9f10c-67b7-4cd6-87b1-0519adbca2a1}</Project>
+      <Name>MvcPager</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\_ViewStart.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Shared\Header.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\AuthorNews\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Shared\_Layout.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Shared\Footer.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Login\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Home\User_Layout.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Home\MyHeader.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Home\MyAttention.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Home\MyFavorite.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Home\MyActivities.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Home\BaseInfo.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\WenDa\Views\Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\WenDa\Views\Shared\_Layout.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\WenDa\Views\_ViewStart.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\WenDa\Views\Home\Activities.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\WenDa\asset\fonts\icomoon.eot" />
+    <Content Include="Areas\WenDa\asset\fonts\icomoon.ttf" />
+    <Content Include="Areas\WenDa\asset\fonts\icomoon.woff" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\WenDa\Views\Shared\Header.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\WenDa\Views\Shared\UserInfo.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\WenDa\Views\Home\Fans.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\WenDa\Views\Home\MyAttentionUsers.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\WenDa\Views\Home\WenDaFavorite.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\WenDa\Views\Home\MyQuestions.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\WenDa\Views\Home\MyAnswers.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\WenDa\Views\Home\MyNotice.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferences Include="Web References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferenceUrl Include="http://wdwse.edushi.com/UploadService.asmx">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\com.edushi.wdwse\</RelPath>
+      <UpdateFromURL>http://wdwse.edushi.com/UploadService.asmx</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>Edushi_UserCenter_Web_PC_com_edushi_wdwse_UploadService</CachedSettingsPropName>
+    </WebReferenceUrl>
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>39866</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://user.edushi.com</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>

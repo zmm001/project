@@ -1,0 +1,360 @@
+﻿@using Edushi.WenDa.Web.App.Models;
+@using Edushi.WenDa.Web.App.Helper;
+@using Edushi.Common;
+@model   CommentDetailModel
+@{
+    ViewBag.Title = "回复详情";
+}
+<script src="@Url.Content("~/asset/js/common.js")"></script>
+<script>
+    getAppId(0);
+</script>
+<style>
+    .error-item {
+        margin: 0 auto;
+        box-sizing: border-box;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        /*margin-top: 238px;*/
+    }
+
+        .error-item img {
+            box-sizing: border-box;
+            margin: 0 auto;
+            width: 3.8rem;
+            height: 2.8rem;
+        }
+
+    .error-tip {
+        margin-top: 0.36rem;
+        font-size: 0.24rem;
+        color: #999999;
+        text-align: center;
+    }
+</style>
+<div id="qw-comment-detail">
+    @if (Model.UserInfo != null)
+    {
+        <div class="q-info-header">
+            <div class="comment-head">
+                <img class="back" src="@Url.Content("~/asset/img/function/2/返回@2x.png")" style="width: 0.44rem;height: 0.44rem;" onclick="history.go(-1);" />
+                <a href="javascript:void(0);" class="photo" onclick="openUserIndexPage(@Model.UserInfo.UI_AppUserId)"><img src="@DataHelper.getAppAvatar(Model.UserInfo.UI_AppAvatar)"></a>
+                <span class="username">@Model.UserInfo.UI_AppNickName</span><span class="datetime">@Common.TimeInterval(Model.Comment.UC_CreateDate.Value, DateTime.Now)</span>
+                <div style="float: right; display: flex; justify-content: flex-end; ">
+                    <span class="follow-btn" data-edsid="@Model.UserInfo.UI_ID" data-appid="@Model.UserInfo.UI_AppUserId"><span>+关注</span></span>
+                    <div class="menu-headers">
+                        <img style="margin-right: 0.06rem; width: 0.44rem; height: 0.42rem;" src="@Url.Content("~/asset/img/function/2/收藏@2x.png")" id="addFavorite" />
+                        <img src="@Url.Content("~/asset/img/function/2/分享@2x.png")" style="width: 0.44rem; height: 0.42rem;" onclick="Share('@Model.share.title','@Model.share.desc','@Model.share.url','@Model.share.picurl')" />
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    }
+    <div class="wraper">
+       
+
+        @if (Model.Comment != null)
+        {
+            <div class="decript-header">@Html.Raw(Model.Comment.UC_Content)</div>
+            <div class="action-header">
+                <input type="hidden" id="hidcomment_@Model.Comment.UC_ID" />
+                <span class="zan_cai" data-cid="@Model.Comment.UC_ID">
+                    @if (Model.Comment.UC_UpvoteTotal > 0)
+                    {
+                    <span id="span_@Model.Comment.UC_ID">@Model.Comment.UC_UpvoteTotal</span>    
+                    }
+                    else
+                    {
+                                 <span id="span_@Model.Comment.UC_ID"></span>    
+                    }
+                    
+                </span>
+            </div>
+        }
+
+        @if (Model.ReplyList != null && Model.ReplyList.Any())
+        {
+            foreach (var item in Model.ReplyList)
+            {
+                var comment = item.CommentInfo;
+                var c_userinfo = item.UserInfo;
+                <div class="comment-item">
+                    <div class="q-info">
+                        <input type="hidden" id="hidcomment_@comment.UC_ID" />
+                        <a href="javascript:void(0);" class="photo" onclick="openUserIndexPage(@c_userinfo.UI_AppUserId)"><img src="@DataHelper.getAppAvatar(c_userinfo.UI_AppAvatar)" alt=""></a><span class="username">@c_userinfo.UI_AppNickName</span><span class="datetime">@item.Time</span>
+                        <span class="zan_cai" data-cid="@comment.UC_ID"></span>
+                        @if (comment.UC_UpvoteTotal > 0)
+                        {
+                                      <span class="zan_num" id="span_@comment.UC_ID">@comment.UC_UpvoteTotal</span>
+                        }
+                        else
+                        {
+                                  <span class="zan_num" id="span_@comment.UC_ID"></span>
+                        }
+                       
+                    </div>
+                    <div class="decript"><span>@Html.Raw(comment.UC_Content)</span></div>
+                </div>
+            }
+            <div style="margin-top:1.03rem"></div>
+            <div class="loading">加载中</div>
+        }
+        else
+        {            
+             <div class="error-box"><div class="error-item"><img src="@(Edushi.WenDa.Web.App.Helper.DataHelper.checkPlatType() == 1 ? Url.Content("~/asset/images/noanswer.png") : Url.Content("~/asset/images/no-answer-android.png"))" /></div><div class="error-tip">暂无评论</div></div>
+        }
+    </div>
+
+    <div class="editFooter">
+            <input type="text" placeholder="说点什么吧..." id="content" maxlength="300">
+        <a class="picture" id="publish">发表</a>
+    </div>
+
+    <section class="pop-content" id="popUp">
+        <div class="pop-box">
+            <div class="msg" id="msg"></div>
+            <span class="btn cancel">知道了</span>
+            <a class="btn confirm" href="javascript:void(0);" style="display: none;">去看看</a>
+        </div>
+    </section>
+</div>
+
+<script src="@Url.Content("~/asset/js/commnet.js")"></script>
+<script src="@Url.Content("~/asset/js/question.js")"></script>
+<script src="@Url.Content("~/asset/js/User.js")"></script>
+
+<script>
+    //公共区
+    var questionId = "@Model.share.ID";
+    var answerid = "@Model.Comment.UC_Source_ID";
+    var fatherID = "@Model.Comment.UC_ID";
+    var useravatar = "@Edushi.Common.Common.GetConfigString("domain_User_App")";
+</script>
+
+<script>
+    //评论区
+
+    //添加评论
+    var _isClick = true;
+    $("#publish").click(function () {
+        if (EId <= 0)//通知APP登录
+        {
+            getAppId(1);
+            return;
+        }
+
+        var content = $('#content').val()
+        if (content == "") {
+            popUp("内容不能为空")
+            return;
+        }
+        if (_isClick) {
+            _isClick = false;
+            var code = AddComment("@Url.Content("~/Shared/AddComment")", EId, answerid, fatherID, content);
+            if (code == 1) {
+                _isClick = true;
+                $("#content").val("");     // 清空文本框值
+                popUp("评论成功，审核中…")
+            }
+            else {
+                //失败
+                popUp("评论失败，请重试。")
+            }
+        }
+    });
+
+    // 评论添加赞或踩
+    $(document).on('click', '.zan_cai', function () {
+        if (EId <= 0)//通知APP登录
+        {
+            getAppId(1);
+            return;
+        }
+
+        //  action 1、赞 2、踩           ：默认没有踩，只有赞
+        var commentId = $(this).attr("data-cid");
+        if ($("#hidcomment_" + commentId).val() == 1) {        // -2、已赞  -3、已踩  1、未赞或未踩
+            var code = comment_zan_cai("@Url.Content("~/Shared/AddUpvoteDownvote_Comment")", EId, commentId, 1);
+            if (code == 1) {
+                $("#hidcomment_" + commentId).val(-2);
+                //成功
+                $(this).addClass('stepped');
+                var num_obj = $("#span_" + commentId);
+                var _number = num_obj.text() == "" ? 0 : parseInt(num_obj.text());
+                num_obj.text(_number + 1);
+            }
+        }
+    })
+</script>
+
+<script>
+    //用户区
+
+    // 添加关注
+    $('.follow-btn').click(function () {
+
+        if (EId <= 0)//通知APP登录
+        {
+            getAppId(1);
+            return;
+        }
+
+        var authorId = $(this).attr("data-edsid");
+        var appAttentionId = $(this).attr("data-appid");
+        if ($(this).hasClass('ed')) { // 如果有ed样式表示已关注 // "type": 2 取消关注，1 添加关注
+            var code = add_CancelAttention('@Url.Content("~/Shared/Add_Cancel_Attention")', EId, authorId, 2);
+            add_CancelAttention_ASTT('@Url.Content("~/Shared/Add_Cancel_Attention_ASTT")', appId, appAttentionId, 2);
+            if (code == 1) {      // 取消成功
+                $(this).text("+关注")
+                $(this).removeClass('ed');
+            } 
+        } else {
+            var code = add_CancelAttention('@Url.Content("~/Shared/Add_Cancel_Attention")', EId, authorId, 1);
+            add_CancelAttention_ASTT('@Url.Content("~/Shared/Add_Cancel_Attention_ASTT")', appId, appAttentionId, 1);
+            if (code == 1) {            //添加关注成功
+                $(this).text("已关注")
+                $(this).addClass('ed');
+            }
+        }
+    })
+</script>
+
+<script>
+    //加载更多区
+    var gate = true;
+    var pageCount = "@Model.ReplyPageCount";
+    var pageIndex = 1;
+
+    $(function () {
+        scrollLoad();
+    })
+
+    function scrollLoad() {
+        $(window).bind("scroll", function () {
+            // 判断页面是否拉到底部
+            if ($(document).scrollTop() + $(window).height() >= $(document).height()) {
+                if (gate) {
+                    pageIndex++;
+                    if (pageIndex > pageCount) {
+                        gate = false;
+                        return false;
+                    }
+                    $(".loading").css("display", "block");
+                    $.ajax({
+                        type: 'post',
+                        url: '@Url.Content("~/Comment/getMoreCommentReplyData")',
+                        data: { "fatherID": fatherID, "pageIndex": pageIndex },
+                        success: function (data) {
+                            var element = "";
+                            for (var i = 0; i < data.length; i++) {
+                                var result = data[i].CommentInfo; // 评论信息
+                                var userinfo = data[i].UserInfo; // 用户信息
+                                var time = data[i].Time
+
+                                // 判断是否赞
+                                var code = 0;
+                                var commentId = result.UC_ID;
+                                if (EId > 0) {
+                                    code = isUpvoteDownvote_Comment("@Url.Content("~/Shared/GetIsUpvoteDownvote_Comment")", commentId, EId);
+                                }
+                                
+                                var iscai = '<span class="zan_cai" data-cid="' + result.UC_ID + '"></span>';
+                                if (code == -2) {
+                                    iscai = '<span class="zan_cai stepped" data-cid="' + result.UC_ID + '"></span>';
+                                }
+                                element = '<div class="comment-item">' +
+                                    '<div class="q-info">' +
+                                        '<input type="hidden" id="hidcomment_' + result.UC_ID + '" />' +
+                                    '<a href="javascript:void(0);" class="photo" onclick="openUserIndexPage(' + userinfo.UI_AppUserId + ')"><img src="' + useravatar + userinfo.UI_AppAvatar + '" alt=""></a>' +
+                                    '<span class="username">' + userinfo.UI_AppNickName + '</span>' +
+                                    '<span class="datetime">' + data[i].Time + '</span>' +
+                                   iscai +
+                                    '<span class="zan_num" id="span_' + result.UC_ID + '">' + result.UC_UpvoteTotal + '</span></div>' +
+                                    '<div class="decript"><span>' + result.UC_Content + '</span></div></div>'
+                                $('.loading').prev().before(element);
+                                $("#hidcomment_" + commentId).val(code);
+                            }
+                            $(".loading").css("display", "none");
+                        },
+                        error: function (msg) { }
+                    })
+                }
+            }
+        })
+    }
+</script>
+
+<script>
+    var EId = 0;
+    setTimeout(function () {
+        EId = getEIdByAppId("@Url.Content("~/Shared/GetEIdByAppId")", appId);
+
+        if (EId <= 0)
+            return;
+
+        //评论是否已赞或踩
+        $(".zan_cai").each(function () {
+            var commentId = $(this).attr("data-cid");
+            var code = isUpvoteDownvote_Comment("@Url.Content("~/Shared/GetIsUpvoteDownvote_Comment")", commentId, EId);
+            $("#hidcomment_" + commentId).val(code);
+            if (code == -2) {
+                //已赞
+                $(this).addClass('stepped');
+            }
+        });
+
+        //用户是否关注
+        $(".follow-btn").each(function () {
+            var authorId = $(this).attr("data-edsid");
+            if (EId != authorId) {
+                var code = isAttentioned("@Url.Content("~/Shared/GetIsAttentioned")", EId, authorId);
+                if (code == -2) {
+                    // $(this)当前选择元素,添加已关注样式
+                    $(this).addClass('ed');
+                    $(this).text("已关注")
+                }
+            }
+            else {
+                $(this).hide();
+            }
+        });
+        // 问题是否已收藏
+        var code_q = isFavorites("@Url.Content("~/Shared/GetIsFavorites")", questionId, EId);
+        if (code_q == -2) {       //1：未收藏，-2：已收藏
+            //已收藏
+            $('#addFavorite').addClass("yisc")   // 收藏添加收藏样式，下次添加收藏根据这个属性判断
+            $('#addFavorite').attr('src', '@Url.Content("~/asset/img/function/2/收藏点击@2x.png")')
+        }
+
+    }, 100);
+</script>
+
+<script>
+    //问题区
+
+    // 添加收藏
+    $('#addFavorite').click(function () {
+        if (EId <= 0)//通知APP登录
+        {
+            getAppId(1);
+            return;
+        }
+
+        if ($(this).hasClass('yisc')) {                  // 已收藏,取消收藏
+            var code = Add_CancelFavorite("@Url.Content("~/Shared/Add_Cancel_Favorite")", EId, questionId, 2)
+            if (code == 1) {
+                $(this).removeClass('yisc') // 取消移除指定样式
+                $(this).attr('src', '@Url.Content("~/asset/img/function/2/收藏@2x.png")')
+            } 
+        } else {                    //未收藏，添加收藏
+            var code = Add_CancelFavorite("@Url.Content("~/Shared/Add_Cancel_Favorite")", EId, questionId, 1)
+            if (code == 1) {
+                $(this).addClass('yisc') // 取消移除指定样式
+                $(this).attr('src', '@Url.Content("~/asset/img/function/2/收藏点击@2x.png")')
+            }
+        }
+    });
+
+</script>

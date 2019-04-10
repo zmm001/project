@@ -1,0 +1,25 @@
+﻿@model Edushi.RenWu.Web.Mobile.Models.HeaderModel
+@using Edushi.RenWu.Special
+<header class="">
+    <a href="javascript:history.go(-1);" class="back"></a>
+    <a href="@ViewBag.ZxDomain" class="logo"></a>
+    <a href="@Url.Content("~/")" class="channel-name">人物</a>
+    <span class="fr">
+        <a href="http://m.edushi.com/user/" class="user"></a>
+        <a href="http://m.edushi.com/Navigation.html" class="category"></a>
+    </span>
+</header>
+<section class="main-nav-box">
+    <div class="main-nav sub-nav clearfix">
+        <nav>
+            <a href="@Url.Content("~/")" @Html.Raw(Model.CurrentId==0?"class=\"on\"":"")>首页</a>
+            @if (Model.RwTypes != null && Model.RwTypes.Any())
+{
+    foreach (var item in Model.RwTypes)
+    {
+        <a href="@Common.GetInfoListUrl(Url.Content("~/"),item.IT_ParentID,item.IT_ID)" @Html.Raw(Model.CurrentId == item.IT_ID ? "class=\"on\"" : "")>@item.IT_Name</a>
+    }
+}
+        </nav>
+    </div>
+</section>

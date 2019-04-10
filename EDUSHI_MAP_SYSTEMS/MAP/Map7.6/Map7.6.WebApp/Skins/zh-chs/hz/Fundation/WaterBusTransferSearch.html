@@ -1,0 +1,228 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head runat="server">
+    <title>公交换乘</title>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <script language="javascript" type="text/javascript" src="/Js/GeneralLib.js"></script>
+    <script language="javascript" type="text/javascript" src="../Js/WaterBusTransferSearch.js"></script>
+<style>	
+	body{ color:#666668;}
+	*{ margin:0; padding:0; font-size:12px;}
+	.clear{ clear:both;}
+	a { text-decoration:none; color:#1c81b9;
+	}
+	li,ul{ list-style:none;}
+ 
+.gj_title{ width:305px; border-top: dotted 1px #cfcfcf; height:46px; border-bottom: dotted 1px #cfcfcf;  margin-bottom:7px;}
+.gj_title .diva{ padding-left:5px;padding-top:5px;background:#f1f9fc; border:solid 1px #f1f9fc; margin:1px; height:36px; width:297px;}
+.gj_title .diva span{ display:block; background:url(../images/icon.jpg) no-repeat -80px -20px; width:16px; height:15px; display: inline-block; margin-right:10px; float:left; } 
+.qd,.zd,.zt{ float:left;margin-right:5px;}
+.qd a,.zd a{ display:block; float:left; margin-top:6px; width:58px; text-overflow: ellipsis; overflow: hidden; white-space: nowrap;}
+.icon_q,.icon_q2{ background:url(../images/icon.jpg) no-repeat 0 -20px; width:27px; height:32px; display:inline-block; margin-right:10px; float:left; }
+.icon_q2{ background-position:-27px -20px;}
+.icon_q3{ background:url(../images/icon.jpg) -54px -33px; width:21px; height:18px; float:left;}
+.zt { margin-top:3px;}
+.zt a{ display:block; float:left; margin:2px 0 0 5px;}
+.z3{ margin:10px 0 10px 10px;}
+.gj_03{ width:303px; background:#fff; border:solid 1px #bad7e7; overflow:auto; background:#f1f9fc; position:relative;}
+.gj_a{ margin:5px;background:#fff;}
+.gj_a1{  border:solid 1px #bad7e7; margin-bottom:5px; position:relative; }
+.gj_a1 .title{ background:url(../images/line1.jpg) repeat-x 0 0; height:27px; }
+.gj_a1 .T_left { float:left; margin:5px 0 0 10px; font-weight:bold; color:#1c81b9; display:inline;}
+
+.gj_a1 .T_right{ float:right; margin:5px 5px 0 0;}
+.gj_a1 .T_right span{ display:inline-block; float:left; padding-right:5px;}
+.gj_a1 .T_right .icon_t,.gj_a1 .T_right .icon_t2{ display: inline-block; background:url(../images/icon.jpg) no-repeat -54px -20px; width:13px; height:13px; padding-right:0px;}
+.number1{
+	background: url(../images/number1.jpg) no-repeat 0 0;
+	width:11px;
+	height:14px;
+	float:left;
+	color:#fff;
+	font:10px Arial, Helvetica, sans-serif;
+	line-height:14px;
+	top: -1px;
+	left: -1px;
+	_top:0px;
+	padding-left:3px;
+	
+}
+
+.gj_a1 .list{  border-top: solid 1px #bad7e7; padding:8px 5px;}
+.icon_bx,.xx1{ float:left;}
+.lc{ float:right;}
+.icon_bx,.icon_bx2,.icon_bx3{ background:url(../images/icon.jpg) 0 -76px; width:10px; height:13px; margin-right:5px; display:inline;}
+.icon_bx2{ background-position: -24px -76px;}
+.icon_bx3{background-position: -10px -74px; width:10px; height:16px;}
+a.ud{ text-decoration:underline; margin:0 3px; }
+.tl_span{ background:url(../images/icon.jpg) no-repeat -36px -77px; width:13px; height:9px; display:inline-block; margin:0 5px;}
+.T_right .icon_t2{ background-position:-67px -20px;}
+.cxd{ text-align: center; background:url(../images/line1.jpg) repeat-x 0 0; height:27px; margin:0 5px; border: solid 1px #bed9e8; line-height:27px; color:#1c81b9; margin-bottom:10px;}
+
+.gj_02_01
+        {
+            width: 305px;
+            background: #fff;
+        }
+        .gj_021_01
+        {
+            margin-bottom: 10px;
+            border: solid 1px #bad7e7;
+        }
+        .gj_021_01 .title_01
+        {
+            height: 33px;
+            background: #f1f9fc;
+            padding: 5px;
+        }
+        .T_left_01
+        {
+            float: left;
+            width: 248px;
+        }
+        .T_right_01
+        {
+            float: right;
+        }
+        .icon_q_01, .icon_q2_01
+        {
+            background: url(../images/icon.jpg) no-repeat 0 -20px;
+            width: 27px;
+            height: 32px;
+            display: inline-block;
+            margin-right: 10px;
+            float: left;
+        }
+        .icon_q2_01
+        {
+            background-position: -27px -20px;
+        }
+        .T_left_01 a
+        {
+            font-size: 14px;
+            font-weight: bold;
+            float: left;
+            margin-top: 5px;
+        }
+        .T_right_01 .icon_t_01, .T_right_01 .icon_t2_01
+        {
+            display: inline-block;
+            background: url(../images/icon.jpg) no-repeat -54px -20px;
+            width: 13px;
+            height: 13px;
+            margin-top: 6px;
+        }
+        .T_right_01 .icon_t2_01
+        {
+            background-position: -67px -20px;
+        }
+        .xd_ul_01
+        {
+            padding: 5px;
+            margin-bottom: 15px;
+            border-top: solid 1px #bad7e7;
+            overflow:auto;
+        }
+        .xd_ul_01 li
+        {
+            padding-left: 5px;
+            position: relative;
+            overflow: hidden;
+            height: 40px;
+            padding-bottom: 8px;
+            border-bottom: dotted 1px #d3e9f6;
+            padding-top: 10px;
+        }
+        .xd_ul_01 li.current
+        {
+            background: #e8f2f8;
+        }
+        .iconb_01 span
+        {
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 11px;
+            color: #fff;
+            display: block;
+            margin: 4px 5px 5px 5px;
+        }
+        .zd_name_01
+        {
+            overflow: hidden;
+            height: 27px;
+        }
+        .zd_name_01 a
+        {
+            display: block;
+            float: left;
+            margin: 5px 0 0 8px;
+        }
+        .zd_adr_01
+        {
+            margin: 0px 0 0 35px;
+            padding: 0;
+        }
+        .xd_ul_01 li .btna_01
+        {
+            position: absolute;
+            background: url(../images/icon.jpg) 0 -52px;
+            width: 45px;
+            height: 21px;
+            left: 232px;
+            top: 11px;
+        }
+        .number_01
+        {
+            margin-bottom: 15px;
+            margin-left: 15px;
+        }
+        .number_01 a
+        {
+            padding: 3px;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        .gj_title_01
+        {
+            width: 305px;
+            border-top: dotted 1px #cfcfcf;
+            height: 28px;
+            border-bottom: dotted 1px #cfcfcf;
+            margin-bottom: 7px;
+        }
+        .gj_title_01 div
+        {
+            padding-left: 5px;
+            padding-top: 5px;
+            background: #f1f9fc;
+            border: solid 1px #f1f9fc;
+            margin: 1px;
+            height: 19px;
+            width: 297px;
+        }
+        .gj_title_01 div span
+        {
+            display: block;
+            background: url(../images/icon.jpg) no-repeat -80px -20px;
+            width: 16px;
+            height: 15px;
+            display: inline-block;
+            margin-right: 10px;
+            float: left;
+        }
+        .iconb_01
+        {
+            width: 26px;
+            height: 27px;
+            float: left;
+            background: url(../images/icon_B.png) no-repeat 0 0;
+            filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/icon_B.png', sizingMethod='crop');
+        }
+
+</style>
+
+</head>
+<body>
+<div id="TabContent" style="overflow-x:hidden;overflow-y:auto;">
+
+</div>
+</body>
+</html>

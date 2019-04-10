@@ -1,0 +1,149 @@
+﻿@model Edushi.UserCenter.Web.Mobile.Areas.WenDa.Models.EditorWendaModel
+@{
+    ViewBag.Title = "答案编辑-E都市问答";
+}
+
+<link href="@Url.Content("~/areas/wenda/asset/css/quill.snow.css")" rel="stylesheet" />
+<style type="text/css">
+    header {
+        position: static !important;
+    }
+
+    .container {
+        padding-top: 0 !important;
+    }
+</style>
+<div id="app">
+    <div class="my">
+        <!--头部-->
+        <header-bar :data="header"></header-bar>
+        <!--内容-->
+        <div class="container">
+            <div class="question-content">
+                <h1>@Html.Raw(Model.QTitle)</h1>
+                <div class="text">
+                    @Html.Raw(Model.QDesc)
+                </div>
+                <div class="img">
+                    @if (!string.IsNullOrWhiteSpace(Model.Pic))
+                    {
+                        <div><img src="@Model.Pic"></div>
+                    }
+                    @if (!string.IsNullOrWhiteSpace(Model.Pic1))
+                    {
+                        <div><img src="@Model.Pic1"></div>
+                    }
+                    @if (!string.IsNullOrWhiteSpace(Model.Pic2))
+                    {
+                        <div><img src="@Model.Pic2"></div>
+                    }
+                </div>
+            </div>
+
+            <div class="editor-box">
+                <div id="editor-container"></div>
+                <div class="editor-bottom">
+                    <form id="upAnswerImgForm" method="post" enctype="multipart/form-data">
+                        <input type="file" name="upfile" class="file" accept="image/jpeg, image/png, image/jpg" title="上传图片">
+                    </form>
+                    <a class="publish-btn fr" id="submit_answer" data-id="@Model.AnswerId">发表答案</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="@Url.Content("~/Areas/WenDa/asset/js/quill.js")"></script>
+<script src="@Url.Content("~/Areas/WenDa/asset/js/jquery.form.js")"></script>
+<script>
+    var my = new Vue({
+        el: '#app',
+        data: function () {
+            return {
+                editContents: sessionStorage.getItem('editContents'),
+                header: {
+                    title: '回答',
+                },
+            }
+        },
+        methods: {
+        },
+        mounted: function () {
+            var that = this;
+            var index = 0;
+            that.quill = new Quill('#editor-container', {
+                modules: {
+                    toolbar: [
+                      [{ 'size': [false, 'large'] }],
+                      ['bold'],
+                      ['underline'],
+                      [{ 'color': [] }],
+                      ['blockquote']
+                    ]
+                },
+                placeholder: '',
+                theme: 'snow'  // or 'bubble'
+            });
+		    that.quill.focus();
+		    $("#editor-container").bind("click", function () {
+		        that.quill.focus();
+		    });
+		    $(".file").change(function () {
+		        if ($(this).val().length > 0) {
+		            $('#upAnswerImgForm').ajaxSubmit({
+		                url: '@Url.Content("~/wenda/UploadImg.htm")',
+		                type: 'post',
+		                success: function (data) {
+		                    if (data) {
+		                        if (data.errno == "0") {
+		                            if (that.quill.getSelection() == null) that.quill.focus();
+		                            that.quill.insertEmbed(that.quill.getSelection().index, 'image', data.data[0]);
+		                        }
+		                        else {
+		                            alert(data.Msg);
+		                        }
+		                    }
+		                }
+		            });
+		        }
+		    });
+
+		    $.post("@Url.Content("~/wenda/GetEditorAnswer.htm")",
+            { iaId: "@Model.AnswerId" },
+            function (data) {
+                if (data) {
+                    $(".ql-editor").html(data.Answer);
+                }
+            }, "json");
+
+            //修改答案
+            $("#submit_answer").click(function () {
+                var aId = "@Model.AnswerId";
+                var answerTxt = $(".ql-editor").text();
+                if (answerTxt == "") {
+                    alert("请填写答案!");
+                    return false;
+                }
+                var answerHtml = $(".ql-editor").html();
+                $.ajax({
+                    type: "post",
+                    dataType: "json",
+                    url: "@Url.Content("~/wenda/UpdateAnswer.htm")",
+                    data: { "iaId": aId, "content": answerHtml },
+                    success: function (data) {
+                        if (data) {
+                            if (data.ResultCode == 1) {
+                                alert("修改成功，请等待管理员审核");
+                                setTimeout(function () {
+                                    window.location.href = "@Url.Content("~/wenda/myanswers.html")";
+                                }, 1000);
+
+                            } else {
+                                alert(data.Msg);
+                            }
+                        }
+                    }
+                });
+            });
+        }
+    })
+</script>

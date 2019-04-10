@@ -1,0 +1,193 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" style="overflow: hidden" scroll="no">
+<head>
+    <meta name="Keywords" content="{$Keywords}" />
+    <meta name="Description" content="{$Description}" />
+    <title>{$Title}</title>
+    <link rel="stylesheet" type="text/css" href="/Css/style.css" />
+    <script type="text/javascript" language="javascript">
+        var GlobalConfig = {
+            'WebRootPath' :'{$WebRootPath}',
+            'Language' : '{$Language}',
+            'Domain': '{$Domain}',
+            'CityCode' : '{$CityCode}',
+            'CityName' : '{$CityName}',         
+            'EDataCenterUrl' : '{$EDataCenterUrl}',
+            'Loading' : '<div style="text-align:center; line-height:200%;"><img src="../Images/loading.gif"><br />正在加载...</div>',
+            'DianUrl' : '{$DianUrl}',
+            'HuangyeUrl' : '{$HuangyeUrl}',
+            'UserCenterUrl' : '{$UserCenterUrl}',
+            'EdizhiUrl' : '{$EdizhiUrl}',
+            'ImgUrl': '{$ImageUrl}pic_{$CityCode}/',
+            'PicUrl'   :  '{$PicUrl}',
+            'GoogleID': '{$GoogleID}',
+            'IsBDT': '{$IsBDT}',
+            'Is3D': '{$Is3D}',
+            'DataCetnerMapDataUrl': '{$DataCetnerMapDataUrl}',          //提供Map7的地图上的主题地图、包打听滚动、常用位置的数据提供
+            'DataCetnerAdDataUrl': '{$DataCetnerAdDataUrl}',            //提供所有程序的广告的数据
+            'Api4Url': '{$Api4Url}',
+            'DataCetnerBusDataUrl': '{$DataCetnerBusDataUrl}',          //提供公交两点搜索的web页面
+            'DataCetnerSearchDataUrl': '{$DataCetnerSearchDataUrl}'     //提供所有程序的搜索接口
+        };
+        var pageTracker = '';
+    </script>   
+    <script type="text/javascript" src="/Js/GeneralLib.js"></script>
+    <script type="text/javascript" src="/Controls/PoiPopControl.js"></script>
+    <script type="text/javascript" src="/Js/Init.js"></script>
+</head>
+<body onkeyup="fnKeyup(event)">
+    <div id="Container">
+        <div id="Header">
+            <a href="http://www.edushi.com/" target="_blank" title="E都市">
+                <img src="/Images/EdushiLogo.gif" alt="E都市" class="EdushiLogo" /></a><div id="SwitchCity">
+                    <strong>{$CityName}</strong><a href="javascript:fnSwichCity()" id="lnkSwichCity">[切换城市]</a></div>
+            <div id="CallBoard">
+                    <a href="http://www.aladdincn.com/phone_overview.html" target="_blank" title="手机地图">手机地图</a>
+                </div>
+            <div id="HeaderRgt">
+                <div id="RgtToBar">
+                    <ul>
+                    <li class="Bz"><a href="/MapHelp.htm" target="_blank" title="帮助">帮助</a></li>
+                        <li class="Ly"><a href="http://www.edushi.com/about/GuestBook.aspx?c={$CityCode}&l={$Language}" target="_blank" title="留言">留言</a></li>
+                        <li><a href="http://{$Domain}/adserver/index.html" target="_blank" title="广告服务">广告服务</a></li>
+                        <li class="LoginInfo" id="liLoginInfo">
+                        </li>
+                    </ul>
+                </div>
+                <div class="HackBox">
+                </div>
+                <div id="ShortcutMenu" style="display:none;">
+                    <div id="RollArLf">
+                        <img id="ImgThemeScrollLeft" src="/Images/RollArLf.gif" alt="向前一个" /></div>
+                    <div class="RollConten" id="divThemeMask">
+                        <div id="divThemeClip" style="display: block; position: absolute; clip: rect(0 500px 22px 0)">
+                            <div style="position:relative; width: 3000px">
+                                <ul id="ulThemeList">
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="HackBox">
+                        </div>
+                    </div>
+                    <div id="RollArRgt">
+                        <img id="ImgThemeScrollRight" src="/Images/RollArRgt.gif" alt="向后一个" /></div>
+                </div>
+            </div>
+        </div>
+        <div id="Wrapper">
+            <div id="Content" style="position: relative;">
+                <div id="Toolbar">
+                    <ul id="MapToolBar">
+                        <li class="Ico31" style="display:none;"><a href="javascript:fnCreateEAddress();" title="E地址" onfocus="this.blur()">E地址</a></li>
+                        <li class="Ico2"><a href="javascript:;" onclick="javascript:fnScale();fnGoogleStat('测距'); " title="测距" onfocus="this.blur()">测距</a></li>
+                        <li class="Ico4"><a href="javascript:fnReport(0,0,2,0,'','')" title="我要报料" onfocus="this.blur()">我要报料</a></li>
+                        <li class="Ico32"><a href="javascript:fnEShopAndCompanyJoin()" title="我要入驻" onfocus="this.blur()">我要入驻</a></li>
+                        <li class="Ico5"><a href="javascript:;" id="aFullScrenn" onclick="fnFullScreen(this);fnGoogleStat('最大化'); " title="最大化" onfocus="this.blur()">最大化</a></li>
+                    </ul>
+                    <div id="RgtPart">
+                        <ul>                            
+                            <li class="Ico12"><a href="javascript:;" onclick="javascript:fnPrint();fnGoogleStat('打印'); ">打印</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <!--常用位置菜单-->
+                <div id="divQuickLink" style="display: none;" class="QuickLink" onmouseover="fnShowCommonGoTo()" onmouseout="fnShowCommonGoTo()">
+                    <div class="InComPlaceNav">
+                        <div class="InComPlaceUp">
+                        </div>
+                        <div class="InComPlaceDn" id="divQuickLinkList">
+                        </div>
+                    </div>
+                </div>
+                <div id="DetailMap">
+                    <div id="EdushiMap"></div>
+                    <div id="CompassNav">
+                        <img src="/Images/CompassIco1.gif" alt="指针" />
+                    </div>
+                    <div id="CopyrightNav" >
+                        {$AuditingPicCode}
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="Navigation">
+            <div id="NavContent">
+                <div id="SearchNav">
+                    <div class="SeaCoteNav">
+                        <ul>
+                            <li class="Current" id="liMapSearch"><a href="javascript:fnSearchChange($('liMapSearch'))">
+                                地图搜索</a></li>
+                            <li id="liEAddress" style="margin-right:0px;display:none;"><a href="javascript:fnSearchChange($('liEAddress'))">E地址</a></li>
+                        </ul>
+                    </div>
+                    <!--地图搜索-->
+                    <div class="MapSearch" id="MapSearch" style="clear: both">
+                        <div class="SearchCond">
+                            <input name="MapSearchType" type="radio" id="radioSearchType0" value="0" checked="checked"
+                                onclick="fnMapSearchChange(this.value)" /><label for="radioSearchType0">全站搜索</label>&nbsp;
+                            <input name="MapSearchType" type="radio" id="radioSearchType1" value="1" onclick="fnMapSearchChange(this.value)" /><label
+                                for="radioSearchType1">名称</label>&nbsp;
+                            <input name="MapSearchType" type="radio" id="radioSearchType2" value="2" onclick="fnMapSearchChange(this.value)" /><label
+                                for="radioSearchType2">地址</label>&nbsp;
+                            <input name="MapSearchType" type="radio" id="radioSearchType3" value="3" onclick="fnMapSearchChange(this.value)" /><label
+                                for="radioSearchType3">周边</label>&nbsp;
+                            
+                        </div>
+                        <div class="SearchInput" id="divSearchInput">
+                            <div style="float: left" id="divSearch">
+                                <input style="width: 210px" type="text" id="txtSearchKey" class="InFieldSty" onblur="if(!__EdushiSuggest.IsMouseOnSuggestPanel){__EdushiSuggest.Hide();}" onkeyup="fnKeySearchSuggest('fnMapSearch()', this, 101, 125, 212, 'map', 0, event);" /></div>
+                            <div style="float: left; display: none" id="divAroundSearch">
+                                在&nbsp;<input style="width: 88px" type="text" id="txtSearchPlace" class="InFieldSty" onblur="if(!__EdushiSuggest.IsMouseOnSuggestPanel){__EdushiSuggest.Hide()}"
+                                    onkeyup="fnKeySearchSuggest('$(\'txtSearchSomething\').focus()', this, 128, 125, 170, 'map', 4, event);" />&nbsp;找&nbsp;<input
+                                        style="width: 85px" type="text" id="txtSearchSomething" class="InFieldSty" onblur="if(!__EdushiSuggest.IsMouseOnSuggestPanel){__EdushiSuggest.Hide()}" onkeyup="fnKeySearchSuggest('fnMapSearch()', this, 18, 125, 170, 'map', 5, event);" /></div>
+                            <div style="float: left; padding-left: 10px">
+                                <img style="cursor:pointer" src="/Images/SearchBtn.gif" onclick="fnMapSearch()" /></div>
+                        </div>
+                        <div class="HotConNav" id="MapHotKey">
+                            热门：<span id="MapHotKeywords"><a href="javascript:fnMapSearchByHotkey('培训',true);">培训</a>&nbsp;<a href="javascript:fnMapSearchByHotkey('健身',true);">健身</a>&nbsp;<a href="javascript:fnMapSearchByHotkey('婚庆',true);">婚庆</a>&nbsp;<a href="javascript:fnMapSearchByHotkey('宾馆',true);">宾馆</a>&nbsp;<a href="javascript:fnMapSearchByHotkey('票务',true);">票务</a>&nbsp;<a href="javascript:fnMapSearchByHotkey('餐厅',true);">餐厅</a>&nbsp;<a href="javascript:fnMapSearchByHotkey('茶馆',true);">茶馆</a>&nbsp;<a href="javascript:fnMapSearchByHotkey('学校',true);">学校</a>&nbsp;</span>
+                        </div>
+                    </div>
+                    <!--E地址-->
+                    <div class="EAddress" id="EAddress" style="display:none;">
+                        <span><strong>http://edizhi.edushi.com/</strong></span><span><input style="width: 98px;" id="txtEAddressName" onkeyup="if(window.event){if(13==window.event.keyCode){fnOpenEAddressWin($('txtEAddressName'));}else{window.event.cancelBubble = true;}}else{if(event.keyCode==13){fnOpenEAddressWin($('txtEAddressName'));}else{event.stopPropagation();}}"
+                            class="InFieldSty" type="text" /></span><span><img src="/Images/CallOnBtn.gif"
+                                alt="访问" onclick="fnOpenEAddressWin($('txtEAddressName'))" style="cursor: pointer;" /></span>
+                        <div class="HackBox"></div>
+                        <div class="ApManNav">
+                            <a href="http://edizhi.edushi.com/Index.aspx" target="_blank" title="E地址-定制您的E地址，分享给朋友很便利">E地址首页</a>&nbsp;&nbsp<a href="javascript:fnEAddressRegister();" title="创建E地址">创建E地址</a>&nbsp;&nbsp;<a href="javascript:fnEAddressManager();" title="管理E地址">管理E地址</a>
+                        </div>
+                        <div class="HotConNav">
+                            <a href="javascript:fnNewEAddressList();" class="Arrow1">最新E地址</a><a href="javascript:fnEAddressHelper();" title="E店助手" class="Arrow1">E地址助手</a>
+                        </div>
+                    </div>
+                </div>
+                <!--选项卡-->
+                <div id="ContenNav">
+                    <div class="CoteNav">
+                        <ul id="HeadContainer" style="position: relative;">
+                        </ul>
+                    </div>
+                    <div class="MoveArrow">
+                        <a href="javascript:;" id="LeftBtn">
+                            <img src="/Images/MoveArrowL.gif" alt="向左平移" /></a> <a href="javascript:;" id="RightBtn">
+                                <img src="/Images/MoveArrowR.gif" alt="向右平移" /></a></div>
+                    <div class="DeConNav" id="BodyContainer" style="height: 350px"></div>
+                </div>
+            </div>
+            <div id="ShrinkDH">
+                <img onclick="fnExpanding(this)" id="imgExpanding" style="cursor: pointer" src="/Images/DrawBack.gif" alt="收缩/展开" />
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript">
+        var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+        document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3F99a36e54478482e04c158ab069a3e598' type='text/javascript'%3E%3C/script%3E"));
+    </script>
+</body>
+</html>
+<script type="text/javascript" language="javascript">
+    window.onresize();  
+    var __EdushiSuggest = new Suggest(18, 155, 200, document.body);
+    __EdushiSuggest._loadData();
+    ENetwork.DownloadScript('http://api3.edushi.com/?City={$CityCode}&L={$Language}&MapID=EdushiMap&x={$CenterX}&y={$CenterY}&w=' + _MapWidth + '&h=' + _MapHeight + '&e=utf-8&z=4&v=2', fnLoadInit);
+</script>

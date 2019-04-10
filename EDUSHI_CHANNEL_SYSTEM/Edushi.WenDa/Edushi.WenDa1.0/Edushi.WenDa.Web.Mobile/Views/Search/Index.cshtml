@@ -1,0 +1,98 @@
+﻿@using Edushi.Common
+@model Edushi.WenDa.Web.Mobile.Models.SearchResultModel
+@{
+    ViewBag.Title = string.Format("搜索'{0}'结果-E都市问答-E都市", Model.KeyWord);
+    ViewBag.IsNeedBack = true;
+    var userUrl = Common.GetConfigString("domain_UserCenter");
+}
+
+@section meta
+{
+    <meta name="Keywords" content="@(Model.KeyWord),E都市问答，一款有用的问答，专注分享知识、经验、观念。在这里，希望所有人都能找到答案、参与讨论。" />
+    <meta name="Description" content="E都市问答 是以在线互动问答和搜索形式展现、提供价值资讯的信息服务平台,您可以根据自身的需求,有针对性地提出问题,同时这些答案也可以满足有相同或类似问题的其他人需求" />
+}
+
+<section class="search-nav">
+    <a class="on">全部</a>
+</section>
+<div class="content-main">
+    <div class="search-cnt js-votebox" id="datalist">
+        <div class="search-tips">为您找到相关结果约@(Model.TotalCount)个</div>
+        @if (Model.ResultList != null && Model.ResultList.Any())
+        {
+            foreach (var item in Model.ResultList)
+            {
+                var qTitle = item.QTitle.Replace(Model.KeyWord, "<span class=\"red\">" + Model.KeyWord + "</span>");
+                var qNickName = item.QUserInfo != null ? item.QUserInfo["NickName"] : "E都市网友";
+                var qUserHead = item.QUserInfo != null ? ViewBag.UserHeaderDomain + item.QUserInfo["Avatar"] : Url.Content("~/asset/images/userhead.jpg");
+                int qUserId = item.QUserInfo != null ? (int)item.QUserInfo["ID"] : 0;
+                var qWendaUserUrl = qUserId > 0 ? "href=" + userUrl + "wenda/index/1-" + qUserId + ".html" : "";
+                
+                 <div class="question-list js-votelist">
+                        <h2 class="q-tit"><a href="@item.Url">@Html.Raw(qTitle)</a></h2>
+                      
+                     <div class="q-info">
+                         <a @qWendaUserUrl class="photo">
+                             <img src="@qUserHead" onerror="this.src='@Url.Content("~/asset/images/userhead.jpg")'" />@qNickName
+                         </a>
+                         <span>@item.CreateDate</span>
+                         <span>@(item.ReplyCount)回答</span><span>@(item.CollectionCount)人收藏</span>
+                     </div>
+
+                        @if (!string.IsNullOrWhiteSpace(item.Answer))
+                        {
+                            var nickName = item.UserInfo != null ? item.UserInfo["NickName"] : "E都市网友";
+                            var userHead = item.UserInfo != null ? ViewBag.UserHeaderDomain + item.UserInfo["Avatar"] : Url.Content("~/asset/images/userhead.jpg");
+                            int userId = item.UserInfo != null && item.UserInfo["ID"] != null ? (int)item.UserInfo["ID"] : 0;
+                            var wendaUserUrl = userId > 0 ? "href=" + userUrl + "wenda/index/1-" + userId + ".html" : "";
+                            
+                            var className = "class=\"anser-item\"";
+                            var imgBox = string.Empty;
+                            if (!string.IsNullOrWhiteSpace(item.Pic)&&!string.IsNullOrWhiteSpace(item.Pic1)&&!string.IsNullOrWhiteSpace(item.Pic2))
+                            {
+                                className = "class=\"anser-item multiple\"";
+                                imgBox = string.Format("<div class=\"img-box\"><span><img src=\"{0}\" /></span><span><img src=\"{1}\" /></span><span><img src=\"{2}\" /></span></div>", item.Pic, item.Pic1, item.Pic2);
+                            }
+                            else if (!string.IsNullOrWhiteSpace(item.Pic))
+                            {
+                                className = "class=\"anser-item single\"";
+                                imgBox = string.Format("<div class=\"img-box\"><span><img src=\"{0}\"/></span></div>", item.Pic);
+                            }
+                            
+                            <div @Html.Raw(className)>
+                                <a href="@item.Url">
+                                    <div class="title">@Html.Raw(item.Answer)<span>全文</span></div>
+                                    @Html.Raw(imgBox)
+                                </a>
+                            </div>
+                            
+                            <div class="answer-user" data-id="@item.AnswerId">
+                                <a class="photo" @wendaUserUrl>
+                                    <img src="@userHead" />@nickName
+                                </a>
+                                <span @Html.Raw(item.IsPraise == -2 ? "class=\"yizan zan\"" : "class=\"zan\"")><span>@(item.PraiseCount)</span>赞<em>+1</em></span>
+                            </div>
+                        }
+                        
+                    </div>
+            }
+        }
+    </div>
+    <div class="loading">加载中</div>
+    <div class="end">没有更多了</div>
+</div>
+
+@Html.Partial("Footer")
+
+<script>
+    var ConfigData = {
+        "PageIndex":1,
+        "Count": "@Model.PageCount",
+        "Page": "@Url.Content("~/")",
+        "Url": "MoreSearchResultData.htm",
+        "keyword": "@(HttpUtility.UrlEncode(Model.KeyWord))",
+        "Type":2
+    }
+</script>
+
+<script src="@Url.Content("~/asset/js/scrollload.bak.js")"></script>

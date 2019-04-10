@@ -1,0 +1,14 @@
+E:\TFS192.168.100.212\EDUSHI_LOCAL_SYSTEMS\Edushi.Tu\Edushi.Tu2.0\Edushi.Tu.Special\bin\Debug\Edushi.Tu.Special.dll
+E:\TFS192.168.100.212\EDUSHI_LOCAL_SYSTEMS\Edushi.Tu\Edushi.Tu2.0\Edushi.Tu.Special\bin\Debug\Edushi.Tu.Special.pdb
+E:\TFS192.168.100.212\EDUSHI_LOCAL_SYSTEMS\Edushi.Tu\Edushi.Tu2.0\Edushi.Tu.Special\bin\Debug\EDC.Framework.dll
+E:\TFS192.168.100.212\EDUSHI_LOCAL_SYSTEMS\Edushi.Tu\Edushi.Tu2.0\Edushi.Tu.Special\bin\Debug\Edushi.Tu.Model.dll
+E:\TFS192.168.100.212\EDUSHI_LOCAL_SYSTEMS\Edushi.Tu\Edushi.Tu2.0\Edushi.Tu.Special\bin\Debug\ThoughtWorks.QRCode.dll
+E:\TFS192.168.100.212\EDUSHI_LOCAL_SYSTEMS\Edushi.Tu\Edushi.Tu2.0\Edushi.Tu.Special\bin\Debug\MongoDB.Bson.dll
+E:\TFS192.168.100.212\EDUSHI_LOCAL_SYSTEMS\Edushi.Tu\Edushi.Tu2.0\Edushi.Tu.Special\bin\Debug\Enyim.Caching.dll
+E:\TFS192.168.100.212\EDUSHI_LOCAL_SYSTEMS\Edushi.Tu\Edushi.Tu2.0\Edushi.Tu.Special\bin\Debug\log4net.dll
+E:\TFS192.168.100.212\EDUSHI_LOCAL_SYSTEMS\Edushi.Tu\Edushi.Tu2.0\Edushi.Tu.Special\bin\Debug\Edushi.Tu.Model.pdb
+E:\TFS192.168.100.212\EDUSHI_LOCAL_SYSTEMS\Edushi.Tu\Edushi.Tu2.0\Edushi.Tu.Special\obj\Debug\Edushi.Tu.Special.dll
+E:\TFS192.168.100.212\EDUSHI_LOCAL_SYSTEMS\Edushi.Tu\Edushi.Tu2.0\Edushi.Tu.Special\obj\Debug\Edushi.Tu.Special.pdb
+E:\TFS192.168.100.212\EDUSHI_LOCAL_SYSTEMS\Edushi.Tu\Edushi.Tu2.0\Edushi.Tu.Special\obj\Debug\Edushi.Tu.Special.csprojAssemblyReference.cache
+E:\TFS192.168.100.212\EDUSHI_LOCAL_SYSTEMS\Edushi.Tu\Edushi.Tu2.0\Edushi.Tu.Special\obj\Debug\Edushi.Tu.Special.csproj.CoreCompileInputs.cache
+E:\TFS192.168.100.212\EDUSHI_LOCAL_SYSTEMS\Edushi.Tu\Edushi.Tu2.0\Edushi.Tu.Special\obj\Debug\Edushi.Tu.Special.csproj.CopyComplete

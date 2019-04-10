@@ -1,0 +1,11 @@
+﻿<script>
+    $.ajax({
+        url: "@Url.Content("~/LoginUser.htm")",
+        type: "post",
+        success:function(data) {
+            if (data) {
+                $(".main-container .fr.sidebar-box").prepend(data);
+            }
+        }
+    })
+</script>

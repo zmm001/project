@@ -1,0 +1,1116 @@
+﻿<Project ToolsVersion="3.5" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{1A0FF913-6826-4D66-9BC4-A009541DE085}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Map.WebApp</RootNamespace>
+    <AssemblyName>Map.WebApp</AssemblyName>
+    <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AspNetPager, Version=6.0.0.0, Culture=neutral, PublicKeyToken=fb0a0fe055d40fd4, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\EDUSHI_CM_LIBRARY\Assembly_Library\Assembly_Library\AspNetPager.dll</HintPath>
+    </Reference>
+    <Reference Include="EDC.Framework, Version=2.0.0.1012, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\EDUSHI_CM_LIBRARY\Assembly_Library\Assembly_Library\EDC.Framework.dll</HintPath>
+    </Reference>
+    <Reference Include="Enyim.Caching, Version=1.2.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\EDUSHI_CM_LIBRARY\Assembly_Library\Assembly_Library\Enyim.Caching.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Web.Mobile" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="AgDataList\rizhao_zh-chs.js" />
+    <Content Include="AgDataList\hz_zh-chs.js" />
+    <Content Include="CityList.html" />
+    <Content Include="Default.aspx" />
+    <Content Include="ExistHotel.aspx" />
+    <Content Include="GoogleAd\hz_googleAd.xml" />
+    <Content Include="GoogleAd\shanghai_googleAd.xml" />
+    <Content Include="Js\GeneralLib.js" />
+    <Content Include="Js\Suggest.js" />
+    <Content Include="Login.aspx" />
+    <Content Include="Plugin.aspx" />
+    <Content Include="Print.aspx" />
+    <Content Include="Skins\en\hongkong\Css\style.css" />
+    <Content Include="Skins\en\hongkong\Images\ToolbarIco.gif" />
+    <Content Include="Skins\en\hongkong\Master_UI.html" />
+    <Content Include="Skins\zh-chs\2DDefault\Css\style.css" />
+    <Content Include="Skins\zh-chs\2DDefault\Fundation\Company2DJoin.aspx" />
+    <Content Include="Skins\zh-chs\2DDefault\js\Company2DJoin.js" />
+    <Content Include="Skins\zh-chs\2DDefault\js\Init.js" />
+    <Content Include="Skins\zh-chs\2DDefault\js\News.js" />
+    <Content Include="Skins\zh-chs\2DDefault\Master_UI.html" />
+    <Content Include="Skins\zh-chs\beijing\Controls\CompanyPopControl.aspx" />
+    <Content Include="Skins\zh-chs\beijing\Controls\CompanyPopControl.js" />
+    <Content Include="Skins\zh-chs\beijing\Controls\ControlBase.js" />
+    <Content Include="Skins\zh-chs\beijing\Controls\EntityPopControl.aspx" />
+    <Content Include="Skins\zh-chs\beijing\Controls\EntityPopControl.js" />
+    <Content Include="Skins\zh-chs\beijing\Controls\images\ms-bg.gif" />
+    <Content Include="Skins\zh-chs\beijing\Controls\taobao.htm" />
+    <Content Include="Skins\zh-chs\beijing\Fundation\GBusAdv.htm" />
+    <Content Include="Skins\zh-chs\beijing\Fundation\GOtherAdv.htm" />
+    <Content Include="Skins\zh-chs\beijing\Fundation\MergeSearch.aspx" />
+    <Content Include="Skins\zh-chs\chongqing\Controls\CompanyPopControl.js" />
+    <Content Include="Skins\zh-chs\Default\Controls\CompanyPopControl.aspx" />
+    <Content Include="Skins\zh-chs\Default\Controls\CompanyPopControl.js" />
+    <Content Include="Skins\zh-chs\Default\Controls\EntityPopControl.aspx" />
+    <Content Include="Skins\zh-chs\Default\Controls\EntityPopControl.js" />
+    <Content Include="Skins\zh-chs\Default\Controls\EShopPopControl.aspx" />
+    <Content Include="Skins\zh-chs\Default\Controls\EShopPopControl.js" />
+    <Content Include="Skins\zh-chs\Default\Controls\FcPopControl.aspx" />
+    <Content Include="Skins\zh-chs\Default\Controls\FcPopControl.js" />
+    <Content Include="Skins\zh-chs\Default\Controls\PoiPopControl.aspx" />
+    <Content Include="Skins\zh-chs\Default\Controls\PoiPopControl.js" />
+    <Content Include="Skins\zh-chs\Default\Css\FcLocalSearch.css" />
+    <Content Include="Skins\zh-chs\Default\Css\FindEstore.css" />
+    <Content Include="Skins\zh-chs\Default\Fundation\FcLocalSearch.aspx" />
+    <Content Include="Skins\zh-chs\Default\Fundation\GooglePoiSearch.aspx" />
+    <Content Include="Skins\zh-chs\Default\Fundation\HotelList.htm" />
+    <Content Include="Skins\zh-chs\Default\Fundation\HotelSearch.js" />
+    <Content Include="Skins\zh-chs\Default\Fundation\ListAd.aspx" />
+    <Content Include="Skins\zh-chs\Default\Images\2DItemAd.gif" />
+    <Content Include="Skins\zh-chs\Default\Images\2dRgtToBarBg.gif" />
+    <Content Include="Skins\zh-chs\Default\Images\bg.gif" />
+    <Content Include="Skins\zh-chs\Default\Images\ChMenusBg.gif" />
+    <Content Include="Skins\zh-chs\Default\Images\close.gif" />
+    <Content Include="Skins\zh-chs\Default\Images\Clouds.gif" />
+    <Content Include="Skins\zh-chs\Default\Images\comein.gif" />
+    <Content Include="Skins\zh-chs\Default\Images\CorpBg2.png" />
+    <Content Include="Skins\zh-chs\Default\Images\Dashed1.gif" />
+    <Content Include="Skins\zh-chs\Default\Images\FcMapIco1.gif" />
+    <Content Include="Skins\zh-chs\Default\Images\FcMapIco2.gif" />
+    <Content Include="Skins\zh-chs\Default\Images\FcMapIco3.gif" />
+    <Content Include="Skins\zh-chs\Default\Images\FcSearchNavBg.gif" />
+    <Content Include="Skins\zh-chs\Default\Images\FcSearchNavTop.gif" />
+    <Content Include="Skins\zh-chs\Default\Images\jdydsearch.gif" />
+    <Content Include="Skins\zh-chs\Default\Images\jianadv.gif" />
+    <Content Include="Skins\zh-chs\Default\Images\LabelsClass.gif" />
+    <Content Include="Skins\zh-chs\Default\Images\LinkExIco2.gif" />
+    <Content Include="Skins\zh-chs\Default\Images\OrderHotel.gif" />
+    <Content Include="Skins\zh-chs\Default\Images\OutBtnLinkBg.gif" />
+    <Content Include="Skins\zh-chs\Default\Images\SearchIco1.gif" />
+    <Content Include="Skins\zh-chs\Default\Images\ThemeMap2.png" />
+    <Content Include="Skins\zh-chs\Default\Images\VipMember.gif" />
+    <Content Include="Skins\zh-chs\Default\Images\wabao.gif" />
+    <Content Include="Skins\zh-chs\Default\Images\Vcomein.gif" />
+    <Content Include="Skins\zh-chs\Default\Images\wydz.gif" />
+    <Content Include="Skins\zh-chs\Default\Js\FcLocalSearch.js" />
+    <Content Include="Skins\zh-chs\Default\Js\GooglePoiSearch.js" />
+    <Content Include="Skins\zh-chs\3DDefault\Master_UI.html" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Skins\zh-chs\Default\Plugins\DigCowry\image\css.css.bak" />
+    <None Include="Skins\zh-chs\Default\Plugins\DigCowry\image\image.rar" />
+    <Content Include="Skins\zh-chs\Default\Controls\BusStationControl.aspx" />
+    <Content Include="Skins\zh-chs\Default\Controls\BusStationControl.js" />
+    <Content Include="Skins\zh-chs\Default\Controls\CommendPopControl.aspx" />
+    <Content Include="Skins\zh-chs\Default\Controls\CommendPopControl.js" />
+    <Content Include="Skins\zh-chs\Default\Controls\ControlBase.js" />
+    <Content Include="Skins\zh-chs\Default\Controls\TabControl.js" />
+    <Content Include="Skins\zh-chs\Default\Controls\ThemePopControl.js" />
+    <Content Include="Skins\zh-chs\Default\Css\BusNoSearch.css" />
+    <Content Include="Skins\zh-chs\Default\Css\BusPlatform.css" />
+    <Content Include="Skins\zh-chs\Default\Css\BusStationSearch.css" />
+    <Content Include="Skins\zh-chs\Default\Css\BusTransfer.css" />
+    <Content Include="Skins\zh-chs\Default\Css\BusTransferSearch.css" />
+    <Content Include="Skins\zh-chs\Default\Css\CommendPopControl.css" />
+    <Content Include="Skins\zh-chs\Default\Css\Common.css" />
+    <Content Include="Skins\zh-chs\Default\Css\CompanyList.css" />
+    <Content Include="Skins\zh-chs\Default\Css\Dialog.css" />
+    <Content Include="Skins\zh-chs\Default\Css\EAddress.css" />
+    <Content Include="Skins\zh-chs\Default\Css\FindEstoreResult.css" />
+    <Content Include="Skins\zh-chs\Default\Css\LocalSearch.css" />
+    <Content Include="Skins\zh-chs\Default\Css\Mark.css" />
+    <Content Include="Skins\zh-chs\Default\Css\MergeSearch.css" />
+    <Content Include="Skins\zh-chs\Default\Css\NearBySearch.css" />
+    <Content Include="Skins\zh-chs\Default\Css\PeripheralBus.css" />
+    <Content Include="Skins\zh-chs\Default\Css\SidePgSty.css" />
+    <Content Include="Skins\zh-chs\Default\Css\style.css" />
+    <Content Include="Skins\zh-chs\Default\Fundation\BusNoSearch.html" />
+    <Content Include="Skins\zh-chs\Default\Fundation\BusStationSearch.html" />
+    <Content Include="Skins\zh-chs\Default\Fundation\BusTransfer.html" />
+    <Content Include="Skins\zh-chs\Default\Fundation\BusTransferSearch.html" />
+    <Content Include="Skins\zh-chs\Default\Fundation\CompanyList.html" />
+    <Content Include="Skins\zh-chs\Default\Fundation\EAddressHandle.aspx" />
+    <Content Include="Skins\zh-chs\Default\Fundation\EAddressHelper.html" />
+    <Content Include="Skins\zh-chs\Default\Fundation\EAddressList.aspx" />
+    <Content Include="Skins\zh-chs\3DDefault\Fundation\Company3DJoin.aspx" />
+    <Content Include="Skins\zh-chs\Default\Fundation\FindEstore.html" />
+    <Content Include="Skins\zh-chs\Default\Fundation\FindEstoreResult.html" />
+    <Content Include="Skins\zh-chs\Default\Fundation\FromHereStart.html" />
+    <Content Include="Skins\zh-chs\Default\Fundation\LocalSearch.aspx" />
+    <Content Include="Skins\zh-chs\Default\Fundation\LocalSearch.html" />
+    <Content Include="Skins\zh-chs\Default\Fundation\MarkPlHandle.aspx" />
+    <Content Include="Skins\zh-chs\Default\Fundation\MergeSearch.aspx" />
+    <Content Include="Skins\zh-chs\Default\Fundation\NearBySearch.html" />
+    <Content Include="Skins\zh-chs\Default\Fundation\News.html" />
+    <Content Include="Skins\zh-chs\Default\Fundation\PeripheralBus.html" />
+    <Content Include="Skins\zh-chs\Default\Fundation\Report.aspx" />
+    <Content Include="Skins\zh-chs\Default\Fundation\ShopLiveIn.html" />
+    <Content Include="Skins\zh-chs\Default\Fundation\ThemeMap.html" />
+    <Content Include="Skins\zh-chs\Default\Fundation\ToHereSearch.html" />
+    <Content Include="Skins\zh-chs\Default\Images\AlterThMapIco.png" />
+    <Content Include="Skins\zh-chs\Default\Images\AlterVesicle.png" />
+    <Content Include="Skins\zh-chs\Default\Images\AmendBtn1.gif" />
+    <Content Include="Skins\zh-chs\Default\Images\ApAdrBtn1.gif" />
+    <Content Include="Skins\zh-chs\Default\Images\ApAdrBtn2.gif" />
+    <Content Include="Skins\zh-chs\Default\Images\ApAdrBtn3.gif" />
+    <Content Include="Skins\zh-chs\Default\Images\ApButton.gif" />
+    <Content Include="Skins\zh-chs\Default\Images\ApButton2.gif" />
+    <Content Include="Skins\zh-chs\Default\Images\ArchitBg.png" />
+    <Content Include="Skins\zh-chs\Default\Images\ArchitBtn.gif" />
+    <Content Include="Skins\zh-chs\Default\Images\Arrow1.gif" />
+    <Content Include="Skins\zh-chs\Default\Images\Arrow2.gif" />
+    <Content Include="Skins\zh-chs\Default\Images\Arrow3.gif" />
+    <Content Include="Skins\zh-chs\Default\Images\ArrowCircle1.gif" />
+    <Content Include="Skins\zh-chs\Default\Images\ArrowCircle2.gif" />
+    <Content Include="Skins\zh-chs\Default\Images\ArrowSx.gif" />
+    <Content Include="Skins\zh-chs\Default\Images\BiDashedLine.gif" />
+    <Content Include="Skins\zh-chs\Default\Images\BlkNavBg.gif" />
+    <Content Include="Skins\zh-chs\Default\Images\BugCirChange.gif" />
+    <Content Include="Skins\zh-chs\Default\Images\BugCirStar.gif" />
+    <Content Include="Skins\zh-chs\Default\Images\BugStart.gif" />
+    <Content Include="Skins\zh-chs\Default\Images\BusChangeIco.gif" />
+    <Content Include="Skins\zh-chs\Default\Images\BusCirEnd.gif" />
+    <Content Include="Skins\zh-chs\Default\Images\BusEnd.gif" />
+    <Content Include="Skins\zh-chs\Default\Images\button4.gif" />
+    <Content Include="Skins\zh-chs\Default\Images\CallOnBtn.gif" />
+    <Content Include="Skins\zh-chs\Default\Images\Change2D3D.gif" />
+    <Content Include="Skins\zh-chs\Default\Images\ClaArrow.gif" />
+    <Content Include="Skins\zh-chs\Default\Images\ClBtn.gif" />
+    <Content Include="Skins\zh-chs\Default\Images\ClewBg1.gif" />
+    <Content Include="Skins\zh-chs\Default\Images\ClewIco1.gif" />
+    <Content Include="Skins\zh-chs\Default\Images\ClewIco2.gif" />
+    <Content Include="Skins\zh-chs\Default\Images\ClewIco3.gif" />
+    <Content Include="Skins\zh-chs\Default\Images\CloseBtn.gif" />
+    <Content Include="Skins\zh-chs\Default\Images\CloseBtn1.gif" />
+    <Content Include="Skins\zh-chs\Default\Images\ComMapIco1.gif" />
+    <Content Include="Skins\zh-chs\Default\Images\ComMapIco2.gif" />
+    <Content Include="Skins\zh-chs\Default\Images\CommonArrow1.gif" />
+    <Content Include="Skins\zh-chs\Default\Images\CompassIco.gif" />
+    <Content Include="Skins\zh-chs\Default\Images\CompassIco1.gif" />
+    <Content Include="Skins\zh-chs\Default\Images\CopyBusLineToFri.gif" />
+    <Content Include="Skins\zh-chs\Default\Images\CorpBg.png" />
+    <Content Include="Skins\zh-chs\Default\Images\Cu.gif" />
+    <Content Include="Skins\zh-chs\Default\Images\DebugBg.png" />
+    <Content Include="Skins\zh-chs\Default\Images\DeBugBtn.gif" />
+    <Content Include="Skins\zh-chs\Default\Images\DelButton2.gif" />
+    <Content Include="Skins\zh-chs\Default\Images\DeleteTag.gif" />
+    <Content Include="Skins\zh-chs\Default\Images\DigUpCowry.gif" />
+    <Content Include="Skins\zh-chs\Default\Images\DownIco.gif" />
+    <Content Include="Skins\zh-chs\Default\Images\DrawBack.gif" />
+    <Content Include="Skins\zh-chs\Default\Images\Edian.gif" />
+    <Content Include="Skins\zh-chs\Default\Images\EdushiLogo.gif" />
+    <Content Include="Skins\zh-chs\Default\Images\eStoreBg.png" />
+    <Content Include="Skins\zh-chs\Default\Images\EstoreLabelBg.gif" />
+    <Content Include="Skins\zh-chs\Default\Images\Expanding.gif" />
+    <Content Include="Skins\zh-chs\Default\Images\FilterIco.gif" />
+    <Content Include="Skins\zh-chs\Default\Images\FindEstoreH3Bg.gif" />
+    <Content Include="Skins\zh-chs\Default\Images\FloorShow.gif" />
+    <Content Include="Skins\zh-chs\Default\Images\FrMapAc.gif" />
+    <Content Include="Skins\zh-chs\Default\Images\gongjiao.gif" />
+    <Content Include="Skins\zh-chs\Default\Images\gongjiao2.gif" />
+    <Content Include="Skins\zh-chs\Default\Images\GoToIco.gif" />
+    <Content Include="Skins\zh-chs\Default\Images\HandIco1.gif" />
+    <Content Include="Skins\zh-chs\Default\Images\HandIco2.gif" />
+    <Content Include="Skins\zh-chs\Default\Images\HeaderBg.gif" />
+    <Content Include="Skins\zh-chs\Default\Images\HeaderIcoBg.gif" />
+    <Content Include="Skins\zh-chs\Default\Images\Help1.gif" />
+    <Content Include="Skins\zh-chs\Default\Images\image1.gif" />
+    <Content Include="Skins\zh-chs\Default\Images\Img1.gif" />
+    <Content Include="Skins\zh-chs\Default\Images\Img2.gif" />
+    <Content Include="Skins\zh-chs\Default\Images\Img3.gif" />
+    <Content Include="Skins\zh-chs\Default\Images\Img4.gif" />
+    <Content Include="Skins\zh-chs\Default\Images\Img5.gif" />
+    <Content Include="Skins\zh-chs\Default\Images\Img6.gif" />
+    <Content Include="Skins\zh-chs\Default\Images\Img7.gif" />
+    <Content Include="Skins\zh-chs\Default\Images\Img8.gif" />
+    <Content Include="Skins\zh-chs\Default\Images\Img9.gif" />
+    <Content Include="Skins\zh-chs\Default\Images\InComPlBg.gif" />
+    <Content Include="Skins\zh-chs\Default\Images\InForm.gif" />
+    <Content Include="Skins\zh-chs\Default\Images\InTagBg.png" />
+    <Content Include="Skins\zh-chs\Default\Images\InTagBg2.png" />
+    <Content Include="Skins\zh-chs\Default\Images\Juan.gif" />
+    <Content Include="Skins\zh-chs\Default\Images\LinkExIco.gif" />
+    <Content Include="Skins\zh-chs\Default\Images\loading.gif" />
+    <Content Include="Skins\zh-chs\Default\Images\LockIco1.gif" />
+    <Content Include="Skins\zh-chs\Default\Images\LockIco2.gif" />
+    <Content Include="Skins\zh-chs\Default\Images\LoginBtn1.gif" />
+    <Content Include="Skins\zh-chs\Default\Images\LoginH3Til.gif" />
+    <Content Include="Skins\zh-chs\Default\Images\LoginNavBg.gif" />
+    <Content Include="Skins\zh-chs\Default\Images\ManButton.gif" />
+    <Content Include="Skins\zh-chs\Default\Images\mapcontrols.gif" />
+    <Content Include="Skins\zh-chs\Default\Images\MapHelpImg1.gif" />
+    <Content Include="Skins\zh-chs\Default\Images\MapHelpImg10.gif" />
+    <Content Include="Skins\zh-chs\Default\Images\MapHelpImg11.gif" />
+    <Content Include="Skins\zh-chs\Default\Images\MapHelpImg12.gif" />
+    <Content Include="Skins\zh-chs\Default\Images\MapHelpImg13.gif" />
+    <Content Include="Skins\zh-chs\Default\Images\MapHelpImg14.gif" />
+    <Content Include="Skins\zh-chs\Default\Images\MapHelpImg15.gif" />
+    <Content Include="Skins\zh-chs\Default\Images\MapHelpImg16.gif" />
+    <Content Include="Skins\zh-chs\Default\Images\MapHelpImg17.gif" />
+    <Content Include="Skins\zh-chs\Default\Images\MapHelpImg18.gif" />
+    <Content Include="Skins\zh-chs\Default\Images\MapHelpImg19.gif" />
+    <Content Include="Skins\zh-chs\Default\Images\MapHelpImg2.gif" />
+    <Content Include="Skins\zh-chs\Default\Images\MapHelpImg20.gif" />
+    <Content Include="Skins\zh-chs\Default\Images\MapHelpImg21.gif" />
+    <Content Include="Skins\zh-chs\Default\Images\MapHelpImg22.gif" />
+    <Content Include="Skins\zh-chs\Default\Images\MapHelpImg23.gif" />
+    <Content Include="Skins\zh-chs\Default\Images\MapHelpImg24.gif" />
+    <Content Include="Skins\zh-chs\Default\Images\MapHelpImg25.gif" />
+    <Content Include="Skins\zh-chs\Default\Images\MapHelpImg26.gif" />
+    <Content Include="Skins\zh-chs\Default\Images\MapHelpImg27.gif" />
+    <Content Include="Skins\zh-chs\Default\Images\MapHelpImg28.gif" />
+    <Content Include="Skins\zh-chs\Default\Images\MapHelpImg29.gif" />
+    <Content Include="Skins\zh-chs\Default\Images\MapHelpImg3.gif" />
+    <Content Include="Skins\zh-chs\Default\Images\MapHelpImg31.gif" />
+    <Content Include="Skins\zh-chs\Default\Images\MapHelpImg32.gif" />
+    <Content Include="Skins\zh-chs\Default\Images\MapHelpImg33.gif" />
+    <Content Include="Skins\zh-chs\Default\Images\MapHelpImg34.gif" />
+    <Content Include="Skins\zh-chs\Default\Images\MapHelpImg35.gif" />
+    <Content Include="Skins\zh-chs\Default\Images\MapHelpImg36.gif" />
+    <Content Include="Skins\zh-chs\Default\Images\MapHelpImg37.gif" />
+    <Content Include="Skins\zh-chs\Default\Images\MapHelpImg38.gif" />
+    <Content Include="Skins\zh-chs\Default\Images\MapHelpImg39.gif" />
+    <Content Include="Skins\zh-chs\Default\Images\MapHelpImg4.gif" />
+    <Content Include="Skins\zh-chs\Default\Images\MapHelpImg40.gif" />
+    <Content Include="Skins\zh-chs\Default\Images\MapHelpImg41.gif" />
+    <Content Include="Skins\zh-chs\Default\Images\MapHelpImg42.gif" />
+    <Content Include="Skins\zh-chs\Default\Images\MapHelpImg43.gif" />
+    <Content Include="Skins\zh-chs\Default\Images\MapHelpImg44.gif" />
+    <Content Include="Skins\zh-chs\Default\Images\MapHelpImg45.gif" />
+    <Content Include="Skins\zh-chs\Default\Images\MapHelpImg46.gif" />
+    <Content Include="Skins\zh-chs\Default\Images\MapHelpImg47.gif" />
+    <Content Include="Skins\zh-chs\Default\Images\MapHelpImg48.gif" />
+    <Content Include="Skins\zh-chs\Default\Images\MapHelpImg49.gif" />
+    <Content Include="Skins\zh-chs\Default\Images\MapHelpImg5.gif" />
+    <Content Include="Skins\zh-chs\Default\Images\MapHelpImg50.gif" />
+    <Content Include="Skins\zh-chs\Default\Images\MapHelpImg51.gif" />
+    <Content Include="Skins\zh-chs\Default\Images\MapHelpImg52.gif" />
+    <Content Include="Skins\zh-chs\Default\Images\MapHelpImg53.gif" />
+    <Content Include="Skins\zh-chs\Default\Images\MapHelpImg54.gif" />
+    <Content Include="Skins\zh-chs\Default\Images\MapHelpImg55.gif" />
+    <Content Include="Skins\zh-chs\Default\Images\MapHelpImg6.gif" />
+    <Content Include="Skins\zh-chs\Default\Images\MapHelpImg7.gif" />
+    <Content Include="Skins\zh-chs\Default\Images\MapHelpImg8.gif" />
+    <Content Include="Skins\zh-chs\Default\Images\MapHelpImg9.gif" />
+    <Content Include="Skins\zh-chs\Default\Images\MarkPlBtn1.gif" />
+    <Content Include="Skins\zh-chs\Default\Images\MarkPlBtn2.gif" />
+    <Content Include="Skins\zh-chs\Default\Images\MendButton1.gif" />
+    <Content Include="Skins\zh-chs\Default\Images\MoveArrowL.gif" />
+    <Content Include="Skins\zh-chs\Default\Images\MoveArrowR.gif" />
+    <Content Include="Skins\zh-chs\Default\Images\MyEadBg.gif" />
+    <Content Include="Skins\zh-chs\Default\Images\NameHeadBg.gif" />
+    <Content Include="Skins\zh-chs\Default\Images\NoheadPic.gif" />
+    <Content Include="Skins\zh-chs\Default\Images\NOPHOTO.jpg" />
+    <Content Include="Skins\zh-chs\Default\Images\Numberbg.gif" />
+    <Content Include="Skins\zh-chs\Default\Images\OpButton.gif" />
+    <Content Include="Skins\zh-chs\Default\Images\PgDn.gif" />
+    <Content Include="Skins\zh-chs\Default\Images\PgUp.gif" />
+    <Content Include="Skins\zh-chs\Default\Images\PinIco.png" />
+    <Content Include="Skins\zh-chs\Default\Images\PlatformConBg.png" />
+    <Content Include="Skins\zh-chs\Default\Images\PopAd.gif" />
+    <Content Include="Skins\zh-chs\Default\Images\PopBtn0.gif" />
+    <Content Include="Skins\zh-chs\Default\Images\PopBtn1.gif" />
+    <Content Include="Skins\zh-chs\Default\Images\PopBtn2.gif" />
+    <Content Include="Skins\zh-chs\Default\Images\PopBtn3.gif" />
+    <Content Include="Skins\zh-chs\Default\Images\PrintBtn.gif" />
+    <Content Include="Skins\zh-chs\Default\Images\PrintLogo.gif" />
+    <Content Include="Skins\zh-chs\Default\Images\BulIco.gif" />
+    <Content Include="Skins\zh-chs\Default\Images\ReDebugBg.png" />
+    <Content Include="Skins\zh-chs\Default\Images\RegBtn1.gif" />
+    <Content Include="Skins\zh-chs\Default\Images\ReMapAc.gif" />
+    <Content Include="Skins\zh-chs\Default\Images\ReMapAc2.gif" />
+    <Content Include="Skins\zh-chs\Default\Images\RgtToBarBg.gif" />
+    <Content Include="Skins\zh-chs\Default\Images\RollArLf.gif" />
+    <Content Include="Skins\zh-chs\Default\Images\RollArRgt.gif" />
+    <Content Include="Skins\zh-chs\Default\Images\SaileStore.gif" />
+    <Content Include="Skins\zh-chs\Default\Images\ScrollBoxBg.gif" />
+    <Content Include="Skins\zh-chs\Default\Images\SeaButton1.gif" />
+    <Content Include="Skins\zh-chs\Default\Images\SearchBtn.gif" />
+    <Content Include="Skins\zh-chs\Default\Images\SearchNavBg.gif" />
+    <Content Include="Skins\zh-chs\Default\Images\SearchNavDown.gif" />
+    <Content Include="Skins\zh-chs\Default\Images\SearchNavLine.gif" />
+    <Content Include="Skins\zh-chs\Default\Images\SearchNavTop.gif" />
+    <Content Include="Skins\zh-chs\Default\Images\ShopClaim.gif" />
+    <Content Include="Skins\zh-chs\Default\Images\ShowTagBg.png" />
+    <Content Include="Skins\zh-chs\Default\Images\ShrinkDHBg.gif" />
+    <Content Include="Skins\zh-chs\Default\Images\SmallArrow.gif" />
+    <Content Include="Skins\zh-chs\Default\Images\SpeLine.gif" />
+    <Content Include="Skins\zh-chs\Default\Images\SrFilBtn.gif" />
+    <Content Include="Skins\zh-chs\Default\Images\SwitchBtn.gif" />
+    <Content Include="Skins\zh-chs\Default\Images\SwTitleBg.gif" />
+    <Content Include="Skins\zh-chs\Default\Images\TagBtn.gif" />
+    <Content Include="Skins\zh-chs\Default\Images\TersIco.gif" />
+    <Content Include="Skins\zh-chs\Default\Images\ThemeMap.png" />
+    <Content Include="Skins\zh-chs\Default\Images\ThMapIco.png" />
+    <Content Include="Skins\zh-chs\Default\Images\ToFriend.gif" />
+    <Content Include="Skins\zh-chs\Default\Images\ToMapRope.gif" />
+    <Content Include="Skins\zh-chs\Default\Images\ToMapRope2.gif" />
+    <Content Include="Skins\zh-chs\Default\Images\ToolbarBg.gif" />
+    <Content Include="Skins\zh-chs\Default\Images\ToolbarIco.gif" />
+    <Content Include="Skins\zh-chs\Default\Images\TriArrow.gif" />
+    <Content Include="Skins\zh-chs\Default\Images\UnError.gif" />
+    <Content Include="Skins\zh-chs\Default\Images\UpIco.gif" />
+    <Content Include="Skins\zh-chs\Default\Images\UsIfBg.gif" />
+    <Content Include="Skins\zh-chs\Default\Images\VesicleBg.png" />
+    <Content Include="Skins\zh-chs\Default\Images\ViewComMap.gif" />
+    <Content Include="Skins\zh-chs\Default\Images\ViewTagBg.png" />
+    <Content Include="Skins\zh-chs\Default\Images\VipEdian.gif" />
+    <Content Include="Skins\zh-chs\Default\Images\xCompassIco.gif" />
+    <Content Include="Skins\zh-chs\Default\Images\Ying.gif" />
+    <Content Include="Skins\zh-chs\Default\Js\BusNoSearch.js" />
+    <Content Include="Skins\zh-chs\Default\Js\BusStationSearch.js" />
+    <Content Include="Skins\zh-chs\Default\Js\BusTransfer.js" />
+    <Content Include="Skins\zh-chs\Default\Js\BusTransferSearch.js" />
+    <Content Include="Skins\zh-chs\Default\Js\CompanyList.js" />
+    <Content Include="Skins\zh-chs\Default\Js\EAddress.js" />
+    <Content Include="Skins\zh-chs\Default\Js\EAddressHandle.js" />
+    <Content Include="Skins\zh-chs\3DDefault\js\Company3DJoin.js" />
+    <Content Include="Skins\zh-chs\Default\Js\FindeEstore.js" />
+    <Content Include="Skins\zh-chs\Default\Js\FindEstoreResult.js" />
+    <Content Include="Skins\zh-chs\Default\Js\FromHereStart.js" />
+    <Content Include="Skins\zh-chs\3DDefault\js\Init.js" />
+    <Content Include="Skins\zh-chs\Default\Js\LocalSearch.js" />
+    <Content Include="Skins\zh-chs\Default\Js\Mark.js" />
+    <Content Include="Skins\zh-chs\Default\Js\MarkEAddress.js" />
+    <Content Include="Skins\zh-chs\Default\Js\MarkEAddressHandle.js" />
+    <Content Include="Skins\zh-chs\Default\Js\MergeSearch.js" />
+    <Content Include="Skins\zh-chs\Default\Js\NearBySearch.js" />
+    <Content Include="Skins\zh-chs\Default\Js\News.js" />
+    <Content Include="Skins\zh-chs\Default\Js\PeripheralBus.js" />
+    <Content Include="Skins\zh-chs\Default\Js\Report.js" />
+    <Content Include="Skins\zh-chs\Default\Js\ThemeMap.js" />
+    <Content Include="Skins\zh-chs\Default\Js\ToHereSearch.js" />
+    <Content Include="Skins\zh-chs\Default\MapHelp.htm" />
+    <Content Include="Skins\zh-chs\Default\Plugins\AdServer\css.css" />
+    <Content Include="Skins\zh-chs\Default\Plugins\AdServer\images\index_r11_c2.jpg" />
+    <Content Include="Skins\zh-chs\Default\Plugins\AdServer\images\index_r1_c1.jpg" />
+    <Content Include="Skins\zh-chs\Default\Plugins\AdServer\images\index_r2_c1.gif" />
+    <Content Include="Skins\zh-chs\Default\Plugins\AdServer\images\pic\pic_1.jpg" />
+    <Content Include="Skins\zh-chs\Default\Plugins\AdServer\images\pic\pic_2.jpg" />
+    <Content Include="Skins\zh-chs\Default\Plugins\AdServer\images\pic\pic_r1_c5.jpg" />
+    <Content Include="Skins\zh-chs\Default\Plugins\AdServer\images\pic\pic_r1_c8.jpg" />
+    <Content Include="Skins\zh-chs\Default\Plugins\AdServer\images\pic\pic_r3_c4.jpg" />
+    <Content Include="Skins\zh-chs\Default\Plugins\AdServer\images\pic\pic_r3_c9.jpg" />
+    <Content Include="Skins\zh-chs\Default\Plugins\AdServer\images\pic\pic_r5_c10.jpg" />
+    <Content Include="Skins\zh-chs\Default\Plugins\AdServer\images\pic\pic_r5_c5.jpg" />
+    <Content Include="Skins\zh-chs\Default\Plugins\AdServer\images\pic\pic_r7_c10.jpg" />
+    <Content Include="Skins\zh-chs\Default\Plugins\AdServer\images\pic\pic_r7_c5.jpg" />
+    <Content Include="Skins\zh-chs\Default\Plugins\AdServer\images\pic\pic_r7_c6.jpg" />
+    <Content Include="Skins\zh-chs\Default\Plugins\AdServer\index.html" />
+    <Content Include="Skins\zh-chs\Default\Plugins\DigCowry\CentBoubleUI.aspx" />
+    <Content Include="Skins\zh-chs\Default\Plugins\DigCowry\CentFive1UI.aspx" />
+    <Content Include="Skins\zh-chs\Default\Plugins\DigCowry\CentFive2UI.aspx" />
+    <Content Include="Skins\zh-chs\Default\Plugins\DigCowry\CentFive3UI.aspx" />
+    <Content Include="Skins\zh-chs\Default\Plugins\DigCowry\CentFiveUI.aspx" />
+    <Content Include="Skins\zh-chs\Default\Plugins\DigCowry\Congratulate.aspx" />
+    <Content Include="Skins\zh-chs\Default\Plugins\DigCowry\css\css.css" />
+    <Content Include="Skins\zh-chs\Default\Plugins\DigCowry\css\DigCowry.css" />
+    <Content Include="Skins\zh-chs\Default\Plugins\DigCowry\css\xunbao.css" />
+    <Content Include="Skins\zh-chs\Default\Plugins\DigCowry\Default.aspx" />
+    <Content Include="Skins\zh-chs\Default\Plugins\DigCowry\Depression.aspx" />
+    <Content Include="Skins\zh-chs\Default\Plugins\DigCowry\dig.aspx" />
+    <Content Include="Skins\zh-chs\Default\Plugins\DigCowry\DigCowry.js" />
+    <Content Include="Skins\zh-chs\Default\Plugins\DigCowry\DigFailture.aspx" />
+    <Content Include="Skins\zh-chs\Default\Plugins\DigCowry\DigFalse.aspx" />
+    <Content Include="Skins\zh-chs\Default\Plugins\DigCowry\DigHelp.aspx" />
+    <Content Include="Skins\zh-chs\Default\Plugins\DigCowry\DigHero.aspx" />
+    <Content Include="Skins\zh-chs\Default\Plugins\DigCowry\DigMemberCert.aspx" />
+    <Content Include="Skins\zh-chs\Default\Plugins\DigCowry\DigSuccess.aspx" />
+    <Content Include="Skins\zh-chs\Default\Plugins\DigCowry\DigTrue.aspx" />
+    <Content Include="Skins\zh-chs\Default\Plugins\DigCowry\images\#.jpg" />
+    <Content Include="Skins\zh-chs\Default\Plugins\DigCowry\images\#1.jpg" />
+    <Content Include="Skins\zh-chs\Default\Plugins\DigCowry\images\1.gif" />
+    <Content Include="Skins\zh-chs\Default\Plugins\DigCowry\images\2.gif" />
+    <Content Include="Skins\zh-chs\Default\Plugins\DigCowry\images\3.gif" />
+    <Content Include="Skins\zh-chs\Default\Plugins\DigCowry\images\4.gif" />
+    <Content Include="Skins\zh-chs\Default\Plugins\DigCowry\images\5.gif" />
+    <Content Include="Skins\zh-chs\Default\Plugins\DigCowry\images\Button1.gif" />
+    <Content Include="Skins\zh-chs\Default\Plugins\DigCowry\images\Button2.gif" />
+    <Content Include="Skins\zh-chs\Default\Plugins\DigCowry\images\chutou.swf" />
+    <Content Include="Skins\zh-chs\Default\Plugins\DigCowry\images\CloseBtn.gif" />
+    <Content Include="Skins\zh-chs\Default\Plugins\DigCowry\images\DigBg.gif" />
+    <Content Include="Skins\zh-chs\Default\Plugins\DigCowry\images\digcowry.jpg" />
+    <Content Include="Skins\zh-chs\Default\Plugins\DigCowry\images\DigCowryTip.png" />
+    <Content Include="Skins\zh-chs\Default\Plugins\DigCowry\images\DigUpCowry.gif" />
+    <Content Include="Skins\zh-chs\Default\Plugins\DigCowry\images\guess.jpg" />
+    <Content Include="Skins\zh-chs\Default\Plugins\DigCowry\images\nocowry.jpg" />
+    <Content Include="Skins\zh-chs\Default\Plugins\DigCowry\images\spade.gif" />
+    <Content Include="Skins\zh-chs\Default\Plugins\DigCowry\images\spade.swf" />
+    <Content Include="Skins\zh-chs\Default\Plugins\DigCowry\images\xunbao_r1_a10.jpg" />
+    <Content Include="Skins\zh-chs\Default\Plugins\DigCowry\images\xunbao_r1_a11.jpg" />
+    <Content Include="Skins\zh-chs\Default\Plugins\DigCowry\images\xunbao_r1_a12.jpg" />
+    <Content Include="Skins\zh-chs\Default\Plugins\DigCowry\images\xunbao_r1_a13.jpg" />
+    <Content Include="Skins\zh-chs\Default\Plugins\DigCowry\images\xunbao_r1_a14.gif" />
+    <Content Include="Skins\zh-chs\Default\Plugins\DigCowry\images\xunbao_r1_a15.jpg" />
+    <Content Include="Skins\zh-chs\Default\Plugins\DigCowry\images\xunbao_r1_a16.jpg" />
+    <Content Include="Skins\zh-chs\Default\Plugins\DigCowry\images\xunbao_r1_a17.jpg" />
+    <Content Include="Skins\zh-chs\Default\Plugins\DigCowry\images\xunbao_r1_a18.jpg" />
+    <Content Include="Skins\zh-chs\Default\Plugins\DigCowry\images\xunbao_r1_a9.jpg" />
+    <Content Include="Skins\zh-chs\Default\Plugins\DigCowry\images\xunbao_r2_a1.jpg" />
+    <Content Include="Skins\zh-chs\Default\Plugins\DigCowry\images\xunbao_r2_a10.jpg" />
+    <Content Include="Skins\zh-chs\Default\Plugins\DigCowry\images\xunbao_r2_a11.jpg" />
+    <Content Include="Skins\zh-chs\Default\Plugins\DigCowry\images\xunbao_r2_a12.jpg" />
+    <Content Include="Skins\zh-chs\Default\Plugins\DigCowry\images\xunbao_r2_a13.jpg" />
+    <Content Include="Skins\zh-chs\Default\Plugins\DigCowry\images\xunbao_r2_a14.jpg" />
+    <Content Include="Skins\zh-chs\Default\Plugins\DigCowry\images\xunbao_r2_a15.jpg" />
+    <Content Include="Skins\zh-chs\Default\Plugins\DigCowry\images\xunbao_r2_a16.jpg" />
+    <Content Include="Skins\zh-chs\Default\Plugins\DigCowry\images\xunbao_r2_a17.jpg" />
+    <Content Include="Skins\zh-chs\Default\Plugins\DigCowry\images\xunbao_r2_a18.jpg" />
+    <Content Include="Skins\zh-chs\Default\Plugins\DigCowry\images\xunbao_r2_a19.jpg" />
+    <Content Include="Skins\zh-chs\Default\Plugins\DigCowry\images\xunbao_r2_a2.jpg" />
+    <Content Include="Skins\zh-chs\Default\Plugins\DigCowry\images\xunbao_r2_a20.jpg" />
+    <Content Include="Skins\zh-chs\Default\Plugins\DigCowry\images\xunbao_r2_a21.jpg" />
+    <Content Include="Skins\zh-chs\Default\Plugins\DigCowry\images\xunbao_r2_a22.jpg" />
+    <Content Include="Skins\zh-chs\Default\Plugins\DigCowry\images\xunbao_r2_a23.jpg" />
+    <Content Include="Skins\zh-chs\Default\Plugins\DigCowry\images\xunbao_r2_a24.jpg" />
+    <Content Include="Skins\zh-chs\Default\Plugins\DigCowry\images\xunbao_r2_a25.jpg" />
+    <Content Include="Skins\zh-chs\Default\Plugins\DigCowry\images\xunbao_r2_a3.jpg" />
+    <Content Include="Skins\zh-chs\Default\Plugins\DigCowry\images\xunbao_r2_a4.jpg" />
+    <Content Include="Skins\zh-chs\Default\Plugins\DigCowry\images\xunbao_r2_a5.jpg" />
+    <Content Include="Skins\zh-chs\Default\Plugins\DigCowry\images\xunbao_r2_a6.jpg" />
+    <Content Include="Skins\zh-chs\Default\Plugins\DigCowry\images\xunbao_r2_a7.jpg" />
+    <Content Include="Skins\zh-chs\Default\Plugins\DigCowry\images\xunbao_r2_a8.jpg" />
+    <Content Include="Skins\zh-chs\Default\Plugins\DigCowry\images\xunbao_r2_a9.jpg" />
+    <Content Include="Skins\zh-chs\Default\Plugins\DigCowry\images\xunbao_r3_a1.jpg" />
+    <Content Include="Skins\zh-chs\Default\Plugins\DigCowry\images\xunbao_r3_a10.gif" />
+    <Content Include="Skins\zh-chs\Default\Plugins\DigCowry\images\xunbao_r3_a11.gif" />
+    <Content Include="Skins\zh-chs\Default\Plugins\DigCowry\images\xunbao_r3_a12.gif" />
+    <Content Include="Skins\zh-chs\Default\Plugins\DigCowry\images\xunbao_r3_a13.jpg" />
+    <Content Include="Skins\zh-chs\Default\Plugins\DigCowry\images\xunbao_r3_a14.jpg" />
+    <Content Include="Skins\zh-chs\Default\Plugins\DigCowry\images\xunbao_r3_a15.jpg" />
+    <Content Include="Skins\zh-chs\Default\Plugins\DigCowry\images\xunbao_r3_a16.jpg" />
+    <Content Include="Skins\zh-chs\Default\Plugins\DigCowry\images\xunbao_r3_a17.jpg" />
+    <Content Include="Skins\zh-chs\Default\Plugins\DigCowry\images\xunbao_r3_a18.jpg" />
+    <Content Include="Skins\zh-chs\Default\Plugins\DigCowry\images\xunbao_r3_a2.jpg" />
+    <Content Include="Skins\zh-chs\Default\Plugins\DigCowry\images\xunbao_r3_a3.jpg" />
+    <Content Include="Skins\zh-chs\Default\Plugins\DigCowry\images\xunbao_r3_a4.jpg" />
+    <Content Include="Skins\zh-chs\Default\Plugins\DigCowry\images\xunbao_r3_a5.jpg" />
+    <Content Include="Skins\zh-chs\Default\Plugins\DigCowry\images\xunbao_r3_a6.jpg" />
+    <Content Include="Skins\zh-chs\Default\Plugins\DigCowry\images\xunbao_r3_a7.jpg" />
+    <Content Include="Skins\zh-chs\Default\Plugins\DigCowry\images\xunbao_r3_a8.jpg" />
+    <Content Include="Skins\zh-chs\Default\Plugins\DigCowry\images\xunbao_r3_a9.gif" />
+    <Content Include="Skins\zh-chs\Default\Plugins\DigCowry\images\xunbao_r4_a1.jpg" />
+    <Content Include="Skins\zh-chs\Default\Plugins\DigCowry\images\xunbao_r4_a10.jpg" />
+    <Content Include="Skins\zh-chs\Default\Plugins\DigCowry\images\xunbao_r4_a2.jpg" />
+    <Content Include="Skins\zh-chs\Default\Plugins\DigCowry\images\xunbao_r4_a21.jpg" />
+    <Content Include="Skins\zh-chs\Default\Plugins\DigCowry\images\xunbao_r4_a22.jpg" />
+    <Content Include="Skins\zh-chs\Default\Plugins\DigCowry\images\xunbao_r4_a3.jpg" />
+    <Content Include="Skins\zh-chs\Default\Plugins\DigCowry\images\xunbao_r4_a4.jpg" />
+    <Content Include="Skins\zh-chs\Default\Plugins\DigCowry\images\xunbao_r4_a5.jpg" />
+    <Content Include="Skins\zh-chs\Default\Plugins\DigCowry\images\xunbao_r4_a6.jpg" />
+    <Content Include="Skins\zh-chs\Default\Plugins\DigCowry\images\xunbao_r4_a7.jpg" />
+    <Content Include="Skins\zh-chs\Default\Plugins\DigCowry\images\xunbao_r4_a8.jpg" />
+    <Content Include="Skins\zh-chs\Default\Plugins\DigCowry\images\xunbao_r4_a9.jpg" />
+    <Content Include="Skins\zh-chs\Default\Plugins\DigCowry\images\二毛.png" />
+    <Content Include="Skins\zh-chs\Default\Plugins\DigCowry\images\二毛1.png" />
+    <Content Include="Skins\zh-chs\Default\Plugins\DigCowry\image\ban.gif" />
+    <Content Include="Skins\zh-chs\Default\Plugins\DigCowry\image\ban1.gif" />
+    <Content Include="Skins\zh-chs\Default\Plugins\DigCowry\image\bg-down.gif" />
+    <Content Include="Skins\zh-chs\Default\Plugins\DigCowry\image\bg-round.gif" />
+    <Content Include="Skins\zh-chs\Default\Plugins\DigCowry\image\bg-up.gif" />
+    <Content Include="Skins\zh-chs\Default\Plugins\DigCowry\image\btn.gif" />
+    <Content Include="Skins\zh-chs\Default\Plugins\DigCowry\image\c1.gif" />
+    <Content Include="Skins\zh-chs\Default\Plugins\DigCowry\image\c2.gif" />
+    <Content Include="Skins\zh-chs\Default\Plugins\DigCowry\image\c3.gif" />
+    <Content Include="Skins\zh-chs\Default\Plugins\DigCowry\image\c4.gif" />
+    <Content Include="Skins\zh-chs\Default\Plugins\DigCowry\image\card.gif" />
+    <Content Include="Skins\zh-chs\Default\Plugins\DigCowry\image\card1.gif" />
+    <Content Include="Skins\zh-chs\Default\Plugins\DigCowry\image\card2.gif" />
+    <Content Include="Skins\zh-chs\Default\Plugins\DigCowry\image\card3.gif" />
+    <Content Include="Skins\zh-chs\Default\Plugins\DigCowry\image\chutou.swf" />
+    <Content Include="Skins\zh-chs\Default\Plugins\DigCowry\image\close.gif" />
+    <Content Include="Skins\zh-chs\Default\Plugins\DigCowry\image\css.css" />
+    <Content Include="Skins\zh-chs\Default\Plugins\DigCowry\image\dan.gif" />
+    <Content Include="Skins\zh-chs\Default\Plugins\DigCowry\image\DigUpCowry.gif" />
+    <Content Include="Skins\zh-chs\Default\Plugins\DigCowry\image\kk.gif" />
+    <Content Include="Skins\zh-chs\Default\Plugins\DigCowry\image\logo_1.gif" />
+    <Content Include="Skins\zh-chs\Default\Plugins\DigCowry\image\m2.png" />
+    <Content Include="Skins\zh-chs\Default\Plugins\DigCowry\image\sure.gif" />
+    <Content Include="Skins\zh-chs\Default\Plugins\DigCowry\image\tj.gif" />
+    <Content Include="Skins\zh-chs\Default\Plugins\DigCowry\image\touch.gif" />
+    <Content Include="Skins\zh-chs\Default\Plugins\DigCowry\js\Check.js" />
+    <Content Include="Skins\zh-chs\Default\Plugins\DigCowry\js\digsubmit.js" />
+    <Content Include="Skins\zh-chs\Default\Plugins\DigCowry\QuestionList.aspx" />
+    <Content Include="Skins\zh-chs\Default\Plugins\DigCowry\Questionnaire.aspx" />
+    <Content Include="Skins\zh-chs\Default\Plugins\DigCowry\QuestionnaireSuccess.aspx" />
+    <Content Include="Skins\zh-chs\Default\Plugins\DigCowry\submitOk.aspx" />
+    <Content Include="Skins\zh-chs\Default\Plugins\DigCowry\SubmitSuccess.aspx" />
+    <Content Include="Skins\zh-chs\Default\Plugins\DigCowry\TrophyDetails.aspx" />
+    <Content Include="Skins\zh-chs\Default\Plugins\DigCowry\TrophyShow.aspx" />
+    <Content Include="Skins\zh-chs\Default\Plugins\DigCowry\TrophyVerdict.aspx" />
+    <Content Include="Skins\zh-chs\Default\Plugins\DigCowry\UserControls\FootUserControl.ascx" />
+    <Content Include="Skins\zh-chs\Default\Plugins\DigCowry\UserControls\GlobalADUserControl.ascx" />
+    <Content Include="Skins\zh-chs\Default\Plugins\DigCowry\UserControls\LinkUserControl.ascx" />
+    <Content Include="Skins\zh-chs\Default\Plugins\DigCowry\UserControls\MediumControl.ascx" />
+    <Content Include="Skins\zh-chs\Default\Plugins\DigCowry\UserControls\OtherTrophysControl.ascx" />
+    <Content Include="Skins\zh-chs\Default\Plugins\DigCowry\UserControls\ProviderADControl.ascx" />
+    <Content Include="Skins\zh-chs\Default\Plugins\DigCowry\UserControls\TrophyDetailsControl.ascx" />
+    <Content Include="Skins\zh-chs\Default\Print.html" />
+    <Content Include="FanYuMing_UI.html" />
+    <Content Include="Skins\zh-chs\guangzhou\Fundation\GBusAdv.htm" />
+    <Content Include="Skins\zh-chs\guangzhou\Fundation\GOtherAdv.htm" />
+    <Content Include="Skins\zh-chs\guangzhou\Fundation\MergeSearch.aspx" />
+    <Content Include="Skins\zh-chs\guilin\js\Init.js" />
+    <Content Include="Skins\zh-chs\guilin\Master_UI.html" />
+    <Content Include="Skins\zh-chs\hz\Controls\CompanyPopControl.aspx" />
+    <Content Include="Skins\zh-chs\hz\Controls\CompanyPopControl.js" />
+    <Content Include="Skins\zh-chs\hz\Controls\EntityPopControl.aspx" />
+    <Content Include="Skins\zh-chs\hz\Controls\EntityPopControl.js" />
+    <Content Include="Skins\zh-chs\hz\Controls\EShopPopControl.aspx" />
+    <Content Include="Skins\zh-chs\hz\Controls\EShopPopControl.js" />
+    <Content Include="Skins\zh-chs\hz\Controls\FcPopControl.aspx" />
+    <Content Include="Skins\zh-chs\hz\Controls\FcPopControl.js" />
+    <Content Include="Skins\zh-chs\hz\Controls\ThemePopControl.js" />
+    <Content Include="Skins\zh-chs\hz\Css\CommendPopControl.css" />
+    <Content Include="Skins\zh-chs\hz\Css\FcLocalSearch.css" />
+    <Content Include="Skins\zh-chs\hz\Fundation\BusNoSearch.html" />
+    <Content Include="Skins\zh-chs\hz\Fundation\EShopAndCompanyJoin.aspx" />
+    <Content Include="Skins\zh-chs\hz\Fundation\FcLocalSearch.aspx" />
+    <Content Include="Skins\zh-chs\hz\Fundation\HTMLPage1.htm" />
+    <Content Include="Skins\zh-chs\hz\Fundation\LocalSearch.aspx" />
+    <Content Include="Skins\zh-chs\hz\js\BusNoSearch.js" />
+    <Content Include="Skins\zh-chs\hz\js\CompanyList.js" />
+    <Content Include="Skins\zh-chs\hz\js\EShopAndCompanyJoin.js" />
+    <Content Include="Skins\zh-chs\hz\js\FcLocalSearch.js" />
+    <Content Include="Skins\zh-chs\hz\Fundation\HotelList.htm" />
+    <Content Include="Skins\zh-chs\hz\Fundation\HotelSearch.js" />
+    <Content Include="Skins\zh-chs\hz\js\Init.js" />
+    <Content Include="Skins\zh-chs\hz\js\LocalSearch.js" />
+    <Content Include="Skins\zh-chs\hz\Master_UI.html" />
+    <Content Include="Skins\zh-chs\lijiang\Plugins\AdServer\css.css" />
+    <Content Include="Skins\zh-chs\lijiang\Plugins\AdServer\images\index_r11_c2.jpg" />
+    <Content Include="Skins\zh-chs\lijiang\Plugins\AdServer\images\index_r1_c1.jpg" />
+    <Content Include="Skins\zh-chs\lijiang\Plugins\AdServer\images\index_r2_c1.gif" />
+    <Content Include="Skins\zh-chs\lijiang\Plugins\AdServer\images\pic\pic_1.jpg" />
+    <Content Include="Skins\zh-chs\lijiang\Plugins\AdServer\images\pic\pic_2.jpg" />
+    <Content Include="Skins\zh-chs\lijiang\Plugins\AdServer\images\pic\pic_r1_c5.jpg" />
+    <Content Include="Skins\zh-chs\lijiang\Plugins\AdServer\images\pic\pic_r1_c8.jpg" />
+    <Content Include="Skins\zh-chs\lijiang\Plugins\AdServer\images\pic\pic_r3_c4.jpg" />
+    <Content Include="Skins\zh-chs\lijiang\Plugins\AdServer\images\pic\pic_r3_c9.jpg" />
+    <Content Include="Skins\zh-chs\lijiang\Plugins\AdServer\images\pic\pic_r5_c10.jpg" />
+    <Content Include="Skins\zh-chs\lijiang\Plugins\AdServer\images\pic\pic_r5_c5.jpg" />
+    <Content Include="Skins\zh-chs\lijiang\Plugins\AdServer\images\pic\pic_r7_c10.jpg" />
+    <Content Include="Skins\zh-chs\lijiang\Plugins\AdServer\images\pic\pic_r7_c5.jpg" />
+    <Content Include="Skins\zh-chs\lijiang\Plugins\AdServer\images\pic\pic_r7_c6.jpg" />
+    <Content Include="Skins\zh-chs\lijiang\Plugins\AdServer\index.html" />
+    <Content Include="Skins\zh-chs\ningbo\Plugins\AdServer\css.css" />
+    <Content Include="Skins\zh-chs\ningbo\Plugins\AdServer\images\index_r11_c2.jpg" />
+    <Content Include="Skins\zh-chs\ningbo\Plugins\AdServer\images\index_r1_c1.jpg" />
+    <Content Include="Skins\zh-chs\ningbo\Plugins\AdServer\images\index_r2_c1.gif" />
+    <Content Include="Skins\zh-chs\ningbo\Plugins\AdServer\images\pic\pic_1.jpg" />
+    <Content Include="Skins\zh-chs\ningbo\Plugins\AdServer\images\pic\pic_2.jpg" />
+    <Content Include="Skins\zh-chs\ningbo\Plugins\AdServer\images\pic\pic_r1_c5.jpg" />
+    <Content Include="Skins\zh-chs\ningbo\Plugins\AdServer\images\pic\pic_r1_c8.jpg" />
+    <Content Include="Skins\zh-chs\ningbo\Plugins\AdServer\images\pic\pic_r3_c4.jpg" />
+    <Content Include="Skins\zh-chs\ningbo\Plugins\AdServer\images\pic\pic_r3_c9.jpg" />
+    <Content Include="Skins\zh-chs\ningbo\Plugins\AdServer\images\pic\pic_r5_c10.jpg" />
+    <Content Include="Skins\zh-chs\ningbo\Plugins\AdServer\images\pic\pic_r5_c5.jpg" />
+    <Content Include="Skins\zh-chs\ningbo\Plugins\AdServer\images\pic\pic_r7_c10.jpg" />
+    <Content Include="Skins\zh-chs\ningbo\Plugins\AdServer\images\pic\pic_r7_c5.jpg" />
+    <Content Include="Skins\zh-chs\ningbo\Plugins\AdServer\images\pic\pic_r7_c6.jpg" />
+    <Content Include="Skins\zh-chs\ningbo\Plugins\AdServer\index.html" />
+    <Content Include="Skins\zh-chs\shanghai\Controls\CompanyPopControl.aspx" />
+    <Content Include="Skins\zh-chs\shanghai\Controls\CompanyPopControl.js" />
+    <Content Include="Skins\zh-chs\shanghai\Controls\ControlBase.js" />
+    <Content Include="Skins\zh-chs\shanghai\Controls\EntityPopControl.aspx" />
+    <Content Include="Skins\zh-chs\shanghai\Controls\EntityPopControl.js" />
+    <Content Include="Skins\zh-chs\shanghai\Css\LocalSearch.css" />
+    <Content Include="Skins\zh-chs\shanghai\Css\LocalSearchHotel.css" />
+    <Content Include="Skins\zh-chs\shanghai\Css\MergeSearch.css" />
+    <Content Include="Skins\zh-chs\shanghai\Css\style.css" />
+    <Content Include="Skins\zh-chs\shanghai\Fundation\GBusAdv.htm" />
+    <Content Include="Skins\zh-chs\shanghai\Fundation\GOtherAdv.htm" />
+    <Content Include="Skins\zh-chs\shanghai\Fundation\MergeSearch.aspx" />
+    <Content Include="Skins\zh-chs\shanghai\Js\Init.js" />
+    <Content Include="Skins\zh-chs\shanghai\Js\LocalSearch.js" />
+    <Content Include="Skins\zh-chs\shanghai\Js\MergeSearch.js" />
+    <Content Include="Skins\zh-chs\shanghai\Master_UI.html" />
+    <Content Include="Skins\zh-chs\zhengzhou\Plugins\AdServer\css.css" />
+    <Content Include="Skins\zh-chs\zhengzhou\Plugins\AdServer\images\index_r11_c2.jpg" />
+    <Content Include="Skins\zh-chs\zhengzhou\Plugins\AdServer\images\index_r1_c1.jpg" />
+    <Content Include="Skins\zh-chs\zhengzhou\Plugins\AdServer\images\index_r2_c1.gif" />
+    <Content Include="Skins\zh-chs\zhengzhou\Plugins\AdServer\images\pic\pic_1.jpg" />
+    <Content Include="Skins\zh-chs\zhengzhou\Plugins\AdServer\images\pic\pic_2.jpg" />
+    <Content Include="Skins\zh-chs\zhengzhou\Plugins\AdServer\images\pic\pic_r1_c5.jpg" />
+    <Content Include="Skins\zh-chs\zhengzhou\Plugins\AdServer\images\pic\pic_r1_c8.jpg" />
+    <Content Include="Skins\zh-chs\zhengzhou\Plugins\AdServer\images\pic\pic_r3_c4.jpg" />
+    <Content Include="Skins\zh-chs\zhengzhou\Plugins\AdServer\images\pic\pic_r3_c9.jpg" />
+    <Content Include="Skins\zh-chs\zhengzhou\Plugins\AdServer\images\pic\pic_r5_c10.jpg" />
+    <Content Include="Skins\zh-chs\zhengzhou\Plugins\AdServer\images\pic\pic_r5_c5.jpg" />
+    <Content Include="Skins\zh-chs\zhengzhou\Plugins\AdServer\images\pic\pic_r7_c10.jpg" />
+    <Content Include="Skins\zh-chs\zhengzhou\Plugins\AdServer\images\pic\pic_r7_c5.jpg" />
+    <Content Include="Skins\zh-chs\zhengzhou\Plugins\AdServer\images\pic\pic_r7_c6.jpg" />
+    <Content Include="Skins\zh-chs\zhengzhou\Plugins\AdServer\index.html" />
+    <Content Include="Skins\zh-cht\hongkong\Master_UI.html" />
+    <Content Include="VerifyImage.aspx" />
+    <Content Include="Vir\Vir.aspx" />
+    <Content Include="Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ExistHotel.aspx.cs">
+      <DependentUpon>ExistHotel.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ExistHotel.aspx.designer.cs">
+      <DependentUpon>ExistHotel.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GoogleAd\GoogleAdConfig.cs" />
+    <Compile Include="HotelState\HotelState.cs" />
+    <Compile Include="Login.aspx.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Login.aspx.designer.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Plugin.aspx.cs">
+      <DependentUpon>Plugin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Plugin.aspx.designer.cs">
+      <DependentUpon>Plugin.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="Print.aspx.cs">
+      <DependentUpon>Print.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Print.aspx.designer.cs">
+      <DependentUpon>Print.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Skins\zh-chs\2DDefault\Fundation\Company2DJoin.aspx.cs">
+      <DependentUpon>Company2DJoin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Skins\zh-chs\2DDefault\Fundation\Company2DJoin.aspx.designer.cs">
+      <DependentUpon>Company2DJoin.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Skins\zh-chs\beijing\Fundation\MergeSearch.aspx.cs">
+      <DependentUpon>MergeSearch.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Skins\zh-chs\beijing\Fundation\MergeSearch.aspx.designer.cs">
+      <DependentUpon>MergeSearch.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Skins\zh-chs\Default\Fundation\GooglePoiSearch.aspx.cs">
+      <DependentUpon>GooglePoiSearch.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Skins\zh-chs\Default\Fundation\GooglePoiSearch.aspx.designer.cs">
+      <DependentUpon>GooglePoiSearch.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Skins\zh-chs\Default\Fundation\EAddressHandle.aspx.cs">
+      <DependentUpon>EAddressHandle.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Skins\zh-chs\Default\Fundation\EAddressHandle.aspx.designer.cs">
+      <DependentUpon>EAddressHandle.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Skins\zh-chs\Default\Fundation\EAddressList.aspx.cs">
+      <DependentUpon>EAddressList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Skins\zh-chs\Default\Fundation\EAddressList.aspx.designer.cs">
+      <DependentUpon>EAddressList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Skins\zh-chs\3DDefault\Fundation\Company3DJoin.aspx.cs">
+      <DependentUpon>Company3DJoin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Skins\zh-chs\3DDefault\Fundation\Company3DJoin.aspx.designer.cs">
+      <DependentUpon>Company3DJoin.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Skins\zh-chs\Default\Fundation\ListAd.aspx.cs">
+      <DependentUpon>ListAd.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Skins\zh-chs\Default\Fundation\ListAd.aspx.designer.cs">
+      <DependentUpon>ListAd.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Skins\zh-chs\Default\Fundation\LocalSearch.aspx.cs">
+      <DependentUpon>LocalSearch.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Skins\zh-chs\Default\Fundation\LocalSearch.aspx.designer.cs">
+      <DependentUpon>LocalSearch.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Skins\zh-chs\Default\Fundation\MarkPlHandle.aspx.cs">
+      <DependentUpon>MarkPlHandle.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Skins\zh-chs\Default\Fundation\MarkPlHandle.aspx.designer.cs">
+      <DependentUpon>MarkPlHandle.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Skins\zh-chs\Default\Fundation\MergeSearch.aspx.cs">
+      <DependentUpon>MergeSearch.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Skins\zh-chs\Default\Fundation\MergeSearch.aspx.designer.cs">
+      <DependentUpon>MergeSearch.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Skins\zh-chs\Default\Fundation\Report.aspx.cs">
+      <DependentUpon>Report.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Skins\zh-chs\Default\Fundation\Report.aspx.designer.cs">
+      <DependentUpon>Report.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Skins\zh-chs\Default\Plugins\DigCowry\CentBoubleUI.aspx.cs">
+      <DependentUpon>CentBoubleUI.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Skins\zh-chs\Default\Plugins\DigCowry\CentBoubleUI.aspx.designer.cs">
+      <DependentUpon>CentBoubleUI.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Skins\zh-chs\Default\Plugins\DigCowry\CentFive1UI.aspx.cs">
+      <DependentUpon>CentFive1UI.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Skins\zh-chs\Default\Plugins\DigCowry\CentFive1UI.aspx.designer.cs">
+      <DependentUpon>CentFive1UI.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Skins\zh-chs\Default\Plugins\DigCowry\CentFive2UI.aspx.cs">
+      <DependentUpon>CentFive2UI.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Skins\zh-chs\Default\Plugins\DigCowry\CentFive2UI.aspx.designer.cs">
+      <DependentUpon>CentFive2UI.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Skins\zh-chs\Default\Plugins\DigCowry\CentFive3UI.aspx.cs">
+      <DependentUpon>CentFive3UI.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Skins\zh-chs\Default\Plugins\DigCowry\CentFive3UI.aspx.designer.cs">
+      <DependentUpon>CentFive3UI.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Skins\zh-chs\Default\Plugins\DigCowry\CentFiveUI.aspx.cs">
+      <DependentUpon>CentFiveUI.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Skins\zh-chs\Default\Plugins\DigCowry\CentFiveUI.aspx.designer.cs">
+      <DependentUpon>CentFiveUI.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Skins\zh-chs\Default\Plugins\DigCowry\Congratulate.aspx.cs">
+      <DependentUpon>Congratulate.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Skins\zh-chs\Default\Plugins\DigCowry\Congratulate.aspx.designer.cs">
+      <DependentUpon>Congratulate.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Skins\zh-chs\Default\Plugins\DigCowry\Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Skins\zh-chs\Default\Plugins\DigCowry\Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Skins\zh-chs\Default\Plugins\DigCowry\Depression.aspx.cs">
+      <DependentUpon>Depression.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Skins\zh-chs\Default\Plugins\DigCowry\Depression.aspx.designer.cs">
+      <DependentUpon>Depression.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Skins\zh-chs\Default\Plugins\DigCowry\dig.aspx.cs">
+      <DependentUpon>dig.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Skins\zh-chs\Default\Plugins\DigCowry\dig.aspx.designer.cs">
+      <DependentUpon>dig.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Skins\zh-chs\Default\Plugins\DigCowry\DigFailture.aspx.cs">
+      <DependentUpon>DigFailture.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Skins\zh-chs\Default\Plugins\DigCowry\DigFailture.aspx.designer.cs">
+      <DependentUpon>DigFailture.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Skins\zh-chs\Default\Plugins\DigCowry\DigFalse.aspx.cs">
+      <DependentUpon>DigFalse.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Skins\zh-chs\Default\Plugins\DigCowry\DigFalse.aspx.designer.cs">
+      <DependentUpon>DigFalse.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Skins\zh-chs\Default\Plugins\DigCowry\DigHelp.aspx.cs">
+      <DependentUpon>DigHelp.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Skins\zh-chs\Default\Plugins\DigCowry\DigHelp.aspx.designer.cs">
+      <DependentUpon>DigHelp.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Skins\zh-chs\Default\Plugins\DigCowry\DigHero.aspx.cs">
+      <DependentUpon>DigHero.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Skins\zh-chs\Default\Plugins\DigCowry\DigHero.aspx.designer.cs">
+      <DependentUpon>DigHero.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Skins\zh-chs\Default\Plugins\DigCowry\DigMemberCert.aspx.cs">
+      <DependentUpon>DigMemberCert.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Skins\zh-chs\Default\Plugins\DigCowry\DigMemberCert.aspx.designer.cs">
+      <DependentUpon>DigMemberCert.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Skins\zh-chs\Default\Plugins\DigCowry\DigSuccess.aspx.cs">
+      <DependentUpon>DigSuccess.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Skins\zh-chs\Default\Plugins\DigCowry\DigSuccess.aspx.designer.cs">
+      <DependentUpon>DigSuccess.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Skins\zh-chs\Default\Plugins\DigCowry\DigTrue.aspx.cs">
+      <DependentUpon>DigTrue.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Skins\zh-chs\Default\Plugins\DigCowry\DigTrue.aspx.designer.cs">
+      <DependentUpon>DigTrue.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Skins\zh-chs\Default\Plugins\DigCowry\QuestionList.aspx.cs">
+      <DependentUpon>QuestionList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Skins\zh-chs\Default\Plugins\DigCowry\QuestionList.aspx.designer.cs">
+      <DependentUpon>QuestionList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Skins\zh-chs\Default\Plugins\DigCowry\Questionnaire.aspx.cs">
+      <DependentUpon>Questionnaire.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Skins\zh-chs\Default\Plugins\DigCowry\Questionnaire.aspx.designer.cs">
+      <DependentUpon>Questionnaire.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Skins\zh-chs\Default\Plugins\DigCowry\QuestionnaireSuccess.aspx.cs">
+      <DependentUpon>QuestionnaireSuccess.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Skins\zh-chs\Default\Plugins\DigCowry\QuestionnaireSuccess.aspx.designer.cs">
+      <DependentUpon>QuestionnaireSuccess.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Skins\zh-chs\Default\Plugins\DigCowry\submitOk.aspx.cs">
+      <DependentUpon>submitOk.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Skins\zh-chs\Default\Plugins\DigCowry\submitOk.aspx.designer.cs">
+      <DependentUpon>submitOk.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Skins\zh-chs\Default\Plugins\DigCowry\SubmitSuccess.aspx.cs">
+      <DependentUpon>SubmitSuccess.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Skins\zh-chs\Default\Plugins\DigCowry\SubmitSuccess.aspx.designer.cs">
+      <DependentUpon>SubmitSuccess.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Skins\zh-chs\Default\Plugins\DigCowry\TrophyDetails.aspx.cs">
+      <DependentUpon>TrophyDetails.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Skins\zh-chs\Default\Plugins\DigCowry\TrophyDetails.aspx.designer.cs">
+      <DependentUpon>TrophyDetails.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Skins\zh-chs\Default\Plugins\DigCowry\TrophyShow.aspx.cs">
+      <DependentUpon>TrophyShow.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Skins\zh-chs\Default\Plugins\DigCowry\TrophyShow.aspx.designer.cs">
+      <DependentUpon>TrophyShow.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Skins\zh-chs\Default\Plugins\DigCowry\TrophyVerdict.aspx.cs">
+      <DependentUpon>TrophyVerdict.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Skins\zh-chs\Default\Plugins\DigCowry\TrophyVerdict.aspx.designer.cs">
+      <DependentUpon>TrophyVerdict.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Skins\zh-chs\Default\Plugins\DigCowry\UserControls\FootUserControl.ascx.cs">
+      <DependentUpon>FootUserControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Skins\zh-chs\Default\Plugins\DigCowry\UserControls\FootUserControl.ascx.designer.cs">
+      <DependentUpon>FootUserControl.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Skins\zh-chs\Default\Plugins\DigCowry\UserControls\GlobalADUserControl.ascx.cs">
+      <DependentUpon>GlobalADUserControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Skins\zh-chs\Default\Plugins\DigCowry\UserControls\GlobalADUserControl.ascx.designer.cs">
+      <DependentUpon>GlobalADUserControl.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Skins\zh-chs\Default\Plugins\DigCowry\UserControls\LinkUserControl.ascx.cs">
+      <DependentUpon>LinkUserControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Skins\zh-chs\Default\Plugins\DigCowry\UserControls\LinkUserControl.ascx.designer.cs">
+      <DependentUpon>LinkUserControl.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Skins\zh-chs\Default\Plugins\DigCowry\UserControls\MediumControl.ascx.cs">
+      <DependentUpon>MediumControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Skins\zh-chs\Default\Plugins\DigCowry\UserControls\MediumControl.ascx.designer.cs">
+      <DependentUpon>MediumControl.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Skins\zh-chs\Default\Plugins\DigCowry\UserControls\OtherTrophysControl.ascx.cs">
+      <DependentUpon>OtherTrophysControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Skins\zh-chs\Default\Plugins\DigCowry\UserControls\OtherTrophysControl.ascx.designer.cs">
+      <DependentUpon>OtherTrophysControl.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Skins\zh-chs\Default\Plugins\DigCowry\UserControls\ProviderADControl.ascx.cs">
+      <DependentUpon>ProviderADControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Skins\zh-chs\Default\Plugins\DigCowry\UserControls\ProviderADControl.ascx.designer.cs">
+      <DependentUpon>ProviderADControl.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Skins\zh-chs\Default\Plugins\DigCowry\UserControls\TrophyDetailsControl.ascx.cs">
+      <DependentUpon>TrophyDetailsControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Skins\zh-chs\Default\Plugins\DigCowry\UserControls\TrophyDetailsControl.ascx.designer.cs">
+      <DependentUpon>TrophyDetailsControl.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Skins\zh-chs\guangzhou\Fundation\MergeSearch.aspx.cs">
+      <DependentUpon>MergeSearch.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Skins\zh-chs\guangzhou\Fundation\MergeSearch.aspx.designer.cs">
+      <DependentUpon>MergeSearch.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Skins\zh-chs\hz\Fundation\EShopAndCompanyJoin.aspx.cs">
+      <DependentUpon>EShopAndCompanyJoin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Skins\zh-chs\hz\Fundation\EShopAndCompanyJoin.aspx.designer.cs">
+      <DependentUpon>EShopAndCompanyJoin.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Skins\zh-chs\hz\Fundation\FcLocalSearch.aspx.cs">
+      <DependentUpon>FcLocalSearch.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Skins\zh-chs\hz\Fundation\FcLocalSearch.aspx.designer.cs">
+      <DependentUpon>FcLocalSearch.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Skins\zh-chs\shanghai\Fundation\MergeSearch.aspx.cs">
+      <DependentUpon>MergeSearch.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Skins\zh-chs\shanghai\Fundation\MergeSearch.aspx.designer.cs">
+      <DependentUpon>MergeSearch.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="VerifyImage.aspx.cs">
+      <DependentUpon>VerifyImage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="VerifyImage.aspx.designer.cs">
+      <DependentUpon>VerifyImage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Vir\Vir.aspx.cs">
+      <DependentUpon>Vir.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Vir\Vir.aspx.designer.cs">
+      <DependentUpon>Vir.aspx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\..\EDUSHI_DATA_CENTER\EdushiDataCenter\v1.0\Edushi.DataCenter\EDC.Member\EDC.Member.csproj">
+      <Project>{E9778714-5E53-4114-884E-FACCFCEB0474}</Project>
+      <Name>EDC.Member</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\Aladdin.WebAg\Aladdin.WebAg\Aladdin.WebAg.csproj">
+      <Project>{59EF62E3-2C2C-47A8-9BEB-5B362E5D3CDC}</Project>
+      <Name>Aladdin.WebAg</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Map.WebBLL\Map.WebBLL.csproj">
+      <Project>{D15F2EFD-1304-464B-9163-902842924AC5}</Project>
+      <Name>Map.WebBLL</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v9.0\WebApplications\Microsoft.WebApplication.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>21160</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://hz.edushi.com</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>

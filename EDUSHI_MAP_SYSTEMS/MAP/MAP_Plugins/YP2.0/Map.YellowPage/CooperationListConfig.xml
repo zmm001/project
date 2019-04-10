@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<CityList>
+  <ShangHai>
+    <zh-chs>
+      <Cooperation name ="住哪网" CityID="321" CityName="上海" IsActive="1">
+        <Url><![CDATA[http://www.zhuna.cn/search___0_0_0_0_0_0.html?city={$CityName}&key={$Key}&Agent_ID=12&hn={$Name}&long={$Long}&lat={$Lat}]]></Url>
+        <PicUrl><![CDATA[images/zhuna.gif]]></PicUrl>
+        <SType>100001,100002,</SType>
+        <Long>0.00000287830251003419,0.00000445011364762952,121.195057603717</Long>
+        <Lat>0.0000024636711444009,-0.00000377527276882317,31.2681916392897</Lat>
+        <TUrl><![CDATA[<a href="{0}" target="_blank"><img src="{1}" border="0"/></a>]]></TUrl>
+      </Cooperation>
+    </zh-chs>
+  </ShangHai>
+  <sh>
+    <zh-chs>
+      <Cooperation name ="住哪网" CityID="321" CityName="上海" IsActive="1">
+        <Url><![CDATA[http://www.zhuna.cn/search___0_0_0_0_0_0.html?city={$CityName}&key={$Key}&Agent_ID=12&hn={$Name}&long={$Long}&lat={$Lat}]]></Url>
+        <PicUrl><![CDATA[images/zhuna.gif]]></PicUrl>
+        <SType>100001,100002,</SType>
+        <Long>0.00000287830251003419,0.00000445011364762952,121.195057603717</Long>
+        <Lat>0.0000024636711444009,-0.00000377527276882317,31.2681916392897</Lat>
+        <TUrl><![CDATA[<a href="{0}" target="_blank"><img src="{1}" border="0"/></a>]]></TUrl>
+      </Cooperation>
+    </zh-chs>
+  </sh>
+  <hz>
+    <zh-chs>
+      <Cooperation name ="住哪网" CityID="321" CityName="杭州" IsActive="1">
+        <Url><![CDATA[http://www.zhuna.cn/search___0_0_0_0_0_0.html?city={$CityName}&key={$Key}&Agent_ID=12&hn={$Name}&long={$Long}&lat={$Lat}]]></Url>
+        <PicUrl><![CDATA[images/zhuna.gif]]></PicUrl>
+        <SType>188,</SType>
+        <Long>0.00000287830251003419,0.00000445011364762952,121.195057603717</Long>
+        <Lat>0.0000024636711444009,-0.00000377527276882317,31.2681916392897</Lat>
+        <TUrl><![CDATA[<a href="{0}" target="_blank"><img src="{1}" border="0"/></a>]]></TUrl>
+      </Cooperation>
+    </zh-chs>
+  </hz>
+</CityList>

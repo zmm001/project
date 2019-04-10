@@ -1,0 +1,78 @@
+﻿@using Edushi.Common
+@model Edushi.UserCenter.Web.PC.Models.UserHeaderModel
+@{
+    var domain = Common.GetConfigString("domain_zixun");
+    var imgDomain = Common.GetConfigString("UserHeadPic");
+}
+<div class="my-header">
+    <div class="top-nav wrapper">
+        <ul class="nav">
+            <li>
+                <a href="@domain" target="_blank">首页</a>
+            </li>
+            @if (Model.AllPTypes != null && Model.AllPTypes.Any())
+            {
+                for (var i = 0; i < Model.AllPTypes.Count; i++)
+                {
+                    if (i > 9)
+                    {
+                        break;
+                    }
+                    var item = Model.AllPTypes[i];
+                    <li>
+                        <a href="@Common.GetPcInfoListUrl(domain, item.IT_ParentID, item.IT_ID)" target="_blank">@item.IT_Name</a>
+                    </li>
+                }
+            }
+
+            @if (Model.AllPTypes != null && Model.AllPTypes.Count > 10)
+            {
+                <li>
+                    <a href="javascript:void(0);" class="more">更多</a>
+                </li>
+            }
+
+        </ul>
+        @if (Model.AllPTypes != null && Model.AllPTypes.Count > 10)
+        {
+            <ul class="more-nav">
+                @for (int i = 10; i < Model.AllPTypes.Count; i++)
+                {
+                    var item = Model.AllPTypes[i];
+                    <li>
+                        <a href="@Common.GetPcInfoListUrl(domain, item.IT_ParentID, item.IT_ID)" target="_blank">@item.IT_Name</a>
+                    </li>
+                }
+                <li>
+                    <a href="http://caijing.edushi.com/" target="_blank">财经</a>
+                </li>
+                <li>
+                    <a href="http://hangzhou.fangtoo.com/" target="_blank">房产</a>
+                </li>
+                <li>
+                    <a href="http://lvyou.edushi.com" target="_blank">旅游</a>
+                </li>
+                <li>
+                    <a href="http://www.edushi.com/zt/" target="_blank">专题</a>
+                </li>
+                <li>
+                    <a href="http://tu.edushi.com/" target="_blank">图闻</a>
+                </li>
+            </ul>
+        }
+        
+        <div class="user-box">
+            <a href="javascript:void(0);" class="name">
+                <div><img src="@(imgDomain + Model.UserInfo.UI_Avatar)"></div>
+                <span>@Model.UserInfo.UI_NickName</span>
+            </a>
+            <a href="/exitlogin.htm">退出</a>
+        </div>
+    </div>
+    <div class="sub">
+        <div class="wrapper">
+            <a href="@domain" class="logo" target="_blank"><img src="@Url.Content("~/asset/images/logo.png")"></a>
+            <span class="sub-name">用户中心</span>
+        </div>
+    </div>
+</div>

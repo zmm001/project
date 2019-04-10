@@ -1,0 +1,249 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="BdtNoSqlService" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://localhost:53968/BdtNoSqlService.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://localhost:53968/BdtNoSqlService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://localhost:53968/BdtNoSqlService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/System.Data" />
+      <xsd:import schemaLocation="http://localhost:53968/BdtNoSqlService.svc?xsd=xsd3" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IBdtNoSqlService_GetTopicsByType_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetTopicsByType" />
+  </wsdl:message>
+  <wsdl:message name="IBdtNoSqlService_GetTopicsByType_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetTopicsByTypeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBdtNoSqlService_GetStatisticsByType_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetStatisticsByType" />
+  </wsdl:message>
+  <wsdl:message name="IBdtNoSqlService_GetStatisticsByType_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetStatisticsByTypeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBdtNoSqlService_GetSearchResult_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetSearchResult" />
+  </wsdl:message>
+  <wsdl:message name="IBdtNoSqlService_GetSearchResult_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetSearchResultResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBdtNoSqlService_GetTopicDetailById_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetTopicDetailById" />
+  </wsdl:message>
+  <wsdl:message name="IBdtNoSqlService_GetTopicDetailById_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetTopicDetailByIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBdtNoSqlService_GetIndexRecommendQuestion_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetIndexRecommendQuestion" />
+  </wsdl:message>
+  <wsdl:message name="IBdtNoSqlService_GetIndexRecommendQuestion_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetIndexRecommendQuestionResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBdtNoSqlService_GetIndexLastQuestion_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetIndexLastQuestion" />
+  </wsdl:message>
+  <wsdl:message name="IBdtNoSqlService_GetIndexLastQuestion_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetIndexLastQuestionResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBdtNoSqlService_GetIndexLastAnswner_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetIndexLastAnswner" />
+  </wsdl:message>
+  <wsdl:message name="IBdtNoSqlService_GetIndexLastAnswner_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetIndexLastAnswnerResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBdtNoSqlService_GetIndexHotAnswner_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetIndexHotAnswner" />
+  </wsdl:message>
+  <wsdl:message name="IBdtNoSqlService_GetIndexHotAnswner_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetIndexHotAnswnerResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBdtNoSqlService_GetListHotAnswner_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetListHotAnswner" />
+  </wsdl:message>
+  <wsdl:message name="IBdtNoSqlService_GetListHotAnswner_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetListHotAnswnerResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBdtNoSqlService_GetIndexIronicQuestion_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetIndexIronicQuestion" />
+  </wsdl:message>
+  <wsdl:message name="IBdtNoSqlService_GetIndexIronicQuestion_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetIndexIronicQuestionResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBdtNoSqlService_GetIndexStatCount_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetIndexStatCount" />
+  </wsdl:message>
+  <wsdl:message name="IBdtNoSqlService_GetIndexStatCount_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetIndexStatCountResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBdtNoSqlService_GetDetailRelatedQuestion_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetDetailRelatedQuestion" />
+  </wsdl:message>
+  <wsdl:message name="IBdtNoSqlService_GetDetailRelatedQuestion_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDetailRelatedQuestionResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IBdtNoSqlService">
+    <wsdl:operation name="GetTopicsByType">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBdtNoSqlService/GetTopicsByType" message="tns:IBdtNoSqlService_GetTopicsByType_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBdtNoSqlService/GetTopicsByTypeResponse" message="tns:IBdtNoSqlService_GetTopicsByType_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetStatisticsByType">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBdtNoSqlService/GetStatisticsByType" message="tns:IBdtNoSqlService_GetStatisticsByType_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBdtNoSqlService/GetStatisticsByTypeResponse" message="tns:IBdtNoSqlService_GetStatisticsByType_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSearchResult">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBdtNoSqlService/GetSearchResult" message="tns:IBdtNoSqlService_GetSearchResult_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBdtNoSqlService/GetSearchResultResponse" message="tns:IBdtNoSqlService_GetSearchResult_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTopicDetailById">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBdtNoSqlService/GetTopicDetailById" message="tns:IBdtNoSqlService_GetTopicDetailById_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBdtNoSqlService/GetTopicDetailByIdResponse" message="tns:IBdtNoSqlService_GetTopicDetailById_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetIndexRecommendQuestion">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBdtNoSqlService/GetIndexRecommendQuestion" message="tns:IBdtNoSqlService_GetIndexRecommendQuestion_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBdtNoSqlService/GetIndexRecommendQuestionResponse" message="tns:IBdtNoSqlService_GetIndexRecommendQuestion_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetIndexLastQuestion">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBdtNoSqlService/GetIndexLastQuestion" message="tns:IBdtNoSqlService_GetIndexLastQuestion_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBdtNoSqlService/GetIndexLastQuestionResponse" message="tns:IBdtNoSqlService_GetIndexLastQuestion_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetIndexLastAnswner">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBdtNoSqlService/GetIndexLastAnswner" message="tns:IBdtNoSqlService_GetIndexLastAnswner_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBdtNoSqlService/GetIndexLastAnswnerResponse" message="tns:IBdtNoSqlService_GetIndexLastAnswner_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetIndexHotAnswner">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBdtNoSqlService/GetIndexHotAnswner" message="tns:IBdtNoSqlService_GetIndexHotAnswner_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBdtNoSqlService/GetIndexHotAnswnerResponse" message="tns:IBdtNoSqlService_GetIndexHotAnswner_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetListHotAnswner">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBdtNoSqlService/GetListHotAnswner" message="tns:IBdtNoSqlService_GetListHotAnswner_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBdtNoSqlService/GetListHotAnswnerResponse" message="tns:IBdtNoSqlService_GetListHotAnswner_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetIndexIronicQuestion">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBdtNoSqlService/GetIndexIronicQuestion" message="tns:IBdtNoSqlService_GetIndexIronicQuestion_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBdtNoSqlService/GetIndexIronicQuestionResponse" message="tns:IBdtNoSqlService_GetIndexIronicQuestion_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetIndexStatCount">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBdtNoSqlService/GetIndexStatCount" message="tns:IBdtNoSqlService_GetIndexStatCount_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBdtNoSqlService/GetIndexStatCountResponse" message="tns:IBdtNoSqlService_GetIndexStatCount_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDetailRelatedQuestion">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBdtNoSqlService/GetDetailRelatedQuestion" message="tns:IBdtNoSqlService_GetDetailRelatedQuestion_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBdtNoSqlService/GetDetailRelatedQuestionResponse" message="tns:IBdtNoSqlService_GetDetailRelatedQuestion_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_IBdtNoSqlService" type="tns:IBdtNoSqlService">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetTopicsByType">
+      <soap:operation soapAction="http://tempuri.org/IBdtNoSqlService/GetTopicsByType" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetStatisticsByType">
+      <soap:operation soapAction="http://tempuri.org/IBdtNoSqlService/GetStatisticsByType" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSearchResult">
+      <soap:operation soapAction="http://tempuri.org/IBdtNoSqlService/GetSearchResult" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTopicDetailById">
+      <soap:operation soapAction="http://tempuri.org/IBdtNoSqlService/GetTopicDetailById" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetIndexRecommendQuestion">
+      <soap:operation soapAction="http://tempuri.org/IBdtNoSqlService/GetIndexRecommendQuestion" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetIndexLastQuestion">
+      <soap:operation soapAction="http://tempuri.org/IBdtNoSqlService/GetIndexLastQuestion" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetIndexLastAnswner">
+      <soap:operation soapAction="http://tempuri.org/IBdtNoSqlService/GetIndexLastAnswner" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetIndexHotAnswner">
+      <soap:operation soapAction="http://tempuri.org/IBdtNoSqlService/GetIndexHotAnswner" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetListHotAnswner">
+      <soap:operation soapAction="http://tempuri.org/IBdtNoSqlService/GetListHotAnswner" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetIndexIronicQuestion">
+      <soap:operation soapAction="http://tempuri.org/IBdtNoSqlService/GetIndexIronicQuestion" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetIndexStatCount">
+      <soap:operation soapAction="http://tempuri.org/IBdtNoSqlService/GetIndexStatCount" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDetailRelatedQuestion">
+      <soap:operation soapAction="http://tempuri.org/IBdtNoSqlService/GetDetailRelatedQuestion" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="BdtNoSqlService">
+    <wsdl:port name="BasicHttpBinding_IBdtNoSqlService" binding="tns:BasicHttpBinding_IBdtNoSqlService">
+      <soap:address location="http://localhost:53968/BdtNoSqlService.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

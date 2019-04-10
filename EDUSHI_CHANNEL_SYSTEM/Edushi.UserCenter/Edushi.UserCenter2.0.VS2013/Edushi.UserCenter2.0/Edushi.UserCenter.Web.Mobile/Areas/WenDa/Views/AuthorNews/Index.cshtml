@@ -1,0 +1,180 @@
+﻿@using System.Diagnostics
+@using Edushi.Common
+@model Edushi.UserCenter.Web.Mobile.Areas.WenDa.Models.UserModel
+@{
+    ViewBag.Title = string.Format("{0}-E都市", Model.UserInfo == null || string.IsNullOrWhiteSpace(Model.UserInfo.UI_NickName) ? "用户问答号" : Model.UserInfo.UI_NickName);
+    ViewBag.AuthorNews = true;
+
+
+}
+
+@section meta
+{
+    <meta name="Keywords" content="" />
+    <meta name="Description" content="" />
+}
+@if (Model.PageType == (int)DataEnum.WenDaType.Attention)
+{
+    Html.RenderPartial("~/Areas/WenDa/Views/AuthorNews/Attention.cshtml", Model.WenDaInfo);
+}
+else if (Model.PageType == (int)DataEnum.WenDaType.Fans)
+{
+    Html.RenderPartial("~/Areas/WenDa/Views/AuthorNews/Fans.cshtml", Model.WenDaInfo);
+}
+else
+{
+    <!--加载头部-->
+    Html.RenderPartial("~/Areas/WenDa/Views/Shared/Header.cshtml");
+    <div id="app" class="my center">
+        <div class="container">
+            @if (Model.UserInfo != null)
+            {
+                <div class="look-info clearfix">
+                    <div class="userid">
+                        <span class="user-img"><img src="@(ViewBag.UserImgDomain + Model.UserInfo.UI_Avatar)"></span>
+                        <div class="user-name">
+                            <span>@Html.Raw(Model.UserInfo.UI_NickName)</span>
+                            @*<p>@Html.Raw(Model.UserInfo.UI_Tags)</p>*@
+                        </div>
+                    </div>
+                    <a class="follow-num" href="@Html.Raw(Model.PageType == (int)DataEnum.WenDaType.Attention ? "javascript:void(0);" : string.Format("{0}wenda/index/{1}-{2}.html", Url.Content("~/"), (int)DataEnum.WenDaType.Attention, Model.UserInfo.UI_ID))" @Html.Raw(Model.PageType == (int)DataEnum.WenDaType.Attention ? "class=\"on\"" : "")>
+                        <h3>@Model.AttentionCount</h3> <span>TA的关注</span>
+                    </a>
+                    <div class="look-follow">
+                        @{
+                if ((Model.IsAttentioned != null && Model.IsAttentioned["Success"].ToString() == "-2")
+                && (Model.IsEachAttentioned != null && Model.IsEachAttentioned["Success"].ToString() == "-2"))
+                {
+                    <div class="js-follow follow-btn eachother">互相关注</div>
+                }
+                else if (Model.IsAttentioned != null && Model.IsAttentioned["Success"].ToString() == "-2")
+                {
+                    <div class="js-follow follow-btn followed">已关注</div>
+                }
+                else if (Model.IsEachAttentioned != null && Model.IsEachAttentioned["Success"].ToString() == "-2")
+                {
+                    <div class="js-follow follow-btn add-follow">关注</div>
+                            <div class="follow-tips">TA关注了我</div>
+                }
+                else
+                {
+                    <div class="js-follow follow-btn add-follow">关注</div>
+                }
+                        }
+                    </div>
+                    <a class="follow-num" href="@Html.Raw(Model.PageType == (int)DataEnum.WenDaType.Fans ? "javascript:void(0);" : string.Format("{0}wenda/index/{1}-{2}.html", Url.Content("~/"), (int)DataEnum.WenDaType.Fans, Model.UserInfo.UI_ID))" @Html.Raw(Model.PageType == (int)DataEnum.WenDaType.Fans ? "class=\"on\"" : "")>
+                        <h3>@Model.FansCount</h3> <span>TA的粉丝</span>
+                    </a>
+                </div>
+                @*<div class="follow-box">
+
+
+                    </div>*@
+                <div class="wd-nav">
+                    <a href="@Html.Raw(Model.PageType == (int)DataEnum.WenDaType.Activities ? "javascript:void(0);" : string.Format("{0}wenda/index/{1}-{2}.html", Url.Content("~/"), (int)DataEnum.WenDaType.Activities, Model.UserInfo.UI_ID))" class="@Html.Raw(Model.PageType == (int)DataEnum.WenDaType.Activities ? "on" : "")">TA的动态</a>
+                    <a href="@Html.Raw(Model.PageType == (int)DataEnum.WenDaType.Questions ? "javascript:void(0);" : string.Format("{0}wenda/index/{1}-{2}.html", Url.Content("~/"), (int)DataEnum.WenDaType.Questions, Model.UserInfo.UI_ID))" class="@Html.Raw(Model.PageType == (int)DataEnum.WenDaType.Questions ? "on" : "")">TA的提问</a>
+                    <a href="@Html.Raw(Model.PageType == (int)DataEnum.WenDaType.Answers ? "javascript:void(0);" : string.Format("{0}wenda/index/{1}-{2}.html", Url.Content("~/"), (int)DataEnum.WenDaType.Answers, Model.UserInfo.UI_ID))" class="@Html.Raw(Model.PageType == (int)DataEnum.WenDaType.Answers ? "on" : "")">TA的回答</a>
+                </div>
+            }
+            @if (Model.WenDaInfo != null)
+            {
+
+                if (Model.PageType == (int)DataEnum.WenDaType.Activities)
+                {
+                    Html.RenderPartial("~/Areas/WenDa/Views/AuthorNews/Activities.cshtml", Model.WenDaInfo);
+                }
+                else if (Model.PageType == (int)DataEnum.WenDaType.Questions)
+                {
+                    Html.RenderPartial("~/Areas/WenDa/Views/AuthorNews/Questions.cshtml", Model.WenDaInfo);
+                }
+                else if (Model.PageType == (int)DataEnum.WenDaType.Answers)
+                {
+                    Html.RenderPartial("~/Areas/WenDa/Views/AuthorNews/Answers.cshtml", Model.WenDaInfo);
+                }
+            }
+        </div>
+
+        <!--分享-->
+        <section class="share-layout" @@click="closeShare"></section>
+        <section class="share-box">
+            <span class="tit">分享到</span>
+            <i class="close" @@click="closeShare"></i>
+            <div class="share-li">
+                <a class="qq js-tips" @@click="showTips">QQ</a>
+                <a href="#" class="qzone">QQ空间</a>
+                <a href="#" class="weibo">微博</a>
+                <a class="weixin js-tips" @@click="showTips">微信</a>
+            </div>
+        </section>
+        <section class="share-layout-tips" @@click="closeTips">
+            <div class="tips-box">
+                <p>点击浏览器下方“<em></em>”分享给<span>微信</span>好友</p>
+                <p>safari浏览器请点击“<i></i>”按钮 </p>
+            </div>
+        </section>
+    </div>
+    <script>
+        var my = new Vue({
+            el: '#app',
+            methods: {
+                closeShare: function () {
+                    $('.share-layout').hide();
+                    $('.share-box').removeClass('show');
+                },
+                showTips: function (event) {
+                    console.log(event.currentTarget);
+                    $('.share-layout-tips').find('p:eq(0) span').text(event.currentTarget.innerHTML);
+                    $('.share-layout-tips').show();
+                },
+                closeTips: function () {
+                    $('.share-layout-tips').hide();
+                    $('.share-layout').hide();
+                    $('.share-box').removeClass('show');
+                }
+            }
+        })
+    </script>
+    <script>
+        $(function () {
+            //更新最后浏览时间
+            $.post("@Url.Content("~/UpdateAttentionOfUpdateDate.htm")", { "userId": "@Model.UserInfo.UI_ID" });
+
+            $(".js-follow").click(function () {
+                if ($(this).hasClass("add-follow")) {
+                    $.ajax({
+                        type: "post",
+                        dataType: "json",
+                        url: "@Url.Content("~/AddAttention.htm")",
+                        data: { "userId": "@Model.UserInfo.UI_ID" },
+                        success: function (data) {
+                            if (data.ResultCode == 1) {
+                                window.location.reload();
+                            } else if (data.ResultCode == 2) {
+                                window.location.href = 'http://m.edushi.com/user/Login.html?BackUrl=' + window.location.href;
+                            } else {
+                                alert(data.Msg);
+                            }
+                        }
+                    });
+                } else {
+                    $.ajax({
+                        type: "post",
+                        dataType: "json",
+                        url: "@Url.Content("~/CancelAttention.htm")",
+                        data: { "userId": "@Model.UserInfo.UI_ID" },
+                        success: function (data) {
+                            if (data.ResultCode == 1) {
+                                window.location.reload();
+                            } else if (data.ResultCode == 2) {
+                                window.location.href = 'http://m.edushi.com/user/Login.html?BackUrl=' + window.location.href;
+                            } else {
+                                alert(data.Msg);
+                            }
+                        }
+                    });
+                }
+            });
+        })
+    </script>
+}
+

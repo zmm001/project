@@ -1,0 +1,288 @@
+html {
+	font-size: 24px;
+	margin: 0;
+	font-family: 'PingFangSC-Regular', 'STHeiti', 'Microsoft YaHei', Helvetica, Arial;
+}
+div,
+form,
+acronym,
+img,
+ul,
+ol,
+li,
+dl,
+dt,
+dd,
+header {
+	margin: 0;
+	padding: 0;
+	border: none;
+	list-style: none;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+	margin: 0;
+	padding: 0 ;
+}
+body {
+	position: relative;
+	margin: 0;
+	padding: 0;
+	font-size: 0;
+	background: #fff;
+	overflow: hidden;
+}
+a {
+	text-decoration: none;
+	color: #333;
+}
+a:link, a:visited, a:hover, a:active {
+	color: #333;
+}
+input, textarea {
+	padding: 0;
+	margin: 0;
+	-webkit-appearance: none;
+}
+/**/
+*{
+	-webkit-tap-highlight-color: rgba(255,0,0,0);
+}
+.fl {
+	float: left;
+}
+.fr {
+	float: right;
+}
+.clearfix:after {
+	content: "";
+	display: table;
+	clear: both;
+}
+.overflow {
+	overflow: hidden;
+}
+
+.top-box {
+	position: absolute;
+	left: 0;
+	top: 0;
+	z-index: 10000;
+	width: 7.5rem;
+	padding-top: 0.14rem;
+	background: #3d92fb;
+}
+.top-box .top-nav {
+	margin: 0 0.27rem;
+}
+.top-box .eds-logo {
+	width: 1.56rem;
+	height: 0.48rem;
+	margin-right: 0.07rem;
+	background: url(../images/logo.png) no-repeat;
+	background-size: cover;
+}
+.top-box .map-logo {
+	width: 0.66rem;
+	height: 0.38rem;
+	margin-top: 0.12rem;
+	margin-right: 0.17rem;
+	background: url(../images/sprite_icon.png) no-repeat;
+	background-size: 1rem 10rem;
+}
+.top-box .city, .top-box .map, .top-box .route {
+	margin-top: 0.08rem;
+	font-size: 0.32rem;
+	color: #fff; 
+}
+.top-box .city:after {
+	content: "";
+	display: inline-block;
+	width: 0.13rem;
+	height: 0.08rem;
+	margin-left: 0.09rem;
+	background: url(../images/sprite_icon.png) no-repeat 0 -0.48rem;
+	background-size: 1rem 10rem;
+	vertical-align: middle;
+}
+.top-box .map {
+	color: #9ec9fd;
+	margin-right: 0.7rem;
+}
+.top-box .route {
+	color: #9ec9fd;
+}
+.top-box .map:before, .top-box .route:before {
+	content: "";
+	display: inline-block;
+	width: 0.24rem;
+	height: 0.35rem;
+	margin-right: 0.07rem;
+	background: url(../images/sprite_icon.png) no-repeat 0 -0.68rem;
+	background-size: 1rem 10rem;
+	vertical-align: -0.04rem;
+}
+.top-box .route:before {
+	width: 0.23rem;
+	height: 0.32rem;
+	background-position: 0 -1.12rem;
+}
+.top-box .current {
+	color: #fff;
+}
+.top-box .current:before {
+	background-position-x: -0.32rem;
+}
+
+.travel-mode {
+	background: #fff;
+}
+.travel-tab {
+	padding-left: 0.85rem;
+	border-bottom: 1px solid #d4d4d4;
+}
+.travel-tab li {
+	position: relative;
+	display: inline-block;
+	height: 0.86rem;
+	margin-right: 0.52rem;
+	padding: 0 0.61rem;
+	text-align: center;
+	vertical-align: top;
+}
+.travel-tab li span {
+	display: inline-block;
+	background: url(../images/sprite_icon.png) no-repeat;
+	background-size: 1rem 10rem;
+}
+.travel-tab .car span {
+	width: 0.4rem;
+	height: 0.34rem;
+	margin-top: 0.23rem;
+	background-position: 0 -4.35rem;
+}
+.travel-tab .bus span {
+	width: 0.36rem;
+	height: 0.4rem;
+	margin-top: 0.2rem;
+	background-position: 0 -4.77rem;
+}
+.travel-tab .walk span {
+	width: 0.3rem;
+	height: 0.48rem;
+	margin-top: 0.18rem;
+	background-position: 0 -5.27rem;
+}
+.travel-tab li.on:before {
+	content: "";
+	position: absolute;
+	left: 0;
+	bottom: -1px;
+	display: block;
+	width: 100%;
+	height: 0.04rem;
+	background: #007ef3;
+}
+.travel-tab li.on span {
+	background-position-x: -0.46rem;
+}
+
+
+/* 自动输入 */
+.amap-sug-result {
+	width: 7.5rem !important;
+	max-height: 4.4rem;
+	left: 0 !important;
+	border: none;
+	box-shadow: 0 1px 3px rgba(0,0,0,.3);
+	overflow-y: scroll;
+	z-index: 10240;
+}
+.auto-item {
+	margin: 0 0.3rem;
+	padding: 0.16rem 0;
+	font-size: 0.3rem;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	border-bottom: 1px solid #dddddd;
+}
+.auto-item-span {
+	padding-left: 0.12rem;
+	font-size: 0.28rem;
+}
+.auto-item:last-child {
+	border-bottom: none;
+}
+
+/* 横屏模式 */
+.landscape .top-box {
+	padding: 0.08rem 0 0.12rem;
+}
+.landscape .top-box .top-nav {
+	margin: 0 0.15rem;
+}
+.landscape .top-box .eds-logo {
+	width: 0.90rem;
+	height: 0.28rem;
+	margin-right: 0;
+}
+.landscape .top-box .map-logo {
+	-webkit-transform: scale(0.58);
+	-moz-transform: scale(0.58);
+	-o-transform: scale(0.58);
+	-ms-transform: scale(0.58);
+	transform: scale(0.58);
+	margin-top: -0.02rem;
+	margin-right: 0;
+}
+.landscape .top-box .city {
+	margin-top: 0.05rem;
+}
+.landscape .top-box .city, .landscape .top-box .map, .landscape .top-box .route {
+	font-size: 0.16rem;
+}
+.landscape .top-box .city:after {
+	-webkit-transform: scale(0.7);
+	-moz-transform: scale(0.7);
+	-o-transform: scale(0.7);
+	-ms-transform: scale(0.7);
+	transform: scale(0.7);
+	margin-left: 0.04rem;
+}
+.landscape .top-box .map {
+	margin-right: 0.35rem;
+	margin-top: 0;
+}
+.landscape .top-box .route {
+	margin-top: 0;
+}
+.landscape .top-box .map:before, .landscape .top-box .route:before {
+	-webkit-transform: scale(0.87);
+	-moz-transform: scale(0.7);
+	-o-transform: scale(0.87);
+	-ms-transform: scale(0.7);
+	transform: scale(0.7);
+	vertical-align: -0.09rem;
+	margin-right: 0.04rem;
+}
+
+.maps {
+	width: 7.5rem;
+	height: 100%;
+	overflow: hidden;
+}
+
+.top-box .city span {
+	display: inline-block;
+	max-width: 1.3rem;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	vertical-align: top;
+}

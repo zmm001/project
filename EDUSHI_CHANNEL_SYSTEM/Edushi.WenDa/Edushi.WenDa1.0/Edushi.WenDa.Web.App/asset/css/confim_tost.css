@@ -1,0 +1,202 @@
+﻿       /*==================================ios  确认框====================================*/
+     .confirms-ios .pop-box {
+      position: fixed;
+      left: 0.95rem;
+      top: 3.75rem;
+      z-index: 1000;
+      text-align: center;
+      background: white;
+      width: 5.4rem;
+      height: 2.06rem;
+      border-radius: 0.24rem
+    }
+
+     .confirms-ios .pop-box .msg {
+      width: 100%;
+      height: 1.2rem;
+      font-size: 0.34rem;
+      font-family: PingFangSC-Regular;
+      font-weight: 400;
+      color: rgba(3, 3, 3, 1);
+      line-height: 1.2rem;
+      box-sizing: border-box;
+      border-bottom: 0.02rem solid #BBBBBB;
+    }
+
+    /* ios确认框 */
+    .confirms-ios {
+      position: fixed;
+      left: 0;
+      top: 0;
+      z-index: 1000;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, .3);
+      display:none
+    }
+
+      .confirms-ios .pop-box .tool {
+      position: fixed;
+      width: inherit;
+    }
+
+      .confirms-ios .pop-box .tool .cancel {
+      float: left;
+      background: none;
+      height: 0.88rem;
+      border: 0.02rem solid transparent;
+      width: 50%;
+          border-right: 0.02rem solid #bbbbbb;
+      font-size: 0.34rem;
+      font-family: PingFangSC-Regular;
+      font-weight: 400;
+      color: rgba(0, 122, 255, 1);
+      line-height: 0.48rem;
+      cursor:pointer;
+    }
+
+     .confirms-ios  .pop-box .tool .ennsure {
+      background: none;
+      border: 0.02rem solid transparent;
+      height: 0.88rem;
+      width: 50%;
+      font-size: 0.34rem;
+      font-family: PingFangSC-Regular;
+      font-weight: 400;
+      color: rgba(0, 122, 255, 1);
+      line-height: 0.48rem;
+       cursor:pointer;
+    }
+
+
+      .confirms-ios .pop-box .tool .ennsure {
+      float: right;
+      background: none;
+      border: 0.02rem solid transparent;
+      height: 0.88rem;
+      width: 50%;
+      font-size: 0.34rem;
+      font-family: PingFangSC-Regular;
+      font-weight: 400;
+      color: rgba(0, 122, 255, 1);
+      line-height: 0.48rem;
+       cursor:pointer;
+    }
+	
+	
+	/*==================================andriod确认框====================================*/
+	
+	.confirms-android .pop-box {
+      position: fixed;
+      left: 0.95rem;
+      top: 5.75rem;
+      z-index: 1000;
+      text-align: center;
+      width: 5.84rem;
+      height: 2.68rem;
+      background: rgba(255, 255, 255, 1);
+      border-radius: 0.08rem;
+    }
+
+    .confirms-android .pop-box .msg {
+      width: 100%;
+      height: 1.62rem;
+      font-size: 0.34rem;
+      font-family: PingFangSC-Regular;
+      font-weight: 400;
+      color: rgba(3, 3, 3, 1);
+      line-height: 1.62rem;
+      box-sizing: border-box;
+     border-bottom: 0.02rem solid #D2D3D5;
+    }
+
+
+    .confirms-android .pop-box .confirmBox-right .cancel {
+      float: left;
+      background: none;
+      height: 1.06rem;
+      border: 0.02rem solid transparent;
+      width: 50%;
+      font-size: 0.34rem;
+      font-family: PingFangSC-Regular;
+      line-height: 1.06rem;
+      font-weight: 500;
+      color: rgba(142, 142, 143, 1);
+    }
+
+    .confirms-android {
+     position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 1000;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, .3);
+    display:none;
+    }
+
+     .confirms-android .confirmBox {
+    display: flex;
+    width: inherit;
+    height: 1.06rem;
+}
+
+    .confirms-android .confirmBox-left {
+      width: 50%;
+    }
+
+    .confirms-android .confirmBox-right {
+      width: 50%;
+    }
+
+
+    .confirms-android .pop-box .confirmBox-right .ennsure {
+      float: right;
+      background: none;
+      border: 0.02rem solid transparent;
+      height: 1.06rem;
+      width: 50%;
+      font-size: 0.34rem;
+      font-family: PingFangSC-Regular;
+      font-weight: 500;
+      color: rgba(0, 122, 255, 1);
+      line-height: 1.06rem;
+    }
+	
+	
+	/*==========================================tost提示框=============================================*/
+	
+	#tost {
+      display: none;
+      position: fixed;
+      left: 0;
+      top: 0;
+      z-index: 1000;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, .3);
+    }
+
+    #tost .pop-box {
+      position: fixed;
+      left: 2.75rem;
+      top: 5.75rem;
+      z-index: 1000;
+      text-align: center;
+      background: rgba(0, 0, 0, .6);
+      border-radius: 0.08rem;
+      width: 2.08rem;
+      height: 0.8rem;
+      background: rgba(0, 0, 0, 0.7);
+      border-radius: 0.1rem;
+    }
+
+    #tost .pop-box .msg {
+      height: 0.4rem;
+      font-size: 0.28rem;
+      font-family: PingFangSC-Regular;
+      font-weight: 400;
+      color: rgba(255, 255, 255, 1);
+      line-height: 0.8rem;
+      text-align: center;
+    }

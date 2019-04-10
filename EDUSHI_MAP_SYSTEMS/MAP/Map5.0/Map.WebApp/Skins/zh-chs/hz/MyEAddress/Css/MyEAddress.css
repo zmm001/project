@@ -1,0 +1,34 @@
+﻿body{font-size:12px; color:#333;text-align:center; margin:0; padding:5px 0 0;}
+img{border-width:0px}
+form{padding:0;margin:0}
+a{color:#369;text-decoration:none;}
+a:hover{color:red; text-decoration:underline;}
+.HackBox{clear:both;border-top:transparent 0px solid;height:0;overflow:hidden;}
+
+#LayOut{width:950px;margin:0 auto;text-align:left;}
+#PageHead{margin-bottom:10px;text-align:center;}
+#PageHead img{margin:0 5px;}
+
+#Navigation{height:38px; overflow:hidden; background:#BEDAFE url(../Images/eAddressBg.gif) no-repeat left top; border:1px solid #88BAD7; position:relative;}
+#ToFriendNav{background:url(../Images/ToFriendBg.gif) no-repeat right top; padding:1px 10px 0; height:29px; margin:5px 0 3px 60px; width:580px; overflow:hidden; text-align:center;}
+
+#ToFriendNav span{font-family:黑体; font-size:14px; font-weight:bold; line-height:21px;}
+#ToFriendNav span strong{color:#FF6400;}
+/*输入框*/
+input.InFieldSty{border:1px solid #84A5CE;border-right-color:#C1D2E7;border-bottom-color:#C1D2E7;background-color:#F7FBFF; width:280px; height:17px;}
+#ToFriendNav img{cursor:pointer;}
+
+#CeartAdd{position:absolute; top:0; right:0; background:url(../Images/eAddressBg.gif) no-repeat left -42px; padding:3px 10px 0 15px; height:35px; text-align:center;}
+
+#MapNav{border:1px solid #88BAD7; border-top-width:0; padding:1px; width:946px; height:486px; overflow:hidden; position:relative;}
+
+.ToolBar{position:absolute; top:10px; right:10px; background:url(../Images/AllTagBg.gif) no-repeat left top; width:168px; height:400px; padding:10px 6px; z-index:10000}
+.ToolBar h3{padding:0; margin:0;}
+.ToolBar ul{padding:0; margin:10px 0; list-style-type:none; height:330px;}
+.ToolBar ul li a{display:block;background:url(../Images/ArrowIco1.gif) no-repeat 5px 6px; padding-left:18px; margin:1px 0;line-height:21px; width:150px; height:21px; overflow:hidden; -o-text-overflow:ellipsis; text-overflow:ellipsis; white-space:nowrap;}
+.ToolBar ul li a:hover,.ToolBar ul li a.On{ background:url(../Images/AdCheckBg.gif) no-repeat left top; color:#FF6400; text-decoration:none;}
+
+.Paginate{text-align:center;margin:5px 0; font-family:Arial; background:url(../Images/LineSty1.gif) no-repeat left top; padding-top:8px; font-family:Arial;}
+
+/*页脚*/
+.PageFooter{ margin:5px 0; text-align:center; line-height:150%;}

@@ -1,0 +1,8 @@
+E:\TFS192.168.100.212\EDUSHI_DATA_CENTER\EdushiDataCenter\v4.0.vs2013\EdushiDataCenterSolution\Edushi.MongoDB_2115\bin\Debug\Edushi.MongoDB_2115.dll
+E:\TFS192.168.100.212\EDUSHI_DATA_CENTER\EdushiDataCenter\v4.0.vs2013\EdushiDataCenterSolution\Edushi.MongoDB_2115\bin\Debug\Edushi.MongoDB_2115.pdb
+E:\TFS192.168.100.212\EDUSHI_DATA_CENTER\EdushiDataCenter\v4.0.vs2013\EdushiDataCenterSolution\Edushi.MongoDB_2115\bin\Debug\Framework.dll
+E:\TFS192.168.100.212\EDUSHI_DATA_CENTER\EdushiDataCenter\v4.0.vs2013\EdushiDataCenterSolution\Edushi.MongoDB_2115\bin\Debug\MongoDB.Bson.dll
+E:\TFS192.168.100.212\EDUSHI_DATA_CENTER\EdushiDataCenter\v4.0.vs2013\EdushiDataCenterSolution\Edushi.MongoDB_2115\bin\Debug\MongoDB.Driver.Core.dll
+E:\TFS192.168.100.212\EDUSHI_DATA_CENTER\EdushiDataCenter\v4.0.vs2013\EdushiDataCenterSolution\Edushi.MongoDB_2115\bin\Debug\MongoDB.Driver.dll
+E:\TFS192.168.100.212\EDUSHI_DATA_CENTER\EdushiDataCenter\v4.0.vs2013\EdushiDataCenterSolution\Edushi.MongoDB_2115\obj\Debug\Edushi.MongoDB_2115.dll
+E:\TFS192.168.100.212\EDUSHI_DATA_CENTER\EdushiDataCenter\v4.0.vs2013\EdushiDataCenterSolution\Edushi.MongoDB_2115\obj\Debug\Edushi.MongoDB_2115.pdb

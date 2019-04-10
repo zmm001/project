@@ -1,0 +1,160 @@
+﻿@{
+    ViewBag.Title = "提问-E都市问答-E都市";
+    ViewBag.IsNeedBack = true;
+    var pTypes = ViewBag.PTypes as List<Edushi.WenDa.Model.InfoTypeModel>;
+}
+
+@section meta
+{
+    <meta name="Keywords" content="" />
+    <meta name="Description" content="" />
+}
+<script src="@Url.Content("~/asset/js/jquery.form.js")"></script>
+<div class="content-main">
+    <div class="ask-tit">提问</div>
+    <div class="ask-box">
+        <input type="text" name="" placeholder="[必填]请在此输入问题（最多40字）" class="ipt" id="question_title" />
+        @if (pTypes != null && pTypes.Any())
+        {
+            <div class="radio-box">
+                <h4>[必选]请选择问题分类</h4>
+                @foreach (var item in pTypes)
+                {
+                    <label data-tid="@item.IT_ID">
+                        <input type="radio" name="type">
+                        <span>@(item.IT_Name.Substring(0, 2))</span>
+                    </label>
+                }
+            </div>
+        }
+        
+        <textarea placeholder="[选填]请在此输入问题描述" id="question_desc"></textarea>
+        <div class="img-upload">
+            <div class="img-list">
+                <!-- <div class="img-item">
+                    <img src="http://npic7.edushi.com/cn/tu/zh-chs/2018-03/09/sa49d5b5bec0a4da8b1a7114d89222de0.jpg">
+                    <span class="img-close"></span>
+                </div> -->
+            </div>
+            <form id="addform" method="post" action="/UploadImg.htm" enctype="multipart/form-data">
+                <div class="file-ipt">
+                    <input type="file" name="upfile" id="file" accept="image/jpeg,image/jpg,image/png" />
+                </div>
+            </form>
+        </div>
+        <input type="button" name="" value="提交" class="submit-btn" />
+    </div>
+</div>
+
+<script>
+    $(function () {
+        $(".radio-box label").bind("click", function (ev) {
+            if (!$(this).find("input").is(":checked")) {
+                $(".radio-box label").removeClass("checked");
+                $(this).addClass("checked");
+            }
+        })
+        //图片上传预览
+        $("#file").change(function () {
+            if ($(".img-item img").length >= 3) {
+                alert("最多只能上传3张图片");
+            } else {
+                if ($(this).val().length > 0) {
+                    subimtForm();
+                }
+            }
+        });
+
+        function subimtForm() {
+            var form = $("#addform");
+            var options = {
+                url: '@Url.Content("~/UploadImg.htm")',
+                type: 'post',
+                success: function (data) {
+                    console.log(data);
+                    //var jsondata = eval("(" + data + ")");
+                    if (data.errno == "0") {
+                        var section = $('<div class="img-item">');
+                        $(".ask-box .img-list").prepend(section);
+                        var div = $('<div>');
+                        div.appendTo(section);
+                        var p = $('<p id="imghead">');
+                        p.appendTo(div);
+                        var img = $('<img>');
+                        img.appendTo(p);
+                        var close = $('<span class="img-close"></span>');
+                        close.appendTo(section);
+                        var url = data.data[0];
+
+                        img.attr("src", url);
+                        if ($(".img-item img").length >= 3) {
+                            form.hide();
+                        }
+                    } else {
+                        alert(data.Msg);
+                    }
+                }
+            };
+            form.ajaxSubmit(options);
+            //$("#fileForm").submit();  
+        }
+
+        $(".img-upload").on("click", ".img-close", function () {
+            $(this).parent(".img-item").remove();
+            $("#file").val("");
+            if ($(".img-item img").length < 3) {
+                $("#addform").show();
+            }
+        });
+        $(".submit-btn").click(function () {
+            var title = $("#question_title").val();
+            if (title == "") {
+                alert("标题不能为空!");
+                return false;
+            } else if (title.length > 40) {
+                alert("标题不能超过40个字!");
+                return false;
+            }
+            var desc = $("#question_desc").val();
+            var imgs = "";
+            $.each($(".img-list .img-item img"), function (i, v) {
+                if (i > 0) {
+                    imgs += ",";
+                }
+                imgs += $(v).attr("src");
+            });
+            var tId = 0;
+            if ($(".radio-box label.checked").length <= 0) {
+                alert("请选择分类!");
+                return false;
+            }
+            tId = $(".radio-box label.checked").data("tid");
+            var obj = {
+                "Title": title,
+                "Desc": desc,
+                "Imgs": imgs,
+                "TId": tId
+            }
+            $.ajax({
+                type: "post",
+                dataType: "json",
+                url: "@Url.Content("~/AddQuestion.htm")",
+                data: obj,
+                success: function (data) {
+                    if (data) {
+                        if (data.ResultCode == 1) {
+                            alert(data.Msg);
+                            $("#question_title").val("");
+                            $("#question_desc").val("");
+                            $(".radio-box label.checked").removeClass("checked");
+                            $(".img-list .img-item").remove();
+                            $("#addform").show();
+                        } else {
+                            alert(data.Msg);
+                        }
+                    }
+                }
+            });
+        });
+    });
+</script>

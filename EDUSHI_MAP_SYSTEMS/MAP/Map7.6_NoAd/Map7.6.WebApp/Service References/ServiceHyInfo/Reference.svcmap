@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="b9a4ed94-7983-4c0d-bf0a-7d81b33e8c30" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>true</GenerateAsynchronousMethods>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings>
+      <CollectionMapping TypeName="System.Collections.Generic.List`1" Category="List" />
+    </CollectionMappings>
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://data.edushi.com/SearchData/Services/HYSearcherService.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="HYSearcherService.xsd" MetadataType="Schema" ID="a05e2b9b-e923-4fbf-b7b1-704ed87ee15f" SourceId="1" SourceUrl="http://data.edushi.com/SearchData/Services/HYSearcherService.svc?xsd=xsd2" />
+    <MetadataFile FileName="HYSearcherService.wsdl" MetadataType="Wsdl" ID="49dc5e22-495c-4dc9-abcd-4d0a7eab8de5" SourceId="1" SourceUrl="http://data.edushi.com/SearchData/Services/HYSearcherService.svc?wsdl" />
+    <MetadataFile FileName="HYSearcherService1.xsd" MetadataType="Schema" ID="790f20d4-aa9d-46bd-b776-e0ef47a6da54" SourceId="1" SourceUrl="http://data.edushi.com/SearchData/Services/HYSearcherService.svc?xsd=xsd1" />
+    <MetadataFile FileName="HYSearcherService2.xsd" MetadataType="Schema" ID="f9ecd153-16b3-4688-90da-af2d2abe74dd" SourceId="1" SourceUrl="http://data.edushi.com/SearchData/Services/HYSearcherService.svc?xsd=xsd0" />
+    <MetadataFile FileName="HYSearcherService3.xsd" MetadataType="Schema" ID="666c6b47-d7e7-46a4-9ce7-da9c5e1b1c13" SourceId="1" SourceUrl="http://data.edushi.com/SearchData/Services/HYSearcherService.svc?xsd=xsd3" />
+    <MetadataFile FileName="HYSearcherService.disco" MetadataType="Disco" ID="5a00c285-3c11-4e47-b0b4-1040042be102" SourceId="1" SourceUrl="http://data.edushi.com/SearchData/Services/HYSearcherService.svc?disco" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

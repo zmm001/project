@@ -1,0 +1,109 @@
+﻿@{
+    Layout = null;
+}
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head><title>
+	E同城—中国生活分类信息网站|免费发布信息
+</title><meta content="E同城,分类信息网,免费发布信息" name="Keywords" /><meta content="E同城是中国分类信息网站,在这里可以免费发布和查询租房买房、二手物品交易、求职招聘、二手车买卖、生活服务等分类信息.满足您不同的免费发布信息需求." name="Description" /><meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <script src="http://res.edushi.com/js/jquery-1.7.2.min.js" type="text/javascript"></script>
+    <script type="text/javascript" src="http://int.dpool.sina.com.cn/iplookup/iplookup.php?format=js"></script>
+    <script src="/js/channelcitylist.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            if (typeof remote_ip_info != 'undefined' && "" != remote_ip_info.city) {
+                var ecity = remote_ip_info.city.replace('市', '');
+
+                $.ajax({
+                    type: "post",
+                    async: false,
+                    url: $("#hidCurrentCity").val(),
+                    dataType: "json",
+                    data: { CityName: ecity },
+                    success: function (data) {
+                        var html = "";
+                        html += "您当前所在的城市可能是 <span>" + ecity + "</span>,";
+                        if (data.isTongcheng == 1) {
+                            html += "<a href='http://" + data.cityCode + ".edushi.com/cheng/'><span>点击进入" + ecity + "E同城</span></a>";
+                        }
+                        $("#currentCity").html(html.toString()).show();
+                        $("#ddlProvince").val(data.EP_ID).change();
+                        $("#ddlCity").val(data.cityCode);
+                    }
+                });
+            }
+
+            $("#btnGo").click(function () {
+                window.location.href = "http://" + $("#ddlCity").val() + ".edushi.com/cheng/";
+            })
+        })
+    </script>
+    <link href="/css/channelcitylist.css" rel="stylesheet" type="text/css" /></head>
+<body>
+
+<div id="topmenu">
+  <div><a href="http://my.edushi.com/register.aspx">免费注册</a> | <a href="http://my.edushi.com/">登录</a> | <a href="http://www.edushi.com/about/GuestBook.aspx">留言</a></div>
+</div>
+<div id="logobox" style=" background-image:url(images/cheng_bj.png)">
+  <div id="logo"><a href="http://www.edushi.com/">
+      <img src="images/citylist_cheng.png" width="191" height="55" border="0" />
+      </a></div>
+  <div id="menu"></div>
+  <div id="breadCrumb">当前位置：<a href="/">E都市首页</a> &gt; 
+      E同城城市列表</div>
+</div>
+<div id="content">
+  <div id="currentCity" class="current" style="display:none;"></div>
+
+  <div class="city_list hotcity"><strong>热门城市：</strong><a href="http://hz.edushi.com/cheng/">杭州</a> <a href="http://sh.edushi.com/cheng/">上海</a> <a href="http://beijing.edushi.com/cheng/">北京</a> <a href="http://tianjin.edushi.com/cheng/">天津</a> <a href="http://sz.edushi.com/cheng/">深圳</a></div>
+
+  <div class="city_list" style="height:30px;">
+    <ul>
+      <li><strong>按省份选择：</strong></li>
+      <li>
+          <select id="ddlProvince"></select>
+         <select id="ddlCity"></select>
+      </li>
+      <li><input id="btnGo" name="" type="button" value="确 定" class="btn" /></li>      
+    </ul>
+  </div>
+
+  <div class="city_list hotcity">
+  <script type="text/javascript">
+      /*首页城市列表标签云*/
+      var cpro_id = "u1134064";
+</script>
+<script src="http://cpro.baidustatic.com/cpro/ui/c.js" type="text/javascript"></script>
+  </div>
+    
+  <div class="city_list">
+    <strong>按拼音首字母选择：</strong>
+      <dl><dt>A</dt><dd><a href="http://ankang.edushi.com/cheng/" >安康</a> |<a href="http://anyang.edushi.com/cheng/" >安阳</a> </dd></dl><dl><dt>B</dt><dd><a href="http://beijing.edushi.com/cheng/" >北京</a> |<a href="http://baotou.edushi.com/cheng/" >包头</a> |<a href="http://baoji.edushi.com/cheng/" >宝鸡</a> |<a href="http://baoding.edushi.com/cheng/" >保定</a> </dd></dl><dl><dt>C</dt><dd><a href="http://chongqing.edushi.com/cheng/" >重庆</a> |<a href="http://chengdu.edushi.com/cheng/" >成都</a> |<a href="http://changchun.edushi.com/cheng/" >长春</a> |<a href="http://chenzhou.edushi.com/cheng/" >郴州</a> |<a href="http://changzhou.edushi.com/cheng/" >常州</a> |<a href="http://changsha.edushi.com/cheng/" >长沙</a> |<a href="http://cangzhou.edushi.com/cheng/" >沧州</a> |<a href="http://changde.edushi.com/cheng/" >常德</a> </dd></dl><dl><dt>D</dt><dd><a href="http://dalian.edushi.com/cheng/" >大连</a> |<a href="http://dongying.edushi.com/cheng/" >东营</a> |<a href="http://daqing.edushi.com/cheng/" >大庆</a> |<a href="http://dezhou.edushi.com/cheng/" >德州</a> |<a href="http://dongguan.edushi.com/cheng/" >东莞</a> </dd></dl><dl><dt>E</dt><dd><a href="http://eerduosi.edushi.com/cheng/" >鄂尔多斯</a> </dd></dl><dl><dt>F</dt><dd><a href="http://fuzhou.edushi.com/cheng/" >福州</a> |<a href="http://fushun.edushi.com/cheng/" >抚顺</a> |<a href="http://foshan.edushi.com/cheng/" >佛山</a> </dd></dl><dl><dt>G</dt><dd><a href="http://guangzhou.edushi.com/cheng/" >广州</a> |<a href="http://guilin.edushi.com/cheng/" >桂林</a> |<a href="http://ganzhou.edushi.com/cheng/" >赣州</a> |<a href="http://guiyang.edushi.com/cheng/" >贵阳</a> </dd></dl><dl><dt>H</dt><dd><a href="http://hz.edushi.com/cheng/" >杭州</a> |<a href="http://huzhou.edushi.com/cheng/" >湖州</a> |<a href="http://hanzhong.edushi.com/cheng/" >汉中</a> |<a href="http://huhehaote.edushi.com/cheng/" >呼和浩特</a> |<a href="http://huizhou.edushi.com/cheng/" >惠州</a> |<a href="http://harbin.edushi.com/cheng/" >哈尔滨</a> |<a href="http://hefei.edushi.com/cheng/" >合肥</a> |<a href="http://haikou.edushi.com/cheng/" >海口</a> |<a href="http://handan.edushi.com/cheng/" >邯郸</a> |<a href="http://hengyang.edushi.com/cheng/" >衡阳</a> |<a href="http://huaihua.edushi.com/cheng/" >怀化</a> </dd></dl><dl><dt>J</dt><dd><a href="http://jinhua.edushi.com/cheng/" >金华</a> |<a href="http://jining.edushi.com/cheng/" >济宁</a> |<a href="http://jiujiang.edushi.com/cheng/" >九江</a> |<a href="http://jiaxing.edushi.com/cheng/" >嘉兴</a> |<a href="http://jinan.edushi.com/cheng/" >济南</a> |<a href="http://jinzhou.edushi.com/cheng/" >锦州</a> |<a href="http://jilin.edushi.com/cheng/" >吉林</a> |<a href="http://jiangmen.edushi.com/cheng/" >江门</a> </dd></dl><dl><dt>K</dt><dd><a href="http://kunming.edushi.com/cheng/" >昆明</a> </dd></dl><dl><dt>L</dt><dd><a href="http://liuzhou.edushi.com/cheng/" >柳州</a> |<a href="http://linyi.edushi.com/cheng/" >临沂</a> |<a href="http://lasa.edushi.com/cheng/" >拉萨</a> |<a href="http://lanzhou.edushi.com/cheng/" >兰州</a> |<a href="http://langfang.edushi.com/cheng/" >廊坊</a> |<a href="http://lianyungang.edushi.com/cheng/" >连云港</a> |<a href="http://luoyang.edushi.com/cheng/" >洛阳</a> </dd></dl><dl><dt>M</dt><dd><a href="http://mianyang.edushi.com/cheng/" >绵阳</a> </dd></dl><dl><dt>N</dt><dd><a href="http://ningbo.edushi.com/cheng/" >宁波</a> |<a href="http://nanchang.edushi.com/cheng/" >南昌</a> |<a href="http://nanjing.edushi.com/cheng/" >南京</a> |<a href="http://nantong.edushi.com/cheng/" >南通</a> |<a href="http://nanning.edushi.com/cheng/" >南宁</a> |<a href="http://nanyang.edushi.com/cheng/" >南阳</a> </dd></dl><dl><dt>Q</dt><dd><a href="http://qinhuangdao.edushi.com/cheng/" >秦皇岛</a> |<a href="http://quanzhou.edushi.com/cheng/" >泉州</a> |<a href="http://jinjiang.edushi.com/cheng/" >泉州</a> |<a href="http://shishi.edushi.com/cheng/" >泉州</a> |<a href="http://qd.edushi.com/cheng/" >青岛</a> |<a href="http://qiqihaer.edushi.com/cheng/" >齐齐哈尔</a> </dd></dl><dl><dt>R</dt><dd><a href="http://rizhao.edushi.com/cheng/" >日照</a> </dd></dl><dl><dt>S</dt><dd><a href="http://sh.edushi.com/cheng/" >上海</a> |<a href="http://sz.edushi.com/cheng/" >深圳</a> |<a href="http://shaoxing.edushi.com/cheng/" >绍兴</a> |<a href="http://shijiazhuang.edushi.com/cheng/" >石家庄</a> |<a href="http://suzhou.edushi.com/cheng/" >苏州</a> |<a href="http://sanya.edushi.com/cheng/" >三亚</a> |<a href="http://shenyang.edushi.com/cheng/" >沈阳</a> </dd></dl><dl><dt>T</dt><dd><a href="http://tianjin.edushi.com/cheng/" >天津</a> |<a href="http://taiyuan.edushi.com/cheng/" >太原</a> |<a href="http://taizhou1.edushi.com/cheng/" >泰州</a> |<a href="http://tangshan.edushi.com/cheng/" >唐山</a> </dd></dl><dl><dt>W</dt><dd><a href="http://wuhan.edushi.com/cheng/" >武汉</a> |<a href="http://wuhu.edushi.com/cheng/" >芜湖</a> |<a href="http://weihai.edushi.com/cheng/" >威海</a> |<a href="http://wulumuqi.edushi.com/cheng/" >乌鲁木齐</a> |<a href="http://weifang.edushi.com/cheng/" >潍坊</a> |<a href="http://wenzhou.edushi.com/cheng/" >温州</a> </dd></dl><dl><dt>X</dt><dd><a href="http://xiamen.edushi.com/cheng/" >厦门</a> |<a href="http://xian.edushi.com/cheng/" >西安</a> |<a href="http://xining.edushi.com/cheng/" >西宁</a> |<a href="http://xiangtan.edushi.com/cheng/" >湘潭</a> |<a href="http://xinyang.edushi.com/cheng/" >信阳</a> |<a href="http://xuzhou.edushi.com/cheng/" >徐州</a> </dd></dl><dl><dt>Y</dt><dd><a href="http://yinchuan.edushi.com/cheng/" >银川</a> |<a href="http://yantai.edushi.com/cheng/" >烟台</a> |<a href="http://yancheng.edushi.com/cheng/" >盐城</a> |<a href="http://yichang.edushi.com/cheng/" >宜昌</a> </dd></dl><dl><dt>Z</dt><dd><a href="http://zibo.edushi.com/cheng/" >淄博</a> |<a href="http://zhengzhou.edushi.com/cheng/" >郑州</a> |<a href="http://zhangzhou.edushi.com/cheng/" >漳州</a> |<a href="http://zhenjiang.edushi.com/cheng/" >镇江</a> |<a href="http://zhongshan.edushi.com/cheng/" >中山</a> |<a href="http://zhuzhou.edushi.com/cheng/" >株洲</a> |<a href="http://zhuhai.edushi.com/cheng/" >珠海</a> </dd></dl>
+
+    <div class="clear">     
+      </div>
+  </div>
+</div>
+
+<div id="footer"><p><a href="http://aladdin.edushi.com" target="_blank">关于阿拉丁</a>| <a href="http://www.edushi.com/about/" target="_blank">关于E都市</a>| <a href="http://www.edushi.com/about/MapSign.aspx" target="_blank"> 产品中心</a>| <a href="http://aladdin.edushi.com/GisInfo.aspx" target="_blank">GIS及政府应用</a>| <a href="http://aladdin.edushi.com/DataApplyMap.aspx" target="_blank">数据销售</a>| <a href="http://www.edushi.com/Links/" target="_blank">友情链接 </a>| <a href="http://www.edushi.com/about/News.htm" target="_blank">新闻中心</a>| <a href="http://www.edushi.com/about/GuestBook.aspx" target="_blank">访客留言 </a>| <a href="http://www.edushi.com/about/Declear.htm" target="_blank">法律声明</a>| <a href="http://aladdin.edushi.com/CompanyDynamicInfo.aspx?id=60" target="_blank">测绘资质</a></p>
+  <p>甲测资字33002003   广告经营许可证号   3301082100176<a href="http://www.miibeian.gov.cn/">浙B2-20050306</a> 版权所有@2004-2012   出版号:ISBN:7-900200-28-2</p>
+</div>
+<script type="text/javascript">
+    var gaJsHost = (("https:" == document.location.protocol) ? " https://ssl." : " http://www.");
+    document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+    try {
+        var pageTracker = _gat._getTracker("UA-2977291-1");
+        pageTracker._trackPageview();
+    } catch (err) { }</script>
+<script type="text/javascript">
+    var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+    document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3F99a36e54478482e04c158ab069a3e598' type='text/javascript'%3E%3C/script%3E"));
+</script>
+</body>
+</html>
+<input type="hidden" id="hidPro" value="@Url.Action("getProvince")" />
+<input type="hidden" id="hidCity" value="@Url.Action("getCity")" />
+<input type="hidden" id="hidCurrentCity" value="@Url.Action("getCurrentCity")" />
+<input type="hidden" id="hidType" value="cheng" />

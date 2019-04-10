@@ -1,0 +1,27 @@
+﻿body,form {margin:0;font-size:12px; background-color:Transparent;}
+a{ color:#1A70C7; font-size:12px; text-decoration:none; cursor:pointer;}
+a:hover{color:#1A70C7; font-size:12px; text-decoration:underline}
+.Tool{width:303px; height:127px; color:#000;position:absolute; z-index:307;}
+.Tool .Head .Shrink{ position:relative; right:5px; text-align:right; margin-left:265px; }
+.Tool .Head .Shrink .min{background:url(../Images/tm.gif) no-repeat;width:15px; height:15px;}
+.Tool .Head .Shrink .min:hover{background:url(../Images/tma.gif) no-repeat;width:15px; height:15px;}
+.Tool .Head .Shrink .max{background:url(../Images/ta.gif) no-repeat;width:15px; height:15px;}
+.Tool .Head .Shrink .max:hover{background:url(../Images/taa.gif) no-repeat;width:15px; height:15px;}
+#Tcontent{height:100px; background:url(../Images/newmap16.gif) no-repeat; position:absolute;width:303px; top:23px;}
+#Tool .collapsed .bg{background:url(../../Images/link.gif) no-repeat;display:block;height:3px;width:303px;}
+#Tool .expanded .bg{background:url(../Images/link.gif) no-repeat;display:none;}
+.Tool .Head{ height:22px; background:url(../Images/newmap15.gif) no-repeat; padding:5px 0 0 18px; position:absolute; width:303PX; z-index:307;}
+.Tool .Head a{color:#000; font-size:12px; text-decoration:none;width:69px; height:16px; line-height:16px; padding-top:2px;float:left; text-align:center}
+.Tool .Head a:hover{ background:url(../Images/newmap17.gif) no-repeat;}
+.Tool .Head .Action{width:69px; height:16px; line-height:16px; padding-top:2px; background:url(../Images/newmap17.gif) no-repeat; float:left; margin:0px 1px 0 1px;  position:relative; top:1px; text-align:center}
+.Tool .Head .UnAction{width:69px; height:16px; line-height:16px; padding-top:2px; background:url(../Images/newmap18.gif) no-repeat; float:left; margin:0 1px 0 1px; text-align:center}
+[class]#Tcontent{height:90px; background:url(../Images/newmap16.gif) no-repeat; position:absolute;width:303px; top:27px;}
+[class].Tool .Head .Action{ top:5px}
+[class].Tool .Head .UnAction{ position:relative;top:4px}
+.Tool  .Local{ margin-left:18px}
+.Tool  .Local .LocalInput2{ height:auto; width:100%}
+.Tool  .Local .LocalInput{ height:auto; clear:both; width:100%}
+.Tool  .Local .LocalInput input{ border:1px solid #898989;  width:210px}
+.Tool  .Local .LocalInput span{ float:left; margin:15px 2px 0 0}
+.Tool  .Local .LocalTxt{ height:auto; clear:both;}
+.Tool  .Local .LocalInput #sbusse input{ width:88px; margin-right:2px; margin-left:2px; }

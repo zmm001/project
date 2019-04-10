@@ -1,0 +1,33 @@
+﻿.ShopMap .Icon {float:left;3px;border-style: solid; border-color: -moz-use-text-color rgb(122, 113, 111) rgb(122, 113, 111); border-width: 1px; background: rgb(218, 215, 208) none repeat scroll 0%; width: 24px; height: auto; -moz-background-clip: -moz-initial; -moz-background-origin: -moz-initial; -moz-background-inline-policy: -moz-initial; text-align: center; font-size: 13px; color: rgb(0, 0, 0);}
+.ShopMap .Name {background-color:#fff; font-size:12px; color:#333;overflow:hidden;}
+.ShopMap .YellowBg { float:left; expression(this.nowrap=true); border:solid 1px #333; background-color:#f90; font-size:12px; color:#333; padding:2px 5px;}
+.ShopMap a { cursor:pointer;}
+
+.Active .Name { background-color:#ff7000; color:#fff; }
+
+.Entity .Eright .Rmiddle .Mcontent ul li a{ color:#8B8A8A; }
+.Entity{width:360px; height:215px; min-height:215px;}
+[class].Entity {height:auto}
+.Entity .Eleft{width:54px; height:96px; position:absolute; z-index:2; left:2px; top:20px; filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='http://res.edushi.com/dian/shop/images/4map01.png',sizingMethod='image');}
+.Entity .Eright{width:308px; height:215px; min-height:215px; float:right;}
+[class].Entity .Eright{height:auto}
+.Entity .Eright .Rtop{ height:29px; background:url(http://res.edushi.com/dian/shop/images/4map02.gif) no-repeat}
+.Entity .Eright .Rtop h1{ float:left; margin:0; padding:0; font-size:12px; line-height:29px; padding-left:10px; color:#48372A}
+.Entity .Eright .Rtop span{ float:right; padding:3px 5px 0 0}
+.Entity .Eright .Rmiddle{ height:100px; min-height:100px; background:url(http://res.edushi.com/dian/shop/images/4map03.gif) repeat-y;}
+[class].Entity .Eright .Rmiddle{ height:auto}
+.Entity .Eright .Rmiddle .Mcontent{ background:#fff; width:280px; margin-left:14px; height:110px; min-height:100px; border:1px solid #B6B4B4}
+.Entity .Eright .Rmiddle .Mcontent2{ background:#fff; width:280px; margin-left:14px; height:280px; min-height:100px; border:1px solid #B6B4B4}
+[class].Entity .Eright .Rmiddle .Mcontent{height:auto}
+.Entity .Eright .Rbottom{ height:15px;filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='http://res.edushi.com/dian/shop/images/4map04.png',sizingMethod='image');}
+
+.eshop_mark_bg{float:left;min-width:100px;width:auto;_width:100px;_white-space:nowrap;background-image:url(http://res.edushi.com/dian/shop/images/eshop_mark_bg.gif);border-left:solid 1px #ffae69; border-right:solid 1px #ffae69;font-size:12px; color:#FFFFFF; text-align:center; padding:4px 4px 0px 4px;}
+.eshop_mark_bottom{clear:both;margin-left:50px;width:12px; height:14px;filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='http://res.edushi.com/dian/shop/images/eshop_mark_bottom.png',sizingMethod='image'); margin-top:-1px; background-repeat:no-repeat;}
+
+.eshop_mark_other{float:left;min-width:100px;width:auto;_width:100px;_white-space:nowrap; background-color:#FFFFFF; border:1px solid #ed6d00;}
+.eshop_mark_other span{ color:#FF0000; font-size:12px; padding:4px 4px 0px 4px;display:block; text-align:center;}
+.eshop_mark_other_bottom{clear:both;margin-left:50px;width:14px; height:14px;filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='http://res.edushi.com/dian/shop/images/eshop_mark_other.png',sizingMethod='image'); margin-top:-1px; background-repeat:no-repeat;}
+
+.side_shop{float:left;min-width:100px;width:auto;_width:100px;_white-space:nowrap;border:1px solid #75b6fd; background-color:#f6fafd;}
+.side_shop span{color:#1562ef; font-size:12px; padding:4px 4px 0px 4px;display:block; text-align:center;} 
+.side_shop_bottom{clear:both;margin-left:50px;width:14px; height:15px;filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='http://res.edushi.com/dian/shop/images/side_shop.png',sizingMethod='image');margin-top:-1px;background-repeat:no-repeat;}

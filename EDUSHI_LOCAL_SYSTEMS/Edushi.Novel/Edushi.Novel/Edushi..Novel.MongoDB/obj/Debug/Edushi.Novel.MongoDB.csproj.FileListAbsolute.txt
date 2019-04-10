@@ -1,0 +1,8 @@
+E:\TFS192.168.100.212\EDUSHI_LOCAL_SYSTEMS\Edushi.Novel\Edushi.Novel\Edushi..Novel.MongoDB\bin\Debug\Framework.MongoDB.dll
+E:\TFS192.168.100.212\EDUSHI_LOCAL_SYSTEMS\Edushi.Novel\Edushi.Novel\Edushi..Novel.MongoDB\bin\Debug\Framework.MongoDB.pdb
+E:\TFS192.168.100.212\EDUSHI_LOCAL_SYSTEMS\Edushi.Novel\Edushi.Novel\Edushi..Novel.MongoDB\bin\Debug\Framework.dll
+E:\TFS192.168.100.212\EDUSHI_LOCAL_SYSTEMS\Edushi.Novel\Edushi.Novel\Edushi..Novel.MongoDB\bin\Debug\MongoDB.Bson.dll
+E:\TFS192.168.100.212\EDUSHI_LOCAL_SYSTEMS\Edushi.Novel\Edushi.Novel\Edushi..Novel.MongoDB\bin\Debug\MongoDB.Driver.Core.dll
+E:\TFS192.168.100.212\EDUSHI_LOCAL_SYSTEMS\Edushi.Novel\Edushi.Novel\Edushi..Novel.MongoDB\bin\Debug\MongoDB.Driver.dll
+E:\TFS192.168.100.212\EDUSHI_LOCAL_SYSTEMS\Edushi.Novel\Edushi.Novel\Edushi..Novel.MongoDB\obj\Debug\Framework.MongoDB.dll
+E:\TFS192.168.100.212\EDUSHI_LOCAL_SYSTEMS\Edushi.Novel\Edushi.Novel\Edushi..Novel.MongoDB\obj\Debug\Framework.MongoDB.pdb

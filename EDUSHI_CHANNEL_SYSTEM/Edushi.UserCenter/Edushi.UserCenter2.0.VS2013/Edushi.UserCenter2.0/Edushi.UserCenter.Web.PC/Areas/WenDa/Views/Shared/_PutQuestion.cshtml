@@ -1,0 +1,112 @@
+﻿@{
+    var pTypes = ViewBag.PTypes as List<Edushi.UserCenter.Model.WdInfoTypeModel>;
+}
+
+<!-- 提问弹出框 -->
+<div id="modal-layer">
+    <div class="ask-layer-box">
+        <div class="ask-tit">提问<span class="close js-close"></span></div>
+        <div class="main">
+            <div class="item clearfix">
+                <div class="name">问题</div>
+                <div class="box">
+                    <input type="text" name="" placeholder="请在此输入问题（最多40字）" class="ipt" id="question_title" />
+                </div>
+            </div>
+            @if (pTypes != null && pTypes.Any())
+            {
+                <div class="item clearfix">
+                    <div class="name">分类</div>
+                    <div class="box radio-box">
+                        @foreach (var item in pTypes)
+                        {
+                            <label data-tId="@item.IT_ID">
+                                <input type="radio" name="type"><i></i>
+                                <span>@(item.IT_Name.Substring(0,2))</span>
+                            </label>
+                        }
+                    </div>
+                </div>
+            }
+            <div class="item clearfix">
+                <div class="name">描述</div>
+                <div class="box">
+                    <textarea placeholder="请在此输入问题描述（选填）" class="tarea" id="question_desc"></textarea>
+                </div>
+            </div>
+           
+            <div class="item clearfix">
+                <div class="name">图片</div>
+                <div class="box">
+                    <div class="img-upload clearfix">
+                        <div class="fl img-list"></div>
+                        <form id="addform" method="post" action="/UploadImg.htm" enctype="multipart/form-data">
+                            <div class="fl file-ipt">
+                                <input type="file" name="upfile" id="file" accept="image/jpeg,image/jpg,image/png" />
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="wran"></div>
+            <input type="button" name="" value="提交" class="submit-btn"/>
+        </div>
+    </div>
+</div>
+<script>
+    $(function() {
+        $(".submit-btn").click(function() {
+            var title = $("#question_title").val();
+            var tId = $(".radio-box label.checked").data("tid");
+            if (title == "" && tId == undefined) {
+                askBoxShowMsg("请先输入问题并选择分类再提交");
+                return false;
+            } else if (title == "") {
+                askBoxShowMsg("请先输入问题再提交");
+                return false;
+            } else if (tId == undefined) {
+                askBoxShowMsg("请先选择分类再提交");
+                return false;
+            } else if (title.length > 40) {
+                askBoxShowMsg("标题不能超过40个字!");
+                return false;
+            }
+            var desc = $("#question_desc").val();
+            var imgs="";
+            $.each($("#modal-layer .img-list .img-item img"),function(i,v) {
+                if (i>0) {
+                    imgs+=",";
+                }
+                imgs+=$(v).attr("src");
+            });
+          
+            var obj = {
+                "Title": title,
+                "Desc": desc,
+                "Imgs": imgs,
+                "TId":tId
+            }
+            $.ajax({
+                type: "post",
+                dataType: "json",
+                url: "/wenda/AddQuestion.htm",
+                data:obj,
+                success: function (data) {
+                    if (data) {
+                        if (data.ResultCode==1) {
+                            popUp(data.Msg);
+                            $("#modal-layer").hide();
+                            $("#question_title, #question_desc").val("");
+                            $(".radio-box label.checked").removeClass("checked");
+                        } else {
+                            askBoxShowMsg(data.Msg);
+                        }
+                    }
+                }
+            });
+        });
+    });
+    function askBoxShowMsg(msg) {
+        $(".ask-layer-box .wran").text(msg);
+    };
+</script>

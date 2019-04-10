@@ -1,0 +1,636 @@
+﻿@using Edushi.WenDa.Web.App.Models;
+@using Edushi.WenDa.Web.App.Helper;
+@using Edushi.Common
+@model DetailModel
+           @{
+               ViewBag.Title = "问题详情页";
+           }
+<script>
+    var date_begin = new Date();  //进入页面的开始时间
+</script>
+              <script>
+                  // 回答图片缩放
+    $('#qw-detail .answer-user .img-box img').on('load', function () {
+        photoZoom()
+    });
+    // 收藏图片缩放
+    $('#qw-detail .more-list .img-box img').on('load', function () {
+        photoZoom()
+    });
+    function photoZoom() {
+        if (this.height > 162.5 && this.height < 200) {
+            $(this).css('margin', "-20px 0 0 0");
+        } else if (this.height > 400 && this.height < 600) {
+            $(this).css('margin', "-150px 0 0 0");
+        } else if (this.height > 600) {
+            $(this).css('margin', "-400px 0 0 0");
+        }
+    }
+</script>
+<script src="@Url.Content("~/asset/js/shence.js")"></script>
+<script>
+    var viewContentDetail = {
+        contentType: "趣问",
+        contentID: "@Model.Question.IQ_ID",
+        contentTitle: "@Model.Question.IQ_Title",
+        contentChannel: "",
+        contentTag: "",
+        exposureFrom: "趣问列表"
+    };
+    sensors_data.track('viewContentDetail', viewContentDetail);
+</script>
+<script src="@Url.Content("~/asset/js/common.js")"></script>
+<script>
+    getAppId(0);
+</script>
+<script src="@Url.Content(string.Format("~/asset/js/PageRedirct.js?v={0}", new Random().Next(1, 100000)))"></script>
+<style>
+    .error-item {
+        margin: 0 auto;
+        box-sizing: border-box;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        /*margin-top: 238px;*/
+    }
+
+        .error-item img {
+            box-sizing: border-box;
+            margin: 0 auto;
+            width: 3.8rem;
+            height: 2.8rem;
+        }
+
+    .error-tip {
+        margin-top: 0.36rem;
+        font-size: 0.24rem;
+        color: #999999;
+        text-align: center;
+    }
+
+    .max {
+        width: 300px;
+    }
+
+    .min {
+        width: 100px;
+    }
+</style>
+<div id="qw-detail">
+    <div class="main-container">
+        <div class="backhearder">
+            <img src="@Url.Content("~/asset/img/function/2/返回@2x.png")" style="width: 0.44rem; height: 0.44rem; margin-top:0.4rem;" onclick="leavePage_Before_Track();goBack()" />
+            <div class="menu-header">
+                <img src="@Url.Content("~/asset/img/function/2/分享@2x.png")" style="width: 0.44rem; height: 0.42rem; margin-top: 0.4rem;" onclick="Share('@Model.share.title','@Model.share.desc','@Model.share.url','@Model.share.picurl')" />
+            </div>
+        </div>
+        <div class="q-detail-border">
+            <div class="content">
+                @if (Model.Question != null && Model.QuestionUserInfo != null)
+                {
+                    var quesition = Model.Question;
+                    var quesitionUser = Model.QuestionUserInfo;
+                    <h1>@quesition.IQ_Title</h1>
+                    <div class="userinfo">
+                        <a href="javascript:void(0);" class="photo" onclick="leavePage_Before_Track();openUserIndexPage(@quesitionUser.UI_AppUserId)"><img src="@DataHelper.getAppAvatar(quesitionUser.UI_AppAvatar)"><span class="newname">@quesitionUser.UI_AppNickName</span></a><span class="datetimes">@(Common.TimeInterval(quesition.IQ_CreateDate.Value, DateTime.Now))</span>
+                        <span class="follow-btn" data-edsid="@quesitionUser.UI_ID" data-appid="@quesitionUser.UI_AppUserId"><span>+关注</span></span>
+                    </div>
+                    if (!string.IsNullOrEmpty(quesition.IQ_Content))
+                    {
+                        <div class="decript">@Html.Raw(quesition.IQ_Content)</div>
+                    }
+
+                    if (!string.IsNullOrEmpty(quesition.IQ_Pic) && !string.IsNullOrEmpty(quesition.IQ_Pic1) && !string.IsNullOrEmpty(quesition.IQ_Pic2))
+                    {
+                        <div class="img-box photos">
+                            <span><img src="@quesition.IQ_Pic" alt=""></span>
+                            <span><img src="@quesition.IQ_Pic1" alt=""></span>
+                            <span><img src="@quesition.IQ_Pic2" alt=""></span>
+                        </div>
+                    }
+                    else if (!string.IsNullOrEmpty(quesition.IQ_Pic))
+                    {
+                             <div class="img-box"><img src="@quesition.IQ_Pic" alt=""></div>
+                    }
+
+               <!-- 回答头部栏 -->
+                    <div class="header">
+                        <div class="header-left">
+                            <span class="title">@(quesition.IQ_AnswerCount)个答案</span>
+                        </div>
+                        <div class="header-right">
+                            <a onclick="ChangeTab(1)" class="zan-sort current" id="a_upvote_count">按赞数排</a>
+                            <span style="padding: 0.18rem; height: 0.26rem;">|</span>
+                            <a onclick="ChangeTab(2)" class="date-sort" id="a_time">按时间排</a>
+                        </div>
+                    </div>
+                }
+
+                <!-- 回答列表 -->
+                @if (Model.Answers != null && Model.Answers.Any())
+                {
+                    <ul class="answer-list">
+                        <!-- 纯文字回答 -->
+                        @foreach (var item in Model.Answers)
+                        {
+                            // 回答用户信息
+                            var answer_userinfo = item.UserInfo;
+                            string imgbox = string.Empty;
+                            if (!string.IsNullOrEmpty(item.Pic) && !string.IsNullOrEmpty(item.Pic1) && !string.IsNullOrEmpty(item.Pic2))
+                            {
+                                imgbox = string.Format("<a href=\"javascript:void(0);\" onclick=\"toPage('" + item.url + "')\"><div class=\"img-box photolist\"><span><img src=\"{0}\" alt=\"\"></span><span><img src=\"{1}\" alt=\"\"></span><span><img src=\"{2}\" alt=\"\"></span></div></a>", item.Pic, item.Pic1, item.Pic2);
+                            }
+                            else if (!string.IsNullOrEmpty(item.Pic))
+                            {
+                                imgbox = string.Format("<a href=\"javascript:void(0);\" onclick=\"toPage('" + item.url + "')\"><div class=\"img-box\"><img src=\"{0}\" alt=\"\"></div></a>", item.Pic);
+                            }
+                            <li>
+                                <!-- 回答用户 -->
+                                <div class="answer-user">
+                                    <a href="javascript:void(0);" class="photo" onclick="leavePage_Before_Track();openUserIndexPage(@answer_userinfo.UI_AppUserId)"><img src="@DataHelper.getAppAvatar(answer_userinfo.UI_AppAvatar)"><span class="newname">@answer_userinfo.UI_AppNickName</span></a><span class="datetime">@item.Time</span>
+                                    <span class="follow-btn" data-edsid="@answer_userinfo.UI_ID" data-appid="@answer_userinfo.UI_AppUserId"><span>+关注</span></span>
+                                </div>
+
+                                @Html.Raw(imgbox)
+
+                                <!-- 回答内容 -->
+                                <div class="answer-content">
+                                    <a href="javascript:void(0);" onclick="toPage('@item.url')"><p>@Html.Raw(item.Content)</p></a>
+                                </div>
+                                <!-- 用户交互 -->
+                                <div class="action" data-aid="@item.Id">
+                                    <input type="hidden" id="hidanswer_@item.Id"/>
+                                    <a href="javascript:void(0);" class="zan"><span class="zantong">赞同</span><span class="zan_num">@(item.PraiseCount)</span></a>
+                                    <a href="javascript:void(0);" class="cai"></a>
+                                    <a href="javascript:void(0);" onclick="toPage('@(item.url)#comment')" class="comment">
+                                        @if (item.CommentCount > 0)
+                                        {
+                                            <span class="comment-num">@item.CommentCount</span>
+                                        }
+
+                                    </a>
+
+                                </div>
+                            </li>
+                        }
+                    </ul>
+                }
+                else
+                {      // 没有回答信息
+                    <div class="error-box"><div class="error-item"><img src="@(Edushi.WenDa.Web.App.Helper.DataHelper.checkPlatType() == 1 ? Url.Content("~/asset/images/noanswer.png") : Url.Content("~/asset/images/no-answer-android.png"))" /></div><div class="error-tip">暂时没有回答</div></div>
+                }
+
+                <!-- 回答被折叠 -->
+                @if (Model.Answers != null && Model.AnswerCount > Model.Answers.Count)
+                {
+                    <a href="javascript:void(0);" class="flod" id="load_answer"><span id="question_answer_count">@(Model.AnswerCount - Model.Answers.Count)</span>个回答被折叠</a>
+                }
+
+                @if (Model.MoreWendaList != null && Model.MoreWendaList.Any())
+                {
+                    <div class="more-read">更多阅读</div>
+
+                    foreach (var item in Model.MoreWendaList)
+                    {
+                        var userinfo = item.UserInfo;
+                        <div class="more-list">
+                            <div class="title"><a href="javascript:void(0);" onclick="toPage('@item.Url')"><span>@item.QTitle</span></a></div>
+                            @if (!string.IsNullOrEmpty(item.Pic))
+                            {
+                                <div class="img-box"><a href="javascript:void(0);" onclick="toPage('@item.Url1')"><img src="@item.Pic" alt=""></a></div>
+                            }
+
+                            <div class="userinfo">
+                                <a href="javascript:void(0);" class="photo" onclick="leavePage_Before_Track();openUserIndexPage(@userinfo.UI_AppUserId)"><img src="@DataHelper.getAppAvatar(userinfo.UI_AppAvatar)"><span class="newname">@userinfo.UI_AppNickName</span></a><span class="datetime">@item.Time</span>
+                            </div>
+                            <div class="detail"><a href="javascript:void(0);" onclick="toPage('@item.Url1')"><span>@Html.Raw(item.Answer)</span></a></div>
+                            <div class="event">
+                                <a>@(item.PraiseCount)赞同</a>
+                                <span style="width: 0.3rem; text-align: center; display: inline-block; color: rgba(176, 179, 184, 1);">·</span>
+                                <a href="javascript:void(0);" onclick="toPage('@(item.Url1)#comment')">@(item.CommentCount)评论</a>
+                            </div>
+                        </div>
+                    }
+                    <div class="loading">加载中</div>
+                }
+
+                <div class="operation">
+                    <div class="favorite">
+                        <img src="@Url.Content("~/asset/img/function/2/趣问-底部收藏问题@2x.png")" alt="">
+                        <span>收藏问题</span>
+                    </div>
+                    <div class="add-answer">
+                        <a href="javascript:void(0);" onclick="toPage('@Url.Content(string.Format("~/Answer/AddAnswer?qtitle={0}&qid={1}", System.Web.HttpUtility.UrlEncode(Model.Question.IQ_Title), Model.Question.IQ_ID))')">
+                            <img src="@Url.Content("~/asset/img/function/2/趣问-底部添加回答@2x.png")" alt="" style="margin-top: -0.05rem;">
+                            <span style="color:#fff;">添加回答</span>
+                        </a>
+                    </div>
+                </div>
+
+                <section class="pop-content" id="popUp">
+                    <div class="pop-box">
+                        <div class="msg" id="msg"></div>
+                        <span class="btn cancel">知道了</span>
+                        <a class="btn confirm" href="javascript:void(0);" style="display: none;">去看看</a>
+                    </div>
+                </section>
+
+            </div>
+        </div>
+    </div>
+</div>
+<!--read_data_qdetail：@Model.ElapsedMilliseconds_qDetail-->
+<!--read_data_qanswers：@Model.ElapsedMilliseconds_qAnswers-->
+<!--read_data_qfenci：@Model.ElapsedMilliseconds_qFenCi-->
+<!--read_data_qes：@Model.ElapsedMilliseconds_qES-->
+<script src="@Url.Content("~/asset/js/question.js")"></script>
+<script src="@Url.Content("~/asset/js/User.js")"></script>
+<script src="@Url.Content("~/asset/js/answer.js")"></script>
+
+<script>
+    //公共区
+    var questionId = "@Model.Question.IQ_ID";
+    var useravatar = "@Edushi.Common.Common.GetConfigString("domain_User_App")";
+    var answerFirstShowCount = "@int.Parse(Edushi.Common.Common.GetConfigString("FirstShowCount"))";
+    var answewrDynamicLoadCount = "@int.Parse(Edushi.Common.Common.GetConfigString("dynamicLoadCount"))";
+    var canLoadAnswer = true;
+    var answerPageIndex = 0;
+</script>
+
+<script>
+    //问题区
+
+    //  添加收藏
+    $('.operation .favorite').click(function () {
+        if (EId <= 0)//通知APP登录
+        {
+            getAppId(1);
+            return;
+        }
+
+        if ($(this).hasClass('yisc')) {             // 已收藏,取消收藏
+            var code = Add_CancelFavorite("@Url.Content("~/Shared/Add_Cancel_Favorite")", EId, questionId, 2)
+            if (code == 1) {
+                $(this).removeClass('yisc') // 取消移除指定样式
+                $(this).find('img').attr('src', '@Url.Content("~/asset/img/function/2/趣问-底部收藏问题@2x.png")')
+            }
+        } else {                                                  //未收藏，添加收藏
+            var code = Add_CancelFavorite("@Url.Content("~/Shared/Add_Cancel_Favorite")", EId, questionId, 1)
+            if (code == 1) {
+                $(this).addClass('yisc') // 取消移除指定样式
+                $(this).find('img').attr('src', '@Url.Content("~/asset/img/function/2/趣问-底部收藏问题已点击@2x.png")')
+            }
+        }
+    })
+
+</script>
+
+<script>
+    //用户区
+
+    // 添加关注
+    $(document).on('click', '.follow-btn', function () {
+        if (EId <= 0)//通知APP登录
+        {
+            getAppId(1);
+            return;
+        }
+
+        var authorId = $(this).attr("data-edsid");
+        var appAttentionId = $(this).attr("data-appid");
+        if ($(this).hasClass('ed') || $(this).hasClass('eds')) { // 如果有ed样式表示已关注 // "type": 2 取消关注，1 添加关注
+            var code = add_CancelAttention('@Url.Content("~/Shared/Add_Cancel_Attention")', EId, authorId, 2);
+            add_CancelAttention_ASTT('@Url.Content("~/Shared/Add_Cancel_Attention_ASTT")', appId, appAttentionId, 2);
+            if (code == 1) {
+                $(this).text('+关注'); // 改变文本框中的值
+                if ($(this).hasClass('eds'))
+                    $(this).removeClass('eds')
+                else
+                    $(this).removeClass('ed')
+            }
+        } else {
+            var code = add_CancelAttention('@Url.Content("~/Shared/Add_Cancel_Attention")', EId, authorId, 1);
+            add_CancelAttention_ASTT('@Url.Content("~/Shared/Add_Cancel_Attention_ASTT")', appId, appAttentionId, 1);
+            if (code == 1) {
+                $(this).text('已关注'); // 改变文本框中的值
+                if ($(this).parent().hasClass('answer-user')) {      // 下面没有背景色的小关注
+                    $(this).addClass('eds')
+                } else {
+                    $(this).addClass('ed')
+                }
+            }
+        }
+    })
+</script>
+
+<script>
+    var SortType = "@Model.SortType";
+    function ChangeTab(type) {
+        SortType = type;
+
+        if (SortType == 1) {
+            $("#a_time").removeClass("current");
+            $("#a_upvote_count").addClass("current");
+        }
+        else {
+            $("#a_time").addClass("current");
+            $("#a_upvote_count").removeClass("current");
+        }
+
+        $('#load_answer').show();
+        answerPageIndex = 0;
+        getData('@Url.Content("~/Detail/GetMoreAnswer")', questionId, 0, SortType, true);
+    }
+
+    //加载更多回答
+    $('#load_answer').click(function () {
+        getMoreAnswer(this, '@Url.Content("~/Detail/GetMoreAnswer")', questionId, SortType, 'span')
+    })
+    //加载更多回答
+    /**
+          clickObj：点击对象
+          url：请求地址
+          qId：用户id
+          sortType：排序类型
+          queryElement：选择的元素
+          ParentElement：父元素
+          SubelElement：子元素
+    */
+    function getMoreAnswer(clickObj, url, qId, sortType, queryElement) {
+        if (canLoadAnswer) {
+            canLoadAnswer = false;
+            var that = $(clickObj);
+            var lastAnswerCount = that.find(queryElement).text();
+            if (lastAnswerCount > 0) {
+                answerPageIndex++;
+                getData(url, qId, answerPageIndex, sortType, false, lastAnswerCount, that, 'span');
+            }
+        }
+    }
+
+    function getData(url, qId, pageIndex, sortType, isCount, lastAnswerCount, obj, queryElement) {
+        $.ajax({
+            type: "post",
+            url: url,
+            data: { "qId": qId, "pageIndex": pageIndex, "sortModel": sortType },
+            success: function (data) {
+                if (data) {
+                    if (answerPageIndex == 0) {
+                        $('.answer-list').html('');
+                    }
+
+                    bindAnswer(data.answerData);
+
+                    if (isCount)
+                        $("#question_answer_count").text(data.answerCount - answerFirstShowCount);
+                    else {
+                        canLoadAnswer = true;
+                        var temp = lastAnswerCount - answewrDynamicLoadCount;
+                        if (temp <= 0) {
+                            obj.hide();
+                        } else {
+                            obj.find(queryElement).text(temp);
+                        }
+                    }
+                }
+            }
+        });
+    }
+
+    function bindAnswer(data) {
+        var element = "";
+        for (var i = 0; i < data.length; i++) {
+            var answer = data[i]; // 回答对象信息
+            var answer_userinfo = answer.UserInfo;
+            var imgbox = "";
+            if (answer.Pic != '' && answer.Pic1 != '' && answer.Pic2 != '') {
+                imgbox = '<a href="javascript:void(0);" onclick="toPage(\'' + answer.url + '\')"><div class="img-box photolist"><span><img src="' + answer.Pic + '" alt=""></span><span><img src="' + answer.Pic1 + '" alt=""></span><span><img src="' + answer.Pic2 + '" alt=""></span></div></a>';
+            } else if (answer.Pic != '') {
+                imgbox = '<a href="javascript:void(0);" onclick="toPage(\'' + answer.url + '\')"><div class="img-box"><img src="' + answer.Pic + '" alt=""></div></a>';
+            }
+            
+            var code_zan = 0;
+            var isGuanzhu = "";
+            if (EId <= 0) {
+                isGuanzhu = '<span class="follow-btn" data-edsid="' + answer_userinfo.UI_ID + '" data-appid="' + answer_userinfo.UI_AppUserId + '">' +
+                '<span>+关注</span></span>';
+            }
+            else {
+                // 判断是否关注
+                var authorId = answer_userinfo.UI_ID;
+                if (EId != authorId) {
+                    var code = isAttentioned("@Url.Content("~/Shared/GetIsAttentioned")", EId, authorId);
+                    if (code == -2) {       //已关注
+                        isGuanzhu = '<span class="follow-btn eds" data-edsid="' + answer_userinfo.UI_ID + '" data-appid="' + answer_userinfo.UI_AppUserId + '">' +
+                        '<span>已关注</span></span>'
+                    }
+                    else {
+                        isGuanzhu = '<span class="follow-btn" data-edsid="' + answer_userinfo.UI_ID + '" data-appid="' + answer_userinfo.UI_AppUserId + '">' +
+                    '<span>+关注</span></span>';
+                    }
+                }
+
+                // 判断是否赞和踩
+                var answerid = answer.Id
+                code_zan = isUpvoteDownvote_Answer("@Url.Content("~/Shared/GetIsUpvoteDownvote_Answer")", answerid, EId);
+            }
+
+            // 赞
+            var zan = '<a href="javascript:void(0);" class="zan"><span class="zantong">赞同</span><span class="zan_num">' + answer.PraiseCount + '</span></a> ';
+            // 踩
+            var cai = '<a href="javascript:void(0);" class="cai"></a>';
+            if (code_zan == -2) {         //已赞
+                zan = '<a href="javascript:void(0);" class="zan yiz" style="background:url(' + '@Url.Content("~/asset/img/function/2/趣问-赞同点击@2x.png")' + ') no-repeat top left;background-size:1.6rem 0.6rem;"><span class="zantong" style="color:white">赞同 </span><span class="zan_num" style="color:white">' + answer.PraiseCount + '</span></a>';
+            }
+            else if (code_zan == -3) {           //已踩
+                cai = '<a href="javascript:void(0);" class="cai yic" style="background:url(' + '@Url.Content("~/asset/img/function/2/趣问-反对点击@2x.png")' + ') no-repeat center center;background-size:0.6rem 0.6rem;"></a>';
+            }
+            var ispinglun = "";
+            if (answer.CommentCount > 0) {
+                ispinglun = '<span class="comment-num">' + answer.CommentCount + '</span>';
+            }
+            element = '<li>' +
+                '<div class="answer-user">' +
+                '<a href="javascript:void(0)" class="photo" onclick="leavePage_Before_Track();openUserIndexPage(' + answer_userinfo.UI_AppUserId + ')">' +
+                '<img src="' + useravatar + answer_userinfo.UI_AppAvatar + '"><span class="newname">' + answer_userinfo.UI_AppNickName + '</span></a>' +
+                '<span class="datetime">' + answer.Time + '</span>' + isGuanzhu + '</div>' +
+                imgbox +
+                '<div class="answer-content">' +
+                '<a href="javascript:void(0);" onclick="toPage(\'' + answer.url + '\')"><p>' + answer.Content + '</p></a></div>' +
+                '<div class="action" data-aid="' + answer.Id + '">' +
+                '<input type="hidden" id="hidanswer_' + answer.Id + '" />' + zan + cai + '<a href="javascript:void(0);" onclick="toPage(\'' + answer.url + '#comment\')" class="comment">' + ispinglun + '</a></div></li>';
+            $('.answer-list').append(element);
+            $("#hidanswer_" + answer.Id).val(code_zan);
+        }
+    }
+</script>
+
+<script>
+    $(function () {
+        getMoreRead();
+    })
+    var gate = true;
+    var pageCount = "@Model.MoreWenDaPageCount";
+    var configData = {
+        "qId": questionId,
+        "itId": "@Model.ItId",
+        "pageIndex": 0
+    };
+    // 加载更多阅读
+    function getMoreRead() {
+        $(window).bind("scroll", function () {
+            // 判断页面是否拉到底部
+            if ($(document).scrollTop() + $(window).height() >= $(document).height()) {
+                if (gate) {
+                    configData.pageIndex++;
+                    if (configData.pageIndex > pageCount) {
+                        gate = false;
+                        return false;
+                    }
+                    if (configData) {
+                        $(".loading").css("display", "block");
+                        $.ajax({
+                            type: 'post',
+                            url: '@Url.Content("~/Detail/GetMoreReadData")',
+                            data: configData,
+                            success: function (data) {
+                                for (var i = 0; i < data.length; i++) {
+                                    var element = "";
+                                    var imgbox = "";
+                                    var item = data[i];
+                                    var userinfo = data[i].UserInfo; // 用户信息
+                                    var time = data[i].Time
+                                    if (item.Pic != null && item.Pic != '') {
+                                        imgbox = '<div class="img-box"><a href="javascript:void(0);" onclick="toPage(\'' + item.Url1 + '\')"><img src="' + item.Pic + '" alt=""></a></div>';
+                                    }
+                                    element = '<div class="more-list"><div class="title"><a href="javascript:void(0);" onclick="toPage(\'' + item.Url + '\')"><span>' + item.QTitle + '</span></a></div>' + imgbox + '<div class="userinfo"><a href="javascrpt:void(0);" class="photo" onclick="leavePage_Before_Track();openUserIndexPage(' + userinfo.UI_AppUserId + ')"><img src="' + useravatar + userinfo.UI_AppAvatar + '"><span class="newname">' + userinfo.UI_AppNickName + '</span></a><span class="datetime">' + item.Time + '</span></div><div class="detail"><a href="javascript:void(0);" onclick="toPage(\'' + item.Url1 + '\')"><span>' + item.Answer + '</span></a></div><div class="event"><a>' + item.PraiseCount + '赞同</a><span style="width: 0.3rem; text-align: center; display: inline-block; color: rgba(176, 179, 184, 1);">·</span><a href="javascript:void(0);" onclick="toPage(\'' + item.Url1 + '#comment\')">' + item.CommentCount + '评论</a></div></div>'
+                                    $('.loading').before(element);
+                                }
+                                $(".loading").css("display", "none");
+                            },
+                            error: function (msg) { }
+                        })
+                    }
+                }
+            }
+        })
+    }
+</script>
+
+<script>
+    //回答区
+
+    $(document).on('click', '.zan', function () {
+        if (EId <= 0)//通知APP登录
+        {
+            getAppId(1);
+            return;
+        }
+
+        var answerid = $(this).parent().attr("data-aid");
+        if ($("#hidanswer_" + answerid).val() == 1) {
+            var code = answer_zan_cai("@Url.Content("~/Shared/AddUpvoteDownvote_Answer")", EId, answerid, 1)
+            if (code == 1) {
+                $("#hidanswer_" + answerid).val(-2);
+                //成功,数量++
+                $(this).css('background', 'url(' + '@Url.Content("~/asset/img/function/2/趣问-赞同点击@2x.png")' + ') no-repeat top left')
+                $(this).css('background-size', '1.6rem 0.6rem')
+                var child_obj = $(this).children('.zan_num');
+                child_obj.text(parseInt(child_obj.text()) + 1)
+                $(this).find('span').css("color", "white")
+            }
+        }
+    });
+
+    $(document).on('click', '.cai', function () {
+        if (EId <= 0)//通知APP登录
+        {
+            getAppId(1);
+            return;
+        }
+
+        var answerid = $(this).parent().attr("data-aid");
+        if ($("#hidanswer_" + answerid).val() == 1) {
+            var code = answer_zan_cai("@Url.Content("~/Shared/AddUpvoteDownvote_Answer")", EId, answerid, 2)
+            if (code == 1) {
+                $("#hidanswer_" + answerid).val(-3);
+                //成功
+                $(this).css('background', 'url(' + '@Url.Content("~/asset/img/function/2/趣问-反对点击@2x.png")' + ')  no-repeat center center ')
+                $(this).css('background-size', '0.6rem 0.6rem')
+            }
+        }
+    })
+</script>
+
+
+
+<script>
+    var EId = 0;
+    setTimeout(function () {
+        EId = getEIdByAppId("@Url.Content("~/Shared/GetEIdByAppId")", appId);
+
+        if (appId > 0) {
+            sensors_data.login(appId);
+        }
+
+        if (EId <= 0)
+            return;
+
+        //问题是否已收藏
+        var code_q = isFavorites("@Url.Content("~/Shared/GetIsFavorites")", questionId, EId);
+        if (code_q == -2) {       //1：未收藏，-2：已收藏
+            //已收藏
+            $('.operation .favorite').addClass("yisc")   // 收藏添加收藏样式，下次添加收藏根据这个属性判断
+            $('.operation .favorite').find('img').attr('src', '@Url.Content("~/asset/img/function/2/趣问-底部收藏问题已点击@2x.png")')
+        }
+
+        //用户是否关注
+        $(".follow-btn").each(function () {
+            var authorId = $(this).attr("data-edsid");
+            if (EId != authorId) {
+                var code = isAttentioned("@Url.Content("~/Shared/GetIsAttentioned")", EId, authorId);
+                if (code == -2) {
+                    //已关注
+                    $(this).text("已关注")
+                    if ($(this).parent().hasClass('answer-user')) {      // 下面没有背景色的小关注
+                        $(this).addClass('eds')
+                    } else {
+                        $(this).addClass('ed')
+                    }
+                }
+            }
+            else {
+                $(this).hide();
+            }
+        });
+
+        //回答是否已赞或踩
+        $(".zan").each(function () {       // 根据赞判断，如果不是赞就是踩
+            var answerid = $(this).parent().attr('data-aid');
+            var code = isUpvoteDownvote_Answer("@Url.Content("~/Shared/GetIsUpvoteDownvote_Answer")", answerid, EId);
+            $("#hidanswer_" + answerid).val(code);
+            if (code == -2) {
+                //已赞
+                $(this).css('background', 'url(' + '@Url.Content("~/asset/img/function/2/趣问-赞同点击@2x.png")' + ') top left no-repeat ')
+                $(this).css('background-size', '1.6rem 0.6rem')
+                $(this).find('span').css("color", "white")
+            }
+            else if (code == -3) {
+                //已踩
+                $(this).next('.cai').css('background', 'url(' + '@Url.Content("~/asset/img/function/2/趣问-反对点击@2x.png")' + ') center no-repeat  ')
+                $(this).next('.cai').css('background-size', '0.6rem 0.6rem')
+            }
+        });
+
+    }, 100);
+
+    $("#clickImg").on('click', function () {
+        $(this).toggleClass("max");
+        $(this).toggleClass("min");
+    })
+</script>
+@*<script src="https://res.wx.qq.com/mmbizwap/zh_CN/htmledition/js/vconsole/3.0.0/vconsole.min.js"></script>
+    <script>
+        window.vConsole = new window.VConsole();
+        // 然后点击右下角 vConsole 按钮即可查看到 log
+    </script>*@

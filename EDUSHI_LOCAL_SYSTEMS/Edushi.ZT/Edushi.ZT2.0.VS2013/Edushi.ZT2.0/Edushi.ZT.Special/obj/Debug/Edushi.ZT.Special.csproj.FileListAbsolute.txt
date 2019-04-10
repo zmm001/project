@@ -1,0 +1,12 @@
+E:\TFS192.168.100.212\EDUSHI_LOCAL_SYSTEMS\Edushi.ZT\Edushi.ZT2.0.VS2013\Edushi.ZT2.0\Edushi.ZT.Special\bin\Debug\Edushi.ZT.Special.dll
+E:\TFS192.168.100.212\EDUSHI_LOCAL_SYSTEMS\Edushi.ZT\Edushi.ZT2.0.VS2013\Edushi.ZT2.0\Edushi.ZT.Special\bin\Debug\Edushi.ZT.Special.pdb
+E:\TFS192.168.100.212\EDUSHI_LOCAL_SYSTEMS\Edushi.ZT\Edushi.ZT2.0.VS2013\Edushi.ZT2.0\Edushi.ZT.Special\bin\Debug\EDC.Framework.dll
+E:\TFS192.168.100.212\EDUSHI_LOCAL_SYSTEMS\Edushi.ZT\Edushi.ZT2.0.VS2013\Edushi.ZT2.0\Edushi.ZT.Special\bin\Debug\Edushi.ZT.Model.dll
+E:\TFS192.168.100.212\EDUSHI_LOCAL_SYSTEMS\Edushi.ZT\Edushi.ZT2.0.VS2013\Edushi.ZT2.0\Edushi.ZT.Special\bin\Debug\ThoughtWorks.QRCode.dll
+E:\TFS192.168.100.212\EDUSHI_LOCAL_SYSTEMS\Edushi.ZT\Edushi.ZT2.0.VS2013\Edushi.ZT2.0\Edushi.ZT.Special\bin\Debug\MongoDB.Bson.dll
+E:\TFS192.168.100.212\EDUSHI_LOCAL_SYSTEMS\Edushi.ZT\Edushi.ZT2.0.VS2013\Edushi.ZT2.0\Edushi.ZT.Special\bin\Debug\Enyim.Caching.dll
+E:\TFS192.168.100.212\EDUSHI_LOCAL_SYSTEMS\Edushi.ZT\Edushi.ZT2.0.VS2013\Edushi.ZT2.0\Edushi.ZT.Special\bin\Debug\log4net.dll
+E:\TFS192.168.100.212\EDUSHI_LOCAL_SYSTEMS\Edushi.ZT\Edushi.ZT2.0.VS2013\Edushi.ZT2.0\Edushi.ZT.Special\bin\Debug\Edushi.ZT.Model.pdb
+E:\TFS192.168.100.212\EDUSHI_LOCAL_SYSTEMS\Edushi.ZT\Edushi.ZT2.0.VS2013\Edushi.ZT2.0\Edushi.ZT.Special\obj\Debug\Edushi.ZT.Special.csprojResolveAssemblyReference.cache
+E:\TFS192.168.100.212\EDUSHI_LOCAL_SYSTEMS\Edushi.ZT\Edushi.ZT2.0.VS2013\Edushi.ZT2.0\Edushi.ZT.Special\obj\Debug\Edushi.ZT.Special.dll
+E:\TFS192.168.100.212\EDUSHI_LOCAL_SYSTEMS\Edushi.ZT\Edushi.ZT2.0.VS2013\Edushi.ZT2.0\Edushi.ZT.Special\obj\Debug\Edushi.ZT.Special.pdb

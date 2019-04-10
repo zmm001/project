@@ -1,0 +1,8 @@
+E:\TFS192.168.100.212\EDUSHI_CHANNEL_SYSTEM\www.edushi.com\Edushi.ZiXun1.0.VS2013\Edushi.ZiXun1.0\Edushi.Bang.IDAL\bin\Debug\Edushi.Bang.IDAL.dll
+E:\TFS192.168.100.212\EDUSHI_CHANNEL_SYSTEM\www.edushi.com\Edushi.ZiXun1.0.VS2013\Edushi.ZiXun1.0\Edushi.Bang.IDAL\bin\Debug\Edushi.Bang.IDAL.pdb
+E:\TFS192.168.100.212\EDUSHI_CHANNEL_SYSTEM\www.edushi.com\Edushi.ZiXun1.0.VS2013\Edushi.ZiXun1.0\Edushi.Bang.IDAL\bin\Debug\Edushi.Bang.Model.dll
+E:\TFS192.168.100.212\EDUSHI_CHANNEL_SYSTEM\www.edushi.com\Edushi.ZiXun1.0.VS2013\Edushi.ZiXun1.0\Edushi.Bang.IDAL\bin\Debug\MongoDB.Bson.dll
+E:\TFS192.168.100.212\EDUSHI_CHANNEL_SYSTEM\www.edushi.com\Edushi.ZiXun1.0.VS2013\Edushi.ZiXun1.0\Edushi.Bang.IDAL\bin\Debug\Edushi.Bang.Model.pdb
+E:\TFS192.168.100.212\EDUSHI_CHANNEL_SYSTEM\www.edushi.com\Edushi.ZiXun1.0.VS2013\Edushi.ZiXun1.0\Edushi.Bang.IDAL\obj\Debug\Edushi.Bang.IDAL.csprojResolveAssemblyReference.cache
+E:\TFS192.168.100.212\EDUSHI_CHANNEL_SYSTEM\www.edushi.com\Edushi.ZiXun1.0.VS2013\Edushi.ZiXun1.0\Edushi.Bang.IDAL\obj\Debug\Edushi.Bang.IDAL.dll
+E:\TFS192.168.100.212\EDUSHI_CHANNEL_SYSTEM\www.edushi.com\Edushi.ZiXun1.0.VS2013\Edushi.ZiXun1.0\Edushi.Bang.IDAL\obj\Debug\Edushi.Bang.IDAL.pdb

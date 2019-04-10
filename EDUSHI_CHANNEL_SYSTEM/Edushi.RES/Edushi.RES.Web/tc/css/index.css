@@ -1,0 +1,75 @@
+@charset "utf-8";
+/* CSS Document */
+*{ list-style:none; margin:0; padding:0; font-family:Arial, Helvetica, sans-serif, "宋体"; text-decoration:none}
+h2{font-size:16px;font-family:"微软雅黑";font-weight:normal;}
+img{ border:none}
+dl,dt,dd,ul,li{ display:block}
+br,.clear{ clear:both; height:1px; overflow:hidden;}
+.tyl{ color:#f60;}
+#topbar{ height:24px; background:#efefef; font-size:12px; line-height:24px;}
+#topbar ul{ width:960px; margin:0 auto;}
+#topbar ul a{ color:#666;}
+#topbar ul .topmenu{ padding-left:30px; float:left}
+#topbar ul .topmenu a{ margin:0 8px;}
+#topbar ul .userinfo{ float: right; width:240px; text-align:right; color:#f60}
+#topbar ul .userinfo a{ margin-left:10px;}
+
+#topbar ul .city{ float:left; position:relative; }
+#topbar ul .city .citylist{position:absolute; width:120px; background:#fff; left: 0px; top: 22px; border:1px solid #ccc; padding:10px;}
+#topbar ul .city .citylist dt{ font-family:Arial; font-weight:bold; font-size:14px; color:#09f; float:left; width:20px;}
+#topbar ul .city .citylist dd{ float:left; width:100px;}
+#topbar ul .city .citylist dd a{ display:inline-block;color:#666;margin-right:5px;}
+#topbar ul .city .citylist dd a:hover{ color:#36f; text-decoration:underline}
+#topbar ul .city .citylist a.close{position:absolute;right:5px;top:2px;cursor:pointer;}
+
+
+.hotsearch a{margin-right:5px;}
+
+#logotop{ width:960px; margin:10px auto;} 
+#logotop #logo{ float:left; width:160px; height:50px; background:url(../images/sprite.png) no-repeat;}
+#logotop #searchbar{ float:left; padding:20px 0 0 20px; width:650px}
+#logotop #searchbar *{ font-size:12px; line-height:24px;}
+#logotop #searchbar .searchtab{ border:1px solid #ccc; width:140px; height:24px; padding:2px 0; background:url(../images/sprite.png) no-repeat 123px -380px; margin-right:6px; float:left}
+#logotop #searchbar .searchtab a{ display:block; color:#666; padding-right:10px; margin:0 5px;}
+#logotop #searchbar .searchtab div.stmenu{ border:1px solid #ccc; border-top:0 none; width:140px; margin-left:-1px; position:relative; background:#fff; z-index:10;}
+#logotop #searchbar .searchtab div.stmenu a{ padding:0; line-height:30px;}
+#logotop #searchbar .searchtab div.stmenu a:hover{ color:#f60; text-decoration:underline}
+#logotop #searchbar .searchbox{float:left; width:298px;}
+#logotop #searchbar .searchbox input{border:1px solid #ccc; width:280px; height:24px;padding:2px 5px;}
+#logotop #searchbar .searchbtn{ float:left;}
+#logotop #searchbar .searchbtn input{ background:url(../images/sprite.png) no-repeat 0 -230px; border:0 none; width:75px; height:32px;}
+#logotop #fbbtn{ width:130px; float:right; padding-top:16px;}
+#logotop #fbbtn a{ display: block; background:url(../images/sprite.png) no-repeat 0 -150px; height:34px; width:130px;}
+
+#contain{ width:960px; margin:10px auto; clear:both; border-top:4px solid #66a3ff; border-bottom:1px solid #f90; padding:20px 0;}
+#contain dl{ float:left;}
+#contain dl dt{ padding:5px 15px 5px 40px; height:22px;}
+#contain dl dt a{color:#666;font-family:"微软雅黑";font-size:16px;  }
+#contain dl dt.fc{ background:#ffe5b2 url(../images/sprite.png) no-repeat -125px -186px; }
+#contain dl dt.cl{ background:#e2e2e2 url(../images/sprite.png) no-repeat -125px -346px; margin-top:8px;}
+#contain dl dt.tz{ background:#dde8ff url(../images/sprite.png) no-repeat -125px -226px; }
+#contain dl dt.gz{ background:#e2f3d3 url(../images/sprite.png) no-repeat -125px -266px; }
+#contain dl dt.sh{ background:#ffdbf6 url(../images/sprite.png) no-repeat -125px -306px; }
+#contain dl dd{ padding:10px 5px;}
+#contain dl dd a{ font-size:14px; line-height:30px; display:block; height:30px; overflow:hidden}
+#contain dl dd a.b50{ width:50%; float:left;}
+#contain dl dd a.b33{ width:33%; float:left;}
+#contain dl dd a:hover{ text-decoration:underline}
+#contain .centerline{ border-left:dashed 1px #ccc; width:1px; height:540px; margin:0 15px; float:left; display: inline;}
+
+.hotcity{ }
+.hotcity dt{ float:left; width:70px; color:#999;}
+.hotcity dd{ float:right; width:890px;}
+.hotcity dd a{line-height:18px; color:#666; margin:0 2px; display:inline-block}
+
+#footer{ line-height:24px; color:#999; font-size:12px; width:960px; margin:10px auto;}
+#footer .foot{ text-align:center; border-top:1px solid #ddd; padding:10px 0 0 0; margin-top:10px;}
+#footer .foot a{ margin:0 10px;}
+#footer a{ color:#999}
+
+
+#topbar ul .topmenu{ padding-left:30px; float:left;position: relative; }
+#topbar ul .topmenu a{ margin:0 8px;}
+#topbar ul .topmenu .moremenu{ width:60px; position: absolute; z-index:11;padding:5px 0; background:#efefef; right:-12px; top:14px; border:1px solid #ddd; border-top:none}
+#topbar ul .topmenu .moremenu a{ display:block; line-height:30px; margin:0; padding:0 5px; }
+#topbar ul .topmenu .moremenu a:hover{ color:#f60; background:#fff}

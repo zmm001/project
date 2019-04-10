@@ -1,0 +1,114 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head runat="server">
+    <title>公交换乘</title>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <script language="javascript" type="text/javascript" src="/Js/GeneralLib.js"></script>
+    <script language="javascript" type="text/javascript" src="../Js/WaterBusTransferSearch.js"></script>
+<style>	
+body, ul, dl, dd, dt, ol, li, p, h1, h2, h3, h4, h5, h6, form, fieldset, table, img, td, div, input{
+margin:0;padding:0;
+}
+body{ background:#fff; font-family:Microsoft Yahei; font-size:12px;}
+ul, li{ list-style:none;}
+a{ outline-style:none; color:#545454 ;text-decoration:none;}
+a:hover{ color:#ff8500; text-decoration:underline; outline:0;}
+.clear{ clear:both;}
+.clearfix:before,.clearfix:after{ display:table; content:" ";}
+.clearfix:after{ clear:both;}
+.clearfix{ *zoom:1;}
+.f-l{ display:inline; float:left;}
+.f-r{ display:inline; float:right;}	
+.m-r8{ margin-right:8px;}
+.position-re{position:relative;}
+@media screen and (-webkit-min-device-pixel-ratio:0) { 
+	body, button, input, select, textarea{line-height:normal !important;}
+	input, select, textarea{outline-style:none;}
+}   
+
+.water-bus-result{ width:333px; margin:0 auto;}
+.gj_title_01{
+	height: 32px; margin-bottom: 7px; border-top: dotted 1px #cfcfcf; border-bottom: dotted 1px #cfcfcf;
+}
+.gj_title_01 div{
+	height: 25px; margin: 1px; padding-left: 5px; padding-top: 5px; background: #f1f9fc;
+}
+.gj_title_01 div span{
+	display: inline-block; float: left; width: 16px; height: 15px; margin-right: 10px; background: url(../images/icon.jpg) no-repeat -80px -20px;
+}
+.gj_021_01{
+	margin-bottom: 10px;
+	border: solid 1px #bad7e7;
+}
+.gj_021_01 .title_01{
+	height: 30px; padding: 5px; background: #f1f9fc;
+}
+.T_left_01{
+	float: left; width: 248px;
+}
+.T_right_01{
+	float: right;
+}
+.icon_q_01, .icon_q2_01{
+	display: inline-block; float: left; width: 27px; height: 32px; margin-right: 10px; background: url(../images/icon.jpg) no-repeat 0 -20px;
+	
+}
+.icon_q2_01{
+	background-position: -27px -20px;
+}
+.T_left_01 a{
+	float: left; margin-top: 5px; font-size: 14px; font-weight: bold; color:#1c81b9;
+}
+.T_right_01 .icon_t_01, .T_right_01 .icon_t2_01{
+	display: inline-block; width: 13px; height: 13px; margin-top: 6px; background: url(../images/icon.jpg) no-repeat -54px -20px;
+}
+.T_right_01 .icon_t2_01{
+	background-position: -67px -20px;
+}
+.xd_ul_01 {
+	padding: 5px; margin-bottom: 15px;  border-top: solid 1px #bad7e7; overflow:auto;
+}
+.xd_ul_01 li {
+	position: relative; padding: 10px 0 8px 5px; border-bottom: dotted 1px #d3e9f6; overflow: hidden;
+}
+.xd_ul_01 li.current {
+	background: #e8f2f8;
+}
+.iconb_01 {
+	float: left; width: 26px;  height: 27px;  background: url(../images/icon_B.png) no-repeat 0 0;
+	filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/icon_B.png', sizingMethod='crop');
+}
+.iconb_01 span {
+	display: block;  margin: 4px 5px 5px 6px; font-family: Arial, Helvetica, sans-serif; font-size: 11px; color: #fff;
+}
+.xd_ul_01 li .btna_01 {
+	position: absolute; right: 22px; top: 11px; width: 45px; height: 21px; background: url(../images/icon.jpg) 0 -52px;
+}
+.zd_adr_01 {
+	margin: 0px 0 0 35px;  padding: 0;
+}
+.zd_name_01{
+	width:238px; height: 27px; overflow: hidden;
+}
+.zd_name_01 a {
+	display: block;  float: left; margin: 5px 0 0 8px;
+}
+.number_01 {
+	margin-bottom: 15px; text-align:center;
+}
+.number_01 a{
+   padding: 3px;font-family: Arial, Helvetica, sans-serif;
+}
+.gj_title{ border-top: dotted 1px #cfcfcf; border-bottom: dotted 1px #cfcfcf;  margin-bottom:7px; padding:12px 0 12px 10px; font-size:13px; color:#db0909;}
+
+</style>
+
+</head>
+<body>
+<div class="water-bus-result">
+    <div id="TabContent" style="overflow-x:hidden;overflow-y:auto;">
+    
+    </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,36 @@
+*{margin:0; padding:0; list-style:none;}
+.t14{ font-size:14px;}
+.t12{ font-size:12px;}
+.clear{ clear:both; height:1px;}
+#login{ width:800px; margin:0 auto}
+img{border-style:none; border:0px; padding:0px; margin:0px;}
+.login_error{padding:4px 10px 4px 30px; font-size:12px;  background:#fff5f5 url(../images/err.png) no-repeat 7px center; border:solid 1px #f30;}
+.topbar{ height:70px; background:url(../images/logo.png) no-repeat left top; font-size:12px; text-align:right; padding:10px 0; border-bottom:1px solid #ccc; margin-bottom:20px;}
+.topbar a{ color:#666; text-decoration:none; margin:0 10px;}
+.reg_con{ padding-bottom:200px; background:url(../images/login_bj.png) no-repeat bottom;}
+.conleft{ width:500px; padding-right:20px; border-right:1px dashed #ccc; float:left}
+.conright{ width:260px; float:right; line-height:28px; font-size:14px; padding-left:18px}
+.conright p{ margin-bottom:10px;}
+.lab{ clear:both; height:44px;}
+.lab li{ float:left;}
+.lab li.nm{ width:80px; font-size:14px; color:#666; line-height:24px;}
+.lab li.box{ width:220px;}
+.lab li.box input{ line-height:24px; height:24px; border:1px solid #ddd; padding:1px 4px; width:200px;}
+.lab li.box select{line-height:24px; height:24px; border:1px solid #ddd;padding:1px 1px 1px; width:103px}
+.lab li.ts{ width:180px; font-size:12px; padding:6px 10px; background:#daf1ff}
+.lab li.ts2{ width:160px; font-size:12px; padding:6px 10px 6px 30px; background:#fff5f5 url(../images/err.png) no-repeat 7px center;}
+
+.login_con{ padding-left:455px; background:url(../images/login_bj2.png) no-repeat left; height:340px;}
+.loginbox{ width:334px; float:right; background:url(../images/login_box.png) no-repeat left top;}
+.loginbox ul{background:url(../images/login_box.png) no-repeat right bottom; margin-top:40px; padding:0 20px; font-size:14px;line-height:22px;}
+.kuang{line-height:22px; height:22px; border:1px solid #ddd; padding:1px 4px; width:200px;}
+.loginbox .log a{ margin-right:10px; line-height:32px}
+.loginbox a{ color:#36f; text-decoration:none}
+.elselogin{ padding:10px 0 0 0; border-top:1px dashed #ccc; height:40px}
+.elselogin span{ font-size:12px; float:left; margin-right:5px;}
+
+ .loginbox input{display:inline-block; vertical-align:middle;}
+
+.footer{ font-size:12px; text-align:center; color:#666;line-height:24px; padding-top:15px; border-top:1px solid #ccc; margin-top:10px;}
+.footer a{ margin:0 10px; color:#999; text-decoration:none; }
+.footer table{ margin:auto}

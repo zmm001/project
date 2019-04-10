@@ -1,0 +1,50 @@
+﻿@{
+    ViewBag.Title = "举报中心";
+}
+<script src="@Url.Content("~/asset/js/report.js")"></script>
+
+<div class="wrapper pb60">
+    <div class="report-box">
+        <div class="list clearfix">
+            <div class="mold">举报中心</div>
+            <div class="ipt">
+               @Html.Raw(Model.ahref)
+               <input type="hidden" id="hidReferrerURL" value="@Model.url" />
+                
+            </div>
+        </div>
+        <div class="list clearfix">
+            <div class="mold nom">举报类型</div>
+            <div class="ipt">
+                <label><input id="rb_r_type_0" type="radio" name="rb_r_type" value="分类错误" /> 分类错误</label>
+                <label><input id="rb_r_type_1" type="radio" name="rb_r_type" value="虚假信息" /> 虚假信息</label>
+                <label><input id="rb_r_type_2" type="radio" name="rb_r_type" value="垃圾信息" checked="checked" /> 垃圾信息</label>
+                <label><input id="rb_r_type_3" type="radio" name="rb_r_type" value="色情或反动内容" /> 色情或反动内容</label>
+                <label><input id="rb_r_type_4" type="radio" name="rb_r_type" value="灌水嫌疑" /> 灌水嫌疑</label>
+                <label><input id="rb_r_type_5" type="radio" name="rb_r_type" value="其他" /> 其他</label>
+
+            </div>
+        </div>
+        <div class="list clearfix">
+            <div class="mold">说明</div>
+            <div class="ipt">
+                <textarea name="txtbRemarks" rows="8" cols="60" id="txtbRemarks"></textarea>
+            </div>
+        </div>
+        <div class="list clearfix">
+            <div class="mold">联系电话</div>
+            <div class="ipt">
+                <input name="txtbPhone" type="text" id="txtbPhone">
+            </div>
+        </div>
+        <div class="list clearfix">
+            <div class="mold">联系人</div>
+            <div class="ipt">
+                <input name="txtbName" type="text" id="txtbName">
+            </div>
+        </div>
+        <input type="button" name="btnPost" value="举报" id="btnPost" onclick="Report()">
+    </div>
+    <input type="hidden" id="hidURL" value="@Url.Action("ReportInfo")" />
+    <input type="hidden" id="hidOKURL" value="@Url.Action("OK")" />
+</div>

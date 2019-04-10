@@ -1,0 +1,229 @@
+body {
+	font-family: "Microsoft YaHei";
+	font-size: 14px;
+	color: #404040;
+	background: #fff;
+}
+body, ul, ol, li, dl, dt, dd, p, h1, h2, h3, h4, h5, h6, button, input, textarea {
+	margin: 0;
+	padding: 0;
+}
+h1, h2, h3, h4, h5, h6 {
+	font-size: 100%;
+}
+ul, ol {
+	list-style-type: none;
+}
+img, a img, :link img, :visited img {
+	border: 0;
+	display: block;
+}
+a {
+	color: #404040;
+	text-decoration: none;
+}
+a:hover {
+	color: #ff3333;
+	text-decoration: none;
+}
+.clearfix:after {
+	content: "";
+	display: table;
+	clear: both;
+}
+.clearfix {
+	*zoom: 1;
+}
+
+.fl {
+	display: inline;
+	float: left;
+}
+.fr {
+	display: inline;
+	float: right;
+}
+.wrapper {
+	width: 1200px;
+	margin: 0 auto;
+}
+
+
+
+.mask {
+	display: none;
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: 999;
+	width: 100%;
+	height: 100%;
+	background: rgba(0,0,0,.4);
+	filter: progid:DXImageTransform.Microsoft.gradient(GradientType=1,startColorstr=#90000000, endColorstr=#90000000);
+}
+.login-box {
+	display: none;
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	z-index: 1000;
+	width: 440px;
+	padding-bottom: 25px;
+	background: #fff;
+	border-radius: 5px;
+}
+.login-box .close {
+	position: absolute;
+	top: 12px;
+	right: 12px;
+	width: 12px;
+	height: 12px;
+	background: url(../images/login_icon.png) no-repeat -19px 0;
+	cursor: pointer;
+}
+.login-box .tabsul {
+	margin: 25px 50px 6px;
+	line-height: 52px;
+}
+.login-box .tabsul span {
+	float: left;
+	width: 50%;
+	border-bottom: 1px solid #dddddd;
+	font-size: 20px;
+	color: #3d3d3d;
+	text-align: center;
+	cursor: pointer;
+}
+.login-box .tabsul span.on {
+	height: 51px;
+	font-weight: bold;
+	color: #404040;
+	border-bottom: 2px solid #ff3333;
+}
+.login-box .login-mobile, .login-box .login-user {
+	margin: 0 50px;
+}
+.login-box .login-user {
+	display: none;
+}
+.login-box .error-msg {
+	height: 30px;
+	font-size: 12px;
+	color: #fa5b5b;
+	line-height: 30px;
+}
+.login-box .error-msg p:before {
+	content: "";
+	display: inline-block;
+	width: 14px;
+	height: 14px;
+	margin-right: 5px;
+	background: url(../images/login_icon.png) no-repeat 0 0;
+	vertical-align: -2px;
+}
+
+.login-box .ipt {
+	width: 326px;
+	height: 44px;
+	margin-bottom: 20px;
+	padding: 0 6px;
+	outline: none;
+	font-size: 16px;
+	line-height: 44px;
+	background: #fff;
+	border: 1px solid #ddd;
+}
+.login-box input::-webkit-input-placeholder {
+	color: #bbb;
+}
+.login-box .ipt-phone {
+	border-color: #fa5b5b;
+}
+.login-box .vcode, .login-box .send-code {
+	font-size: 0;
+}
+.login-box .ipt-vcode {
+	display: inline-block;
+	width: 186px;
+	margin-right: 10px;
+	border-color: #1c88e3;
+}
+.login-box .vcode img {
+	display: inline-block;
+	width: 128px;
+	height: 44px;
+	vertical-align: top;
+}
+.login-box .ipt-code {
+	display: inline-block;
+	width: 186px;
+	margin-right: 10px;
+}
+.login-box .send-code-tn {
+	display: inline-block;
+	width: 128px;
+	height: 46px;
+	background: #1c88e3;
+	font-size: 16px;
+	text-align: center;
+	line-height: 46px;
+	color: #fff;
+	vertical-align: top;
+}
+.login-box .send-agin {
+	background: #dddddd;
+}
+.login-box .btn-input {
+	width: 340px;
+	height: 43px;
+	background: #f34640;
+	border: none;
+	outline: none;
+	font-size: 20px;
+	color: #fff;
+	cursor: pointer;
+}
+.login-box .auto-login {
+	margin-bottom: 10px;
+	color: #404040;
+}
+.login-box .ipt-check {
+	width: 15px;
+	height: 15px;
+	border: 1px solid #dddddd;
+	vertical-align: -3px;
+	*vertical-align: 0;
+}
+.login-box .auto-login a {
+	float: right;
+	color: #1c88e3;
+	*margin-top: -18px;
+}
+
+
+.login-box .third .tit {
+	margin: 5px 30px 0;
+	line-height: 44px;
+	color: #404040;
+	text-align: center;
+	background: url(../images/line_bg.png) no-repeat left center;
+}
+.login-box .third .third-login {
+	font-size: 0;
+	text-align: center;
+}
+.login-box .third .third-login a {
+	display: inline-block;
+	width: 44px;
+	height: 44px;
+	margin: 0 25px;
+}
+.login-box .third .third-login a.qq {
+	background: url(../images/login_icon.png) no-repeat 0 -19px;
+}
+.login-box .third .third-login a.weibo {
+	background: url(../images/login_icon.png) no-repeat 0 -67px;
+}
+.login-box .third .third-login a.weixin {
+	background: url(../images/login_icon.png) no-repeat 0 -114px;
+}

@@ -1,0 +1,266 @@
+.icon {
+  display: inline-block;
+  background-image: url(../images/sprite_icon.png);
+  background-size: 0.7rem 10rem;
+}
+header {
+  position: relative;
+  text-align: center;
+  background-color: #fff;
+  box-shadow: 0 0.04rem 0.1rem rgba(125, 155, 230, 0.15);
+}
+header h1 {
+  display: inline-block;
+  height: 0.36rem;
+  line-height: 0.36rem;
+  font-size: 0.36rem;
+  font-weight: normal;
+  color: #333;
+  margin: 0.21rem 0;
+}
+.main {
+  padding: 0.6rem 0.3rem;
+}
+.main form .item {
+  margin-bottom: 0.5rem;
+}
+.main form .item .name {
+  display: inline-block;
+  width: 1.45rem;
+  font-size: 0.28rem;
+  color: #333;
+  vertical-align: top;
+  text-align: right;
+}
+.main form .item .val {
+  display: inline-block;
+}
+.main form .item .val input[type=text] {
+  width: 4.98rem;
+  height: 0.56rem;
+  line-height: 0.56rem;
+  padding: 0 0.15rem;
+  margin: 0;
+  border: 1px solid #e3e3e3;
+  border-radius: 0.05rem;
+  outline: none;
+  -webkit-appearance : none
+}
+.main form .item .val textarea {
+  width: 4.98rem;
+  height: 2rem;
+  line-height: 0.56rem;
+  padding: 0 0.15rem;
+  margin: 0;
+  border: 1px solid #e3e3e3;
+  border-radius: 0.05rem;
+  outline: none;
+  -webkit-appearance : none
+}
+.main form .item .val label {
+  position: relative;
+  display: block;
+  margin-top: 0.04rem;
+  margin-bottom: 0.26rem;
+}
+.main form .item .val label:last-child {
+  margin-bottom: 0;
+}
+.main form .item .val label:before {
+  content: "";
+  display: inline-block;
+  width: 0.32rem;
+  height: 0.32rem;
+  border-radius: 100%;
+  border: 1px solid #e3e3e3;
+  vertical-align: top;
+  margin-right: 0.18rem;
+}
+.main form .item .val label.checked:before {
+  width: 0.34rem;
+  height: 0.34rem;
+  background-image: url(../images/sprite_icon.png);
+  background-position: 0 -9.45rem;
+  background-size: 0.7rem 10rem;
+  border: none;
+}
+.main form .item .val label input[type=radio] {
+  position: absolute;
+  opacity: 0;
+}
+.main form .item .val label span {
+  font-size: 0.28rem;
+  color: #888;
+  line-height: 0.34rem;
+}
+.main .msg {
+  display: block;
+  text-align: center;
+  margin-bottom: 0.5rem;
+}
+.main .msg p {
+  color: #ff3300;
+  font-size: 0.28rem;
+  line-height: 0.48rem;
+}
+.main .submit-btn {
+  display: block;
+  width: 6.9rem;
+  height: 0.8rem;
+  line-height: 0.8rem;
+  font-size: 0.3rem;
+  color: #fff;
+  text-align: center;
+  background-color: #007ef3;
+  border-radius: 0.08rem;
+}
+.feedback textarea {
+  display: block;
+  width: 6.9rem;
+  height: 4.25rem;
+  padding: 0.15rem 0.3rem;
+  border: none;
+  margin: 0;
+  outline: none;
+  font-size: 0.28rem;
+  resize: none;
+}
+.feedback input {
+  padding: 0.2rem 0;
+  margin: 0 0.3rem;
+  width: 6.9rem;
+  height: 0.65rem;
+  border: none;
+  border-top: 1px solid #eee;
+  border-bottom: 1px solid #eee;
+  outline: none;
+  font-size: 0.28rem;
+  -webkit-appearance : none
+}
+.feedback {
+  margin-bottom: 0.3rem;
+}
+.feedback .img-upload {
+  margin: 0.3rem;
+}
+.feedback .img-upload .img-list {
+  display: inline-block;
+  vertical-align: top;
+}
+.feedback .img-upload .img-list .img-item {
+  position: relative;
+  display: inline-block;
+  width: 1.62rem;
+  height: 1.62rem;
+  margin-right: 0.09rem;
+  border: 1px solid #dddddd;
+  background: #fff;
+  overflow: hidden;
+}
+.feedback .img-upload .img-list .img-item .img-close {
+  position: absolute;
+  right: 0;
+  top: 0;
+  display: block;
+  width: 0.3rem;
+  height: 0.3rem;
+  background: url(../images/share_icon.png) no-repeat 0 -5.29rem;
+  background-size: 0.73rem 5.6rem;
+}
+.feedback .img-upload .img-list .img-item img {
+  position: absolute;
+  max-width: 100%;
+  max-height: 100%;
+  top: 50%;
+  left: 50%;
+  -moz-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+.feedback .img-upload .file-ipt {
+  position: relative;
+  display: inline-block;
+  width: 1.6rem;
+  height: 1.6rem;
+  background: #fff;
+  border: 1px solid #dddddd;
+}
+.feedback .img-upload .file-ipt:before {
+  content: "";
+  position: absolute;
+  left: 0.34rem;
+  top: 0.34rem;
+  display: block;
+  width: 0.9rem;
+  height: 0.9rem;
+  background: url(../images/add_btn.png) no-repeat;
+  background-size: cover;
+}
+.feedback .img-upload .file-ipt input {
+  width: 1.6rem;
+  height: 1.6rem;
+  opacity: 0;
+}
+.feedback .submit-btn {
+  width: 6.9rem;
+  height: 0.8rem;
+  margin-top: 0.8rem;
+  border: none;
+  background: #007ef3;
+  color: #fff;
+  font-size: 0.3rem;
+  outline: none;
+  -webkit-appearance: none;
+  border-radius: 0.08rem;
+}
+.feedback.submit-btn {
+  width: 6.9rem;
+  height: 0.8rem;
+  margin-top: 0.8rem;
+  border: none;
+  background: #007ef3;
+  color: #fff;
+  font-size: 0.3rem;
+  outline: none;
+  -webkit-appearance: none;
+  border-radius: 0.08rem;
+}
+.notfound {
+  position: relative;
+  background-color: #fff;
+  margin-top: -1px;
+  width: 7.5rem;
+  overflow: hidden;
+}
+.notfound i {
+  display: block;
+  width: 4.5rem;
+  height: 4.69rem;
+  background: url(../images/notfound.png) no-repeat;
+  background-size: 4.5rem 4.69rem;
+  margin: 0.9rem auto 0.3rem auto;
+}
+.notfound p {
+  text-align: center;
+  font-size: 0.3rem;
+  color: #2f3133;
+  margin-bottom: 0.1rem;
+}
+.notfound p.b {
+  font-size: 0.48rem;
+  margin-bottom: 0.2rem;
+}
+.notfound .back-btn {
+  display: block;
+  width: 4.8rem;
+  margin: 0.4rem 1.35rem 0.3rem 1.35rem;
+  height: 0.8rem;
+  background-color: #007ef3;
+  border: 0;
+  padding: 0;
+  font-size: 0.32rem;
+  color: #fff;
+  border-radius: 0.8rem;
+  -webkit-appearance : none
+}

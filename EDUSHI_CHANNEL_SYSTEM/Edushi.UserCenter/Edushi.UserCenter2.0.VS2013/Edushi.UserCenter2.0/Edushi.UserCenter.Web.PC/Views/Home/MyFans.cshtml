@@ -1,0 +1,62 @@
+﻿@using Edushi.Common
+@model Edushi.UserCenter.Web.PC.Models.MyAttentionModel
+@{
+    Layout = "~/Views/Home/User_Layout.cshtml";
+    var imgDomain = Common.GetConfigString("UserHeadPic");
+    ViewBag.PageFlag = "5";
+}
+
+<div class="main follow-box" id="datalist">
+    <div class="tab-box">
+        <div class="info">
+            <span>共有粉丝<em>@Model.TotalCount</em>人!</span>
+        </div>
+    </div>
+    @if (Model.List != null && Model.List.Any())
+    {
+        <ul class="follow-list slide-box fans-list">
+            @foreach (var item in Model.List)
+            {
+                <li @Html.Raw(item.Num <= 0 ? "" : (item.Num > 99 ? "data-new=\"99+\"" : string.Format("data-new=\"{0}\"", item.Num)))>
+                    <a href="@string.Format(Url.Content("~/index/{0}-{1}.html"), item.UserInfo["Type"].ToString()=="3"?5:1, item.UserInfo["FansId"])" target="_blank">
+                        <div class="photo">
+                            <img src="@(imgDomain + item.UserInfo["Avatar"])">
+                        </div>
+                        <div class="info">
+                            <div class="name">@Html.Raw(item.UserInfo["NickName"])</div>
+                            <span class="title">@Html.Raw(item.Title)</span>
+                        </div>
+                    </a>
+                    @{
+                var fansId = int.Parse(item.UserInfo["FansId"].ToString());// 获取当前粉丝列表用户id
+                var isAttentioneds = fansId <= 0 ? null : Edushi.UserCenter.Web.PC.Controllers.AuthorNewsController.GetISAttentionUserList(fansId);
+                // 列表中存在关注的对象
+                if (isAttentioneds != null && isAttentioneds["Success"].ToString() == "-2")
+                {
+                    <div class="fr follow-btn following" id="@item.UserInfo["FansId"]" data-title="1">互相关注</div>
+                }
+                else
+                {
+
+                    <div class="fr add-follow" id="@item.UserInfo["FansId"]" data-title="1">关注</div>
+                        <div class="follow-tips">TA关注了我</div>
+
+                }
+                    }
+
+                </li>
+            }
+        </ul>
+    }
+    @if (Model.PageCount <= 1)
+    {
+        <div data-v-3cc692d1="" class="load-prompt">没有更多关注了</div>
+    }
+    else
+    {
+        <div class="page-box">
+            @Html.Raw(Html.Pager(Model.TotalCount, Model.PageSize, Model.PageIndex, "", "", new PagerOptions { PageIndexParameterName = "pageIndex", ShowDisabledPagerItems = false, NumericPagerItemCount = 10, CurrentPageNumberFormatString = "<span>{0}</span>", ShowFirstLast = false }, Model.PageRouteName, null, null).ToString().Replace("&lt;", "<").Replace("&gt;", ">").Replace("'", "\""))
+        </div>
+    }
+
+</div>

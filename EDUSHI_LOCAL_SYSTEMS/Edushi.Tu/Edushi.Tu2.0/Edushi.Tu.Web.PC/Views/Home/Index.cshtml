@@ -1,0 +1,86 @@
+﻿@using Edushi.Tu.Special
+@model Edushi.Tu.Web.PC.Models.HomeModel
+@{
+    ViewBag.Title = "图闻频道-E都市";
+    var myType = Model.AllPicType.FindAll(p => p.PT_ParentID == 0);
+    string sub = string.Empty;
+    if (myType.Any())
+    {
+        sub = string.Join(",", myType.Select(p => p.PT_Name));
+    }
+}
+@section meta{
+    <meta name="Keywords" content="图闻,@sub" />
+    <meta name="Description" content="E都市图闻频道是全面专业的图闻资讯信息平台，提供@(sub.Replace(",", "、"))等图闻资讯，构建新型互联网媒体平台为互联网用户提供价值资讯。" />
+    <meta http-equiv="mobile-agent" content="format=html5; url=@(Request.Url.AbsoluteUri.ToLower().Replace("tu", "m.tu"))" />
+}
+<link href="@Url.Content("~/asset/css/style7.0.css")" rel="stylesheet" type="text/css"/>
+<div class="container">
+    <div class="channel-header">
+        <div class="wrapper">
+            <div class="logo">
+                <a href="http://www.edushi.com/" target="_blank"><img src="@Url.Content("~/asset/images/logo.png")"></a>
+                <a href="@Url.Content("~/")" target="_blank" class="channel-name">图闻</a>
+            </div>
+        </div>
+        <div class="sub-nav">
+            <div class="wrapper">
+                <a href="@Url.Content("~/")" target="_blank" class="current">首页</a>
+                @if (myType.Any())
+                {
+                    foreach (var item in myType)
+                    {
+                        <a href="@Common.GetInfoListUrl(Url.Content("~/"),item.PT_ParentID,item.PT_ID)" target="_blank">@item.PT_Name</a>
+                    }
+                }
+            </div>
+        </div>
+    </div>
+    @if (Model.ListRecommend != null && Model.ListRecommend.Any())
+    {
+        <div class="wrapper middle">
+            <div class="middle-l">
+                <a href="javascript:void(0);" class="btn-page-left" style="display: none;"></a>
+                @if (Model.PageCount > 0)
+                {
+                    <a href="javascript:void(0);" class="btn-page-right"></a>
+                }
+			
+                <div class="center-tip"></div>
+                <div class="cont-wrap">
+                    <div class="cont-scroller">
+                        <div class="water-wrapper">
+                            <ul class="clearfix">
+                                @foreach (var item in Model.ListRecommend)
+                                {
+                                    <li>
+                                        <a href="@item.Url" target="_blnak" class="img">
+                                            <img src="@item.Pic">
+                                            <span class="number">@(item.PicCount)图</span>
+                                        </a>
+                                        <div class="tit">
+                                            <a href="@item.TypeUrl" target="_blnak" class="category">@item.TypeName</a>
+                                            <a href="@item.Url" target="_blnak" class="info">@Html.Raw(item.Title)</a>
+                                        </div>
+                                    </li>
+                                }
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="loading"></div>
+                </div>
+            </div>
+        </div>
+    }
+</div>
+<script type="text/javascript">
+    var configData = {
+        pageCount: "@Model.PageCount",
+        pageIndex: 0,
+        Page: "@Url.Content("~/")",
+        Url: "GetMoreData.htm",
+        PId: 0
+    };
+</script>
+<script type="text/javascript" src="@Url.Content("~/asset/js/jquery.mousewheel.js")"></script>
+<script type="text/javascript" src="@Url.Content("~/asset/js/imgScroll.js")"></script>

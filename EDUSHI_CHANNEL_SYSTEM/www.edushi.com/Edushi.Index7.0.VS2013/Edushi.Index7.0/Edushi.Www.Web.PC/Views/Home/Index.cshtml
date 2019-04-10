@@ -1,0 +1,965 @@
+﻿@model Edushi.Www.Web.PC.Models.HomeModel
+@{
+    ViewBag.Title = "爱上头条|E都市门户资讯|三维地图|电子地图|E都市-查地图,上E都市";
+}
+
+@section meta{
+    <meta name="Keywords" content="地图、三维地图、手机地图、电子地图、公交查询、地图搜索、地图网站、导航、城市黄页、公交车站、行车路线、酒店、宾馆、景点、门票、餐饮、娱乐" />
+    <meta name="Description" content="全球首个三维城市地图,提供公交线路、旅游线路、交通路线、地铁线路、道路景点查询和酒店、景点门票预订等服务,您可以在家欣赏杭州,上海,北京,深圳,广州,成都,长沙,厦门等大城市的风光。" />
+}
+<link href="@Url.Content("~/asset/css/style.css")" rel="stylesheet" />
+<div style="background: url('@Url.Content("~/asset/images/index_2019.jpg")') no-repeat ;    background-size: 100%;padding-top: 20px;">
+    <div class="wrapper" style="background-color: #fff; padding-left: 10px; padding-right: 10px;">
+            <div class="clearfix index-logo">
+                <div class="fl"><h1><a href="@Url.Content("~/")" target="_blank" class="logo"><img src="@Url.Content("~/asset/images/logo.png")"></a></h1></div>
+                <div class="fr tg">
+                    <!-- 广告位：【A01-01】 -->
+                    <script>
+                        (function () {
+                            var s = "_" + Math.random().toString(36).slice(2);
+                            document.write('<div id="' + s + '"></div>');
+                            (window.slotbydup = window.slotbydup || []).push({
+                                id: '5296132',
+                                container: s,
+                                size: '600,40',
+                                display: 'inlay-fix'
+                            });
+                        })();
+                    </script>
+                </div>
+            </div>
+            <div class="main-nav">
+                <ul class="clearfix">
+                    <li class="liw1">
+                        <p class="mb">
+                            <a href="@Url.Content("~/info/2.html")" target="_blank" class="fontb">新闻</a>
+                            <a href="@Url.Content("~/info/2-15.html")" target="_blank">热点</a>
+                            <a href="@Url.Content("~/info/2-9.html")" target="_blank">社会</a>
+                            <a href="@Url.Content("~/info/2-5.html")" target="_blank">民生</a>
+                        </p>
+                        <p class="mb">
+                            <a href="@Url.Content("~/info/113.html")" target="_blank" class="fontb">科技</a>
+                            <a href="@Url.Content("~/info/113-138.html")" target="_blank">互联网</a>
+                            <a href="@Url.Content("~/info/119.html")" target="_blank">奇乐</a>
+                            <a href="@Url.Content("~/info/161.html")" target="_blank">游戏</a>
+                        </p>
+
+                    </li>
+                    <li>
+                        <p class="mb">
+                            <a href="@Url.Content("~/info/4.html")" target="_blank" class="fontb">娱乐</a>
+                            <a href="@Url.Content("~/info/4-109.html")" target="_blank">明星</a>
+                            <a href="@Url.Content("~/info/4-21.html")" target="_blank">八卦</a>
+                            <a href="@Url.Content("~/info/4-23.html")" target="_blank">影视</a>
+                        </p>
+                        <p>
+                            <a href="@Url.Content("~/info/6.html")" target="_blank" class="fontb">体育</a>
+                            <a href="@Url.Content("~/info/6-34.html")" target="_blank">NBA</a>
+                            <a href="@Url.Content("~/info/6-132.html")" target="_blank">足球</a>
+                            <a href="@Url.Content("~/info/6-40.html")" target="_blank">热议</a>
+                        </p>
+                    </li>
+                    <li>
+                        <p class="mb">
+                            <a href="@Url.Content("~/info/83.html")" target="_blank" class="fontb">时尚</a>
+                            <a href="@Url.Content("~/info/27.html")" target="_blank">情感</a>
+                            <a href="@Url.Content("~/info/19.html")" target="_blank">亲子</a>
+                            <a href="@Url.Content("~/info/27-29.html")" target="_blank">故事</a>
+                        </p>
+                        <p>
+                            <a href="http://hangzhou.fangtoo.com/" target="_blank" class="fontb">房产</a>
+                            <a href="http://hangzhou.fangtoo.com/zixun/info/5.html" target="_blank">知识</a>
+                            <a href="http://hangzhou.fangtoo.com/zixun/info/6.html" target="_blank">装修</a>
+                            <a href="http://hangzhou.fangtoo.com/zixun/info/7.html" target="_blank">案例</a>
+                        </p>
+                    </li>
+                    <li>
+                        <p class="mb">
+                            <a href="@Url.Content("~/info/119.html")" target="_blank" class="fontb">奇乐</a>
+                            <a href="@Url.Content("~/info/119-125.html")" target="_blank">奇美</a>
+                            <a href="@Url.Content("~/info/119-124.html")" target="_blank">奇谈</a>
+                            <a href="@Url.Content("~/info/119-123.html")" target="_blank">奇异</a>
+                        </p>
+                        <p>
+                            <a href="@Url.Content("~/info/207.html")" target="_blank" class="fontb">汽车</a>
+                            <a href="@Url.Content("~/info/207-208.html")" target="_blank">新车</a>
+                            <a href="@Url.Content("~/info/207-212.html")" target="_blank">导购</a>
+                            <a href="@Url.Content("~/info/207-209.html")" target="_blank">试驾</a>
+                        </p>
+                    </li>
+                    <li>
+                        <p class="mb">
+                            <a href="@Url.Content("~/info/142.html")" target="_blank" class="fontb">健康</a>
+                            <a href="@Url.Content("~/info/142-145.html")" target="_blank">中医</a>
+                            <a href="@Url.Content("~/info/142-143.html")" target="_blank">饮食</a>
+                            <a href="@Url.Content("~/info/142-144.html")" target="_blank">保健</a>
+                        </p>
+                        <p>
+                            <a href="@Url.Content("~/info/3.html")" target="_blank" class="fontb">休闲</a>
+                            <a href="@Url.Content("~/info/3-16.html")" target="_blank">味道</a>
+                            <a href="@Url.Content("~/info/3-205.html")" target="_blank">家居</a>
+                            <a href="@Url.Content("~/info/3-18.html")" target="_blank">玩乐</a>
+                        </p>
+                    </li>
+                    <li>
+                        <p class="mb">
+                            <a href="@Url.Content("~/info/1.html")" target="_blank" class="fontb">集萃</a>
+                            <a href="@Url.Content("~/info/1-185.html")" target="_blank">娱乐圈</a>
+                            <a href="@Url.Content("~/info/1-173.html")" target="_blank">奇葩</a>
+                            <a href="@Url.Content("~/info/1-174.html")" target="_blank">吃货</a>
+                        </p>
+                        <p>
+                            <a href="@Url.Content("~/info/149.html")" target="_blank" class="fontb">历史</a>
+                            <a href="@Url.Content("~/info/149-151.html")" target="_blank">世界</a>
+                            <a href="@Url.Content("~/info/149-152.html")" target="_blank">秘闻</a>
+                            <a href="@Url.Content("~/info/149-154.html")" target="_blank">考古</a>
+                        </p>
+                    </li>
+                    <li class="last">
+                        <p class="mb">
+                            <a href="http://www.edushi.com/zt/" target="_blank" class="fontb">专题</a>
+                            <a href="http://www.edushi.com/renwu/" target="_blank" class="fontb ml">人物</a>
+                        </p>
+                        <p>
+                            <a href="http://tu.edushi.com/" target="_blank" class="fontb">图闻</a>
+                            <a href="http://www.edushi.com/jumi/" target="_blank" class="fontb ml">剧迷</a>
+                        </p>
+                    </li>
+                </ul>
+            </div>
+            <div class="index-top-ad mt20">
+                <!-- 广告位：【A01-02】 -->
+                <script>
+                    (function() {
+                        var s = "_" + Math.random().toString(36).slice(2);
+                        document.write('<div id="' + s + '"></div>');
+                        (window.slotbydup = window.slotbydup || []).push({
+                            id: '5296134',
+                            container: s,
+                            size: '1200,125',
+                            display: 'inlay-fix'
+                        });
+                    })();
+                </script>
+            </div>
+            <div class="area-fisrt clearfix">
+                <div class="fl col-lm">
+                    <div class="clearfix">
+                        <div class="fl col-l">
+                            <div class="slide">
+                                <div class="slide-box">
+                                    <ul>
+                                        @Html.Raw(Model.TopDay)
+                                    </ul>
+                                    <div class="slide-prev"></div>
+                                    <div class="slide-next"></div>
+                                </div>
+                                <div class="slide-btn"></div>
+                            </div>
+                            <div class="zt-news">
+                                <div class="zt-tit">
+                                    <a href="http://www.edushi.com/zt/" target="_blank">专题</a>
+                                </div>
+                                @Html.Raw(Model.Topic)
+                            </div>
+
+                        </div>
+                        <div class="fr col-c">
+                            <div class="news-tab">
+                                <div class="tab-nav">
+                                    <span class="current"><a href="@Url.Content("~/info/4.html")" target="_blank">要闻</a></span>
+                                    <span><a href="@Url.Content("~/info/2-15.html")" target="_blank">热点</a></span>
+                                    <span><a href="@Url.Content("~/info/4-109.html")" target=" _blank">明星</a></span>
+                                </div>
+                                <div class="tab-main">
+                                    <ul class="tab-body" style="display: block;">
+                                        @Html.Raw(Model.RecommendedNews)
+                                    </ul>
+                                    <ul class="tab-body">
+                                        @Html.Raw(Model.HotRecommendedNews)
+                                    </ul>
+                                    <ul class="tab-body">
+                                        @Html.Raw(Model.StartRecommendedNews)
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div style="margin-top: 36px;">
+                        <!-- 广告位：【A01-04】 -->
+                        <script>
+                            (function() {
+                                var s = "_" + Math.random().toString(36).slice(2);
+                                document.write('<div id="' + s + '"></div>');
+                                (window.slotbydup = window.slotbydup || []).push({
+                                    id: '5296138',
+                                    container: s,
+                                    size: '860,200',
+                                    display: 'inlay-fix'
+                                });
+                            })();
+                        </script>
+                    </div>
+                </div>
+                <div class="fr col-r">
+                    <div class="eds-product">
+                        <div class="nav-title">
+                            <span>我的产品</span>
+                        </div>
+                        <div class="product-list">
+                            <div class="list">
+                                <span class="tub eds"></span>
+                                <div class="tips">
+                                    <p>爱上头条</p>
+                                    <a href="https://www.astoutiao.com" target="_blank">头条官网</a>
+                                    <a href="http://apps.edushi.com/news/app-pc.html" target="_blank">iOS下载</a>
+                                    <a href="http://apps.edushi.com/news/app-pc.html" target="_blank">Android下载</a>
+                                </div>
+                            </div>
+                            <div class="list">
+                                <span class="tub wallet"></span>
+                                <div class="tips">
+                                    <p>E都市钱包</p>
+                                    <a href="https://www.edspay.com" target="_blank">钱包首页</a>
+                                    <a href="http://apps.edushi.com/news/download.html#edspay" target="_blank">iOS下载</a>
+                                    <a href="http://apps.edushi.com/news/download.html#edspay" target="_blank">Android下载</a>
+                                </div>
+                            </div>
+                            <div class="list">
+                                <span class="tub fanbai"></span>
+                                <div class="tips">
+                                    <p>爱上街</p>
+                                    <a href="http://www.aishangjie.com" target="_blank">爱上街首页</a>
+                                    <a href="http://apps.edushi.com/news/download.html#ala" target="_blank">iOS下载</a>
+                                    <a href="http://apps.edushi.com/news/download.html#ala" target="_blank">Android下载</a>
+                                </div>
+                            </div>
+                            <!--2019、01、18 新增-->
+                            <div class="list">
+                                <span class="tub mapp"></span>
+                                <div class="tips">
+                                    <p>冒泡</p>
+                                    <a href="https://www.maopp.cn" target="_blank">冒泡首页</a>
+                                    <a href="http://apps.edushi.com/news/download.html#maopp" target="_blank">iOS下载</a>
+                                    <a href="http://apps.edushi.com/news/download.html#maopp" target="_blank">Android下载</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="eds-map clearfix">
+                            <a href="http://www.edushi.com/mapcity.html" target="_blank" class="map-tit">三维地图</a>
+                            <div class="fl tu-city">
+                                <p><a href="http://beijing.edushi.com/" target="_blank"><img src="@Url.Content("~/asset/images/beijing.png")"></a></p>
+                                <p><a href="http://sh.edushi.com/" target="_blank"><img src="@Url.Content("~/asset/images/shanghai.png")"></a></p>
+                                <p><a href="http://hz.edushi.com/" target="_blank"><img src="@Url.Content("~/asset/images/hangzhou.png")"></a></p>
+                                <p><a href="http://sz.edushi.com/" target="_blank"><img src="@Url.Content("~/asset/images/shenzhen.png")"></a></p>
+                            </div>
+                            <ul class="fr text-city">
+                                <li>
+                                    <a href="http://tianjin.edushi.com/" target="_blank">天津</a>
+                                    <a href="http://changchun.edushi.com/" target="_blank">长春</a>
+                                    <a href="http://dalian.edushi.com/" target="_blank">大连</a>
+                                    <a href="http://shijiazhuang.edushi.com/" target="_blank" class="no-mr">石家庄</a>
+                                    <a href="http://jinan.edushi.com/" target="_blank">济南</a>
+                                    <a href="http://qingdao.edushi.com/" target="_blank">青岛</a>
+                                    <a href="http://weihai.edushi.com/" target="_blank">威海</a>
+                                    <a href="http://qinhuangdao.edushi.com/" target="_blank" class="no-mr">秦皇岛</a>
+                                </li>
+                                <li>
+                                    <a href="http://nanjing.edushi.com/" target="_blank">南京</a>
+                                    <a href="http://suzhou.edushi.com/" target="_blank">苏州</a>
+                                    <a href="http://changsha.edushi.com/" target="_blank">长沙</a>
+                                    <a href="http://nanchang.edushi.com/" target="_blank" class="no-mr">南昌</a>
+                                    <a href="http://xian.edushi.com/" target="_blank">西安</a>
+                                    <a href="http://wuhan.edushi.com/" target="_blank">武汉</a>
+                                    <a href="http://chongqing.edushi.com/" target="_blank">重庆</a>
+                                    <a href="http://chengdu.edushi.com/" target="_blank" class="no-mr">成都</a>
+                                </li>
+                                <li>
+                                    <a href="http://ningbo.edushi.com/" target="_blank">宁波</a>
+                                    <a href="http://shaoxing.edushi.com/" target="_blank">绍兴</a>
+                                    <a href="http://jinhua.edushi.com/" target="_blank">金华</a>
+                                    <a href="http://lishui.edushi.com/" target="_blank" class="no-mr">丽水</a>
+                                    <a href="http://hefei.edushi.com/" target="_blank">合肥</a>
+                                    <a href="http://fuzhou.edushi.com/" target="_blank">福州</a>
+                                    <a href="http://zhengzhou.edushi.com/" target="_blank">郑州</a>
+                                    <a href="http://quanzhou.edushi.com/" target="_blank" class="no-mr">泉州</a>
+                                </li>
+                                <li>
+                                    <a href="http://guangzhou.edushi.com/" target="_blank">广州</a>
+                                    <a href="http://xiamen.edushi.com/" target="_blank">厦门</a>
+                                    <a href="http://guizhou.edushi.com/" target="_blank">桂林</a>
+                                    <a href="http://lijiang.edushi.com/" target="_blank" class="no-mr">丽江</a>
+                                    <a href="http://hongkong.edushi.com/" target="_blank">香港</a>
+                                    <a href="http://zhangjiajie.edushi.com/" target="_blank">张家界</a>
+                                    <a href="http://www.edushi.com/mapcity.html" target="_blank" class="more">更多城市</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="tu-news">
+                        <div class="nav-title">
+                            <span><a href="http://tu.edushi.com/" target="_blank">图闻</a></span>
+                            <a href="http://tu.edushi.com/" target="_blank" class="more">更多</a>
+                        </div>
+                        <ul class="col-news-list">
+                            @Html.Raw(Model.PicArticle)
+                        </ul>
+                    </div>
+                    <div style="margin-top: 22px;">
+                        <!-- 广告位：【A01-03】 -->
+                        <script>
+                            (function() {
+                                var s = "_" + Math.random().toString(36).slice(2);
+                                document.write('<div id="' + s + '"></div>');
+                                (window.slotbydup = window.slotbydup || []).push({
+                                    id: '5296136',
+                                    container: s,
+                                    size: '300,250',
+                                    display: 'inlay-fix'
+                                });
+                            })();
+                        </script>
+                    </div>
+                </div>
+            </div>
+            <div class="area-news clearfix">
+                <div class="fl col-lm">
+                    <div class="channel-nav clearfix">
+                        <div class="fl rem-nav">
+                            <a href="@Url.Content("~/info/2.html")" target="_blank" class="current">新闻</a>
+                            <a href="@Url.Content("~/info/2-5.html")" target="_blank">民生</a>
+                            <a href="@Url.Content("~/info/2-11.html")" target="_blank">文娱</a>
+                        </div>
+                        <div class="fr other-nav">
+                            <a href="@Url.Content("~/info/2-12.html")" target="_blank">教育</a>
+                            <a href="@Url.Content("~/info/2-13.html")" target="_blank">房产</a>
+                            <a href="@Url.Content("~/info/2-14.html")" target="_blank">交通</a>
+                            <a href="@Url.Content("~/info/2-170.html")" target="_blank">体育</a>
+                        </div>
+                    </div>
+                    <div class="clearfix">
+                        @Html.Raw(Model.XinWen)
+                    </div>
+                    <div style="margin-top: 30px;">
+                        <!-- 广告位：【A01-06】 -->
+                        <script>
+                            (function() {
+                                var s = "_" + Math.random().toString(36).slice(2);
+                                document.write('<div id="' + s + '"></div>');
+                                (window.slotbydup = window.slotbydup || []).push({
+                                    id: '5296148',
+                                    container: s,
+                                    size: '860,125',
+                                    display: 'inlay-fix'
+                                });
+                            })();
+                        </script>
+                    </div>
+                </div>
+                <div class="fr col-r">
+                    <div class="channel-small-nav">
+                        <div class="nav-title">
+                            <span><a href="@Url.Content("~/info/2-9.html")" target="_blank">社会</a></span>
+                            <a href="@Url.Content("~/info/2-9.html")" target="_blank" class="more">更多</a>
+                        </div>
+                        <ul class="col-news-list">
+                            @Html.Raw(Model.SheHui)
+                        </ul>
+                    </div>
+                    <div style="margin-top: 25px;">
+                        <!-- 广告位：【A01-05】 -->
+                        <script>
+                            (function() {
+                                var s = "_" + Math.random().toString(36).slice(2);
+                                document.write('<div id="' + s + '"></div>');
+                                (window.slotbydup = window.slotbydup || []).push({
+                                    id: '5296146',
+                                    container: s,
+                                    size: '300,250',
+                                    display: 'inlay-fix'
+                                });
+                            })();
+                        </script>
+                    </div>
+                </div>
+            </div>
+            <div class="area-news area-keji-news clearfix">
+                <div class="fl col-lm">
+                    <div class="channel-nav clearfix">
+                        <div class="fl rem-nav">
+                            <a href="@Url.Content("~/info/113.html")" target="_blank" class="current">科技</a>
+                            <a href="@Url.Content("~/info/113-140.html")" target="_blank">曝光</a>
+                            <a href="@Url.Content("~/info/113-139.html")" target="_blank">IT业界</a>
+                        </div>
+                        <div class="fr other-nav">
+                            <a href="@Url.Content("~/info/113-190.html")" target="_blank">视界</a>
+                            <a href="@Url.Content("~/info/113-114.html")" target="_blank">法治</a>
+                            <a href="@Url.Content("~/info/113-117.html")" target="_blank">军事</a>
+                            <a href="@Url.Content("~/info/113-138.html")" target="_blank">互联网</a>
+                        </div>
+                    </div>
+                    <div class="clearfix">
+                        @Html.Raw(Model.KeJi)
+                    </div>
+
+                </div>
+                <div class="fr col-r">
+                    <div class="channel-small-nav">
+                        <div class="nav-title">
+                            <span><a href="@Url.Content("~/info/113-189.html")" target="_blank">电商</a></span>
+                            <a href="@Url.Content("~/info/113-189.html")" target="_blank" class="more">更多</a>
+                        </div>
+                        <ul class="col-news-list">
+                            @Html.Raw(Model.DianShang)
+                        </ul>
+                    </div>
+                    <div style="margin-top: 21px;">
+                        <!-- 广告位：【A01-07】 -->
+                        <script>
+                            (function() {
+                                var s = "_" + Math.random().toString(36).slice(2);
+                                document.write('<div id="' + s + '"></div>');
+                                (window.slotbydup = window.slotbydup || []).push({
+                                    id: '5296152',
+                                    container: s,
+                                    size: '300,250',
+                                    display: 'inlay-fix'
+                                });
+                            })();
+                        </script>
+                    </div>
+                </div>
+            </div>
+
+            @*<div style="margin-top: 32px;">
+                    <!-- 广告位：【A01-08】 -->
+                    <script>
+                        (function() {
+                            var s = "_" + Math.random().toString(36).slice(2);
+                            document.write('<div id="' + s + '"></div>');
+                            (window.slotbydup = window.slotbydup || []).push({
+                                id: '5296154',
+                                container: s,
+                                size: '1200,125',
+                                display: 'inlay-fix'
+                            });
+                        })();
+                    </script>
+                </div>*@
+            <div class="area-news area-yule-news clearfix">
+                <div class="fl col-lm">
+                    <div class="channel-nav clearfix">
+                        <div class="fl rem-nav">
+                            <a href="@Url.Content("~/info/4.html")" target="_blank" class="current">娱乐</a>
+                            <a href="@Url.Content("~/info/4-21.html")" target="_blank">八卦</a>
+                            <a href="@Url.Content("~/info/4-23.html")" target="_blank">影视</a>
+                        </div>
+                        <div class="fr other-nav">
+                            <a href="@Url.Content("~/info/4-111.html")" target="_blank">综艺</a>
+                            <a href="@Url.Content("~/info/4-112.html")" target="_blank">音乐</a>
+                            <a href="@Url.Content("~/info/4-22.html")" target="_blank">测试</a>
+                            <a href="@Url.Content("~/info/4-126.html")" target="_blank">星座</a>
+                        </div>
+                    </div>
+                    <div class="clearfix">
+                        @Html.Raw(Model.YuLe)
+                    </div>
+                    <div style="margin-top: 25px;">
+                        <!-- 广告位：【A01-10】 -->
+                        <script>
+                            (function() {
+                                var s = "_" + Math.random().toString(36).slice(2);
+                                document.write('<div id="' + s + '"></div>');
+                                (window.slotbydup = window.slotbydup || []).push({
+                                    id: '5296158',
+                                    container: s,
+                                    size: '860,125',
+                                    display: 'inlay-fix'
+                                });
+                            })();
+                        </script>
+                    </div>
+                </div>
+                <div class="fr col-r">
+                    <div class="channel-small-nav">
+                        <div class="nav-title">
+                            <span><a href="@Url.Content("~/info/4-110.html")" target="_blank">电视</a></span>
+                            <a href="@Url.Content("~/info/4-110.html")" target="_blank" class="more">更多</a>
+                        </div>
+                        <ul class="col-news-list">
+                            @Html.Raw(Model.DianShi)
+                        </ul>
+                    </div>
+                    <div style="margin-top: 20px;">
+                        <!-- 广告位：【A01-09】 -->
+                        <script>
+                            (function() {
+                                var s = "_" + Math.random().toString(36).slice(2);
+                                document.write('<div id="' + s + '"></div>');
+                                (window.slotbydup = window.slotbydup || []).push({
+                                    id: '5296156',
+                                    container: s,
+                                    size: '300,250',
+                                    display: 'inlay-fix'
+                                });
+                            })();
+                        </script>
+                    </div>
+
+                </div>
+            </div>
+            <div class="area-news area-healthy-news clearfix">
+                <div class="fl col-lm">
+                    <div class="channel-nav clearfix">
+                        <div class="fl rem-nav">
+                            <a href="@Url.Content("~/info/142.html")" target="_blank" class="current">健康</a>
+                            <a href="@Url.Content("~/info/142-145.html")" target="_blank">中医</a>
+                            <a href="@Url.Content("~/info/142-143.html")" target="_blank">饮食</a>
+                        </div>
+                        <div class="fr other-nav">
+                            <a href="@Url.Content("~/info/142-148.html")" target="_blank">疾病</a>
+                            <a href="@Url.Content("~/info/142-147.html")" target="_blank">运动</a>
+                            <a href="@Url.Content("~/info/142-146.html")" target="_blank">心理</a>
+                            <a href="@Url.Content("~/info/142-198.html")" target="_blank">百科</a>
+                        </div>
+                    </div>
+                    <div class="clearfix">
+                        @Html.Raw(Model.JianKang)
+                    </div>
+                    @*<div style="margin-top: 29px;">
+                            <!-- 广告位：【A01-12】 -->
+                            <script>
+                                (function() {
+                                    var s = "_" + Math.random().toString(36).slice(2);
+                                    document.write('<div id="' + s + '"></div>');
+                                    (window.slotbydup = window.slotbydup || []).push({
+                                        id: '5296163',
+                                        container: s,
+                                        size: '860,125',
+                                        display: 'inlay-fix'
+                                    });
+                                })();
+                            </script>
+                        </div>*@
+                </div>
+                <div class="fr col-r">
+                    <div class="channel-small-nav">
+                        <div class="nav-title">
+                            <span><a href="@Url.Content("~/info/142-144.html")" target="_blank">保健</a></span>
+                            <a href="@Url.Content("~/info/142-1144.html")" target="_blank" class="more">更多</a>
+                        </div>
+                        <ul class="col-news-list">
+                            @Html.Raw(Model.BaoJian)
+                        </ul>
+                    </div>
+                    @*<div style="margin-top: 24px;">
+                            <!-- 广告位：【A01-11】 -->
+                            <script>
+                                (function() {
+                                    var s = "_" + Math.random().toString(36).slice(2);
+                                    document.write('<div id="' + s + '"></div>');
+                                    (window.slotbydup = window.slotbydup || []).push({
+                                        id: '5296161',
+                                        container: s,
+                                        size: '300,250',
+                                        display: 'inlay-fix'
+                                    });
+                                })();
+                            </script>
+                        </div> *@
+                </div>
+            </div>
+            <div class="area-news area-fashion-news clearfix">
+                <div class="fl col-lm">
+                    <div class="channel-nav clearfix">
+                        <div class="fl rem-nav">
+                            <a href="@Url.Content("~/info/207.html")" target="_blank" class="current">汽车</a>
+                            <a href="@Url.Content("~/info/207-208.html")" target="_blank">新车</a>
+                            <a href="@Url.Content("~/info/207-209.html")" target="_blank">试驾</a>
+                        </div>
+                        <div class="fr other-nav">
+                            <a href="@Url.Content("~/info/207-211.html")" target="_blank">行业</a>
+                            <a href="@Url.Content("~/info/207-212.html")" target="_blank">导购</a>
+                        </div>
+                    </div>
+                    <div class="clearfix">
+                        @Html.Raw(Model.QiChe)
+                    </div>
+                    <div style="margin-top: 28px;">
+                        <!-- 广告位：【A01-14】 -->
+                        <script>
+                            (function() {
+                                var s = "_" + Math.random().toString(36).slice(2);
+                                document.write('<div id="' + s + '"></div>');
+                                (window.slotbydup = window.slotbydup || []).push({
+                                    id: '5296169',
+                                    container: s,
+                                    size: '860,125',
+                                    display: 'inlay-fix'
+                                });
+                            })();
+                        </script>
+                    </div>
+                </div>
+                <div class="fr col-r">
+                    <div style="margin-bottom: 23px;">
+                        <!-- 广告位：【A01-13】 -->
+                        <script>
+                            (function() {
+                                var s = "_" + Math.random().toString(36).slice(2);
+                                document.write('<div id="' + s + '"></div>');
+                                (window.slotbydup = window.slotbydup || []).push({
+                                    id: '5296166',
+                                    container: s,
+                                    size: '300,250',
+                                    display: 'inlay-fix'
+                                });
+                            })();
+                        </script>
+                    </div>
+                    <div class="channel-small-nav">
+                        <div class="nav-title">
+                            <span><a href="@Url.Content("~/info/207-210.html")" target="_blank">用车</a></span>
+                            <a href="@Url.Content("~/info/207-210.html")" target="_blank" class="more">更多</a>
+                        </div>
+                        <ul class="col-news-list">
+                            @Html.Raw(Model.YongChe)
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="area-news area-fangchan-news clearfix">
+                <div class="fl col-lm">
+                    <div class="channel-nav clearfix">
+                        <div class="fl rem-nav">
+                            <a href="http://hangzhou.fangtoo.com/" target="_blank" class="current">房产</a>
+                            <a href="http://hangzhou.fangtoo.com/zixun/info/5.html" target="_blank">知识</a>
+                            <a href="http://hangzhou.fangtoo.com/zixun/info/6.html" target="_blank">装修</a>
+                        </div>
+                        <div class="fr other-nav">
+                            <a href="http://hangzhou.fangtoo.com/zixun/info/1.html" target="_blank">新闻</a>
+                            <a href="http://hangzhou.fangtoo.com/es/" target="_blank">房源</a>
+                            <a href="http://hangzhou.fangtoo.com/zixun/info/3.html" target="_blank">地产</a>
+                            <a href="http://hangzhou.fangtoo.com/renwu/" target="_blank">人物</a>
+                        </div>
+                    </div>
+                    <div class="clearfix">
+                        @Html.Raw(Model.FangChanZixun)
+                    </div>
+                </div>
+                <div class="fr col-r">
+                    <div class="channel-small-nav">
+                        <div class="nav-title">
+                            <span><a href="http://hangzhou.fangtoo.com/zixun/info/7.html" target="_blank">案例</a></span>
+                            <a href="http://hangzhou.fangtoo.com/zixun/info/7.html" target="_blank" class="more">更多</a>
+                        </div>
+                        <ul class="col-news-list">
+                            @Html.Raw(Model.AnLi)
+                        </ul>
+                    </div>
+                    <div style="margin-top: 18px;">
+                        <!-- 广告位：【A01-15】 -->
+                        <script>
+                            (function() {
+                                var s = "_" + Math.random().toString(36).slice(2);
+                                document.write('<div id="' + s + '"></div>');
+                                (window.slotbydup = window.slotbydup || []).push({
+                                    id: '5296171',
+                                    container: s,
+                                    size: '300,250',
+                                    display: 'inlay-fix'
+                                });
+                            })();
+                        </script>
+                    </div>
+                </div>
+            </div>
+            @*<div style="margin-top: 32px;">
+                    <!-- 广告位：【A01-16】 -->
+                    <script>
+                        (function() {
+                            var s = "_" + Math.random().toString(36).slice(2);
+                            document.write('<div id="' + s + '"></div>');
+                            (window.slotbydup = window.slotbydup || []).push({
+                                id: '5296175',
+                                container: s,
+                                size: '1200,125',
+                                display: 'inlay-fix'
+                            });
+                        })();
+                    </script>
+                </div>*@
+            <div class="area-news clearfix">
+                <div class="fl col-lm">
+                    <div class="clearfix">
+                        <div class="fl w380">
+                            @*<div class="other-news other-caijing-news">
+                                    <div class="other-channel-nav">
+                                        <a href="http://caijing.edushi.com/" target="_blank">财经</a>
+                                    </div>
+                                    <ul class="other-news-list">
+                                        @Html.Raw(Model.CaiJing)
+                                    </ul>
+                                </div>*@
+                            <div class="other-news">@*mt30*@
+                                <div class="other-channel-nav">
+                                    <a href="@Url.Content("~/info/1.html")" target="_blank">集萃</a>
+                                </div>
+                                <ul class="other-news-list">
+                                    @Html.Raw(Model.JiCui)
+                                </ul>
+                            </div>
+
+                            <div class="other-news other-qile-news mt30">
+                                <div class="other-channel-nav">
+                                    <a href="@Url.Content("~/info/119.html")" target="_blank">奇乐</a>
+                                </div>
+                                <ul class="other-news-list">
+                                    @Html.Raw(Model.QiLe)
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="fr w440">
+                            @*<div class="other-text-news other-car-news">
+                                    <div class="other-channel-nav">
+                                        <a href="@Url.Content("~/info/83.html")" target="_blank">时尚</a>
+                                    </div>
+                                    <ul class="other-news-list">
+                                        @Html.Raw(Model.ShiShang)
+                                    </ul>
+                                </div>*@
+                            <div class="other-text-news other-history-news">@*mt30*@
+                                <div class="other-channel-nav">
+                                    <a href="@Url.Content("~/info/149.html")" target="_blank">历史</a>
+                                </div>
+                                <ul class="other-news-list">
+                                    @Html.Raw(Model.LiShi)
+                                </ul>
+                            </div>
+                            <div class="other-text-news other-game-news mt30">
+                                <div class="other-channel-nav">
+                                    <a href="@Url.Content("~/info/161.html")" target="_blank">游戏</a>
+                                </div>
+                                <ul class="other-news-list">
+                                    @Html.Raw(Model.YouXi)
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div style="margin-top: 29px;">
+                        <!-- 广告位：【A01-20】 -->
+                        <script>
+                            (function() {
+                                var s = "_" + Math.random().toString(36).slice(2);
+                                document.write('<div id="' + s + '"></div>');
+                                (window.slotbydup = window.slotbydup || []).push({
+                                    id: '5296184',
+                                    container: s,
+                                    size: '860,125',
+                                    display: 'inlay-fix'
+                                });
+                            })();
+                        </script>
+                    </div>
+                </div>
+                <div class="fr col-r">
+                    @*<div>
+                            <!-- 广告位：【A01-17】 -->
+                            <script>
+                                (function() {
+                                    var s = "_" + Math.random().toString(36).slice(2);
+                                    document.write('<div id="' + s + '"></div>');
+                                    (window.slotbydup = window.slotbydup || []).push({
+                                        id: '5296177',
+                                        container: s,
+                                        size: '300,250',
+                                        display: 'inlay-fix'
+                                    });
+                                })();
+                            </script>
+                        </div>
+                        <div style="margin-bottom: 44px;">
+                            <!-- 广告位：【A01-18】 -->
+                            <script>
+                                (function() {
+                                    var s = "_" + Math.random().toString(36).slice(2);
+                                    document.write('<div id="' + s + '"></div>');
+                                    (window.slotbydup = window.slotbydup || []).push({
+                                        id: '5296180',
+                                        container: s,
+                                        size: '300,150',
+                                        display: 'inlay-fix'
+                                    });
+                                })();
+                            </script>
+                        </div>*@
+                    <div class="channel-small-nav">
+                        <div class="nav-title">
+                            <span><a href="@Url.Content("~/info/6.html")" target="_blank">体育</a></span>
+                            <a href="@Url.Content("~/info/6.html")" target="_blank" class="more">更多</a>
+                        </div>
+                        <ul class="col-news-list">
+                            @Html.Raw(Model.TiYu)
+                        </ul>
+                    </div>
+                    <div style="margin-top: 22px;">
+                        <!-- 广告位：【A01-19】 -->
+                        <script>
+                            (function() {
+                                var s = "_" + Math.random().toString(36).slice(2);
+                                document.write('<div id="' + s + '"></div>');
+                                (window.slotbydup = window.slotbydup || []).push({
+                                    id: '5296182',
+                                    container: s,
+                                    size: '300,250',
+                                    display: 'inlay-fix'
+                                });
+                            })();
+                        </script>
+                    </div>
+                    <div class="channel-small-nav mt24">
+                        <div class="nav-title">
+                            <span><a href="@Url.Content("~/info/215.html")" target="_blank">教育</a></span>
+                            <a href="@Url.Content("~/info/215.html")" target="_blank" class="more">更多</a>
+                        </div>
+                        <ul class="col-news-list">
+                            @Html.Raw(Model.JiaoYu)
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="area-news clearfix">
+                <div class="fl col-lm">
+                    <div class="fl w380">
+                        <div class="other-news other-qinggan-news">
+                            <div class="other-channel-nav">
+                                <a href="@Url.Content("~/info/27.html")" target="_blank">情感</a>
+                            </div>
+                            <ul class="other-news-list">
+                                @Html.Raw(Model.QingGan)
+                            </ul>
+                        </div>
+                        <div class="other-news other-tongchen-news mt30">
+                            <div class="other-channel-nav">
+                                <a href="@Url.Content("~/info/3.html")" target="_blank">休闲</a>
+                            </div>
+                            <ul class="other-news-list">
+                                @Html.Raw(Model.XiuXian)
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="fr w440">
+                        <div class="other-text-news other-qinzi-news">
+                            <div class="other-channel-nav">
+                                <a href="@Url.Content("~/info/19.html")" target="_blank">亲子</a>
+                            </div>
+                            <ul class="other-news-list">
+                                @Html.Raw(Model.QinZi)
+                            </ul>
+                        </div>
+                        <div class="other-text-news other-bdt-news mt30">
+                            <div class="other-channel-nav">
+                                <a href="http://wenda.edushi.com/" target="_blank">问答</a>
+                            </div>
+                            <ul class="other-news-list">
+                                @Html.Raw(Model.NewQuestions)
+                            </ul>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="fr col-r">
+                    <div style="margin-bottom: 21px;">
+                        <!-- 广告位：【A01-21】 -->
+                        <script>
+                            (function() {
+                                var s = "_" + Math.random().toString(36).slice(2);
+                                document.write('<div id="' + s + '"></div>');
+                                (window.slotbydup = window.slotbydup || []).push({
+                                    id: '5296186',
+                                    container: s,
+                                    size: '300,250',
+                                    display: 'inlay-fix'
+                                });
+                            })();
+                        </script>
+                    </div>
+                    <div style="margin-bottom: 22px;">
+                        <!-- 广告位：【A01-22】 -->
+                        <script>
+                            (function() {
+                                var s = "_" + Math.random().toString(36).slice(2);
+                                document.write('<div id="' + s + '"></div>');
+                                (window.slotbydup = window.slotbydup || []).push({
+                                    id: '5296188',
+                                    container: s,
+                                    size: '300,250',
+                                    display: 'inlay-fix'
+                                });
+                            })();
+                        </script>
+                    </div>
+                    <div class="channel-small-nav channel-shouyou">
+                        <div class="nav-title">
+                            <span><a href="@Url.Content("~/info/104.html")" target="_blank">旅游</a></span>
+                            <a href="@Url.Content("~/info/104.html")" target="_blank" class="more">更多</a>
+                        </div>
+                        <ul class="col-news-list">
+                            @Html.Raw(Model.LvYou)
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <!--read_data：@Model.read_data_time-->      
+    @*<div style="margin-top: 30px;">
+                    <!-- 广告位：【A01-23】 -->
+                    <script>
+                        (function() {
+                            var s = "_" + Math.random().toString(36).slice(2);
+                            document.write('<div id="' + s + '"></div>');
+                            (window.slotbydup = window.slotbydup || []).push({
+                                id: '5296243',
+                                container: s,
+                                size: '1200,125',
+                                display: 'inlay-fix'
+                            });
+                        })();
+                    </script>
+                </div>  *@
+  
+                
+    </div>
+ </div>
+        @{Html.RenderAction("IndexFooter", "Home");}
+
+        <script src="@Url.Content("~/asset/js/slide.js")"></script>
+        <script type="text/javascript">
+            $(function () {
+                slide($(".slide"), $(".slide-prev"), $(".slide-next"), $(".slide-btn"), "on");
+
+                //专题新闻左右滑动
+                var scrollBox = $(".zt-text-list .slide-scroll");
+                var len = scrollBox.find("ul").length;
+                var sWidth = scrollBox.find("ul").width();
+                var ztBtn = "";
+                scrollBox.css({ "width": sWidth * len });
+                for (var i = 0; i < len; i++) {
+                    ztBtn += "<span></span>";
+                }
+                $(".zt-btn").append(ztBtn);
+                $(".zt-btn span").eq(0).addClass("on");
+                $(".zt-btn span").hover(function () {
+                    var _index = $(this).index();
+                    $(this).addClass("on").siblings().removeClass("on");
+                    scrollBox.animate({ "left": -_index * sWidth }, 300);
+                });
+
+                //头条推荐tab切换
+                //$(".tab-main").find(".tab-body:first").show();
+                $(".tab-nav span").hover(function () {
+                    var _index = $(this).index();
+                    $(this).addClass("current").siblings().removeClass("current");
+                    $(".tab-main").find(".tab-body").eq(_index).show().siblings().hide();
+                });
+            });
+        </script>

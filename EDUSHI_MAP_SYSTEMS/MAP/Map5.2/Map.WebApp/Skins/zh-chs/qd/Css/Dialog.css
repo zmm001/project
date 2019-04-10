@@ -1,0 +1,42 @@
+﻿@import url(Common.css);
+
+/*纠错*/
+.PinIco{
+    width:35px; height:34px;
+    /*---- IE6 png bug ----*/
+    background:url('../Images/PinIco.png') !important;
+	background:none;
+	filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../Images/PinIco.png',sizingMethod='image') !important;
+}
+.DebugNav{position:relative;width:300px; height:190px; overflow:hidden;}
+.DebugBg{
+    width:300px; height:206px;
+    /*---- IE6 png bug ----*/
+    background:url('../Images/DebugBg.png') !important;
+	background:none;
+	filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../Images/DebugBg.png',sizingMethod='image') !important;}
+.DebugCon{position:absolute; top:0; left:0;width:280px; height:180px; padding:5px 11px 5px 9px;}
+.DebugCon h3{font-size:14px; padding:0 0 0 16px; margin:0 0 3px; height:23px; line-height:23px; background:url(../Images/UnError.gif) no-repeat left 3px;}
+
+.CloseWin,.CloseBtnOver,.CloseBtnOut{position:absolute; top:8px; right:15px; cursor:hand; width:13px; height:13px; overflow:hidden;background:url(../Images/CloseBtn.gif) no-repeat left top;}
+.CloseBtnOver{background-position:left -13px;}
+
+table.MissTable{width:280px;}
+table.MissTable tr th{width:50px;font-weight:normal;text-align:right;}
+
+/*纠错登录*/
+.MinLogin{margin:8px 8px 0 5px;border:1px solid #FFDD99;background-color: #FFF9ED; padding:5px; text-align:center;}
+.P{padding:4px 0; text-align:center;}
+
+.ReDebugNav{position:relative;width:300px; height:120px; overflow:hidden;}
+.ReDebugNav .DebugBg{
+    height:120px;
+    /*---- IE6 png bug ----*/
+    background:url('../Images/ReDebugBg.png') !important;
+	filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../Images/ReDebugBg.png',sizingMethod='image') !important;}
+.ReDebugNav .DebugCon{height:120px;}
+
+/*到这里*/
+#ToHereNav,#FormHearNav{height:auto; width:300px;overflow-y:auto;overflow-x:hidden;}
+#ToHereNav span,#FormHearNav span{float:left; display:block; margin-right:3px;}
+input.InFieldSty{ width:200px; height:17px;}

@@ -1,0 +1,11 @@
+E:\TFS192.168.100.212\EDUSHI_DATA_CENTER\EdushiDataCenter\v4.0.vs2013\EdushiDataCenterSolution\Edushi.XiaoShuo\bin\Debug\Edushi.XiaoShuo.dll
+E:\TFS192.168.100.212\EDUSHI_DATA_CENTER\EdushiDataCenter\v4.0.vs2013\EdushiDataCenterSolution\Edushi.XiaoShuo\bin\Debug\Edushi.XiaoShuo.pdb
+E:\TFS192.168.100.212\EDUSHI_DATA_CENTER\EdushiDataCenter\v4.0.vs2013\EdushiDataCenterSolution\Edushi.XiaoShuo\bin\Debug\Edushi.MongoDB_2115.dll
+E:\TFS192.168.100.212\EDUSHI_DATA_CENTER\EdushiDataCenter\v4.0.vs2013\EdushiDataCenterSolution\Edushi.XiaoShuo\bin\Debug\Framework.dll
+E:\TFS192.168.100.212\EDUSHI_DATA_CENTER\EdushiDataCenter\v4.0.vs2013\EdushiDataCenterSolution\Edushi.XiaoShuo\bin\Debug\MongoDB.Bson.dll
+E:\TFS192.168.100.212\EDUSHI_DATA_CENTER\EdushiDataCenter\v4.0.vs2013\EdushiDataCenterSolution\Edushi.XiaoShuo\bin\Debug\MongoDB.Driver.Core.dll
+E:\TFS192.168.100.212\EDUSHI_DATA_CENTER\EdushiDataCenter\v4.0.vs2013\EdushiDataCenterSolution\Edushi.XiaoShuo\bin\Debug\MongoDB.Driver.dll
+E:\TFS192.168.100.212\EDUSHI_DATA_CENTER\EdushiDataCenter\v4.0.vs2013\EdushiDataCenterSolution\Edushi.XiaoShuo\bin\Debug\Edushi.MongoDB_2115.pdb
+E:\TFS192.168.100.212\EDUSHI_DATA_CENTER\EdushiDataCenter\v4.0.vs2013\EdushiDataCenterSolution\Edushi.XiaoShuo\obj\Debug\Edushi.XiaoShuo.csprojResolveAssemblyReference.cache
+E:\TFS192.168.100.212\EDUSHI_DATA_CENTER\EdushiDataCenter\v4.0.vs2013\EdushiDataCenterSolution\Edushi.XiaoShuo\obj\Debug\Edushi.XiaoShuo.dll
+E:\TFS192.168.100.212\EDUSHI_DATA_CENTER\EdushiDataCenter\v4.0.vs2013\EdushiDataCenterSolution\Edushi.XiaoShuo\obj\Debug\Edushi.XiaoShuo.pdb

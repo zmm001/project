@@ -1,0 +1,456 @@
+﻿<Project ToolsVersion="3.5" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{CB382AC3-816A-4312-94AB-0317610E78CB}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Map.Plugins.DigCowry</RootNamespace>
+    <AssemblyName>Map.Plugins.DigCowry</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AspNetPager, Version=6.0.0.0, Culture=neutral, PublicKeyToken=fb0a0fe055d40fd4, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\EDUSHI_CM_LIBRARY\Assembly_Library\Assembly_Library\AspNetPager.dll</HintPath>
+    </Reference>
+    <Reference Include="EDC.Framework, Version=3.0.1.708, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Lib\EDC.Framework.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Web.Extensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Web.Mobile" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="account.aspx.cs">
+      <DependentUpon>account.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="account.aspx.designer.cs">
+      <DependentUpon>account.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="BasePage.Master.cs">
+      <DependentUpon>BasePage.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="BasePage.Master.designer.cs">
+      <DependentUpon>BasePage.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DigCowryPageBase.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DigHeroJIT.aspx.cs">
+      <DependentUpon>DigHeroJIT.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DigHeroJIT.aspx.designer.cs">
+      <DependentUpon>DigHeroJIT.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DigHeroList.aspx.cs">
+      <DependentUpon>DigHeroList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DigHeroList.aspx.designer.cs">
+      <DependentUpon>DigHeroList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DigHeroNow.aspx.cs">
+      <DependentUpon>DigHeroNow.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DigHeroNow.aspx.designer.cs">
+      <DependentUpon>DigHeroNow.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Explain.aspx.cs">
+      <DependentUpon>Explain.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Explain.aspx.designer.cs">
+      <DependentUpon>Explain.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GoTrophyDetailURL.aspx.cs">
+      <DependentUpon>GoTrophyDetailURL.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GoTrophyDetailURL.aspx.designer.cs">
+      <DependentUpon>GoTrophyDetailURL.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="lingjiang.aspx.cs">
+      <DependentUpon>lingjiang.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="lingjiang.aspx.designer.cs">
+      <DependentUpon>lingjiang.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="mail.aspx.cs">
+      <DependentUpon>mail.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="mail.aspx.designer.cs">
+      <DependentUpon>mail.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="more.aspx.cs">
+      <DependentUpon>more.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="more.aspx.designer.cs">
+      <DependentUpon>more.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Transmit.aspx.cs">
+      <DependentUpon>Transmit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Transmit.aspx.designer.cs">
+      <DependentUpon>Transmit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="TrophyList.aspx.cs">
+      <DependentUpon>TrophyList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="TrophyList.aspx.designer.cs">
+      <DependentUpon>TrophyList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="TrophyToDay4PageCard.aspx.cs">
+      <DependentUpon>TrophyToDay4PageCard.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="TrophyToDay4PageCard.aspx.designer.cs">
+      <DependentUpon>TrophyToDay4PageCard.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\DigHeroSurvey.ascx.cs">
+      <DependentUpon>DigHeroSurvey.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\DigHeroSurvey.ascx.designer.cs">
+      <DependentUpon>DigHeroSurvey.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UserControls\SponsorsControls.ascx.cs">
+      <DependentUpon>SponsorsControls.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\SponsorsControls.ascx.designer.cs">
+      <DependentUpon>SponsorsControls.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\TitleSponsor.ascx.cs">
+      <DependentUpon>TitleSponsor.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\TitleSponsor.ascx.designer.cs">
+      <DependentUpon>TitleSponsor.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\TransmitSurvey.ascx.cs">
+      <DependentUpon>TransmitSurvey.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\TransmitSurvey.ascx.designer.cs">
+      <DependentUpon>TransmitSurvey.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\TrophyListSurvey.ascx.cs">
+      <DependentUpon>TrophyListSurvey.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\TrophyListSurvey.ascx.designer.cs">
+      <DependentUpon>TrophyListSurvey.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="DigCowryControlBase.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="wqhg.aspx.cs">
+      <DependentUpon>wqhg.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="wqhg.aspx.designer.cs">
+      <DependentUpon>wqhg.aspx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="account.aspx" />
+    <Content Include="css\basic.css" />
+    <Content Include="Default.aspx" />
+    <Content Include="DigHeroJIT.aspx" />
+    <Content Include="DigHeroList.aspx" />
+    <Content Include="DigHeroNow.aspx" />
+    <Content Include="DLL\EDC.Framework.dll" />
+    <Content Include="Explain.aspx" />
+    <Content Include="GoTrophyDetailURL.aspx" />
+    <Content Include="images\bj1.png" />
+    <Content Include="images\bj2.png" />
+    <Content Include="images\blank.gif" />
+    <Content Include="images\gms.gif" />
+    <Content Include="images\h2bj_03.gif" />
+    <Content Include="images\h2bj_04.gif" />
+    <Content Include="images\hd_03.gif" />
+    <Content Include="images\hd_06.gif" />
+    <Content Include="images\hd_07.gif" />
+    <Content Include="images\hd_09.gif" />
+    <Content Include="images\hd_11.gif" />
+    <Content Include="images\hd_13.gif" />
+    <Content Include="images\hd_15.gif" />
+    <Content Include="images\hd_17.gif" />
+    <Content Include="images\hd_19.gif" />
+    <Content Include="images\hd_21.gif" />
+    <Content Include="images\hd_32.gif" />
+    <Content Include="images\hd_36.gif" />
+    <Content Include="images\hd_37.gif" />
+    <Content Include="images\hd_40.gif" />
+    <Content Include="images\hd_44.gif" />
+    <Content Include="images\hd_46.gif" />
+    <Content Include="images\hd_48.gif" />
+    <Content Include="images\hd_50.gif" />
+    <Content Include="images\hd_52.gif" />
+    <Content Include="images\hd_n_03.gif" />
+    <Content Include="images\hd_n_05.gif" />
+    <Content Include="images\hd_n_09.gif" />
+    <Content Include="images\hd_n_13.gif" />
+    <Content Include="images\hd_n_17.gif" />
+    <Content Include="images\ico.png" />
+    <Content Include="images\lc.png" />
+    <Content Include="images\zp.png" />
+    <Content Include="images_bak\baobei1.jpg" />
+    <Content Include="images_bak\baobei2.jpg" />
+    <Content Include="images_bak\DSCN1860.jpg" />
+    <Content Include="images_bak\DSCN1861.jpg" />
+    <Content Include="images_bak\DSCN1862.jpg" />
+    <Content Include="images_bak\DSCN1863.jpg" />
+    <Content Include="images_bak\DSCN1864.jpg" />
+    <Content Include="images_bak\DSCN1865.jpg" />
+    <Content Include="images_bak\DSCN1866.jpg" />
+    <Content Include="images_bak\DSCN1867.jpg" />
+    <Content Include="images_bak\DSCN1868.jpg" />
+    <Content Include="images_bak\DSCN1901.jpg" />
+    <Content Include="images_bak\DSCN1902.jpg" />
+    <Content Include="images_bak\DSCN1903.jpg" />
+    <Content Include="images_bak\DSCN1904.jpg" />
+    <Content Include="images_bak\DSCN1905.jpg" />
+    <Content Include="images_bak\DSCN1906.jpg" />
+    <Content Include="images_bak\DSCN1908.jpg" />
+    <Content Include="images_bak\DSCN1909.jpg" />
+    <Content Include="images_bak\zzs_1.jpg" />
+    <Content Include="innerdiv.js" />
+    <Content Include="js\iepngfix.htc" />
+    <Content Include="js\iepngfix_tilebg.js" />
+    <Content Include="js\Utility.js" />
+    <Content Include="mail.aspx" />
+    <Content Include="images_bak\5151tv.gif" />
+    <Content Include="images_bak\88X31.jpg" />
+    <Content Include="images_bak\a010-011-1.gif" />
+    <Content Include="images_bak\a010-011.jpg" />
+    <Content Include="images_bak\adv_r1_c1.jpg" />
+    <Content Include="images_bak\alg.gif" />
+    <Content Include="images_bak\banner.gif" />
+    <Content Include="images_bak\banner.jpg" />
+    <Content Include="images_bak\bookimagesa.jpg" />
+    <Content Include="images_bak\bookimagesjy.jpg" />
+    <Content Include="images_bak\bookimagessdk.jpg" />
+    <Content Include="images_bak\css.css" />
+    <Content Include="images_bak\DC_200912140422416339640456185906042970.jpg" />
+    <Content Include="images_bak\dhz.gif" />
+    <Content Include="images_bak\dslogo.gif" />
+    <Content Include="images_bak\gunTb.js" />
+    <Content Include="images_bak\gunYu.js" />
+    <Content Include="images_bak\hnLOGO.jpg" />
+    <Content Include="images_bak\ico_1.jpg" />
+    <Content Include="images_bak\ico_2.gif" />
+    <Content Include="images_bak\index_cbt.jpg" />
+    <Content Include="images_bak\index_r1_c1.jpg" />
+    <Content Include="images_bak\index_r1_c10.jpg" />
+    <Content Include="images_bak\index_r1_c7.jpg" />
+    <Content Include="images_bak\index_r3_c1.jpg" />
+    <Content Include="images_bak\index_r3_c11.jpg" />
+    <Content Include="images_bak\index_r3_c12.jpg" />
+    <Content Include="images_bak\index_r3_c2.jpg" />
+    <Content Include="images_bak\index_r3_c3.jpg" />
+    <Content Include="images_bak\index_r3_c6.jpg" />
+    <Content Include="images_bak\index_r3_c8.jpg" />
+    <Content Include="images_bak\index_r3_c9.jpg" />
+    <Content Include="images_bak\index_r4_c3.jpg" />
+    <Content Include="images_bak\index_r6_c4.jpg" />
+    <Content Include="images_bak\index_r8_c2.jpg" />
+    <Content Include="images_bak\index_r9_c1.jpg" />
+    <Content Include="images_bak\index_r9_c2.jpg" />
+    <Content Include="images_bak\jbp.gif" />
+    <Content Include="images_bak\lb.gif" />
+    <Content Include="images_bak\logo_1.jpg" />
+    <Content Include="images_bak\logo_aosk.gif" />
+    <Content Include="images_bak\logo_be.gif" />
+    <Content Include="images_bak\logo_bjys.gif" />
+    <Content Include="images_bak\logo_bzt.gif" />
+    <Content Include="images_bak\logo_df.gif" />
+    <Content Include="images_bak\logo_dhj.gif" />
+    <Content Include="images_bak\logo_dm.gif" />
+    <Content Include="images_bak\logo_f2.gif" />
+    <Content Include="images_bak\logo_hld.gif" />
+    <Content Include="images_bak\logo_home.gif" />
+    <Content Include="images_bak\logo_jjdy.gif" />
+    <Content Include="images_bak\logo_jy.gif" />
+    <Content Include="images_bak\logo_lakf.gif" />
+    <Content Include="images_bak\logo_lg.gif" />
+    <Content Include="images_bak\logo_ls.gif" />
+    <Content Include="images_bak\logo_lt.gif" />
+    <Content Include="images_bak\logo_ly.gif" />
+    <Content Include="images_bak\logo_mq.gif" />
+    <Content Include="images_bak\logo_ms.gif" />
+    <Content Include="images_bak\logo_nh.gif" />
+    <Content Include="images_bak\logo_rx.gif" />
+    <Content Include="images_bak\logo_xg.gif" />
+    <Content Include="images_bak\logo_xhpj.gif" />
+    <Content Include="images_bak\logo_xxw.gif" />
+    <Content Include="images_bak\logo_yk.gif" />
+    <Content Include="images_bak\logo_yljd.gif" />
+    <Content Include="images_bak\logo_yyyy.gif" />
+    <Content Include="images_bak\logo_zan.gif" />
+    <Content Include="images_bak\logo_zl.gif" />
+    <Content Include="images_bak\logo_zszy.gif" />
+    <Content Include="images_bak\miji.jpg" />
+    <Content Include="images_bak\mlhz.gif" />
+    <Content Include="images_bak\ms.jpg" />
+    <Content Include="images_bak\myit365.gif" />
+    <Content Include="images_bak\nei_r1_c11.jpg" />
+    <Content Include="images_bak\nei_r1_c12.jpg" />
+    <Content Include="images_bak\nei_r1_c5.jpg" />
+    <Content Include="images_bak\nei_r1_c6.jpg" />
+    <Content Include="images_bak\nei_r1_c8.jpg" />
+    <Content Include="images_bak\nei_r1_c9.jpg" />
+    <Content Include="images_bak\nei_r2_c1.jpg" />
+    <Content Include="images_bak\nei_r2_c2.jpg" />
+    <Content Include="images_bak\nei_r3_c2.jpg" />
+    <Content Include="images_bak\ny.jpg" />
+    <Content Include="images_bak\rx.jpg" />
+    <Content Include="images_bak\sf.gif" />
+    <Content Include="images_bak\shoker-com-88x31.gif" />
+    <Content Include="images_bak\slide_trigger.gif" />
+    <Content Include="images_bak\slide_trigger_c.gif" />
+    <Content Include="images_bak\title_gms.jpg" />
+    <Content Include="images_bak\title_mj.gif" />
+    <Content Include="images_bak\title_zzs.gif" />
+    <Content Include="images_bak\tx %281%29.jpg" />
+    <Content Include="images_bak\tx %282%29.jpg" />
+    <Content Include="images_bak\tx.jpg" />
+    <Content Include="images_bak\uochuang.jpg" />
+    <Content Include="images_bak\vd.jpg" />
+    <Content Include="images_bak\wb-mj.gif" />
+    <Content Include="images_bak\wb-sy.gif" />
+    <Content Include="images_bak\wy.gif" />
+    <Content Include="images_bak\xh.jpg" />
+    <Content Include="images_bak\xzcf.jpg" />
+    <Content Include="images_bak\yinxingbang.jpg" />
+    <Content Include="images_bak\yk-31.gif" />
+    <Content Include="images_bak\yklogo.jpg" />
+    <Content Include="images_bak\yszx.gif" />
+    <Content Include="images_bak\yxb.gif" />
+    <Content Include="images_bak\yyw.gif" />
+    <Content Include="images_bak\zzs_1.gif" />
+    <Content Include="images_bak\shuoming.gif" />
+    <Content Include="lingjiang.aspx" />
+    <Content Include="more.aspx" />
+    <Content Include="swf\FlaPlug.swf" />
+    <Content Include="swf\zp.swf" />
+    <Content Include="TrophyToDay4PageCard.aspx" />
+    <Content Include="UserControls\SponsorsControls.ascx" />
+    <Content Include="UserControls\TitleSponsor.ascx" />
+    <Content Include="wjhg.html" />
+    <Content Include="wqhg.aspx" />
+    <Content Include="说明.txt" />
+    <Content Include="Transmit.aspx" />
+    <Content Include="TrophyList.aspx" />
+    <Content Include="UserControls\DigHeroSurvey.ascx" />
+    <Content Include="images_bak\pic\jbp_1.jpg" />
+    <Content Include="images_bak\pic\jbp_2.jpg" />
+    <Content Include="StaticData\ZZS.xml" />
+    <Content Include="UserControls\TransmitSurvey.ascx" />
+    <Content Include="UserControls\TrophyListSurvey.ascx" />
+    <Content Include="DLL\EDC.Framework.dll.config" />
+    <Content Include="BasePage.Master" />
+    <None Include="images_bak\pic\Thumbs.db" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Map.Plugins.BLL\Map.Plugins.BLL.csproj">
+      <Project>{72D0FEC4-2577-4713-A2B1-456A069F05EC}</Project>
+      <Name>Map.Plugins.BLL</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v9.0\WebApplications\Microsoft.WebApplication.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>False</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>20576</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>
+          </IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>

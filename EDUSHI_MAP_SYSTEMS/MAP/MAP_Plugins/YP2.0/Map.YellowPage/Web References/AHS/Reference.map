@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<DiscoveryClientResultsFile xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Results>
+    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.SchemaReference" url="http://webag.edushi.com/AlaHotelService.svc?xsd=xsd0" filename="AlaHotelService.xsd" />
+    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.ContractReference" url="http://webag.edushi.com/AlaHotelService.svc?wsdl" filename="AlaHotelService.wsdl" />
+    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.DiscoveryDocumentReference" url="http://webag.edushi.com/AlaHotelService.svc?disco" filename="AlaHotelService.disco" />
+    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.SchemaReference" url="http://webag.edushi.com/AlaHotelService.svc?xsd=xsd1" filename="AlaHotelService0.xsd" />
+  </Results>
+</DiscoveryClientResultsFile>

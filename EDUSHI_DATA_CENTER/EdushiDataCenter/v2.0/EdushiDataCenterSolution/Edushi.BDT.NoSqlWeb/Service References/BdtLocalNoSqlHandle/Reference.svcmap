@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="80e0b458-7ebb-44ec-91a8-af8d51f17867" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:53968/BdtNoSqlHandle.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="BdtNoSqlHandle.xsd" MetadataType="Schema" ID="6c57528b-1682-4cd6-9c70-d1f9df63a327" SourceId="1" SourceUrl="http://localhost:53968/BdtNoSqlHandle.svc?xsd=xsd0" />
+    <MetadataFile FileName="BdtNoSqlHandle.wsdl" MetadataType="Wsdl" ID="61c75b0b-c817-4ba7-b923-9ffa16f1827c" SourceId="1" SourceUrl="http://localhost:53968/BdtNoSqlHandle.svc?wsdl" />
+    <MetadataFile FileName="BdtNoSqlHandle1.xsd" MetadataType="Schema" ID="29c949c8-8a08-431a-a316-b277308bb9db" SourceId="1" SourceUrl="http://localhost:53968/BdtNoSqlHandle.svc?xsd=xsd2" />
+    <MetadataFile FileName="BdtNoSqlHandle2.xsd" MetadataType="Schema" ID="7c19fe45-a298-4dda-b91d-af2b18f897fb" SourceId="1" SourceUrl="http://localhost:53968/BdtNoSqlHandle.svc?xsd=xsd1" />
+    <MetadataFile FileName="BdtNoSqlHandle.disco" MetadataType="Disco" ID="2d23e0b8-4f6c-4b8b-8ee7-4a1c9411ac7a" SourceId="1" SourceUrl="http://localhost:53968/BdtNoSqlHandle.svc?disco" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

@@ -1,0 +1,38 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+    <title>Google Maps JavaScript API Example</title>
+    <script src="http://maps.google.com/maps?file=api&amp;v=2&amp;key=ABQIAAAAbOi4csv3QXppUfaQy8yNyRRtal7L5TohoM5BUbtS3QfMkm7SnxRqeAzecCXF7wgDMGUrEieiwtKDUw"
+      type="text/javascript"></script>
+    <script type="text/javascript">
+    //<![CDATA[
+    function load() {
+      if (GBrowserIsCompatible()) {
+        ChangeMapWidth();
+        var map = new GMap2(document.getElementById("map"));
+        map.setCenter(new GLatLng(30.26415470607053, 120.13722538948059), 17);
+      }
+    }
+    function ChangeMapWidth()
+    {
+        var mapdiv = document.getElementById("map");
+        mapdiv.style.width = parent.MapWidth + 'px';
+        mapdiv.style.height = parent.MapHeight + 'px';
+    }
+    function lat2x(lat,lng)
+    {
+        return parseInt(277811.8159*lat+254180.2914*lng+(-38930849.15));
+    }
+    function lng2y(lat,lng)
+    {
+        return parseInt(-178020.1622*lat+160563.3858*lng+(-13879401.36));
+    }
+    //]]>
+    </script>
+  </head>
+  <body onload="load()" onunload="GUnload()" style="margin:0px; padding:0px">
+    <div id="map" style="width:1024px;height:768px"></div>
+  </body>
+</html>

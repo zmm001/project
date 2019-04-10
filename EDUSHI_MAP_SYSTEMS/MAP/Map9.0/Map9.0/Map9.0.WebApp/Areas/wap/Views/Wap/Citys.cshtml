@@ -1,0 +1,125 @@
+﻿<div id="city" style="display:none">
+    <section class="top-box">
+        <div class="top-nav clearfix">
+            <a class="fl eds-logo" href="index.html"></a>
+            <a href="/Wap" class="fl map-logo"></a>
+            <a href="/Wap/city" class="fl city">杭州</a>
+            <div class="fr">
+                <a href="/Wap" class="fl map">地图</a>
+                <a href="/Wap/line" class="fl route current">路线</a>
+            </div>
+        </div>
+    </section>
+    <section class="travel-mode">
+        <ul class="travel-tab">
+            <li class="car on"><span></span></li>
+            <li class="bus"><span></span></li>
+            <li class="walk"><span></span></li>
+        </ul>
+        <div class="line-search clearfix">
+            <div class="fl dir-exchange"></div>
+            <div class="fl line-search-form">
+                <div class="line-search-ipt">
+                    <span class="start"></span>
+                    <input type="text" id="start" name="" placeholder="输入起点" class="start-point">
+                    <span class="del-item"></span>
+                </div>
+                <div class="line-search-ipt">
+                    <span class="end"></span>
+                    <input type="text" id="end" name="" placeholder="输入终点" value="" class="end-point">
+                    <span class="del-item"></span>
+                </div>
+            </div>
+            <div class="fl dir-submit">搜索</div>
+        </div>
+    </section>
+    <script type="text/javascript">
+        $(function () {
+            @*document.writeln("<script  src='~/Areas/wap/Scripts/map.js'></script>");*@
+            // 驾车
+            //var driving = new AMap.Driving({
+            //    map: map,
+            //    panel: "panel",
+            //    policy: AMap.DrivingPolicy.LEAST_TIME
+            //});
+            // 公交
+            //var transfer = new AMap.Transfer({
+            //    map: map,
+            //    panel: "panel",
+            //    policy: AMap.TransferPolicy.LEAST_TIME
+            //});
+            //// 步行
+            //var walking = new AMap.Walking({
+            //    map: map,
+            //    panel: "panel"
+            //});
+            //终点与起点转换
+            $(".dir-exchange").click(function () {
+                var startVal = $(".start-point").val();
+                var endVal = $(".end-point").val();
+                $(".start-point").val(endVal);
+                $(".end-point").val(startVal);
+            });
+
+            $(".line-search-ipt input").keydown(function () {
+                $(this).next(".del-item").show();
+            });
+            $(".end-point").click(function () {
+                if ($(this).val()) {
+                    $(this).next(".del-item").show();
+                } else {
+                    return;
+                }
+            });
+
+            $(".line-search-ipt input").bind("input propertychange", function () {
+                var val = $(this).val();
+                if (val == "") {
+                    $(this).next(".del-item").hide();
+                }
+            });
+            $(".line-search-ipt .del-item").click(function () {
+                $(this).prev("input").val("");
+                $(this).hide();
+            });
+
+            $(".travel-tab li").click(function () {
+                $(this).addClass("on").siblings().removeClass("on");
+                if ($(".travel-tab .bus").hasClass("on")) {
+                    $(".dir-submit").click(function () {
+                        window.location.href = "/wap/Line_bus";
+                    });
+                } else if ($(".travel-tab .walk").hasClass("on")) {
+                    $(".dir-submit").click(function () {
+                        window.location.href = "/wap/Line_walk";
+                    });
+                }
+                else {
+                    $(".dir-submit").click(function () {
+                        window.location.href = "/wap/Line_drive";
+                    });
+                }
+            });
+            $(".dir-submit").click(function () {
+                var start = $('#start').val().trim();
+                var end = $('#end').val().trim();
+                if (start == '') { alert('请输入起点') } else if (end == '') { alert(alert('请输入终点')) } else {
+                    if ($(".travel-tab .bus").hasClass("on")) {
+                        alert('gongjiao')
+                        window.location.href = "/wap/Line_bus";
+                    } else if ($(".travel-tab .walk").hasClass("on")) {
+                        alert('buxing')
+                        window.location.href = "/wap/Line_walk";
+                    } else {
+                        alert('jiache')
+
+                        window.location.href = "/wap/";
+                        driving.search([{ keyword: start, city: currentCity }, { keyword: end, city: currentCity }]);
+                    }
+                }
+            });
+
+        })
+    </script>
+
+</div>

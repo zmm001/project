@@ -1,0 +1,44 @@
+﻿@{
+    ViewBag.Title = "E都市地图";
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" id="viewport" content="width=device-width,initial-scale=1.0, maximum-scale=1.0,minimum-scale=1.0,user-scalable=no" />
+
+    <link href="~/Content/common.css" rel="stylesheet" />
+    <link href="~/Content/navigation.css" rel="stylesheet" />
+    <script type="text/javascript" src="https://webapi.amap.com/maps?v=1.4.4&key=e8c07f64d6c9803cff6f05258b065221&plugin=AMap.Walking,AMap.LineSearch"></script>
+    <script>
+        document.documentElement.style.fontSize = 100 * ((document.documentElement.clientWidth) / 750) + "px";
+    </script>
+    <script src="~/Scripts/jquery-1.8.3.min.js"></script>
+    <script src="~/Scripts/common.js"></script>
+</head>
+<body style="background: #fff;">
+    <script>
+        $(function () {
+            var currentCity = getQueryString('city');
+            var start = getQueryString('start');
+            var end = getQueryString('end');
+            var walking = new AMap.Walking({
+                panel: "panel",
+            });
+            walking.search([{ keyword: start, city: currentCity }, { keyword: end, city: currentCity }]);
+            $('header').append("<p>从" + start + "到" + end + "</p>")
+        })
+    </script>
+    <header><a href="javascript:history.go(-1);" class="back"></a></header>
+    <div class="map-lib-driving">
+        <!-- 走路去 -->
+        <div id="panel">
+
+        </div>
+    </div>
+
+
+
+</body>
+
+</html>

@@ -1,0 +1,82 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" id="viewport" content="width=device-width,initial-scale=1.0, maximum-scale=1.0,minimum-scale=1.0,user-scalable=no" />
+    <link href="~/Content/common.css" rel="stylesheet" />
+    <link href="~/Content/navigation.css" rel="stylesheet" />
+    <script src="~/Scripts/jquery-1.8.3.min.js"></script>
+    <script src="~/Scripts/common.js"></script>
+    <script type="text/javascript" src="https://webapi.amap.com/maps?v=1.4.4&key=e8c07f64d6c9803cff6f05258b065221&plugin=AMap.Driving,AMap.Transfer,AMap.Walking,AMap.RangingTool,AMap.Autocomplete,AMap.PlaceSearch,AMap.AdvancedInfoWindow,AMap.Geolocation"></script>
+    <title>E都市地图</title>
+</head>
+<body>
+    <section class="transfer-mode">
+        <a href="javascript:history.go(-1);" class="back"></a>
+        <ul class="travel-tab">
+            <li class="car"><span></span></li>
+            <li class="bus on"><span></span></li>
+            <li class="walk"><span></span></li>
+        </ul>
+    </section>
+    <div id="buslist">
+
+    </div>
+
+    <script>
+        document.documentElement.style.fontSize = 100 * ((document.documentElement.clientWidth) / 750) + "px";
+    </script>
+    <script type="text/javascript">
+        $(function () {
+
+            var transfer = new AMap.Transfer({
+                //map: map,
+                //panel:'panel',
+                policy: AMap.TransferPolicy.LEAST_TIME
+            });
+
+            var start = getQueryString('start');
+            var end = getQueryString('end');
+            var currCity = getQueryString('currCity');
+
+            transfer.search([{ keyword: start, city: currCity }, { keyword: end, city: currCity }], function (status, result) {
+                if (status === 'complete' && result.info === 'OK') {
+                    sessionStorage.setItem('businfo', JSON.stringify(result));
+                    for (var i = 0; i < result.plans.length; i++) { // 循环公交线路
+
+                        var data = result.plans[i];
+                        var li = (data.distance / 100 / 10).toFixed(2); // 获取公里
+                        var minitu = Math.round(data.time / 60); // 获取时间
+                        var cost = data.cost; // 获取公交费
+                        for (var j = 0; j < data.segments.length; j++) { //  公交路线详情
+                            var results = data.segments[j];
+                            if (results.transit_mode == "BUS") { // 获取公交WDFG
+                                var linename = results.transit.lines[0].name;
+                                var line = linename.substring(0, linename.indexOf('路') + 1);
+                                var s = "<span class='line busline'>" + line + "</span>";
+                            }
+                        }
+
+                        if (linename) {
+                            $("#buslist").append("<div class='planTitlebus' id='" + i + "'><h3>" + s + "</h3><p>" + minitu + "分钟 (" + li + "公里)<em>|</em><span>" + cost + "元</span></p><a id='detail' href='/wap/?action=2&city=" + escape(currCity) + "&start=" + escape(start) + "&end=" + escape(end) + "&index=" + i + "&linename=" + escape(line) + "&isLocation=1&minute=" + minitu +"&distance="+ li + "'>路线详情></a></div>");
+                        }
+                    }
+                }
+            });
+            $(".car").click(function () {
+                window.location.href = "/wap/?action=1&start=" + escape(start) + "&end=" + escape(end) + "&isLocation=1";
+            });
+
+            $(".walk").click(function () {
+                window.location.href = "/wap/?action=3&start=" + escape(start) + "&end=" + escape(end) + "&isLocation=1";
+            });
+
+        });
+
+    </script>
+</body>
+</html>

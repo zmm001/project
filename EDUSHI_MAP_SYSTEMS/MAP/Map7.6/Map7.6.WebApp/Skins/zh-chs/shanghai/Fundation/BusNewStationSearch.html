@@ -1,0 +1,86 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head>
+    <title>公交站点搜索</title>
+    <script language="javascript" type="text/javascript" src="/Js/GeneralLib.js"></script>
+    <script language="javascript" type="text/javascript" src="../Js/BusNewStationSearch.js"></script>
+    <link href="../Css/BusNewSearch.css" rel="stylesheet" type="text/css" />
+     <style type="text/css">
+        #div_ad{ margin-top:3px; margin-bottom:3px; width:100%;}
+        #div_ad img{border:0px;margin:3px 0px}
+    </style>
+</head>
+<body>
+<div id ='union' >
+<style>
+.my_adslot { width: 310px; height: 80px; }
+@media(min-width: 500px) { .my_adslot { width: 468px; height: 60px; } }
+@media(min-width: 800px) { .my_adslot { width: 728px; height: 90px; } }
+</style>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- 搜索列表自适应广告 -->
+<ins class="adsbygoogle my_adslot"
+     style="display:inline-block"
+     data-ad-client="ca-pub-6571762537302535"
+     data-ad-slot="9530850037"></ins>
+<script>
+    (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+<div class="bus_pubsearch">
+		<div class="bus_pubsearch_a">
+	    <input type="text" value="输入要搜索的公交或地铁站点名称" onfocus="if(this.value=='输入要搜索的公交或地铁站点名称'){this.value='';this.style.color='#000000';};" id="textKeyWords" />
+	    <button id="BusSearch_Btn"></button>
+	</div>
+		<div class="dandiancx" id="TabContent">
+    	<div class="zhandianGJ">
+    	<DIV class="title">
+        	<div class="t_l"><img src="../images/zdcx_03.jpg" width="4" height="20" /></div>
+            <div class="t_c t_c1">相应字母开头的公交站点</div>
+            <div class="t_r"><img src="../images/zdcx_09.jpg" width="11" height="20" /></div>
+            <div class="clear"></div>
+        </DIV>
+        <div class="text">
+        	<ul class="ul_1">
+            	<li>
+                	<a href="javascript:;" onclick="BusStationSearchList('a');" class="currnet">A</a>
+                    <a href="javascript:;" onclick="BusStationSearchList('b');">B</a>
+                    <a href="javascript:;" onclick="BusStationSearchList('c');">C</a>
+                    <a href="javascript:;" onclick="BusStationSearchList('d');">D</a>
+                    <a href="javascript:;" onclick="BusStationSearchList('e');">E</a>
+                    <a href="javascript:;" onclick="BusStationSearchList('f');">F</a>
+                    <a href="javascript:;" onclick="BusStationSearchList('g');">G</a>
+                    <a href="javascript:;" onclick="BusStationSearchList('h');">H</a>
+                    <a href="javascript:;" onclick="BusStationSearchList('i');">I</a>
+                    <a href="javascript:;" onclick="BusStationSearchList('j');">J</a>
+                    <a href="javascript:;" onclick="BusStationSearchList('k');">K</a>
+                    <a href="javascript:;" onclick="BusStationSearchList('l');">L</a>
+                    <a href="javascript:;" onclick="BusStationSearchList('m');" style="margin-right:0;">M</a>
+                </li>
+                <li>
+                	<a href="javascript:;" onclick="BusStationSearchList('n');">N</a>
+                	<a href="javascript:;" onclick="BusStationSearchList('o');">O</a>
+                    <a href="javascript:;" onclick="BusStationSearchList('p');">P</a>
+                    <a href="javascript:;" onclick="BusStationSearchList('q');">Q</a>
+                    <a href="javascript:;" onclick="BusStationSearchList('r');">R</a>
+                    <a href="javascript:;" onclick="BusStationSearchList('s');">S</a>
+                    <a href="javascript:;" onclick="BusStationSearchList('t');">T</a>
+                    <a href="javascript:;" onclick="BusStationSearchList('u');">U</a>
+                    <a href="javascript:;" onclick="BusStationSearchList('v');">V</a>
+                    <a href="javascript:;" onclick="BusStationSearchList('w');">W</a>
+                    <a href="javascript:;" onclick="BusStationSearchList('x');">X</a>
+                    <a href="javascript:;" onclick="BusStationSearchList('y');">Y</a>
+                    <a href="javascript:;" onclick="BusStationSearchList('z');" style="margin-right:0;">Z</a>
+                </li>
+            </ul>
+            <div class="clear"></div>
+          <DIV class="list_gj" id="stationlists">
+       	    
+            </DIV>
+        </div >
+    </div>
+    </div>
+    <div class="clear"></div>
+	</div>
+</body>
+</html>

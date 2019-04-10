@@ -1,0 +1,26 @@
+﻿@using Edushi.RenWu.Model
+@using Edushi.RenWu.Special
+@{
+    var allParentTypes = ((List<RenWuInfoTypeModel>) Model.AllRwType).FindAll(p=>p.IT_ParentID==0);
+    
+}
+
+<div class="channel-header">
+    <div class="wrapper">
+        <div class="logo">
+            <a href="@Url.Content("~/")" target="_blank"><img src="@Url.Content("~/asset/images/logo.png")"></a>
+            <a href="@Url.Content("~/")" target="_blank" class="channel-name">人物</a>
+        </div>
+    </div>
+    <div class="sub-nav">
+        <div class="wrapper">
+            <p class="home"><a href="@Url.Content("~/")" target="_blank" @Html.Raw(Model.CurrentModel == null ? "class=\"current\"" : "")>人物首页</a></p>
+            <div class="nav">
+                @foreach (var item in allParentTypes)
+                {
+                     <span><a href="@Common.GetInfoListUrl(Url.Content("~/"),item.IT_ParentID,item.IT_ID)" target="_blank" @Html.Raw(Model.CurrentModel!=null&&item.IT_ID == Model.CurrentModel.IT_ID ? "class=\"current\"" : "")>@(item.IT_Name)人物</a></span>
+                }
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,4 @@
+E:\TFS192.168.100.212\EDUSHI_CHANNEL_SYSTEM\www.edushi.com\Edushi.ZiXun1.0.VS2013\Edushi.ZiXun1.0\Edushi.Bang.SQLServerDAL\bin\Debug\Edushi.Bang.SQLServerDAL.dll
+E:\TFS192.168.100.212\EDUSHI_CHANNEL_SYSTEM\www.edushi.com\Edushi.ZiXun1.0.VS2013\Edushi.ZiXun1.0\Edushi.Bang.SQLServerDAL\bin\Debug\Edushi.Bang.SQLServerDAL.pdb
+E:\TFS192.168.100.212\EDUSHI_CHANNEL_SYSTEM\www.edushi.com\Edushi.ZiXun1.0.VS2013\Edushi.ZiXun1.0\Edushi.Bang.SQLServerDAL\obj\Debug\Edushi.Bang.SQLServerDAL.dll
+E:\TFS192.168.100.212\EDUSHI_CHANNEL_SYSTEM\www.edushi.com\Edushi.ZiXun1.0.VS2013\Edushi.ZiXun1.0\Edushi.Bang.SQLServerDAL\obj\Debug\Edushi.Bang.SQLServerDAL.pdb

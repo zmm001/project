@@ -1,0 +1,131 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{A3B344F6-9981-4789-A7B0-5CA7C7FA7589}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Edushi.User</RootNamespace>
+    <AssemblyName>Edushi.User</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="MongoDB.Bson">
+      <HintPath>..\..\..\..\..\EDUSHI_CM_LIBRARY\Assembly_Library\EDC.Framework\MongoDB1.10\MongoDB.Bson.dll</HintPath>
+    </Reference>
+    <Reference Include="MongoDB.Driver">
+      <HintPath>..\..\..\..\..\EDUSHI_CM_LIBRARY\Assembly_Library\EDC.Framework\MongoDB1.10\MongoDB.Driver.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ArticleUpvoteDownvote.cs" />
+    <Compile Include="Comment.cs" />
+    <Compile Include="common\Common.cs" />
+    <Compile Include="common\CookieHelper.cs" />
+    <Compile Include="common\DEncrypt.cs" />
+    <Compile Include="common\EncryptHelper.cs" />
+    <Compile Include="common\PicReplaceExtensionHelper.cs" />
+    <Compile Include="Favorite.cs" />
+    <Compile Include="jumi\Reply.cs" />
+    <Compile Include="model\jumi\DiscussModel.cs" />
+    <Compile Include="model\jumi\DiscussReplyModel.cs" />
+    <Compile Include="model\jumi\DiscussReplyUpvoteDownvoteModel.cs" />
+    <Compile Include="model\PicArticleModel.cs" />
+    <Compile Include="model\TopicModel.cs" />
+    <Compile Include="model\UserAttentionModel.cs" />
+    <Compile Include="Attention.cs" />
+    <Compile Include="model\UserCommentModel.cs" />
+    <Compile Include="model\UserFavoritesModel.cs" />
+    <Compile Include="model\UserInfoModel.cs" />
+    <Compile Include="model\UserInfoModel_Full.cs" />
+    <Compile Include="model\UserUpvoteDownvoteCountModel.cs" />
+    <Compile Include="model\UserUpvoteDownvoteModel.cs" />
+    <Compile Include="model\UserUpvoteModel.cs" />
+    <Compile Include="model\InfoArticleModel.cs" />
+    <Compile Include="model\wenda\InfoAnswerModel.cs" />
+    <Compile Include="model\wenda\InfoAnswerUpvoteDownvoteModel.cs" />
+    <Compile Include="model\wenda\InfoQuestionModel.cs" />
+    <Compile Include="model\wenda\InfoTypeModel.cs" />
+    <Compile Include="model\xiaoshuo\Novel_BookRackModel.cs" />
+    <Compile Include="model\xiaoshuo\Novel_ReadingRecordModel.cs" />
+    <Compile Include="nosql\InfoArticle.cs" />
+    <Compile Include="nosql\jumi\DiscussReplyUpvoteDownvote.cs" />
+    <Compile Include="nosql\jumi\NosqlHandle.cs" />
+    <Compile Include="nosql\MongoDBServer.cs" />
+    <Compile Include="nosql\NosqlHandle.cs" />
+    <Compile Include="nosql\PicArticle.cs" />
+    <Compile Include="nosql\Topic.cs" />
+    <Compile Include="nosql\UserAttention.cs" />
+    <Compile Include="nosql\UserComment.cs" />
+    <Compile Include="nosql\UserFavorites.cs" />
+    <Compile Include="nosql\UserUpvote.cs" />
+    <Compile Include="nosql\UserUpvoteDownvote.cs" />
+    <Compile Include="nosql\UserUpvoteDownvoteCount.cs" />
+    <Compile Include="nosql\wenda\InfoAnswer.cs" />
+    <Compile Include="nosql\wenda\InfoAnswerUpvoteDownvote.cs" />
+    <Compile Include="nosql\wenda\InfoQuestion.cs" />
+    <Compile Include="nosql\wenda\NosqlHandle.cs" />
+    <Compile Include="nosql\xiaoshuo\NosqlHandle.cs" />
+    <Compile Include="nosql\xiaoshuo\Novel_ReadingRecord.cs" />
+    <Compile Include="nosql\xiaoshuo\Novel_BookRack.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="sql\DbHelperSQL.cs" />
+    <Compile Include="sql\jumi\DbHelperSQL.cs" />
+    <Compile Include="sql\jumi\TableOperate.cs" />
+    <Compile Include="sql\TableOperate.cs" />
+    <Compile Include="CommentUpvoteDownvote.cs" />
+    <Compile Include="sql\wenda\DbHelperSQL.cs" />
+    <Compile Include="sql\wenda\TableOperate.cs" />
+    <Compile Include="sql\xiaoshuo\DbHelperSQL.cs" />
+    <Compile Include="sql\xiaoshuo\TableOperate.cs" />
+    <Compile Include="User.cs" />
+    <Compile Include="wenda\Answer.cs" />
+    <Compile Include="xiaoshuo\Book.cs" />
+    <Compile Include="xiaoshuo\BookRack.cs" />
+    <Compile Include="xiaoshuo\ReadingRecord.cs" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

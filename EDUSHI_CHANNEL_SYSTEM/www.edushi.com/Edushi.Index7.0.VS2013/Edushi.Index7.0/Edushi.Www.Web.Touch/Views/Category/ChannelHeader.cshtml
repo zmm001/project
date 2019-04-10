@@ -1,0 +1,37 @@
+﻿@using Edushi.Www.Model
+@using Edushi.Common
+@{
+    var allTypes = Model.allType as List<InfoTypeModel>;
+    var currentType = Model.currentModel as InfoTypeModel;
+    var parentType = currentType.IT_ParentID == 0 ? currentType : allTypes.Find(p => p.IT_ID == currentType.IT_ParentID);
+    var ParameterName = System.Configuration.ConfigurationManager.AppSettings["CooperationApp_UrlParameterName"];
+    var ParameterValue = Request.QueryString[ParameterName];
+    var subType = allTypes.FindAll(p => p.IT_ParentID == parentType.IT_ID);
+
+}
+
+
+<header>
+    <a onclick="javascript:history.go(-1);" class="back"></a>
+    <a href="@Url.Content("~/")" class="logo"></a>
+    <a href="@(Common.GetMobileInfoListUrl(Url.Content("~/"), 0, parentType.IT_ID).GetCooperationAppURL(ParameterName, ParameterValue))" class="channel-name">@parentType.IT_Name</a>
+    <span class="fr">
+        <a href="http://m.edushi.com/user/" class="user"></a>
+        <a href="@string.Format("{0}{1}", Url.Content("~/"), "Navigation.html")" class="category"></a>
+    </span>
+</header>
+<section class="main-nav-box">
+    <div class="main-nav sub-nav clearfix">
+        <nav>
+            <a href="@(Common.GetMobileInfoListUrl(Url.Content("~/"), 0, parentType.IT_ID).GetCooperationAppURL(ParameterName, ParameterValue))" @Html.Raw(currentType.IT_ParentID == 0 ? "class=\"on\"" : "\"\"")>首页</a>
+            @if (subType.Any())
+            {
+                foreach (var item in subType)
+                {
+                    <a href="@(Common.GetMobileInfoListUrl(Url.Content("~/"), item.IT_ParentID, item.IT_ID).GetCooperationAppURL(ParameterName, ParameterValue))" @Html.Raw(item.IT_ID == currentType.IT_ID ? "class=\"on\"" : "\"\"")>@item.IT_Name</a>
+                }
+            }
+
+        </nav>
+    </div>
+</section>

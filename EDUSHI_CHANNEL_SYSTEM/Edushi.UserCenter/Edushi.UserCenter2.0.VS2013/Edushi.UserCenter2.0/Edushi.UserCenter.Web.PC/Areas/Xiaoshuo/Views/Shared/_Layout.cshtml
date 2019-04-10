@@ -1,0 +1,102 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>@ViewBag.Title</title>
+    <link rel="stylesheet" href="~/Areas/Xiaoshuo/asset/css/common.css">
+    <link rel="stylesheet" href="~/Areas/Xiaoshuo/asset/css/user.css">
+    <link href="http://res.edushi.com/top/asset/css/top.css" rel="stylesheet" />
+    <script src="~/Areas/Xiaoshuo/asset/js/jquery-1.8.3.min.js"></script>
+    <script src="~/Areas/Xiaoshuo/asset/js/vue.min.js"></script>
+    <script src="~/Areas/Xiaoshuo/asset/js/knockout-3.1.0.js"></script>
+
+</head>
+
+<body>
+    <!--加载头部 开始-->
+    <div class="top-nav-box">
+        <div class="top-nav-wrap">
+            <div class="wrapper clearfix">
+                <a href="http://www.edushi.com/" target="_blank" class="fl e-home">爱上头条首页</a>
+                <div class="fr nav-tips">
+                    <a href="http://apps.edushi.com/news/app-pc.html" target="_blank" class="mobile">E都市<em></em></a>
+                    <a href="http://www.edushi.com/mapcity.html" target="_blank" class="map">三维地图<em></em></a>
+                    <a href="http://wenda.edushi.com/" target="_blank" class="bdt">问答<em></em></a>
+                    <a href="http://xiaoshuo.edushi.com/" target="_blank" class="xiaoshuo">小说<em></em></a>
+                    <a href="http://lvyou.edushi.com/" target="_blank" class="yl">旅游景点<em></em></a>
+                    <a href="http://lvyou.edushi.com/Hotel" target="_blank" class="jdyd">酒店预订<em></em></a>
+                    <a href="http://fangtoo.edushi.com/es/" target="_blank" class="fang">二手房<em></em></a>
+                    <a href="http://fangtoo.edushi.com/cz/" target="_blank" class="zf">租房<em></em></a>
+                    <span id="member"></span>
+                    <a href="javascript:void(0);" class="more"><em></em></a>
+                </div>
+            </div>
+            <div class="sitemap">
+                <div class="wrapper">
+                    <ul class="clearfix classilylist"></ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="~/Areas/Xiaoshuo/asset/js/top.js"></script>
+    <!--加载头部 结束-->
+
+    <div class="my-header">
+        <div class="sub">
+            <div class="wrapper">
+                <a href="http://xiaoshuo.edushi.com/" class="logo" target="_blank"><img src="~/Areas/Xiaoshuo/asset/images/logo.png"></a>
+                <span class="sub-name">用户中心</span>
+            </div>
+        </div>
+    </div>
+    <div class="container my" id="app">
+        <div class="wrapper">
+            <div class="side">
+                <div class="photo-box">
+                    <div class="photo">
+                        <img data-bind="attr:{src:UI_Avatar}">
+                    </div>
+                    <span class="name" data-bind="text:UI_NickName"></span>
+                    <span class="text" data-bind="text:UI_Tags"></span>
+                </div>
+                @Html.Partial("~/Areas/Xiaoshuo/Views/Shared/_PartialUserInfo.cshtml")
+            </div>
+
+            @RenderBody()
+        </div>
+    </div>
+    <script>
+        var setting = {
+            UI_Avatar: ko.observable(),
+            UI_NickName: ko.observable(),
+            UI_Tags: ko.observable()
+        }
+        var action = {
+            init: function () {
+                var self = this
+                self.GetUserInfo()
+            },
+            GetUserInfo: function () {
+                $.ajax({
+                    type: "POST",
+                    url: "@Url.Content("~/xiaoshuo/GetUserInfo.html")",
+                    success: function (data) {
+                        if (data != null) {
+                            setting.UI_Avatar('http://apps.edushi.com/Avatar' + data.UI_Avatar)
+                            setting.UI_NickName(data.UI_NickName)
+                            setting.UI_Tags(data.UI_Tags)
+                        }
+                    },
+                    error: function (data) {
+                        //console.log(data);
+                    }
+                })
+            }
+        }
+        ko.applyBindings(setting)
+        action.init()
+    </script>
+</body>
+</html>

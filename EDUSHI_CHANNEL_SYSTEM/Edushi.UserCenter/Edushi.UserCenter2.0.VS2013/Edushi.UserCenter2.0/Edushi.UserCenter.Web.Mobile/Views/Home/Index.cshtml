@@ -1,0 +1,101 @@
+﻿@using Edushi.Common
+@model Edushi.User.model.UserInfoModel
+@{
+    ViewBag.Title = string.Format("{0}个人中心-E都市",Model.UI_NickName);
+    var imgDomain = Common.GetConfigString("UserHeadPic");
+
+    string inviteCode = Edushi.User.common.CookieHelper.GetCookieValue("inviteCode");
+}
+
+<div id="app" class="my center">
+    <!--头部-->
+    <header-bar :data="header" @@back="back()"></header-bar>
+    <!--内容-->
+    <div class="photo-box">
+        <div class="photo">
+            <img src="@(imgDomain + Model.UI_Avatar)">
+        </div>
+        <div class="info">
+            <span class="name">@Html.Raw(Model.UI_NickName)</span>
+            <span class="text">@Html.Raw(Model.UI_Tags)</span>
+            @if (ViewBag.balance != null && ViewBag.gold != null)
+            {
+                <div class="tips">
+                    <p>
+                        <span>@ViewBag.gold <span>枚</span></span>我的金币
+                    </p>
+                    <p>
+                        <span>@ViewBag.balance <span>元</span></span>我的零钱
+                    </p>
+                </div>
+            }
+        </div>
+    </div>
+    <div class="app-download">
+        <a href="@Url.Content("~/my/app.html")"></a>
+        <span @@click="close"></span>
+    </div>
+    <ul class="nav">
+        <li class="invite">
+            <a href="javascript:void(0);" class="mybtn" data-clipboard-action="copy" data-clipboard-text="https://client.makezixun.com/weixinShare.html?activities=normal&inviteCode=@inviteCode">邀请好友<span>每邀请一人注册，可得最高313现金！</span></a>
+        </li>
+        <li class="gold">
+            <a href="@Url.Content("~/my/help.html")">金币活动</a>
+        </li>
+        <li class="follow">
+            <a href="@Url.Content("~/my/attention.html")">我的关注</a>
+        </li>
+        <li class="fans">
+            <a href="@Url.Content("~/my/fans.html")">我的粉丝</a>
+        </li>
+        <li class="favorite">
+            <a href="@Url.Content("~/my/favorite.html")">我的收藏</a>
+        </li>
+        <li class="activities">
+            <a href="@Url.Content("~/my/activities.html")">我的动态</a>
+        </li>
+        <li class="info">
+            <a href="@Url.Content("~/my/baseinfo.html")">基本资料</a>
+        </li>
+        <li class="quit">
+            <a href="@Url.Content("~/exitlogin.htm")">退出</a>
+        </li>
+    </ul>
+</div>
+<div class="invite-tips-show">链接复制成功，可发给好友！</div>
+<script>
+    var my = new Vue({
+        el: '#app',
+        data: function () {
+            return {
+                header: {
+                    title: "个人中心"
+                }
+            }
+        },
+        methods: {
+            //返回
+            back: function () {
+                window.history.back();
+            },
+            close: function () {
+                $(".app-download").hide();
+            }
+        }
+    })
+
+
+</script>
+<script type="text/javascript" src="@Url.Content("~/asset/js/clipboard.min.js")"></script>
+<script>
+    var clipboard = new ClipboardJS('.mybtn');
+
+    clipboard.on('success', function (e) {
+        $(".invite-tips-show").fadeIn(500).delay(2000).fadeOut(500);
+    });
+
+    clipboard.on('error', function (e) {
+        console.log(e);
+    });
+</script>
+

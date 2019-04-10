@@ -1,0 +1,207 @@
+﻿@model Edushi.Www.Web.Touch.Models.HomeModel
+@using Edushi.Common
+@{
+    string ParameterName = System.Configuration.ConfigurationManager.AppSettings["CooperationApp_UrlParameterName"];
+    string ParameterValue = Request.QueryString[ParameterName];
+
+    System.Diagnostics.Stopwatch getTime_lunbo = new System.Diagnostics.Stopwatch();
+    getTime_lunbo.Start();
+
+    System.Diagnostics.Stopwatch getTime_data = new System.Diagnostics.Stopwatch();
+    getTime_data.Start();
+}
+
+@{
+    ViewBag.Title = "爱上头条（E都市）-移动互联网资讯媒体";
+}
+
+@section meta {
+    <meta name="keywords" content="E都市,爱上头条,杭州E都市,edushi,移动互联网媒体,资讯,新闻" />
+    <meta name="description" content="E都市（edushi.com）为阿拉丁股份推出的集新闻资讯、三维地图、O2O生活服务为一体的综合门户网站。构建新型互联网媒体平台为用户提供价值资讯，拥有全球首个三维城市地图。" />
+    <link rel="canonical" href="http://www.edushi.com/">
+}
+<link rel="stylesheet" href="http://res.edushi.com/www/touch/v7/asset/css/style_7.0.css">
+<header>
+    <a href="@Url.Content("~/")" class="logo"></a>
+    <span class="text"></span>
+    <span class="fr">
+        <a href="http://m.edushi.com/user/" class="user"></a>
+    </span>
+</header>
+
+<section class="main-nav-box">
+    <div class="main-nav clearfix">
+        <nav>
+            <a href="#" class="on">要闻</a>
+            @if (Model.PInfoTypes != null && Model.PInfoTypes.Any())
+            {
+                foreach (var item in Model.PInfoTypes)
+                {
+                    <a href="@(Common.GetMobileInfoListUrl(Url.Content("~/"), item.IT_ParentID, item.IT_ID).GetCooperationAppURL(ParameterName, ParameterValue))">@item.IT_Name</a>
+                }
+            }
+
+            @*<a href="@(("http://m.edushi.com/caijing").GetCooperationAppURL(ParameterName, ParameterValue))">财经</a>*@
+            <a href="http://wap.fangtoo.com/">房产</a>
+            <a href="@(("http://m.edushi.com/lvyou/").GetCooperationAppURL(ParameterName, ParameterValue))">出行</a>
+            <a href="@(("http://m.edushi.com/zt/").GetCooperationAppURL(ParameterName, ParameterValue))">专题</a>
+            <a href="@(("http://m.tu.edushi.com/").GetCooperationAppURL(ParameterName, ParameterValue))">图闻</a>
+            <a href="http://m.edushi.com/wenda/">问答</a>
+            <a href="http://m.xiaoshuo.edushi.com/">小说</a>
+        </nav>
+        <span class="btn"></span>
+    </div>
+    <div class="more-nav"></div>
+</section>
+<div class="content-main">
+    <!--轮播-->
+    @if (Model.TopDay != null && Model.TopDay.Any())
+    {
+        <section class="carousel">
+            <div class="focus-box">
+                <ul class="swiper-wrapper">
+                    @foreach (var item in Model.TopDay)
+                    {
+                        string url = item.ITD_3gUrl.Replace("www", "m").GetRedirectPermanentURL().GetCooperationAppURL(ParameterName, ParameterValue);
+                        <li class="swiper-slide">
+                            <a href="@url"><img src="@item.ITD_PicUrl.GetPicReplace("", "")" /></a>
+                            <p class="text">
+                                <a href="@url">@Html.Raw(item.ITD_Title)</a>
+                            </p>
+                        </li>
+                    }
+
+                </ul>
+            </div>
+            <div class="pic-num">
+                <div class="number">
+                    <span class="on-num">1</span>/<span class="total-num">@Model.TopDay.Count</span>
+                </div>
+            </div>
+        </section>
+        getTime_lunbo.Stop();
+    }
+
+    @if (Model.Data != null && Model.Data.Any())
+    {
+        <section class="news-list">
+            <ul id="datalist">
+                @for (var i = 0; i < Model.Data.Count; i++)
+                {
+                    var item = Model.Data[i];
+                    string url = item.CooperationAppURL == 1 ? item.Url.GetCooperationAppURL(ParameterName, ParameterValue) : item.Url;
+                    string liClass = string.Empty;//无样式
+                    string imgBox = string.Empty;//无图
+                    if (item.Type == 2)  //tuwen
+                    {
+
+                        if (!string.IsNullOrWhiteSpace(item.Pic) && !string.IsNullOrWhiteSpace(item.Pic1) && !string.IsNullOrWhiteSpace(item.Pic2))
+                        {
+                            imgBox = string.Format(" <div class=\"img-box\">\r\n  <p><img src=\"{0}\"/></p>\r\n <p><img src=\"{1}\"/></p>\r\n <p><img src=\"{2}\"/></p>\r\n <div class=\"number\"><span>{3}</span></div></div>\r\n", item.Pic, item.Pic1, item.Pic2, item.PicCount);
+                            liClass = " class=\"tu\"";
+                        }
+                        else if (!string.IsNullOrWhiteSpace(item.Pic))
+                        {
+                            imgBox = string.Format(" <div class=\"img-box\">\r\n  <p><img src=\"{0}\"/></p>\r\n  <div class=\"number\"><span>{1}</span></div></div>\r\n", item.Pic, item.PicCount);
+                            liClass = " class=\"tu singletu\"";
+                        }
+
+                    }
+                    else if (item.Type == 3)  //zhuanti
+                    {
+                        imgBox = string.Format(" <div class=\"img-box\"><img src=\"{0}\"/></div>\r\n", item.Pic);
+                        liClass = " class=\"topic\"";
+                    }
+                    else   //资讯(含包打听、财经)
+                    {
+                        if (!string.IsNullOrEmpty(item.Pic) && !string.IsNullOrEmpty(item.Pic1) && !string.IsNullOrEmpty(item.Pic2))
+                        {
+                            liClass = " class=\"multiple\"";//multiple
+                            imgBox = string.Format("<div class=\"img-box\">{0}</div>\r\n", "<img src=\"" + item.Pic + "\"><img src=\"" + item.Pic1 + "\"><img src=\"" + item.Pic2 + "\">");//三张图
+                        }
+                        else if (!string.IsNullOrEmpty(item.Pic))
+                        {
+                            liClass = " class=\"single\"";//single
+                            imgBox = string.Format("<div class=\"img-box\">{0}</div>\r\n", "<img src=\"" + item.Pic + "\">");//一张图
+                        }
+                    }
+                    <li @Html.Raw(liClass)>
+                        <a href="@url">
+                            <div class="title">@Html.Raw(item.Title)</div>
+                            @Html.Raw(imgBox)
+                            <div class="tips">
+                                @if (i == 0)
+                                {
+                                    <span class="top">置顶</span>
+                                }
+                                else if (i == 1)
+                                {
+                                    <span class="top">热</span>
+                                }
+                                <span class="author">@item.Author</span>
+                                <span class="comment"></span>
+                                <span class="time">@item.Time</span>
+                            </div>
+                        </a>
+                    </li>
+
+                    if (i == 3)
+                    {
+                        <li>
+                            <a href="https://game.ltyun.cc/api/public/lottery/MjMyXzUxMzBfMTI3Mw=="><img src="http://res.edushi.com/www/touch/v7/asset/images/aitui_ad_three.png" style="width: 100%;"></a>
+                        </li>
+                    }
+                    else if (i == 7)
+                    {
+                        <li>
+                            <a href="https://game.ltyun.cc/api/public/lottery/MjMyXzUxMzBfMTI3Mw=="><img src="http://res.edushi.com/www/touch/v7/asset/images/aitui_ad_one.png" style="width: 100%;"></a>
+                        </li>
+                    }
+                    else if (i == 11)
+                    {
+                        <li>
+                            <a href="https://game.ltyun.cc/api/public/lottery/MjMyXzUxMzBfMTI3Mw=="><img src="http://res.edushi.com/www/touch/v7/asset/images/aitui_ad_topic.png" style="width: 100%;"></a>
+                        </li>
+                    }
+                }
+
+            </ul>
+            <div class="loading">
+                <span>正在加载更多</span>
+            </div>
+        </section>
+        getTime_data.Stop();
+    }
+
+</div>
+<!--read_data：@Model.read_data_time，lunbo_load：@getTime_lunbo.ElapsedMilliseconds，data_load：@getTime_data.ElapsedMilliseconds-->
+<script type="text/javascript">
+    var ConfigData = {
+        Count: "@Model.PageCount",
+        PName: "@ParameterName",
+        PValue: "@(!string.IsNullOrEmpty(ParameterValue) ? ParameterValue : string.Empty)",
+        Url: "@Url.Content("~/")",
+        Page: "GetMoreData.htm",
+        Index: "@Model.Index"
+    };
+</script>
+
+<script type="text/javascript" src="http://res.edushi.com/www/touch/v7/asset/js/swiper.min.js"></script>
+<script type="text/javascript">
+    if ($(".focus-box li").length > 1) {
+        var mySwiper = new Swiper('.focus-box', {
+            autoplay: 5000,
+            autoplayDisableOnInteraction: false,
+            loop: true,
+            onInit: function (swiper) {
+                $(".total-num").text(swiper.slides.length - 2);
+            },
+            onSlideChangeStart: function (swiper) {
+                var newText = parseInt($(".swiper-slide-active").attr("data-swiper-slide-index"));
+                $(".on-num").text(newText + 1);
+            }
+        });
+    }
+</script>
+<script type="text/javascript" src="http://res.edushi.com/www/touch/v7/asset/js/scrollload.min.js"></script>
+
